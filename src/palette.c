@@ -9,7 +9,6 @@
 #include "task.h"
 #include "constants/field_weather.h"
 #include "constants/rgb.h"
-#include "dns.h"
 
 enum
 {
@@ -71,9 +70,7 @@ void TransferPlttBuffer(void)
 {
     if (!gPaletteFade.bufferTransferDisabled)
     {
-        void *src = gPlttBufferFaded;
-        void *dest = (void *)PLTT;
-        DnsTransferPlttBuffer(src, dest);  //Does 16b Dma Transfer
+        DmaCopy16Defvars(3, gPlttBufferFaded, (void *)PLTT, PLTT_SIZE);
         sPlttBufferTransferPending = FALSE;
         if (gPaletteFade.mode == HARDWARE_FADE && gPaletteFade.active)
             UpdateBlendRegisters();
