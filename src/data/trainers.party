@@ -9507,7 +9507,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 === TRAINER_BRENDAN_ROUTE_103_MUDKIP ===
 Name: BARRY
 Class: Rival
-Pic: Youngster
+Pic: Wally
 Gender: Male
 Music: Male
 Double Battle: No
@@ -9562,7 +9562,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 === TRAINER_BRENDAN_ROUTE_103_TREECKO ===
 Name: BARRY
 Class: Rival
-Pic: Youngster
+Pic: Wally
 Gender: Male
 Music: Male
 Double Battle: No
@@ -9617,7 +9617,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 === TRAINER_BRENDAN_ROUTE_103_TORCHIC ===
 Name: BARRY
 Class: Rival
-Pic: Youngster
+Pic: Wally
 Gender: Male
 Music: Male
 Double Battle: No
