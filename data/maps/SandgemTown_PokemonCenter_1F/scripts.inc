@@ -14,3 +14,13 @@ SandgemTown_PokemonCenter_1F_EventScript_Nurse::
 	waitbuttonpress
 	release
 	end
+
+SandgemTown_PokemonCenter_1F_EventScript_Gentleman::
+	msgbox SandgemTown_PokemonCenter_1F_Text_Gentleman, MSGBOX_NPC
+	end
+
+SandgemTown_PokemonCenter_1F_Text_Gentleman:
+	.string "Your POKéMON are healed for free\n"
+	.string "here. Don't be shy about visiting\l"
+	.string "often!$"
+

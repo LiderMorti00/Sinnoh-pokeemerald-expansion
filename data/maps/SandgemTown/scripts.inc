@@ -31,3 +31,12 @@ SandgemTown_Text_Woman:
 SandgemTown_Text_Fisherman:
 	.string "The sea breeze here is the best in\n"
 	.string "all of Sinnoh. Smell that salt!$"
+
+SandgemTown_EventScript_Kid::
+	msgbox SandgemTown_Text_Kid, MSGBOX_NPC
+	end
+
+SandgemTown_Text_Kid:
+	.string "The beach south of town is great\n"
+	.string "for finding shells!$"
+

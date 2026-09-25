@@ -341,7 +341,9 @@
 
 // ---- Proyecto Sinnoh: progreso de la historia ----
 // 0 inicio, 1 mamá, 2 Barry en Hojaverde, 3 Ruta 201, 4 escena del lago,
-// 5 inicial y combate con Barry, 6 Pokédex del Prof. Rowan
+// 5 inicial y combate con Barry, 6 Pokédex del Prof. Rowan,
+// 7 tutorial de captura (Ruta 202), 8 Barry en la Ruta 203, 9 Roco en la mina,
+// 10 medalla Lignito
 #define VAR_SINNOH_STORY                  VAR_UNUSED_0x404E
 
 #endif // GUARD_CONSTANTS_VARS_H

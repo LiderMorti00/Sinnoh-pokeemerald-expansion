@@ -14,3 +14,12 @@ OreburghCity_PokemonCenter_1F_EventScript_Nurse::
 	waitbuttonpress
 	release
 	end
+
+OreburghCity_PokemonCenter_1F_EventScript_Hiker::
+	msgbox OreburghCity_PokemonCenter_1F_Text_Hiker, MSGBOX_NPC
+	end
+
+OreburghCity_PokemonCenter_1F_Text_Hiker:
+	.string "After a long shift in the mine,\n"
+	.string "nothing beats a rest here.$"
+
