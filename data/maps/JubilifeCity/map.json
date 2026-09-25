@@ -118,6 +118,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "JubilifeCity_EventScript_Man2",
       "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 34,
+      "y": 10,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_POTION",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_ROUTE_109_PP_UP"
     }
   ],
   "warp_events": [
@@ -193,5 +207,46 @@
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 17,
+      "y": 16,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "JubilifeCity_EventScript_Sign1"
+    },
+    {
+      "type": "sign",
+      "x": 43,
+      "y": 16,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "JubilifeCity_EventScript_Sign2"
+    },
+    {
+      "type": "sign",
+      "x": 56,
+      "y": 36,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "JubilifeCity_EventScript_Sign3"
+    },
+    {
+      "type": "sign",
+      "x": 39,
+      "y": 37,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "JubilifeCity_EventScript_Sign4"
+    },
+    {
+      "type": "hidden_item",
+      "x": 50,
+      "y": 11,
+      "elevation": 3,
+      "item": "ITEM_PARALYZE_HEAL",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_121_HP_UP"
+    }
+  ]
 }

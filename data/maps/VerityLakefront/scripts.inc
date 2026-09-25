@@ -18,6 +18,7 @@ VerityLakefront_EventScript_BriefcaseScene::
 	removeobject LOCALID_LAKEFRONT_BRIEFCASE
 	setflag FLAG_HIDE_LAKEFRONT_BRIEFCASE
 	special ChooseStarter
+	setvar VAR_SINNOH_HAS_POKEMON, 1
 	special HealPlayerParty
 	msgbox VerityLakefront_Text_BarryPicks, MSGBOX_DEFAULT
 	closemessage
@@ -109,3 +110,12 @@ VerityLakefront_Text_BarryAfter:
 	.string "We'd better return the briefcase.\n"
 	.string "His lab is in SANDGEM TOWN,\l"
 	.string "east of ROUTE 201. Let's go!$"
+
+VerityLakefront_EventScript_Sign1::
+	msgbox VerityLakefront_Text_Sign1, MSGBOX_SIGN
+	end
+
+VerityLakefront_Text_Sign1:
+	.string "LAKE VERITY\p"
+	.string "A lake said to be home to a\n"
+	.string "POKéMON of emotion.$"

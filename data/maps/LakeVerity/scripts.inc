@@ -73,3 +73,26 @@ Sinnoh_Text_Dawn:
 
 Sinnoh_Text_Lucas:
 	.string "LUCAS$"
+
+LakeVerity_EventScript_NoPokemonGrass::
+	lockall
+	msgbox Sinnoh_Text_NoPokemonGrass, MSGBOX_DEFAULT
+	closemessage
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+	goto_if_eq VAR_RESULT, DIR_NORTH, LakeVerity_EventScript_GrassBackDown
+	goto_if_eq VAR_RESULT, DIR_SOUTH, LakeVerity_EventScript_GrassBackUp
+	goto_if_eq VAR_RESULT, DIR_WEST, LakeVerity_EventScript_GrassBackRight
+	applymovement LOCALID_PLAYER, Common_Movement_WalkLeft
+	goto LakeVerity_EventScript_GrassBackEnd
+LakeVerity_EventScript_GrassBackDown::
+	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
+	goto LakeVerity_EventScript_GrassBackEnd
+LakeVerity_EventScript_GrassBackUp::
+	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
+	goto LakeVerity_EventScript_GrassBackEnd
+LakeVerity_EventScript_GrassBackRight::
+	applymovement LOCALID_PLAYER, Common_Movement_WalkRight
+LakeVerity_EventScript_GrassBackEnd::
+	waitmovement 0
+	releaseall
+	end

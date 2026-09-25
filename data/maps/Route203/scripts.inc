@@ -33,7 +33,7 @@ Route203_EventScript_BarryAfter::
 	waitmovement 0
 	removeobject LOCALID_ROUTE203_BARRY
 	setflag FLAG_HIDE_ROUTE203_BARRY
-	setvar VAR_SINNOH_STORY, 8
+	setvar VAR_SINNOH_STORY, 9
 	releaseall
 	end
 
@@ -196,3 +196,48 @@ Route203_Text_MadelinePost:
 	.string "Its headache got worse. I'll take\n"
 	.string "it to the POKéMON CENTER.$"
 
+Route203_EventScript_Sign1::
+	msgbox Route203_Text_Sign1, MSGBOX_SIGN
+	end
+
+Route203_Text_Sign1:
+	.string "ROUTE 203\p"
+	.string "West: JUBILIFE CITY East: OREBURGH\n"
+	.string "GATE$"
+
+Route203_EventScript_Sign2::
+	msgbox Route203_Text_Sign2, MSGBOX_SIGN
+	end
+
+Route203_Text_Sign2:
+	.string "TRAINER TIPS\p"
+	.string "Some items can only be found by\n"
+	.string "searching carefully. Look closely\l"
+	.string "at odd-looking spots!$"
+
+Route203_EventScript_Sign3::
+	msgbox Route203_Text_Sign3, MSGBOX_SIGN
+	end
+
+Route203_Text_Sign3:
+	.string "TRAINER TIPS\p"
+	.string "ZUBAT fly out in dark caves. REPEL\n"
+	.string "keeps weak wild POKéMON away.$"
+
+Route203_EventScript_Lass::
+	msgbox Route203_Text_Lass, MSGBOX_NPC
+	end
+
+Route203_Text_Lass:
+	.string "The cave in OREBURGH GATE is dark\n"
+	.string "and full of ZUBAT. Be careful in\l"
+	.string "there!$"
+
+Route203_EventScript_SignExtra1::
+	msgbox Route203_Text_SignExtra1, MSGBOX_SIGN
+	end
+
+Route203_Text_SignExtra1:
+	.string "OREBURGH GATE\p"
+	.string "The tunnel ahead leads to OREBURGH\n"
+	.string "CITY.$"

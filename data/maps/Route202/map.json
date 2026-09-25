@@ -70,7 +70,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_BUG_CATCHER",
+      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
       "x": 10,
       "y": 6,
       "elevation": 3,
@@ -80,6 +80,34 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "Route202_EventScript_Logan",
+      "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 9,
+      "y": 1,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_POTION",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_ROUTE_116_X_SPECIAL"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
+      "x": 15,
+      "y": 4,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route202_EventScript_Youngster",
       "flag": "0"
     }
   ],
@@ -91,7 +119,7 @@
       "y": 31,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
-      "var_value": "6",
+      "var_value": "7",
       "script": "Route202_EventScript_DawnScene"
     },
     {
@@ -100,7 +128,7 @@
       "y": 31,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
-      "var_value": "6",
+      "var_value": "7",
       "script": "Route202_EventScript_DawnScene"
     },
     {
@@ -109,7 +137,7 @@
       "y": 31,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
-      "var_value": "6",
+      "var_value": "7",
       "script": "Route202_EventScript_DawnScene"
     },
     {
@@ -118,7 +146,7 @@
       "y": 31,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
-      "var_value": "6",
+      "var_value": "7",
       "script": "Route202_EventScript_DawnScene"
     },
     {
@@ -127,7 +155,7 @@
       "y": 31,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
-      "var_value": "6",
+      "var_value": "7",
       "script": "Route202_EventScript_DawnScene"
     },
     {
@@ -136,7 +164,7 @@
       "y": 31,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
-      "var_value": "6",
+      "var_value": "7",
       "script": "Route202_EventScript_DawnScene"
     },
     {
@@ -145,7 +173,7 @@
       "y": 31,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
-      "var_value": "6",
+      "var_value": "7",
       "script": "Route202_EventScript_DawnScene"
     },
     {
@@ -154,7 +182,7 @@
       "y": 31,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
-      "var_value": "6",
+      "var_value": "7",
       "script": "Route202_EventScript_DawnScene"
     },
     {
@@ -163,7 +191,7 @@
       "y": 31,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
-      "var_value": "6",
+      "var_value": "7",
       "script": "Route202_EventScript_DawnScene"
     },
     {
@@ -172,9 +200,42 @@
       "y": 31,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
-      "var_value": "6",
+      "var_value": "7",
       "script": "Route202_EventScript_DawnScene"
     }
   ],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 14,
+      "y": 3,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route202_EventScript_Sign1"
+    },
+    {
+      "type": "sign",
+      "x": 11,
+      "y": 14,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route202_EventScript_Sign2"
+    },
+    {
+      "type": "sign",
+      "x": 21,
+      "y": 25,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route202_EventScript_Sign3"
+    },
+    {
+      "type": "hidden_item",
+      "x": 14,
+      "y": 1,
+      "elevation": 3,
+      "item": "ITEM_POKE_BALL",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_119_CALCIUM"
+    }
+  ]
 }

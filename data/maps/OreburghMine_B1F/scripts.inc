@@ -10,7 +10,7 @@ OreburghMine_B1F_EventScript_Roark::
 	removeobject LOCALID_MINE_ROARK
 	setflag FLAG_HIDE_MINE_ROARK
 	clearflag FLAG_HIDE_GYM_ROARK
-	setvar VAR_SINNOH_STORY, 9
+	setvar VAR_SINNOH_STORY, 10
 	fadescreen FADE_FROM_BLACK
 	release
 	end
@@ -41,4 +41,3 @@ OreburghMine_B1F_Text_Worker1:
 OreburghMine_B1F_Text_Worker2:
 	.string "Sometimes we dig up fossils of\n"
 	.string "ancient POKéMON down here!$"
-

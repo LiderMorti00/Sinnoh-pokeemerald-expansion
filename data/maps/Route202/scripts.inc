@@ -27,7 +27,7 @@ Route202_EventScript_DawnScene::
 	waitmovement 0
 	removeobject LOCALID_ROUTE202_DAWN
 	setflag FLAG_HIDE_ROUTE202_DAWN
-	setvar VAR_SINNOH_STORY, 7
+	setvar VAR_SINNOH_STORY, 8
 	releaseall
 	end
 
@@ -183,3 +183,38 @@ Route202_Text_LoganPost:
 	.string "on where it last battled. Neat,\l"
 	.string "huh?$"
 
+Route202_EventScript_Sign1::
+	msgbox Route202_Text_Sign1, MSGBOX_SIGN
+	end
+
+Route202_Text_Sign1:
+	.string "ROUTE 202\p"
+	.string "North: JUBILIFE CITY South:\n"
+	.string "SANDGEM TOWN$"
+
+Route202_EventScript_Sign2::
+	msgbox Route202_Text_Sign2, MSGBOX_SIGN
+	end
+
+Route202_Text_Sign2:
+	.string "TRAINER TIPS\p"
+	.string "A POKéMON that is asleep or\n"
+	.string "paralyzed is easier to catch!$"
+
+Route202_EventScript_Sign3::
+	msgbox Route202_Text_Sign3, MSGBOX_SIGN
+	end
+
+Route202_Text_Sign3:
+	.string "TRAINER TIPS\p"
+	.string "Trainers will challenge you as\n"
+	.string "soon as your eyes meet. Be ready!$"
+
+Route202_EventScript_Youngster::
+	msgbox Route202_Text_Youngster, MSGBOX_NPC
+	end
+
+Route202_Text_Youngster:
+	.string "Trainers who look at you want to\n"
+	.string "battle. Walk past them if you're\l"
+	.string "not ready!$"

@@ -148,3 +148,11 @@ TwinleafTown_Text_Girl:
 TwinleafTown_Text_Man:
 	.string "TWINLEAF TOWN is quiet, but the\n"
 	.string "wind always smells of fresh leaves.$"
+
+TwinleafTown_EventScript_Guitarist::
+	msgbox TwinleafTown_Text_Guitarist, MSGBOX_NPC
+	end
+
+TwinleafTown_Text_Guitarist:
+	.string "Ah, TWINLEAF... Where the breeze\n"
+	.string "always plays the same sweet song.$"

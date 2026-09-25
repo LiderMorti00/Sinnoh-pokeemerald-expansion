@@ -54,3 +54,36 @@ JubilifeCity_Text_Man2:
 	.string "bothering folks near the edge of\l"
 	.string "town. Strange...$"
 
+JubilifeCity_EventScript_Sign1::
+	msgbox JubilifeCity_Text_Sign1, MSGBOX_SIGN
+	end
+
+JubilifeCity_Text_Sign1:
+	.string "JUBILIFE CITY\p"
+	.string "The most modern city in Sinnoh.$"
+
+JubilifeCity_EventScript_Sign2::
+	msgbox JubilifeCity_Text_Sign2, MSGBOX_SIGN
+	end
+
+JubilifeCity_Text_Sign2:
+	.string "TRAINERS' SCHOOL\p"
+	.string "Learn the basics of POKéMON\n"
+	.string "battling!$"
+
+JubilifeCity_EventScript_Sign3::
+	msgbox JubilifeCity_Text_Sign3, MSGBOX_SIGN
+	end
+
+JubilifeCity_Text_Sign3:
+	.string "POKéTCH COMPANY\p"
+	.string "Making life easier for Trainers\n"
+	.string "everywhere.$"
+
+JubilifeCity_EventScript_Sign4::
+	msgbox JubilifeCity_Text_Sign4, MSGBOX_SIGN
+	end
+
+JubilifeCity_Text_Sign4:
+	.string "JUBILIFE TV\p"
+	.string "Broadcasting across all of Sinnoh.$"

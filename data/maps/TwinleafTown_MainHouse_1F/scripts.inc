@@ -39,6 +39,7 @@ TwinleafTown_MainHouse_1F_EventScript_MomRunningShoes::
 	waitfanfare
 	waitmessage
 	setflag FLAG_SYS_B_DASH
+	call_if_eq VAR_SINNOH_STORY, 6, TwinleafTown_MainHouse_1F_EventScript_SetStory7
 	msgbox TwinleafTown_MainHouse_1F_Text_RunningShoesInfo, MSGBOX_DEFAULT
 	release
 	end
@@ -74,3 +75,7 @@ TwinleafTown_MainHouse_1F_Text_TakeCare:
 	.string "MOM: Take good care of your\n"
 	.string "POKéMON, and come home once\l"
 	.string "in a while, okay?$"
+
+TwinleafTown_MainHouse_1F_EventScript_SetStory7::
+	setvar VAR_SINNOH_STORY, 7
+	return

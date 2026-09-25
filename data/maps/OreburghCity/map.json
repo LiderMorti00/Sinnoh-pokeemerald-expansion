@@ -191,9 +191,42 @@
       "y": 23,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
-      "var_value": "8",
+      "var_value": "9",
       "script": "OreburghCity_EventScript_GymClosed"
     }
   ],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 56,
+      "y": 15,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "OreburghCity_EventScript_Sign1"
+    },
+    {
+      "type": "sign",
+      "x": 52,
+      "y": 22,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "OreburghCity_EventScript_Sign2"
+    },
+    {
+      "type": "sign",
+      "x": 50,
+      "y": 54,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "OreburghCity_EventScript_Sign3"
+    },
+    {
+      "type": "hidden_item",
+      "x": 7,
+      "y": 14,
+      "elevation": 3,
+      "item": "ITEM_ESCAPE_ROPE",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_121_NUGGET"
+    }
+  ]
 }

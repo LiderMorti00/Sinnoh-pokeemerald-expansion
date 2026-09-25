@@ -48,3 +48,27 @@ OreburghCity_Text_GymClosed:
 	.string "GYM LEADER ROARK is working at the\l"
 	.string "OREBURGH MINE, south of town.$"
 
+OreburghCity_EventScript_Sign1::
+	msgbox OreburghCity_Text_Sign1, MSGBOX_SIGN
+	end
+
+OreburghCity_Text_Sign1:
+	.string "OREBURGH CITY\p"
+	.string "The energetic town of coal.$"
+
+OreburghCity_EventScript_Sign2::
+	msgbox OreburghCity_Text_Sign2, MSGBOX_SIGN
+	end
+
+OreburghCity_Text_Sign2:
+	.string "OREBURGH CITY POKéMON GYM\p"
+	.string "LEADER: ROARK\p"
+	.string "The rock-solid POKéMON pro!$"
+
+OreburghCity_EventScript_Sign3::
+	msgbox OreburghCity_Text_Sign3, MSGBOX_SIGN
+	end
+
+OreburghCity_Text_Sign3:
+	.string "OREBURGH MINE\p"
+	.string "Coal mining site. Watch your step!$"

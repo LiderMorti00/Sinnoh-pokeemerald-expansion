@@ -43,6 +43,11 @@ SandgemLab_EventScript_Scene::
 	call Sinnoh_EventScript_BufferCounterpartName
 	msgbox SandgemLab_Text_AssistantGoHome, MSGBOX_DEFAULT
 	closemessage
+	applymovement LOCALID_SANDGEM_LAB_ASSISTANT, SandgemLab_Movement_DawnLeaves
+	waitmovement 0
+	playse SE_EXIT
+	removeobject LOCALID_SANDGEM_LAB_ASSISTANT
+	setflag FLAG_HIDE_LAB_DAWN
 	setvar VAR_SINNOH_STORY, 6
 	releaseall
 	end
@@ -113,11 +118,12 @@ SandgemLab_Text_AssistantBalls:
 	.string "POKéMON. Here, take them!$"
 
 SandgemLab_Text_AssistantGoHome:
-	.string "{STR_VAR_1}: You should tell your mom\n"
-	.string "about your journey before you leave!\p"
-	.string "When you're ready, head north to\n"
-	.string "ROUTE 202. JUBILIFE CITY is\l"
-	.string "just beyond it.$"
+	.string "{STR_VAR_1}: You should go home\n"
+	.string "and tell your mom about your\l"
+	.string "journey!\p"
+	.string "I'll wait for you at the entrance\n"
+	.string "to ROUTE 202, north of town. See\l"
+	.string "you there!$"
 
 SandgemLab_Text_RowanAdvice:
 	.string "ROWAN: A POKéMON grows when it is\n"
@@ -1136,3 +1142,14 @@ LittlerootTown_ProfessorBirchsLab_Text_ScottAboardSSTidalCall:
 	.string "we meet. I'll be waiting!\p"
 	.string "… … … … … …\n"
 	.string "… … … … … Click!$"
+
+SandgemLab_Movement_DawnLeaves:
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_left
+	step_end

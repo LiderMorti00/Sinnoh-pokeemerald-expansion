@@ -17,7 +17,7 @@ OreburghCity_Gym_EventScript_RoarkDefeated::
 	setflag FLAG_DEFEATED_RUSTBORO_GYM
 	setvar VAR_0x8008, 1
 	call Common_EventScript_SetGymTrainers
-	setvar VAR_SINNOH_STORY, 10
+	setvar VAR_SINNOH_STORY, 11
 	goto OreburghCity_Gym_EventScript_GiveTM
 	end
 
@@ -115,4 +115,3 @@ OreburghCity_Gym_Text_DariusDefeat:
 OreburghCity_Gym_Text_DariusPost:
 	.string "ROCK-types are weak to WATER. Did\n"
 	.string "you know?$"
-

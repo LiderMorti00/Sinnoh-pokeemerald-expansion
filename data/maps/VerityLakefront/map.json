@@ -85,5 +85,22 @@
       "script": "VerityLakefront_EventScript_BriefcaseScene"
     }
   ],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "VerityLakefront_EventScript_Sign1"
+    },
+    {
+      "type": "hidden_item",
+      "x": 8,
+      "y": 7,
+      "elevation": 3,
+      "item": "ITEM_POTION",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_113_ETHER"
+    }
+  ]
 }
