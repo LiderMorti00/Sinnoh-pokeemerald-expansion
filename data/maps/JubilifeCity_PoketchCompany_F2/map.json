@@ -12,17 +12,15 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
-  "object_events": [
-
-  ],
+  "connections": null,
+  "object_events": [],
   "warp_events": [
     {
       "x": 14,
       "y": 1,
       "elevation": 0,
       "dest_map": "MAP_JUBILIFE_CITY_POKETCH_COMPANY_F1",
-      "dest_warp_id": "2"
+      "dest_warp_id": "4"
     },
     {
       "x": 2,
@@ -32,10 +30,6 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [
-
-  ],
-  "bg_events": [
-
-  ]
+  "coord_events": [],
+  "bg_events": []
 }

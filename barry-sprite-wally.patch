@@ -1,0 +1,85 @@
+From f724fa58fc2a73f27bc3860b8b27078fff7d6360 Mon Sep 17 00:00:00 2001
+From: LiderMorti00 <lidermorti@gmail.com>
+Date: Fri, 25 Sep 2026 16:04:06 +0000
+Subject: [PATCH] Barry usa el sprite de Blasco (Wally)
+
+---
+ data/maps/Route201/map.json        | 2 +-
+ data/maps/TwinleafTown/map.json    | 2 +-
+ data/maps/VerityLakefront/map.json | 2 +-
+ src/data/trainers.party            | 6 +++---
+ 4 files changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/data/maps/Route201/map.json b/data/maps/Route201/map.json
+index 2e1a2fb31..a4eb93b75 100644
+--- a/data/maps/Route201/map.json
++++ b/data/maps/Route201/map.json
+@@ -33,7 +33,7 @@
+     {
+       "local_id": "LOCALID_ROUTE201_BARRY",
+       "type": "object",
+-      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
++      "graphics_id": "OBJ_EVENT_GFX_WALLY",
+       "x": 15,
+       "y": 16,
+       "elevation": 3,
+diff --git a/data/maps/TwinleafTown/map.json b/data/maps/TwinleafTown/map.json
+index 4135a5345..fcc227025 100644
+--- a/data/maps/TwinleafTown/map.json
++++ b/data/maps/TwinleafTown/map.json
+@@ -28,7 +28,7 @@
+     {
+       "local_id": "LOCALID_TWINLEAF_BARRY",
+       "type": "object",
+-      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
++      "graphics_id": "OBJ_EVENT_GFX_WALLY",
+       "x": 5,
+       "y": 10,
+       "elevation": 3,
+diff --git a/data/maps/VerityLakefront/map.json b/data/maps/VerityLakefront/map.json
+index b6382c806..73ca0db92 100644
+--- a/data/maps/VerityLakefront/map.json
++++ b/data/maps/VerityLakefront/map.json
+@@ -23,7 +23,7 @@
+     {
+       "local_id": "LOCALID_LAKEFRONT_BARRY",
+       "type": "object",
+-      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
++      "graphics_id": "OBJ_EVENT_GFX_WALLY",
+       "x": 4,
+       "y": 6,
+       "elevation": 3,
+diff --git a/src/data/trainers.party b/src/data/trainers.party
+index 4da867858..defe81fe9 100644
+--- a/src/data/trainers.party
++++ b/src/data/trainers.party
+@@ -9507,7 +9507,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+ === TRAINER_BRENDAN_ROUTE_103_MUDKIP ===
+ Name: BARRY
+ Class: Rival
+-Pic: Youngster
++Pic: Wally
+ Gender: Male
+ Music: Male
+ Double Battle: No
+@@ -9562,7 +9562,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+ === TRAINER_BRENDAN_ROUTE_103_TREECKO ===
+ Name: BARRY
+ Class: Rival
+-Pic: Youngster
++Pic: Wally
+ Gender: Male
+ Music: Male
+ Double Battle: No
+@@ -9617,7 +9617,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+ === TRAINER_BRENDAN_ROUTE_103_TORCHIC ===
+ Name: BARRY
+ Class: Rival
+-Pic: Youngster
++Pic: Wally
+ Gender: Male
+ Music: Male
+ Double Battle: No
+-- 
+2.43.0
+

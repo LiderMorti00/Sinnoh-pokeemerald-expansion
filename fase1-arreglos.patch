@@ -1,0 +1,355 @@
+From 7f8ed924c131097b85528fd613a8478441fbcba4 Mon Sep 17 00:00:00 2001
+From: LiderMorti00 <lidermorti@gmail.com>
+Date: Fri, 25 Sep 2026 16:36:09 +0000
+Subject: [PATCH] =?UTF-8?q?Fase=201:=20arreglos=20de=20Barry,=20Dawn/Lucas?=
+ =?UTF-8?q?=20y=20mam=C3=A1?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+- Barry sigue caminos que respetan las colisiones (Hojaverde, Ruta 201, orilla del lago)
+- La ayudante se llama DAWN (o LUCAS si juegas con chica)
+- Mamá está en la cocina mirando la encimera
+- El bloqueo de la salida norte de Hojaverde cubre todo el camino
+---
+ data/maps/LakeVerity/scripts.inc              | 26 +++++-
+ .../scripts.inc                               | 12 ++-
+ data/maps/Route201/scripts.inc                |  2 +
+ data/maps/TwinleafTown/map.json               | 36 ++++++++
+ data/maps/TwinleafTown/scripts.inc            | 84 ++++++++++++++++++-
+ data/maps/TwinleafTown_MainHouse_1F/map.json  |  4 +-
+ data/maps/VerityLakefront/scripts.inc         | 13 +++
+ 7 files changed, 165 insertions(+), 12 deletions(-)
+
+diff --git a/data/maps/LakeVerity/scripts.inc b/data/maps/LakeVerity/scripts.inc
+index 8de3048c2..6bf1fcef7 100644
+--- a/data/maps/LakeVerity/scripts.inc
++++ b/data/maps/LakeVerity/scripts.inc
+@@ -15,6 +15,7 @@ LakeVerity_EventScript_SetDawn::
+ LakeVerity_EventScript_Rowan::
+ LakeVerity_EventScript_RowanScene::
+ 	lockall
++	call Sinnoh_EventScript_BufferCounterpartName
+ 	msgbox LakeVerity_Text_Rowan1, MSGBOX_DEFAULT
+ 	closemessage
+ 	applymovement LOCALID_LAKE_VERITY_ROWAN, Common_Movement_FaceDown
+@@ -37,21 +38,38 @@ LakeVerity_EventScript_RowanScene::
+ 	end
+ 
+ LakeVerity_Text_Rowan1:
+-	.string "PROFESSOR: ...It is as I feared.\n"
++	.string "ROWAN: ...It is as I feared.\n"
+ 	.string "The lake is quiet. Too quiet.\p"
+ 	.string "Something stirs beneath these\n"
+ 	.string "waters, and it is watching us.$"
+ 
+ LakeVerity_Text_Rowan2:
+-	.string "PROFESSOR: Hm? And who might you be?\p"
++	.string "ROWAN: Hm? And who might you be?\p"
+ 	.string "The tall grass is no place to\n"
+ 	.string "wander without POKéMON of your own.\p"
+ 	.string "...Come. We are finished here.$"
+ 
+ LakeVerity_Text_Assistant:
+-	.string "ASSISTANT: Coming, Professor!\n"
+-	.string "Sorry, you two, excuse us!$"
++	.string "{STR_VAR_1}: Coming, Professor!\n"
++	.string "Sorry, excuse us!$"
+ 
+ LakeVerity_Text_BarryAfterRowan:
+ 	.string "Barry ran back toward the lake's\n"
+ 	.string "entrance, looking excited.$"
++
++@ Guarda en STR_VAR_1 el nombre del ayudante de Rowan: DAWN si el jugador es chico, LUCAS si es chica
++Sinnoh_EventScript_BufferCounterpartName::
++	checkplayergender
++	goto_if_eq VAR_RESULT, MALE, Sinnoh_EventScript_BufferDawn
++	bufferstring STR_VAR_1, Sinnoh_Text_Lucas
++	return
++
++Sinnoh_EventScript_BufferDawn::
++	bufferstring STR_VAR_1, Sinnoh_Text_Dawn
++	return
++
++Sinnoh_Text_Dawn:
++	.string "DAWN$"
++
++Sinnoh_Text_Lucas:
++	.string "LUCAS$"
+diff --git a/data/maps/LittlerootTown_ProfessorBirchsLab/scripts.inc b/data/maps/LittlerootTown_ProfessorBirchsLab/scripts.inc
+index d9afc1689..81fe9927e 100644
+--- a/data/maps/LittlerootTown_ProfessorBirchsLab/scripts.inc
++++ b/data/maps/LittlerootTown_ProfessorBirchsLab/scripts.inc
+@@ -25,6 +25,7 @@ SandgemLab_EventScript_SceneRight::
+ 	goto SandgemLab_EventScript_Scene
+ 
+ SandgemLab_EventScript_Scene::
++	call Sinnoh_EventScript_BufferCounterpartName
+ 	msgbox SandgemLab_Text_RowanWelcome, MSGBOX_DEFAULT
+ 	playfanfare MUS_OBTAIN_ITEM
+ 	message SandgemLab_Text_ReceivedPokedex
+@@ -39,6 +40,7 @@ SandgemLab_EventScript_Scene::
+ 	waitmovement 0
+ 	msgbox SandgemLab_Text_AssistantBalls, MSGBOX_DEFAULT
+ 	giveitem ITEM_POKE_BALL, 5
++	call Sinnoh_EventScript_BufferCounterpartName
+ 	msgbox SandgemLab_Text_AssistantGoHome, MSGBOX_DEFAULT
+ 	closemessage
+ 	setvar VAR_SINNOH_STORY, 6
+@@ -54,6 +56,7 @@ SandgemLab_EventScript_Rowan::
+ 
+ SandgemLab_EventScript_Assistant::
+ 	lock
++	call Sinnoh_EventScript_BufferCounterpartName
+ 	faceplayer
+ 	msgbox SandgemLab_Text_AssistantAdvice, MSGBOX_DEFAULT
+ 	release
+@@ -103,13 +106,14 @@ SandgemLab_Text_RowanPokedex:
+ 	.string "own eyes. That is my request.$"
+ 
+ SandgemLab_Text_AssistantBalls:
+-	.string "ASSISTANT: Hi! I'm helping the\n"
+-	.string "Professor fill his POKéDEX too.\p"
++	.string "{STR_VAR_1}: Hi! I'm {STR_VAR_1}.\n"
++	.string "I'm helping the Professor\n"
++	.string "fill his POKéDEX.\p"
+ 	.string "You'll need these to catch\n"
+ 	.string "POKéMON. Here, take them!$"
+ 
+ SandgemLab_Text_AssistantGoHome:
+-	.string "ASSISTANT: You should tell your mom\n"
++	.string "{STR_VAR_1}: You should tell your mom\n"
+ 	.string "about your journey before you leave!\p"
+ 	.string "When you're ready, head north to\n"
+ 	.string "ROUTE 202. JUBILIFE CITY is\l"
+@@ -120,7 +124,7 @@ SandgemLab_Text_RowanAdvice:
+ 	.string "trusted. Remember that.$"
+ 
+ SandgemLab_Text_AssistantAdvice:
+-	.string "ASSISTANT: Weaken a wild POKéMON\n"
++	.string "{STR_VAR_1}: Weaken a wild POKéMON\n"
+ 	.string "before you throw a POKé BALL.\l"
+ 	.string "It works much better that way!$"
+ 
+diff --git a/data/maps/Route201/scripts.inc b/data/maps/Route201/scripts.inc
+index b34f115fc..9dce1786a 100644
+--- a/data/maps/Route201/scripts.inc
++++ b/data/maps/Route201/scripts.inc
+@@ -43,6 +43,8 @@ Route201_Movement_BarryToLake:
+ 	walk_fast_left
+ 	walk_fast_left
+ 	walk_fast_left
++	walk_fast_left
++	walk_fast_left
+ 	step_end
+ 
+ Route201_Text_BarryHurry:
+diff --git a/data/maps/TwinleafTown/map.json b/data/maps/TwinleafTown/map.json
+index fcc227025..ae6f3ebdb 100644
+--- a/data/maps/TwinleafTown/map.json
++++ b/data/maps/TwinleafTown/map.json
+@@ -100,6 +100,24 @@
+     }
+   ],
+   "coord_events": [
++    {
++      "type": "trigger",
++      "x": 8,
++      "y": 3,
++      "elevation": 3,
++      "var": "VAR_SINNOH_STORY",
++      "var_value": "1",
++      "script": "TwinleafTown_EventScript_BlockNorth"
++    },
++    {
++      "type": "trigger",
++      "x": 9,
++      "y": 3,
++      "elevation": 3,
++      "var": "VAR_SINNOH_STORY",
++      "var_value": "1",
++      "script": "TwinleafTown_EventScript_BlockNorth"
++    },
+     {
+       "type": "trigger",
+       "x": 10,
+@@ -135,6 +153,24 @@
+       "var": "VAR_SINNOH_STORY",
+       "var_value": "1",
+       "script": "TwinleafTown_EventScript_BlockNorth"
++    },
++    {
++      "type": "trigger",
++      "x": 14,
++      "y": 3,
++      "elevation": 3,
++      "var": "VAR_SINNOH_STORY",
++      "var_value": "1",
++      "script": "TwinleafTown_EventScript_BlockNorth"
++    },
++    {
++      "type": "trigger",
++      "x": 15,
++      "y": 3,
++      "elevation": 3,
++      "var": "VAR_SINNOH_STORY",
++      "var_value": "1",
++      "script": "TwinleafTown_EventScript_BlockNorth"
+     }
+   ],
+   "bg_events": []
+diff --git a/data/maps/TwinleafTown/scripts.inc b/data/maps/TwinleafTown/scripts.inc
+index cde209dcb..30f20eb83 100644
+--- a/data/maps/TwinleafTown/scripts.inc
++++ b/data/maps/TwinleafTown/scripts.inc
+@@ -6,7 +6,26 @@ TwinleafTown_EventScript_Barry::
+ 	faceplayer
+ 	msgbox TwinleafTown_Text_BarryLetsGo, MSGBOX_DEFAULT
+ 	closemessage
+-	applymovement LOCALID_TWINLEAF_BARRY, TwinleafTown_Movement_BarryRunsOff
++	getplayerxy VAR_0x8004, VAR_0x8005
++	goto_if_eq VAR_0x8004, 4, TwinleafTown_EventScript_BarryLeaveLeft
++	goto_if_eq VAR_0x8004, 6, TwinleafTown_EventScript_BarryLeaveRight
++	goto_if_eq VAR_0x8005, 11, TwinleafTown_EventScript_BarryLeaveBelow
++	applymovement LOCALID_TWINLEAF_BARRY, TwinleafTown_Movement_BarryRunsOffAbove
++	goto TwinleafTown_EventScript_BarryGone
++
++TwinleafTown_EventScript_BarryLeaveLeft::
++	applymovement LOCALID_TWINLEAF_BARRY, TwinleafTown_Movement_BarryRunsOffLeft
++	goto TwinleafTown_EventScript_BarryGone
++
++TwinleafTown_EventScript_BarryLeaveRight::
++	applymovement LOCALID_TWINLEAF_BARRY, TwinleafTown_Movement_BarryRunsOffRight
++	goto TwinleafTown_EventScript_BarryGone
++
++TwinleafTown_EventScript_BarryLeaveBelow::
++	applymovement LOCALID_TWINLEAF_BARRY, TwinleafTown_Movement_BarryRunsOffBelow
++	goto TwinleafTown_EventScript_BarryGone
++
++TwinleafTown_EventScript_BarryGone::
+ 	waitmovement 0
+ 	removeobject LOCALID_TWINLEAF_BARRY
+ 	setflag FLAG_HIDE_TWINLEAF_BARRY
+@@ -32,11 +51,15 @@ TwinleafTown_EventScript_Man::
+ 	msgbox TwinleafTown_Text_Man, MSGBOX_NPC
+ 	end
+ 
+-TwinleafTown_Movement_BarryRunsOff:
++TwinleafTown_Movement_BarryRunsOffLeft:
+ 	walk_fast_right
+ 	walk_fast_right
+ 	walk_fast_right
+ 	walk_fast_right
++	walk_fast_right
++	walk_fast_up
++	walk_fast_up
++	walk_fast_up
+ 	walk_fast_up
+ 	walk_fast_up
+ 	walk_fast_up
+@@ -44,6 +67,63 @@ TwinleafTown_Movement_BarryRunsOff:
+ 	walk_fast_up
+ 	walk_fast_up
+ 	walk_fast_up
++	walk_fast_right
++	step_end
++TwinleafTown_Movement_BarryRunsOffRight:
++	walk_fast_down
++	walk_fast_right
++	walk_fast_right
++	walk_fast_up
++	walk_fast_right
++	walk_fast_right
++	walk_fast_right
++	walk_fast_up
++	walk_fast_up
++	walk_fast_up
++	walk_fast_up
++	walk_fast_up
++	walk_fast_up
++	walk_fast_up
++	walk_fast_up
++	walk_fast_up
++	walk_fast_up
++	walk_fast_right
++	step_end
++TwinleafTown_Movement_BarryRunsOffBelow:
++	walk_fast_right
++	walk_fast_right
++	walk_fast_right
++	walk_fast_right
++	walk_fast_right
++	walk_fast_up
++	walk_fast_up
++	walk_fast_up
++	walk_fast_up
++	walk_fast_up
++	walk_fast_up
++	walk_fast_up
++	walk_fast_up
++	walk_fast_up
++	walk_fast_up
++	walk_fast_right
++	step_end
++TwinleafTown_Movement_BarryRunsOffAbove:
++	walk_fast_right
++	walk_fast_right
++	walk_fast_right
++	walk_fast_right
++	walk_fast_right
++	walk_fast_up
++	walk_fast_up
++	walk_fast_up
++	walk_fast_up
++	walk_fast_up
++	walk_fast_up
++	walk_fast_up
++	walk_fast_up
++	walk_fast_up
++	walk_fast_up
++	walk_fast_right
+ 	step_end
+ 
+ TwinleafTown_Text_BarryLetsGo:
+diff --git a/data/maps/TwinleafTown_MainHouse_1F/map.json b/data/maps/TwinleafTown_MainHouse_1F/map.json
+index f34eab50b..861b95a9a 100644
+--- a/data/maps/TwinleafTown_MainHouse_1F/map.json
++++ b/data/maps/TwinleafTown_MainHouse_1F/map.json
+@@ -18,8 +18,8 @@
+       "local_id": "LOCALID_TWINLEAF_MOM",
+       "type": "object",
+       "graphics_id": "OBJ_EVENT_GFX_MOM",
+-      "x": 4,
+-      "y": 5,
++      "x": 2,
++      "y": 3,
+       "elevation": 3,
+       "movement_type": "MOVEMENT_TYPE_FACE_UP",
+       "movement_range_x": 0,
+diff --git a/data/maps/VerityLakefront/scripts.inc b/data/maps/VerityLakefront/scripts.inc
+index 27f566642..da1b48d25 100644
+--- a/data/maps/VerityLakefront/scripts.inc
++++ b/data/maps/VerityLakefront/scripts.inc
+@@ -55,6 +55,19 @@ VerityLakefront_EventScript_AfterBattle::
+ 
+ VerityLakefront_Movement_BarryLeaves:
+ 	walk_fast_down
++	walk_fast_down
++	walk_fast_down
++	walk_fast_down
++	walk_fast_down
++	walk_fast_down
++	walk_fast_down
++	walk_fast_right
++	walk_fast_right
++	walk_fast_right
++	walk_fast_right
++	walk_fast_right
++	walk_fast_right
++	walk_fast_right
+ 	walk_fast_right
+ 	walk_fast_right
+ 	walk_fast_right
+-- 
+2.43.0
+

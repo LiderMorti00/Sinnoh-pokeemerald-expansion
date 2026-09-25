@@ -29,9 +29,7 @@
       "direction": "down"
     }
   ],
-  "object_events": [
-
-  ],
+  "object_events": [],
   "warp_events": [
     {
       "x": 46,
@@ -48,10 +46,6 @@
       "dest_warp_id": "3"
     }
   ],
-  "coord_events": [
-
-  ],
-  "bg_events": [
-
-  ]
+  "coord_events": [],
+  "bg_events": []
 }

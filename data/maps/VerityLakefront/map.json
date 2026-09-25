@@ -22,7 +22,6 @@
   "object_events": [
     {
       "local_id": "LOCALID_LAKEFRONT_BARRY",
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_WALLY",
       "x": 4,
       "y": 6,
@@ -37,7 +36,6 @@
     },
     {
       "local_id": "LOCALID_LAKEFRONT_BRIEFCASE",
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BIRCHS_BAG",
       "x": 2,
       "y": 7,

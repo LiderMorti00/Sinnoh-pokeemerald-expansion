@@ -1,0 +1,2238 @@
+From 1708b3f030005b41bd65d8e813db415995b8f525 Mon Sep 17 00:00:00 2001
+From: LiderMorti00 <lidermorti@gmail.com>
+Date: Fri, 25 Sep 2026 15:58:24 +0000
+Subject: [PATCH] Fase 1 (parte 1): inicio de la historia de Platino
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+- Hojaverde: mamá, Barry y bloqueo de la salida norte
+- Ruta 201: Barry te guía al Lago Veraz
+- Lago Veraz: escena con el Prof. Rowan y su ayudante
+- Orilla del lago: maletín, Starly salvaje, elección de inicial y combate con Barry
+- Laboratorio de Arena: Pokédex y 5 Poké Balls; mamá da las Deportivas
+- Iniciales de Sinnoh (Turtwig, Chimchar, Piplup)
+- Enfermeras y puntos de curación en Arena, Jubileo, Pirita y Aromaflor
+- Arreglo de las salidas del Centro de Aromaflor
+- Encuentros salvajes en Rutas 201-203 y la orilla del lago
+---
+ .../FloaromaTown_PokemonCenter_1F/map.json    |  26 +-
+ .../FloaromaTown_PokemonCenter_1F/scripts.inc |  14 +
+ .../JubilifeCity_PokemonCenter_1F/map.json    |  24 +-
+ .../JubilifeCity_PokemonCenter_1F/scripts.inc |  14 +
+ data/maps/LakeVerity/map.json                 |  90 +++++-
+ data/maps/LakeVerity/scripts.inc              |  55 ++++
+ .../map.json                                  | 216 +++-----------
+ .../scripts.inc                               | 140 +++++++++
+ .../OreburghCity_PokemonCenter_1F/map.json    |  24 +-
+ .../OreburghCity_PokemonCenter_1F/scripts.inc |  14 +
+ data/maps/Route201/map.json                   | 169 ++++++++++-
+ data/maps/Route201/scripts.inc                |  58 ++++
+ data/maps/SandgemTown/map.json                |  88 +++++-
+ data/maps/SandgemTown/scripts.inc             |  31 ++
+ .../SandgemTown_PokemonCenter_1F/map.json     |  24 +-
+ .../SandgemTown_PokemonCenter_1F/scripts.inc  |  14 +
+ data/maps/TwinleafTown/map.json               |  85 +++++-
+ data/maps/TwinleafTown/scripts.inc            |  68 +++++
+ data/maps/TwinleafTown_MainHouse_1F/map.json  |  24 +-
+ .../TwinleafTown_MainHouse_1F/scripts.inc     |  74 +++++
+ data/maps/VerityLakefront/map.json            |  54 +++-
+ data/maps/VerityLakefront/scripts.inc         |  96 ++++++
+ data/scripts/new_game.inc                     |   3 +
+ include/config/battle.h                       |   2 +-
+ include/constants/flags.h                     |   8 +
+ include/constants/opponents.h                 |   5 +
+ include/constants/vars.h                      |   6 +
+ src/battle_controllers.c                      |   2 +-
+ src/data/heal_locations.json                  |  32 ++
+ src/data/trainers.party                       |  20 +-
+ src/data/wild_encounters.json                 | 276 ++++++++++++++++++
+ src/starter_choose.c                          |   6 +-
+ 32 files changed, 1504 insertions(+), 258 deletions(-)
+
+diff --git a/data/maps/FloaromaTown_PokemonCenter_1F/map.json b/data/maps/FloaromaTown_PokemonCenter_1F/map.json
+index 0ec6ffcd2..beecfaa19 100644
+--- a/data/maps/FloaromaTown_PokemonCenter_1F/map.json
++++ b/data/maps/FloaromaTown_PokemonCenter_1F/map.json
+@@ -14,7 +14,21 @@
+   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+   "connections": 0,
+   "object_events": [
+-
++    {
++      "local_id": "LOCALID_FLOAROMA_NURSE",
++      "type": "object",
++      "graphics_id": "OBJ_EVENT_GFX_NURSE",
++      "x": 7,
++      "y": 2,
++      "elevation": 3,
++      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
++      "movement_range_x": 0,
++      "movement_range_y": 0,
++      "trainer_type": "TRAINER_TYPE_NONE",
++      "trainer_sight_or_berry_tree_id": "0",
++      "script": "FloaromaTown_PokemonCenter_1F_EventScript_Nurse",
++      "flag": "0"
++    }
+   ],
+   "warp_events": [
+     {
+@@ -35,14 +49,10 @@
+       "x": 1,
+       "y": 6,
+       "elevation": 0,
+-      "dest_map": "MAP_FLOAROMA_TOWN_POKEMON_CENTER_1F",
++      "dest_map": "MAP_FLOAROMA_TWON_POKEMON_CENTER_2F",
+       "dest_warp_id": "0"
+     }
+   ],
+-  "coord_events": [
+-
+-  ],
+-  "bg_events": [
+-
+-  ]
++  "coord_events": [],
++  "bg_events": []
+ }
+diff --git a/data/maps/FloaromaTown_PokemonCenter_1F/scripts.inc b/data/maps/FloaromaTown_PokemonCenter_1F/scripts.inc
+index f2a33d5e1..5935d2a63 100644
+--- a/data/maps/FloaromaTown_PokemonCenter_1F/scripts.inc
++++ b/data/maps/FloaromaTown_PokemonCenter_1F/scripts.inc
+@@ -1,2 +1,16 @@
+ FloaromaTown_PokemonCenter_1F_MapScripts::
++	map_script MAP_SCRIPT_ON_TRANSITION, FloaromaTown_PokemonCenter_1F_OnTransition
++	map_script MAP_SCRIPT_ON_RESUME, CableClub_OnResume
+ 	.byte 0
++
++FloaromaTown_PokemonCenter_1F_OnTransition:
++	setrespawn HEAL_LOCATION_FLOAROMA_TOWN
++	end
++
++FloaromaTown_PokemonCenter_1F_EventScript_Nurse::
++	setvar VAR_0x800B, LOCALID_FLOAROMA_NURSE
++	call Common_EventScript_PkmnCenterNurse
++	waitmessage
++	waitbuttonpress
++	release
++	end
+diff --git a/data/maps/JubilifeCity_PokemonCenter_1F/map.json b/data/maps/JubilifeCity_PokemonCenter_1F/map.json
+index eda22b5d4..340838ed8 100644
+--- a/data/maps/JubilifeCity_PokemonCenter_1F/map.json
++++ b/data/maps/JubilifeCity_PokemonCenter_1F/map.json
+@@ -14,7 +14,21 @@
+   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+   "connections": 0,
+   "object_events": [
+-
++    {
++      "local_id": "LOCALID_JUBILIFE_NURSE",
++      "type": "object",
++      "graphics_id": "OBJ_EVENT_GFX_NURSE",
++      "x": 7,
++      "y": 2,
++      "elevation": 3,
++      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
++      "movement_range_x": 0,
++      "movement_range_y": 0,
++      "trainer_type": "TRAINER_TYPE_NONE",
++      "trainer_sight_or_berry_tree_id": "0",
++      "script": "JubilifeCity_PokemonCenter_1F_EventScript_Nurse",
++      "flag": "0"
++    }
+   ],
+   "warp_events": [
+     {
+@@ -39,10 +53,6 @@
+       "dest_warp_id": "0"
+     }
+   ],
+-  "coord_events": [
+-
+-  ],
+-  "bg_events": [
+-
+-  ]
++  "coord_events": [],
++  "bg_events": []
+ }
+diff --git a/data/maps/JubilifeCity_PokemonCenter_1F/scripts.inc b/data/maps/JubilifeCity_PokemonCenter_1F/scripts.inc
+index ab03a2c59..7990265ef 100644
+--- a/data/maps/JubilifeCity_PokemonCenter_1F/scripts.inc
++++ b/data/maps/JubilifeCity_PokemonCenter_1F/scripts.inc
+@@ -1,2 +1,16 @@
+ JubilifeCity_PokemonCenter_1F_MapScripts::
++	map_script MAP_SCRIPT_ON_TRANSITION, JubilifeCity_PokemonCenter_1F_OnTransition
++	map_script MAP_SCRIPT_ON_RESUME, CableClub_OnResume
+ 	.byte 0
++
++JubilifeCity_PokemonCenter_1F_OnTransition:
++	setrespawn HEAL_LOCATION_JUBILIFE_CITY
++	end
++
++JubilifeCity_PokemonCenter_1F_EventScript_Nurse::
++	setvar VAR_0x800B, LOCALID_JUBILIFE_NURSE
++	call Common_EventScript_PkmnCenterNurse
++	waitmessage
++	waitbuttonpress
++	release
++	end
+diff --git a/data/maps/LakeVerity/map.json b/data/maps/LakeVerity/map.json
+index 9cc42ba95..60b4c3c56 100644
+--- a/data/maps/LakeVerity/map.json
++++ b/data/maps/LakeVerity/map.json
+@@ -14,7 +14,36 @@
+   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+   "connections": 0,
+   "object_events": [
+-
++    {
++      "local_id": "LOCALID_LAKE_VERITY_ROWAN",
++      "type": "object",
++      "graphics_id": "OBJ_EVENT_GFX_PROF_BIRCH",
++      "x": 38,
++      "y": 36,
++      "elevation": 3,
++      "movement_type": "MOVEMENT_TYPE_FACE_UP",
++      "movement_range_x": 0,
++      "movement_range_y": 0,
++      "trainer_type": "TRAINER_TYPE_NONE",
++      "trainer_sight_or_berry_tree_id": "0",
++      "script": "LakeVerity_EventScript_Rowan",
++      "flag": "FLAG_HIDE_LAKE_VERITY_ROWAN"
++    },
++    {
++      "local_id": "LOCALID_LAKE_VERITY_ASSISTANT",
++      "type": "object",
++      "graphics_id": "OBJ_EVENT_GFX_VAR_0",
++      "x": 39,
++      "y": 36,
++      "elevation": 3,
++      "movement_type": "MOVEMENT_TYPE_FACE_UP",
++      "movement_range_x": 0,
++      "movement_range_y": 0,
++      "trainer_type": "TRAINER_TYPE_NONE",
++      "trainer_sight_or_berry_tree_id": "0",
++      "script": "LakeVerity_EventScript_Rowan",
++      "flag": "FLAG_HIDE_LAKE_VERITY_ROWAN"
++    }
+   ],
+   "warp_events": [
+     {
+@@ -33,9 +62,60 @@
+     }
+   ],
+   "coord_events": [
+-
++    {
++      "type": "trigger",
++      "x": 36,
++      "y": 40,
++      "elevation": 3,
++      "var": "VAR_SINNOH_STORY",
++      "var_value": "3",
++      "script": "LakeVerity_EventScript_RowanScene"
++    },
++    {
++      "type": "trigger",
++      "x": 37,
++      "y": 40,
++      "elevation": 3,
++      "var": "VAR_SINNOH_STORY",
++      "var_value": "3",
++      "script": "LakeVerity_EventScript_RowanScene"
++    },
++    {
++      "type": "trigger",
++      "x": 38,
++      "y": 40,
++      "elevation": 3,
++      "var": "VAR_SINNOH_STORY",
++      "var_value": "3",
++      "script": "LakeVerity_EventScript_RowanScene"
++    },
++    {
++      "type": "trigger",
++      "x": 39,
++      "y": 40,
++      "elevation": 3,
++      "var": "VAR_SINNOH_STORY",
++      "var_value": "3",
++      "script": "LakeVerity_EventScript_RowanScene"
++    },
++    {
++      "type": "trigger",
++      "x": 40,
++      "y": 40,
++      "elevation": 3,
++      "var": "VAR_SINNOH_STORY",
++      "var_value": "3",
++      "script": "LakeVerity_EventScript_RowanScene"
++    },
++    {
++      "type": "trigger",
++      "x": 41,
++      "y": 40,
++      "elevation": 3,
++      "var": "VAR_SINNOH_STORY",
++      "var_value": "3",
++      "script": "LakeVerity_EventScript_RowanScene"
++    }
+   ],
+-  "bg_events": [
+-
+-  ]
++  "bg_events": []
+ }
+diff --git a/data/maps/LakeVerity/scripts.inc b/data/maps/LakeVerity/scripts.inc
+index 698874636..8de3048c2 100644
+--- a/data/maps/LakeVerity/scripts.inc
++++ b/data/maps/LakeVerity/scripts.inc
+@@ -1,2 +1,57 @@
+ LakeVerity_MapScripts::
++	map_script MAP_SCRIPT_ON_TRANSITION, LakeVerity_OnTransition
+ 	.byte 0
++
++LakeVerity_OnTransition:
++	checkplayergender
++	goto_if_eq VAR_RESULT, MALE, LakeVerity_EventScript_SetDawn
++	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL
++	end
++
++LakeVerity_EventScript_SetDawn::
++	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RIVAL_MAY_NORMAL
++	end
++
++LakeVerity_EventScript_Rowan::
++LakeVerity_EventScript_RowanScene::
++	lockall
++	msgbox LakeVerity_Text_Rowan1, MSGBOX_DEFAULT
++	closemessage
++	applymovement LOCALID_LAKE_VERITY_ROWAN, Common_Movement_FaceDown
++	applymovement LOCALID_LAKE_VERITY_ASSISTANT, Common_Movement_FaceDown
++	waitmovement 0
++	msgbox LakeVerity_Text_Rowan2, MSGBOX_DEFAULT
++	msgbox LakeVerity_Text_Assistant, MSGBOX_DEFAULT
++	closemessage
++	fadescreen FADE_TO_BLACK
++	removeobject LOCALID_LAKE_VERITY_ROWAN
++	removeobject LOCALID_LAKE_VERITY_ASSISTANT
++	setflag FLAG_HIDE_LAKE_VERITY_ROWAN
++	clearflag FLAG_HIDE_LAKEFRONT_BARRY
++	clearflag FLAG_HIDE_LAKEFRONT_BRIEFCASE
++	fadescreen FADE_FROM_BLACK
++	msgbox LakeVerity_Text_BarryAfterRowan, MSGBOX_DEFAULT
++	closemessage
++	setvar VAR_SINNOH_STORY, 4
++	releaseall
++	end
++
++LakeVerity_Text_Rowan1:
++	.string "PROFESSOR: ...It is as I feared.\n"
++	.string "The lake is quiet. Too quiet.\p"
++	.string "Something stirs beneath these\n"
++	.string "waters, and it is watching us.$"
++
++LakeVerity_Text_Rowan2:
++	.string "PROFESSOR: Hm? And who might you be?\p"
++	.string "The tall grass is no place to\n"
++	.string "wander without POKéMON of your own.\p"
++	.string "...Come. We are finished here.$"
++
++LakeVerity_Text_Assistant:
++	.string "ASSISTANT: Coming, Professor!\n"
++	.string "Sorry, you two, excuse us!$"
++
++LakeVerity_Text_BarryAfterRowan:
++	.string "Barry ran back toward the lake's\n"
++	.string "entrance, looking excited.$"
+diff --git a/data/maps/LittlerootTown_ProfessorBirchsLab/map.json b/data/maps/LittlerootTown_ProfessorBirchsLab/map.json
+index b70666fdf..b5652789b 100644
+--- a/data/maps/LittlerootTown_ProfessorBirchsLab/map.json
++++ b/data/maps/LittlerootTown_ProfessorBirchsLab/map.json
+@@ -16,88 +16,48 @@
+   "connections": 0,
+   "object_events": [
+     {
+-      "local_id": "LOCALID_BIRCHS_LAB_AIDE",
+-      "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_1",
+-      "x": 9,
+-      "y": 8,
+-      "elevation": 3,
+-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+-      "movement_range_x": 1,
+-      "movement_range_y": 1,
+-      "trainer_type": "TRAINER_TYPE_NONE",
+-      "trainer_sight_or_berry_tree_id": "0",
+-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Aide",
+-      "flag": "0"
+-    },
+-    {
+-      "local_id": "LOCALID_BIRCHS_LAB_BIRCH",
++      "local_id": "LOCALID_SANDGEM_LAB_ROWAN",
++      "type": "object",
+       "graphics_id": "OBJ_EVENT_GFX_PROF_BIRCH",
+       "x": 6,
+-      "y": 4,
++      "y": 3,
+       "elevation": 3,
+       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+       "movement_range_x": 0,
+       "movement_range_y": 0,
+       "trainer_type": "TRAINER_TYPE_NONE",
+       "trainer_sight_or_berry_tree_id": "0",
+-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Birch",
+-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_BIRCH"
++      "script": "SandgemLab_EventScript_Rowan",
++      "flag": "0"
+     },
+     {
+-      "local_id": "LOCALID_BIRCHS_LAB_RIVAL",
++      "local_id": "LOCALID_SANDGEM_LAB_ASSISTANT",
++      "type": "object",
+       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
+-      "x": 7,
++      "x": 8,
+       "y": 4,
+       "elevation": 3,
+-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+-      "movement_range_x": 1,
+-      "movement_range_y": 1,
+-      "trainer_type": "TRAINER_TYPE_NONE",
+-      "trainer_sight_or_berry_tree_id": "0",
+-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Rival",
+-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_RIVAL"
+-    },
+-    {
+-      "local_id": "LOCALID_BIRCHS_LAB_CYNDAQUIL_BALL",
+-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+-      "x": 6,
+-      "y": 8,
+-      "elevation": 3,
+-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+-      "movement_range_x": 1,
+-      "movement_range_y": 1,
+-      "trainer_type": "TRAINER_TYPE_NONE",
+-      "trainer_sight_or_berry_tree_id": "0",
+-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Cyndaquil",
+-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_CYNDAQUIL"
+-    },
+-    {
+-      "local_id": "LOCALID_BIRCHS_LAB_TOTODILE_BALL",
+-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+-      "x": 6,
+-      "y": 8,
+-      "elevation": 3,
+-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+-      "movement_range_x": 1,
+-      "movement_range_y": 1,
++      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
++      "movement_range_x": 0,
++      "movement_range_y": 0,
+       "trainer_type": "TRAINER_TYPE_NONE",
+       "trainer_sight_or_berry_tree_id": "0",
+-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Totodile",
+-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_TOTODILE"
++      "script": "SandgemLab_EventScript_Assistant",
++      "flag": "0"
+     },
+     {
+-      "local_id": "LOCALID_BIRCHS_LAB_CHIKORITA_BALL",
+-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+-      "x": 6,
+-      "y": 8,
++      "type": "object",
++      "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_1",
++      "x": 10,
++      "y": 9,
+       "elevation": 3,
+-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+-      "movement_range_x": 1,
+-      "movement_range_y": 1,
++      "movement_type": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
++      "movement_range_x": 0,
++      "movement_range_y": 0,
+       "trainer_type": "TRAINER_TYPE_NONE",
+       "trainer_sight_or_berry_tree_id": "0",
+-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Chikorita",
+-      "flag": "FLAG_HIDE_LITTLEROOT_TOWN_BIRCHS_LAB_POKEBALL_CHIKORITA"
++      "script": "SandgemLab_EventScript_Aide",
++      "flag": "0"
+     }
+   ],
+   "warp_events": [
+@@ -116,127 +76,25 @@
+       "dest_warp_id": "0"
+     }
+   ],
+-  "coord_events": [],
+-  "bg_events": [
+-    {
+-      "type": "sign",
+-      "x": 10,
+-      "y": 7,
+-      "elevation": 0,
+-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Machine"
+-    },
+-    {
+-      "type": "sign",
+-      "x": 11,
+-      "y": 7,
+-      "elevation": 0,
+-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Machine"
+-    },
++  "coord_events": [
+     {
+-      "type": "sign",
+-      "x": 7,
+-      "y": 1,
+-      "elevation": 0,
+-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Book"
+-    },
+-    {
+-      "type": "sign",
+-      "x": 8,
+-      "y": 1,
+-      "elevation": 0,
+-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Book"
+-    },
+-    {
+-      "type": "sign",
+-      "x": 1,
+-      "y": 1,
+-      "elevation": 0,
+-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Bookshelf"
+-    },
+-    {
+-      "type": "sign",
+-      "x": 0,
+-      "y": 7,
+-      "elevation": 0,
+-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Bookshelf"
+-    },
+-    {
+-      "type": "sign",
+-      "x": 1,
+-      "y": 7,
+-      "elevation": 0,
+-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Bookshelf"
+-    },
+-    {
+-      "type": "sign",
+-      "x": 2,
+-      "y": 7,
+-      "elevation": 0,
+-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Bookshelf"
+-    },
+-    {
+-      "type": "sign",
+-      "x": 3,
+-      "y": 7,
+-      "elevation": 0,
+-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_Bookshelf"
+-    },
+-    {
+-      "type": "sign",
+-      "x": 4,
+-      "y": 1,
+-      "elevation": 0,
+-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_PC"
+-    },
+-    {
+-      "type": "sign",
+-      "x": 3,
+-      "y": 1,
+-      "elevation": 0,
+-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_PC"
+-    },
+-    {
+-      "type": "sign",
+-      "x": 1,
++      "type": "trigger",
++      "x": 6,
+       "y": 10,
+-      "elevation": 0,
+-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_PC"
+-    },
+-    {
+-      "type": "sign",
+-      "x": 1,
+-      "y": 9,
+-      "elevation": 0,
+-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_PC"
++      "elevation": 3,
++      "var": "VAR_SINNOH_STORY",
++      "var_value": "5",
++      "script": "SandgemLab_EventScript_SceneLeft"
+     },
+     {
+-      "type": "sign",
+-      "x": 11,
++      "type": "trigger",
++      "x": 7,
+       "y": 10,
+-      "elevation": 0,
+-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_PC"
+-    },
+-    {
+-      "type": "sign",
+-      "x": 11,
+-      "y": 9,
+-      "elevation": 0,
+-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+-      "script": "LittlerootTown_ProfessorBirchsLab_EventScript_PC"
++      "elevation": 3,
++      "var": "VAR_SINNOH_STORY",
++      "var_value": "5",
++      "script": "SandgemLab_EventScript_SceneRight"
+     }
+-  ]
++  ],
++  "bg_events": []
+ }
+diff --git a/data/maps/LittlerootTown_ProfessorBirchsLab/scripts.inc b/data/maps/LittlerootTown_ProfessorBirchsLab/scripts.inc
+index 76fda0f32..d9afc1689 100644
+--- a/data/maps/LittlerootTown_ProfessorBirchsLab/scripts.inc
++++ b/data/maps/LittlerootTown_ProfessorBirchsLab/scripts.inc
+@@ -1,4 +1,144 @@
+ LittlerootTown_ProfessorBirchsLab_MapScripts::
++	map_script MAP_SCRIPT_ON_TRANSITION, SandgemLab_OnTransition
++	.byte 0
++
++SandgemLab_OnTransition:
++	checkplayergender
++	goto_if_eq VAR_RESULT, MALE, SandgemLab_EventScript_SetDawn
++	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL
++	end
++
++SandgemLab_EventScript_SetDawn::
++	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RIVAL_MAY_NORMAL
++	end
++
++SandgemLab_EventScript_SceneLeft::
++	lockall
++	applymovement LOCALID_PLAYER, SandgemLab_Movement_WalkToRowanLeft
++	waitmovement 0
++	goto SandgemLab_EventScript_Scene
++
++SandgemLab_EventScript_SceneRight::
++	lockall
++	applymovement LOCALID_PLAYER, SandgemLab_Movement_WalkToRowanRight
++	waitmovement 0
++	goto SandgemLab_EventScript_Scene
++
++SandgemLab_EventScript_Scene::
++	msgbox SandgemLab_Text_RowanWelcome, MSGBOX_DEFAULT
++	playfanfare MUS_OBTAIN_ITEM
++	message SandgemLab_Text_ReceivedPokedex
++	waitfanfare
++	waitmessage
++	setflag FLAG_SYS_POKEDEX_GET
++	special SetUnlockedPokedexFlags
++	setflag FLAG_RECEIVED_POKEDEX_FROM_BIRCH
++	msgbox SandgemLab_Text_RowanPokedex, MSGBOX_DEFAULT
++	closemessage
++	applymovement LOCALID_SANDGEM_LAB_ASSISTANT, Common_Movement_FacePlayer
++	waitmovement 0
++	msgbox SandgemLab_Text_AssistantBalls, MSGBOX_DEFAULT
++	giveitem ITEM_POKE_BALL, 5
++	msgbox SandgemLab_Text_AssistantGoHome, MSGBOX_DEFAULT
++	closemessage
++	setvar VAR_SINNOH_STORY, 6
++	releaseall
++	end
++
++SandgemLab_EventScript_Rowan::
++	lock
++	faceplayer
++	msgbox SandgemLab_Text_RowanAdvice, MSGBOX_DEFAULT
++	release
++	end
++
++SandgemLab_EventScript_Assistant::
++	lock
++	faceplayer
++	msgbox SandgemLab_Text_AssistantAdvice, MSGBOX_DEFAULT
++	release
++	end
++
++SandgemLab_EventScript_Aide::
++	msgbox SandgemLab_Text_Aide, MSGBOX_NPC
++	end
++
++SandgemLab_Movement_WalkToRowanLeft:
++	walk_up
++	walk_up
++	walk_up
++	walk_up
++	walk_up
++	walk_up
++	step_end
++
++SandgemLab_Movement_WalkToRowanRight:
++	walk_left
++	walk_up
++	walk_up
++	walk_up
++	walk_up
++	walk_up
++	walk_up
++	step_end
++
++SandgemLab_Text_RowanWelcome:
++	.string "ROWAN: So. You are the one who\n"
++	.string "opened my briefcase at the lake.\p"
++	.string "...And yet that POKéMON already\n"
++	.string "trusts you. I can see it in its eyes.\p"
++	.string "Very well. Keep it. In return, I\n"
++	.string "ask you to help me with my research.\p"
++	.string "Take this. It will record every\n"
++	.string "POKéMON you meet on your journey.$"
++
++SandgemLab_Text_ReceivedPokedex:
++	.string "{PLAYER} received the POKéDEX\n"
++	.string "from PROFESSOR ROWAN!$"
++
++SandgemLab_Text_RowanPokedex:
++	.string "ROWAN: I want to know every POKéMON\n"
++	.string "that lives in Sinnoh.\p"
++	.string "Go out and see this region with your\n"
++	.string "own eyes. That is my request.$"
++
++SandgemLab_Text_AssistantBalls:
++	.string "ASSISTANT: Hi! I'm helping the\n"
++	.string "Professor fill his POKéDEX too.\p"
++	.string "You'll need these to catch\n"
++	.string "POKéMON. Here, take them!$"
++
++SandgemLab_Text_AssistantGoHome:
++	.string "ASSISTANT: You should tell your mom\n"
++	.string "about your journey before you leave!\p"
++	.string "When you're ready, head north to\n"
++	.string "ROUTE 202. JUBILIFE CITY is\l"
++	.string "just beyond it.$"
++
++SandgemLab_Text_RowanAdvice:
++	.string "ROWAN: A POKéMON grows when it is\n"
++	.string "trusted. Remember that.$"
++
++SandgemLab_Text_AssistantAdvice:
++	.string "ASSISTANT: Weaken a wild POKéMON\n"
++	.string "before you throw a POKé BALL.\l"
++	.string "It works much better that way!$"
++
++SandgemLab_Text_Aide:
++	.string "The Professor spent years studying\n"
++	.string "evolution. He's very strict, but\l"
++	.string "he truly cares about POKéMON.$"
++
++@ Scripts antiguos del laboratorio de Hoenn (sin uso en Sinnoh). Se mantienen
++@ porque otras partes del juego base los referencian.
++	.set LOCALID_BIRCHS_LAB_AIDE, 10
++	.set LOCALID_BIRCHS_LAB_BIRCH, 11
++	.set LOCALID_BIRCHS_LAB_RIVAL, 12
++	.set LOCALID_BIRCHS_LAB_CYNDAQUIL_BALL, 13
++	.set LOCALID_BIRCHS_LAB_TOTODILE_BALL, 14
++	.set LOCALID_BIRCHS_LAB_CHIKORITA_BALL, 15
++
++LittlerootTown_ProfessorBirchsLab_OldHoenn_MapScripts::
+ 	map_script MAP_SCRIPT_ON_TRANSITION, LittlerootTown_ProfessorBirchsLab_OnTransition
+ 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, LittlerootTown_ProfessorBirchsLab_OnWarp
+ 	map_script MAP_SCRIPT_ON_FRAME_TABLE, LittlerootTown_ProfessorBirchsLab_OnFrame
+diff --git a/data/maps/OreburghCity_PokemonCenter_1F/map.json b/data/maps/OreburghCity_PokemonCenter_1F/map.json
+index e4b44bce1..4b6cfc6dd 100644
+--- a/data/maps/OreburghCity_PokemonCenter_1F/map.json
++++ b/data/maps/OreburghCity_PokemonCenter_1F/map.json
+@@ -14,7 +14,21 @@
+   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+   "connections": 0,
+   "object_events": [
+-
++    {
++      "local_id": "LOCALID_OREBURGH_NURSE",
++      "type": "object",
++      "graphics_id": "OBJ_EVENT_GFX_NURSE",
++      "x": 7,
++      "y": 2,
++      "elevation": 3,
++      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
++      "movement_range_x": 0,
++      "movement_range_y": 0,
++      "trainer_type": "TRAINER_TYPE_NONE",
++      "trainer_sight_or_berry_tree_id": "0",
++      "script": "OreburghCity_PokemonCenter_1F_EventScript_Nurse",
++      "flag": "0"
++    }
+   ],
+   "warp_events": [
+     {
+@@ -39,10 +53,6 @@
+       "dest_warp_id": "0"
+     }
+   ],
+-  "coord_events": [
+-
+-  ],
+-  "bg_events": [
+-
+-  ]
++  "coord_events": [],
++  "bg_events": []
+ }
+diff --git a/data/maps/OreburghCity_PokemonCenter_1F/scripts.inc b/data/maps/OreburghCity_PokemonCenter_1F/scripts.inc
+index cba974371..9aa641579 100644
+--- a/data/maps/OreburghCity_PokemonCenter_1F/scripts.inc
++++ b/data/maps/OreburghCity_PokemonCenter_1F/scripts.inc
+@@ -1,2 +1,16 @@
+ OreburghCity_PokemonCenter_1F_MapScripts::
++	map_script MAP_SCRIPT_ON_TRANSITION, OreburghCity_PokemonCenter_1F_OnTransition
++	map_script MAP_SCRIPT_ON_RESUME, CableClub_OnResume
+ 	.byte 0
++
++OreburghCity_PokemonCenter_1F_OnTransition:
++	setrespawn HEAL_LOCATION_OREBURGH_CITY
++	end
++
++OreburghCity_PokemonCenter_1F_EventScript_Nurse::
++	setvar VAR_0x800B, LOCALID_OREBURGH_NURSE
++	call Common_EventScript_PkmnCenterNurse
++	waitmessage
++	waitbuttonpress
++	release
++	end
+diff --git a/data/maps/Route201/map.json b/data/maps/Route201/map.json
+index 39b5b00a6..2e1a2fb31 100644
+--- a/data/maps/Route201/map.json
++++ b/data/maps/Route201/map.json
+@@ -30,15 +30,168 @@
+     }
+   ],
+   "object_events": [
+-
+-  ],
+-  "warp_events": [
+-
++    {
++      "local_id": "LOCALID_ROUTE201_BARRY",
++      "type": "object",
++      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
++      "x": 15,
++      "y": 16,
++      "elevation": 3,
++      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
++      "movement_range_x": 0,
++      "movement_range_y": 0,
++      "trainer_type": "TRAINER_TYPE_NONE",
++      "trainer_sight_or_berry_tree_id": "0",
++      "script": "Route201_EventScript_BarryWaiting",
++      "flag": "FLAG_HIDE_ROUTE201_BARRY"
++    }
+   ],
++  "warp_events": [],
+   "coord_events": [
+-
++    {
++      "type": "trigger",
++      "x": 14,
++      "y": 19,
++      "elevation": 3,
++      "var": "VAR_SINNOH_STORY",
++      "var_value": "2",
++      "script": "Route201_EventScript_BarryScene"
++    },
++    {
++      "type": "trigger",
++      "x": 15,
++      "y": 19,
++      "elevation": 3,
++      "var": "VAR_SINNOH_STORY",
++      "var_value": "2",
++      "script": "Route201_EventScript_BarryScene"
++    },
++    {
++      "type": "trigger",
++      "x": 16,
++      "y": 19,
++      "elevation": 3,
++      "var": "VAR_SINNOH_STORY",
++      "var_value": "2",
++      "script": "Route201_EventScript_BarryScene"
++    },
++    {
++      "type": "trigger",
++      "x": 17,
++      "y": 19,
++      "elevation": 3,
++      "var": "VAR_SINNOH_STORY",
++      "var_value": "2",
++      "script": "Route201_EventScript_BarryScene"
++    },
++    {
++      "type": "trigger",
++      "x": 60,
++      "y": 2,
++      "elevation": 3,
++      "var": "VAR_SINNOH_STORY",
++      "var_value": "3",
++      "script": "Route201_EventScript_BlockSandgem"
++    },
++    {
++      "type": "trigger",
++      "x": 60,
++      "y": 3,
++      "elevation": 3,
++      "var": "VAR_SINNOH_STORY",
++      "var_value": "3",
++      "script": "Route201_EventScript_BlockSandgem"
++    },
++    {
++      "type": "trigger",
++      "x": 60,
++      "y": 4,
++      "elevation": 3,
++      "var": "VAR_SINNOH_STORY",
++      "var_value": "3",
++      "script": "Route201_EventScript_BlockSandgem"
++    },
++    {
++      "type": "trigger",
++      "x": 60,
++      "y": 5,
++      "elevation": 3,
++      "var": "VAR_SINNOH_STORY",
++      "var_value": "3",
++      "script": "Route201_EventScript_BlockSandgem"
++    },
++    {
++      "type": "trigger",
++      "x": 60,
++      "y": 6,
++      "elevation": 3,
++      "var": "VAR_SINNOH_STORY",
++      "var_value": "3",
++      "script": "Route201_EventScript_BlockSandgem"
++    },
++    {
++      "type": "trigger",
++      "x": 60,
++      "y": 7,
++      "elevation": 3,
++      "var": "VAR_SINNOH_STORY",
++      "var_value": "3",
++      "script": "Route201_EventScript_BlockSandgem"
++    },
++    {
++      "type": "trigger",
++      "x": 60,
++      "y": 2,
++      "elevation": 3,
++      "var": "VAR_SINNOH_STORY",
++      "var_value": "4",
++      "script": "Route201_EventScript_BlockSandgem"
++    },
++    {
++      "type": "trigger",
++      "x": 60,
++      "y": 3,
++      "elevation": 3,
++      "var": "VAR_SINNOH_STORY",
++      "var_value": "4",
++      "script": "Route201_EventScript_BlockSandgem"
++    },
++    {
++      "type": "trigger",
++      "x": 60,
++      "y": 4,
++      "elevation": 3,
++      "var": "VAR_SINNOH_STORY",
++      "var_value": "4",
++      "script": "Route201_EventScript_BlockSandgem"
++    },
++    {
++      "type": "trigger",
++      "x": 60,
++      "y": 5,
++      "elevation": 3,
++      "var": "VAR_SINNOH_STORY",
++      "var_value": "4",
++      "script": "Route201_EventScript_BlockSandgem"
++    },
++    {
++      "type": "trigger",
++      "x": 60,
++      "y": 6,
++      "elevation": 3,
++      "var": "VAR_SINNOH_STORY",
++      "var_value": "4",
++      "script": "Route201_EventScript_BlockSandgem"
++    },
++    {
++      "type": "trigger",
++      "x": 60,
++      "y": 7,
++      "elevation": 3,
++      "var": "VAR_SINNOH_STORY",
++      "var_value": "4",
++      "script": "Route201_EventScript_BlockSandgem"
++    }
+   ],
+-  "bg_events": [
+-
+-  ]
++  "bg_events": []
+ }
+diff --git a/data/maps/Route201/scripts.inc b/data/maps/Route201/scripts.inc
+index 540e2148a..b34f115fc 100644
+--- a/data/maps/Route201/scripts.inc
++++ b/data/maps/Route201/scripts.inc
+@@ -1,2 +1,60 @@
+ Route201_MapScripts::
+ 	.byte 0
++
++Route201_EventScript_BarryWaiting::
++	lock
++	faceplayer
++	msgbox Route201_Text_BarryHurry, MSGBOX_DEFAULT
++	release
++	end
++
++Route201_EventScript_BarryScene::
++	lockall
++	applymovement LOCALID_ROUTE201_BARRY, Common_Movement_ExclamationMark
++	waitmovement 0
++	msgbox Route201_Text_BarryToTheLake, MSGBOX_DEFAULT
++	closemessage
++	applymovement LOCALID_ROUTE201_BARRY, Route201_Movement_BarryToLake
++	waitmovement 0
++	removeobject LOCALID_ROUTE201_BARRY
++	setflag FLAG_HIDE_ROUTE201_BARRY
++	setvar VAR_SINNOH_STORY, 3
++	releaseall
++	end
++
++Route201_EventScript_BlockSandgem::
++	lockall
++	msgbox Route201_Text_LakeIsTheOtherWay, MSGBOX_DEFAULT
++	closemessage
++	applymovement LOCALID_PLAYER, Common_Movement_WalkLeft
++	waitmovement 0
++	releaseall
++	end
++
++Route201_Movement_BarryToLake:
++	walk_fast_up
++	walk_fast_left
++	walk_fast_left
++	walk_fast_left
++	walk_fast_left
++	walk_fast_left
++	walk_fast_left
++	walk_fast_left
++	walk_fast_left
++	walk_fast_left
++	walk_fast_left
++	step_end
++
++Route201_Text_BarryHurry:
++	.string "BARRY: Come on, come on!\n"
++	.string "LAKE VERITY is just to the west!$"
++
++Route201_Text_BarryToTheLake:
++	.string "BARRY: There you are!\p"
++	.string "LAKE VERITY is to the west of this\n"
++	.string "route. Professor Rowan must be there!\p"
++	.string "Last one there owes me a fine!$"
++
++Route201_Text_LakeIsTheOtherWay:
++	.string "Barry is waiting at LAKE VERITY.\n"
++	.string "The lake is back to the west.$"
+diff --git a/data/maps/SandgemTown/map.json b/data/maps/SandgemTown/map.json
+index d82ae26ac..4c1589750 100644
+--- a/data/maps/SandgemTown/map.json
++++ b/data/maps/SandgemTown/map.json
+@@ -30,7 +30,34 @@
+     }
+   ],
+   "object_events": [
+-
++    {
++      "type": "object",
++      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
++      "x": 14,
++      "y": 12,
++      "elevation": 3,
++      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
++      "movement_range_x": 0,
++      "movement_range_y": 0,
++      "trainer_type": "TRAINER_TYPE_NONE",
++      "trainer_sight_or_berry_tree_id": "0",
++      "script": "SandgemTown_EventScript_Woman",
++      "flag": "0"
++    },
++    {
++      "type": "object",
++      "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
++      "x": 24,
++      "y": 22,
++      "elevation": 3,
++      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
++      "movement_range_x": 0,
++      "movement_range_y": 0,
++      "trainer_type": "TRAINER_TYPE_NONE",
++      "trainer_sight_or_berry_tree_id": "0",
++      "script": "SandgemTown_EventScript_Fisherman",
++      "flag": "0"
++    }
+   ],
+   "warp_events": [
+     {
+@@ -70,9 +97,60 @@
+     }
+   ],
+   "coord_events": [
+-
++    {
++      "type": "trigger",
++      "x": 20,
++      "y": 4,
++      "elevation": 3,
++      "var": "VAR_SINNOH_STORY",
++      "var_value": "5",
++      "script": "SandgemTown_EventScript_BlockNorth"
++    },
++    {
++      "type": "trigger",
++      "x": 21,
++      "y": 4,
++      "elevation": 3,
++      "var": "VAR_SINNOH_STORY",
++      "var_value": "5",
++      "script": "SandgemTown_EventScript_BlockNorth"
++    },
++    {
++      "type": "trigger",
++      "x": 22,
++      "y": 4,
++      "elevation": 3,
++      "var": "VAR_SINNOH_STORY",
++      "var_value": "5",
++      "script": "SandgemTown_EventScript_BlockNorth"
++    },
++    {
++      "type": "trigger",
++      "x": 23,
++      "y": 4,
++      "elevation": 3,
++      "var": "VAR_SINNOH_STORY",
++      "var_value": "5",
++      "script": "SandgemTown_EventScript_BlockNorth"
++    },
++    {
++      "type": "trigger",
++      "x": 24,
++      "y": 4,
++      "elevation": 3,
++      "var": "VAR_SINNOH_STORY",
++      "var_value": "5",
++      "script": "SandgemTown_EventScript_BlockNorth"
++    },
++    {
++      "type": "trigger",
++      "x": 25,
++      "y": 4,
++      "elevation": 3,
++      "var": "VAR_SINNOH_STORY",
++      "var_value": "5",
++      "script": "SandgemTown_EventScript_BlockNorth"
++    }
+   ],
+-  "bg_events": [
+-
+-  ]
++  "bg_events": []
+ }
+diff --git a/data/maps/SandgemTown/scripts.inc b/data/maps/SandgemTown/scripts.inc
+index 723a13718..1acff03c4 100644
+--- a/data/maps/SandgemTown/scripts.inc
++++ b/data/maps/SandgemTown/scripts.inc
+@@ -1,2 +1,33 @@
+ SandgemTown_MapScripts::
+ 	.byte 0
++
++SandgemTown_EventScript_BlockNorth::
++	lockall
++	msgbox SandgemTown_Text_ReturnBriefcase, MSGBOX_DEFAULT
++	closemessage
++	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
++	waitmovement 0
++	releaseall
++	end
++
++SandgemTown_EventScript_Woman::
++	msgbox SandgemTown_Text_Woman, MSGBOX_NPC
++	end
++
++SandgemTown_EventScript_Fisherman::
++	msgbox SandgemTown_Text_Fisherman, MSGBOX_NPC
++	end
++
++SandgemTown_Text_ReturnBriefcase:
++	.string "I should return the Professor's\n"
++	.string "briefcase first. His lab is the big\l"
++	.string "building to the west.$"
++
++SandgemTown_Text_Woman:
++	.string "PROFESSOR ROWAN'S lab is here in\n"
++	.string "SANDGEM. Trainers from all over\l"
++	.string "Sinnoh come to visit him.$"
++
++SandgemTown_Text_Fisherman:
++	.string "The sea breeze here is the best in\n"
++	.string "all of Sinnoh. Smell that salt!$"
+diff --git a/data/maps/SandgemTown_PokemonCenter_1F/map.json b/data/maps/SandgemTown_PokemonCenter_1F/map.json
+index d7383f9a9..36031fcd1 100644
+--- a/data/maps/SandgemTown_PokemonCenter_1F/map.json
++++ b/data/maps/SandgemTown_PokemonCenter_1F/map.json
+@@ -14,7 +14,21 @@
+   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+   "connections": 0,
+   "object_events": [
+-
++    {
++      "local_id": "LOCALID_SANDGEM_NURSE",
++      "type": "object",
++      "graphics_id": "OBJ_EVENT_GFX_NURSE",
++      "x": 7,
++      "y": 2,
++      "elevation": 3,
++      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
++      "movement_range_x": 0,
++      "movement_range_y": 0,
++      "trainer_type": "TRAINER_TYPE_NONE",
++      "trainer_sight_or_berry_tree_id": "0",
++      "script": "SandgemTown_PokemonCenter_1F_EventScript_Nurse",
++      "flag": "0"
++    }
+   ],
+   "warp_events": [
+     {
+@@ -39,10 +53,6 @@
+       "dest_warp_id": "0"
+     }
+   ],
+-  "coord_events": [
+-
+-  ],
+-  "bg_events": [
+-
+-  ]
++  "coord_events": [],
++  "bg_events": []
+ }
+diff --git a/data/maps/SandgemTown_PokemonCenter_1F/scripts.inc b/data/maps/SandgemTown_PokemonCenter_1F/scripts.inc
+index ab07b740e..79fd71e38 100644
+--- a/data/maps/SandgemTown_PokemonCenter_1F/scripts.inc
++++ b/data/maps/SandgemTown_PokemonCenter_1F/scripts.inc
+@@ -1,2 +1,16 @@
+ SandgemTown_PokemonCenter_1F_MapScripts::
++	map_script MAP_SCRIPT_ON_TRANSITION, SandgemTown_PokemonCenter_1F_OnTransition
++	map_script MAP_SCRIPT_ON_RESUME, CableClub_OnResume
+ 	.byte 0
++
++SandgemTown_PokemonCenter_1F_OnTransition:
++	setrespawn HEAL_LOCATION_SANDGEM_TOWN
++	end
++
++SandgemTown_PokemonCenter_1F_EventScript_Nurse::
++	setvar VAR_0x800B, LOCALID_SANDGEM_NURSE
++	call Common_EventScript_PkmnCenterNurse
++	waitmessage
++	waitbuttonpress
++	release
++	end
+diff --git a/data/maps/TwinleafTown/map.json b/data/maps/TwinleafTown/map.json
+index 6cbe068d6..4135a5345 100644
+--- a/data/maps/TwinleafTown/map.json
++++ b/data/maps/TwinleafTown/map.json
+@@ -25,7 +25,49 @@
+     }
+   ],
+   "object_events": [
+-
++    {
++      "local_id": "LOCALID_TWINLEAF_BARRY",
++      "type": "object",
++      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
++      "x": 5,
++      "y": 10,
++      "elevation": 3,
++      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
++      "movement_range_x": 0,
++      "movement_range_y": 0,
++      "trainer_type": "TRAINER_TYPE_NONE",
++      "trainer_sight_or_berry_tree_id": "0",
++      "script": "TwinleafTown_EventScript_Barry",
++      "flag": "FLAG_HIDE_TWINLEAF_BARRY"
++    },
++    {
++      "type": "object",
++      "graphics_id": "OBJ_EVENT_GFX_LITTLE_GIRL",
++      "x": 14,
++      "y": 13,
++      "elevation": 3,
++      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
++      "movement_range_x": 0,
++      "movement_range_y": 0,
++      "trainer_type": "TRAINER_TYPE_NONE",
++      "trainer_sight_or_berry_tree_id": "0",
++      "script": "TwinleafTown_EventScript_Girl",
++      "flag": "0"
++    },
++    {
++      "type": "object",
++      "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
++      "x": 8,
++      "y": 21,
++      "elevation": 3,
++      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
++      "movement_range_x": 0,
++      "movement_range_y": 0,
++      "trainer_type": "TRAINER_TYPE_NONE",
++      "trainer_sight_or_berry_tree_id": "0",
++      "script": "TwinleafTown_EventScript_Man",
++      "flag": "0"
++    }
+   ],
+   "warp_events": [
+     {
+@@ -58,9 +100,42 @@
+     }
+   ],
+   "coord_events": [
+-
++    {
++      "type": "trigger",
++      "x": 10,
++      "y": 3,
++      "elevation": 3,
++      "var": "VAR_SINNOH_STORY",
++      "var_value": "1",
++      "script": "TwinleafTown_EventScript_BlockNorth"
++    },
++    {
++      "type": "trigger",
++      "x": 11,
++      "y": 3,
++      "elevation": 3,
++      "var": "VAR_SINNOH_STORY",
++      "var_value": "1",
++      "script": "TwinleafTown_EventScript_BlockNorth"
++    },
++    {
++      "type": "trigger",
++      "x": 12,
++      "y": 3,
++      "elevation": 3,
++      "var": "VAR_SINNOH_STORY",
++      "var_value": "1",
++      "script": "TwinleafTown_EventScript_BlockNorth"
++    },
++    {
++      "type": "trigger",
++      "x": 13,
++      "y": 3,
++      "elevation": 3,
++      "var": "VAR_SINNOH_STORY",
++      "var_value": "1",
++      "script": "TwinleafTown_EventScript_BlockNorth"
++    }
+   ],
+-  "bg_events": [
+-
+-  ]
++  "bg_events": []
+ }
+diff --git a/data/maps/TwinleafTown/scripts.inc b/data/maps/TwinleafTown/scripts.inc
+index 3a0f42bd6..cde209dcb 100644
+--- a/data/maps/TwinleafTown/scripts.inc
++++ b/data/maps/TwinleafTown/scripts.inc
+@@ -1,2 +1,70 @@
+ TwinleafTown_MapScripts::
+ 	.byte 0
++
++TwinleafTown_EventScript_Barry::
++	lock
++	faceplayer
++	msgbox TwinleafTown_Text_BarryLetsGo, MSGBOX_DEFAULT
++	closemessage
++	applymovement LOCALID_TWINLEAF_BARRY, TwinleafTown_Movement_BarryRunsOff
++	waitmovement 0
++	removeobject LOCALID_TWINLEAF_BARRY
++	setflag FLAG_HIDE_TWINLEAF_BARRY
++	clearflag FLAG_HIDE_ROUTE201_BARRY
++	setvar VAR_SINNOH_STORY, 2
++	release
++	end
++
++TwinleafTown_EventScript_BlockNorth::
++	lockall
++	msgbox TwinleafTown_Text_FindBarryFirst, MSGBOX_DEFAULT
++	closemessage
++	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
++	waitmovement 0
++	releaseall
++	end
++
++TwinleafTown_EventScript_Girl::
++	msgbox TwinleafTown_Text_Girl, MSGBOX_NPC
++	end
++
++TwinleafTown_EventScript_Man::
++	msgbox TwinleafTown_Text_Man, MSGBOX_NPC
++	end
++
++TwinleafTown_Movement_BarryRunsOff:
++	walk_fast_right
++	walk_fast_right
++	walk_fast_right
++	walk_fast_right
++	walk_fast_up
++	walk_fast_up
++	walk_fast_up
++	walk_fast_up
++	walk_fast_up
++	walk_fast_up
++	walk_fast_up
++	step_end
++
++TwinleafTown_Text_BarryLetsGo:
++	.string "BARRY: {PLAYER}! What took you so long?\n"
++	.string "I'm fining you ten million!\p"
++	.string "Listen, listen! Professor Rowan came\n"
++	.string "back to Sinnoh, and they say he's at\l"
++	.string "LAKE VERITY right now!\p"
++	.string "A professor who studies POKéMON\n"
++	.string "is bound to have some with him!\p"
++	.string "Let's go and ask him for one!\n"
++	.string "I'll wait for you on ROUTE 201!$"
++
++TwinleafTown_Text_FindBarryFirst:
++	.string "Mom said Barry was looking for me.\n"
++	.string "I should find him first.$"
++
++TwinleafTown_Text_Girl:
++	.string "Barry ran past me so fast my hat\n"
++	.string "nearly flew off!$"
++
++TwinleafTown_Text_Man:
++	.string "TWINLEAF TOWN is quiet, but the\n"
++	.string "wind always smells of fresh leaves.$"
+diff --git a/data/maps/TwinleafTown_MainHouse_1F/map.json b/data/maps/TwinleafTown_MainHouse_1F/map.json
+index 001bc8c31..f34eab50b 100644
+--- a/data/maps/TwinleafTown_MainHouse_1F/map.json
++++ b/data/maps/TwinleafTown_MainHouse_1F/map.json
+@@ -14,7 +14,21 @@
+   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+   "connections": 0,
+   "object_events": [
+-
++    {
++      "local_id": "LOCALID_TWINLEAF_MOM",
++      "type": "object",
++      "graphics_id": "OBJ_EVENT_GFX_MOM",
++      "x": 4,
++      "y": 5,
++      "elevation": 3,
++      "movement_type": "MOVEMENT_TYPE_FACE_UP",
++      "movement_range_x": 0,
++      "movement_range_y": 0,
++      "trainer_type": "TRAINER_TYPE_NONE",
++      "trainer_sight_or_berry_tree_id": "0",
++      "script": "TwinleafTown_MainHouse_1F_EventScript_Mom",
++      "flag": "0"
++    }
+   ],
+   "warp_events": [
+     {
+@@ -39,10 +53,6 @@
+       "dest_warp_id": "0"
+     }
+   ],
+-  "coord_events": [
+-
+-  ],
+-  "bg_events": [
+-
+-  ]
++  "coord_events": [],
++  "bg_events": []
+ }
+diff --git a/data/maps/TwinleafTown_MainHouse_1F/scripts.inc b/data/maps/TwinleafTown_MainHouse_1F/scripts.inc
+index 8f433a859..f5cf5707d 100644
+--- a/data/maps/TwinleafTown_MainHouse_1F/scripts.inc
++++ b/data/maps/TwinleafTown_MainHouse_1F/scripts.inc
+@@ -1,2 +1,76 @@
+ TwinleafTown_MainHouse_1F_MapScripts::
++	map_script MAP_SCRIPT_ON_FRAME_TABLE, TwinleafTown_MainHouse_1F_OnFrame
+ 	.byte 0
++
++TwinleafTown_MainHouse_1F_OnFrame:
++	map_script_2 VAR_SINNOH_STORY, 0, TwinleafTown_MainHouse_1F_EventScript_MomIntro
++	.2byte 0
++
++TwinleafTown_MainHouse_1F_EventScript_MomIntro::
++	lockall
++	applymovement LOCALID_TWINLEAF_MOM, Common_Movement_FacePlayer
++	waitmovement 0
++	msgbox TwinleafTown_MainHouse_1F_Text_BarryWasHere, MSGBOX_DEFAULT
++	closemessage
++	applymovement LOCALID_TWINLEAF_MOM, Common_Movement_FaceUp
++	waitmovement 0
++	setvar VAR_SINNOH_STORY, 1
++	releaseall
++	end
++
++TwinleafTown_MainHouse_1F_EventScript_Mom::
++	lock
++	faceplayer
++	goto_if_lt VAR_SINNOH_STORY, 6, TwinleafTown_MainHouse_1F_EventScript_MomGoOut
++	goto_if_unset FLAG_SYS_B_DASH, TwinleafTown_MainHouse_1F_EventScript_MomRunningShoes
++	msgbox TwinleafTown_MainHouse_1F_Text_TakeCare, MSGBOX_DEFAULT
++	release
++	end
++
++TwinleafTown_MainHouse_1F_EventScript_MomGoOut::
++	msgbox TwinleafTown_MainHouse_1F_Text_GoSeeBarry, MSGBOX_DEFAULT
++	release
++	end
++
++TwinleafTown_MainHouse_1F_EventScript_MomRunningShoes::
++	msgbox TwinleafTown_MainHouse_1F_Text_YouGotAPokemon, MSGBOX_DEFAULT
++	playfanfare MUS_OBTAIN_ITEM
++	message TwinleafTown_MainHouse_1F_Text_ReceivedRunningShoes
++	waitfanfare
++	waitmessage
++	setflag FLAG_SYS_B_DASH
++	msgbox TwinleafTown_MainHouse_1F_Text_RunningShoesInfo, MSGBOX_DEFAULT
++	release
++	end
++
++TwinleafTown_MainHouse_1F_Text_BarryWasHere:
++	.string "MOM: Oh, good morning, {PLAYER}!\n"
++	.string "Barry dashed in here a moment ago.\p"
++	.string "He was shouting about something\n"
++	.string "urgent and ran right back home.\p"
++	.string "You'd better go see him before he\n"
++	.string "bursts through the door again!$"
++
++TwinleafTown_MainHouse_1F_Text_GoSeeBarry:
++	.string "MOM: Barry lives in the house just\n"
++	.string "up the road. Go on, he's waiting!$"
++
++TwinleafTown_MainHouse_1F_Text_YouGotAPokemon:
++	.string "MOM: {PLAYER}! Is that a POKéMON?\n"
++	.string "And Professor Rowan gave you a\l"
++	.string "POKéDEX? That's wonderful!\p"
++	.string "If you're going on a journey, you'll\n"
++	.string "need these. Here you go!$"
++
++TwinleafTown_MainHouse_1F_Text_ReceivedRunningShoes:
++	.string "{PLAYER} received the\n"
++	.string "RUNNING SHOES!$"
++
++TwinleafTown_MainHouse_1F_Text_RunningShoesInfo:
++	.string "Hold the B Button while walking\n"
++	.string "to run. Now you can go anywhere!$"
++
++TwinleafTown_MainHouse_1F_Text_TakeCare:
++	.string "MOM: Take good care of your\n"
++	.string "POKéMON, and come home once\l"
++	.string "in a while, okay?$"
+diff --git a/data/maps/VerityLakefront/map.json b/data/maps/VerityLakefront/map.json
+index b2f519d04..b6382c806 100644
+--- a/data/maps/VerityLakefront/map.json
++++ b/data/maps/VerityLakefront/map.json
+@@ -20,7 +20,36 @@
+     }
+   ],
+   "object_events": [
+-
++    {
++      "local_id": "LOCALID_LAKEFRONT_BARRY",
++      "type": "object",
++      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
++      "x": 4,
++      "y": 6,
++      "elevation": 3,
++      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
++      "movement_range_x": 0,
++      "movement_range_y": 0,
++      "trainer_type": "TRAINER_TYPE_NONE",
++      "trainer_sight_or_berry_tree_id": "0",
++      "script": "VerityLakefront_EventScript_Barry",
++      "flag": "FLAG_HIDE_LAKEFRONT_BARRY"
++    },
++    {
++      "local_id": "LOCALID_LAKEFRONT_BRIEFCASE",
++      "type": "object",
++      "graphics_id": "OBJ_EVENT_GFX_BIRCHS_BAG",
++      "x": 2,
++      "y": 7,
++      "elevation": 3,
++      "movement_type": "MOVEMENT_TYPE_NONE",
++      "movement_range_x": 0,
++      "movement_range_y": 0,
++      "trainer_type": "TRAINER_TYPE_NONE",
++      "trainer_sight_or_berry_tree_id": "0",
++      "script": "VerityLakefront_EventScript_Briefcase",
++      "flag": "FLAG_HIDE_LAKEFRONT_BRIEFCASE"
++    }
+   ],
+   "warp_events": [
+     {
+@@ -39,9 +68,24 @@
+     }
+   ],
+   "coord_events": [
+-
++    {
++      "type": "trigger",
++      "x": 2,
++      "y": 5,
++      "elevation": 3,
++      "var": "VAR_SINNOH_STORY",
++      "var_value": "4",
++      "script": "VerityLakefront_EventScript_BriefcaseScene"
++    },
++    {
++      "type": "trigger",
++      "x": 3,
++      "y": 5,
++      "elevation": 3,
++      "var": "VAR_SINNOH_STORY",
++      "var_value": "4",
++      "script": "VerityLakefront_EventScript_BriefcaseScene"
++    }
+   ],
+-  "bg_events": [
+-
+-  ]
++  "bg_events": []
+ }
+diff --git a/data/maps/VerityLakefront/scripts.inc b/data/maps/VerityLakefront/scripts.inc
+index 198364fa9..27f566642 100644
+--- a/data/maps/VerityLakefront/scripts.inc
++++ b/data/maps/VerityLakefront/scripts.inc
+@@ -1,2 +1,98 @@
+ VerityLakefront_MapScripts::
+ 	.byte 0
++
++VerityLakefront_EventScript_Barry::
++VerityLakefront_EventScript_Briefcase::
++VerityLakefront_EventScript_BriefcaseScene::
++	lockall
++	setflag FLAG_SYS_POKEMON_GET
++	applymovement LOCALID_LAKEFRONT_BARRY, Common_Movement_ExclamationMark
++	waitmovement 0
++	msgbox VerityLakefront_Text_ABriefcase, MSGBOX_DEFAULT
++	closemessage
++	playse SE_PIN
++	msgbox VerityLakefront_Text_WildPokemon, MSGBOX_DEFAULT
++	msgbox VerityLakefront_Text_UseThese, MSGBOX_DEFAULT
++	closemessage
++	fadescreen FADE_TO_BLACK
++	removeobject LOCALID_LAKEFRONT_BRIEFCASE
++	setflag FLAG_HIDE_LAKEFRONT_BRIEFCASE
++	special ChooseStarter
++	special HealPlayerParty
++	msgbox VerityLakefront_Text_BarryPicks, MSGBOX_DEFAULT
++	closemessage
++	setflag B_FLAG_NO_WHITEOUT
++	switch VAR_STARTER_MON
++	case 0, VerityLakefront_EventScript_BattleChimchar
++	case 1, VerityLakefront_EventScript_BattlePiplup
++	case 2, VerityLakefront_EventScript_BattleTurtwig
++	end
++
++VerityLakefront_EventScript_BattleChimchar::
++	trainerbattle_no_intro TRAINER_BARRY_LAKE_CHIMCHAR, VerityLakefront_Text_BarryDefeat
++	goto VerityLakefront_EventScript_AfterBattle
++
++VerityLakefront_EventScript_BattlePiplup::
++	trainerbattle_no_intro TRAINER_BARRY_LAKE_PIPLUP, VerityLakefront_Text_BarryDefeat
++	goto VerityLakefront_EventScript_AfterBattle
++
++VerityLakefront_EventScript_BattleTurtwig::
++	trainerbattle_no_intro TRAINER_BARRY_LAKE_TURTWIG, VerityLakefront_Text_BarryDefeat
++	goto VerityLakefront_EventScript_AfterBattle
++
++VerityLakefront_EventScript_AfterBattle::
++	clearflag B_FLAG_NO_WHITEOUT
++	special HealPlayerParty
++	msgbox VerityLakefront_Text_BarryAfter, MSGBOX_DEFAULT
++	closemessage
++	applymovement LOCALID_LAKEFRONT_BARRY, VerityLakefront_Movement_BarryLeaves
++	waitmovement 0
++	removeobject LOCALID_LAKEFRONT_BARRY
++	setflag FLAG_HIDE_LAKEFRONT_BARRY
++	setvar VAR_SINNOH_STORY, 5
++	releaseall
++	end
++
++VerityLakefront_Movement_BarryLeaves:
++	walk_fast_down
++	walk_fast_right
++	walk_fast_right
++	walk_fast_right
++	walk_fast_right
++	walk_fast_right
++	walk_fast_right
++	walk_fast_right
++	walk_fast_right
++	step_end
++
++VerityLakefront_Text_ABriefcase:
++	.string "BARRY: {PLAYER}! Look, the Professor\n"
++	.string "left his briefcase behind!\p"
++	.string "Should we... take a peek? Just a\n"
++	.string "tiny little peek?$"
++
++VerityLakefront_Text_WildPokemon:
++	.string "Wild STARLY swooped down\n"
++	.string "from the trees!$"
++
++VerityLakefront_Text_UseThese:
++	.string "BARRY: Whoa! {PLAYER}, grab a POKéMON\n"
++	.string "from the briefcase! Quick!$"
++
++VerityLakefront_Text_BarryPicks:
++	.string "BARRY: Phew... That was close!\p"
++	.string "I'll take this one, then!\n"
++	.string "And now...\p"
++	.string "Let's see whose POKéMON is\n"
++	.string "stronger! Here I come!$"
++
++VerityLakefront_Text_BarryDefeat:
++	.string "What?! No way! I'm fining\n"
++	.string "myself for that one!$"
++
++VerityLakefront_Text_BarryAfter:
++	.string "BARRY: Hmm... We used the\n"
++	.string "Professor's POKéMON without asking.\p"
++	.string "We'd better return the briefcase.\n"
++	.string "His lab is in SANDGEM TOWN,\l"
++	.string "east of ROUTE 201. Let's go!$"
+diff --git a/data/scripts/new_game.inc b/data/scripts/new_game.inc
+index d4dead028..3e018e3c5 100644
+--- a/data/scripts/new_game.inc
++++ b/data/scripts/new_game.inc
+@@ -113,6 +113,9 @@ EventScript_ResetAllBerries::
+ 	return
+ 
+ EventScript_ResetAllMapFlags::
++	setflag FLAG_HIDE_ROUTE201_BARRY
++	setflag FLAG_HIDE_LAKEFRONT_BARRY
++	setflag FLAG_HIDE_LAKEFRONT_BRIEFCASE
+ 	setflag FLAG_HIDE_CONTEST_POKE_BALL
+ 	setflag FLAG_HIDE_ROUTE_111_VICTORIA_WINSTRATE
+ 	setflag FLAG_HIDE_ROUTE_111_VIVI_WINSTRATE
+diff --git a/include/config/battle.h b/include/config/battle.h
+index 616380236..17b62df0f 100644
+--- a/include/config/battle.h
++++ b/include/config/battle.h
+@@ -283,7 +283,7 @@
+ #define B_FLAG_TERA_ORB_CHARGED     0     // If this flag is set, the Tera Orb is charged. It is automatically set upon healing and cleared upon Terastallizing once configured.
+ #define B_FLAG_TERA_ORB_NO_COST     0     // If this flag is set, the Tera Orb does not use up its charge upon Terastallization. In SV, this occurs after an event with Terapagos.
+ #define B_FLAG_SLEEP_CLAUSE         0     // If this flag is set, sleep clause is enabled; if a Pokémon on the one side of the field is asleep, another one on that side cannot be put to sleep. AI requires AI_FLAG_CHECK_BAD_MOVE to understand.
+-#define B_FLAG_NO_WHITEOUT          0     // If this flag is set, the player can not white out against Trainers. Please note that the party is not healed automatically!
++#define B_FLAG_NO_WHITEOUT          FLAG_UNUSED_0x025     // If this flag is set, the player can not white out against Trainers. Please note that the party is not healed automatically!
+ 
+ // Var Settings
+ // To use the following features, change the 0 for a var present in include/constants/vars.h, preferably an unused one.
+diff --git a/include/constants/flags.h b/include/constants/flags.h
+index d7a023117..f79462e3e 100644
+--- a/include/constants/flags.h
++++ b/include/constants/flags.h
+@@ -2449,4 +2449,12 @@
+ #endif // TESTING
+ 
+ 
++
++// ---- Proyecto Sinnoh: historia (fase 1) ----
++#define FLAG_HIDE_TWINLEAF_BARRY          FLAG_UNUSED_0x020
++#define FLAG_HIDE_ROUTE201_BARRY          FLAG_UNUSED_0x021
++#define FLAG_HIDE_LAKE_VERITY_ROWAN       FLAG_UNUSED_0x022
++#define FLAG_HIDE_LAKEFRONT_BARRY         FLAG_UNUSED_0x023
++#define FLAG_HIDE_LAKEFRONT_BRIEFCASE     FLAG_UNUSED_0x024
++
+ #endif // GUARD_CONSTANTS_FLAGS_H
+diff --git a/include/constants/opponents.h b/include/constants/opponents.h
+index 0724da548..326d19043 100644
+--- a/include/constants/opponents.h
++++ b/include/constants/opponents.h
+@@ -864,6 +864,11 @@
+ //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
+ //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
+ 
++// Proyecto Sinnoh: combates contra Barry en el Lago Veraz
++#define TRAINER_BARRY_LAKE_TURTWIG   TRAINER_BRENDAN_ROUTE_103_TREECKO
++#define TRAINER_BARRY_LAKE_CHIMCHAR  TRAINER_BRENDAN_ROUTE_103_TORCHIC
++#define TRAINER_BARRY_LAKE_PIPLUP    TRAINER_BRENDAN_ROUTE_103_MUDKIP
++
+ #define TRAINERS_COUNT_EMERALD     855
+ #define MAX_TRAINERS_COUNT_EMERALD 864
+ 
+diff --git a/include/constants/vars.h b/include/constants/vars.h
+index 7992ae09a..78b358367 100644
+--- a/include/constants/vars.h
++++ b/include/constants/vars.h
+@@ -338,4 +338,10 @@
+ #define TESTING_VAR_UNUSED_7                (TESTING_VARS_START + 0x7)
+ #endif // TESTING
+ 
++
++// ---- Proyecto Sinnoh: progreso de la historia ----
++// 0 inicio, 1 mamá, 2 Barry en Hojaverde, 3 Ruta 201, 4 escena del lago,
++// 5 inicial y combate con Barry, 6 Pokédex del Prof. Rowan
++#define VAR_SINNOH_STORY                  VAR_UNUSED_0x404E
++
+ #endif // GUARD_CONSTANTS_VARS_H
+diff --git a/src/battle_controllers.c b/src/battle_controllers.c
+index 4c556ea9c..b07c72c54 100644
+--- a/src/battle_controllers.c
++++ b/src/battle_controllers.c
+@@ -152,7 +152,7 @@ void SetUpBattleVarsAndBirchZigzagoon(void)
+     BattleAI_SetupFlags();
+ 
+     if (!IS_FRLG && gBattleTypeFlags & BATTLE_TYPE_FIRST_BATTLE)
+-        CreateWildMon(SPECIES_ZIGZAGOON, 2);
++        CreateWildMon(SPECIES_STARLY, 2);
+ }
+ 
+ void InitBattleControllers(void)
+diff --git a/src/data/heal_locations.json b/src/data/heal_locations.json
+index ad1e5f1d2..0af088af9 100644
+--- a/src/data/heal_locations.json
++++ b/src/data/heal_locations.json
+@@ -349,6 +349,38 @@
+       "y": 12,
+       "respawn_map": "MAP_SIX_ISLAND_POKEMON_CENTER_1F",
+       "respawn_npc": "LOCALID_SIX_ISLAND_NURSE"
++    },
++    {
++      "id": "HEAL_LOCATION_SANDGEM_TOWN",
++      "map": "MAP_SANDGEM_TOWN",
++      "x": 17,
++      "y": 9,
++      "respawn_map": "MAP_SANDGEM_TOWN_POKEMON_CENTER_1F",
++      "respawn_npc": "LOCALID_SANDGEM_NURSE"
++    },
++    {
++      "id": "HEAL_LOCATION_JUBILIFE_CITY",
++      "map": "MAP_JUBILIFE_CITY",
++      "x": 55,
++      "y": 37,
++      "respawn_map": "MAP_JUBILIFE_CITY_POKEMON_CENTER_1F",
++      "respawn_npc": "LOCALID_JUBILIFE_NURSE"
++    },
++    {
++      "id": "HEAL_LOCATION_OREBURGH_CITY",
++      "map": "MAP_OREBURGH_CITY",
++      "x": 51,
++      "y": 23,
++      "respawn_map": "MAP_OREBURGH_CITY_POKEMON_CENTER_1F",
++      "respawn_npc": "LOCALID_OREBURGH_NURSE"
++    },
++    {
++      "id": "HEAL_LOCATION_FLOAROMA_TOWN",
++      "map": "MAP_FLOAROMA_TOWN",
++      "x": 18,
++      "y": 29,
++      "respawn_map": "MAP_FLOAROMA_TOWN_POKEMON_CENTER_1F",
++      "respawn_npc": "LOCALID_FLOAROMA_NURSE"
+     }
+   ]
+ }
+diff --git a/src/data/trainers.party b/src/data/trainers.party
+index fbe4a37f6..4da867858 100644
+--- a/src/data/trainers.party
++++ b/src/data/trainers.party
+@@ -9505,15 +9505,15 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+ - Future Sight
+ 
+ === TRAINER_BRENDAN_ROUTE_103_MUDKIP ===
+-Name: BRENDAN
++Name: BARRY
+ Class: Rival
+-Pic: Brendan
++Pic: Youngster
+ Gender: Male
+ Music: Male
+ Double Battle: No
+ AI: Basic Trainer
+ 
+-Treecko
++Piplup
+ Level: 5
+ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+ 
+@@ -9560,15 +9560,15 @@ Level: 31
+ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+ 
+ === TRAINER_BRENDAN_ROUTE_103_TREECKO ===
+-Name: BRENDAN
++Name: BARRY
+ Class: Rival
+-Pic: Brendan
++Pic: Youngster
+ Gender: Male
+ Music: Male
+ Double Battle: No
+-AI: Check Bad Move / Try To Faint / Force Setup First Turn
++AI: Basic Trainer
+ 
+-Torchic
++Turtwig
+ Level: 5
+ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+ 
+@@ -9615,15 +9615,15 @@ Level: 31
+ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+ 
+ === TRAINER_BRENDAN_ROUTE_103_TORCHIC ===
+-Name: BRENDAN
++Name: BARRY
+ Class: Rival
+-Pic: Brendan
++Pic: Youngster
+ Gender: Male
+ Music: Male
+ Double Battle: No
+ AI: Basic Trainer
+ 
+-Mudkip
++Chimchar
+ Level: 5
+ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+ 
+diff --git a/src/data/wild_encounters.json b/src/data/wild_encounters.json
+index ac4c8a1f5..98311b73b 100755
+--- a/src/data/wild_encounters.json
++++ b/src/data/wild_encounters.json
+@@ -36577,6 +36577,282 @@
+               }
+             ]
+           }
++        },
++        {
++          "map": "MAP_ROUTE201",
++          "base_label": "gRoute201",
++          "land_mons": {
++            "encounter_rate": 20,
++            "mons": [
++              {
++                "min_level": 2,
++                "max_level": 2,
++                "species": "SPECIES_STARLY"
++              },
++              {
++                "min_level": 2,
++                "max_level": 2,
++                "species": "SPECIES_BIDOOF"
++              },
++              {
++                "min_level": 3,
++                "max_level": 3,
++                "species": "SPECIES_STARLY"
++              },
++              {
++                "min_level": 3,
++                "max_level": 3,
++                "species": "SPECIES_BIDOOF"
++              },
++              {
++                "min_level": 2,
++                "max_level": 2,
++                "species": "SPECIES_KRICKETOT"
++              },
++              {
++                "min_level": 3,
++                "max_level": 3,
++                "species": "SPECIES_KRICKETOT"
++              },
++              {
++                "min_level": 2,
++                "max_level": 3,
++                "species": "SPECIES_STARLY"
++              },
++              {
++                "min_level": 2,
++                "max_level": 3,
++                "species": "SPECIES_BIDOOF"
++              },
++              {
++                "min_level": 3,
++                "max_level": 3,
++                "species": "SPECIES_STARLY"
++              },
++              {
++                "min_level": 3,
++                "max_level": 3,
++                "species": "SPECIES_BIDOOF"
++              },
++              {
++                "min_level": 4,
++                "max_level": 4,
++                "species": "SPECIES_STARLY"
++              },
++              {
++                "min_level": 4,
++                "max_level": 4,
++                "species": "SPECIES_BIDOOF"
++              }
++            ]
++          }
++        },
++        {
++          "map": "MAP_VERITY_LAKEFRONT",
++          "base_label": "gVerityLakefront",
++          "land_mons": {
++            "encounter_rate": 20,
++            "mons": [
++              {
++                "min_level": 2,
++                "max_level": 2,
++                "species": "SPECIES_STARLY"
++              },
++              {
++                "min_level": 2,
++                "max_level": 2,
++                "species": "SPECIES_BIDOOF"
++              },
++              {
++                "min_level": 3,
++                "max_level": 3,
++                "species": "SPECIES_STARLY"
++              },
++              {
++                "min_level": 3,
++                "max_level": 3,
++                "species": "SPECIES_BIDOOF"
++              },
++              {
++                "min_level": 2,
++                "max_level": 2,
++                "species": "SPECIES_KRICKETOT"
++              },
++              {
++                "min_level": 3,
++                "max_level": 3,
++                "species": "SPECIES_KRICKETOT"
++              },
++              {
++                "min_level": 2,
++                "max_level": 3,
++                "species": "SPECIES_STARLY"
++              },
++              {
++                "min_level": 2,
++                "max_level": 3,
++                "species": "SPECIES_BIDOOF"
++              },
++              {
++                "min_level": 3,
++                "max_level": 3,
++                "species": "SPECIES_STARLY"
++              },
++              {
++                "min_level": 3,
++                "max_level": 3,
++                "species": "SPECIES_BIDOOF"
++              },
++              {
++                "min_level": 4,
++                "max_level": 4,
++                "species": "SPECIES_STARLY"
++              },
++              {
++                "min_level": 4,
++                "max_level": 4,
++                "species": "SPECIES_BIDOOF"
++              }
++            ]
++          }
++        },
++        {
++          "map": "MAP_ROUTE202",
++          "base_label": "gRoute202",
++          "land_mons": {
++            "encounter_rate": 20,
++            "mons": [
++              {
++                "min_level": 3,
++                "max_level": 3,
++                "species": "SPECIES_STARLY"
++              },
++              {
++                "min_level": 3,
++                "max_level": 3,
++                "species": "SPECIES_BIDOOF"
++              },
++              {
++                "min_level": 3,
++                "max_level": 3,
++                "species": "SPECIES_SHINX"
++              },
++              {
++                "min_level": 4,
++                "max_level": 4,
++                "species": "SPECIES_SHINX"
++              },
++              {
++                "min_level": 4,
++                "max_level": 4,
++                "species": "SPECIES_STARLY"
++              },
++              {
++                "min_level": 4,
++                "max_level": 4,
++                "species": "SPECIES_BIDOOF"
++              },
++              {
++                "min_level": 3,
++                "max_level": 3,
++                "species": "SPECIES_KRICKETOT"
++              },
++              {
++                "min_level": 4,
++                "max_level": 4,
++                "species": "SPECIES_KRICKETOT"
++              },
++              {
++                "min_level": 5,
++                "max_level": 5,
++                "species": "SPECIES_SHINX"
++              },
++              {
++                "min_level": 5,
++                "max_level": 5,
++                "species": "SPECIES_STARLY"
++              },
++              {
++                "min_level": 5,
++                "max_level": 5,
++                "species": "SPECIES_BIDOOF"
++              },
++              {
++                "min_level": 5,
++                "max_level": 5,
++                "species": "SPECIES_SHINX"
++              }
++            ]
++          }
++        },
++        {
++          "map": "MAP_ROUTE203",
++          "base_label": "gRoute203",
++          "land_mons": {
++            "encounter_rate": 20,
++            "mons": [
++              {
++                "min_level": 4,
++                "max_level": 4,
++                "species": "SPECIES_STARLY"
++              },
++              {
++                "min_level": 4,
++                "max_level": 4,
++                "species": "SPECIES_BIDOOF"
++              },
++              {
++                "min_level": 4,
++                "max_level": 4,
++                "species": "SPECIES_SHINX"
++              },
++              {
++                "min_level": 4,
++                "max_level": 4,
++                "species": "SPECIES_ABRA"
++              },
++              {
++                "min_level": 5,
++                "max_level": 5,
++                "species": "SPECIES_ZUBAT"
++              },
++              {
++                "min_level": 5,
++                "max_level": 5,
++                "species": "SPECIES_KRICKETOT"
++              },
++              {
++                "min_level": 5,
++                "max_level": 5,
++                "species": "SPECIES_STARLY"
++              },
++              {
++                "min_level": 5,
++                "max_level": 5,
++                "species": "SPECIES_BIDOOF"
++              },
++              {
++                "min_level": 6,
++                "max_level": 6,
++                "species": "SPECIES_SHINX"
++              },
++              {
++                "min_level": 6,
++                "max_level": 6,
++                "species": "SPECIES_ABRA"
++              },
++              {
++                "min_level": 6,
++                "max_level": 6,
++                "species": "SPECIES_ZUBAT"
++              },
++              {
++                "min_level": 7,
++                "max_level": 7,
++                "species": "SPECIES_SHINX"
++              }
++            ]
++          }
+         }
+       ]
+     },
+diff --git a/src/starter_choose.c b/src/starter_choose.c
+index 78bafcedb..c5fbb9923 100644
+--- a/src/starter_choose.c
++++ b/src/starter_choose.c
+@@ -110,9 +110,9 @@ static const u8 sStarterLabelCoords[STARTER_MON_COUNT][2] =
+     {8, 4},
+ };
+ 
+-#define GRASS_STARTER (IS_FRLG ? SPECIES_BULBASAUR  : SPECIES_TREECKO)
+-#define FIRE_STARTER  (IS_FRLG ? SPECIES_CHARMANDER : SPECIES_TORCHIC)
+-#define WATER_STARTER (IS_FRLG ? SPECIES_SQUIRTLE   : SPECIES_MUDKIP )
++#define GRASS_STARTER (IS_FRLG ? SPECIES_BULBASAUR  : SPECIES_TURTWIG)
++#define FIRE_STARTER  (IS_FRLG ? SPECIES_CHARMANDER : SPECIES_CHIMCHAR)
++#define WATER_STARTER (IS_FRLG ? SPECIES_SQUIRTLE   : SPECIES_PIPLUP )
+ 
+ static const u16 sStarterMon[STARTER_MON_COUNT] =
+ {
+-- 
+2.43.0
+
