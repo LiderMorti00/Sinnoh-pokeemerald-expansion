@@ -864,6 +864,11 @@
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
+// Proyecto Sinnoh: combates contra Barry en el Lago Veraz
+#define TRAINER_BARRY_LAKE_TURTWIG   TRAINER_BRENDAN_ROUTE_103_TREECKO
+#define TRAINER_BARRY_LAKE_CHIMCHAR  TRAINER_BRENDAN_ROUTE_103_TORCHIC
+#define TRAINER_BARRY_LAKE_PIPLUP    TRAINER_BRENDAN_ROUTE_103_MUDKIP
+
 #define TRAINERS_COUNT_EMERALD     855
 #define MAX_TRAINERS_COUNT_EMERALD 864
 

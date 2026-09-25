@@ -349,6 +349,38 @@
       "y": 12,
       "respawn_map": "MAP_SIX_ISLAND_POKEMON_CENTER_1F",
       "respawn_npc": "LOCALID_SIX_ISLAND_NURSE"
+    },
+    {
+      "id": "HEAL_LOCATION_SANDGEM_TOWN",
+      "map": "MAP_SANDGEM_TOWN",
+      "x": 17,
+      "y": 9,
+      "respawn_map": "MAP_SANDGEM_TOWN_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_SANDGEM_NURSE"
+    },
+    {
+      "id": "HEAL_LOCATION_JUBILIFE_CITY",
+      "map": "MAP_JUBILIFE_CITY",
+      "x": 55,
+      "y": 37,
+      "respawn_map": "MAP_JUBILIFE_CITY_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_JUBILIFE_NURSE"
+    },
+    {
+      "id": "HEAL_LOCATION_OREBURGH_CITY",
+      "map": "MAP_OREBURGH_CITY",
+      "x": 51,
+      "y": 23,
+      "respawn_map": "MAP_OREBURGH_CITY_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_OREBURGH_NURSE"
+    },
+    {
+      "id": "HEAL_LOCATION_FLOAROMA_TOWN",
+      "map": "MAP_FLOAROMA_TOWN",
+      "x": 18,
+      "y": 29,
+      "respawn_map": "MAP_FLOAROMA_TOWN_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_FLOAROMA_NURSE"
     }
   ]
 }

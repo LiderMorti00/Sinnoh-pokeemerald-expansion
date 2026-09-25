@@ -1,4 +1,144 @@
 LittlerootTown_ProfessorBirchsLab_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, SandgemLab_OnTransition
+	.byte 0
+
+SandgemLab_OnTransition:
+	checkplayergender
+	goto_if_eq VAR_RESULT, MALE, SandgemLab_EventScript_SetDawn
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL
+	end
+
+SandgemLab_EventScript_SetDawn::
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RIVAL_MAY_NORMAL
+	end
+
+SandgemLab_EventScript_SceneLeft::
+	lockall
+	applymovement LOCALID_PLAYER, SandgemLab_Movement_WalkToRowanLeft
+	waitmovement 0
+	goto SandgemLab_EventScript_Scene
+
+SandgemLab_EventScript_SceneRight::
+	lockall
+	applymovement LOCALID_PLAYER, SandgemLab_Movement_WalkToRowanRight
+	waitmovement 0
+	goto SandgemLab_EventScript_Scene
+
+SandgemLab_EventScript_Scene::
+	msgbox SandgemLab_Text_RowanWelcome, MSGBOX_DEFAULT
+	playfanfare MUS_OBTAIN_ITEM
+	message SandgemLab_Text_ReceivedPokedex
+	waitfanfare
+	waitmessage
+	setflag FLAG_SYS_POKEDEX_GET
+	special SetUnlockedPokedexFlags
+	setflag FLAG_RECEIVED_POKEDEX_FROM_BIRCH
+	msgbox SandgemLab_Text_RowanPokedex, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_SANDGEM_LAB_ASSISTANT, Common_Movement_FacePlayer
+	waitmovement 0
+	msgbox SandgemLab_Text_AssistantBalls, MSGBOX_DEFAULT
+	giveitem ITEM_POKE_BALL, 5
+	msgbox SandgemLab_Text_AssistantGoHome, MSGBOX_DEFAULT
+	closemessage
+	setvar VAR_SINNOH_STORY, 6
+	releaseall
+	end
+
+SandgemLab_EventScript_Rowan::
+	lock
+	faceplayer
+	msgbox SandgemLab_Text_RowanAdvice, MSGBOX_DEFAULT
+	release
+	end
+
+SandgemLab_EventScript_Assistant::
+	lock
+	faceplayer
+	msgbox SandgemLab_Text_AssistantAdvice, MSGBOX_DEFAULT
+	release
+	end
+
+SandgemLab_EventScript_Aide::
+	msgbox SandgemLab_Text_Aide, MSGBOX_NPC
+	end
+
+SandgemLab_Movement_WalkToRowanLeft:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+SandgemLab_Movement_WalkToRowanRight:
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+SandgemLab_Text_RowanWelcome:
+	.string "ROWAN: So. You are the one who\n"
+	.string "opened my briefcase at the lake.\p"
+	.string "...And yet that POKéMON already\n"
+	.string "trusts you. I can see it in its eyes.\p"
+	.string "Very well. Keep it. In return, I\n"
+	.string "ask you to help me with my research.\p"
+	.string "Take this. It will record every\n"
+	.string "POKéMON you meet on your journey.$"
+
+SandgemLab_Text_ReceivedPokedex:
+	.string "{PLAYER} received the POKéDEX\n"
+	.string "from PROFESSOR ROWAN!$"
+
+SandgemLab_Text_RowanPokedex:
+	.string "ROWAN: I want to know every POKéMON\n"
+	.string "that lives in Sinnoh.\p"
+	.string "Go out and see this region with your\n"
+	.string "own eyes. That is my request.$"
+
+SandgemLab_Text_AssistantBalls:
+	.string "ASSISTANT: Hi! I'm helping the\n"
+	.string "Professor fill his POKéDEX too.\p"
+	.string "You'll need these to catch\n"
+	.string "POKéMON. Here, take them!$"
+
+SandgemLab_Text_AssistantGoHome:
+	.string "ASSISTANT: You should tell your mom\n"
+	.string "about your journey before you leave!\p"
+	.string "When you're ready, head north to\n"
+	.string "ROUTE 202. JUBILIFE CITY is\l"
+	.string "just beyond it.$"
+
+SandgemLab_Text_RowanAdvice:
+	.string "ROWAN: A POKéMON grows when it is\n"
+	.string "trusted. Remember that.$"
+
+SandgemLab_Text_AssistantAdvice:
+	.string "ASSISTANT: Weaken a wild POKéMON\n"
+	.string "before you throw a POKé BALL.\l"
+	.string "It works much better that way!$"
+
+SandgemLab_Text_Aide:
+	.string "The Professor spent years studying\n"
+	.string "evolution. He's very strict, but\l"
+	.string "he truly cares about POKéMON.$"
+
+@ Scripts antiguos del laboratorio de Hoenn (sin uso en Sinnoh). Se mantienen
+@ porque otras partes del juego base los referencian.
+	.set LOCALID_BIRCHS_LAB_AIDE, 10
+	.set LOCALID_BIRCHS_LAB_BIRCH, 11
+	.set LOCALID_BIRCHS_LAB_RIVAL, 12
+	.set LOCALID_BIRCHS_LAB_CYNDAQUIL_BALL, 13
+	.set LOCALID_BIRCHS_LAB_TOTODILE_BALL, 14
+	.set LOCALID_BIRCHS_LAB_CHIKORITA_BALL, 15
+
+LittlerootTown_ProfessorBirchsLab_OldHoenn_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, LittlerootTown_ProfessorBirchsLab_OnTransition
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, LittlerootTown_ProfessorBirchsLab_OnWarp
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, LittlerootTown_ProfessorBirchsLab_OnFrame
