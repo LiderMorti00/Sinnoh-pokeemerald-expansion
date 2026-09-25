@@ -1,6 +1,3 @@
-.set LOCALID_WOMAN_1, 19
-.set LOCALID_MAN_1, 20
-
 LilycoveCity_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, LilycoveCity_OnTransition
 	map_script MAP_SCRIPT_ON_LOAD, LilycoveCity_OnLoad
@@ -39,9 +36,7 @@ LilycoveCity_EventScript_BerryGentleman::
 	dotimebasedevents
 	goto_if_set FLAG_DAILY_LILYCOVE_RECEIVED_BERRY, LilycoveCity_EventScript_ReceivedBerry
 	msgbox LilycoveCity_Text_BerrySuitsYou, MSGBOX_DEFAULT
-	random 10
-	addvar VAR_RESULT, FIRST_BERRY_INDEX
-	giveitem VAR_RESULT
+	giverandomberry BERRY_ID_CHERI, BERRY_ID_SITRUS
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_DAILY_LILYCOVE_RECEIVED_BERRY
 	msgbox LilycoveCity_Text_BecauseYoureTrainer, MSGBOX_DEFAULT
@@ -136,13 +131,13 @@ LilycoveCity_EventScript_FatMan::
 LilycoveCity_EventScript_Man1::
 	lockall
 	msgbox LilycoveCity_Text_JustArrivedAndSawRarePokemon, MSGBOX_NPC
-	applymovement LOCALID_MAN_1, Common_Movement_FaceOriginalDirection
+	applymovement LOCALID_LILYCOVE_MAN_1, Common_Movement_FaceOriginalDirection
 	end
 
 LilycoveCity_EventScript_Woman1::
 	lockall
 	msgbox LilycoveCity_Text_HoneymoonVowToSeeRarePokemon, MSGBOX_NPC
-	applymovement LOCALID_WOMAN_1, Common_Movement_FaceOriginalDirection
+	applymovement LOCALID_LILYCOVE_WOMAN_1, Common_Movement_FaceOriginalDirection
 	end
 
 LilycoveCity_EventScript_CitySign::

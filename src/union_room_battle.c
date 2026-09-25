@@ -26,7 +26,7 @@ struct UnionRoomBattle
     s16 textState;
 };
 
-static EWRAM_DATA struct UnionRoomBattle * sBattle = NULL;
+static EWRAM_DATA struct UnionRoomBattle *sBattle = NULL;
 
 static const struct BgTemplate sBgTemplates[] = {
     {
@@ -57,15 +57,15 @@ static void CB2_SetUpPartiesAndStartBattle(void)
     StartUnionRoomBattle(BATTLE_TYPE_LINK | BATTLE_TYPE_TRAINER);
     for (i = 0; i < UNION_ROOM_PARTY_SIZE; i++)
     {
-        gEnemyParty[i] = gPlayerParty[gSelectedOrderFromParty[i] - 1];
+        gParties[B_TRAINER_OPPONENT_A][i] = gParties[B_TRAINER_PLAYER][gSelectedOrderFromParty[i] - 1];
     }
     for (i = 0; i < PARTY_SIZE; i++)
     {
-        ZeroMonData(&gPlayerParty[i]);
+        ZeroMonData(&gParties[B_TRAINER_PLAYER][i]);
     }
     for (i = 0; i < UNION_ROOM_PARTY_SIZE; i++)
     {
-        gPlayerParty[i] = gEnemyParty[i];
+        gParties[B_TRAINER_PLAYER][i] = gParties[B_TRAINER_OPPONENT_A][i];
     }
     IncrementGameStat(GAME_STAT_NUM_UNION_ROOM_BATTLES);
     CalculatePlayerPartyCount();
@@ -81,7 +81,7 @@ static void AddTextPrinterForUnionRoomBattle(u8 windowId, const u8 *str, u8 x, u
     AddTextPrinterParameterized4(windowId, FONT_NORMAL, x, y, letterSpacing, lineSpacing, sTextColors, speed, str);
 }
 
-static bool32 PrintUnionRoomBattleMessage(s16 * state, const u8 *str, s32 speed)
+static bool32 PrintUnionRoomBattleMessage(s16 *state, const u8 *str, s32 speed)
 {
     switch (*state)
     {
@@ -93,7 +93,7 @@ static bool32 PrintUnionRoomBattleMessage(s16 * state, const u8 *str, s32 speed)
         (*state)++;
         break;
     case 1:
-        if (!IsTextPrinterActive(0))
+        if (!IsTextPrinterActiveOnWindow(0))
         {
             *state = 0;
             return TRUE;

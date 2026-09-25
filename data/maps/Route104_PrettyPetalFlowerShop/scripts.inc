@@ -1,5 +1,3 @@
-.set LOCALID_OWNER, 1
-
 Route104_PrettyPetalFlowerShop_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, Route104_PrettyPetalFlowerShop_OnTransition
 	.byte 0
@@ -12,7 +10,7 @@ Route104_PrettyPetalFlowerShop_OnTransition:
 	end
 
 Route104_PrettyPetalFlowerShop_EventScript_MoveShopOwner::
-	setobjectxyperm LOCALID_OWNER, 4, 6
+	setobjectxyperm LOCALID_FLOWER_SHOP_OWNER, 4, 6
 	end
 
 Route104_PrettyPetalFlowerShop_EventScript_ShopOwner::
@@ -84,9 +82,7 @@ Route104_PrettyPetalFlowerShop_EventScript_RandomBerryGirl::
 	dotimebasedevents
 	goto_if_set FLAG_DAILY_FLOWER_SHOP_RECEIVED_BERRY, Route104_PrettyPetalFlowerShop_EventScript_AlreadyReceivedBerry
 	msgbox Route104_PrettyPetalFlowerShop_Text_ImGrowingFlowers, MSGBOX_DEFAULT
-	random 8
-	addvar VAR_RESULT, FIRST_BERRY_INDEX
-	giveitem VAR_RESULT
+	giverandomberry BERRY_ID_CHERI, BERRY_ID_PERSIM
 	goto_if_eq VAR_RESULT, 0, Common_EventScript_ShowBagIsFull
 	setflag FLAG_DAILY_FLOWER_SHOP_RECEIVED_BERRY
 	msgbox Route104_PrettyPetalFlowerShop_Text_MachineMixesBerries, MSGBOX_DEFAULT

@@ -1,11 +1,13 @@
 #include "global.h"
 #include "braille_puzzles.h"
+#include "decompress.h"
 #include "event_data.h"
 #include "event_scripts.h"
 #include "field_effect.h"
 #include "fldeff.h"
 #include "gpu_regs.h"
 #include "main.h"
+#include "map_preview_screen.h"
 #include "overworld.h"
 #include "palette.h"
 #include "party_menu.h"
@@ -14,7 +16,6 @@
 #include "sprite.h"
 #include "task.h"
 #include "constants/songs.h"
-#include "constants/map_types.h"
 
 struct FlashStruct
 {
@@ -36,7 +37,6 @@ static void Task_ExitCaveTransition4(u8 taskId);
 static void Task_ExitCaveTransition5(u8 taskId);
 static void DoEnterCaveTransition(void);
 static void Task_EnterCaveTransition1(u8 taskId);
-static void Task_EnterCaveTransition2(u8 taskId);
 static void Task_EnterCaveTransition3(u8 taskId);
 static void Task_EnterCaveTransition4(u8 taskId);
 
@@ -61,15 +61,15 @@ static const struct FlashStruct sTransitionTypes[] =
     {},
 };
 
-static const u16 sCaveTransitionPalette_White[] = INCBIN_U16("graphics/cave_transition/white.gbapal");
-static const u16 sCaveTransitionPalette_Black[] = INCBIN_U16("graphics/cave_transition/black.gbapal");
+static const u16 sCaveTransitionPalette_White[] = INCGFX_U16("graphics/cave_transition/white.pal", ".gbapal");
+static const u16 sCaveTransitionPalette_Black[] = INCGFX_U16("graphics/cave_transition/black.pal", ".gbapal");
 
-static const u16 sCaveTransitionPalette_Enter[] = INCBIN_U16("graphics/cave_transition/enter.gbapal");
+static const u16 sCaveTransitionPalette_Enter[] = INCGFX_U16("graphics/cave_transition/enter.pal", ".gbapal");
 
-static const u32 sCaveTransitionTilemap[] = INCBIN_U32("graphics/cave_transition/tilemap.bin.lz");
-static const u32 sCaveTransitionTiles[] = INCBIN_U32("graphics/cave_transition/tiles.4bpp.lz");
+static const u32 sCaveTransitionTilemap[] = INCGFX_U32("graphics/cave_transition/tilemap.bin", ".smolTM");
+static const u32 sCaveTransitionTiles[] = INCGFX_U32("graphics/cave_transition/tiles.png", ".4bpp.smol");
 
-bool8 SetUpFieldMove_Flash(void)
+bool32 SetUpFieldMove_Flash(void)
 {
     // In Ruby and Sapphire, Registeel's tomb is opened by using Fly. In Emerald,
     // Flash is used instead.
@@ -122,8 +122,6 @@ static void VBC_ChangeMapVBlank(void)
 
 void CB2_DoChangeMap(void)
 {
-    u16 ime;
-
     SetVBlankCallback(NULL);
     SetGpuReg(REG_OFFSET_DISPCNT, 0);
     SetGpuReg(REG_OFFSET_BG2CNT, 0);
@@ -141,10 +139,7 @@ void CB2_DoChangeMap(void)
     ResetPaletteFade();
     ResetTasks();
     ResetSpriteData();
-    ime = REG_IME;
-    REG_IME = 0;
-    REG_IE |= INTR_FLAG_VBLANK;
-    REG_IME = ime;
+    IntrEnable(INTR_FLAG_VBLANK);
     SetVBlankCallback(VBC_ChangeMapVBlank);
     SetMainCallback2(CB2_ChangeMapMain);
     if (!TryDoMapTransition())
@@ -154,8 +149,14 @@ void CB2_DoChangeMap(void)
 static bool8 TryDoMapTransition(void)
 {
     u8 i;
-    u8 fromType = GetLastUsedWarpMapType();
-    u8 toType = GetCurrentMapType();
+    enum MapType fromType = GetLastUsedWarpMapType();
+    enum MapType toType = GetCurrentMapType();
+
+    if (ShouldRunMapPreview() && (CurrentMapHasPreviewScreen(MPS_TYPE_CAVE) == TRUE || CurrentMapHasPreviewScreen(MPS_TYPE_BASIC) == TRUE))
+    {
+        RunMapPreviewScreenNonFade(gMapHeader.regionMapSectionId);
+        return TRUE;
+    }
 
     for (i = 0; sTransitionTypes[i].fromType; i++)
     {
@@ -216,8 +217,8 @@ static void Task_ExitCaveTransition1(u8 taskId)
 static void Task_ExitCaveTransition2(u8 taskId)
 {
     SetGpuReg(REG_OFFSET_DISPCNT, 0);
-    LZ77UnCompVram(sCaveTransitionTiles, (void *)(VRAM + 0xC000));
-    LZ77UnCompVram(sCaveTransitionTilemap, (void *)(VRAM + 0xF800));
+    DecompressDataWithHeaderVram(sCaveTransitionTiles, (void *)(VRAM + 0xC000));
+    DecompressDataWithHeaderVram(sCaveTransitionTilemap, (void *)(VRAM + 0xF800));
     LoadPalette(sCaveTransitionPalette_White, BG_PLTT_ID(14), PLTT_SIZE_4BPP);
     LoadPalette(&sCaveTransitionPalette_Enter[8], BG_PLTT_ID(14), PLTT_SIZEOF(8));
     SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_BG0
@@ -298,11 +299,11 @@ static void Task_EnterCaveTransition1(u8 taskId)
     gTasks[taskId].func = Task_EnterCaveTransition2;
 }
 
-static void Task_EnterCaveTransition2(u8 taskId)
+void Task_EnterCaveTransition2(u8 taskId)
 {
     SetGpuReg(REG_OFFSET_DISPCNT, 0);
-    LZ77UnCompVram(sCaveTransitionTiles, (void *)(VRAM + 0xC000));
-    LZ77UnCompVram(sCaveTransitionTilemap, (void *)(VRAM + 0xF800));
+    DecompressDataWithHeaderVram(sCaveTransitionTiles, (void *)(VRAM + 0xC000));
+    DecompressDataWithHeaderVram(sCaveTransitionTilemap, (void *)(VRAM + 0xF800));
     SetGpuReg(REG_OFFSET_BLDCNT, 0);
     SetGpuReg(REG_OFFSET_BLDALPHA, 0);
     SetGpuReg(REG_OFFSET_BLDY, 0);

@@ -3,6 +3,7 @@
   "name": "VerdanturfTown_BattleTentBattleRoom",
   "layout": "LAYOUT_VERDANTURF_TOWN_BATTLE_TENT_BATTLE_ROOM",
   "music": "MUS_B_TOWER_RS",
+  "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_VERDANTURF_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -15,6 +16,7 @@
   "connections": null,
   "object_events": [
     {
+      "local_id": "LOCALID_VERDANTURF_TENT_BATTLE_PLAYER",
       "graphics_id": "OBJ_EVENT_GFX_VAR_1",
       "x": 2,
       "y": 8,
@@ -28,6 +30,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_VERDANTURF_TENT_BATTLE_OPPONENT",
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
       "x": 11,
       "y": 1,
@@ -41,6 +44,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_VERDANTURF_TENT_BATTLE_ATTENDANT",
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
       "x": 2,
       "y": 4,

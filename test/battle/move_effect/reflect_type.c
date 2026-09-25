@@ -4,7 +4,7 @@
 SINGLE_BATTLE_TEST("Reflect Type does not affect any of Arceus' forms")
 {
     u32 j;
-    static const u16 sArceusFormSpeciesIdTable[] = {
+    static const enum Species sArceusFormSpeciesIdTable[] = {
         SPECIES_ARCEUS,
         SPECIES_ARCEUS_FIGHTING,
         SPECIES_ARCEUS_FLYING,
@@ -24,7 +24,7 @@ SINGLE_BATTLE_TEST("Reflect Type does not affect any of Arceus' forms")
         SPECIES_ARCEUS_DARK,
         SPECIES_ARCEUS_FAIRY,
     };
-    u16 species = SPECIES_NONE;
+    enum Species species = SPECIES_NONE;
 
     for (j = 0; j < ARRAY_COUNT(sArceusFormSpeciesIdTable); j++)
     {
@@ -45,7 +45,7 @@ SINGLE_BATTLE_TEST("Reflect Type does not affect any of Arceus' forms")
 SINGLE_BATTLE_TEST("Reflect Type does not affect any of Silvally's forms")
 {
     u32 j;
-    static const u16 sSilvallyFormSpeciesIdTable[] = {
+    static const enum Species sSilvallyFormSpeciesIdTable[] = {
         SPECIES_SILVALLY,
         SPECIES_SILVALLY_FIGHTING,
         SPECIES_SILVALLY_FLYING,
@@ -65,7 +65,7 @@ SINGLE_BATTLE_TEST("Reflect Type does not affect any of Silvally's forms")
         SPECIES_SILVALLY_DARK,
         SPECIES_SILVALLY_FAIRY,
     };
-    u16 species = SPECIES_NONE;
+    enum Species species = SPECIES_NONE;
 
     for (j = 0; j < ARRAY_COUNT(sSilvallyFormSpeciesIdTable); j++)
     {
@@ -86,10 +86,10 @@ SINGLE_BATTLE_TEST("Reflect Type does not affect any of Silvally's forms")
 SINGLE_BATTLE_TEST("Reflect Type fails if the target has no types")
 {
     GIVEN {
-        ASSUME(gSpeciesInfo[SPECIES_ARCANINE].types[0] == TYPE_FIRE);
-        ASSUME(gSpeciesInfo[SPECIES_ARCANINE].types[1] == TYPE_FIRE);
-        ASSUME(gSpeciesInfo[SPECIES_POLIWRATH].types[0] == TYPE_WATER);
-        ASSUME(gSpeciesInfo[SPECIES_POLIWRATH].types[1] == TYPE_FIGHTING);
+        ASSUME(GetSpeciesType(SPECIES_ARCANINE, 0) == TYPE_FIRE);
+        ASSUME(GetSpeciesType(SPECIES_ARCANINE, 1) == TYPE_FIRE);
+        ASSUME(GetSpeciesType(SPECIES_POLIWRATH, 0) == TYPE_WATER);
+        ASSUME(GetSpeciesType(SPECIES_POLIWRATH, 1) == TYPE_FIGHTING);
         PLAYER(SPECIES_ARCANINE);
         OPPONENT(SPECIES_POLIWRATH);
     } WHEN {
@@ -107,10 +107,10 @@ SINGLE_BATTLE_TEST("Reflect Type fails if the target has no types")
 SINGLE_BATTLE_TEST("Reflect Type copies a target's dual types")
 {
     GIVEN {
-        ASSUME(gSpeciesInfo[SPECIES_ARCANINE].types[0] == TYPE_FIRE);
-        ASSUME(gSpeciesInfo[SPECIES_ARCANINE].types[1] == TYPE_FIRE);
-        ASSUME(gSpeciesInfo[SPECIES_POLIWRATH].types[0] == TYPE_WATER);
-        ASSUME(gSpeciesInfo[SPECIES_POLIWRATH].types[1] == TYPE_FIGHTING);
+        ASSUME(GetSpeciesType(SPECIES_ARCANINE, 0) == TYPE_FIRE);
+        ASSUME(GetSpeciesType(SPECIES_ARCANINE, 1) == TYPE_FIRE);
+        ASSUME(GetSpeciesType(SPECIES_POLIWRATH, 0) == TYPE_WATER);
+        ASSUME(GetSpeciesType(SPECIES_POLIWRATH, 1) == TYPE_FIGHTING);
         PLAYER(SPECIES_ARCANINE);
         OPPONENT(SPECIES_POLIWRATH);
     } WHEN {
@@ -129,10 +129,10 @@ SINGLE_BATTLE_TEST("Reflect Type copies a target's dual types")
 SINGLE_BATTLE_TEST("Reflect Type copies a target's pure type")
 {
     GIVEN {
-        ASSUME(gSpeciesInfo[SPECIES_ARCANINE].types[0] == TYPE_FIRE);
-        ASSUME(gSpeciesInfo[SPECIES_ARCANINE].types[1] == TYPE_FIRE);
-        ASSUME(gSpeciesInfo[SPECIES_SUDOWOODO].types[0] == TYPE_ROCK);
-        ASSUME(gSpeciesInfo[SPECIES_SUDOWOODO].types[1] == TYPE_ROCK);
+        ASSUME(GetSpeciesType(SPECIES_ARCANINE, 0) == TYPE_FIRE);
+        ASSUME(GetSpeciesType(SPECIES_ARCANINE, 1) == TYPE_FIRE);
+        ASSUME(GetSpeciesType(SPECIES_SUDOWOODO, 0) == TYPE_ROCK);
+        ASSUME(GetSpeciesType(SPECIES_SUDOWOODO, 1) == TYPE_ROCK);
         PLAYER(SPECIES_ARCANINE);
         OPPONENT(SPECIES_SUDOWOODO);
     } WHEN {
@@ -151,10 +151,10 @@ SINGLE_BATTLE_TEST("Reflect Type copies a target's pure type")
 SINGLE_BATTLE_TEST("Reflect Type defaults to Normal type for the user's 1st and 2nd types if the target only has a 3rd type")
 {
     GIVEN {
-        ASSUME(gSpeciesInfo[SPECIES_WOBBUFFET].types[0] == TYPE_PSYCHIC);
-        ASSUME(gSpeciesInfo[SPECIES_WOBBUFFET].types[1] == TYPE_PSYCHIC);
-        ASSUME(gSpeciesInfo[SPECIES_ARCANINE].types[0] == TYPE_FIRE);
-        ASSUME(gSpeciesInfo[SPECIES_ARCANINE].types[1] == TYPE_FIRE);
+        ASSUME(GetSpeciesType(SPECIES_WOBBUFFET, 0) == TYPE_PSYCHIC);
+        ASSUME(GetSpeciesType(SPECIES_WOBBUFFET, 1) == TYPE_PSYCHIC);
+        ASSUME(GetSpeciesType(SPECIES_ARCANINE, 0) == TYPE_FIRE);
+        ASSUME(GetSpeciesType(SPECIES_ARCANINE, 1) == TYPE_FIRE);
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_ARCANINE);
     } WHEN {
@@ -202,12 +202,12 @@ SINGLE_BATTLE_TEST("Reflect Type fails if the user is Terastallized")
 SINGLE_BATTLE_TEST("Reflect Type succeeds against a Terastallized target and copies its Tera type")
 {
     GIVEN {
-        ASSUME(gSpeciesInfo[SPECIES_POLIWRATH].types[0] != TYPE_NORMAL);
-        ASSUME(gSpeciesInfo[SPECIES_POLIWRATH].types[1] != TYPE_NORMAL);
+        ASSUME(GetSpeciesType(SPECIES_POLIWRATH, 0) != TYPE_NORMAL);
+        ASSUME(GetSpeciesType(SPECIES_POLIWRATH, 1) != TYPE_NORMAL);
         PLAYER(SPECIES_ARCANINE) { TeraType(TYPE_NORMAL); }
         OPPONENT(SPECIES_POLIWRATH);
     } WHEN {
-        TURN { MOVE(player, MOVE_TACKLE, gimmick: GIMMICK_TERA); MOVE(opponent, MOVE_REFLECT_TYPE); }
+        TURN { MOVE(player, MOVE_SCRATCH, gimmick: GIMMICK_TERA); MOVE(opponent, MOVE_REFLECT_TYPE); }
     } SCENE {
         MESSAGE("The opposing Poliwrath used Reflect Type!");
     } THEN {

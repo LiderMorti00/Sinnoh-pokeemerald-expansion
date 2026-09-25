@@ -3,40 +3,21 @@
 
 ASSUMPTIONS
 {
-    ASSUME(!IsBattleMoveStatus(MOVE_WATER_GUN));
+    ASSUME(GetMoveCategory(MOVE_WATER_GUN) != DAMAGE_CATEGORY_STATUS);
 }
 
-SINGLE_BATTLE_TEST("Battle Bond does not transform species other than Greninja")
-{
-    GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Ability(ABILITY_BATTLE_BOND); }
-        OPPONENT(SPECIES_WOBBUFFET) { HP(1); }
-        OPPONENT(SPECIES_WOBBUFFET);
-    } WHEN {
-        TURN { MOVE(player, MOVE_WATER_GUN); SEND_OUT(opponent, 1); }
-    } SCENE {
-        HP_BAR(opponent);
-        MESSAGE("The opposing Wobbuffet fainted!");
-        NONE_OF {
-            ABILITY_POPUP(player, ABILITY_BATTLE_BOND);
-            MESSAGE("Wobbuffet became fully charged due to its bond with its trainer!");
-        }
-    } THEN {
-        EXPECT(player->species == SPECIES_WOBBUFFET);
-    }
-}
-
-// Battle Bond transforms the pokemon when fainting any battler(opposing or partner), unless it's the last pokemon and the battle ends.
+// Battle Bond transforms the Pokémon when fainting any battler(opposing or partner), unless it's the last Pokémon and the battle ends.
 SINGLE_BATTLE_TEST("Battle Bond transforms player's Greninja - Singles")
 {
     u32 monsCountPlayer, monsCountOpponent;
 
-    PARAMETRIZE {monsCountPlayer = 1; monsCountOpponent = 1; }
-    PARAMETRIZE {monsCountPlayer = 1; monsCountOpponent = 2; }
-    PARAMETRIZE {monsCountPlayer = 2; monsCountOpponent = 1; }
-    PARAMETRIZE {monsCountPlayer = 2; monsCountOpponent = 2; }
+    PARAMETRIZE { monsCountPlayer = 1; monsCountOpponent = 1; }
+    PARAMETRIZE { monsCountPlayer = 1; monsCountOpponent = 2; }
+    PARAMETRIZE { monsCountPlayer = 2; monsCountOpponent = 1; }
+    PARAMETRIZE { monsCountPlayer = 2; monsCountOpponent = 2; }
 
     GIVEN {
+        WITH_CONFIG(B_BATTLE_BOND, GEN_8);
         PLAYER(SPECIES_GRENINJA_BATTLE_BOND);
         if (monsCountPlayer == 2) {
             PLAYER(SPECIES_WOBBUFFET);
@@ -68,6 +49,9 @@ SINGLE_BATTLE_TEST("Battle Bond transforms player's Greninja - Singles")
     } FINALLY {
         if (monsCountOpponent != 1) {
             EXPECT(player->species == SPECIES_GRENINJA_ASH);
+            EXPECT_EQ(player->attack, 295);
+            EXPECT_EQ(player->spAttack, 311);
+            EXPECT_EQ(player->speed, 269);
         } else {
             EXPECT(player->species == SPECIES_GRENINJA_BATTLE_BOND);
         }
@@ -78,17 +62,18 @@ SINGLE_BATTLE_TEST("Battle Bond transforms opponent's Greninja - Singles")
 {
     u32 monsCountPlayer, monsCountOpponent;
 
-    PARAMETRIZE {monsCountPlayer = 1; monsCountOpponent = 1; }
-    PARAMETRIZE {monsCountPlayer = 1; monsCountOpponent = 2; }
-    PARAMETRIZE {monsCountPlayer = 2; monsCountOpponent = 1; }
-    PARAMETRIZE {monsCountPlayer = 2; monsCountOpponent = 2; }
+    PARAMETRIZE { monsCountPlayer = 1; monsCountOpponent = 1; }
+    PARAMETRIZE { monsCountPlayer = 1; monsCountOpponent = 2; }
+    PARAMETRIZE { monsCountPlayer = 2; monsCountOpponent = 1; }
+    PARAMETRIZE { monsCountPlayer = 2; monsCountOpponent = 2; }
 
     GIVEN {
+        WITH_CONFIG(B_BATTLE_BOND, GEN_8);
         OPPONENT(SPECIES_GRENINJA_BATTLE_BOND);
         if (monsCountOpponent == 2) {
             OPPONENT(SPECIES_WOBBUFFET);
         }
-        PLAYER(SPECIES_WOBBUFFET) {HP(1); }
+        PLAYER(SPECIES_WOBBUFFET) { HP(1); }
         if (monsCountPlayer == 2) {
             PLAYER(SPECIES_WOBBUFFET);
         }
@@ -125,12 +110,13 @@ DOUBLE_BATTLE_TEST("Battle Bond transforms player's Greninja when fainting its A
 {
     u32 monsCountPlayer, monsCountOpponent;
 
-    PARAMETRIZE {monsCountPlayer = 2; monsCountOpponent = 2; }
-    PARAMETRIZE {monsCountPlayer = 2; monsCountOpponent = 3; }
-    PARAMETRIZE {monsCountPlayer = 3; monsCountOpponent = 2; }
-    PARAMETRIZE {monsCountPlayer = 3; monsCountOpponent = 3; }
+    PARAMETRIZE { monsCountPlayer = 2; monsCountOpponent = 2; }
+    PARAMETRIZE { monsCountPlayer = 2; monsCountOpponent = 3; }
+    PARAMETRIZE { monsCountPlayer = 3; monsCountOpponent = 2; }
+    PARAMETRIZE { monsCountPlayer = 3; monsCountOpponent = 3; }
 
     GIVEN {
+        WITH_CONFIG(B_BATTLE_BOND, GEN_8);
         PLAYER(SPECIES_GRENINJA_BATTLE_BOND);
         PLAYER(SPECIES_WOBBUFFET) { HP(1); }
         if (monsCountPlayer == 3) {
@@ -156,5 +142,53 @@ DOUBLE_BATTLE_TEST("Battle Bond transforms player's Greninja when fainting its A
         MESSAGE("Greninja became Ash-Greninja!");
     } FINALLY {
         EXPECT(playerLeft->species == SPECIES_GRENINJA_ASH);
+    }
+}
+
+SINGLE_BATTLE_TEST("Battle Bond increases Atk, SpAtk and Speed by 1 stage (Gen9+)")
+{
+    GIVEN {
+        WITH_CONFIG(B_BATTLE_BOND, GEN_9);
+        PLAYER(SPECIES_GRENINJA_BATTLE_BOND) { Ability(ABILITY_BATTLE_BOND); }
+        OPPONENT(SPECIES_WOBBUFFET) { HP(1); }
+        OPPONENT(SPECIES_WOBBUFFET);
+    } WHEN {
+        TURN { MOVE(player, MOVE_WATER_GUN); SEND_OUT(opponent, 1); }
+    } SCENE {
+        HP_BAR(opponent);
+        MESSAGE("The opposing Wobbuffet fainted!");
+        ABILITY_POPUP(player, ABILITY_BATTLE_BOND);
+    } THEN {
+        EXPECT(player->species != SPECIES_GRENINJA_ASH);
+        EXPECT_EQ(player->statStages[STAT_ATK], DEFAULT_STAT_STAGE + 1);
+        EXPECT_EQ(player->statStages[STAT_SPATK], DEFAULT_STAT_STAGE + 1);
+        EXPECT_EQ(player->statStages[STAT_SPEED], DEFAULT_STAT_STAGE + 1);
+    }
+}
+
+SINGLE_BATTLE_TEST("Battle Bond increases a Stat even if only one can be increased (Gen9+)")
+{
+    GIVEN {
+        WITH_CONFIG(B_BATTLE_BOND, GEN_9);
+        PLAYER(SPECIES_GRENINJA_BATTLE_BOND) { Ability(ABILITY_BATTLE_BOND); }
+        OPPONENT(SPECIES_WOBBUFFET) { HP(1); }
+        OPPONENT(SPECIES_WOBBUFFET);
+    } WHEN {
+        TURN { MOVE(player, MOVE_DRAGON_DANCE); }
+        TURN { MOVE(player, MOVE_DRAGON_DANCE); }
+        TURN { MOVE(player, MOVE_DRAGON_DANCE); }
+        TURN { MOVE(player, MOVE_DRAGON_DANCE); }
+        TURN { MOVE(player, MOVE_DRAGON_DANCE); }
+        TURN { MOVE(player, MOVE_DRAGON_DANCE); }
+        TURN { MOVE(player, MOVE_WATER_GUN); SEND_OUT(opponent, 1); }
+    } SCENE {
+        HP_BAR(opponent);
+        MESSAGE("The opposing Wobbuffet fainted!");
+        ABILITY_POPUP(player, ABILITY_BATTLE_BOND);
+    } THEN {
+        EXPECT(player->species != SPECIES_GRENINJA_ASH);
+        EXPECT_EQ(player->statStages[STAT_ATK], DEFAULT_STAT_STAGE + 6);
+        EXPECT_EQ(player->statStages[STAT_SPATK], DEFAULT_STAT_STAGE + 1);
+        EXPECT_EQ(player->statStages[STAT_SPEED], DEFAULT_STAT_STAGE + 6);
     }
 }

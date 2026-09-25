@@ -26,6 +26,11 @@
 #include "c_file.h"
 #include "charmap.h"
 
+#ifdef _WIN32
+#include <io.h>
+#include <fcntl.h>
+#endif
+
 static void UsageAndExit(const char *program);
 
 Charmap* g_charmap;
@@ -46,9 +51,11 @@ void PrintAsmBytes(unsigned char *s, int length)
     }
 }
 
-void PreprocAsmFile(std::string filename, bool isStdin, bool doEnum)
+void PreprocAsmFile(std::string filename, bool isStdin, bool doEnum, bool doSize)
 {
     std::stack<AsmFile> stack;
+    Label prevLabel;
+    bool inScriptData = false;
 
     stack.push(AsmFile(filename, isStdin, doEnum));
     std::printf("# 1 \"%s\"\n", filename.c_str());
@@ -57,6 +64,11 @@ void PreprocAsmFile(std::string filename, bool isStdin, bool doEnum)
     {
         while (stack.top().IsAtEnd())
         {
+            const char *ps = prevLabel.symbol.c_str();
+            if (doSize && inScriptData && prevLabel)
+                std::printf(".ifdef %s ; .size %s, . - %s ; .endif\n", ps, ps, ps);
+            prevLabel = Label();
+
             stack.pop();
 
             if (stack.empty())
@@ -93,17 +105,47 @@ void PreprocAsmFile(std::string filename, bool isStdin, bool doEnum)
                 stack.top().OutputLine();
             break;
         }
+        case Directive::Macro:
+        {
+            // GNU as misreports the filename (but not line!) when an
+            // error occurs in a macro, so we work around this bug by
+            // emitting an explicit location inside the macro
+            // definition.
+            // ... but only on the first pass, because on the second
+            // pass we have lost track of our location.
+            if (!isStdin)
+            {
+                stack.top().OutputLine();
+                stack.top().OutputLocation();
+            }
+        }
         case Directive::Unknown:
         {
-            std::string globalLabel = stack.top().GetGlobalLabel();
+            Label label = stack.top().GetLabel();
 
-            if (globalLabel.length() != 0)
+            if (label)
             {
-                const char *s = globalLabel.c_str();
-                std::printf("%s: ; .global %s\n", s, s);
+                const char *s = label.symbol.c_str();
+                const char *ps = prevLabel.symbol.c_str();
+
+                if (doSize && inScriptData && prevLabel)
+                    std::printf(".ifdef %s ; .size %s, . - %s ; .endif ; ", ps, ps, ps);
+
+                if (label.type == Label::global)
+                    std::printf(".global %s\n%s:\n", s, s);
+
+                if (doSize)
+                    stack.top().OutputLocation();
+
+                prevLabel = label;
             }
             else
             {
+                std::string section = stack.top().PeekSection();
+                if (section == "script_data")
+                    inScriptData = true;
+                else if (section != "")
+                    inScriptData = false;
                 stack.top().OutputLine();
             }
 
@@ -113,9 +155,9 @@ void PreprocAsmFile(std::string filename, bool isStdin, bool doEnum)
     }
 }
 
-void PreprocCFile(const char * filename, bool isStdin)
+void PreprocCFile(const char * filename, bool isStdin, const char * graphicsRoot)
 {
-    CFile cFile(filename, isStdin);
+    CFile cFile(filename, isStdin, graphicsRoot);
     cFile.Preproc();
 }
 
@@ -142,7 +184,7 @@ const char* GetFileExtension(const char* filename)
 
 static void UsageAndExit(const char *program)
 {
-    std::fprintf(stderr, "Usage: %s [-i] [-e] SRC_FILE CHARMAP_FILE\nwhere -i denotes if input is from stdin\n      -e enables enum handling\n", program);
+    std::fprintf(stderr, "Usage: %s [-i] [-e] [-g PATH] [-s] SRC_FILE CHARMAP_FILE\nwhere -i denotes if input is from stdin\n      -e enables enum handling\n      -g specifies the root for INCGFX\n      -s enables '.size' handling\n", program);
     std::exit(EXIT_FAILURE);
 }
 
@@ -153,9 +195,11 @@ int main(int argc, char **argv)
     const char *charmap = NULL;
     bool isStdin = false;
     bool doEnum = false;
+    const char *graphicsRoot = "";
+    bool doSize = false;
 
-    /* preproc [-i] [-e] SRC_FILE CHARMAP_FILE */
-    while ((opt = getopt(argc, argv, "ie")) != -1)
+    /* preproc [-i] [-e] [-s] SRC_FILE CHARMAP_FILE */
+    while ((opt = getopt(argc, argv, "ieg:s")) != -1)
     {
         switch (opt)
         {
@@ -164,6 +208,12 @@ int main(int argc, char **argv)
             break;
         case 'e':
             doEnum = true;
+            break;
+        case 's':
+            doSize = true;
+            break;
+        case 'g':
+            graphicsRoot = optarg;
             break;
         default:
             UsageAndExit(argv[0]);
@@ -179,6 +229,11 @@ int main(int argc, char **argv)
 
     g_charmap = new Charmap(charmap);
 
+#ifdef _WIN32
+	// On Windows, piping from stdout can break newlines. Treat stdout as binary stream to avoid this.
+	_setmode(_fileno(stdout), _O_BINARY);
+#endif
+
     const char* extension = GetFileExtension(source);
 
     if (!extension)
@@ -186,13 +241,13 @@ int main(int argc, char **argv)
 
     if ((extension[0] == 's') && extension[1] == 0)
     {
-        PreprocAsmFile(source, isStdin, doEnum);
+        PreprocAsmFile(source, isStdin, doEnum, doSize);
     }
     else if ((extension[0] == 'c' || extension[0] == 'i') && extension[1] == 0)
     {
         if (doEnum)
             FATAL_ERROR("-e is invalid for C sources\n");
-        PreprocCFile(source, isStdin);
+        PreprocCFile(source, isStdin, graphicsRoot);
     }
     else
     {

@@ -3,6 +3,7 @@
   "name": "LilycoveCity_DepartmentStoreRooftop",
   "layout": "LAYOUT_LILYCOVE_CITY_DEPARTMENT_STORE_ROOFTOP",
   "music": "MUS_POKE_MART",
+  "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_VEILSTONE_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -76,9 +77,7 @@
       "dest_warp_id": "2"
     }
   ],
-  "coord_events": [
-
-  ],
+  "coord_events": [],
   "bg_events": [
     {
       "type": "sign",

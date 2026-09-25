@@ -1,22 +1,21 @@
 #include "global.h"
 #include "test/battle.h"
 
-
 ASSUMPTIONS
 {
-    ASSUME(GetMoveEffect(MOVE_WORK_UP) == EFFECT_ATTACK_SPATK_UP);
+    ASSUME_STAT_CHANGE(MOVE_WORK_UP, attack: +1, spAtk: +1);
 }
 
 SINGLE_BATTLE_TEST("Work Up raises Attack and Sp. Attack by 1 stage each", s16 damage)
 {
     bool32 raiseStats;
-    u32 move;
-    PARAMETRIZE { raiseStats = FALSE; move = MOVE_TACKLE; }
-    PARAMETRIZE { raiseStats = TRUE;  move = MOVE_TACKLE; }
+    enum Move move;
+    PARAMETRIZE { raiseStats = FALSE; move = MOVE_SCRATCH; }
+    PARAMETRIZE { raiseStats = TRUE;  move = MOVE_SCRATCH; }
     PARAMETRIZE { raiseStats = FALSE; move = MOVE_SWIFT; }
     PARAMETRIZE { raiseStats = TRUE;  move = MOVE_SWIFT; }
     GIVEN {
-        ASSUME(GetMoveCategory(MOVE_TACKLE) == DAMAGE_CATEGORY_PHYSICAL);
+        ASSUME(GetMoveCategory(MOVE_SCRATCH) == DAMAGE_CATEGORY_PHYSICAL);
         ASSUME(GetMoveCategory(MOVE_SWIFT) == DAMAGE_CATEGORY_SPECIAL);
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);

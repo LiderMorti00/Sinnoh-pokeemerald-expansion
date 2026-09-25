@@ -316,12 +316,16 @@ struct STWIStatus
     u8 recoveryCount;
     u8 unk_16;
     u8 unk_17;
+#if __STDC_VERSION__ < 202311L
     void (*callbackM)();
+#else
+    void (*callbackM)(...);
+#endif
     void (*callbackS)(u16);
     void (*callbackID)(void);
     union RfuPacket *txPacket;
     union RfuPacket *rxPacket;
-    vu8 sending;
+    vbool8 sending;
 };
 
 // This struct is used as u8 array in SDK.
@@ -515,7 +519,7 @@ void rfu_REQ_endSearchParent(void);
 void rfu_REQ_startConnectParent(u16 pid);
 void rfu_REQ_pollConnectParent(void);
 void rfu_REQ_endConnectParent(void);
-u16 rfu_getConnectParentStatus(u8 *status,u8 *connectSlotNo);
+u16 rfu_getConnectParentStatus(u8 *status, u8 *connectSlotNo);
     // Restore link from child device
 void rfu_REQ_CHILD_startConnectRecovery(u8 bmRecoverySlot);
 void rfu_REQ_CHILD_pollConnectRecovery(void);
@@ -550,8 +554,6 @@ u16 rfu_setRecvBuffer(u8 connType, u8 slotNo, void *buffer, u32 buffSize);
 u16 rfu_UNI_setSendData(u8 bmSendSlot, const void *src, u8 size);
         // Enable transmission data
 void rfu_UNI_readySendData(u8 slotStatusIndex);
-        // Change address or size of transmission data and enable transmission data
-u16 rfu_UNI_changeAndReadySendData(u8 slotStatusIndex, const void *src, u8 size);
         // Used only by parent device. At the beginning of a MSC Callback that received notification that the data transmission completed, an ACK flag is obtained.
 u16 rfu_UNI_PARENT_getDRAC_ACK(u8 *ackFlag);
         // Clear the flag that indicates newly arrived reception data
@@ -575,25 +577,18 @@ void rfu_REQ_PARENT_resumeRetransmitAndChange(void);
         // Read receive data
 void rfu_REQ_recvData(void);
 
-// For Multi-boot
-    // Inherits the information about the link established by the downloader just after the program downloaded with multiboot starts up.
-u16 rfu_MBOOT_CHILD_inheritanceLinkStatus(void);
-
 // For Debug
     // Obtain address of the SWTI-layer receive buffer
 u8 *rfu_getSTWIRecvBuffer(void);
     // Obtain RFU state
 void rfu_REQ_RFUStatus(void);
 u16 rfu_getRFUStatus(u8 *rfuState);
-    // Using RFU, generate noise (jamming radio waves) for other RFUs
-void rfu_REQ_noise(void);
 
 // librfu_intr
 void IntrSIO32(void);
 
 // librfu_stwi
 void STWI_init_all(struct RfuIntrStruct *interruptStruct, IntrFunc *interrupt, bool8 copyInterruptToRam);
-void STWI_set_MS_mode(u8 mode);
 void STWI_init_Callback_M(void);
 void STWI_init_Callback_S(void);
 void STWI_set_Callback_M(void *callbackM);
@@ -607,12 +602,10 @@ void STWI_send_DataRxREQ(void);
 void STWI_send_MS_ChangeREQ(void);
 void STWI_send_StopModeREQ(void);
 void STWI_send_SystemStatusREQ(void);
-void STWI_send_GameConfigREQ(const u8 *serial_uname, const u8 *gname);
+void STWI_send_GameConfigREQ(const u8 *serial_gname, const u8 *uname);
 void STWI_send_ResetREQ(void);
 void STWI_send_LinkStatusREQ(void);
-void STWI_send_VersionStatusREQ(void);
 void STWI_send_SlotStatusREQ(void);
-void STWI_send_ConfigStatusREQ(void);
 void STWI_send_ResumeRetransmitAndChangeREQ(void);
 void STWI_send_SystemConfigREQ(u16 availSlotFlag, u8 maxMFrame, u8 mcTimer);
 void STWI_send_SC_StartREQ(void);
@@ -626,8 +619,6 @@ void STWI_send_CP_PollingREQ(void);
 void STWI_send_CP_EndREQ(void);
 void STWI_send_DataTxREQ(const void *in, u8 size);
 void STWI_send_DataTxAndChangeREQ(const void *in, u8 size);
-void STWI_send_DataReadyAndChangeREQ(u8 unk);
-void STWI_send_DisconnectedAndChangeREQ(u8 unk0, u8 unk1);
 void STWI_send_DisconnectREQ(u8 unk);
 void STWI_send_TestModeREQ(u8 unk0, u8 unk1);
 void STWI_send_CPR_StartREQ(u16 unk0, u16 unk1, u8 unk2);

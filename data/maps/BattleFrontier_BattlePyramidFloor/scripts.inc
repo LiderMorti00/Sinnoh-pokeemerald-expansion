@@ -103,9 +103,8 @@ BattlePyramid_WarpToTop::
 	waitstate
 	end
 
-@ TRAINER_PHILLIP is used as a placeholder
 BattlePyramid_TrainerBattle::
-	trainerbattle TRAINER_BATTLE_HILL, OBJ_ID_NONE, TRAINER_PHILLIP, BattleFacility_TrainerBattle_PlaceholderText, BattleFacility_TrainerBattle_PlaceholderText, NULL, OBJ_ID_NONE, TRAINER_NONE, NULL, NULL, NULL, NULL, NULL, FALSE, FALSE, FALSE, FALSE
+	facilitytrainerbattle FACILITY_BATTLE_PYRAMID
 	pyramid_showhint
 	waitmessage
 	waitbuttonpress

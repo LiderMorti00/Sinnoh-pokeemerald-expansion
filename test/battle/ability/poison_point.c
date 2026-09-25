@@ -3,11 +3,11 @@
 
 SINGLE_BATTLE_TEST("Poison Point inflicts poison on contact")
 {
-    u32 move;
-    PARAMETRIZE { move = MOVE_TACKLE; }
+    enum Move move;
+    PARAMETRIZE { move = MOVE_SCRATCH; }
     PARAMETRIZE { move = MOVE_SWIFT; }
     GIVEN {
-        ASSUME(MoveMakesContact(MOVE_TACKLE));
+        ASSUME(MoveMakesContact(MOVE_SCRATCH));
         ASSUME(!MoveMakesContact(MOVE_SWIFT));
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_NIDORAN_M) { Ability(ABILITY_POISON_POINT); }
@@ -18,34 +18,56 @@ SINGLE_BATTLE_TEST("Poison Point inflicts poison on contact")
         if (MoveMakesContact(move)) {
             ABILITY_POPUP(opponent, ABILITY_POISON_POINT);
             ANIMATION(ANIM_TYPE_STATUS, B_ANIM_STATUS_PSN, player);
-            MESSAGE("Wobbuffet was poisoned by the opposing Nidoran♂'s Poison Point!");
+            MESSAGE("Wobbuffet was poisoned!");
             STATUS_ICON(player, poison: TRUE);
         } else {
             NONE_OF {
                 ABILITY_POPUP(opponent, ABILITY_POISON_POINT);
                 ANIMATION(ANIM_TYPE_STATUS, B_ANIM_STATUS_PSN, player);
-                MESSAGE("Wobbuffet was poisoned by the opposing Nidoran♂'s Poison Point!");
+                MESSAGE("Wobbuffet was poisoned!");
                 STATUS_ICON(player, poison: TRUE);
             }
         }
     }
 }
 
-SINGLE_BATTLE_TEST("Poison Point triggers 30% of the time")
+SINGLE_BATTLE_TEST("Poison Point triggers 1/3 times (Gen3) or 30% (Gen 4+) of the time")
 {
-    PASSES_RANDOMLY(3, 10, RNG_POISON_POINT);
+    u32 config, passes, trials;
+    PARAMETRIZE { config = GEN_3; passes = 1; trials = 3; }  // 33.3%
+    PARAMETRIZE { config = GEN_4; passes = 3; trials = 10; } // 30%
+    PASSES_RANDOMLY(passes, trials, RNG_POISON_POINT);
     GIVEN {
-        ASSUME(B_ABILITY_TRIGGER_CHANCE >= GEN_4);
-        ASSUME(MoveMakesContact(MOVE_TACKLE));
+        WITH_CONFIG(B_ABILITY_TRIGGER_CHANCE, config);
+        ASSUME(MoveMakesContact(MOVE_SCRATCH));
         PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_NIDORAN_M) { Ability(ABILITY_POISON_POINT); }
+    } WHEN {
+        TURN { MOVE(player, MOVE_SCRATCH); }
+        TURN {}
+    } SCENE {
+        ABILITY_POPUP(opponent, ABILITY_POISON_POINT);
+        ANIMATION(ANIM_TYPE_STATUS, B_ANIM_STATUS_PSN, player);
+        MESSAGE("Wobbuffet was poisoned!");
+        STATUS_ICON(player, poison: TRUE);
+    }
+}
+
+SINGLE_BATTLE_TEST("Poison Point will not poison Poison-Type targets with corrosion")
+{
+    GIVEN {
+        ASSUME(MoveMakesContact(MOVE_TACKLE));
+        PLAYER(SPECIES_SALANDIT) { Ability(ABILITY_CORROSION); }
         OPPONENT(SPECIES_NIDORAN_M) { Ability(ABILITY_POISON_POINT); }
     } WHEN {
         TURN { MOVE(player, MOVE_TACKLE); }
         TURN {}
     } SCENE {
-        ABILITY_POPUP(opponent, ABILITY_POISON_POINT);
-        ANIMATION(ANIM_TYPE_STATUS, B_ANIM_STATUS_PSN, player);
-        MESSAGE("Wobbuffet was poisoned by the opposing Nidoran♂'s Poison Point!");
-        STATUS_ICON(player, poison: TRUE);
+        NONE_OF {
+            ABILITY_POPUP(opponent, ABILITY_POISON_POINT);
+            ANIMATION(ANIM_TYPE_STATUS, B_ANIM_STATUS_PSN, player);
+            MESSAGE("Salandit was poisoned!");
+            STATUS_ICON(player, poison: TRUE);
+        }
     }
 }

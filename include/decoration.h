@@ -40,6 +40,12 @@ enum DecorationCategory
     DECORCAT_COUNT,
 };
 
+struct DecorItem
+{
+    const u32 *pic;
+    const u16 *pal;
+};
+
 struct Decoration
 {
     u8 id;
@@ -50,6 +56,7 @@ struct Decoration
     u16 price;
     const u8 *description;
     const u16 *tiles;
+    struct DecorItem icon;
 };
 
 extern const struct Decoration gDecorations[];
@@ -58,10 +65,10 @@ extern u8 gCurDecorationIndex;
 
 void InitDecorationContextItems(void);
 void DoSecretBaseDecorationMenu(u8 taskId);
-void ShowDecorationOnMap(u16 mapX, u16 mapY, u16 decor);
+void ShowDecorationOnMap(u16 mapX, u16 mapY, u16 decoration);
 void DoPlayerRoomDecorationMenu(u8 taskId);
 void ShowDecorationCategoriesWindow(u8 taskId);
-void CopyDecorationCategoryName(u8 *dest, u8 decorCat);
+void CopyDecorationCategoryName(u8 *dest, u8 category);
 bool8 IsSelectedDecorInThePC(void);
 u8 AddDecorationIconObject(u8 decor, s16 x, s16 y, u8 priority, u16 tilesTag, u16 paletteTag);
 

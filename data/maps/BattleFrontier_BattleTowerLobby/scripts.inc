@@ -1,10 +1,3 @@
-.set LOCALID_ATTENDANT_SINGLES, 1
-.set LOCALID_ATTENDANT_DOUBLES, 7
-.set LOCALID_ATTENDANT_MULTIS, 8
-.set LOCALID_ATTENDANT_LINK_MULTIS, 9
-
-@ Note: LOCALID_BATTLE_TOWER_LOBBY_REPORTER is a local id for this map used elsewhere. It's defined in event_objects.h
-
 BattleFrontier_BattleTowerLobby_MapScripts::
 	map_script MAP_SCRIPT_ON_RESUME, BattleFrontier_BattleTowerLobby_OnResume
 	map_script MAP_SCRIPT_ON_TRANSITION, BattleFrontier_BattleTowerLobby_OnTransition
@@ -37,7 +30,7 @@ BattleFrontier_BattleTowerLobby_OnWarp:
 
 BattleFrontier_BattleTowerLobby_EventScript_PlayerFaceNorth::
 	setvar VAR_TEMP_1, 1
-	turnobject OBJ_EVENT_ID_PLAYER, DIR_NORTH
+	turnobject LOCALID_PLAYER, DIR_NORTH
 	end
 
 BattleFrontier_BattleTowerLobby_OnFrame:
@@ -207,7 +200,6 @@ BattleFrontier_BattleTowerLobby_EventScript_TryEnterSinglesChallenge::
 	copyvar VAR_0x8004, VAR_RESULT
 	setvar VAR_0x8005, FRONTIER_PARTY_SIZE
 	special ChoosePartyForBattleFrontier
-	waitstate
 	goto_if_eq VAR_RESULT, 0, BattleFrontier_BattleTowerLobby_EventScript_LoadPartyCancelChallenge
 	msgbox BattleFrontier_BattleTowerLobby_Text_OkayToSaveBeforeEntering, MSGBOX_YESNO
 	switch VAR_RESULT
@@ -271,7 +263,6 @@ BattleFrontier_BattleTowerLobby_EventScript_TryEnterDoublesChallenge::
 	copyvar VAR_0x8004, VAR_RESULT
 	setvar VAR_0x8005, FRONTIER_DOUBLES_PARTY_SIZE
 	special ChoosePartyForBattleFrontier
-	waitstate
 	goto_if_eq VAR_RESULT, 0, BattleFrontier_BattleTowerLobby_EventScript_LoadPartyCancelChallenge
 	msgbox BattleFrontier_BattleTowerLobby_Text_OkayToSaveBeforeEntering, MSGBOX_YESNO
 	switch VAR_RESULT
@@ -336,7 +327,6 @@ BattleFrontier_BattleTowerLobby_EventScript_TryEnterMultisChallenge::
 	copyvar VAR_0x8004, VAR_RESULT
 	setvar VAR_0x8005, FRONTIER_MULTI_PARTY_SIZE
 	special ChoosePartyForBattleFrontier
-	waitstate
 	goto_if_eq VAR_RESULT, 0, BattleFrontier_BattleTowerLobby_EventScript_LoadPartyCancelChallenge
 	msgbox BattleFrontier_BattleTowerLobby_Text_OkayToSaveBeforeEntering, MSGBOX_YESNO
 	switch VAR_RESULT
@@ -400,7 +390,6 @@ BattleFrontier_BattleTowerLobby_EventScript_TryEnterLinkMultisChallenge::
 	copyvar VAR_0x8004, VAR_RESULT
 	setvar VAR_0x8005, FRONTIER_MULTI_PARTY_SIZE
 	special ChoosePartyForBattleFrontier
-	waitstate
 	goto_if_eq VAR_RESULT, 0, BattleFrontier_BattleTowerLobby_EventScript_LoadPartyCancelChallenge
 	msgbox BattleFrontier_BattleTowerLobby_Text_OkayToSaveBeforeEntering, MSGBOX_YESNO
 	switch VAR_RESULT
@@ -550,16 +539,22 @@ BattleFrontier_BattleTowerLobby_EventScript_NotEnoughValidMonsLv50::
 	case FRONTIER_MODE_SINGLES, BattleFrontier_BattleTowerLobby_EventScript_NotEnoughValidMonsLv50Singles
 	case FRONTIER_MODE_DOUBLES, BattleFrontier_BattleTowerLobby_EventScript_NotEnoughValidMonsLv50Doubles
 	msgbox BattleFrontier_BattleTowerLobby_Text_NotEnoughValidMonsLv50Multis, MSGBOX_DEFAULT
+	call BattleFrontier_ShowCaughtBannedSpecies
+	msgbox BattleFrontier_BattleTowerLobby_Text_NotEnoughValidMonsEnd, MSGBOX_DEFAULT
 	goto BattleFrontier_BattleTowerLobby_EventScript_EndCancelChallenge
 	end
 
 BattleFrontier_BattleTowerLobby_EventScript_NotEnoughValidMonsLv50Singles::
 	msgbox BattleFrontier_BattleTowerLobby_Text_NotEnoughValidMonsLv50Singles, MSGBOX_DEFAULT
+	call BattleFrontier_ShowCaughtBannedSpecies
+	msgbox BattleFrontier_BattleTowerLobby_Text_NotEnoughValidMonsEnd, MSGBOX_DEFAULT
 	goto BattleFrontier_BattleTowerLobby_EventScript_EndCancelChallenge
 	end
 
 BattleFrontier_BattleTowerLobby_EventScript_NotEnoughValidMonsLv50Doubles::
 	msgbox BattleFrontier_BattleTowerLobby_Text_NotEnoughValidMonsLv50Doubles, MSGBOX_DEFAULT
+	call BattleFrontier_ShowCaughtBannedSpecies
+	msgbox BattleFrontier_BattleTowerLobby_Text_NotEnoughValidMonsEnd, MSGBOX_DEFAULT
 	goto BattleFrontier_BattleTowerLobby_EventScript_EndCancelChallenge
 	end
 
@@ -568,16 +563,22 @@ BattleFrontier_BattleTowerLobby_EventScript_NotEnoughValidMonsLvOpen::
 	case FRONTIER_MODE_SINGLES, BattleFrontier_BattleTowerLobby_EventScript_NotEnoughValidMonsLvOpenSingles
 	case FRONTIER_MODE_DOUBLES, BattleFrontier_BattleTowerLobby_EventScript_NotEnoughValidMonsLvOpenDoubles
 	msgbox BattleFrontier_BattleTowerLobby_Text_NotEnoughValidMonsLvOpenMultis, MSGBOX_DEFAULT
+	call BattleFrontier_ShowCaughtBannedSpecies
+	msgbox BattleFrontier_BattleTowerLobby_Text_NotEnoughValidMonsEnd, MSGBOX_DEFAULT
 	goto BattleFrontier_BattleTowerLobby_EventScript_EndCancelChallenge
 	end
 
 BattleFrontier_BattleTowerLobby_EventScript_NotEnoughValidMonsLvOpenSingles::
 	msgbox BattleFrontier_BattleTowerLobby_Text_NotEnoughValidMonsLvOpenSingles, MSGBOX_DEFAULT
+	call BattleFrontier_ShowCaughtBannedSpecies
+	msgbox BattleFrontier_BattleTowerLobby_Text_NotEnoughValidMonsEnd, MSGBOX_DEFAULT
 	goto BattleFrontier_BattleTowerLobby_EventScript_EndCancelChallenge
 	end
 
 BattleFrontier_BattleTowerLobby_EventScript_NotEnoughValidMonsLvOpenDoubles::
 	msgbox BattleFrontier_BattleTowerLobby_Text_NotEnoughValidMonsLvOpenDoubles, MSGBOX_DEFAULT
+	call BattleFrontier_ShowCaughtBannedSpecies
+	msgbox BattleFrontier_BattleTowerLobby_Text_NotEnoughValidMonsEnd, MSGBOX_DEFAULT
 	goto BattleFrontier_BattleTowerLobby_EventScript_EndCancelChallenge
 	end
 
@@ -628,12 +629,12 @@ BattleFrontier_BattleTowerLobby_EventScript_WalkToElevator::
 	call BattleFrontier_BattleTowerLobby_EventScript_SetAttendantTalkedTo
 	call BattleFrontier_BattleTowerLobby_EventScript_GetDoorXCoord
 	applymovement VAR_LAST_TALKED, BattleFrontier_BattleTowerLobby_Movement_WalkToElevator
-	applymovement OBJ_EVENT_ID_PLAYER, BattleFrontier_BattleTowerLobby_Movement_WalkToElevator
+	applymovement LOCALID_PLAYER, BattleFrontier_BattleTowerLobby_Movement_WalkToElevator
 	waitmovement 0
 	opendoor VAR_0x8004, 1
 	waitdooranim
 	applymovement VAR_LAST_TALKED, BattleFrontier_BattleTowerLobby_Movement_AttendantEnterElevator
-	applymovement OBJ_EVENT_ID_PLAYER, BattleFrontier_BattleTowerLobby_Movement_PlayerEnterElevator
+	applymovement LOCALID_PLAYER, BattleFrontier_BattleTowerLobby_Movement_PlayerEnterElevator
 	waitmovement 0
 	closedoor VAR_0x8004, 1
 	waitdooranim
@@ -697,19 +698,19 @@ BattleFrontier_BattleTowerLobby_EventScript_SetAttendantTalkedTo::
 	return
 
 BattleFrontier_BattleTowerLobby_EventScript_TalkedToSinglesAttendant::
-	setvar VAR_LAST_TALKED, LOCALID_ATTENDANT_SINGLES
+	setvar VAR_LAST_TALKED, LOCALID_TOWER_ATTENDANT_SINGLES
 	return
 
 BattleFrontier_BattleTowerLobby_EventScript_TalkedToDoublesAttendant::
-	setvar VAR_LAST_TALKED, LOCALID_ATTENDANT_DOUBLES
+	setvar VAR_LAST_TALKED, LOCALID_TOWER_ATTENDANT_DOUBLES
 	return
 
 BattleFrontier_BattleTowerLobby_EventScript_TalkedToMultisAttendant::
-	setvar VAR_LAST_TALKED, LOCALID_ATTENDANT_MULTIS
+	setvar VAR_LAST_TALKED, LOCALID_TOWER_ATTENDANT_MULTIS
 	return
 
 BattleFrontier_BattleTowerLobby_EventScript_TalkedToLinkMultisAttendant::
-	setvar VAR_LAST_TALKED, LOCALID_ATTENDANT_LINK_MULTIS
+	setvar VAR_LAST_TALKED, LOCALID_TOWER_ATTENDANT_LINK_MULTIS
 	return
 
 BattleFrontier_BattleTowerLobby_EventScript_GetDoorXCoord::
@@ -768,7 +769,6 @@ BattleFrontier_BattleTowerLobby_EventScript_TryCableLink::
 	waitmessage
 	setvar VAR_0x8005, 0
 	special TryBattleLinkup
-	waitstate
 	goto_if_eq VAR_RESULT, LINKUP_SUCCESS, BattleFrontier_BattleTowerLobby_EventScript_CableLinkSuccessful
 	goto_if_eq VAR_RESULT, LINKUP_SOMEONE_NOT_READY, CableClub_EventScript_AbortLinkSomeoneNotReady
 	goto_if_eq VAR_RESULT, LINKUP_DIFF_SELECTIONS, BattleFrontier_BattleTowerLobby_EventScript_AbortLinkDifferentSelections
@@ -826,7 +826,6 @@ BattleFrontier_BattleTowerLobby_EventScript_CableLinkSuccessful::
 	waitmessage
 	tower_save CHALLENGE_STATUS_SAVING
 	special SaveForBattleTowerLink
-	waitstate
 	playse SE_SAVE
 	waitse
 	special TrySetBattleTowerLinkType
@@ -879,7 +878,6 @@ BattleFrontier_BattleTowerLobby_EventScript_WirelessLinkSuccessful::
 	waitmessage
 	tower_save CHALLENGE_STATUS_SAVING
 	special SaveForBattleTowerLink
-	waitstate
 	playse SE_SAVE
 	waitse
 	goto BattleFrontier_BattleTowerLobby_EventScript_EnterElevator
@@ -1090,7 +1088,9 @@ BattleFrontier_BattleTowerLobby_Text_NotEnoughValidMonsLv50:
 	.string "of Level 50 or less to enter.\p"
 	.string "They also must be holding different\n"
 	.string "kinds of items.\p"
-	.string "EGGS{STR_VAR_1} ineligible.\p"
+	.string "EGGS{STR_VAR_1}.$"
+
+BattleFrontier_BattleTowerLobby_Text_NotEnoughValidMonsEnd:
 	.string "Please come see me when you are ready.$"
 
 @ Unused
@@ -1101,8 +1101,7 @@ BattleFrontier_BattleTowerLobby_Text_NotEnoughValidMonsLvOpen:
 	.string "to enter.\p"
 	.string "They also must be holding different\n"
 	.string "kinds of items.\p"
-	.string "EGGS{STR_VAR_1} ineligible.\p"
-	.string "Please come see me when you are ready.$"
+	.string "EGGS{STR_VAR_1}.$"
 
 BattleFrontier_BattleTowerLobby_Text_NotEnoughValidMonsLv50Singles:
 	.string "Excuse me!\p"
@@ -1111,8 +1110,7 @@ BattleFrontier_BattleTowerLobby_Text_NotEnoughValidMonsLv50Singles:
 	.string "of Level 50 or less to enter.\p"
 	.string "They also must be holding different\n"
 	.string "kinds of items.\p"
-	.string "EGGS{STR_VAR_1} ineligible.\p"
-	.string "Please come see me when you are ready.$"
+	.string "EGGS{STR_VAR_1}.$"
 
 BattleFrontier_BattleTowerLobby_Text_NotEnoughValidMonsLvOpenSingles:
 	.string "Excuse me!\p"
@@ -1121,8 +1119,7 @@ BattleFrontier_BattleTowerLobby_Text_NotEnoughValidMonsLvOpenSingles:
 	.string "to enter.\p"
 	.string "They also must be holding different\n"
 	.string "kinds of items.\p"
-	.string "EGGS{STR_VAR_1} ineligible.\p"
-	.string "Please come see me when you are ready.$"
+	.string "EGGS{STR_VAR_1}.$"
 
 BattleFrontier_BattleTowerLobby_Text_NotEnoughValidMonsLv50Doubles:
 	.string "Excuse me!\p"
@@ -1131,8 +1128,7 @@ BattleFrontier_BattleTowerLobby_Text_NotEnoughValidMonsLv50Doubles:
 	.string "of Level 50 or less to enter.\p"
 	.string "They also must be holding different\n"
 	.string "kinds of items.\p"
-	.string "EGGS{STR_VAR_1} ineligible.\p"
-	.string "Please come see me when you are ready.$"
+	.string "EGGS{STR_VAR_1}.$"
 
 BattleFrontier_BattleTowerLobby_Text_NotEnoughValidMonsLvOpenDoubles:
 	.string "Excuse me!\p"
@@ -1141,8 +1137,7 @@ BattleFrontier_BattleTowerLobby_Text_NotEnoughValidMonsLvOpenDoubles:
 	.string "to enter.\p"
 	.string "They also must be holding different\n"
 	.string "kinds of items.\p"
-	.string "EGGS{STR_VAR_1} ineligible.\p"
-	.string "Please come see me when you are ready.$"
+	.string "EGGS{STR_VAR_1}.$"
 
 BattleFrontier_BattleTowerLobby_Text_NotEnoughValidMonsLv50Multis:
 	.string "Excuse me!\p"
@@ -1151,8 +1146,7 @@ BattleFrontier_BattleTowerLobby_Text_NotEnoughValidMonsLv50Multis:
 	.string "of Level 50 or less to enter.\p"
 	.string "They also must be holding different\n"
 	.string "kinds of items.\p"
-	.string "EGGS{STR_VAR_1} ineligible.\p"
-	.string "Please come see me when you are ready.$"
+	.string "EGGS{STR_VAR_1}.$"
 
 BattleFrontier_BattleTowerLobby_Text_NotEnoughValidMonsLvOpenMultis:
 	.string "Excuse me!\p"
@@ -1161,8 +1155,7 @@ BattleFrontier_BattleTowerLobby_Text_NotEnoughValidMonsLvOpenMultis:
 	.string "to enter.\p"
 	.string "They also must be holding different\n"
 	.string "kinds of items.\p"
-	.string "EGGS{STR_VAR_1} ineligible.\p"
-	.string "Please come see me when you are ready.$"
+	.string "EGGS{STR_VAR_1}.$"
 
 BattleFrontier_BattleTowerLobby_Text_WelcomSingleBattle:
 	.string "Where the talents of TRAINERS\n"

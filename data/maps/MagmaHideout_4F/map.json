@@ -3,6 +3,7 @@
   "name": "MagmaHideout_4F",
   "layout": "LAYOUT_MAGMA_HIDEOUT_4F",
   "music": "MUS_AQUA_MAGMA_HIDEOUT",
+  "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_MAGMA_HIDEOUT",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -15,6 +16,7 @@
   "connections": null,
   "object_events": [
     {
+      "local_id": "LOCALID_MAGMA_HIDEOUT_4F_GROUDON",
       "graphics_id": "OBJ_EVENT_GFX_GROUDON_FRONT",
       "x": 16,
       "y": 17,
@@ -28,6 +30,7 @@
       "flag": "FLAG_HIDE_MAGMA_HIDEOUT_4F_GROUDON"
     },
     {
+      "local_id": "LOCALID_MAGMA_HIDEOUT_4F_GRUNT_1",
       "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
       "x": 31,
       "y": 22,
@@ -41,6 +44,7 @@
       "flag": "FLAG_HIDE_MAGMA_HIDEOUT_GRUNTS"
     },
     {
+      "local_id": "LOCALID_MAGMA_HIDEOUT_4F_GRUNT_2",
       "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
       "x": 30,
       "y": 13,
@@ -54,6 +58,7 @@
       "flag": "FLAG_HIDE_MAGMA_HIDEOUT_GRUNTS"
     },
     {
+      "local_id": "LOCALID_MAGMA_HIDEOUT_4F_GRUNT_3",
       "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
       "x": 26,
       "y": 13,
@@ -67,6 +72,7 @@
       "flag": "FLAG_HIDE_MAGMA_HIDEOUT_GRUNTS"
     },
     {
+      "local_id": "LOCALID_MAGMA_HIDEOUT_4F_TABITHA",
       "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
       "x": 22,
       "y": 4,
@@ -80,6 +86,7 @@
       "flag": "FLAG_HIDE_MAGMA_HIDEOUT_GRUNTS"
     },
     {
+      "local_id": "LOCALID_MAGMA_HIDEOUT_4F_MAXIE",
       "graphics_id": "OBJ_EVENT_GFX_MAXIE",
       "x": 16,
       "y": 21,
@@ -93,6 +100,7 @@
       "flag": "FLAG_HIDE_MAGMA_HIDEOUT_GRUNTS"
     },
     {
+      "local_id": "LOCALID_MAGMA_HIDEOUT_4F_GROUDON_SLEEPING",
       "graphics_id": "OBJ_EVENT_GFX_GROUDON_ASLEEP",
       "x": 16,
       "y": 17,

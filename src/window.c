@@ -3,15 +3,12 @@
 #include "malloc.h"
 #include "bg.h"
 #include "blit.h"
+#include "decompress.h"
 
-// This global is set to 0 and never changed.
-COMMON_DATA u8 gTransparentTileNumber = 0;
 COMMON_DATA void *gWindowBgTilemapBuffers[NUM_BACKGROUNDS] = {0};
 extern u32 gWindowTileAutoAllocEnabled;
 
 EWRAM_DATA struct Window gWindows[WINDOWS_MAX] = {0};
-EWRAM_DATA static struct Window* sWindowPtr = NULL;
-EWRAM_DATA static u16 sWindowSize = 0;
 
 static u32 GetNumActiveWindowsOnBg(u32 bgId);
 static u32 GetNumActiveWindowsOnBg8Bit(u32 bgId);
@@ -23,7 +20,39 @@ static void DummyWindowBgTilemap(void)
 
 }
 
-bool32 InitWindows(const struct WindowTemplate *templates)
+bool32 InitWindowsChecked(const struct WindowTemplate *templates, s32 staticSize)
+{
+    bool32 terminated;
+
+    if (staticSize >= 0)
+    {
+        terminated = templates[(staticSize / sizeof(*templates)) - 1].bg == 0xFF;
+    }
+    else
+    {
+        terminated = FALSE;
+        for (u32 i = 0; i < WINDOWS_MAX; i++)
+        {
+            if (templates[i].bg == 0xFF)
+            {
+                terminated = TRUE;
+                break;
+            }
+            else if (0x04 <= templates[i].bg && templates[i].bg < 0xFF)
+            {
+                break;
+            }
+        }
+    }
+
+    fatal_assertf(terminated, "%p is missing DUMMY_WIN_TEMPLATE terminator", templates);
+
+    bool32 initialized = InitWindowsUnchecked(templates);
+    fatal_assertf(initialized, "Could not initialize windows");
+    return TRUE;
+}
+
+bool32 InitWindowsUnchecked(const struct WindowTemplate *templates)
 {
     int i;
     void *bgTilemapBuffer;
@@ -52,7 +81,7 @@ bool32 InitWindows(const struct WindowTemplate *templates)
     {
         if (gWindowTileAutoAllocEnabled == TRUE)
         {
-            allocatedBaseBlock = BgTileAllocOp(bgLayer, 0, templates[i].width * templates[i].height, 0);
+            allocatedBaseBlock = BgTileAllocOpUnchecked(bgLayer, 0, templates[i].width * templates[i].height, 0);
             if (allocatedBaseBlock == -1)
                 return FALSE;
         }
@@ -63,7 +92,7 @@ bool32 InitWindows(const struct WindowTemplate *templates)
 
             if (attrib != 0xFFFF)
             {
-                allocatedTilemapBuffer = AllocZeroed(attrib);
+                allocatedTilemapBuffer = AllocZeroedUnchecked(attrib);
 
                 if (allocatedTilemapBuffer == NULL)
                 {
@@ -79,7 +108,7 @@ bool32 InitWindows(const struct WindowTemplate *templates)
             }
         }
 
-        allocatedTilemapBuffer = AllocZeroed((u16)(32 * (templates[i].width * templates[i].height)));
+        allocatedTilemapBuffer = AllocZeroedUnchecked((u16)(32 * (templates[i].width * templates[i].height)));
 
         if (allocatedTilemapBuffer == NULL)
         {
@@ -102,7 +131,6 @@ bool32 InitWindows(const struct WindowTemplate *templates)
         }
     }
 
-    gTransparentTileNumber = 0;
     return TRUE;
 }
 
@@ -129,7 +157,7 @@ u32 AddWindow(const struct WindowTemplate *template)
 
     if (gWindowTileAutoAllocEnabled == TRUE)
     {
-        allocatedBaseBlock = BgTileAllocOp(bgLayer, 0, template->width * template->height, 0);
+        allocatedBaseBlock = BgTileAllocOpUnchecked(bgLayer, 0, template->width * template->height, 0);
 
         if (allocatedBaseBlock == -1)
             return WINDOW_NONE;
@@ -237,6 +265,20 @@ void RemoveWindow(u32 windowId)
     {
         Free(gWindows[windowId].tileData);
         gWindows[windowId].tileData = NULL;
+    }
+}
+
+void RemoveAllWindowsOnBg(u32 bgId)
+{
+    u32 i;
+
+    if (bgId > NUM_BACKGROUNDS)
+        return;
+
+    for (i = 0; i < WINDOWS_MAX; i++)
+    {
+        if (gWindows[i].window.bg == bgId)
+            RemoveWindow(i);
     }
 }
 
@@ -360,7 +402,7 @@ void ClearWindowTilemap(u32 windowId)
 
     FillBgTilemapBufferRect(
         windowLocal.window.bg,
-        gTransparentTileNumber,
+        0,
         windowLocal.window.tilemapLeft,
         windowLocal.window.tilemapTop,
         windowLocal.window.width,
@@ -443,7 +485,7 @@ void CopyToWindowPixelBuffer(u32 windowId, const void *src, u16 size, u16 tileOf
     if (size != 0)
         CpuCopy16(src, gWindows[windowId].tileData + (32 * tileOffset), size);
     else
-        LZ77UnCompWram(src, gWindows[windowId].tileData + (32 * tileOffset));
+        DecompressDataWithHeaderWram(src, gWindows[windowId].tileData + (32 * tileOffset));
 }
 
 // Sets all pixels within the window to the fillValue color.
@@ -683,20 +725,20 @@ void BlitBitmapRectToWindow4BitTo8Bit(u32 windowId, const u8 *pixels, u16 srcX, 
 
 void CopyWindowToVram8Bit(u32 windowId, u8 mode)
 {
-    sWindowPtr = &gWindows[windowId];
-    sWindowSize = 64 * (sWindowPtr->window.width * sWindowPtr->window.height);
+    struct Window *window = &gWindows[windowId];
+    u16 windowSize = 64 * (window->window.width * window->window.height);
 
     switch (mode)
     {
     case COPYWIN_MAP:
-        CopyBgTilemapBufferToVram(sWindowPtr->window.bg);
+        CopyBgTilemapBufferToVram(window->window.bg);
         break;
     case COPYWIN_GFX:
-        LoadBgTiles(sWindowPtr->window.bg, sWindowPtr->tileData, sWindowSize, sWindowPtr->window.baseBlock);
+        LoadBgTiles(window->window.bg, window->tileData, windowSize, window->window.baseBlock);
         break;
     case COPYWIN_FULL:
-        LoadBgTiles(sWindowPtr->window.bg, sWindowPtr->tileData, sWindowSize, sWindowPtr->window.baseBlock);
-        CopyBgTilemapBufferToVram(sWindowPtr->window.bg);
+        LoadBgTiles(window->window.bg, window->tileData, windowSize, window->window.baseBlock);
+        CopyBgTilemapBufferToVram(window->window.bg);
         break;
     }
 }

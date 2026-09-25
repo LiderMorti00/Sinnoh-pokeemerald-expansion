@@ -2,6 +2,7 @@
 #include "play_time.h"
 #include "fake_rtc.h"
 #include "rtc.h"
+#include "field_player_avatar.h"
 
 enum
 {
@@ -30,17 +31,13 @@ void PlayTimeCounter_Start(void)
         PlayTimeCounter_SetToMax();
 }
 
-void PlayTimeCounter_Stop(void)
-{
-    sPlayTimeCounterState = STOPPED;
-}
-
 void PlayTimeCounter_Update(void)
 {
     if (sPlayTimeCounterState != RUNNING)
         return;
 
     gSaveBlock2Ptr->playTimeVBlanks++;
+    UpdateSpinData();
 
     if (gSaveBlock2Ptr->playTimeVBlanks < 60)
         return;

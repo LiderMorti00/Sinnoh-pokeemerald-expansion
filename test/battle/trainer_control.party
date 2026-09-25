@@ -1,10 +1,43 @@
-=== 0 ===
+=== TRAINER_NONE ===
+Name:
+Class: Pkmn Trainer 1
+Pic: Hiker
+Gender: Male
+Music: Male
+Double Battle: No
+
+=== 1 ===
+Name: RED
+Class: Rival
+Pic: Red
+Gender: Male
+Music: Male
+Double Battle: No
+
+Charmander
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== 2 ===
+Name: LEAF
+Class: Rival
+Pic: Leaf
+Gender: Female
+Music: Male
+Double Battle: No
+
+Bulbasaur
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+
+=== 3 ===
 Name: Test1
 Class: Pkmn Trainer 1
 Pic: Red
 Gender: Male
 Music: Male
-Double Battle: No
+Battle Type: Singles
 
 Bubbles (Wobbuffet) (F) @ Assault Vest
 Hasty Nature
@@ -14,7 +47,7 @@ IVs: 25 HP / 26 Atk / 27 Def / 29 SpA / 30 SpD / 28 Spe
 EVs: 252 HP / 4 SpA / 252 Spe
 Happiness: 42
 Shiny: Yes
-Ball: Master Ball
+Ball: Master
 Dynamax Level: 5
 - Air Slash
 - Barrier
@@ -24,67 +57,69 @@ Dynamax Level: 5
 Wobbuffet
 Level: 5
 Ability: Shadow Tag
+Dynamax Level: 10
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Wynaut
 Level: 5
+Tera Type: Water
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== 1 ===
+=== 4 ===
 Name: Test2
 Class: Pkmn Trainer 1
 Pic: Red
 Gender: Male
 Music: Male
-Double Battle: No
+Battle Type: Singles
 Difficulty: Normal
 
 Mewtwo
 Level: 5
 
-=== 2 ===
+=== 5 ===
 Name: Test2
 Class: Pkmn Trainer 1
 Pic: Red
 Gender: Male
 Music: Male
-Double Battle: No
+Battle Type: Singles
 Difficulty: Normal
 
 Mewtwo
 Level: 50
 
-=== 2 ===
+=== 5 ===
 Name: Test2
 Class: Pkmn Trainer 1
 Pic: Red
 Gender: Male
 Music: Male
-Double Battle: No
+Battle Type: Singles
 Difficulty: Easy
 
 Metapod
 Level: 1
 
-=== 2 ===
+=== 5 ===
 Name: Test2
 Class: Pkmn Trainer 1
 Pic: Red
 Gender: Male
 Music: Male
-Double Battle: No
+Battle Type: Singles
 Difficulty: Hard
 
 Arceus
 Level: 99
 
-=== 3 ===
+=== 6 ===
 Name: Test3
 Class: Pkmn Trainer 1
 Pic: Red
 Gender: Male
 Music: Male
-Double Battle: No
+Battle Type: Singles
 Party Size: 1
 
 Wynaut
@@ -95,13 +130,13 @@ Eevee
 
 Mew
 
-=== 4 ===
+=== 7 ===
 Name: Test4
 Class: Pkmn Trainer 1
 Pic: Red
 Gender: Male
 Music: Male
-Double Battle: No
+Battle Type: Singles
 Party Size: 3
 
 Wynaut
@@ -120,13 +155,13 @@ Tags: Ace
 Aron
 Tags: Lead
 
-=== 5 ===
+=== 8 ===
 Name: Test5
 Class: Pkmn Trainer 1
 Pic: Red
 Gender: Male
 Music: Male
-Double Battle: Yes
+Battle Type: Doubles
 Party Size: 3
 Pool Rules: Weather Doubles
 
@@ -158,13 +193,13 @@ Oddish
 
 Eevee
 
-=== 6 ===
+=== 9 ===
 Name: Test6
 Class: Pkmn Trainer 1
 Pic: Red
 Gender: Male
 Music: Male
-Double Battle: No
+Battle Type: Singles
 Party Size: 2
 Pool Rules: Basic
 
@@ -177,13 +212,13 @@ Tags: Lead
 Eevee
 Tags: Lead
 
-=== 7 ===
+=== 10 ===
 Name: Test1
 Class: Pkmn Trainer 1
 Pic: Red
 Gender: Male
 Music: Male
-Double Battle: No
+Battle Type: Singles
 Party Size: 2
 Pool Rules: Basic
 Pool Prune: Test
@@ -195,13 +230,13 @@ Tags: Lead
 
 Eevee
 
-=== 8 ===
+=== 11 ===
 Name: Test1
 Class: Pkmn Trainer 1
 Pic: Red
 Gender: Male
 Music: Male
-Double Battle: No
+Battle Type: Singles
 Party Size: 2
 Pool Rules: Basic
 Pool Pick Functions: Lowest
@@ -213,3 +248,62 @@ Wobbuffet
 
 Eevee
 Tags: Lead
+
+=== 12 ===
+Name: Test9
+Class: Pkmn Trainer 1
+Pic: Red
+Gender: Male
+Music: Male
+Double Battle: Yes
+Party Size: 2
+
+Wynaut
+
+Wobbuffet
+
+=== 13 ===
+Name: Test10
+Class: Pkmn Trainer 1
+Pic: Red
+Gender: Male
+Music: Male
+Battle Type: Doubles
+Party Size: 2
+
+Wynaut
+
+Wobbuffet
+
+=== 14 ===
+Name: Test11
+Class: Black Belt
+Pic: Red
+Gender: Male
+Music: Male
+Battle Type: Singles
+Party Size: 6
+
+Wynaut
+
+Wobbuffet
+
+Eevee
+
+Mew
+
+Oddish
+
+Aron
+
+=== 15 ===
+Name: TestTera
+Class: Black Belt
+Pic: Red
+Gender: Male
+Music: Male
+AI: Smart Tera
+Battle Type: Singles
+Party Size: 1
+
+Wynaut

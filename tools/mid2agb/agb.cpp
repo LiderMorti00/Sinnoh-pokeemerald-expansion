@@ -46,7 +46,7 @@ static int s_memaccParam2;
 void PrintAgbHeader()
 {
     std::fprintf(g_outputFile, "\t.include \"MPlayDef.s\"\n\n");
-    std::fprintf(g_outputFile, "\t.equ\t%s_grp, voicegroup%03u\n", g_asmLabel.c_str(), g_voiceGroup);
+    std::fprintf(g_outputFile, "\t.equ\t%s_grp, voicegroup%s\n", g_asmLabel.c_str(), g_voiceGroup.c_str());
     std::fprintf(g_outputFile, "\t.equ\t%s_pri, %u\n", g_asmLabel.c_str(), g_priority);
 
     if (g_reverb >= 0)
@@ -273,54 +273,53 @@ void PrintMemAcc(const Event& event)
     case 0x05:
         PrintByte("MEMACC, mem_mem_sub, 0x%02X, 0x%02X", s_memaccParam1, event.param2);
         break;
-    // TODO: everything else
     case 0x06:
+        PrintByte("MEMACC, mem_beq, 0x%02X, %u", s_memaccParam1, event.param2);
+        PrintWord("%s_%u_L%u", g_asmLabel.c_str(), g_agbTrack, s_memaccParam2);
         break;
     case 0x07:
+        PrintByte("MEMACC, mem_bne, 0x%02X, %u", s_memaccParam1, event.param2);
+        PrintWord("%s_%u_L%u", g_asmLabel.c_str(), g_agbTrack, s_memaccParam2);
         break;
     case 0x08:
+        PrintByte("MEMACC, mem_bhi, 0x%02X, %u", s_memaccParam1, event.param2);
+        PrintWord("%s_%u_L%u", g_asmLabel.c_str(), g_agbTrack, s_memaccParam2);
         break;
     case 0x09:
+        PrintByte("MEMACC, mem_bhs, 0x%02X, %u", s_memaccParam1, event.param2);
+        PrintWord("%s_%u_L%u", g_asmLabel.c_str(), g_agbTrack, s_memaccParam2);
         break;
     case 0x0A:
+        PrintByte("MEMACC, mem_bls, 0x%02X, %u", s_memaccParam1, event.param2);
+        PrintWord("%s_%u_L%u", g_asmLabel.c_str(), g_agbTrack, s_memaccParam2);
         break;
     case 0x0B:
+        PrintByte("MEMACC, mem_blo, 0x%02X, %u", s_memaccParam1, event.param2);
+        PrintWord("%s_%u_L%u", g_asmLabel.c_str(), g_agbTrack, s_memaccParam2);
         break;
     case 0x0C:
+        PrintByte("MEMACC, mem_mem_beq, 0x%02X, 0x%02X", s_memaccParam1, event.param2);
+        PrintWord("%s_%u_L%u", g_asmLabel.c_str(), g_agbTrack, s_memaccParam2);
         break;
     case 0x0D:
+        PrintByte("MEMACC, mem_mem_bne, 0x%02X, 0x%02X", s_memaccParam1, event.param2);
+        PrintWord("%s_%u_L%u", g_asmLabel.c_str(), g_agbTrack, s_memaccParam2);
         break;
     case 0x0E:
+        PrintByte("MEMACC, mem_mem_bhi, 0x%02X, 0x%02X", s_memaccParam1, event.param2);
+        PrintWord("%s_%u_L%u", g_asmLabel.c_str(), g_agbTrack, s_memaccParam2);
         break;
     case 0x0F:
+        PrintByte("MEMACC, mem_mem_bhs, 0x%02X, 0x%02X", s_memaccParam1, event.param2);
+        PrintWord("%s_%u_L%u", g_asmLabel.c_str(), g_agbTrack, s_memaccParam2);
         break;
     case 0x10:
+        PrintByte("MEMACC, mem_mem_bls, 0x%02X, 0x%02X", s_memaccParam1, event.param2);
+        PrintWord("%s_%u_L%u", g_asmLabel.c_str(), g_agbTrack, s_memaccParam2);
         break;
     case 0x11:
-        break;
-    case 0x46:
-        break;
-    case 0x47:
-        break;
-    case 0x48:
-        break;
-    case 0x49:
-        break;
-    case 0x4A:
-        break;
-    case 0x4B:
-        break;
-    case 0x4C:
-        break;
-    case 0x4D:
-        break;
-    case 0x4E:
-        break;
-    case 0x4F:
-        break;
-    case 0x50:
-        break;
-    case 0x51:
+        PrintByte("MEMACC, mem_mem_blo, 0x%02X, 0x%02X", s_memaccParam1, event.param2);
+        PrintWord("%s_%u_L%u", g_asmLabel.c_str(), g_agbTrack, s_memaccParam2);
         break;
     default:
         break;
@@ -519,6 +518,117 @@ void PrintAgbTrack(std::vector<Event>& events)
         default:
             PrintWait(event.time);
             break;
+        }
+    }
+
+    PrintByte("FINE");
+}
+
+void PrintAgbTrackLoop(std::vector<Event>& events, int trackLoops)
+{
+    std::fprintf(g_outputFile, "\n@**************** Track %u (Midi-Chn.%u) ****************@\n\n", g_agbTrack, g_midiChan + 1);
+    std::fprintf(g_outputFile, "%s_%u:\n", g_asmLabel.c_str(), g_agbTrack);
+    int wholeNoteCount = 0;
+
+    ResetTrackVars();
+
+    bool foundVolBeforeNote = false;
+
+    for (const Event& event : events)
+    {
+        if (event.type == EventType::Note)
+            break;
+
+        if (event.type == EventType::Controller && event.param1 == 0x07)
+        {
+            foundVolBeforeNote = true;
+            break;
+        }
+    }
+
+    if (!foundVolBeforeNote)
+        PrintByte("\tVOL   , 127*%s_mvl/mxv", g_asmLabel.c_str());
+
+    PrintWait(g_initialWait);
+    if (trackLoops > 0)
+        PrintByte("KEYSH , %s_key%+d", g_asmLabel.c_str(), 0);
+
+    for (int k = 0; k < trackLoops; k++)
+    {
+        for (unsigned i = 0; events[i].type != EventType::EndOfTrack; i++)
+        {
+            const Event& event = events[i];
+
+            if (IsPatternBoundary(event.type))
+            {
+                if (s_inPattern)
+                    PrintByte("PEND");
+                s_inPattern = false;
+            }
+
+            // added `&& (i % 2 == 0)` to cut down on excess comments created in the .s file
+            if ((event.type == EventType::WholeNoteMark || event.type == EventType::Pattern) && (i % 2 == 0))
+                std::fprintf(g_outputFile, "@ %03d   ----------------------------------------\n", wholeNoteCount++);
+
+            switch (event.type)
+            {
+            case EventType::Note:
+                PrintNote(event);
+                break;
+            case EventType::EndOfTie:
+                PrintEndOfTieOp(event);
+                break;
+            case EventType::Label:
+                if (k == 0)
+                    PrintSeqLoopLabel(event);
+                break;
+            case EventType::LoopEnd:
+            case EventType::LoopEndBegin:
+                break;
+            case EventType::LoopBegin:
+                if (k == 0)
+                    PrintSeqLoopLabel(event);
+                break;
+            case EventType::WholeNoteMark:
+                if (event.param2 & 0x80000000)
+                {
+                    std::fprintf(g_outputFile, "%s_%u_%03lu:\n", g_asmLabel.c_str(), g_agbTrack, (unsigned long)(event.param2 & 0x7FFFFFFF));
+                    ResetTrackVars();
+                    s_inPattern = true;
+                }
+                PrintWait(event.time);
+                break;
+            case EventType::Pattern:
+                PrintByte("PATT");
+                PrintWord("%s_%u_%03lu", g_asmLabel.c_str(), g_agbTrack, event.param2);
+
+                while (!IsPatternBoundary(events[i + 1].type))
+                    i++;
+
+                ResetTrackVars();
+                break;
+            case EventType::Tempo:
+                if (k == 0)
+                {
+                    PrintByte("TEMPO , %u*%s_tbs/2", static_cast<int>(round(60000000.0f / static_cast<float>(event.param2))), g_asmLabel.c_str());
+                    PrintWait(event.time);
+                }
+                break;
+            case EventType::InstrumentChange:
+                if (k == 0)
+                    PrintOp(event.time, "VOICE ", "%u", event.param1);
+                break;
+            case EventType::PitchBend:
+                PrintOp(event.time, "BEND  ", "c_v%+d", event.param2 - 64);
+                break;
+            case EventType::Controller:
+                if (k == 0)
+                    PrintControllerOp(event);
+                break;
+            default:
+                PrintWait(event.time);
+                break;
+            }
         }
     }
 

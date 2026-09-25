@@ -4,7 +4,9 @@
 #include "constants/moves.h"
 #include "constants/trainers.h"
 #include "constants/battle.h"
+#include "constants/pokeball.h"
 #include "difficulty.h"
+#include "debug.h"
 
 #define MAX_TRAINER_ITEMS 4
 
@@ -29,22 +31,27 @@ struct MonCoords
     u8 y_offset;
 };
 
-struct TrainerSprite
+struct TrainerFrontPicInfo
 {
-    u8 y_offset;
-    struct CompressedSpriteSheet frontPic;
-    struct CompressedSpritePalette palette;
+    const u32 *imageData;
+    const u16 *paletteData;
     const union AnimCmd *const *const animation;
     const struct Coords16 mugshotCoords;
     s16 mugshotRotation;
 };
 
-struct TrainerBacksprite
+struct TrainerBackPicInfo
 {
-    struct MonCoords coordinates;
-    struct CompressedSpriteSheet backPic;
-    struct CompressedSpritePalette palette;
+    const struct MonCoords coordinates;
+    const struct SpriteFrameImage image;
+    const u16 *paletteData;
     const union AnimCmd *const *const animation;
+};
+
+struct TrainerPicInfo
+{
+    const struct TrainerFrontPicInfo *frontPic;
+    const struct TrainerBackPicInfo *backPic;
 };
 
 #define MON_COORDS_SIZE(width, height) (DIV_ROUND_UP(width, 8) << 4 | DIV_ROUND_UP(height, 8))
@@ -60,17 +67,17 @@ struct TrainerMon
     const u8 *nickname;
     const u8 *ev;
     u32 iv;
-    u16 moves[4];
-    u16 species;
-    u16 heldItem;
-    u16 ability;
+    enum Move moves[MAX_MON_MOVES];
+    enum Species species;
+    enum Item heldItem;
+    enum Ability ability;
     u8 lvl;
-    u8 ball;
+    enum PokeBall ball:8;
     u8 friendship;
     u8 nature:5;
     bool8 gender:2;
     bool8 isShiny:1;
-    u8 teraType:5;
+    enum Type teraType:5;
     bool8 gigantamaxFactor:1;
     u8 shouldUseDynamax:1;
     u8 padding1:1;
@@ -81,24 +88,63 @@ struct TrainerMon
 
 #define TRAINER_PARTY(partyArray) partyArray, .partySize = ARRAY_COUNT(partyArray)
 
+enum TrainerBattleType
+{
+    TRAINER_BATTLE_TYPE_SINGLES,
+    TRAINER_BATTLE_TYPE_DOUBLES,
+};
+
+enum MultiTeamSize
+{
+    MULTI_TEAM_SIZE_FULL,
+    MULTI_TEAM_SIZE_HALF,
+};
+
+#define UNPACK_STARTING_STATUSES_STRUCT(_enum, _fieldName, _typeMaxValue, ...) INVOKE_WITH_(UNPACK_STARTING_STATUSES_STRUCT_, _fieldName, UNPACK_B(_typeMaxValue));
+#define UNPACK_STARTING_STATUSES_STRUCT_(_fieldName, _type, ...) _type FIRST(__VA_OPT__(_fieldName:BIT_SIZE(FIRST(__VA_ARGS__)),) _fieldName)
+
+struct StartingStatuses
+{
+    STARTING_STATUS_DEFINITIONS(UNPACK_STARTING_STATUSES_STRUCT)
+    // Expands to:
+    // u32 electricTerrain:1;
+    // u32 mistyTerrain:1;
+    // u32 grassyTerrain:1;
+    // u32 psychicTerrain:1;
+    // u32 trickRoom:1;
+    // u32 magicRoom:1;
+    // u32 wonderRoom:1;
+    // u32 tailwindPlayer:1;
+    // u32 tailwindOpponent:1;
+    // u32 rainbowPlayer:1;
+    // u32 rainbowOpponent:1;
+    // u32 seaOfFirePlayer:1;
+    // u32 seaOfFireOpponent:1;
+    // u32 swampPlayer:1;
+    // u32 swampOpponent:1;
+};
+
 struct Trainer
 {
-    /*0x00*/ u32 aiFlags;
-    /*0x04*/ const struct TrainerMon *party;
-    /*0x08*/ u16 items[MAX_TRAINER_ITEMS];
-    /*0x10*/ u8 trainerClass;
-    /*0x11*/ u8 encounterMusic_gender; // last bit is gender
-    /*0x12*/ u8 trainerPic;
-    /*0x13*/ u8 trainerName[TRAINER_NAME_LENGTH + 1];
-    /*0x1E*/ bool8 doubleBattle:1;
-             bool8 padding:1;
-             u8 startingStatus:6;    // this trainer starts a battle with a given status. see include/constants/battle.h for values
-    /*0x1F*/ u8 mugshotColor;
-    /*0x20*/ u8 partySize;
-    /*0x21*/ u8 poolSize;
-    /*0x22*/ u8 poolRuleIndex;
-    /*0x23*/ u8 poolPickIndex;
-    /*0x24*/ u8 poolPruneIndex;
+    u64 aiFlags;
+    const struct TrainerMon *party;
+    enum Item items[MAX_TRAINER_ITEMS];
+    struct StartingStatuses startingStatus; // this trainer starts a battle with a given status. see include/constants/battle.h for values
+    u8 trainerClass;
+    u16 encounterMusic:4;
+    u16 multiTeamSize:1;
+    u16 gender:1;
+    u16 battleType:2;
+    u16 mugshotColor:3;
+    u16 partySize:3;
+    u16 padding:2;
+    enum TrainerPicID trainerPic;
+    u8 trainerName[TRAINER_NAME_LENGTH + 1];
+    u8 poolSize;
+    u8 poolRuleIndex;
+    u8 poolPickIndex;
+    u8 poolPruneIndex;
+    u16 overrideTrainer;
 };
 
 struct TrainerClass
@@ -121,14 +167,14 @@ struct TypeInfo
     u16 isSpecialCaseType:1;
     u16 isHiddenPowerType:1; // Changing this for any type will change the distribution of all Hidden Power types from vanilla.
     u16 padding:11;
-    const u32 *const paletteTMHM;
-    //u16 enhanceItem;
-    //u16 berry;
-    //u16 gem;
-    //u16 plate;
-    //u16 memory;
-    //u16 zCrystal;
-    //u16 teraShard;
+    const u16 *const paletteTMHM;
+    //enum Item enhanceItem;
+    //enum Item berry;
+    //enum Item gem;
+    //enum Item plate;
+    //enum Item memory;
+    //enum Item zCrystal;
+    //enum Item teraShard;
     //u16 arceusForm;
 };
 
@@ -169,13 +215,14 @@ extern const union AnimCmd sAnim_GeneralFrame0[];
 extern const union AnimCmd sAnim_GeneralFrame3[];
 extern const union AnimCmd *const gAnims_MonPic[];
 extern const union AnimCmd *const gAnims_Trainer[];
-extern const struct TrainerSprite gTrainerSprites[];
-extern const struct TrainerBacksprite gTrainerBacksprites[];
+extern const struct TrainerPicInfo gTrainerPicInfo[TRAINER_PIC_COUNT];
 
 extern const struct Trainer gTrainers[DIFFICULTY_COUNT][TRAINERS_COUNT];
 extern const struct Trainer gBattlePartners[DIFFICULTY_COUNT][PARTNER_COUNT];
 
 extern const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT];
+
+extern const struct EggData gEggDatas[EGG_ID_COUNT];
 
 // Follower text messages
 extern const struct FollowerMsgInfo gFollowerHappyMessages[];
@@ -190,112 +237,191 @@ extern const struct FollowerMsgInfo gFollowerCuriousMessages[];
 extern const struct FollowerMsgInfo gFollowerMusicMessages[];
 extern const struct FollowerMsgInfo gFollowerPoisonedMessages[];
 
+static inline bool8 IsPartnerTrainerId(u16 trainerId)
+{
+    if (trainerId > TRAINER_PARTNER(PARTNER_NONE) && trainerId < TRAINER_PARTNER(PARTNER_COUNT))
+        return TRUE;
+    return FALSE;
+}
+
+static inline bool32 IsSpecialTrainer(u16 trainerId)
+{
+    if (trainerId == TRAINER_SECRET_BASE ||
+        trainerId == TRAINER_LINK_OPPONENT ||
+        trainerId == TRAINER_UNION_ROOM)
+    {
+        return TRUE;
+    }
+    return FALSE;
+}
+
 static inline u16 SanitizeTrainerId(u16 trainerId)
 {
-    if (trainerId >= TRAINERS_COUNT)
+    assertf(trainerId < TRAINERS_COUNT, "invalid trainer: %d", trainerId)
+    {
         return TRAINER_NONE;
+    }
+
     return trainerId;
+}
+
+//sanitizes but also converts partner trainer ids into gBattlePartners indexes
+static inline u16 GetPartnerIdFromTrainerId(u16 trainerId)
+{
+    assertf(IsPartnerTrainerId(trainerId), "invalid trainer id for partner: %d", trainerId)
+    {
+        return PARTNER_NONE;
+    }
+
+    return (trainerId - TRAINER_PARTNER(PARTNER_NONE));
 }
 
 static inline const struct Trainer *GetTrainerStructFromId(u16 trainerId)
 {
-    u32 sanitizedTrainerId = SanitizeTrainerId(trainerId);
-    enum DifficultyLevel difficulty = GetTrainerDifficultyLevel(sanitizedTrainerId);
+    if (gIsDebugBattle) return GetDebugAiTrainer();
+    enum DifficultyLevel difficulty;
 
-    return &gTrainers[difficulty][sanitizedTrainerId];
+    if (IsPartnerTrainerId(trainerId))
+    {
+        difficulty = GetBattlePartnerDifficultyLevel(trainerId);
+        return &gBattlePartners[difficulty][GetPartnerIdFromTrainerId(trainerId)];
+    }
+    else
+    {
+        difficulty = GetTrainerDifficultyLevel(trainerId);
+        return &gTrainers[difficulty][SanitizeTrainerId(trainerId)];
+    }
 }
 
-static inline const u8 GetTrainerClassFromId(u16 trainerId)
+static inline const enum TrainerClassID GetTrainerClassFromId(u16 trainerId)
 {
-    u32 sanitizedTrainerId = SanitizeTrainerId(trainerId);
-    enum DifficultyLevel difficulty = GetTrainerDifficultyLevel(sanitizedTrainerId);
+    const struct Trainer *trainer = GetTrainerStructFromId(trainerId);
 
-    return gTrainers[difficulty][sanitizedTrainerId].trainerClass;
+    return trainer->trainerClass;
 }
 
 static inline const u8 *GetTrainerClassNameFromId(u16 trainerId)
 {
-    enum DifficultyLevel difficulty = GetBattlePartnerDifficultyLevel(trainerId);
-
-    if (trainerId > TRAINER_PARTNER(PARTNER_NONE))
-        return gTrainerClasses[gBattlePartners[difficulty][trainerId - TRAINER_PARTNER(PARTNER_NONE)].trainerClass].name;
     return gTrainerClasses[GetTrainerClassFromId(trainerId)].name;
 }
 
 static inline const u8 *GetTrainerNameFromId(u16 trainerId)
 {
-    u32 sanitizedTrainerId = SanitizeTrainerId(trainerId);
-
-    enum DifficultyLevel difficulty = GetTrainerDifficultyLevel(sanitizedTrainerId);
-
-    enum DifficultyLevel partnerDifficulty = GetBattlePartnerDifficultyLevel(trainerId);
-
-    if (trainerId > TRAINER_PARTNER(PARTNER_NONE))
-        return gBattlePartners[partnerDifficulty][trainerId - TRAINER_PARTNER(PARTNER_NONE)].trainerName;
-    return gTrainers[difficulty][sanitizedTrainerId].trainerName;
+    return GetTrainerStructFromId(trainerId)->trainerName;
 }
 
-static inline const u8 GetTrainerPicFromId(u16 trainerId)
+static inline const enum TrainerPicID GetTrainerPicFromId(u16 trainerId)
 {
-    u32 sanitizedTrainerId = SanitizeTrainerId(trainerId);
-    enum DifficultyLevel difficulty = GetTrainerDifficultyLevel(sanitizedTrainerId);
-
-    return gTrainers[difficulty][sanitizedTrainerId].trainerPic;
+    return GetTrainerStructFromId(trainerId)->trainerPic;
 }
 
-static inline const u8 GetTrainerStartingStatusFromId(u16 trainerId)
+static inline const struct StartingStatuses GetTrainerStartingStatusFromId(u16 trainerId)
 {
-    return gTrainers[GetCurrentDifficultyLevel()][SanitizeTrainerId(trainerId)].startingStatus;
+    return GetTrainerStructFromId(trainerId)->startingStatus;
 }
 
-static inline const bool32 IsTrainerDoubleBattle(u16 trainerId)
+static inline const enum TrainerBattleType GetTrainerBattleType(u16 trainerId)
 {
-    u32 sanitizedTrainerId = SanitizeTrainerId(trainerId);
-    enum DifficultyLevel difficulty = GetTrainerDifficultyLevel(sanitizedTrainerId);
-
-    return gTrainers[difficulty][sanitizedTrainerId].doubleBattle;
+    return GetTrainerStructFromId(trainerId)->battleType;
 }
 
 static inline const u8 GetTrainerPartySizeFromId(u16 trainerId)
 {
-    u32 sanitizedTrainerId = SanitizeTrainerId(trainerId);
-    enum DifficultyLevel difficulty = GetTrainerDifficultyLevel(sanitizedTrainerId);
-
-    return gTrainers[difficulty][sanitizedTrainerId].partySize;
+    return GetTrainerStructFromId(trainerId)->partySize;
 }
 
 static inline const bool32 DoesTrainerHaveMugshot(u16 trainerId)
 {
-    return gTrainers[GetCurrentDifficultyLevel()][SanitizeTrainerId(trainerId)].mugshotColor;
+    return GetTrainerStructFromId(trainerId)->mugshotColor;
 }
 
 static inline const u8 GetTrainerMugshotColorFromId(u16 trainerId)
 {
-    return gTrainers[GetCurrentDifficultyLevel()][SanitizeTrainerId(trainerId)].mugshotColor;
+    return GetTrainerStructFromId(trainerId)->mugshotColor;
 }
 
-static inline const u16 *GetTrainerItemsFromId(u16 trainerId)
+static inline const enum Item *GetTrainerItemsFromId(u16 trainerId)
 {
-    u32 sanitizedTrainerId = SanitizeTrainerId(trainerId);
-    enum DifficultyLevel difficulty = GetTrainerDifficultyLevel(sanitizedTrainerId);
-
-    return gTrainers[difficulty][sanitizedTrainerId].items;
+    return GetTrainerStructFromId(trainerId)->items;
 }
 
 static inline const struct TrainerMon *GetTrainerPartyFromId(u16 trainerId)
 {
-    u32 sanitizedTrainerId = SanitizeTrainerId(trainerId);
-    enum DifficultyLevel difficulty = GetTrainerDifficultyLevel(sanitizedTrainerId);
-
-    return gTrainers[difficulty][sanitizedTrainerId].party;
+    return GetTrainerStructFromId(trainerId)->party;
 }
 
-static inline const bool32 GetTrainerAIFlagsFromId(u16 trainerId)
+static inline const u64 GetTrainerAIFlagsFromId(u16 trainerId)
 {
-    u32 sanitizedTrainerId = SanitizeTrainerId(trainerId);
-    enum DifficultyLevel difficulty = GetTrainerDifficultyLevel(sanitizedTrainerId);
+    return GetTrainerStructFromId(trainerId)->aiFlags;
+}
 
-    return gTrainers[difficulty][sanitizedTrainerId].aiFlags;
+static inline enum TrainerPicID SanitizeTrainerPic(enum TrainerPicID trainerPicId)
+{
+    assertf(trainerPicId < TRAINER_PIC_COUNT, "trainerPicId %d out of range", trainerPicId)
+    {
+        return TRAINER_PIC_NONE;
+    };
+    return trainerPicId;
+}
+
+static inline enum TrainerPicID SanitizeFrontTrainerPic(enum TrainerPicID trainerPicId)
+{
+    trainerPicId = SanitizeTrainerPic(trainerPicId);
+    assertf(gTrainerPicInfo[trainerPicId].frontPic != NULL, "trainerPicId %d does not have a front pic defined", trainerPicId)
+    {
+        return TRAINER_PIC_NONE;
+    }
+    return trainerPicId;
+}
+
+static inline enum TrainerPicID SanitizeBackTrainerPic(enum TrainerPicID trainerPicId)
+{
+    trainerPicId = SanitizeTrainerPic(trainerPicId);
+    assertf(gTrainerPicInfo[trainerPicId].backPic != NULL, "trainerPicId %d does not have a back pic defined", trainerPicId)
+    {
+        return TRAINER_PIC_NONE;
+    }
+    return trainerPicId;
+}
+
+static inline const u32 *GetTrainerFrontPicData(enum TrainerPicID trainerPic)
+{
+    return gTrainerPicInfo[SanitizeFrontTrainerPic(trainerPic)].frontPic->imageData;
+}
+
+static inline const u16 *GetTrainerFrontPicPalette(enum TrainerPicID trainerPic)
+{
+    return gTrainerPicInfo[SanitizeFrontTrainerPic(trainerPic)].frontPic->paletteData;
+}
+
+static inline const struct Coords16 GetTrainerFrontPicMugshotCoords(enum TrainerPicID trainerPic)
+{
+    return gTrainerPicInfo[SanitizeFrontTrainerPic(trainerPic)].frontPic->mugshotCoords;
+}
+
+static inline s16 GetTrainerFrontPicMugshotRotation(enum TrainerPicID trainerPic)
+{
+    return gTrainerPicInfo[SanitizeFrontTrainerPic(trainerPic)].frontPic->mugshotRotation;
+}
+
+static inline const struct MonCoords *GetTrainerBackPicCoords(enum TrainerPicID trainerPic)
+{
+    return &gTrainerPicInfo[SanitizeBackTrainerPic(trainerPic)].backPic->coordinates;
+}
+
+static inline const struct SpriteFrameImage *GetTrainerBackPicImage(enum TrainerPicID trainerPic)
+{
+    return &gTrainerPicInfo[SanitizeBackTrainerPic(trainerPic)].backPic->image;
+}
+
+static inline const union AnimCmd *const *GetTrainerBackPicAnims(enum TrainerPicID trainerPic)
+{
+    return gTrainerPicInfo[SanitizeBackTrainerPic(trainerPic)].backPic->animation;
+}
+
+static inline const u16 *GetTrainerBackPicPalette(enum TrainerPicID trainerPic)
+{
+    return gTrainerPicInfo[SanitizeBackTrainerPic(trainerPic)].backPic->paletteData;
 }
 
 #endif // GUARD_DATA_H

@@ -5,7 +5,8 @@ ASSUMPTIONS
 {
     ASSUME(gItemsInfo[ITEM_SITRUS_BERRY].holdEffect == HOLD_EFFECT_RESTORE_PCT_HP);
     ASSUME(I_SITRUS_BERRY_HEAL >= GEN_4);
-    ASSUME(GetMoveEffect(MOVE_SUNNY_DAY) == EFFECT_SUNNY_DAY);
+    ASSUME(GetMoveEffect(MOVE_SUNNY_DAY) == EFFECT_WEATHER);
+    ASSUME(GetMoveWeatherType(MOVE_SUNNY_DAY) == BATTLE_WEATHER_SUN);
 }
 
 SINGLE_BATTLE_TEST("Harvest has a 50% chance to restore a Berry at the end of the turn")
@@ -15,9 +16,9 @@ SINGLE_BATTLE_TEST("Harvest has a 50% chance to restore a Berry at the end of th
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_EXEGGUTOR) { Ability(ABILITY_HARVEST); MaxHP(500); HP(251); Item(ITEM_SITRUS_BERRY); }
     } WHEN {
-        TURN { MOVE(player, MOVE_TACKLE); }
+        TURN { MOVE(player, MOVE_SCRATCH); }
     } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_TACKLE, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SCRATCH, player);
         ABILITY_POPUP(opponent, ABILITY_HARVEST);
     } THEN {
         EXPECT_EQ(opponent->item, ITEM_SITRUS_BERRY);
@@ -31,9 +32,9 @@ SINGLE_BATTLE_TEST("Harvest always restores a Berry in Sunlight")
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_EXEGGUTOR) { Ability(ABILITY_HARVEST); MaxHP(500); HP(251); Item(ITEM_SITRUS_BERRY); }
     } WHEN {
-        TURN { MOVE(player, MOVE_TACKLE); MOVE(opponent, MOVE_SUNNY_DAY); }
+        TURN { MOVE(player, MOVE_SCRATCH); MOVE(opponent, MOVE_SUNNY_DAY); }
     } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_TACKLE, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SCRATCH, player);
         ANIMATION(ANIM_TYPE_MOVE, MOVE_SUNNY_DAY, opponent);
         ABILITY_POPUP(opponent, ABILITY_HARVEST);
     } THEN {
@@ -48,9 +49,9 @@ SINGLE_BATTLE_TEST("Harvest doesn't always restore a Berry if Cloud Nine/Air Loc
         PLAYER(SPECIES_GOLDUCK) { Ability(ABILITY_CLOUD_NINE); }
         OPPONENT(SPECIES_EXEGGUTOR) { Ability(ABILITY_HARVEST); MaxHP(500); HP(251); Item(ITEM_SITRUS_BERRY); }
     } WHEN {
-        TURN { MOVE(player, MOVE_TACKLE); MOVE(opponent, MOVE_SUNNY_DAY); }
+        TURN { MOVE(player, MOVE_SCRATCH); MOVE(opponent, MOVE_SUNNY_DAY); }
     } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_TACKLE, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SCRATCH, player);
         ANIMATION(ANIM_TYPE_MOVE, MOVE_SUNNY_DAY, opponent);
         NOT ABILITY_POPUP(opponent, ABILITY_HARVEST);
     } THEN {
@@ -66,10 +67,10 @@ SINGLE_BATTLE_TEST("Harvest restores a Berry even after being switched out and b
         OPPONENT(SPECIES_EXEGGUTOR) { Ability(ABILITY_HARVEST); MaxHP(500); HP(251); Item(ITEM_SITRUS_BERRY); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
-        TURN { MOVE(player, MOVE_TACKLE); MOVE(opponent, MOVE_PARTING_SHOT); SEND_OUT(opponent, 1); }
+        TURN { MOVE(player, MOVE_SCRATCH); MOVE(opponent, MOVE_PARTING_SHOT); SEND_OUT(opponent, 1); }
         TURN { MOVE(player, MOVE_SUNNY_DAY); MOVE(opponent, MOVE_PARTING_SHOT); SEND_OUT(opponent, 0); }
     } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_TACKLE, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SCRATCH, player);
         ANIMATION(ANIM_TYPE_MOVE, MOVE_SUNNY_DAY, player);
         ABILITY_POPUP(opponent, ABILITY_HARVEST);
     } THEN {
@@ -111,7 +112,33 @@ SINGLE_BATTLE_TEST("Harvest restores a Berry consumed by Natural Gift")
     }
 }
 
-TO_DO_BATTLE_TEST("Harvest only works once per turn"); // Check for berries that are consumed immediately, like Pecha Berry
+SINGLE_BATTLE_TEST("Harvest only works once per turn")
+{
+    GIVEN {
+        ASSUME(gItemsInfo[ITEM_PECHA_BERRY].holdEffect == HOLD_EFFECT_CURE_PSN);
+        ASSUME(GetMoveEffect(MOVE_TOXIC_THREAD) == EFFECT_TOXIC_THREAD);
+        PLAYER(SPECIES_NINETALES) { Ability(ABILITY_DROUGHT); }
+        OPPONENT(SPECIES_EXEGGUTOR) { Ability(ABILITY_HARVEST); Item(ITEM_PECHA_BERRY); Status1(STATUS1_POISON); }
+    } WHEN {
+        TURN { MOVE(player, MOVE_TOXIC_THREAD); }
+    } SCENE {
+        ABILITY_POPUP(player, ABILITY_DROUGHT);
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_BERRY, opponent);
+        STATUS_ICON(opponent, poison: FALSE);
+
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_TOXIC_THREAD, player);
+        ANIMATION(ANIM_TYPE_STATUS, B_ANIM_STATUS_PSN, opponent);
+        STATUS_ICON(opponent, poison: TRUE);
+
+        ABILITY_POPUP(opponent, ABILITY_HARVEST);
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_BERRY, opponent);
+        STATUS_ICON(opponent, poison: FALSE);
+        NOT ABILITY_POPUP(opponent, ABILITY_HARVEST);
+    } THEN {
+        EXPECT_EQ(opponent->item, ITEM_NONE);
+        EXPECT_EQ(opponent->status1, STATUS1_NONE);
+    }
+}
 
 SINGLE_BATTLE_TEST("Harvest doesn't restore a Berry when destroyed by Incinerate")
 {
@@ -135,7 +162,7 @@ SINGLE_BATTLE_TEST("Harvest doesn't restore a Berry when knocked off by Knock Of
 {
     PASSES_RANDOMLY(1, 1, RNG_HARVEST);
     GIVEN {
-        ASSUME(MoveHasAdditionalEffect(MOVE_KNOCK_OFF, MOVE_EFFECT_KNOCK_OFF));
+        ASSUME(GetMoveEffect(MOVE_KNOCK_OFF) == EFFECT_KNOCK_OFF);
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_EXEGGUTOR) { Ability(ABILITY_HARVEST); Item(ITEM_SITRUS_BERRY); }
     } WHEN {
@@ -173,9 +200,9 @@ SINGLE_BATTLE_TEST("Harvest doesn't restore a Berry that's collected via Pickup"
         PLAYER(SPECIES_ZIGZAGOON) { Speed(50); Ability(ABILITY_PICKUP); }
         OPPONENT(SPECIES_EXEGGUTOR) { Speed(10); Ability(ABILITY_HARVEST); MaxHP(500); HP(251); Item(ITEM_SITRUS_BERRY); }
     } WHEN {
-        TURN { MOVE(player, MOVE_TACKLE); MOVE(opponent, MOVE_SUNNY_DAY); }
+        TURN { MOVE(player, MOVE_SCRATCH); MOVE(opponent, MOVE_SUNNY_DAY); }
     } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_TACKLE, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SCRATCH, player);
         ANIMATION(ANIM_TYPE_MOVE, MOVE_SUNNY_DAY, opponent);
         ABILITY_POPUP(player, ABILITY_PICKUP);
         MESSAGE("Zigzagoon found one Sitrus Berry!");
@@ -230,13 +257,12 @@ SINGLE_BATTLE_TEST("Harvest can restore a Berry that was transferred from anothe
         PLAYER(SPECIES_TORKOAL) { Ability(ABILITY_DROUGHT); Item(ITEM_SITRUS_BERRY); }
         OPPONENT(SPECIES_EXEGGUTOR) { Ability(ABILITY_HARVEST); HP(100); MaxHP(500); }
     } WHEN {
-        TURN { MOVE(opponent, MOVE_TRICK); MOVE(player, MOVE_TACKLE); }
+        TURN { MOVE(opponent, MOVE_TRICK); }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_TRICK, opponent);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_TACKLE, player);
-        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, opponent);
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_BERRY, opponent);
         ABILITY_POPUP(opponent, ABILITY_HARVEST);
-        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, opponent);
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_BERRY, opponent);
     } THEN {
         EXPECT_GT(opponent->hp, opponent->maxHP / 2); // eats 2 Sitrus
     }
@@ -250,14 +276,13 @@ SINGLE_BATTLE_TEST("Harvest can only restore the newest berry consumed that was 
         PLAYER(SPECIES_TORKOAL) { Ability(ABILITY_DROUGHT); Item(ITEM_SITRUS_BERRY); }
         OPPONENT(SPECIES_EXEGGUTOR) { Ability(ABILITY_HARVEST); HP(100); MaxHP(500); Item(ITEM_APICOT_BERRY); }
     } WHEN {
-        TURN { MOVE(opponent, MOVE_TRICK); MOVE(player, MOVE_TACKLE); }
+        TURN { MOVE(opponent, MOVE_TRICK); }
     } SCENE {
-        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, opponent);
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_BERRY, opponent);
         ANIMATION(ANIM_TYPE_MOVE, MOVE_TRICK, opponent);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_TACKLE, player);
-        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, opponent);
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_BERRY, opponent);
         ABILITY_POPUP(opponent, ABILITY_HARVEST);
-        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, opponent);
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_BERRY, opponent);
     } THEN {
         EXPECT_GT(opponent->hp, opponent->maxHP / 2); // eats 2 Sitrus
     }

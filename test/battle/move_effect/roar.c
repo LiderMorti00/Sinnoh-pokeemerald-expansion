@@ -20,6 +20,8 @@ SINGLE_BATTLE_TEST("Roar switches the target with a random non-fainted replaceme
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_ROAR, player);
         MESSAGE("The opposing Bulbasaur was dragged out!");
+    } THEN {
+        EXPECT_EQ(gLastUsedMove, MOVE_ROAR);
     }
 }
 
@@ -78,7 +80,7 @@ SINGLE_BATTLE_TEST("Roar fails against target with Guard Dog")
     } WHEN {
         TURN { MOVE(player, MOVE_ROAR); }
     } SCENE {
-        NONE_OF {        
+        NONE_OF {
             ANIMATION(ANIM_TYPE_MOVE, MOVE_ROAR, player);
             MESSAGE("The opposing Charmander was dragged out!");
         }
@@ -99,7 +101,7 @@ SINGLE_BATTLE_TEST("Roar fails to switch out target with Suction Cups")
         MESSAGE("Wobbuffet used Roar!");
         NOT ANIMATION(ANIM_TYPE_MOVE, MOVE_ROAR, player);
         ABILITY_POPUP(opponent, ABILITY_SUCTION_CUPS);
-        MESSAGE("The opposing Octillery anchors itself with Suction Cups!");
+        MESSAGE("The opposing Octillery is anchored in place with its suction cups!");
         NOT MESSAGE("The opposing Charmander was dragged out!");
     }
 }

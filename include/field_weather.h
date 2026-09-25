@@ -3,6 +3,7 @@
 
 #include "sprite.h"
 #include "constants/field_weather.h"
+#include "constants/weather.h"
 
 #define TAG_WEATHER_START 0x1200
 enum {
@@ -44,7 +45,8 @@ struct Weather
     s8 targetColorMapIndex;
     u8 colorMapStepDelay;
     u8 colorMapStepCounter;
-    u16 fadeDestColor;
+    u16 fadeDestColor:15;
+    u16 noShadows:1; // Certain weathers require blend coeffs that do not work nice with shadows
     u8 palProcessingState;
     u8 fadeScreenCounter;
     bool8 readyForInit;
@@ -147,9 +149,11 @@ void SetCurrentAndNextWeatherNoDelay(u8 weather);
 void ApplyWeatherColorMapIfIdle(s8 colorMapIndex);
 void ApplyWeatherColorMapIfIdle_Gradual(u8 colorMapIndex, u8 targetColorMapIndex, u8 colorMapStepDelay);
 void FadeScreen(u8 mode, s8 delay);
+void FadeSelectedPals(u8 mode, s8 delay, u32 selectedPalettes);
+void FadeScreenHardware(u32 mode, s32 delay);
 bool8 IsWeatherNotFadingIn(void);
-void UpdateSpritePaletteWithWeather(u8 spritePaletteIndex);
-void ApplyWeatherColorMapToPal(u8 paletteIndex);
+void UpdateSpritePaletteWithWeather(u8 spritePaletteIndex, bool8 allowFog);
+void ApplyWeatherColorMapToPals(u8 startPalIndex, u8 numPalettes);
 void LoadCustomWeatherSpritePalette(const u16 *palette);
 void ResetDroughtWeatherPaletteLoading(void);
 bool8 LoadDroughtWeatherPalettes(void);
@@ -164,7 +168,9 @@ void PlayRainStoppingSoundEffect(void);
 u8 IsWeatherChangeComplete(void);
 void SetWeatherScreenFadeOut(void);
 void SetWeatherPalStateIdle(void);
+const u8 *SetPaletteColorMapType(u8 paletteIndex, enum ColorMapType colorMapType);
 void PreservePaletteInWeather(u8 preservedPalIndex);
+void ResetPaletteColorMapType(u8 paletteIndex);
 void ResetPreservedPalettesInWeather(void);
 bool32 IsWeatherAlphaBlend(void);
 
@@ -190,6 +196,7 @@ void Thunderstorm_Main(void);
 void Thunderstorm_InitAll(void);
 bool8 Thunderstorm_Finish(void);
 void FogHorizontal_InitVars(void);
+u8 UpdateShadowColor(u16 color);
 void FogHorizontal_Main(void);
 void FogHorizontal_InitAll(void);
 bool8 FogHorizontal_Finish(void);
@@ -221,9 +228,9 @@ void Bubbles_InitAll(void);
 bool8 Bubbles_Finish(void);
 
 u8 GetSavedWeather(void);
-void SetSavedWeather(u32 weather);
+void SetSavedWeather(enum OverworldWeather weather);
 void SetSavedWeatherFromCurrMapHeader(void);
-void SetWeather(u32 weather);
+void SetWeather(enum OverworldWeather weather);
 void DoCurrentWeather(void);
 void UpdateWeatherPerDay(u16 increment);
 void ResumePausedWeather(void);

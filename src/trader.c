@@ -17,10 +17,10 @@
 
 static const u8 *const sDefaultTraderNames[NUM_TRADER_ITEMS] =
 {
-    gText_Tristan,
-    gText_Philip,
-    gText_Dennis,
-    gText_Roberto,
+    COMPOUND_STRING("TRISTAN"),
+    COMPOUND_STRING("PHILIP"),
+    COMPOUND_STRING("DENNIS"),
+    COMPOUND_STRING("ROBERTO"),
 };
 
 static const u8 sDefaultTraderDecorations[NUM_TRADER_ITEMS] =
@@ -58,7 +58,7 @@ void Trader_ResetFlag(void)
 void CreateAvailableDecorationsMenu(u8 taskId)
 {
     u8 i;
-    s16 * data = gTasks[taskId].data;
+    s16 *data = gTasks[taskId].data;
     struct MauvilleOldManTrader *trader = &gSaveBlock1Ptr->oldMan.trader;
     struct WindowTemplate windowTemplate = {
         .bg = 0,
@@ -98,7 +98,7 @@ void CreateAvailableDecorationsMenu(u8 taskId)
 
 void Task_BufferDecorSelectionAndCloseWindow(u8 taskId, u8 decorationId)
 {
-    s16 * data = gTasks[taskId].data;
+    s16 *data = gTasks[taskId].data;
     if (decorationId > NUM_DECORATIONS)
         gSpecialVar_0x8004 = 0xFFFF;
     else
@@ -119,20 +119,20 @@ void Task_HandleGetDecorationMenuInput(u8 taskId)
 
     switch (input)
     {
-        case MENU_NOTHING_CHOSEN:
-            break;
-        case MENU_B_PRESSED:
-        case NUM_TRADER_ITEMS: // EXIT
-            PlaySE(SE_SELECT);
-            Task_BufferDecorSelectionAndCloseWindow(taskId, 0);
-            break;
-        default:
-            PlaySE(SE_SELECT);
-            gSpecialVar_0x8005 = input;
-            StringCopy(gStringVar1, trader->playerNames[input]);
-            ConvertInternationalString(gStringVar1, trader->language[input]);
-            Task_BufferDecorSelectionAndCloseWindow(taskId, trader->decorations[input]);
-            break;
+    case MENU_NOTHING_CHOSEN:
+        break;
+    case MENU_B_PRESSED:
+    case NUM_TRADER_ITEMS: // EXIT
+        PlaySE(SE_SELECT);
+        Task_BufferDecorSelectionAndCloseWindow(taskId, 0);
+        break;
+    default:
+        PlaySE(SE_SELECT);
+        gSpecialVar_0x8005 = input;
+        StringCopy(gStringVar1, trader->playerNames[input]);
+        ConvertInternationalString(gStringVar1, trader->language[input]);
+        Task_BufferDecorSelectionAndCloseWindow(taskId, trader->decorations[input]);
+        break;
     }
 }
 

@@ -3,6 +3,7 @@
   "name": "LavaridgeTown",
   "layout": "LAYOUT_LAVARIDGE_TOWN",
   "music": "MUS_OLDALE",
+  "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_LAVARIDGE_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
@@ -99,6 +100,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_LAVARIDGE_RIVAL_ON_BIKE",
       "graphics_id": "OBJ_EVENT_GFX_VAR_3",
       "x": 6,
       "y": 16,
@@ -112,6 +114,7 @@
       "flag": "FLAG_HIDE_LAVARIDGE_TOWN_RIVAL_ON_BIKE"
     },
     {
+      "local_id": "LOCALID_LAVARIDGE_RIVAL",
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
       "x": 12,
       "y": 15,

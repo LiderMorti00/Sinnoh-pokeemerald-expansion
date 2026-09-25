@@ -15,7 +15,7 @@ SINGLE_BATTLE_TEST("Eject Button is not triggered when there is nothing to switc
     } WHEN {
         TURN {
             MOVE(player, MOVE_QUICK_ATTACK);
-            MOVE(opponent, MOVE_TACKLE);
+            MOVE(opponent, MOVE_SCRATCH);
         }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_QUICK_ATTACK, player);
@@ -23,7 +23,7 @@ SINGLE_BATTLE_TEST("Eject Button is not triggered when there is nothing to switc
             ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, opponent);
             MESSAGE("The opposing Wobbuffet is switched out with the Eject Button!");
         }
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_TACKLE, opponent);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SCRATCH, opponent);
     }
 }
 
@@ -36,7 +36,7 @@ SINGLE_BATTLE_TEST("Eject Button is not activated by a Sheer Force boosted move"
     } WHEN {
         TURN {
             MOVE(player, MOVE_FLAMETHROWER);
-            MOVE(opponent, MOVE_TACKLE);
+            MOVE(opponent, MOVE_SCRATCH);
         }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_FLAMETHROWER, player);
@@ -44,7 +44,7 @@ SINGLE_BATTLE_TEST("Eject Button is not activated by a Sheer Force boosted move"
             ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, opponent);
             MESSAGE("The opposing Wobbuffet is switched out with the Eject Button!");
         }
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_TACKLE, opponent);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SCRATCH, opponent);
     }
 }
 
@@ -57,12 +57,12 @@ SINGLE_BATTLE_TEST("Eject Button will not activate under Substitute")
     } WHEN {
         TURN {
                MOVE(opponent, MOVE_SUBSTITUTE);
-               MOVE(player, MOVE_TACKLE);
+               MOVE(player, MOVE_SCRATCH);
         }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_SUBSTITUTE, opponent);
         MESSAGE("The opposing Raichu put in a substitute!");
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_TACKLE, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SCRATCH, player);
         MESSAGE("The substitute took damage for the opposing Raichu!");
         NONE_OF {
             ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, opponent);
@@ -79,11 +79,11 @@ SINGLE_BATTLE_TEST("Eject Button is not blocked by trapping abilities or moves")
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN {
-            MOVE(player, MOVE_TACKLE);
+            MOVE(player, MOVE_SCRATCH);
             SEND_OUT(opponent, 1);
         }
     } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_TACKLE, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SCRATCH, player);
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, opponent);
         MESSAGE("The opposing Wobbuffet is switched out with the Eject Button!");
         MESSAGE("2 sent out Wobbuffet!");
@@ -99,7 +99,7 @@ SINGLE_BATTLE_TEST("Eject Button is not triggered after the mon loses Eject Butt
     } WHEN {
         TURN {
             MOVE(player, MOVE_KNOCK_OFF);
-            MOVE(opponent, MOVE_TACKLE);
+            MOVE(opponent, MOVE_SCRATCH);
         }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_KNOCK_OFF, player);
@@ -107,7 +107,7 @@ SINGLE_BATTLE_TEST("Eject Button is not triggered after the mon loses Eject Butt
             ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, opponent);
             MESSAGE("The opposing Wobbuffet is switched out with the Eject Button!");
         }
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_TACKLE, opponent);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SCRATCH, opponent);
     }
 }
 
@@ -120,14 +120,14 @@ SINGLE_BATTLE_TEST("Eject Button is not triggered after given to player by Picke
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN {
-            MOVE(player, MOVE_TACKLE);
-            MOVE(opponent, MOVE_TACKLE);
+            MOVE(player, MOVE_SCRATCH);
+            MOVE(opponent, MOVE_SCRATCH);
         }
     } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_TACKLE, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SCRATCH, player);
         ABILITY_POPUP(opponent, ABILITY_PICKPOCKET);
         MESSAGE("The opposing Sneasel stole Regieleki's Eject Button!");
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_TACKLE, opponent);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SCRATCH, opponent);
     }
 }
 
@@ -140,7 +140,7 @@ SINGLE_BATTLE_TEST("Eject Button has no chance to activate after Dragon Tail")
     } WHEN {
         TURN {
             MOVE(player, MOVE_DRAGON_TAIL);
-            MOVE(opponent, MOVE_TACKLE);
+            MOVE(opponent, MOVE_SCRATCH);
         }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_TAIL, player);
@@ -209,26 +209,59 @@ SINGLE_BATTLE_TEST("Eject Button is not triggered after High Jump Kick crash dam
     }
 }
 
-DOUBLE_BATTLE_TEST("Eject Button activation will not trigger an attack from the incoming mon")
+SINGLE_BATTLE_TEST("Eject Button activates after Wandering Spirit")
 {
     GIVEN {
-        PLAYER(SPECIES_TATSUGIRI) { Speed(10); Ability(ABILITY_COMMANDER); }
-        PLAYER(SPECIES_WOBBUFFET) { Speed(100); Item(ITEM_EJECT_BUTTON); }
-        PLAYER(SPECIES_DONDOZO) { Speed(20); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(50); Item(ITEM_EJECT_PACK); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(10); }
-        OPPONENT(SPECIES_WYNAUT) { Speed(1); }
+        PLAYER(SPECIES_EKANS) { Ability(ABILITY_INTIMIDATE); }
+        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_YAMASK_GALAR) { Item(ITEM_EJECT_BUTTON); Ability(ABILITY_WANDERING_SPIRIT); }
     } WHEN {
-        TURN { MOVE(opponentRight, MOVE_MAKE_IT_RAIN); SEND_OUT(playerRight, 2); SEND_OUT(opponentRight, 2); }
-    } SCENE {
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_MAKE_IT_RAIN, opponentRight);
-        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, playerRight);
-        MESSAGE("Wobbuffet is switched out with the Eject Button!");
-        ABILITY_POPUP(playerLeft, ABILITY_COMMANDER);
-        MESSAGE("Tatsugiri was swallowed by Dondozo and became Dondozo's commander!");
-        NONE_OF {
-            ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, opponentLeft);
-            MESSAGE("Wobbuffet is switched out with the Eject Pack!");
+        TURN {
+            SWITCH(opponent, 1);
+            MOVE(player, MOVE_DRAGON_CLAW);
+            SEND_OUT(opponent, 0);
         }
+    } SCENE {
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_CLAW, player);
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, opponent);
+    }
+}
+
+DOUBLE_BATTLE_TEST("Eject Button will activate before Red Card if holder is faster")
+{
+    GIVEN {
+        PLAYER(SPECIES_WOBBUFFET) { Speed(20); }
+        PLAYER(SPECIES_WOBBUFFET) { Speed(10); }
+        PLAYER(SPECIES_WOBBUFFET) { Speed(5); };
+        OPPONENT(SPECIES_WOBBUFFET) { Speed(30); Item(ITEM_EJECT_BUTTON); }
+        OPPONENT(SPECIES_WYNAUT) { Speed(25); Item(ITEM_RED_CARD); }
+        OPPONENT(SPECIES_WOBBUFFET) { Speed(5); }
+    } WHEN {
+        TURN {
+            MOVE(playerLeft, MOVE_HYPER_VOICE);
+            SEND_OUT(opponentLeft, 2);
+        }
+    } SCENE {
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_HYPER_VOICE, playerLeft);
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, opponentLeft);
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, opponentRight);
+    }
+}
+
+SINGLE_BATTLE_TEST("Eject Button activates and the attacker takes Life Orb recoil before replacement comes out")
+{
+    GIVEN {
+        ASSUME(GetItemHoldEffect(ITEM_LIFE_ORB) == HOLD_EFFECT_LIFE_ORB);
+        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_LIFE_ORB); }
+        OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_EJECT_BUTTON); }
+        OPPONENT(SPECIES_EKANS) { Ability(ABILITY_INTIMIDATE); }
+    } WHEN {
+        TURN { MOVE(player, MOVE_SCRATCH); SEND_OUT(opponent, 1); }
+    } SCENE {
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SCRATCH, player);
+        HP_BAR(opponent);
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, opponent);
+        HP_BAR(player);
+        ABILITY_POPUP(opponent, ABILITY_INTIMIDATE);
     }
 }

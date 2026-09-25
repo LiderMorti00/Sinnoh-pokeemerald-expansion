@@ -1,6 +1,7 @@
 #include "global.h"
 #include "reset_rtc_screen.h"
 #include "event_data.h"
+#include "fake_rtc.h"
 #include "main.h"
 #include "menu.h"
 #include "palette.h"
@@ -41,7 +42,10 @@ enum {
 #define tWindowId  data[8]
 
 enum {
-    SELECTION_DAYS = 1,
+    SELECTION_DAYS_1000 = 1,
+    SELECTION_DAYS_100,
+    SELECTION_DAYS_10,
+    SELECTION_DAYS_1,
     SELECTION_HOURS,
     SELECTION_MINS,
     SELECTION_SECS,
@@ -59,6 +63,7 @@ struct ResetRtcInputMap
     /*0x0*/ u8 dataIndex;
     /*0x2*/ u16 minVal;
     /*0x4*/ u16 maxVal;
+            u16 increment;
     /*0x6*/ u8 left;
     /*0x7*/ u8 right;
     /*0x8*/ u8 unk; // never read
@@ -117,43 +122,75 @@ static const struct WindowTemplate sInputTimeWindow = {
 
 static const struct ResetRtcInputMap sInputMap[] =
 {
-    [SELECTION_DAYS - 1] = {
+    [SELECTION_DAYS_1000 - 1] = {
         .dataIndex = DATAIDX_DAYS,
         .minVal = 1,
         .maxVal = 9999,
+        .increment = 1000,
         .left = 0,
         .right = 2,
+        .unk = 0,
+    },
+    [SELECTION_DAYS_100 - 1] = {
+        .dataIndex = DATAIDX_DAYS,
+        .minVal = 1,
+        .maxVal = 9999,
+        .increment = 100,
+        .left = 1,
+        .right = 3,
+        .unk = 0,
+    },
+    [SELECTION_DAYS_10 - 1] = {
+        .dataIndex = DATAIDX_DAYS,
+        .minVal = 1,
+        .maxVal = 9999,
+        .increment = 10,
+        .left = 2,
+        .right = 4,
+        .unk = 0,
+    },
+    [SELECTION_DAYS_1 - 1] = {
+        .dataIndex = DATAIDX_DAYS,
+        .minVal = 1,
+        .maxVal = 9999,
+        .increment = 1,
+        .left = 3,
+        .right = 5,
         .unk = 0,
     },
     [SELECTION_HOURS - 1] = {
         .dataIndex = DATAIDX_HOURS,
         .minVal = 0,
         .maxVal = 23,
-        .left = 1,
-        .right = 3,
+        .increment = 1,
+        .left = 4,
+        .right = 6,
         .unk = 0,
     },
     [SELECTION_MINS - 1] = {
         .dataIndex = DATAIDX_MINS,
         .minVal = 0,
         .maxVal = 59,
-        .left = 2,
-        .right = 4,
+        .increment = 1,
+        .left = 5,
+        .right = 7,
         .unk = 0,
     },
     [SELECTION_SECS - 1] = {
         .dataIndex = DATAIDX_SECS,
         .minVal = 0,
         .maxVal = 59,
-        .left = 3,
-        .right = 5,
+        .increment = 1,
+        .left = 6,
+        .right = 8,
         .unk = 0,
     },
     [SELECTION_CONFIRM - 1] = {
         .dataIndex = DATAIDX_CONFIRM,
         .minVal = 0,
         .maxVal = 0,
-        .left = 4,
+        .increment = 1,
+        .left = 7,
         .right = 0,
         .unk = 6,
     },
@@ -176,9 +213,9 @@ static const struct OamData sOamData_Arrow =
     .affineParam = 0,
 };
 
-static const u8 sArrowDown_Gfx[] = INCBIN_U8("graphics/reset_rtc_screen/arrow_down.4bpp");
-static const u8 sArrowRight_Gfx[] = INCBIN_U8("graphics/reset_rtc_screen/arrow_right.4bpp");
-static const u16 sArrow_Pal[] = INCBIN_U16("graphics/reset_rtc_screen/arrow.gbapal");
+static const u8 sArrowDown_Gfx[] = INCGFX_U8("graphics/reset_rtc_screen/arrow_down.png", ".4bpp");
+static const u8 sArrowRight_Gfx[] = INCGFX_U8("graphics/reset_rtc_screen/arrow_right.png", ".4bpp");
+static const u16 sArrow_Pal[] = INCGFX_U16("graphics/reset_rtc_screen/arrow.pal", ".gbapal");
 
 static const struct SpriteFrameImage sPicTable_Arrow[] =
 {
@@ -229,8 +266,6 @@ const struct SpriteTemplate gSpriteTemplate_Arrow =
     .oam = &sOamData_Arrow,
     .anims = sAnims_Arrow,
     .images = sPicTable_Arrow,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCallbackDummy,
 };
 
 #define sTaskId data[0]
@@ -244,7 +279,28 @@ static void SpriteCB_Cursor_UpOrRight(struct Sprite *sprite)
         sprite->sState = state;
         switch (state)
         {
-        case SELECTION_DAYS:
+        case SELECTION_DAYS_1000:
+            sprite->invisible = FALSE;
+            sprite->animNum = ARROW_UP;
+            sprite->animDelayCounter = 0;
+            sprite->x = 35;
+            sprite->y = 68;
+            break;
+        case SELECTION_DAYS_100:
+            sprite->invisible = FALSE;
+            sprite->animNum = ARROW_UP;
+            sprite->animDelayCounter = 0;
+            sprite->x = 41;
+            sprite->y = 68;
+            break;
+        case SELECTION_DAYS_10:
+            sprite->invisible = FALSE;
+            sprite->animNum = ARROW_UP;
+            sprite->animDelayCounter = 0;
+            sprite->x = 47;
+            sprite->y = 68;
+            break;
+        case SELECTION_DAYS_1:
             sprite->invisible = FALSE;
             sprite->animNum = ARROW_UP;
             sprite->animDelayCounter = 0;
@@ -294,7 +350,28 @@ static void SpriteCB_Cursor_Down(struct Sprite *sprite)
         sprite->sState = state;
         switch (state)
         {
-        case SELECTION_DAYS:
+        case SELECTION_DAYS_1000:
+            sprite->invisible = FALSE;
+            sprite->animNum = ARROW_DOWN;
+            sprite->animDelayCounter = 0;
+            sprite->x = 35;
+            sprite->y = 92;
+            break;
+        case SELECTION_DAYS_100:
+            sprite->invisible = FALSE;
+            sprite->animNum = ARROW_DOWN;
+            sprite->animDelayCounter = 0;
+            sprite->x = 41;
+            sprite->y = 92;
+            break;
+        case SELECTION_DAYS_10:
+            sprite->invisible = FALSE;
+            sprite->animNum = ARROW_DOWN;
+            sprite->animDelayCounter = 0;
+            sprite->x = 47;
+            sprite->y = 92;
+            break;
+        case SELECTION_DAYS_1:
             sprite->invisible = FALSE;
             sprite->animNum = ARROW_DOWN;
             sprite->animDelayCounter = 0;
@@ -397,17 +474,17 @@ static void ShowChooseTimeWindow(u8 windowId, u16 days, u8 hours, u8 minutes, u8
     ScheduleBgCopyTilemapToVram(0);
 }
 
-static bool32 MoveTimeUpDown(s16 *val, int minVal, int maxVal, u16 keys)
+static bool32 MoveTimeUpDown(s16 *val, int minVal, int maxVal, int increment, u16 keys)
 {
     if (keys & DPAD_DOWN)
     {
-        *val -= 1;
+        *val -= increment;
         if (*val < minVal)
             *val = maxVal;
     }
     else if (keys & DPAD_UP)
     {
-        *val += 1;
+        *val += increment;
         if (*val > maxVal)
             *val = minVal;
     }
@@ -494,7 +571,7 @@ static void Task_ResetRtc_HandleInput(u8 taskId)
             tSelection = SELECTION_NONE;
         }
     }
-    else if (MoveTimeUpDown(&data[selectionInfo->dataIndex], selectionInfo->minVal, selectionInfo->maxVal, JOY_REPEAT(DPAD_UP | DPAD_DOWN)))
+    else if (MoveTimeUpDown(&data[selectionInfo->dataIndex], selectionInfo->minVal, selectionInfo->maxVal, selectionInfo->increment, JOY_REPEAT(DPAD_UP | DPAD_DOWN)))
     {
         PlaySE(SE_SELECT);
         PrintTime(tWindowId, 0, 1, tDays, tHours, tMinutes, tSeconds);
@@ -522,7 +599,7 @@ void CB2_InitResetRtcScreen(void)
     SetGpuReg(REG_OFFSET_DISPCNT, 0);
     SetVBlankCallback(NULL);
     DmaClear16(3, PLTT, PLTT_SIZE);
-    DmaFillLarge16(3, 0, (u8 *)VRAM, VRAM_SIZE, 0x1000);
+    DmaClearLarge16(3, (void *)VRAM, VRAM_SIZE, 0x1000);
     ResetOamRange(0, 128);
     LoadOam();
     ScanlineEffect_Stop();

@@ -5,6 +5,7 @@
 #include "data.h"
 #include "event_data.h"
 #include "event_object_movement.h"
+#include "frontier_util.h"
 #include "field_player_avatar.h"
 #include "international_string_util.h"
 #include "item.h"
@@ -62,16 +63,16 @@
 struct ApprenticePartyMovesData
 {
     u8 moveCounter;
-    u16 moves[MULTI_PARTY_SIZE][NUM_WHICH_MOVE_QUESTIONS];
+    enum Move moves[MULTI_PARTY_SIZE][NUM_WHICH_MOVE_QUESTIONS];
     u8 moveSlots[MULTI_PARTY_SIZE][NUM_WHICH_MOVE_QUESTIONS];
 };
 
 struct ApprenticeQuestionData
 {
-    u16 speciesId;
-    u16 altSpeciesId;
-    u16 moveId1;
-    u16 moveId2;
+    enum Species speciesId;
+    enum Species altSpeciesId;
+    enum Move move1;
+    enum Move move2;
 };
 
 // IWRAM common
@@ -81,7 +82,7 @@ COMMON_DATA void (*gApprenticeFunc)(void) = NULL;
 
 // This file's functions.
 static u16 GetRandomAlternateMove(u8 monId);
-static bool8 TrySetMove(u8 monId, u16 moveId);
+static bool8 TrySetMove(u8 monId, enum Move move);
 static void CreateChooseAnswerTask(bool8 noBButton, u8 itemsCount, u8 windowId);
 static u8 CreateAndShowWindow(u8 left, u8 top, u8 width, u8 height);
 static void RemoveAndHideWindow(u8 windowId);
@@ -201,7 +202,7 @@ static void SetPlayersApprenticeLvlMode(u8 mode)
 
 static void ShuffleApprenticeSpecies(void)
 {
-    u8 species[APPRENTICE_SPECIES_COUNT];
+    enum Species species[APPRENTICE_SPECIES_COUNT];
     u8 i;
 
     for (i = 0; i < ARRAY_COUNT(species); i++)
@@ -313,10 +314,10 @@ static u16 GetRandomAlternateMove(u8 monId)
     u8 i, j;
     u8 id;
     u8 numLearnsetMoves;
-    u16 species;
+    enum Species species;
     const struct LevelUpMove *learnset;
     bool32 needTMs = FALSE;
-    u16 moveId = MOVE_NONE;
+    enum Move move = MOVE_NONE;
     bool32 shouldUseMove;
     u8 level;
 
@@ -353,13 +354,11 @@ static u16 GetRandomAlternateMove(u8 monId)
                 // NOTE: Below is an infinite loop if a species which cannot learn TMs is assigned to an Apprentice
                 do
                 {
-                    id = Random() % (NUM_TECHNICAL_MACHINES + NUM_HIDDEN_MACHINES);
-                    shouldUseMove = CanLearnTeachableMove(species, ItemIdToBattleMoveId(ITEM_TM01 + id));
+                    id = (Random() % NUM_ALL_MACHINES) + 1;
+                    move = GetTMHMMoveId(id);
+                    shouldUseMove = CanLearnTeachableMove(species, move);
                 }
                 while (!shouldUseMove);
-
-                moveId = ItemIdToBattleMoveId(ITEM_TM01 + id);
-                shouldUseMove = TRUE;
 
                 if (numLearnsetMoves <= MAX_MON_MOVES)
                     j = 0;
@@ -369,7 +368,7 @@ static u16 GetRandomAlternateMove(u8 monId)
                 for (; j < numLearnsetMoves; j++)
                 {
                     // Keep looking for TMs until one not in the level up learnset is found
-                    if ((learnset[j].move) == moveId)
+                    if ((learnset[j].move) == move)
                     {
                         shouldUseMove = FALSE;
                         break;
@@ -393,13 +392,13 @@ static u16 GetRandomAlternateMove(u8 monId)
                 {
                     // Get a random move excluding the 4 it would know at max level
                     u8 learnsetId = Random() % (numLearnsetMoves - MAX_MON_MOVES);
-                    moveId = learnset[learnsetId].move;
+                    move = learnset[learnsetId].move;
                     shouldUseMove = TRUE;
 
                     for (j = numLearnsetMoves - MAX_MON_MOVES; j < numLearnsetMoves; j++)
                     {
                         // Keep looking for moves until one not in the last 4 is found
-                        if ((learnset[j].move) == moveId)
+                        if ((learnset[j].move) == move)
                         {
                             shouldUseMove = FALSE;
                             break;
@@ -409,33 +408,33 @@ static u16 GetRandomAlternateMove(u8 monId)
             }
         }
 
-        if (TrySetMove(monId, moveId))
+        if (TrySetMove(monId, move))
         {
-            if (gMovesInfo[moveId].validApprenticeMove)
+            if (IsValidApprenticeMove(move))
                 break;
             i++;
         }
     }
 
     gApprenticePartyMovesData->moveCounter++;
-    return moveId;
+    return move;
 }
 
-static bool8 TrySetMove(u8 monId, u16 moveId)
+static bool8 TrySetMove(u8 monId, enum Move move)
 {
     u8 i;
 
     for (i = 0; i < NUM_WHICH_MOVE_QUESTIONS; i++)
     {
-        if (gApprenticePartyMovesData->moves[monId][i] == moveId)
+        if (gApprenticePartyMovesData->moves[monId][i] == move)
             return FALSE;
     }
 
-    gApprenticePartyMovesData->moves[monId][gApprenticePartyMovesData->moveCounter] = moveId;
+    gApprenticePartyMovesData->moves[monId][gApprenticePartyMovesData->moveCounter] = move;
     return TRUE;
 }
 
-static void GetLatestLearnedMoves(u16 species, u16 *moves)
+static void GetLatestLearnedMoves(enum Species species, u16 *moves)
 {
     u8 i, j;
     u8 level, numLearnsetMoves;
@@ -463,9 +462,9 @@ static void GetLatestLearnedMoves(u16 species, u16 *moves)
 
 // Get the level up move or previously suggested move to be the first move choice
 // Compare to GetRandomAlternateMove, which gets the move that will be the second choice
-static u16 GetDefaultMove(u8 monId, u8 speciesArrayId, u8 moveSlot)
+static enum Move GetDefaultMove(u8 monId, u8 speciesArrayId, u8 moveSlot)
 {
-    u16 moves[MAX_MON_MOVES];
+    enum Move moves[MAX_MON_MOVES];
     u8 i, numQuestions;
 
     if (PLAYER_APPRENTICE.questionsAnswered < NUM_WHICH_MON_QUESTIONS)
@@ -565,7 +564,7 @@ static void CreateApprenticeMenu(u8 menu)
         top = 6;
         for (i = 0; i < MULTI_PARTY_SIZE; i++)
         {
-            u16 species;
+            enum Species species;
             u32 speciesTableId;
 
             speciesTableId = APPRENTICE_SPECIES_ID(i);
@@ -584,8 +583,8 @@ static void CreateApprenticeMenu(u8 menu)
     case APPRENTICE_ASK_MOVES:
         left = 17;
         top = 8;
-        strings[0] = GetMoveName(gApprenticeQuestionData->moveId1);
-        strings[1] = GetMoveName(gApprenticeQuestionData->moveId2);
+        strings[0] = GetMoveName(gApprenticeQuestionData->move1);
+        strings[1] = GetMoveName(gApprenticeQuestionData->move2);
         break;
     case APPRENTICE_ASK_GIVE:
         left = 18;
@@ -985,8 +984,8 @@ static void InitQuestionData(void)
             count = PLAYER_APPRENTICE.questions[CURRENT_QUESTION_NUM].monId;
             APPRENTICE_SPECIES_ID_NO_COND(id1, count);
             gApprenticeQuestionData->speciesId = gApprentices[PLAYER_APPRENTICE.id].species[id1];
-            gApprenticeQuestionData->moveId1 = GetDefaultMove(count, id1, PLAYER_APPRENTICE.questions[CURRENT_QUESTION_NUM].moveSlot);
-            gApprenticeQuestionData->moveId2 = PLAYER_APPRENTICE.questions[CURRENT_QUESTION_NUM].data;
+            gApprenticeQuestionData->move1 = GetDefaultMove(count, id1, PLAYER_APPRENTICE.questions[CURRENT_QUESTION_NUM].moveSlot);
+            gApprenticeQuestionData->move2 = PLAYER_APPRENTICE.questions[CURRENT_QUESTION_NUM].data;
         }
     }
     else if (gSpecialVar_0x8005 == APPRENTICE_QUESTION_WHAT_ITEM)
@@ -1041,13 +1040,13 @@ static void ApprenticeBufferString(void)
         StringCopy(stringDst, GetSpeciesName(gApprenticeQuestionData->speciesId));
         break;
     case APPRENTICE_BUFF_MOVE1:
-        StringCopy(stringDst, GetMoveName(gApprenticeQuestionData->moveId1));
+        StringCopy(stringDst, GetMoveName(gApprenticeQuestionData->move1));
         break;
     case APPRENTICE_BUFF_MOVE2:
-        StringCopy(stringDst, GetMoveName(gApprenticeQuestionData->moveId2));
+        StringCopy(stringDst, GetMoveName(gApprenticeQuestionData->move2));
         break;
     case APPRENTICE_BUFF_ITEM:
-        StringCopy(stringDst, ItemId_GetName(PLAYER_APPRENTICE.questions[CURRENT_QUESTION_NUM].data));
+        StringCopy(stringDst, GetItemName(PLAYER_APPRENTICE.questions[CURRENT_QUESTION_NUM].data));
         break;
     case APPRENTICE_BUFF_NAME:
         TVShowConvertInternationalString(text, GetApprenticeNameInLanguage(PLAYER_APPRENTICE.id, GAME_LANGUAGE), GAME_LANGUAGE);
@@ -1184,20 +1183,20 @@ static void SetSavedApprenticeTrainerGfxId(void)
     u8 objectEventGfxId;
     u8 class = gApprentices[gSaveBlock2Ptr->apprentices[0].id].facilityClass;
 
-    for (i = 0; i < ARRAY_COUNT(gTowerMaleFacilityClasses) && gTowerMaleFacilityClasses[i] != class; i++)
+    for (i = 0; i < ARRAY_COUNT(gTowerMaleFacilityClasses) && gTowerMaleFacilityClasses[i].class != class; i++)
         ;
     if (i != ARRAY_COUNT(gTowerMaleFacilityClasses))
     {
-        objectEventGfxId = gTowerMaleTrainerGfxIds[i];
+        objectEventGfxId = gTowerMaleFacilityClasses[i].gfxId;
         VarSet(VAR_OBJ_GFX_ID_0, objectEventGfxId);
         return;
     }
 
-    for (i = 0; i < ARRAY_COUNT(gTowerFemaleFacilityClasses) && gTowerFemaleFacilityClasses[i] != class; i++)
+    for (i = 0; i < ARRAY_COUNT(gTowerFemaleFacilityClasses) && gTowerFemaleFacilityClasses[i].class != class; i++)
         ;
     if (i != ARRAY_COUNT(gTowerFemaleFacilityClasses))
     {
-        objectEventGfxId = gTowerFemaleTrainerGfxIds[i];
+        objectEventGfxId = gTowerFemaleFacilityClasses[i].gfxId;
         VarSet(VAR_OBJ_GFX_ID_0, objectEventGfxId);
     }
 }
@@ -1208,20 +1207,20 @@ static void SetPlayerApprenticeTrainerGfxId(void)
     u8 objectEventGfxId;
     u8 class = gApprentices[PLAYER_APPRENTICE.id].facilityClass;
 
-    for (i = 0; i < ARRAY_COUNT(gTowerMaleFacilityClasses) && gTowerMaleFacilityClasses[i] != class; i++)
+    for (i = 0; i < ARRAY_COUNT(gTowerMaleFacilityClasses) && gTowerMaleFacilityClasses[i].class != class; i++)
         ;
     if (i != ARRAY_COUNT(gTowerMaleFacilityClasses))
     {
-        objectEventGfxId = gTowerMaleTrainerGfxIds[i];
+        objectEventGfxId = gTowerMaleFacilityClasses[i].gfxId;
         VarSet(VAR_OBJ_GFX_ID_0, objectEventGfxId);
         return;
     }
 
-    for (i = 0; i < ARRAY_COUNT(gTowerFemaleFacilityClasses) && gTowerFemaleFacilityClasses[i] != class; i++)
+    for (i = 0; i < ARRAY_COUNT(gTowerFemaleFacilityClasses) && gTowerFemaleFacilityClasses[i].class != class; i++)
         ;
     if (i != ARRAY_COUNT(gTowerFemaleFacilityClasses))
     {
-        objectEventGfxId = gTowerFemaleTrainerGfxIds[i];
+        objectEventGfxId = gTowerFemaleFacilityClasses[i].gfxId;
         VarSet(VAR_OBJ_GFX_ID_0, objectEventGfxId);
     }
 }
@@ -1238,7 +1237,7 @@ static void GetShouldApprenticeLeave(void)
     gSpecialVar_0x8004 = TRUE;
 }
 
-const u8 *GetApprenticeNameInLanguage(u32 apprenticeId, s32 language)
+const u8 *GetApprenticeNameInLanguage(u32 apprenticeId, enum Language language)
 {
     const struct ApprenticeTrainer *apprentice = &gApprentices[apprenticeId];
 

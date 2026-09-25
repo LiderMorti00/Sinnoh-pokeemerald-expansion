@@ -4,15 +4,15 @@
 ASSUMPTIONS
 {
     ASSUME(gItemsInfo[ITEM_GANLON_BERRY].holdEffect == HOLD_EFFECT_DEFENSE_UP);
-    ASSUME(GetMoveEffect(MOVE_DRAGON_RAGE) == EFFECT_FIXED_DAMAGE_ARG);
-    ASSUME(GetMoveFixedDamage(MOVE_DRAGON_RAGE) == 40);
+    ASSUME(GetMoveEffect(MOVE_DRAGON_RAGE) == EFFECT_FIXED_HP_DAMAGE);
+    ASSUME(GetMoveFixedHPDamage(MOVE_DRAGON_RAGE) == 40);
 }
 
 SINGLE_BATTLE_TEST("Ganlon Berry raises the holder's Defense by one stage when HP drops to 1/4 or below")
 {
-    u32 move;
+    enum Move move;
 
-    PARAMETRIZE { move = MOVE_TACKLE; }
+    PARAMETRIZE { move = MOVE_SCRATCH; }
     PARAMETRIZE { move = MOVE_DRAGON_RAGE; }
 
     GIVEN {
@@ -22,14 +22,14 @@ SINGLE_BATTLE_TEST("Ganlon Berry raises the holder's Defense by one stage when H
         TURN { MOVE(opponent, move); }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, move, opponent);
-        if (move == MOVE_TACKLE) {
+        if (move == MOVE_SCRATCH) {
             NONE_OF {
-                ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, player);
-                MESSAGE("Using Ganlon Berry, the Defense of Wobbuffet rose!");
+                ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_BERRY, player);
+                MESSAGE("The Ganlon Berry boosted Wobbuffet's Defense!");
             }
         } else {
-            ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, player);
-            MESSAGE("Using Ganlon Berry, the Defense of Wobbuffet rose!");
+            ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_BERRY, player);
+            MESSAGE("The Ganlon Berry boosted Wobbuffet's Defense!");
         }
     } THEN {
         if (move == MOVE_DRAGON_RAGE)
@@ -46,8 +46,8 @@ SINGLE_BATTLE_TEST("Ganlon Berry raises Defense by one stage when HP drops to 1/
         TURN { MOVE(opponent, MOVE_DRAGON_RAGE); }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, opponent);
-        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, player);
-        MESSAGE("Using Ganlon Berry, the Defense of Bellsprout rose!");
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_BERRY, player);
+        MESSAGE("The Ganlon Berry boosted Bellsprout's Defense!");
     } THEN {
         EXPECT_EQ(player->statStages[STAT_DEF], DEFAULT_STAT_STAGE + 1);
     }
@@ -62,8 +62,8 @@ SINGLE_BATTLE_TEST("Ganlon Berry raises Defense by one stage when HP drops to 1/
         TURN { MOVE(opponent, MOVE_DRAGON_RAGE); }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, opponent);
-        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, player);
-        MESSAGE("Using Ganlon Berry, the Defense of Applin sharply rose!");
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_BERRY, player);
+        MESSAGE("The Ganlon Berry sharply boosted Applin's Defense!");
     } THEN {
         EXPECT_EQ(player->statStages[STAT_DEF], DEFAULT_STAT_STAGE + 2);
     }

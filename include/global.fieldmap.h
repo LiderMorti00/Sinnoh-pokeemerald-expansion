@@ -7,18 +7,48 @@
 #define MAPGRID_METATILE_ID_MASK 0x03FF // Bits 0-9
 #define MAPGRID_COLLISION_MASK   0x0C00 // Bits 10-11
 #define MAPGRID_ELEVATION_MASK   0xF000 // Bits 12-15
+#define MAPGRID_METATILE_ID_SHIFT 0
 #define MAPGRID_COLLISION_SHIFT  10
 #define MAPGRID_ELEVATION_SHIFT  12
 
+enum
+{
+    ELEVATION_TRANSITION = 0,
+    ELEVATION_SURF = 1,
+    ELEVATION_DEFAULT = 3,
+    ELEVATION_MULTI_LEVEL = 15,
+    ELEVATION_INVALID = 0xFFFF
+};
+
+#define PACK_METATILE(metatileId) PACK(metatileId, MAPGRID_METATILE_ID_SHIFT, MAPGRID_METATILE_ID_MASK)
+#define PACK_COLLISION(collision) PACK(collision, MAPGRID_COLLISION_SHIFT, MAPGRID_COLLISION_MASK)
+#define PACK_ELEVATION(elevation) PACK(elevation, MAPGRID_ELEVATION_SHIFT, MAPGRID_ELEVATION_MASK)
+#define UNPACK_METATILE(data)  UNPACK(data, MAPGRID_METATILE_ID_SHIFT, MAPGRID_METATILE_ID_MASK)
+#define UNPACK_COLLISION(data) UNPACK(data, MAPGRID_COLLISION_SHIFT, MAPGRID_COLLISION_MASK)
+#define UNPACK_ELEVATION(data) UNPACK(data, MAPGRID_ELEVATION_SHIFT, MAPGRID_ELEVATION_MASK)
+
 // An undefined map grid block has all metatile id bits set and nothing else
 #define MAPGRID_UNDEFINED   MAPGRID_METATILE_ID_MASK
+
+// When setting impassability manually GF sets all the collision bits
+#define MAPGRID_IMPASSABLE  MAPGRID_COLLISION_MASK
 
 // Masks/shifts for metatile attributes
 // Metatile attributes consist of an 8 bit behavior value, 4 unused bits, and a 4 bit layer type value
 // This is the data stored in each data/tilesets/*/*/metatile_attributes.bin file
 #define METATILE_ATTR_BEHAVIOR_MASK 0x00FF // Bits 0-7
 #define METATILE_ATTR_LAYER_MASK    0xF000 // Bits 12-15
+#define METATILE_ATTR_BEHAVIOR_SHIFT 0
 #define METATILE_ATTR_LAYER_SHIFT   12
+#define METATILE_ATTR_BEHAVIOR_MASK_FRLG  0x000001ff // Bits 0-8
+#define METATILE_ATTR_LAYER_MASK_FRLG     0x60000000 // Bits 29-30
+#define METATILE_ATTR_BEHAVIOR_SHIFT_FRLG 0
+#define METATILE_ATTR_LAYER_SHIFT_FRLG    29
+
+#define PACK_BEHAVIOR(behavior) PACK(behavior, METATILE_ATTR_BEHAVIOR_SHIFT, METATILE_ATTR_BEHAVIOR_MASK)
+#define PACK_LAYER_TYPE(layerType) PACK(layerType, METATILE_ATTR_LAYER_SHIFT, METATILE_ATTR_LAYER_MASK)
+#define UNPACK_BEHAVIOR(data) UNPACK(data, METATILE_ATTR_BEHAVIOR_SHIFT, METATILE_ATTR_BEHAVIOR_MASK)
+#define UNPACK_LAYER_TYPE(data) UNPACK(data, METATILE_ATTR_LAYER_SHIFT, METATILE_ATTR_LAYER_MASK)
 
 enum {
     METATILE_LAYER_TYPE_NORMAL,  // Metatile uses middle and top bg layers
@@ -27,6 +57,35 @@ enum {
 };
 
 #define METATILE_ID(tileset, name) (METATILE_##tileset##_##name)
+
+enum
+{
+    METATILE_ATTRIBUTE_BEHAVIOR,
+    METATILE_ATTRIBUTE_TERRAIN,
+    METATILE_ATTRIBUTE_2,
+    METATILE_ATTRIBUTE_3,
+    METATILE_ATTRIBUTE_ENCOUNTER_TYPE,
+    METATILE_ATTRIBUTE_5,
+    METATILE_ATTRIBUTE_LAYER_TYPE,
+    METATILE_ATTRIBUTE_7,
+    METATILE_ATTRIBUTE_COUNT,
+    METATILE_ATTRIBUTES_ALL = 255  // Special id to get the full attributes value
+};
+
+enum
+{
+    TILE_ENCOUNTER_NONE,
+    TILE_ENCOUNTER_LAND,
+    TILE_ENCOUNTER_WATER,
+};
+
+enum
+{
+    TILE_TERRAIN_NORMAL,
+    TILE_TERRAIN_GRASS,
+    TILE_TERRAIN_WATER,
+    TILE_TERRAIN_WATERFALL,
+};
 
 // Rows of metatiles do not actually have a strict width.
 // This constant is used for calculations for finding the next row of metatiles
@@ -37,8 +96,11 @@ typedef void (*TilesetCB)(void);
 
 struct Tileset
 {
-    /*0x00*/ bool8 isCompressed;
+    /*0x00*/ u8 isCompressed:1;
+    /*0x00*/ u8 swapPalettes:7; // Bitmask determining whether palette has an alternate, night-time palette
     /*0x01*/ bool8 isSecondary;
+    /*0x02*/ u8 lightPalettes; // Bitmask determining whether a palette should be time-blended as a light
+    /*0x03*/ u8 customLightColor; // Bitmask determining which light palettes have custom light colors (color 15)
     /*0x04*/ const u32 *tiles;
     /*0x08*/ const u16 (*palettes)[16];
     /*0x0C*/ const u16 *metatiles;
@@ -54,6 +116,10 @@ struct MapLayout
     /*0x0C*/ const u16 *map;
     /*0x10*/ const struct Tileset *primaryTileset;
     /*0x14*/ const struct Tileset *secondaryTileset;
+    bool8 isFrlg;
+    u8 borderWidth;
+    u8 borderHeight;
+    u8 padding;
 };
 
 struct BackupMapLayout
@@ -70,13 +136,27 @@ struct __attribute__((packed, aligned(4))) ObjectEventTemplate
     /*0x03*/ u8 kind; // Always OBJ_KIND_NORMAL in Emerald.
     /*0x04*/ s16 x;
     /*0x06*/ s16 y;
-    /*0x08*/ u8 elevation;
-    /*0x09*/ u8 movementType;
-    /*0x0A*/ u16 movementRangeX:4;
-             u16 movementRangeY:4;
-             u16 unused:8;
-    /*0x0C*/ u16 trainerType;
-    /*0x0E*/ u16 trainerRange_berryTreeId;
+    union
+    {
+        struct
+        {
+
+            /*0x08*/ u8 elevation;
+            /*0x09*/ u8 movementType;
+            /*0x0A*/ u16 movementRangeX:4;
+            u16 movementRangeY:4;
+            u16 unused:8;
+            /*0x0C*/ u16 trainerType;
+            /*0x0E*/ u16 trainerRange_berryTreeId;
+        };
+        struct
+        {
+            u8 targetLocalId;
+            u8 padding[3];
+            u16 targetMapNum;
+            u16 targetMapGroup;
+        };
+    };
     /*0x10*/ const u8 *script;
     /*0x14*/ u16 flagId;
     /*0x16*/ u16 filler;
@@ -108,8 +188,10 @@ struct BgEvent
     union {
         const u8 *script;
         struct {
-            u16 item;
-            u16 hiddenItemId;
+            u32 item:11;
+            u32 hiddenItemId:13;
+            u32 quantity:7;
+            u32 underfoot:1;
         } hiddenItem;
         u32 secretBaseId;
     } bgUnion;
@@ -149,17 +231,19 @@ struct MapHeader
     /* 0x0C */ const struct MapConnections *connections;
     /* 0x10 */ u16 music;
     /* 0x12 */ u16 mapLayoutId;
-    /* 0x14 */ u8 regionMapSectionId;
-    /* 0x15 */ u8 cave;
-    /* 0x16 */ u8 weather;
-    /* 0x17 */ u8 mapType;
-    /* 0x18 */ u8 filler_18[2];
+    /* 0x14 */ mapsec_u8_t regionMapSectionId;
+    /* 0x15 */ u8 weather;
+    /* 0x16 */ u8 mapType;
+    /* 0x17 */ s8 floorNumber;
+    /* 0x18 */ u16 nightMusic;
                // fields correspond to the arguments in the map_header_flags macro
     /* 0x1A */ bool8 allowCycling:1;
                bool8 allowEscaping:1; // Escape Rope and Dig
                bool8 allowRunning:1;
-               bool8 showMapName:5; // the last 4 bits are unused
-                                    // but the 5 bit sized bitfield is required to match
+               bool8 showMapName:1;
+               bool8 writeSpecialVarIsEffect:1;
+               bool8 cave:1;
+               bool8 unused:2;
     /* 0x1B */ u8 battleType;
 };
 
@@ -188,14 +272,15 @@ struct ObjectEvent
              u32 inShallowFlowingWater:1;
              u32 inSandPile:1;
              u32 inHotSprings:1;
-             u32 hasShadow:1;
+             u32 noShadow:1;
              u32 spriteAnimPausedBackup:1;
     /*0x03*/ u32 spriteAffineAnimPausedBackup:1;
              u32 disableJumpLandingGroundEffect:1;
              u32 fixedPriority:1;
              u32 hideReflection:1;
              u32 shiny:1; // OW mon shininess
-             u32 padding:3;
+             u32 jumpDone:1;
+             u32 padding:2;
     /*0x04*/ u16 graphicsId; // 12 bits for species; high 4 bits for form
     /*0x06*/ u8 movementType;
     /*0x07*/ u8 trainerType;
@@ -209,8 +294,11 @@ struct ObjectEvent
     /*0x14*/ struct Coords16 previousCoords;
     /*0x18*/ u16 facingDirection:4; // current direction?
              u16 movementDirection:4;
-             u16 rangeX:4;
-             u16 rangeY:4;
+             struct __attribute__((packed))
+             {
+                u8 rangeX:4;
+                u8 rangeY:4;
+             } range;
     /*0x1A*/ u8 fieldEffectSpriteId;
     /*0x1B*/ u8 warpArrowSpriteId;
     /*0x1C*/ u8 movementActionId;
@@ -282,7 +370,7 @@ enum
     ACRO_BIKE_STATE6,
 };
 
-enum
+enum Collision
 {
     COLLISION_NONE,
     COLLISION_OUTSIDE_RANGE,
@@ -340,6 +428,7 @@ struct PlayerAvatar
     // these two are timer history arrays which [0] is the active timer for acro bike. every element is backed up to the next element upon update.
     /*0x14*/ u8 dirTimerHistory[8];
     /*0x1C*/ u8 abStartSelectTimerHistory[8];
+    u16 lastSpinTile;
 };
 
 struct Camera

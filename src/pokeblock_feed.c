@@ -55,7 +55,7 @@ struct PokeblockFeed
     u8 animId;
     u8 unused2;
     bool8 noMonFlip;
-    u16 species;
+    enum Species species;
     u16 monAnimLength;
     u16 timer;
     u8 nature;
@@ -101,7 +101,7 @@ static const u8 sText_Var1HappilyAteVar2[] = _("{STR_VAR_1} happily ate the\n{ST
 static const u8 sText_Var1DisdainfullyAteVar2[] = _("{STR_VAR_1} disdainfully ate the\n{STR_VAR_2}.{PAUSE_UNTIL_PRESS}");
 
 EWRAM_DATA static struct PokeblockFeed *sPokeblockFeed = NULL;
-EWRAM_DATA static struct CompressedSpritePalette sPokeblockSpritePal = {0};
+EWRAM_DATA static struct SpritePalette sPokeblockSpritePal = {0};
 
 // Data for the animation the Pokémon does while readying to jump for the Pokéblock
 // Each nature can have up to 8 anim 'stages' it progresses through, and each stage has its own array of data.
@@ -399,7 +399,7 @@ static const struct WindowTemplate sWindowTemplates[] =
 };
 
 // - 1 excludes PBLOCK_CLR_NONE
-static const u32 *const sPokeblocksPals[] =
+static const u16 *const sPokeblocksPals[] =
 {
     [PBLOCK_CLR_RED - 1]       = gPokeblockRed_Pal,
     [PBLOCK_CLR_BLUE - 1]      = gPokeblockBlue_Pal,
@@ -524,7 +524,6 @@ static const struct SpriteTemplate sSpriteTemplate_Pokeblock =
     .paletteTag = TAG_POKEBLOCK,
     .oam = &sOamData_Pokeblock,
     .anims = sAnims_Pokeblock,
-    .images = NULL,
     .affineAnims = sAffineAnims_Pokeblock,
     .callback = SpriteCB_ThrownPokeblock
 };
@@ -581,7 +580,7 @@ static bool8 LoadPokeblockFeedScene(void)
         gMain.state++;
         break;
     case 7:
-        if (LoadMonAndSceneGfx(&gPlayerParty[gPokeblockMonId]))
+        if (LoadMonAndSceneGfx(&gParties[B_TRAINER_PLAYER][gPokeblockMonId]))
             gMain.state++;
         break;
     case 8:
@@ -589,7 +588,7 @@ static bool8 LoadPokeblockFeedScene(void)
         gMain.state++;
         break;
     case 9:
-        sPokeblockFeed->monSpriteId = CreateMonSprite(&gPlayerParty[gPokeblockMonId]);
+        sPokeblockFeed->monSpriteId = CreateMonSprite(&gParties[B_TRAINER_PLAYER][gPokeblockMonId]);
         gMain.state++;
         break;
     case 10:
@@ -650,7 +649,7 @@ static void HandleInitBackgrounds(void)
 
 static bool8 LoadMonAndSceneGfx(struct Pokemon *mon)
 {
-    u16 species;
+    enum Species species;
     u32 personality;
     bool32 isShiny;
 
@@ -668,7 +667,7 @@ static bool8 LoadMonAndSceneGfx(struct Pokemon *mon)
         species = GetMonData(mon, MON_DATA_SPECIES_OR_EGG);
         personality = GetMonData(mon, MON_DATA_PERSONALITY);
         isShiny = GetMonData(mon, MON_DATA_IS_SHINY);
-        LoadCompressedSpritePaletteWithTag(GetMonSpritePalFromSpeciesAndPersonality(species, isShiny, personality), species);
+        LoadSpritePaletteWithTag(GetMonSpritePalFromSpeciesAndPersonality(species, isShiny, personality), species);
         SetMultiuseSpriteTemplateToPokemon(species, B_POSITION_OPPONENT_LEFT);
         sPokeblockFeed->loadGfxState++;
         break;
@@ -677,7 +676,7 @@ static bool8 LoadMonAndSceneGfx(struct Pokemon *mon)
         sPokeblockFeed->loadGfxState++;
         break;
     case 3:
-        LoadCompressedSpritePalette(&gPokeblockCase_SpritePal);
+        LoadSpritePalette(&gPokeblockCase_SpritePal);
         sPokeblockFeed->loadGfxState++;
         break;
     case 4:
@@ -686,23 +685,23 @@ static bool8 LoadMonAndSceneGfx(struct Pokemon *mon)
         break;
     case 5:
         SetPokeblockSpritePal(gSpecialVar_ItemId);
-        LoadCompressedSpritePalette(&sPokeblockSpritePal);
+        LoadSpritePalette(&sPokeblockSpritePal);
         sPokeblockFeed->loadGfxState++;
         break;
     case 6:
         ResetTempTileDataBuffers();
-        DecompressAndCopyTileDataToVram(1, gBattleTerrainTiles_Building, 0, 0, 0);
+        DecompressAndCopyTileDataToVram(1, gBattleEnvironmentTiles_Building, 0, 0, 0);
         sPokeblockFeed->loadGfxState++;
         break;
     case 7:
         if (FreeTempTileDataBuffersIfPossible() != TRUE)
         {
-            LZDecompressWram(gPokeblockFeedBg_Tilemap, sPokeblockFeed->tilemapBuffer);
+            DecompressDataWithHeaderWram(gPokeblockFeedBg_Tilemap, sPokeblockFeed->tilemapBuffer);
             sPokeblockFeed->loadGfxState++;
         }
         break;
     case 8:
-        LoadCompressedPalette(gBattleTerrainPalette_Frontier, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
+        LoadPalette(gBattleEnvironmentPalette_Frontier, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
         sPokeblockFeed->loadGfxState = 0;
         return TRUE;
     }
@@ -788,7 +787,7 @@ static void Task_WaitForAtePokeblockMessage(u8 taskId)
 
 static void Task_PrintAtePokeblockMessage(u8 taskId)
 {
-    struct Pokemon *mon = &gPlayerParty[gPokeblockMonId];
+    struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][gPokeblockMonId];
     struct Pokeblock *pokeblock = &gSaveBlock1Ptr->pokeblocks[gSpecialVar_ItemId];
 
     gPokeblockGain = PokeblockGetGain(GetNature(mon), pokeblock);
@@ -838,7 +837,7 @@ static void Task_FadeOutPokeblockFeed(u8 taskId)
 
 static u8 CreateMonSprite(struct Pokemon *mon)
 {
-    u16 species = GetMonData(mon, MON_DATA_SPECIES_OR_EGG);
+    enum Species species = GetMonData(mon, MON_DATA_SPECIES_OR_EGG);
     u8 spriteId = CreateSprite(&gMultiuseSpriteTemplate, MON_X, MON_Y, 2);
 
     sPokeblockFeed->species = species;

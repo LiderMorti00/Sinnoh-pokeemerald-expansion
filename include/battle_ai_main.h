@@ -6,41 +6,34 @@ typedef s32 (*AiScoreFunc)(u32, u32, u32, s32);
 
 #define UNKNOWN_NO_OF_HITS UINT32_MAX
 
-// return vals for BattleAI_ChooseMoveOrAction
-// 0 - 3 are move idx
-#define AI_CHOICE_FLEE 4
-#define AI_CHOICE_WATCH 5
-
 // for AI_WhoStrikesFirst
 #define AI_IS_FASTER   1
 #define AI_IS_SLOWER   -1
-
-// for stat increasing / decreasing scores
-#define STAT_CHANGE_ATK        0
-#define STAT_CHANGE_DEF        1
-#define STAT_CHANGE_SPEED      2
-#define STAT_CHANGE_SPATK      3
-#define STAT_CHANGE_SPDEF      4
-
-#define STAT_CHANGE_ATK_2      5
-#define STAT_CHANGE_DEF_2      6
-#define STAT_CHANGE_SPEED_2    7
-#define STAT_CHANGE_SPATK_2    8
-#define STAT_CHANGE_SPDEF_2    9
-
-#define STAT_CHANGE_ACC        10
-#define STAT_CHANGE_EVASION    11
 
 #define BEST_DAMAGE_MOVE         1  // Move with the most amount of hits with the best accuracy/effect
 #define POWERFUL_STATUS_MOVE     10 // Moves with this score will be chosen over a move that faints target
 #define NO_DAMAGE_OR_FAILS      -20 // Move fails or does no damage
 
 // Scores given in AI_CalcMoveEffectScore and AI_CalcHoldEffectMoveScore
-#define NO_INCREASE      0
-#define WEAK_EFFECT      1
-#define DECENT_EFFECT    2
-#define GOOD_EFFECT      3
-#define BEST_EFFECT      4
+enum AIScore
+{
+    NO_INCREASE = 0,
+    WEAK_EFFECT = 1,
+    DECENT_EFFECT = 2,
+    GOOD_EFFECT = 3,
+    BEST_EFFECT = 4,
+    PERFECT_EFFECT = 10,
+    BAD_EFFECT = -1,
+    AWFUL_EFFECT = -3,
+    WORST_EFFECT = -10
+};
+
+enum MoveComparisonResult
+{
+    MOVE_NEUTRAL_COMPARISON,
+    MOVE_WON_COMPARISON,
+    MOVE_LOST_COMPARISON,
+};
 
 // AI_TryToFaint
 #define FAST_KILL      6 // AI is faster and faints target
@@ -61,7 +54,7 @@ typedef s32 (*AiScoreFunc)(u32, u32, u32, s32);
         { \
             TestRunner_Battle_AISetScore(__FILE__, __LINE__, battler, movesetIndex, val); \
         } \
-        AI_THINKING_STRUCT->score[movesetIndex] = val; \
+        gAiThinkingStruct->score[movesetIndex] = val; \
     } while (0) \
 
 #define ADJUST_SCORE(val) \
@@ -69,7 +62,7 @@ typedef s32 (*AiScoreFunc)(u32, u32, u32, s32);
     { \
         if (TESTING) \
         { \
-            TestRunner_Battle_AIAdjustScore(__FILE__, __LINE__, battlerAtk, AI_THINKING_STRUCT->movesetIndex, val); \
+            TestRunner_Battle_AIAdjustScore(__FILE__, __LINE__, battlerAtk, gAiThinkingStruct->movesetIndex, val); \
         } \
         score += val; \
     } while (0) \
@@ -79,7 +72,7 @@ typedef s32 (*AiScoreFunc)(u32, u32, u32, s32);
     { \
     if (TESTING) \
         { \
-            TestRunner_Battle_AIAdjustScore(__FILE__, __LINE__, battlerAtk, AI_THINKING_STRUCT->movesetIndex, val); \
+            TestRunner_Battle_AIAdjustScore(__FILE__, __LINE__, battlerAtk, gAiThinkingStruct->movesetIndex, val); \
         } \
         score += val; \
         return score; \
@@ -90,7 +83,7 @@ typedef s32 (*AiScoreFunc)(u32, u32, u32, s32);
     { \
         if (TESTING) \
         { \
-            TestRunner_Battle_AIAdjustScore(__FILE__, __LINE__, battlerAtk, AI_THINKING_STRUCT->movesetIndex, val); \
+            TestRunner_Battle_AIAdjustScore(__FILE__, __LINE__, battlerAtk, gAiThinkingStruct->movesetIndex, val); \
         } \
         (*score) += val; \
     } while (0) \
@@ -107,14 +100,19 @@ typedef s32 (*AiScoreFunc)(u32, u32, u32, s32);
     return score;                   \
 }
 
+void BattleAI_SetupAIData(u8 defaultScoreMoves, enum BattlerId battler);
 void BattleAI_SetupItems(void);
 void BattleAI_SetupFlags(void);
-void BattleAI_SetupAIData(u8 defaultScoreMoves, u32 battler);
-u32 BattleAI_ChooseMoveOrAction(u32 battler);
+void ComputeAiBattlerDecisions(enum BattlerId battler);
+u32 BattleAI_ChooseMoveIndex(enum BattlerId battler);
 void Ai_InitPartyStruct(void);
-void Ai_UpdateSwitchInData(u32 battler);
-void Ai_UpdateFaintData(u32 battler);
+void Ai_UpdateSwitchInData(enum BattlerId battler);
+void Ai_UpdateFaintData(enum BattlerId battler);
 void SetAiLogicDataForTurn(struct AiLogicData *aiData);
-void ResetDynamicAiFunc(void);
+void ResetDynamicAiFunctions(void);
+void AI_TrySwitchOrUseItem(enum BattlerId battler);
+void CalcBattlerAiMovesData(struct AiLogicData *aiData, enum BattlerId battlerAtk, enum BattlerId battlerDef, u32 weather, enum BattleTerrain terrain);
+void AIDebugTimerStart(void);
+void AIDebugTimerEnd(void);
 
 #endif // GUARD_BATTLE_AI_MAIN_H

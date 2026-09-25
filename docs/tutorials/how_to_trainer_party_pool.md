@@ -3,7 +3,7 @@ Trainer Party Pools (TPP) is a way to introduce a bit of unpredictability to tra
 
 The maximum number of mons that can be in a single trainer's pool is 255.
 
-## Turning on TPP with `trainer.sparty`
+## Turning on TPP with `trainers.party`
 To use TPP with `trainers.party`, all that's needed is to define a `Party Size` that's smaller than than the number of defined mons for the trainer.
 
 ## Turning on TPP with `trainers.h`
@@ -52,6 +52,11 @@ By default, only `Default<position>PickFunction` and `PickLowest` are implemente
 - `Pool Prune` (`.poolPruneIndex`) controls if members in the pool should be removed before party members are picked from the pool.
 By default, only `POOL_PRUNE_NONE`, which doesn't remove anything from the pool, and `POOL_PRUNE_TEST`, which removes Wobbuffet from the pool, are implemented. Must be an  `enum` value in `enum PoolPruneOptions`.
 
+## Pool copy
+The `Copy Pool` option can be used to have the trainer use the party or pool from a different trainer.
+If you for example want some other trainer to have the same team/pool as Tiana, you'd use `Copy Pool: TRAINER_TIANA`.
+If `Party Size` isn't defined for the current trainer, it will inherit from the copied trainer.
+
 ## Example pool
 ```
 === TRAINER_TIANA ===
@@ -64,7 +69,7 @@ Double Battle: Yes
 AI: Check Bad Move
 Party Size: 4
 Pool Rules: Weather Doubles
-Pool Pick Index: Default
+Pool Pick Functions: Default
 
 Zigzagoon
 Level: 4

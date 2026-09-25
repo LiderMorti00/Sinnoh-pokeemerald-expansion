@@ -3,6 +3,7 @@
   "name": "Route112",
   "layout": "LAYOUT_ROUTE112",
   "music": "MUS_ROUTE110",
+  "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_ROUTE_112",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
@@ -31,6 +32,7 @@
   ],
   "object_events": [
     {
+      "local_id": "LOCALID_ROUTE112_GRUNT_1",
       "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
       "x": 26,
       "y": 30,
@@ -96,6 +98,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_ROUTE112_GRUNT_2",
       "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
       "x": 27,
       "y": 30,

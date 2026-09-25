@@ -3,6 +3,7 @@
   "name": "DewfordTown",
   "layout": "LAYOUT_DEWFORD_TOWN",
   "music": "MUS_DEWFORD",
+  "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_DEWFORD_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
@@ -39,6 +40,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_DEWFORD_BRINEY",
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
       "x": 12,
       "y": 9,
@@ -65,6 +67,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_DEWFORD_BOAT",
       "graphics_id": "OBJ_EVENT_GFX_MR_BRINEYS_BOAT",
       "x": 12,
       "y": 8,

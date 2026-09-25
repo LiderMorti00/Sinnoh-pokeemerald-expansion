@@ -31,7 +31,6 @@ struct SendRecvMgr
     int checksum;
 };
 
-static void GetKeyInput(void);
 static u16 DetermineSendRecvState(u8);
 static void EnableSio(void);
 static void DisableTm3(void);
@@ -39,9 +38,6 @@ static void SetUpTransferManager(size_t, const void *, void *);
 static void StartTm3(void);
 
 static struct SendRecvMgr sSendRecvMgr;
-static u16 sJoyNewOrRepeated;
-static u16 sJoyNew;
-static u16 sSendRecvStatus;
 static u16 sCounter1;
 static u32 sCounter2;
 static u16 sSavedIme;
@@ -382,7 +378,7 @@ static u8 GetTrainerHillUnkVal(void)
 #endif //FREE_TRAINER_HILL
 }
 
-static bool32 ValidateTrainerChecksum(struct EReaderTrainerHillTrainer * hillTrainer)
+static bool32 ValidateTrainerChecksum(struct EReaderTrainerHillTrainer *hillTrainer)
 {
     int checksum = CalcByteArraySum((u8 *)hillTrainer, offsetof(typeof(*hillTrainer), checksum));
     if (checksum != hillTrainer->checksum)
@@ -391,7 +387,7 @@ static bool32 ValidateTrainerChecksum(struct EReaderTrainerHillTrainer * hillTra
     return TRUE;
 }
 
-bool8 ValidateTrainerHillData(struct EReaderTrainerHillSet * hillSet)
+bool8 ValidateTrainerHillData(struct EReaderTrainerHillSet *hillSet)
 {
     u32 i;
     u32 checksum;
@@ -430,7 +426,7 @@ static bool32 ValidateTrainerHillChecksum(struct EReaderTrainerHillSet *hillSet)
     return TRUE;
 }
 
-static bool32 TryWriteTrainerHill_Internal(struct EReaderTrainerHillSet * hillSet, struct TrainerHillChallenge * challenge)
+static bool32 TryWriteTrainerHill_Internal(struct EReaderTrainerHillSet *hillSet, struct TrainerHillChallenge *challenge)
 {
     int i;
 
@@ -469,7 +465,7 @@ static bool32 TryWriteTrainerHill_Internal(struct EReaderTrainerHillSet * hillSe
     return TRUE;
 }
 
-bool32 TryWriteTrainerHill(struct EReaderTrainerHillSet * hillSet)
+bool32 TryWriteTrainerHill(struct EReaderTrainerHillSet *hillSet)
 {
     void *buffer = AllocZeroed(SECTOR_SIZE);
     bool32 result = TryWriteTrainerHill_Internal(hillSet, buffer);
@@ -477,7 +473,7 @@ bool32 TryWriteTrainerHill(struct EReaderTrainerHillSet * hillSet)
     return result;
 }
 
-static bool32 TryReadTrainerHill_Internal(struct EReaderTrainerHillSet * dest, u8 *buffer)
+static bool32 TryReadTrainerHill_Internal(struct EReaderTrainerHillSet *dest, u8 *buffer)
 {
     if (TryReadSpecialSaveSector(SECTOR_ID_TRAINER_HILL, buffer) != SAVE_STATUS_OK)
         return FALSE;
@@ -489,7 +485,7 @@ static bool32 TryReadTrainerHill_Internal(struct EReaderTrainerHillSet * dest, u
     return TRUE;
 }
 
-static bool32 TryReadTrainerHill(struct EReaderTrainerHillSet * hillSet)
+static bool32 TryReadTrainerHill(struct EReaderTrainerHillSet *hillSet)
 {
     u8 *buffer = AllocZeroed(SECTOR_SIZE);
     bool32 result = TryReadTrainerHill_Internal(hillSet, buffer);
@@ -502,88 +498,6 @@ bool32 ReadTrainerHillAndValidate(void)
     struct EReaderTrainerHillSet *hillSet = AllocZeroed(SECTOR_SIZE);
     bool32 result = TryReadTrainerHill(hillSet);
     Free(hillSet);
-    return result;
-}
-
-int EReader_Send(int size, const void * src)
-{
-    int result;
-    int sendStatus;
-
-    EReaderHelper_SaveRegsState();
-    while (1)
-    {
-        GetKeyInput();
-        if (sJoyNew & B_BUTTON)
-            gShouldAdvanceLinkState = 2;
-
-        sendStatus = EReaderHandleTransfer(1, size, src, NULL);
-        sSendRecvStatus = sendStatus;
-        if ((sSendRecvStatus & EREADER_XFER_MASK) == 0 && sSendRecvStatus & EREADER_CHECKSUM_OK_MASK)
-        {
-            result = 0;
-            break;
-        }
-        else if (sSendRecvStatus & EREADER_CANCEL_KEY_MASK)
-        {
-            result = 1;
-            break;
-        }
-        else if (sSendRecvStatus & EREADER_CANCEL_TIMEOUT_MASK)
-        {
-            result = 2;
-            break;
-        }
-        else
-        {
-            gShouldAdvanceLinkState = 0;
-            VBlankIntrWait();
-        }
-    }
-
-    CpuFill32(0, &sSendRecvMgr, sizeof(sSendRecvMgr));
-    EReaderHelper_RestoreRegsState();
-    return result;
-}
-
-int EReader_Recv(void * dest)
-{
-    int result;
-    int recvStatus;
-
-    EReaderHelper_SaveRegsState();
-    while (1)
-    {
-        GetKeyInput();
-        if (sJoyNew & B_BUTTON)
-            gShouldAdvanceLinkState = 2;
-
-        recvStatus = EReaderHandleTransfer(0, 0, NULL, dest);
-        sSendRecvStatus = recvStatus;
-        if ((sSendRecvStatus & EREADER_XFER_MASK) == 0 && sSendRecvStatus & EREADER_CHECKSUM_OK_MASK)
-        {
-            result = 0;
-            break;
-        }
-        else if (sSendRecvStatus & EREADER_CANCEL_KEY_MASK)
-        {
-            result = 1;
-            break;
-        }
-        else if (sSendRecvStatus & EREADER_CANCEL_TIMEOUT_MASK)
-        {
-            result = 2;
-            break;
-        }
-        else
-        {
-            gShouldAdvanceLinkState = 0;
-            VBlankIntrWait();
-        }
-    }
-
-    CpuFill32(0, &sSendRecvMgr, sizeof(sSendRecvMgr));
-    EReaderHelper_RestoreRegsState();
     return result;
 }
 
@@ -623,7 +537,7 @@ static void OpenSerial32(void)
     sCounter2 = 0;
 }
 
-int EReaderHandleTransfer(u8 mode, size_t size, const void * data, void * recvBuffer)
+int EReaderHandleTransfer(u8 mode, size_t size, const void *data, void *recvBuffer)
 {
     switch (sSendRecvMgr.state)
     {
@@ -665,16 +579,8 @@ int EReaderHandleTransfer(u8 mode, size_t size, const void * data, void * recvBu
 
             if (sSendRecvMgr.xferState != EREADER_XFER_CHK)
             {
-                if (sSendRecvMgr.isParent && sCounter1 > 2)
-                {
-                    EnableSio();
-                    sSendRecvMgr.xferState = EREADER_XFER_CHK;
-                }
-                else
-                {
-                    EnableSio();
-                    sSendRecvMgr.xferState = EREADER_XFER_CHK;
-                }
+                EnableSio();
+                sSendRecvMgr.xferState = EREADER_XFER_CHK;
             }
         }
         break;
@@ -716,7 +622,7 @@ static u16 DetermineSendRecvState(u8 mode)
     return resp;
 }
 
-static void SetUpTransferManager(size_t size, const void * data, void * recvBuffer)
+static void SetUpTransferManager(size_t size, const void *data, void *recvBuffer)
 {
     if (sSendRecvMgr.isParent)
     {
@@ -846,13 +752,6 @@ static void DisableTm3(void)
 {
     REG_TM3CNT_H &= ~TIMER_ENABLE;
     REG_TM3CNT_L = 0xFDA7;
-}
-
-static void GetKeyInput(void)
-{
-    int rawKeys = REG_KEYINPUT ^ KEYS_MASK;
-    sJoyNew = rawKeys & ~sJoyNewOrRepeated;
-    sJoyNewOrRepeated = rawKeys;
 }
 
 void EReaderHelper_SaveRegsState(void)

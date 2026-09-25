@@ -3,6 +3,7 @@
   "name": "SSTidalCorridor",
   "layout": "LAYOUT_SS_TIDAL_CORRIDOR",
   "music": "MUS_SAILING",
+  "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_DYNAMIC",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -15,6 +16,7 @@
   "connections": null,
   "object_events": [
     {
+      "local_id": "LOCALID_SS_TIDAL_EXIT_SAILOR",
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
       "x": 1,
       "y": 11,
@@ -67,6 +69,7 @@
       "flag": "FLAG_HIDE_SS_TIDAL_CORRIDOR_MR_BRINEY"
     },
     {
+      "local_id": "LOCALID_SS_TIDAL_SCOTT",
       "graphics_id": "OBJ_EVENT_GFX_SCOTT",
       "x": 9,
       "y": 10,

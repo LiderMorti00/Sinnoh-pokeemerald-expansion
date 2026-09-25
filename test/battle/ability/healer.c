@@ -18,16 +18,34 @@ DOUBLE_BATTLE_TEST("Healer cures adjacent ally's status condition 30% of the tim
         OPPONENT(SPECIES_WOBBUFFET) { Status1(status); }
         OPPONENT(SPECIES_CHANSEY) { Ability(ABILITY_HEALER); }
     } WHEN {
-        TURN { }
+        TURN {}
     } SCENE {
-        MESSAGE("The opposing Chansey's Healer cured the opposing Wobbuffet's problem!");
+        switch (status)
+        {
+            case STATUS1_BURN:
+                MESSAGE("The opposing Wobbuffet's burn was cured!");
+                break;
+            case STATUS1_PARALYSIS:
+                MESSAGE("The opposing Wobbuffet was cured of paralysis!");
+                break;
+            case STATUS1_FROSTBITE:
+                MESSAGE("The opposing Wobbuffet's frostbite was cured!");
+                break;
+            case STATUS1_POISON:
+                MESSAGE("The opposing Wobbuffet was cured of its poisoning!");
+                break;
+            case STATUS1_TOXIC_POISON:
+                MESSAGE("The opposing Wobbuffet was cured of its poisoning!");
+                break;
+            case STATUS1_SLEEP:
+                MESSAGE("The opposing Wobbuffet woke up!");
+                break;
+        }
     }
 }
 
 DOUBLE_BATTLE_TEST("Healer cures status condition before burn or poison damage is dealt")
 {
-    KNOWN_FAILING; // According to Bulbapedia, Healer should trigger before status damage and Wobbuffet should live
-    // Source: https://bulbapedia.bulbagarden.net/wiki/Healer_(Ability)#Effect
     u16 status;
     PARAMETRIZE { status = STATUS1_POISON; }
     PARAMETRIZE { status = STATUS1_BURN; }
@@ -42,10 +60,22 @@ DOUBLE_BATTLE_TEST("Healer cures status condition before burn or poison damage i
     } WHEN {
         TURN {}
     } SCENE {
-        NOT {
-            MESSAGE("The opposing Wobbuffet fainted!");
+        NOT MESSAGE("The opposing Wobbuffet fainted!");
+        switch (status)
+        {
+            case STATUS1_POISON:
+                MESSAGE("The opposing Wobbuffet was cured of its poisoning!");
+                break;
+            case STATUS1_BURN:
+                MESSAGE("The opposing Wobbuffet's burn was cured!");
+                break;
+            case STATUS1_TOXIC_POISON:
+                MESSAGE("The opposing Wobbuffet was cured of its poisoning!");
+                break;
+            case STATUS1_FROSTBITE:
+                MESSAGE("The opposing Wobbuffet's frostbite was cured!");
+                break;
         }
-        MESSAGE("The opposing Chansey's Healer cured Foe Wobbuffet's problem!");
     }
 }
 

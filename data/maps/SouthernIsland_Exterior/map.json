@@ -3,6 +3,7 @@
   "name": "SouthernIsland_Exterior",
   "layout": "LAYOUT_SOUTHERN_ISLAND_EXTERIOR",
   "music": "MUS_ABANDONED_SHIP",
+  "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_SOUTHERN_ISLAND",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -15,6 +16,7 @@
   "connections": 0,
   "object_events": [
     {
+      "local_id": "LOCALID_SOUTHERN_ISLAND_SAILOR",
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
       "x": 13,
       "y": 23,
@@ -28,6 +30,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_SOUTHERN_ISLAND_SS_TIDAL",
       "graphics_id": "OBJ_EVENT_GFX_SS_TIDAL",
       "x": 13,
       "y": 25,

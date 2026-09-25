@@ -1,9 +1,9 @@
 #include "global.h"
 #include "test/battle.h"
 
-SINGLE_BATTLE_TEST("Damp prevents explosion-like moves from enemies")
+SINGLE_BATTLE_TEST("Damp prevents Explosion-like moves from enemies")
 {
-    u32 move;
+    enum Move move;
     PARAMETRIZE { move = MOVE_EXPLOSION; }
     PARAMETRIZE { move = MOVE_SELF_DESTRUCT; }
     PARAMETRIZE { move = MOVE_MIND_BLOWN; }
@@ -19,9 +19,9 @@ SINGLE_BATTLE_TEST("Damp prevents explosion-like moves from enemies")
     }
 }
 
-DOUBLE_BATTLE_TEST("Damp prevents explosion-like moves from enemies in a double battle")
+DOUBLE_BATTLE_TEST("Damp prevents Explosion-like moves from enemies in a double battle")
 {
-    u32 move;
+    enum Move move;
     PARAMETRIZE { move = MOVE_EXPLOSION; }
     PARAMETRIZE { move = MOVE_SELF_DESTRUCT; }
     PARAMETRIZE { move = MOVE_MIND_BLOWN; }
@@ -39,9 +39,9 @@ DOUBLE_BATTLE_TEST("Damp prevents explosion-like moves from enemies in a double 
     }
 }
 
-SINGLE_BATTLE_TEST("Damp prevents explosion-like moves from self")
+SINGLE_BATTLE_TEST("Damp prevents Explosion-like moves from self")
 {
-    u32 move;
+    enum Move move;
     PARAMETRIZE { move = MOVE_EXPLOSION; }
     PARAMETRIZE { move = MOVE_SELF_DESTRUCT; }
     PARAMETRIZE { move = MOVE_MIND_BLOWN; }
@@ -60,15 +60,17 @@ SINGLE_BATTLE_TEST("Damp prevents explosion-like moves from self")
 SINGLE_BATTLE_TEST("Damp prevents damage from Aftermath")
 {
     GIVEN {
-        ASSUME(MoveMakesContact(MOVE_TACKLE));
+        ASSUME(MoveMakesContact(MOVE_SCRATCH));
         PLAYER(SPECIES_PARAS) { Ability(ABILITY_DAMP); }
         OPPONENT(SPECIES_VOLTORB) { Ability(ABILITY_AFTERMATH); HP(1); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
-        TURN { MOVE(player, MOVE_TACKLE); SEND_OUT(opponent, 1); }
+        TURN { MOVE(player, MOVE_SCRATCH); SEND_OUT(opponent, 1); }
     } SCENE {
         ABILITY_POPUP(opponent, ABILITY_AFTERMATH);
         ABILITY_POPUP(player, ABILITY_DAMP);
         NONE_OF { HP_BAR(player); }
     }
 }
+
+//TO_DO_BATTLE_TEST("Damp affects non-adjacent Pokémon (triples)")

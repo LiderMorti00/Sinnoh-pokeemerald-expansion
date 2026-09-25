@@ -100,7 +100,7 @@ void FreeRotatingTilePuzzle(void)
 
     TRY_FREE_AND_SET_NULL(sRotatingTilePuzzle);
 
-    id = GetObjectEventIdByLocalIdAndMap(OBJ_EVENT_ID_PLAYER, 0, 0);
+    id = GetObjectEventIdByLocalIdAndMap(LOCALID_PLAYER, 0, 0);
     ObjectEventClearHeldMovementIfFinished(&gObjectEvents[id]);
     ScriptMovement_UnfreezeObjectEvents();
 }
@@ -109,7 +109,7 @@ u16 MoveRotatingTileObjects(u8 puzzleNumber)
 {
     u8 i;
     struct ObjectEventTemplate *objectEvents = gSaveBlock1Ptr->objectEventTemplates;
-    u16 localId = 0;
+    u16 localId = LOCALID_NONE;
 
     for (i = 0; i < OBJECT_EVENT_TEMPLATES_COUNT; i++)
     {
@@ -241,7 +241,7 @@ void TurnRotatingTileObjects(void)
         if (objectEventId != OBJECT_EVENTS_COUNT)
         {
             const u8 *movementScript;
-            u8 direction = gObjectEvents[objectEventId].facingDirection;
+            enum Direction direction = gObjectEvents[objectEventId].facingDirection;
             if (rotation == ROTATE_COUNTERCLOCKWISE)
             {
                 switch (direction)

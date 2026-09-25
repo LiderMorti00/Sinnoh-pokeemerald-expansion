@@ -4,6 +4,7 @@
 #include "librfu.h"
 #include "link.h"
 #include "AgbRfu_LinkManager.h"
+#include "constants/species.h"
 
 #define RFUCMD_MASK                0xFF00
 
@@ -103,7 +104,7 @@ struct __attribute__((packed, aligned(2))) RfuGameData
 {
     struct RfuGameCompatibilityData compatibility;
     u8 partnerInfo[RFU_CHILD_MAX];
-    u16 tradeSpecies;
+    enum Species tradeSpecies;
     u8 activity:7;
     u8 startedActivity:1;
     u8 playerGender:1;
@@ -268,7 +269,7 @@ void RfuVSync(void);
 void RfuSetIgnoreError(bool32 enable);
 u8 RfuGetStatus(void);
 struct RfuGameData *GetHostRfuGameData(void);
-void UpdateGameData_GroupLockedIn(u8 startedActivity);
+void UpdateGameData_GroupLockedIn(bool8 startedActivity);
 void RfuSetErrorParams(u32 errorInfo);
 void RfuSetStatus(u8 status, u16 errorInfo);
 u8 Rfu_SetLinkRecovery(bool32 enable);
@@ -294,7 +295,7 @@ void UpdateGameData_SetActivity(u8 activity, u32 partnerInfo, bool32 startedActi
 void CreateTask_RfuReconnectWithParent(const u8 *name, u16 trainerId);
 void SetHostRfuWonderFlags(bool32 hasNews, bool32 hasCard);
 void ResetHostRfuGameData(void);
-void SetTradeBoardRegisteredMonInfo(u32 type, u32 species, u32 level);
+void SetTradeBoardRegisteredMonInfo(u32 type, enum Species species, u32 level);
 void InitializeRfuLinkManager_EnterUnionRoom(void);
 void TryConnectToUnionRoomParent(const u8 *name, struct RfuGameData *parent, u8 activity);
 bool32 IsUnionRoomListenTaskActive(void);
@@ -320,8 +321,8 @@ void RfuRecvQueue_Reset(struct RfuRecvQueue *queue);
 void RfuSendQueue_Reset(struct RfuSendQueue *queue);
 void RfuRecvQueue_Enqueue(struct RfuRecvQueue *queue, u8 *data);
 void RfuSendQueue_Enqueue(struct RfuSendQueue *queue, u8 *data);
-bool8 RfuRecvQueue_Dequeue(struct RfuRecvQueue *queue, u8 *dest);
-bool8 RfuSendQueue_Dequeue(struct RfuSendQueue *queue, u8 *dest);
+bool8 RfuRecvQueue_Dequeue(struct RfuRecvQueue *queue, u8 *src);
+bool8 RfuSendQueue_Dequeue(struct RfuSendQueue *queue, u8 *src);
 void RfuBackupQueue_Enqueue(struct RfuBackupQueue *queue, const u8 *data);
 bool8 RfuBackupQueue_Dequeue(struct RfuBackupQueue *queue, u8 *src);
 void InitHostRfuGameData(struct RfuGameData *data, u8 activity, bool32 startedActivity, s32 partnerInfo);

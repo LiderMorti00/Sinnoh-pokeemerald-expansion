@@ -1,9 +1,11 @@
 #ifndef GUARD_EVOLUTION_SCENE_H
 #define GUARD_EVOLUTION_SCENE_H
 
-void BeginEvolutionScene(struct Pokemon *mon, u16 speciesToEvolve, bool8 canStopEvo, u8 partyID);
-void EvolutionScene(struct Pokemon *mon, u16 speciesToEvolve, bool8 canStopEvo, u8 partyID);
-void TradeEvolutionScene(struct Pokemon *mon, u16 speciesToEvolve, u8 preEvoSpriteID, u8 partyID);
+#include "constants/species.h"
+
+void BeginEvolutionScene(struct Pokemon *mon, enum Species postEvoSpecies, bool32 canStopEvo, u8 partyId);
+void EvolutionScene(struct Pokemon *mon, enum Species postEvoSpecies, bool32 canStopEvo, u8 partyId);
+void TradeEvolutionScene(struct Pokemon *mon, enum Species postEvoSpecies, u8 preEvoSpriteId, u8 partyId);
 
 extern void (*gCB2_AfterEvolution)(void);
 

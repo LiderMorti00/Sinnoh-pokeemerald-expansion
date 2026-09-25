@@ -1,0 +1,24 @@
+{{ doNotModifyHeader }}
+#ifndef GUARD_CONSTANTS_REGION_MAP_SECTIONS_H
+#define GUARD_CONSTANTS_REGION_MAP_SECTIONS_H
+
+enum {
+## for map_section in map_sections
+    {{ map_section.id }},
+## endfor
+    MAPSEC_NONE,
+    MAPSEC_COUNT
+};
+
+// Special location IDs that use the same value space as MAPSECs.
+#define METLOC_SPECIAL_EGG         0xFD
+#define METLOC_IN_GAME_TRADE       0xFE
+#define METLOC_FATEFUL_ENCOUNTER   0xFF
+
+// Proyecto Sinnoh: las secciones de Kanto se han eliminado para dejar sitio a las de Sinnoh
+// (las secciones se guardan en un u8 y no caben todas).
+#define KANTO_MAPSEC_START  MAPSEC_NONE
+#define KANTO_MAPSEC_END    MAPSEC_NONE
+#define KANTO_MAPSEC_COUNT  0
+
+#endif // GUARD_CONSTANTS_REGION_MAP_SECTIONS_H

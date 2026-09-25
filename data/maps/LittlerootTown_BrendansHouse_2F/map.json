@@ -3,6 +3,7 @@
   "name": "LittlerootTown_BrendansHouse_2F",
   "layout": "LAYOUT_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F",
   "music": "MUS_LITTLEROOT",
+  "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -15,6 +16,7 @@
   "connections": 0,
   "object_events": [
     {
+      "local_id": "LOCALID_RIVALS_HOUSE_2F_RIVAL",
       "graphics_id": "OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL",
       "x": 7,
       "y": 1,
@@ -184,6 +186,7 @@
       "flag": "FLAG_DECORATION_12"
     },
     {
+      "local_id": "LOCALID_PLAYERS_HOUSE_2F_MOM",
       "graphics_id": "OBJ_EVENT_GFX_MOM",
       "x": 7,
       "y": 1,

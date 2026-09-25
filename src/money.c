@@ -2,6 +2,7 @@
 #include "money.h"
 #include "graphics.h"
 #include "event_data.h"
+#include "palette.h"
 #include "string_util.h"
 #include "text.h"
 #include "menu.h"
@@ -14,7 +15,7 @@
 EWRAM_DATA static u8 sMoneyBoxWindowId = 0;
 EWRAM_DATA static u8 sMoneyLabelSpriteId = 0;
 
-#define MONEY_LABEL_TAG 0x2722
+#define MONEY_LABEL_TAG 0x2722 | BLEND_IMMUNE_FLAG
 
 static const struct OamData sOamData_MoneyLabel =
 {
@@ -50,9 +51,6 @@ static const struct SpriteTemplate sSpriteTemplate_MoneyLabel =
     .paletteTag = MONEY_LABEL_TAG,
     .oam = &sOamData_MoneyLabel,
     .anims = sSpriteAnimTable_MoneyLabel,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCallbackDummy
 };
 
 static const struct CompressedSpriteSheet sSpriteSheet_MoneyLabel =
@@ -62,7 +60,7 @@ static const struct CompressedSpriteSheet sSpriteSheet_MoneyLabel =
     .tag = MONEY_LABEL_TAG,
 };
 
-static const struct CompressedSpritePalette sSpritePalette_MoneyLabel =
+static const struct SpritePalette sSpritePalette_MoneyLabel =
 {
     .data = gShopMenu_Pal,
     .tag = MONEY_LABEL_TAG
@@ -201,7 +199,7 @@ void HideMoneyBox(void)
 void AddMoneyLabelObject(u16 x, u16 y)
 {
     LoadCompressedSpriteSheet(&sSpriteSheet_MoneyLabel);
-    LoadCompressedSpritePalette(&sSpritePalette_MoneyLabel);
+    LoadSpritePalette(&sSpritePalette_MoneyLabel);
     sMoneyLabelSpriteId = CreateSprite(&sSpriteTemplate_MoneyLabel, x, y, 0);
 }
 

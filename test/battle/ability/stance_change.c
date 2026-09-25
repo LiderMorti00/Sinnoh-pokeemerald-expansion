@@ -1,11 +1,10 @@
 #include "global.h"
 #include "test/battle.h"
 
-
 SINGLE_BATTLE_TEST("Stance Change changes Aegislash from Shield to Blade when using a damaging move")
 {
-    u16 move;
-    PARAMETRIZE { move = MOVE_TACKLE; }
+    enum Move move;
+    PARAMETRIZE { move = MOVE_SCRATCH; }
     PARAMETRIZE { move = MOVE_SWIFT; }
     PARAMETRIZE { move = MOVE_GROWL; }
     GIVEN {
@@ -34,7 +33,7 @@ SINGLE_BATTLE_TEST("Stance Change changes Aegislash from Shield to Blade when us
 
 SINGLE_BATTLE_TEST("Stance Change changes Aegislash from Blade to Shield when using King's Shield")
 {
-    u16 move;
+    enum Move move;
     PARAMETRIZE { move = MOVE_PROTECT; }
     PARAMETRIZE { move = MOVE_KINGS_SHIELD; }
     GIVEN {

@@ -1,10 +1,12 @@
 #include "constants/abilities.h"
+#include "constants/teaching_types.h"
 #include "species_info/shared_dex_text.h"
 #include "species_info/shared_front_pic_anims.h"
 
 // Macros for ease of use.
 
 #define EVOLUTION(...) (const struct Evolution[]) { __VA_ARGS__, { EVOLUTIONS_END }, }
+#define CONDITIONS(...) ((const struct EvolutionParam[]) { __VA_ARGS__, {CONDITIONS_END} })
 
 #define ANIM_FRAMES(...) (const union AnimCmd *const[]) { sAnim_GeneralFrame0, (const union AnimCmd[]) { __VA_ARGS__ ANIMCMD_END, }, }
 
@@ -62,7 +64,6 @@
     .subspriteTables = (_size == SIZE_32x32 ? sOamTables_32x32 : sOamTables_64x64),                                                     \
     .anims = _anims,                                                                                                                    \
     .images = picTable,                                                                                                                 \
-    .affineAnims = gDummySpriteAffineAnimTable,                                                                                         \
 }
 
 #define OVERWORLD(objEventPic, _size, shadow, _tracks, _anims, ...)                                 \
@@ -99,7 +100,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
     [SPECIES_NONE] =
     {
         .speciesName = _("??????????"),
-        .cryId = CRY_NONE,
+        .cryId = CRY_PORYGON,
         .natDexNum = NATIONAL_DEX_NONE,
         .categoryName = _("Unknown"),
         .height = 0,
@@ -122,7 +123,9 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .shinyPalette = gMonShinyPalette_CircledQuestionMark,
         .iconSprite = gMonIcon_QuestionMark,
         .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         FOOTPRINT(QuestionMark)
+        SHADOW(-1, 0, SHADOW_SIZE_M)
     #if OW_POKEMON_OBJECT_EVENTS
         .overworldData = {
             .tileTag = TAG_NONE,
@@ -140,7 +143,6 @@ const struct SpeciesInfo gSpeciesInfo[] =
             .subspriteTables = sOamTables_32x32,
             .anims = sAnimTable_Following,
             .images = sPicTable_Substitute,
-            .affineAnims = gDummySpriteAffineAnimTable,
         },
     #endif
         .levelUpLearnset = sNoneLevelUpLearnset,
@@ -244,4 +246,9 @@ const struct SpeciesInfo gSpeciesInfo[] =
         //.perfectIVCount = NUM_STATS,
     },
     */
+};
+
+const struct EggData gEggDatas[EGG_ID_COUNT] =
+{
+#include "egg_data.h"
 };
