@@ -25,6 +25,7 @@ SandgemLab_EventScript_SceneRight::
 	goto SandgemLab_EventScript_Scene
 
 SandgemLab_EventScript_Scene::
+	call Sinnoh_EventScript_BufferCounterpartName
 	msgbox SandgemLab_Text_RowanWelcome, MSGBOX_DEFAULT
 	playfanfare MUS_OBTAIN_ITEM
 	message SandgemLab_Text_ReceivedPokedex
@@ -39,6 +40,7 @@ SandgemLab_EventScript_Scene::
 	waitmovement 0
 	msgbox SandgemLab_Text_AssistantBalls, MSGBOX_DEFAULT
 	giveitem ITEM_POKE_BALL, 5
+	call Sinnoh_EventScript_BufferCounterpartName
 	msgbox SandgemLab_Text_AssistantGoHome, MSGBOX_DEFAULT
 	closemessage
 	setvar VAR_SINNOH_STORY, 6
@@ -54,6 +56,7 @@ SandgemLab_EventScript_Rowan::
 
 SandgemLab_EventScript_Assistant::
 	lock
+	call Sinnoh_EventScript_BufferCounterpartName
 	faceplayer
 	msgbox SandgemLab_Text_AssistantAdvice, MSGBOX_DEFAULT
 	release
@@ -103,13 +106,14 @@ SandgemLab_Text_RowanPokedex:
 	.string "own eyes. That is my request.$"
 
 SandgemLab_Text_AssistantBalls:
-	.string "ASSISTANT: Hi! I'm helping the\n"
-	.string "Professor fill his POKéDEX too.\p"
+	.string "{STR_VAR_1}: Hi! I'm {STR_VAR_1}.\n"
+	.string "I'm helping the Professor\n"
+	.string "fill his POKéDEX.\p"
 	.string "You'll need these to catch\n"
 	.string "POKéMON. Here, take them!$"
 
 SandgemLab_Text_AssistantGoHome:
-	.string "ASSISTANT: You should tell your mom\n"
+	.string "{STR_VAR_1}: You should tell your mom\n"
 	.string "about your journey before you leave!\p"
 	.string "When you're ready, head north to\n"
 	.string "ROUTE 202. JUBILIFE CITY is\l"
@@ -120,7 +124,7 @@ SandgemLab_Text_RowanAdvice:
 	.string "trusted. Remember that.$"
 
 SandgemLab_Text_AssistantAdvice:
-	.string "ASSISTANT: Weaken a wild POKéMON\n"
+	.string "{STR_VAR_1}: Weaken a wild POKéMON\n"
 	.string "before you throw a POKé BALL.\l"
 	.string "It works much better that way!$"
 

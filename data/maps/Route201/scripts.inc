@@ -43,6 +43,8 @@ Route201_Movement_BarryToLake:
 	walk_fast_left
 	walk_fast_left
 	walk_fast_left
+	walk_fast_left
+	walk_fast_left
 	step_end
 
 Route201_Text_BarryHurry:

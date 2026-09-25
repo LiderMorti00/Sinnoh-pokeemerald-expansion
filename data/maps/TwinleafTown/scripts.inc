@@ -6,7 +6,26 @@ TwinleafTown_EventScript_Barry::
 	faceplayer
 	msgbox TwinleafTown_Text_BarryLetsGo, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_TWINLEAF_BARRY, TwinleafTown_Movement_BarryRunsOff
+	getplayerxy VAR_0x8004, VAR_0x8005
+	goto_if_eq VAR_0x8004, 4, TwinleafTown_EventScript_BarryLeaveLeft
+	goto_if_eq VAR_0x8004, 6, TwinleafTown_EventScript_BarryLeaveRight
+	goto_if_eq VAR_0x8005, 11, TwinleafTown_EventScript_BarryLeaveBelow
+	applymovement LOCALID_TWINLEAF_BARRY, TwinleafTown_Movement_BarryRunsOffAbove
+	goto TwinleafTown_EventScript_BarryGone
+
+TwinleafTown_EventScript_BarryLeaveLeft::
+	applymovement LOCALID_TWINLEAF_BARRY, TwinleafTown_Movement_BarryRunsOffLeft
+	goto TwinleafTown_EventScript_BarryGone
+
+TwinleafTown_EventScript_BarryLeaveRight::
+	applymovement LOCALID_TWINLEAF_BARRY, TwinleafTown_Movement_BarryRunsOffRight
+	goto TwinleafTown_EventScript_BarryGone
+
+TwinleafTown_EventScript_BarryLeaveBelow::
+	applymovement LOCALID_TWINLEAF_BARRY, TwinleafTown_Movement_BarryRunsOffBelow
+	goto TwinleafTown_EventScript_BarryGone
+
+TwinleafTown_EventScript_BarryGone::
 	waitmovement 0
 	removeobject LOCALID_TWINLEAF_BARRY
 	setflag FLAG_HIDE_TWINLEAF_BARRY
@@ -32,11 +51,12 @@ TwinleafTown_EventScript_Man::
 	msgbox TwinleafTown_Text_Man, MSGBOX_NPC
 	end
 
-TwinleafTown_Movement_BarryRunsOff:
+TwinleafTown_Movement_BarryRunsOffLeft:
 	walk_fast_right
 	walk_fast_right
 	walk_fast_right
 	walk_fast_right
+	walk_fast_right
 	walk_fast_up
 	walk_fast_up
 	walk_fast_up
@@ -44,6 +64,66 @@ TwinleafTown_Movement_BarryRunsOff:
 	walk_fast_up
 	walk_fast_up
 	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_right
+	step_end
+TwinleafTown_Movement_BarryRunsOffRight:
+	walk_fast_down
+	walk_fast_right
+	walk_fast_right
+	walk_fast_up
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_right
+	step_end
+TwinleafTown_Movement_BarryRunsOffBelow:
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_right
+	step_end
+TwinleafTown_Movement_BarryRunsOffAbove:
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_right
 	step_end
 
 TwinleafTown_Text_BarryLetsGo:

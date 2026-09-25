@@ -15,6 +15,7 @@ LakeVerity_EventScript_SetDawn::
 LakeVerity_EventScript_Rowan::
 LakeVerity_EventScript_RowanScene::
 	lockall
+	call Sinnoh_EventScript_BufferCounterpartName
 	msgbox LakeVerity_Text_Rowan1, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_LAKE_VERITY_ROWAN, Common_Movement_FaceDown
@@ -37,21 +38,38 @@ LakeVerity_EventScript_RowanScene::
 	end
 
 LakeVerity_Text_Rowan1:
-	.string "PROFESSOR: ...It is as I feared.\n"
+	.string "ROWAN: ...It is as I feared.\n"
 	.string "The lake is quiet. Too quiet.\p"
 	.string "Something stirs beneath these\n"
 	.string "waters, and it is watching us.$"
 
 LakeVerity_Text_Rowan2:
-	.string "PROFESSOR: Hm? And who might you be?\p"
+	.string "ROWAN: Hm? And who might you be?\p"
 	.string "The tall grass is no place to\n"
 	.string "wander without POKéMON of your own.\p"
 	.string "...Come. We are finished here.$"
 
 LakeVerity_Text_Assistant:
-	.string "ASSISTANT: Coming, Professor!\n"
-	.string "Sorry, you two, excuse us!$"
+	.string "{STR_VAR_1}: Coming, Professor!\n"
+	.string "Sorry, excuse us!$"
 
 LakeVerity_Text_BarryAfterRowan:
 	.string "Barry ran back toward the lake's\n"
 	.string "entrance, looking excited.$"
+
+@ Guarda en STR_VAR_1 el nombre del ayudante de Rowan: DAWN si el jugador es chico, LUCAS si es chica
+Sinnoh_EventScript_BufferCounterpartName::
+	checkplayergender
+	goto_if_eq VAR_RESULT, MALE, Sinnoh_EventScript_BufferDawn
+	bufferstring STR_VAR_1, Sinnoh_Text_Lucas
+	return
+
+Sinnoh_EventScript_BufferDawn::
+	bufferstring STR_VAR_1, Sinnoh_Text_Dawn
+	return
+
+Sinnoh_Text_Dawn:
+	.string "DAWN$"
+
+Sinnoh_Text_Lucas:
+	.string "LUCAS$"

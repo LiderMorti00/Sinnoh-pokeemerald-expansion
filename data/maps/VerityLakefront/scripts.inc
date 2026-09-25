@@ -55,6 +55,19 @@ VerityLakefront_EventScript_AfterBattle::
 
 VerityLakefront_Movement_BarryLeaves:
 	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
 	walk_fast_right
 	walk_fast_right
 	walk_fast_right

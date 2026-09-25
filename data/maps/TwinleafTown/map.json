@@ -102,6 +102,24 @@
   "coord_events": [
     {
       "type": "trigger",
+      "x": 8,
+      "y": 3,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "1",
+      "script": "TwinleafTown_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 3,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "1",
+      "script": "TwinleafTown_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
       "x": 10,
       "y": 3,
       "elevation": 3,
@@ -130,6 +148,24 @@
     {
       "type": "trigger",
       "x": 13,
+      "y": 3,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "1",
+      "script": "TwinleafTown_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 3,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "1",
+      "script": "TwinleafTown_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
       "y": 3,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
