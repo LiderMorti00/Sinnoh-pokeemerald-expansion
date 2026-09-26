@@ -44,3 +44,18 @@ FloaromaTown_Mart_Pokemart_Badge:
 	.2byte ITEM_REPEL
 	pokemartlistend
 
+FloaromaTown_Mart_EventScript_PtNpc1::
+	msgbox FloaromaTown_Mart_Text_PtNpc1, MSGBOX_NPC
+	end
+
+FloaromaTown_Mart_Text_PtNpc1:
+	.string "I'm buying POKé BALLS for my trip\n"
+	.string "through ETERNA FOREST.$"
+
+FloaromaTown_Mart_EventScript_PtNpc2::
+	msgbox FloaromaTown_Mart_Text_PtNpc2, MSGBOX_NPC
+	end
+
+FloaromaTown_Mart_Text_PtNpc2:
+	.string "This shop has everything you need\n"
+	.string "for a long journey!$"

@@ -236,56 +236,40 @@ Stunky
 Level: 11
 
 === TRAINER_MARCEL ===
-Name: MARCEL
-Class: Cooltrainer
-Pic: Cooltrainer M
-Gender: Male
-Music: Cool
-Items: Hyper Potion
+Name: SARAH
+Class: Lass
+Pic: Lass
+Gender: Female
+Music: Female
 Double Battle: No
 AI: Basic Trainer
 
-Manectric
-Level: 29
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-
-Shiftry
-Level: 29
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Shinx
+Level: 7
 
 === TRAINER_ALBERTO ===
-Name: ALBERTO
-Class: Bird Keeper
-Pic: Bird Keeper
-Gender: Male
-Music: Cool
+Name: SAMANTHA
+Class: Lass
+Pic: Lass
+Gender: Female
+Music: Female
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Pelipper
-Level: 30
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Xatu
-Level: 30
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Budew
+Level: 7
 
 === TRAINER_ED ===
-Name: ED
-Class: Collector
-Pic: Collector
+Name: TYLER
+Class: Youngster
+Pic: Youngster
 Gender: Male
-Music: Suspicious
+Music: Male
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Zangoose
-Level: 30
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Seviper
-Level: 30
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Magikarp
+Level: 8
 
 === TRAINER_GRUNT_SEAFLOOR_CAVERN_4 ===
 Name: GRUNT
@@ -301,17 +285,19 @@ Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_DECLAN ===
-Name: DECLAN
-Class: Swimmer M
-Pic: Swimmer M
+Name: BRANDON
+Class: Bug Catcher
+Pic: Bug Catcher
 Gender: Male
-Music: Swimmer
+Music: Male
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Gyarados
-Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Wurmple
+Level: 10
+
+Kricketot
+Level: 11
 
 === TRAINER_GRUNT_RUSTURF_TUNNEL ===
 Name: GRUNT
@@ -506,21 +492,19 @@ Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_FREDRICK ===
-Name: FREDRICK
-Class: Expert
-Pic: Expert M
-Gender: Male
-Music: Intense
+Name: TAYLOR
+Class: Aroma Lady
+Pic: Aroma Lady
+Gender: Female
+Music: Female
 Double Battle: No
 AI: Basic Trainer
 
-Makuhita
-Level: 30
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Budew
+Level: 9
 
-Machoke
-Level: 30
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Cherubi
+Level: 11
 
 === TRAINER_MATT ===
 Name: MATT
@@ -541,17 +525,19 @@ Level: 34
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_ZANDER ===
-Name: ZANDER
-Class: Black Belt
-Pic: Black Belt
-Gender: Male
-Music: Intense
-Double Battle: No
-AI: Check Bad Move
+Name: LIV & LIZ
+Class: Twins
+Pic: Twins
+Gender: Female
+Music: Female
+Double Battle: Yes
+AI: Basic Trainer
 
-Hariyama
-Level: 31
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Pachirisu
+Level: 11
+
+Pachirisu
+Level: 11
 
 === TRAINER_SHELLY_WEATHER_INSTITUTE ===
 Name: SHELLY
@@ -610,17 +596,22 @@ Level: 43
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_LEAH ===
-Name: LEAH
-Class: Hex Maniac
-Pic: Hex Maniac
-Gender: Female
-Music: Suspicious
+Name: DANIEL
+Class: Hiker
+Pic: Hiker
+Gender: Male
+Music: Male
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Spoink
-Level: 31
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Geodude
+Level: 10
+
+Geodude
+Level: 11
+
+Geodude
+Level: 12
 
 === TRAINER_DAISY ===
 Name: HARRISON
@@ -656,42 +647,28 @@ Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_FELIX ===
-Name: FELIX
-Class: Cooltrainer
-Pic: Cooltrainer M
-Gender: Male
-Music: Cool
-Items: Full Restore
-Double Battle: No
-AI: Basic Trainer
-
-Medicham
-Level: 43
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Psychic
-
-Claydol
-Level: 43
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Skill Swap
-- Earthquake
-
-=== TRAINER_VIOLET ===
-Name: VIOLET
+Name: ELIZABETH
 Class: Aroma Lady
 Pic: Aroma Lady
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
 Roselia
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Level: 14
 
-Gloom
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+=== TRAINER_VIOLET ===
+Name: JACOB
+Class: Camper
+Pic: Camper
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Basic Trainer
+
+Ponyta
+Level: 14
 
 === TRAINER_ROSE_2 ===
 Name: ROSE
@@ -791,62 +768,31 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 - Poison Sting
 
 === TRAINER_CHIP ===
-Name: CHIP
-Class: Ruin Maniac
-Pic: Ruin Maniac
-Gender: Male
-Music: Hiker
+Name: SIENA
+Class: Picnicker
+Pic: Picnicker
+Gender: Female
+Music: Female
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Baltoy
-Level: 27
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-- Psybeam
-- Self Destruct
-- Sandstorm
-- Ancient Power
+Bidoof
+Level: 12
 
-Sandshrew
-Level: 27
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-- Dig
-- Slash
-- Sand Attack
-- Poison Sting
-
-Sandslash
-Level: 27
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-- Dig
-- Slash
-- Sand Attack
-- Poison Sting
+Pachirisu
+Level: 12
 
 === TRAINER_FOSTER ===
-Name: FOSTER
-Class: Ruin Maniac
-Pic: Ruin Maniac
+Name: NICHOLAS
+Class: Hiker
+Pic: Hiker
 Gender: Male
-Music: Hiker
+Music: Male
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Sandshrew
-Level: 25
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Dig
-- Slash
-- Sand Attack
-- Poison Sting
-
-Sandslash
-Level: 25
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Dig
-- Slash
-- Sand Attack
-- Poison Sting
+Onix
+Level: 14
 
 === TRAINER_DUSTY_2 ===
 Name: DUSTY
@@ -1044,30 +990,28 @@ Level: 12
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
 === TRAINER_AUSTINA ===
-Name: AUSTINA
-Class: Tuber F
-Pic: Tuber F
+Name: KELSEY
+Class: Battle Girl
+Pic: Battle Girl
 Gender: Female
-Music: Girl
+Music: Female
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Marill
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Machop
+Level: 15
 
 === TRAINER_GWEN ===
-Name: GWEN
-Class: Tuber F
-Pic: Tuber F
+Name: KARINA
+Class: Picnicker
+Pic: Picnicker
 Gender: Female
-Music: Girl
+Music: Female
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Marill
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Piplup
+Level: 14
 
 === TRAINER_LOLA_2 ===
 Name: LOLA
@@ -1155,34 +1099,28 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 - Surf
 
 === TRAINER_SIMON ===
-Name: SIMON
-Class: Tuber M
-Pic: Tuber M
+Name: ZACKARY
+Class: Camper
+Pic: Camper
 Gender: Male
-Music: Girl
+Music: Male
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Azurill
-Level: 12
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Marill
-Level: 12
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Aipom
+Level: 14
 
 === TRAINER_CHARLIE ===
-Name: CHARLIE
-Class: Tuber M
-Pic: Tuber M
+Name: GRUNT
+Class: Team Magma
+Pic: Magma Grunt M
 Gender: Male
-Music: Girl
+Music: Magma
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Marill
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Glameow
+Level: 13
 
 === TRAINER_RICKY_2 ===
 Name: RICKY
@@ -1253,121 +1191,73 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 - Surf
 
 === TRAINER_RANDALL ===
-Name: RANDALL
-Class: Cooltrainer
-Pic: Cooltrainer M
+Name: GRUNT
+Class: Team Magma
+Pic: Magma Grunt M
 Gender: Male
-Music: Cool
-Items: Hyper Potion
+Music: Magma
 Double Battle: No
 AI: Basic Trainer
 
-Swellow
-Level: 26
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Quick Attack
-- Agility
-- Wing Attack
+Stunky
+Level: 13
 
 === TRAINER_PARKER ===
-Name: PARKER
-Class: Cooltrainer
-Pic: Cooltrainer M
+Name: GRUNT
+Class: Team Magma
+Pic: Magma Grunt M
 Gender: Male
-Music: Cool
-Items: Hyper Potion
+Music: Magma
 Double Battle: No
 AI: Basic Trainer
 
-Spinda
-Level: 26
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Teeter Dance
-- Dizzy Punch
-- Focus Punch
+Zubat
+Level: 11
+
+Zubat
+Level: 11
 
 === TRAINER_GEORGE ===
-Name: GEORGE
-Class: Cooltrainer
-Pic: Cooltrainer M
+Name: GRUNT
+Class: Team Magma
+Pic: Magma Grunt M
 Gender: Male
-Music: Cool
-Items: Hyper Potion
+Music: Magma
 Double Battle: No
 AI: Basic Trainer
 
-Slakoth @ Sitrus Berry
-Level: 26
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Slack Off
-- Counter
-- Shadow Ball
+Zubat
+Level: 13
 
 === TRAINER_BERKE ===
-Name: BERKE
-Class: Cooltrainer
-Pic: Cooltrainer M
+Name: GRUNT
+Class: Team Magma
+Pic: Magma Grunt M
 Gender: Male
-Music: Cool
-Items: Hyper Potion
+Music: Magma
 Double Battle: No
 AI: Basic Trainer
 
-Vigoroth
-Level: 26
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Focus Energy
-- Slash
+Glameow
+Level: 11
+
+Stunky
+Level: 11
 
 === TRAINER_BRAXTON ===
-Name: BRAXTON
-Class: Cooltrainer
-Pic: Cooltrainer M
-Gender: Male
-Music: Cool
-Items: Hyper Potion
+Name: MARS
+Class: Team Magma
+Pic: Magma Admin
+Gender: Female
+Music: Magma
 Double Battle: No
 AI: Basic Trainer
 
-Swellow
-Level: 28
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Focus Energy
-- Quick Attack
-- Wing Attack
-- Endeavor
+Zubat
+Level: 15
 
-Trapinch
-Level: 28
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Bite
-- Dig
-- Feint Attack
-- Sand Tomb
-
-Wailmer
-Level: 28
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Rollout
-- Whirlpool
-- Astonish
-- Water Pulse
-
-Magneton
-Level: 28
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Thunderbolt
-- Supersonic
-- Thunder Wave
-- Sonic Boom
-
-Shiftry
-Level: 28
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Giga Drain
-- Feint Attack
-- Double Team
-- Swagger
+Purugly
+Level: 17
 
 === TRAINER_VINCENT ===
 Name: VINCENT

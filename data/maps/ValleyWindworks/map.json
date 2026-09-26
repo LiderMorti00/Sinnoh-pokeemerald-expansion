@@ -24,7 +24,51 @@
       "direction": "up"
     }
   ],
-  "object_events": [],
+  "object_events": [
+    {
+      "local_id": "LOCALID_WINDWORKS_DOOR_GRUNT",
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_MAGMA_MEMBER_M",
+      "x": 21,
+      "y": 80,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "ValleyWindworks_EventScript_DoorGrunt",
+      "flag": "FLAG_HIDE_WINDWORKS_DOOR_GRUNT"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 3,
+      "y": 71,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_MAX_ELIXIR",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_ROUTE_119_LEAF_STONE"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 9,
+      "y": 71,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_GREAT_BALL",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_ROUTE_119_RARE_CANDY"
+    }
+  ],
   "warp_events": [
     {
       "x": 21,
@@ -34,6 +78,34 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
-  "bg_events": []
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 80,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "21",
+      "script": "ValleyWindworks_EventScript_Locked"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 80,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "22",
+      "script": "ValleyWindworks_EventScript_Unlock"
+    }
+  ],
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 15,
+      "y": 71,
+      "elevation": 3,
+      "item": "ITEM_SUPER_REPEL",
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_124_GREEN_SHARD"
+    }
+  ]
 }

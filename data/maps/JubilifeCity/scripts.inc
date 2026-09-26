@@ -485,3 +485,17 @@ JubilifeCity_Movement_PresidentWalks:
 	walk_up
 	walk_right
 	step_end
+
+JubilifeCity_EventScript_BlockNorth::
+	lockall
+	msgbox JubilifeCity_Text_BlockNorth, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
+	waitmovement 0
+	releaseall
+	end
+
+JubilifeCity_Text_BlockNorth:
+	.string "The road north leads to a rocky\n"
+	.string "cave. I'd better get the BADGE\l"
+	.string "from OREBURGH GYM first.$"

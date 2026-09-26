@@ -351,7 +351,8 @@
 // 11 mamá da el Diario y la madre de Barry el Paquete, 12 tutorial de captura,
 // 13 Looker en Jubileo, 14 Barry en la Escuela (Mapa), 15 campaña del Pokéreloj,
 // 16 Pokénav, 17 Barry en la Ruta 203, 18 Roco en la mina, 19 medalla Lignito,
-// 20 Equipo Galaxia en Jubileo
+// 20 Equipo Galaxia en Jubileo, 21 soldado de la puerta del Valle Eólico,
+// 22 Llave Almacén (Pradera Floral), 23 Venus derrotada
 #define VAR_SINNOH_STORY                  VAR_UNUSED_0x404E
 // 0 hasta tener el primer Pokémon (bloquea la hierba alta), 1 después
 // 0 Looker aún no ha aparecido en Jubileo, 1 ya

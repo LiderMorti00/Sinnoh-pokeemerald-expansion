@@ -822,7 +822,6 @@ enum __attribute__((packed)) Item
     ITEM_HM07 = 688,
     ITEM_HM08 = 689,
 
-
     /* Expands to:
      *   ITEM_TM_FOCUS_PUNCH = ITEM_TM01,
      *   ...
@@ -1058,6 +1057,7 @@ enum __attribute__((packed)) Item
     ITEM_COUPON_1 = 876,
     ITEM_COUPON_2 = 877,
     ITEM_COUPON_3 = 878,
+    ITEM_WORKS_KEY = 879,
 
     ITEMS_COUNT,
     ITEM_FIELD_ARROW = ITEMS_COUNT,

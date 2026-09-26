@@ -807,6 +807,384 @@
       "var": "VAR_SINNOH_LOOKER",
       "var_value": "0",
       "script": "JubilifeCity_EventScript_LookerScene"
+    },
+    {
+      "type": "trigger",
+      "x": 47,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "12",
+      "script": "JubilifeCity_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 48,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "12",
+      "script": "JubilifeCity_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 49,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "12",
+      "script": "JubilifeCity_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 50,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "12",
+      "script": "JubilifeCity_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 51,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "12",
+      "script": "JubilifeCity_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 52,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "12",
+      "script": "JubilifeCity_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 47,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "13",
+      "script": "JubilifeCity_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 48,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "13",
+      "script": "JubilifeCity_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 49,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "13",
+      "script": "JubilifeCity_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 50,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "13",
+      "script": "JubilifeCity_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 51,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "13",
+      "script": "JubilifeCity_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 52,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "13",
+      "script": "JubilifeCity_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 47,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "14",
+      "script": "JubilifeCity_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 48,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "14",
+      "script": "JubilifeCity_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 49,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "14",
+      "script": "JubilifeCity_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 50,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "14",
+      "script": "JubilifeCity_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 51,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "14",
+      "script": "JubilifeCity_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 52,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "14",
+      "script": "JubilifeCity_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 47,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "15",
+      "script": "JubilifeCity_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 48,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "15",
+      "script": "JubilifeCity_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 49,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "15",
+      "script": "JubilifeCity_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 50,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "15",
+      "script": "JubilifeCity_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 51,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "15",
+      "script": "JubilifeCity_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 52,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "15",
+      "script": "JubilifeCity_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 47,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "16",
+      "script": "JubilifeCity_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 48,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "16",
+      "script": "JubilifeCity_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 49,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "16",
+      "script": "JubilifeCity_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 50,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "16",
+      "script": "JubilifeCity_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 51,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "16",
+      "script": "JubilifeCity_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 52,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "16",
+      "script": "JubilifeCity_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 47,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "17",
+      "script": "JubilifeCity_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 48,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "17",
+      "script": "JubilifeCity_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 49,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "17",
+      "script": "JubilifeCity_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 50,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "17",
+      "script": "JubilifeCity_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 51,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "17",
+      "script": "JubilifeCity_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 52,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "17",
+      "script": "JubilifeCity_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 47,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "18",
+      "script": "JubilifeCity_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 48,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "18",
+      "script": "JubilifeCity_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 49,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "18",
+      "script": "JubilifeCity_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 50,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "18",
+      "script": "JubilifeCity_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 51,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "18",
+      "script": "JubilifeCity_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 52,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "18",
+      "script": "JubilifeCity_EventScript_BlockNorth"
     }
   ],
   "bg_events": [

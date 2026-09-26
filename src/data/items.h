@@ -7387,6 +7387,22 @@ const struct ItemInfo gItemsInfo[] =
         .iconPalette = gItemIconPalette_SSTicket,
     },
 
+    [ITEM_WORKS_KEY] =
+    {
+        .name = ITEM_NAME("Works Key"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A large key that\n"
+            "opens the door of\n"
+            "VALLEY WINDWORKS."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_SecretKey,
+        .iconPalette = gItemIconPalette_SecretKey,
+    },
+
 // Gems
 #if I_PRICE >= GEN_9
     #define GEM_PRICE 15000
