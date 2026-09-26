@@ -90,8 +90,18 @@ SandgemTown_EventScript_Rowan::
 	lockall
 	goto_if_ne VAR_SINNOH_STORY, 9, SandgemTown_EventScript_RowanEnd
 	call Sinnoh_EventScript_BufferCounterpartName
-	applymovement LOCALID_SANDGEM_ROWAN, Common_Movement_FacePlayer
-	applymovement LOCALID_SANDGEM_DAWN2, Common_Movement_FacePlayer
+	applymovement LOCALID_PLAYER, SandgemTown_Movement_PlayerStepBack
+	waitmovement 0
+	clearflag FLAG_HIDE_SANDGEM_ROWAN
+	addobject LOCALID_SANDGEM_ROWAN
+	playse SE_DOOR
+	applymovement LOCALID_SANDGEM_ROWAN, SandgemTown_Movement_RowanExits
+	waitmovement 0
+	addobject LOCALID_SANDGEM_DAWN2
+	playse SE_DOOR
+	applymovement LOCALID_SANDGEM_DAWN2, Common_Movement_WalkDown
+	waitmovement 0
+	applymovement LOCALID_SANDGEM_ROWAN, Common_Movement_FaceLeft
 	waitmovement 0
 	msgbox SandgemTown_Text_Rowan, MSGBOX_DEFAULT
 	giveitem ITEM_TM_RETURN
@@ -368,15 +378,14 @@ SandgemTown_Movement_RowanLeaves:
 	step_end
 
 SandgemTown_Movement_DawnTour:
+	walk_right
 	walk_down
-	walk_right
-	walk_right
+	walk_down
 	walk_right
 	walk_right
 	step_end
 
 SandgemTown_Movement_DawnLeaves:
-	walk_down
 	walk_right
 	walk_right
 	walk_right
@@ -400,3 +409,13 @@ SandgemTown_Text_DawnGoIn:
 	.string "{STR_VAR_1}: That was Barry,\n"
 	.string "right? He's always in such a\l"
 	.string "hurry! Come on, let's go in.$"
+
+SandgemTown_Movement_PlayerStepBack:
+	walk_down
+	face_up
+	step_end
+
+SandgemTown_Movement_RowanExits:
+	walk_down
+	walk_right
+	step_end
