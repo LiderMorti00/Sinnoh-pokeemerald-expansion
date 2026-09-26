@@ -354,6 +354,8 @@
 // 20 Equipo Galaxia en Jubileo
 #define VAR_SINNOH_STORY                  VAR_UNUSED_0x404E
 // 0 hasta tener el primer Pokémon (bloquea la hierba alta), 1 después
+// 0 Looker aún no ha aparecido en Jubileo, 1 ya
+#define VAR_SINNOH_LOOKER                 VAR_UNUSED_0x40DC
 #define VAR_SINNOH_HAS_POKEMON            VAR_UNUSED_0x40DB
 // 0 hasta tener el primer Pokémon (bloquea la hierba alta), 1 después
 #define VAR_SINNOH_HAS_POKEMON            VAR_UNUSED_0x40DB

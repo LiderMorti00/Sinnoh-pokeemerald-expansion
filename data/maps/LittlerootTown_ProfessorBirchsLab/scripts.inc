@@ -45,6 +45,7 @@ SandgemLab_EventScript_Scene::
 	playse SE_EXIT
 	removeobject LOCALID_SANDGEM_LAB_ASSISTANT
 	setflag FLAG_HIDE_LAB_DAWN
+	clearflag FLAG_HIDE_SANDGEM_ROWAN
 	setvar VAR_SINNOH_STORY, 9
 	releaseall
 	end

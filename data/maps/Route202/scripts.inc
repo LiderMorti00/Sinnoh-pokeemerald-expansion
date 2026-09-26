@@ -29,7 +29,6 @@ Route202_EventScript_DawnScene::
 	setflag FLAG_HIDE_ROUTE202_DAWN
 	setvar VAR_SINNOH_STORY, 12
 	clearflag FLAG_HIDE_JUBILIFE_DAWN
-	clearflag FLAG_HIDE_JUBILIFE_LOOKER
 	releaseall
 	end
 

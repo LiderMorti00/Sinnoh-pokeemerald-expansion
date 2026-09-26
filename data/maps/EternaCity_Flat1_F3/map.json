@@ -3,7 +3,7 @@
   "name": "EternaCity_Flat1_F3",
   "layout": "LAYOUT_ETERNA_CITY_FLAT1_F3",
   "music": "MUS_DUMMY",
-  "region_map_section": "MAPSEC_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_ETERNA_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_NONE",

@@ -3,6 +3,7 @@ Route201_MapScripts::
 	.byte 0
 
 Route201_OnTransition:
+	call_if_eq VAR_SINNOH_HAS_POKEMON, 1, Sinnoh_EventScript_SetPokemonMenu
 	checkplayergender
 	goto_if_eq VAR_RESULT, MALE, Route201_EventScript_SetDawnGfx
 	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL
@@ -29,7 +30,12 @@ Route201_EventScript_Barry::
 	clearflag FLAG_HIDE_ROUTE201_ROWAN
 	addobject LOCALID_ROUTE201_ROWAN
 	addobject LOCALID_ROUTE201_DAWN
+	applymovement LOCALID_ROUTE201_ROWAN, Route201_Movement_RowanArrives
+	applymovement LOCALID_ROUTE201_DAWN, Route201_Movement_DawnArrives
 	applymovement LOCALID_ROUTE201_BARRY, Common_Movement_WalkDown
+	waitmovement 0
+	applymovement LOCALID_ROUTE201_BARRY, Common_Movement_FaceLeft
+	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
 	waitmovement 0
 	msgbox Route201_Text_Rowan1, MSGBOX_DEFAULT
 	msgbox Route201_Text_Dawn1, MSGBOX_DEFAULT
@@ -37,15 +43,17 @@ Route201_EventScript_Barry::
 	closemessage
 	fadescreen FADE_TO_BLACK
 	special ChooseStarter
+	setflag FLAG_SYS_POKEMON_GET
 	setvar VAR_SINNOH_HAS_POKEMON, 1
 	msgbox Route201_Text_BarryPicks, MSGBOX_DEFAULT
 	msgbox Route201_Text_Rowan3, MSGBOX_DEFAULT
 	closemessage
-	fadescreen FADE_TO_BLACK
+	applymovement LOCALID_ROUTE201_ROWAN, Route201_Movement_RowanLeaves
+	applymovement LOCALID_ROUTE201_DAWN, Route201_Movement_DawnLeaves
+	waitmovement 0
 	removeobject LOCALID_ROUTE201_ROWAN
 	removeobject LOCALID_ROUTE201_DAWN
 	setflag FLAG_HIDE_ROUTE201_ROWAN
-	fadescreen FADE_FROM_BLACK
 	msgbox Route201_Text_BarryBattle, MSGBOX_DEFAULT
 	closemessage
 	setflag B_FLAG_NO_WHITEOUT
@@ -71,7 +79,7 @@ Route201_EventScript_AfterBattle::
 	msgbox Route201_Text_BarryAfter, MSGBOX_DEFAULT
 	closemessage
 	setvar VAR_SINNOH_STORY, 4
-	warp MAP_TWINLEAF_TOWN_MAIN_HOUSE_1F, 2, 7
+	warp MAP_TWINLEAF_TOWN_MAIN_HOUSE_1F, 2, 6
 	waitstate
 	releaseall
 	end
@@ -291,3 +299,69 @@ Route201_Text_PtNpc3:
 	.string "If you look carefully, you can\n"
 	.string "spot items lying around on the\l"
 	.string "routes.$"
+
+Route201_Movement_RowanArrives:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+Route201_Movement_DawnArrives:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+Route201_Movement_RowanLeaves:
+	walk_right
+	walk_up
+	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+Route201_Movement_DawnLeaves:
+	walk_up
+	walk_up
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+Sinnoh_EventScript_SetPokemonMenu::
+	setflag FLAG_SYS_POKEMON_GET
+	return

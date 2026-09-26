@@ -666,12 +666,147 @@
     },
     {
       "type": "trigger",
-      "x": 43,
-      "y": 37,
+      "x": 40,
+      "y": 39,
       "elevation": 3,
-      "var": "VAR_SINNOH_STORY",
-      "var_value": "14",
-      "script": "JubilifeCity_EventScript_PresidentScene"
+      "var": "VAR_SINNOH_LOOKER",
+      "var_value": "0",
+      "script": "JubilifeCity_EventScript_LookerScene"
+    },
+    {
+      "type": "trigger",
+      "x": 41,
+      "y": 39,
+      "elevation": 3,
+      "var": "VAR_SINNOH_LOOKER",
+      "var_value": "0",
+      "script": "JubilifeCity_EventScript_LookerScene"
+    },
+    {
+      "type": "trigger",
+      "x": 42,
+      "y": 39,
+      "elevation": 3,
+      "var": "VAR_SINNOH_LOOKER",
+      "var_value": "0",
+      "script": "JubilifeCity_EventScript_LookerScene"
+    },
+    {
+      "type": "trigger",
+      "x": 43,
+      "y": 39,
+      "elevation": 3,
+      "var": "VAR_SINNOH_LOOKER",
+      "var_value": "0",
+      "script": "JubilifeCity_EventScript_LookerScene"
+    },
+    {
+      "type": "trigger",
+      "x": 44,
+      "y": 39,
+      "elevation": 3,
+      "var": "VAR_SINNOH_LOOKER",
+      "var_value": "0",
+      "script": "JubilifeCity_EventScript_LookerScene"
+    },
+    {
+      "type": "trigger",
+      "x": 45,
+      "y": 39,
+      "elevation": 3,
+      "var": "VAR_SINNOH_LOOKER",
+      "var_value": "0",
+      "script": "JubilifeCity_EventScript_LookerScene"
+    },
+    {
+      "type": "trigger",
+      "x": 46,
+      "y": 39,
+      "elevation": 3,
+      "var": "VAR_SINNOH_LOOKER",
+      "var_value": "0",
+      "script": "JubilifeCity_EventScript_LookerScene"
+    },
+    {
+      "type": "trigger",
+      "x": 47,
+      "y": 39,
+      "elevation": 3,
+      "var": "VAR_SINNOH_LOOKER",
+      "var_value": "0",
+      "script": "JubilifeCity_EventScript_LookerScene"
+    },
+    {
+      "type": "trigger",
+      "x": 48,
+      "y": 39,
+      "elevation": 3,
+      "var": "VAR_SINNOH_LOOKER",
+      "var_value": "0",
+      "script": "JubilifeCity_EventScript_LookerScene"
+    },
+    {
+      "type": "trigger",
+      "x": 49,
+      "y": 39,
+      "elevation": 3,
+      "var": "VAR_SINNOH_LOOKER",
+      "var_value": "0",
+      "script": "JubilifeCity_EventScript_LookerScene"
+    },
+    {
+      "type": "trigger",
+      "x": 50,
+      "y": 39,
+      "elevation": 3,
+      "var": "VAR_SINNOH_LOOKER",
+      "var_value": "0",
+      "script": "JubilifeCity_EventScript_LookerScene"
+    },
+    {
+      "type": "trigger",
+      "x": 51,
+      "y": 39,
+      "elevation": 3,
+      "var": "VAR_SINNOH_LOOKER",
+      "var_value": "0",
+      "script": "JubilifeCity_EventScript_LookerScene"
+    },
+    {
+      "type": "trigger",
+      "x": 52,
+      "y": 39,
+      "elevation": 3,
+      "var": "VAR_SINNOH_LOOKER",
+      "var_value": "0",
+      "script": "JubilifeCity_EventScript_LookerScene"
+    },
+    {
+      "type": "trigger",
+      "x": 53,
+      "y": 39,
+      "elevation": 3,
+      "var": "VAR_SINNOH_LOOKER",
+      "var_value": "0",
+      "script": "JubilifeCity_EventScript_LookerScene"
+    },
+    {
+      "type": "trigger",
+      "x": 54,
+      "y": 39,
+      "elevation": 3,
+      "var": "VAR_SINNOH_LOOKER",
+      "var_value": "0",
+      "script": "JubilifeCity_EventScript_LookerScene"
+    },
+    {
+      "type": "trigger",
+      "x": 55,
+      "y": 39,
+      "elevation": 3,
+      "var": "VAR_SINNOH_LOOKER",
+      "var_value": "0",
+      "script": "JubilifeCity_EventScript_LookerScene"
     }
   ],
   "bg_events": [

@@ -22,7 +22,8 @@ TwinleafTown_MainHouse_1F_EventScript_MomGrass::
 
 TwinleafTown_MainHouse_1F_EventScript_MomShoes::
 	lockall
-	applymovement LOCALID_TWINLEAF_MOM, Common_Movement_FacePlayer
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+	applymovement LOCALID_TWINLEAF_MOM, TwinleafTown_MainHouse_1F_Movement_MomToPlayer
 	waitmovement 0
 	msgbox TwinleafTown_MainHouse_1F_Text_MomShoes, MSGBOX_DEFAULT
 	playfanfare MUS_OBTAIN_ITEM
@@ -32,6 +33,8 @@ TwinleafTown_MainHouse_1F_EventScript_MomShoes::
 	setflag FLAG_SYS_B_DASH
 	msgbox TwinleafTown_MainHouse_1F_Text_ShoesInfo, MSGBOX_DEFAULT
 	closemessage
+	applymovement LOCALID_TWINLEAF_MOM, TwinleafTown_MainHouse_1F_Movement_MomBack
+	waitmovement 0
 	setvar VAR_SINNOH_STORY, 5
 	releaseall
 	end
@@ -117,3 +120,14 @@ TwinleafTown_MainHouse_1F_Text_MomTalk:
 	.string "MOM: Take good care of your\n"
 	.string "POKéMON, and come home to visit\l"
 	.string "sometimes, okay?$"
+
+TwinleafTown_MainHouse_1F_Movement_MomToPlayer:
+	walk_down
+	walk_down
+	step_end
+
+TwinleafTown_MainHouse_1F_Movement_MomBack:
+	walk_up
+	walk_up
+	face_up
+	step_end

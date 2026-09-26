@@ -1,4 +1,5 @@
 JubilifeCity_MapScripts::
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, JubilifeCity_OnFrame
 	.byte 0
 
 JubilifeCity_EventScript_Sign1::
@@ -133,18 +134,6 @@ JubilifeCity_EventScript_DawnScene::
 	applymovement LOCALID_JUBILIFE_DAWN, Common_Movement_ExclamationMark
 	waitmovement 0
 	msgbox JubilifeCity_Text_DawnWelcome, MSGBOX_DEFAULT
-	closemessage
-	applymovement LOCALID_JUBILIFE_LOOKER, Common_Movement_ExclamationMark
-	waitmovement 0
-	msgbox JubilifeCity_Text_LookerIntro, MSGBOX_DEFAULT
-	giveitem ITEM_VS_RECORDER
-	msgbox JubilifeCity_Text_LookerBye, MSGBOX_DEFAULT
-	closemessage
-	fadescreen FADE_TO_BLACK
-	removeobject LOCALID_JUBILIFE_LOOKER
-	setflag FLAG_HIDE_JUBILIFE_LOOKER
-	fadescreen FADE_FROM_BLACK
-	call Sinnoh_EventScript_BufferCounterpartName
 	msgbox JubilifeCity_Text_DawnSchool, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_JUBILIFE_DAWN, JubilifeCity_Movement_DawnToSchool
@@ -152,6 +141,8 @@ JubilifeCity_EventScript_DawnScene::
 	removeobject LOCALID_JUBILIFE_DAWN
 	setflag FLAG_HIDE_JUBILIFE_DAWN
 	clearflag FLAG_HIDE_SCHOOL_BARRY
+	clearflag FLAG_HIDE_JUBILIFE_LOOKER
+	addobject LOCALID_JUBILIFE_LOOKER
 	setvar VAR_SINNOH_STORY, 13
 	releaseall
 	end
@@ -159,6 +150,11 @@ JubilifeCity_EventScript_DawnScene::
 JubilifeCity_EventScript_PresidentScene::
 	lockall
 	applymovement LOCALID_JUBILIFE_PRESIDENT, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_JUBILIFE_PRESIDENT, JubilifeCity_Movement_PresidentWalks
+	waitmovement 0
+	applymovement LOCALID_JUBILIFE_PRESIDENT, Common_Movement_FaceRight
+	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
 	waitmovement 0
 	msgbox JubilifeCity_Text_PresidentCampaign, MSGBOX_DEFAULT
 	closemessage
@@ -330,8 +326,10 @@ JubilifeCity_Movement_DawnToSchool:
 JubilifeCity_Text_DawnWelcome:
 	.string "{STR_VAR_1}: Welcome to JUBILIFE\n"
 	.string "CITY! It's the biggest city in\l"
-	.string "Sinnoh. Come on, I'll show you\n"
-	.string "around!$"
+	.string "Sinnoh.\p"
+	.string "Barry went to the TRAINERS'\n"
+	.string "SCHOOL, just up the street. Let's\l"
+	.string "go!$"
 
 JubilifeCity_Text_BlockEastSchool:
 	.string "I have to deliver Barry's PARCEL\n"
@@ -428,9 +426,8 @@ JubilifeCity_Text_LookerBye:
 	.string "tell anyone you saw me!$"
 
 JubilifeCity_Text_DawnSchool:
-	.string "{STR_VAR_1}: What a strange man...\n"
-	.string "Anyway, Barry went into the\l"
-	.string "TRAINERS' SCHOOL. Let's go!$"
+	.string "{STR_VAR_1}: Follow me! The school\n"
+	.string "is next to the POKéMON CENTER.$"
 
 JubilifeCity_Text_PresidentCampaign:
 	.string "Hello there! I'm the president of\n"
@@ -461,3 +458,30 @@ JubilifeCity_Text_PresidentPokenav:
 JubilifeCity_Text_PresidentAfter:
 	.string "How do you like your POKéNAV? Use\n"
 	.string "it well!$"
+
+JubilifeCity_OnFrame:
+	map_script_2 VAR_SINNOH_STORY, 14, JubilifeCity_EventScript_PresidentScene
+	.2byte 0
+
+JubilifeCity_EventScript_LookerScene::
+	lockall
+	goto_if_lt VAR_SINNOH_STORY, 13, JubilifeCity_EventScript_LookerEnd
+	applymovement LOCALID_JUBILIFE_LOOKER, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox JubilifeCity_Text_LookerIntro, MSGBOX_DEFAULT
+	giveitem ITEM_VS_RECORDER
+	msgbox JubilifeCity_Text_LookerBye, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_JUBILIFE_LOOKER
+	setflag FLAG_HIDE_JUBILIFE_LOOKER
+	fadescreen FADE_FROM_BLACK
+	setvar VAR_SINNOH_LOOKER, 1
+JubilifeCity_EventScript_LookerEnd::
+	releaseall
+	end
+
+JubilifeCity_Movement_PresidentWalks:
+	walk_up
+	walk_right
+	step_end
