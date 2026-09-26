@@ -156,7 +156,8 @@
     "LakeValor",
     "LakeAcuity",
     "ValleyWindworks",
-    "EternaForest"
+    "EternaForest",
+    "FloaromaMeadow"
   ],
   "gMapGroup_DungeonsSinnoh": [
     "OreburghGate_1F",
@@ -166,7 +167,12 @@
     "MtCoronet_B1F",
     "MtCoronet_1F_South",
     "MtCoronet_1F_North_Room1",
-    "MtCoronet_1F_North_Room2"
+    "MtCoronet_1F_North_Room2",
+    "OldChateau_Entrance",
+    "OldChateau_SideRoom_1",
+    "OldChateau_SideRoom_2",
+    "OldChateau_DiningRoom",
+    "OldChateau_2F"
   ],
   "gMapGroup_IndoorSinnoh": [
     "Route206_North",
@@ -182,7 +188,9 @@
     "Route222_Access",
     "Route225_Access",
     "Route226_Access",
-    "HotelGrandLake"
+    "HotelGrandLake",
+    "ValleyWindoworks_Indoor",
+    "Route205_House"
   ],
   "gMapGroup_IndoorTwinleaf": [
     "TwinleafTown_MainHouse_1F",
@@ -243,9 +251,28 @@
     "FloaromaTown_FlowerShop",
     "FloaromaTown_PokemonCenter_1F",
     "FloaromaTwon_PokemonCenter_2F",
-    "FloaromaTown_Mart"
+    "FloaromaTown_Mart",
+    "FloaromaMeadow_House"
   ],
-  "gMapGroup_IndoorEterna": [],
+  "gMapGroup_IndoorEterna": [
+    "EternaCity_Flat1_F1",
+    "EternaCity_Flat1_F2",
+    "EternaCity_Flat1_F3",
+    "EternaCity_HerbShop",
+    "EternaCity_UndergroundManHouse",
+    "EternaCity_CycleShop",
+    "EternaCity_House1",
+    "EternaCity_House2",
+    "EternaCity_Gym",
+    "EternaCity_PokemonCenter_F1",
+    "EternaCity_PokemonCenter_F2",
+    "EternaCity_Mart",
+    "EternaCity_GalacticBuilding_1F",
+    "EternaCity_GalacticBuilding_2F",
+    "EternaCity_GalacticBuilding_3F",
+    "EternaCity_GalacticBuilding_4F",
+    "EternaCity_GalacticBuilding_B1F"
+  ],
   "gMapGroup_IndoorHearthome": [],
   "gMapGroup_IndoorSolaceon": [],
   "gMapGroup_IndoorVeilstone": [],

@@ -12,10 +12,9 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 15,
       "y": 4,
@@ -30,7 +29,6 @@
     },
     {
       "local_id": "LOCALID_LAKE_CYRUS",
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MAXIE",
       "x": 38,
       "y": 36,
@@ -45,7 +43,6 @@
     },
     {
       "local_id": "LOCALID_LAKE_BARRY",
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_WALLY",
       "x": 39,
       "y": 38,

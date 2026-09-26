@@ -10653,6 +10653,276 @@
       "secondary_tileset": "gTileset_Shop",
       "border_filepath": "data/layouts/FloaromaTown_Mart/border.bin",
       "blockdata_filepath": "data/layouts/FloaromaTown_Mart/map.bin"
+    },
+    {
+      "id": "LAYOUT_FUEGO_IRONWORKS",
+      "name": "FuegoIronworks",
+      "width": 60,
+      "height": 60,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville",
+      "border_filepath": "data/layouts/FuegoIronworks/border.bin",
+      "blockdata_filepath": "data/layouts/FuegoIronworks/map.bin"
+    },
+    {
+      "id": "LAYOUT_FLOAROMA_MEADOW",
+      "name": "FloaromaMeadow_Layout",
+      "width": 60,
+      "height": 60,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville",
+      "border_filepath": "data/layouts/FloaromaMeadow/border.bin",
+      "blockdata_filepath": "data/layouts/FloaromaMeadow/map.bin"
+    },
+    {
+      "id": "LAYOUT_FLOAROMA_MEADOW_HOUSE",
+      "name": "FloaromaMeadow_House_Layout",
+      "width": 10,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/FloaromaMeadow_House/border.bin",
+      "blockdata_filepath": "data/layouts/FloaromaMeadow_House/map.bin"
+    },
+    {
+      "id": "LAYOUT_VALLEY_WINDOWORKS_INDOOR",
+      "name": "ValleyWindoworks_Indoor_Layout",
+      "width": 22,
+      "height": 16,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BikeShop",
+      "border_filepath": "data/layouts/ValleyWindoworks_Indoor/border.bin",
+      "blockdata_filepath": "data/layouts/ValleyWindoworks_Indoor/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE205_HOUSE",
+      "name": "Route205_House_Layout",
+      "width": 10,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Route205_House/border.bin",
+      "blockdata_filepath": "data/layouts/Route205_House/map.bin"
+    },
+    {
+      "id": "LAYOUT_OLD_CHATEAU_ENTRANCE",
+      "name": "OldChateau_Entrance_Layout",
+      "width": 19,
+      "height": 17,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_LilycoveMuseum",
+      "border_filepath": "data/layouts/OldChateau_Entrance/border.bin",
+      "blockdata_filepath": "data/layouts/OldChateau_Entrance/map.bin"
+    },
+    {
+      "id": "LAYOUT_OLD_CHATEAU_SIDE_ROOM_2",
+      "name": "OldChateau_SideRoom_2_Layout",
+      "width": 10,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/OldChateau_SideRoom_2/border.bin",
+      "blockdata_filepath": "data/layouts/OldChateau_SideRoom_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_OLD_CHATEAU_SIDE_ROOM_1",
+      "name": "OldChateau_SideRoom_1_Layout",
+      "width": 10,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/OldChateau_SideRoom_1/border.bin",
+      "blockdata_filepath": "data/layouts/OldChateau_SideRoom_1/map.bin"
+    },
+    {
+      "id": "LAYOUT_OLD_CHATEAU_DINING_ROOM",
+      "name": "OldChateau_DiningRoom_Layout",
+      "width": 40,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/OldChateau_DiningRoom/border.bin",
+      "blockdata_filepath": "data/layouts/OldChateau_DiningRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_OLD_CHATEAU_2F",
+      "name": "OldChateau_2F_Layout",
+      "width": 38,
+      "height": 14,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/OldChateau_2F/border.bin",
+      "blockdata_filepath": "data/layouts/OldChateau_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ETERNA_CITY_FLAT1_F2",
+      "name": "EternaCity_Flat1_F2_Layout",
+      "width": 14,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/EternaCity_Flat1_F2/border.bin",
+      "blockdata_filepath": "data/layouts/EternaCity_Flat1_F2/map.bin"
+    },
+    {
+      "id": "LAYOUT_ETERNA_CITY_FLAT1_F1",
+      "name": "EternaCity_Flat1_F1_Layout",
+      "width": 14,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/EternaCity_Flat1_F1/border.bin",
+      "blockdata_filepath": "data/layouts/EternaCity_Flat1_F1/map.bin"
+    },
+    {
+      "id": "LAYOUT_ETERNA_CITY_FLAT1_F3",
+      "name": "EternaCity_Flat1_F3_Layout",
+      "width": 14,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/EternaCity_Flat1_F3/border.bin",
+      "blockdata_filepath": "data/layouts/EternaCity_Flat1_F3/map.bin"
+    },
+    {
+      "id": "LAYOUT_ETERNA_CITY_HERB_SHOP",
+      "name": "EternaCity_HerbShop_Layout",
+      "width": 11,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
+      "border_filepath": "data/layouts/EternaCity_HerbShop/border.bin",
+      "blockdata_filepath": "data/layouts/EternaCity_HerbShop/map.bin"
+    },
+    {
+      "id": "LAYOUT_ETERNA_CITY_UNDERGROUND_MAN_HOUSE",
+      "name": "EternaCity_UndergroundManHouse_Layout",
+      "width": 11,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/EternaCity_UndergroundManHouse/border.bin",
+      "blockdata_filepath": "data/layouts/EternaCity_UndergroundManHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_ETERNA_CITY_CYCLE_SHOP",
+      "name": "EternaCity_CycleShop_Layout",
+      "width": 12,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BikeShop",
+      "border_filepath": "data/layouts/EternaCity_CycleShop/border.bin",
+      "blockdata_filepath": "data/layouts/EternaCity_CycleShop/map.bin"
+    },
+    {
+      "id": "LAYOUT_ETERNA_CITY_HOUSE1",
+      "name": "EternaCity_House1_Layout",
+      "width": 11,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/EternaCity_House1/border.bin",
+      "blockdata_filepath": "data/layouts/EternaCity_House1/map.bin"
+    },
+    {
+      "id": "LAYOUT_ETERNA_CITY_HOUSE2",
+      "name": "EternaCity_House2_Layout",
+      "width": 11,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/EternaCity_House2/border.bin",
+      "blockdata_filepath": "data/layouts/EternaCity_House2/map.bin"
+    },
+    {
+      "id": "LAYOUT_ETERNA_CITY_GYM",
+      "name": "EternaCity_Gym_Layout",
+      "width": 20,
+      "height": 25,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_FortreeGym",
+      "border_filepath": "data/layouts/EternaCity_Gym/border.bin",
+      "blockdata_filepath": "data/layouts/EternaCity_Gym/map.bin"
+    },
+    {
+      "id": "LAYOUT_ETERNA_CITY_POKEMON_CENTER_F1",
+      "name": "EternaCity_PokemonCenter_F1_Layout",
+      "width": 14,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonCenter",
+      "border_filepath": "data/layouts/EternaCity_PokemonCenter_F1/border.bin",
+      "blockdata_filepath": "data/layouts/EternaCity_PokemonCenter_F1/map.bin"
+    },
+    {
+      "id": "LAYOUT_ETERNA_CITY_POKEMON_CENTER_F2",
+      "name": "EternaCity_PokemonCenter_F2_Layout",
+      "width": 14,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonCenter",
+      "border_filepath": "data/layouts/EternaCity_PokemonCenter_F2/border.bin",
+      "blockdata_filepath": "data/layouts/EternaCity_PokemonCenter_F2/map.bin"
+    },
+    {
+      "id": "LAYOUT_ETERNA_CITY_MART",
+      "name": "EternaCity_Mart_Layout",
+      "width": 11,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
+      "border_filepath": "data/layouts/EternaCity_Mart/border.bin",
+      "blockdata_filepath": "data/layouts/EternaCity_Mart/map.bin"
+    },
+    {
+      "id": "LAYOUT_ETERNA_CITY_GALACTIC_BUILDING_4F",
+      "name": "EternaCity_GalacticBuilding_4F_Layout",
+      "width": 16,
+      "height": 12,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/EternaCity_GalacticBuilding_4F/border.bin",
+      "blockdata_filepath": "data/layouts/EternaCity_GalacticBuilding_4F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ETERNA_CITY_GALACTIC_BUILDING_3F",
+      "name": "EternaCity_GalacticBuilding_3F_Layout",
+      "width": 16,
+      "height": 12,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/EternaCity_GalacticBuilding_3F/border.bin",
+      "blockdata_filepath": "data/layouts/EternaCity_GalacticBuilding_3F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ETERNA_CITY_GALACTIC_BUILDING_2F",
+      "name": "EternaCity_GalacticBuilding_2F_Layout",
+      "width": 16,
+      "height": 12,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/EternaCity_GalacticBuilding_2F/border.bin",
+      "blockdata_filepath": "data/layouts/EternaCity_GalacticBuilding_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ETERNA_CITY_GALACTIC_BUILDING_1F",
+      "name": "EternaCity_GalacticBuilding_1F_Layout",
+      "width": 16,
+      "height": 12,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/EternaCity_GalacticBuilding_1F/border.bin",
+      "blockdata_filepath": "data/layouts/EternaCity_GalacticBuilding_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ETERNA_CITY_GALACTIC_BUILDING_B1F",
+      "name": "EternaCity_GalacticBuilding_B1F_Layout",
+      "width": 16,
+      "height": 12,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/EternaCity_GalacticBuilding_B1F/border.bin",
+      "blockdata_filepath": "data/layouts/EternaCity_GalacticBuilding_B1F/map.bin"
     }
   ]
 }

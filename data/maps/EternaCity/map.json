@@ -32,10 +32,80 @@
   "object_events": [],
   "warp_events": [
     {
-      "x": 15,
-      "y": 48,
+      "x": 16,
+      "y": 17,
       "elevation": 0,
-      "dest_map": "MAP_ROUTE206_NORTH",
+      "dest_map": "MAP_ETERNA_CITY_POKEMON_CENTER_F1",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 19,
+      "y": 33,
+      "elevation": 0,
+      "dest_map": "MAP_ETERNA_CITY_MART",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 22,
+      "y": 44,
+      "elevation": 0,
+      "dest_map": "MAP_ETERNA_CITY_GYM",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 19,
+      "y": 25,
+      "elevation": 0,
+      "dest_map": "MAP_ETERNA_CITY_CYCLE_SHOP",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 20,
+      "y": 25,
+      "elevation": 0,
+      "dest_map": "MAP_ETERNA_CITY_CYCLE_SHOP",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 25,
+      "y": 33,
+      "elevation": 0,
+      "dest_map": "MAP_ETERNA_CITY_FLAT1_F1",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 21,
+      "y": 17,
+      "elevation": 0,
+      "dest_map": "MAP_ETERNA_CITY_UNDERGROUND_MAN_HOUSE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 27,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_ETERNA_CITY_HERB_SHOP",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 9,
+      "y": 44,
+      "elevation": 0,
+      "dest_map": "MAP_ETERNA_CITY_HOUSE1",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 39,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_ETERNA_CITY_HOUSE2",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 16,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_ETERNA_CITY_GALACTIC_BUILDING_1F",
       "dest_warp_id": "0"
     }
   ],

@@ -1922,3 +1922,55 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/FloaromaTwon_PokemonCenter_2F/scripts.inc"
 
 	.include "data/maps/FloaromaTown_Mart/scripts.inc"
+
+	.include "data/maps/FloaromaMeadow/scripts.inc"
+
+	.include "data/maps/FloaromaMeadow_House/scripts.inc"
+
+	.include "data/maps/ValleyWindoworks_Indoor/scripts.inc"
+
+	.include "data/maps/Route205_House/scripts.inc"
+
+	.include "data/maps/OldChateau_Entrance/scripts.inc"
+
+	.include "data/maps/OldChateau_SideRoom_1/scripts.inc"
+
+	.include "data/maps/OldChateau_SideRoom_2/scripts.inc"
+
+	.include "data/maps/OldChateau_DiningRoom/scripts.inc"
+
+	.include "data/maps/OldChateau_2F/scripts.inc"
+
+	.include "data/maps/EternaCity_Flat1_F1/scripts.inc"
+
+	.include "data/maps/EternaCity_Flat1_F3/scripts.inc"
+
+	.include "data/maps/EternaCity_Flat1_F2/scripts.inc"
+
+	.include "data/maps/EternaCity_HerbShop/scripts.inc"
+
+	.include "data/maps/EternaCity_UndergroundManHouse/scripts.inc"
+
+	.include "data/maps/EternaCity_CycleShop/scripts.inc"
+
+	.include "data/maps/EternaCity_House2/scripts.inc"
+
+	.include "data/maps/EternaCity_House1/scripts.inc"
+
+	.include "data/maps/EternaCity_Gym/scripts.inc"
+
+	.include "data/maps/EternaCity_PokemonCenter_F2/scripts.inc"
+
+	.include "data/maps/EternaCity_PokemonCenter_F1/scripts.inc"
+
+	.include "data/maps/EternaCity_Mart/scripts.inc"
+
+	.include "data/maps/EternaCity_GalacticBuilding_4F/scripts.inc"
+
+	.include "data/maps/EternaCity_GalacticBuilding_1F/scripts.inc"
+
+	.include "data/maps/EternaCity_GalacticBuilding_2F/scripts.inc"
+
+	.include "data/maps/EternaCity_GalacticBuilding_3F/scripts.inc"
+
+	.include "data/maps/EternaCity_GalacticBuilding_B1F/scripts.inc"
