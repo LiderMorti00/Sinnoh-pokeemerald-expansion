@@ -1112,10 +1112,10 @@ Level: 14
 
 === TRAINER_CHARLIE ===
 Name: GRUNT
-Class: Team Magma
-Pic: Magma Grunt M
+Class: Team Aqua
+Pic: Aqua Grunt M
 Gender: Male
-Music: Magma
+Music: Aqua
 Double Battle: No
 AI: Basic Trainer
 
@@ -1192,10 +1192,10 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
 === TRAINER_RANDALL ===
 Name: GRUNT
-Class: Team Magma
-Pic: Magma Grunt M
+Class: Team Aqua
+Pic: Aqua Grunt M
 Gender: Male
-Music: Magma
+Music: Aqua
 Double Battle: No
 AI: Basic Trainer
 
@@ -1204,10 +1204,10 @@ Level: 13
 
 === TRAINER_PARKER ===
 Name: GRUNT
-Class: Team Magma
-Pic: Magma Grunt M
+Class: Team Aqua
+Pic: Aqua Grunt M
 Gender: Male
-Music: Magma
+Music: Aqua
 Double Battle: No
 AI: Basic Trainer
 
@@ -1219,10 +1219,10 @@ Level: 11
 
 === TRAINER_GEORGE ===
 Name: GRUNT
-Class: Team Magma
-Pic: Magma Grunt M
+Class: Team Aqua
+Pic: Aqua Grunt M
 Gender: Male
-Music: Magma
+Music: Aqua
 Double Battle: No
 AI: Basic Trainer
 
@@ -1231,10 +1231,10 @@ Level: 13
 
 === TRAINER_BERKE ===
 Name: GRUNT
-Class: Team Magma
-Pic: Magma Grunt M
+Class: Team Aqua
+Pic: Aqua Grunt M
 Gender: Male
-Music: Magma
+Music: Aqua
 Double Battle: No
 AI: Basic Trainer
 
@@ -1246,10 +1246,10 @@ Level: 11
 
 === TRAINER_BRAXTON ===
 Name: MARS
-Class: Team Magma
-Pic: Magma Admin
+Class: Team Aqua
+Pic: Aqua Admin F
 Gender: Female
-Music: Magma
+Music: Aqua
 Double Battle: No
 AI: Basic Trainer
 
