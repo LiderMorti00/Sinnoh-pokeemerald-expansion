@@ -41,7 +41,7 @@ Route201_EventScript_Barry::
 	msgbox Route201_Text_Dawn1, MSGBOX_DEFAULT
 	msgbox Route201_Text_Rowan2, MSGBOX_DEFAULT
 	closemessage
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	special ChooseStarter
 	setflag FLAG_SYS_POKEMON_GET
 	setvar VAR_SINNOH_HAS_POKEMON, 1

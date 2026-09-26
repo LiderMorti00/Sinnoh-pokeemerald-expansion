@@ -165,6 +165,24 @@
       "y": 9,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
+      "var_value": "12",
+      "script": "JubilifeCity_PokemonSchool_EventScript_BarryScene"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 9,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "12",
+      "script": "JubilifeCity_PokemonSchool_EventScript_BarryScene"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 9,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
       "var_value": "13",
       "script": "JubilifeCity_PokemonSchool_EventScript_BarryScene"
     },

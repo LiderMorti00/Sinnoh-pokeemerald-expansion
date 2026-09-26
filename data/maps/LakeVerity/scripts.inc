@@ -9,18 +9,18 @@ LakeVerity_EventScript_Scene::
 	waitmovement 0
 	msgbox LakeVerity_Text_Cyrus2, MSGBOX_DEFAULT
 	closemessage
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_LAKE_CYRUS
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	playmoncry SPECIES_MESPRIT, CRY_MODE_NORMAL
 	waitmoncry
 	msgbox LakeVerity_Text_Cry, MSGBOX_DEFAULT
 	msgbox LakeVerity_Text_Barry, MSGBOX_DEFAULT
 	closemessage
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_LAKE_BARRY
 	setflag FLAG_HIDE_LAKE_VERITY_ROWAN
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	setvar VAR_SINNOH_STORY, 7
 	releaseall
 	end

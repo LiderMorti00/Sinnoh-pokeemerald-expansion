@@ -20,12 +20,12 @@ ValleyWindoworks_Indoor_EventScript_Mars::
 	msgbox ValleyWindoworks_Indoor_Text_MarsAfter, MSGBOX_DEFAULT
 	msgbox ValleyWindoworks_Indoor_Text_Charon, MSGBOX_DEFAULT
 	closemessage
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_WINDWORKS_MARS
 	removeobject LOCALID_WINDWORKS_CHARON
 	setflag FLAG_HIDE_WINDWORKS_TEAM
 	setflag FLAG_HIDE_ROUTE205_GRUNTS
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	applymovement LOCALID_WINDWORKS_WORKER, Common_Movement_FacePlayer
 	waitmovement 0
 	msgbox ValleyWindoworks_Indoor_Text_WorkerThanks, MSGBOX_DEFAULT

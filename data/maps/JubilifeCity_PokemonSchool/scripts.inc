@@ -1,4 +1,5 @@
 JubilifeCity_PokemonSchool_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, JubilifeCity_PokemonSchool_OnTransition
 	.byte 0
 
 JubilifeCity_PokemonSchool_EventScript_PtNpc1::
@@ -134,3 +135,12 @@ JubilifeCity_PokemonSchool_Text_ChristineDefeat:
 JubilifeCity_PokemonSchool_Text_ChristinePost:
 	.string "I'll review my notes and try\n"
 	.string "again!$"
+
+JubilifeCity_PokemonSchool_OnTransition:
+	goto_if_lt VAR_SINNOH_STORY, 12, JubilifeCity_PokemonSchool_EventScript_NoBarry
+	goto_if_gt VAR_SINNOH_STORY, 13, JubilifeCity_PokemonSchool_EventScript_NoBarry
+	clearflag FLAG_HIDE_SCHOOL_BARRY
+	end
+JubilifeCity_PokemonSchool_EventScript_NoBarry::
+	setflag FLAG_HIDE_SCHOOL_BARRY
+	end

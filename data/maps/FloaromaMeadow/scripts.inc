@@ -12,11 +12,11 @@ FloaromaMeadow_EventScript_Grunts::
 	trainerbattle_no_intro TRAINER_PARKER, FloaromaMeadow_Text_Grunt2Defeat
 	msgbox FloaromaMeadow_Text_GruntsFlee, MSGBOX_DEFAULT
 	closemessage
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_MEADOW_GRUNT_1
 	removeobject LOCALID_MEADOW_GRUNT_2
 	setflag FLAG_HIDE_MEADOW_GRUNTS
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	applymovement LOCALID_MEADOW_HONEY_MAN, Common_Movement_FacePlayer
 	waitmovement 0
 	msgbox FloaromaMeadow_Text_HoneyThanks, MSGBOX_DEFAULT

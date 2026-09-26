@@ -40,10 +40,6 @@ SandgemLab_EventScript_Scene::
 	waitmovement 0
 	msgbox SandgemLab_Text_AssistantGoHome, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_SANDGEM_LAB_ASSISTANT, SandgemLab_Movement_DawnLeaves
-	waitmovement 0
-	playse SE_EXIT
-	removeobject LOCALID_SANDGEM_LAB_ASSISTANT
 	setflag FLAG_HIDE_LAB_DAWN
 	setvar VAR_SINNOH_STORY, 9
 	releaseall
@@ -111,9 +107,8 @@ SandgemLab_Text_AssistantBalls:
 	.string "POKéMON. Here, take them!$"
 
 SandgemLab_Text_AssistantGoHome:
-	.string "{STR_VAR_1}: The Professor wants\n"
-	.string "to talk to you outside. I'll go on\l"
-	.string "ahead!$"
+	.string "{STR_VAR_1}: The Professor wants to talk\n"
+	.string "to you outside. Come on!$"
 
 SandgemLab_Text_RowanAdvice:
 	.string "ROWAN: A POKéMON grows when it is\n"

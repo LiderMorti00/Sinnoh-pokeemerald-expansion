@@ -281,16 +281,16 @@ JubilifeCity_EventScript_GalacticScene::
 	trainerbattle_no_intro TRAINER_GALACTIC_JUBILIFE_2, JubilifeCity_Text_Grunt2Defeat
 	msgbox JubilifeCity_Text_GruntsFlee, MSGBOX_DEFAULT
 	closemessage
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_JUBILIFE_GRUNT_1
 	removeobject LOCALID_JUBILIFE_GRUNT_2
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	msgbox JubilifeCity_Text_RowanThanks, MSGBOX_DEFAULT
 	closemessage
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_JUBILIFE_ROWAN
 	setflag FLAG_HIDE_JUBILIFE_GRUNTS
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	setvar VAR_SINNOH_STORY, 20
 	releaseall
 	end
@@ -465,17 +465,19 @@ JubilifeCity_OnFrame:
 
 JubilifeCity_EventScript_LookerScene::
 	lockall
-	goto_if_lt VAR_SINNOH_STORY, 13, JubilifeCity_EventScript_LookerEnd
+	goto_if_lt VAR_SINNOH_STORY, 12, JubilifeCity_EventScript_LookerEnd
+	clearflag FLAG_HIDE_JUBILIFE_LOOKER
+	addobject LOCALID_JUBILIFE_LOOKER
 	applymovement LOCALID_JUBILIFE_LOOKER, Common_Movement_ExclamationMark
 	waitmovement 0
 	msgbox JubilifeCity_Text_LookerIntro, MSGBOX_DEFAULT
 	giveitem ITEM_VS_RECORDER
 	msgbox JubilifeCity_Text_LookerBye, MSGBOX_DEFAULT
 	closemessage
-	fadescreen FADE_TO_BLACK
+	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_JUBILIFE_LOOKER
 	setflag FLAG_HIDE_JUBILIFE_LOOKER
-	fadescreen FADE_FROM_BLACK
+	fadescreenswapbuffers FADE_FROM_BLACK
 	setvar VAR_SINNOH_LOOKER, 1
 JubilifeCity_EventScript_LookerEnd::
 	releaseall
