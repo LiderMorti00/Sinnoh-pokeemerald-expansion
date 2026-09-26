@@ -44,3 +44,26 @@ JubilifeCity_Mart_Pokemart_Badge:
 	.2byte ITEM_REPEL
 	pokemartlistend
 
+JubilifeCity_Mart_EventScript_PtNpc1::
+	msgbox JubilifeCity_Mart_Text_PtNpc1, MSGBOX_NPC
+	end
+
+JubilifeCity_Mart_Text_PtNpc1:
+	.string "I buy strings for my guitar here.\n"
+	.string "Oh, and POTIONS too.$"
+
+JubilifeCity_Mart_EventScript_PtNpc2::
+	msgbox JubilifeCity_Mart_Text_PtNpc2, MSGBOX_NPC
+	end
+
+JubilifeCity_Mart_Text_PtNpc2:
+	.string "This mart has everything! I could\n"
+	.string "shop all day.$"
+
+JubilifeCity_Mart_EventScript_PtNpc3::
+	msgbox JubilifeCity_Mart_Text_PtNpc3, MSGBOX_NPC
+	end
+
+JubilifeCity_Mart_Text_PtNpc3:
+	.string "Shopping in the big city is so\n"
+	.string "exciting!$"

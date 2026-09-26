@@ -17,7 +17,7 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_4",
-      "x": 1,
+      "x": 3,
       "y": 3,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -25,35 +25,49 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "JubilifeCity_PokemonSchool_EventScript_Teacher",
+      "script": "JubilifeCity_PokemonSchool_EventScript_PtNpc1",
       "flag": "0"
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_SCHOOL_KID_M",
-      "x": 3,
-      "y": 3,
+      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
+      "x": 11,
+      "y": 8,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "JubilifeCity_PokemonSchool_EventScript_Student1",
+      "script": "JubilifeCity_PokemonSchool_EventScript_PtNpc2",
       "flag": "0"
     },
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LASS",
-      "x": 8,
-      "y": 3,
+      "x": 0,
+      "y": 7,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "JubilifeCity_PokemonSchool_EventScript_Student2",
+      "script": "JubilifeCity_PokemonSchool_EventScript_PtNpc3",
+      "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
+      "x": 4,
+      "y": 7,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "JubilifeCity_PokemonSchool_EventScript_PtNpc4",
       "flag": "0"
     },
     {
@@ -62,13 +76,42 @@
       "x": 10,
       "y": 3,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "JubilifeCity_PokemonSchool_EventScript_Student3",
+      "script": "JubilifeCity_PokemonSchool_EventScript_PtNpc5",
       "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
+      "x": 11,
+      "y": 3,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "JubilifeCity_PokemonSchool_EventScript_PtNpc6",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_SCHOOL_BARRY",
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_WALLY",
+      "x": 3,
+      "y": 2,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "JubilifeCity_PokemonSchool_EventScript_Barry",
+      "flag": "FLAG_HIDE_SCHOOL_BARRY"
     }
   ],
   "warp_events": [
@@ -87,6 +130,25 @@
       "dest_warp_id": "4"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 9,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "9",
+      "script": "JubilifeCity_PokemonSchool_EventScript_BarryScene"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 9,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "9",
+      "script": "JubilifeCity_PokemonSchool_EventScript_BarryScene"
+    }
+  ],
   "bg_events": []
 }

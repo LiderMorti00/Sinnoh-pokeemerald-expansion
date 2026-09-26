@@ -1,21 +1,19 @@
 TwinleafTown_Haouse1_MapScripts::
 	.byte 0
 
-TwinleafTown_Haouse1_EventScript_Woman::
-	msgbox TwinleafTown_Haouse1_Text_Woman, MSGBOX_NPC
+TwinleafTown_Haouse1_EventScript_PtNpc1::
+	msgbox TwinleafTown_Haouse1_Text_PtNpc1, MSGBOX_NPC
 	end
 
-TwinleafTown_Haouse1_EventScript_Boy::
-	msgbox TwinleafTown_Haouse1_Text_Boy, MSGBOX_NPC
+TwinleafTown_Haouse1_Text_PtNpc1:
+	.string "When I was young, I traveled all\n"
+	.string "of Sinnoh with my POKéMON. Those\l"
+	.string "were good days.$"
+
+TwinleafTown_Haouse1_EventScript_PtNpc2::
+	msgbox TwinleafTown_Haouse1_Text_PtNpc2, MSGBOX_NPC
 	end
 
-TwinleafTown_Haouse1_Text_Woman:
-	.string "My son dreams of becoming a\n"
-	.string "Trainer. He keeps asking when\l"
-	.string "he'll be old enough!$"
-
-TwinleafTown_Haouse1_Text_Boy:
-	.string "When I grow up, I'm going to\n"
-	.string "battle at the POKéMON LEAGUE! Just\l"
-	.string "you wait!$"
-
+TwinleafTown_Haouse1_Text_PtNpc2:
+	.string "I'm going to go on an adventure\n"
+	.string "too! As soon as I'm a bit taller!$"

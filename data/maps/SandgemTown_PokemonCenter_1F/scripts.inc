@@ -15,12 +15,26 @@ SandgemTown_PokemonCenter_1F_EventScript_Nurse::
 	release
 	end
 
-SandgemTown_PokemonCenter_1F_EventScript_Gentleman::
-	msgbox SandgemTown_PokemonCenter_1F_Text_Gentleman, MSGBOX_NPC
+SandgemTown_PokemonCenter_1F_EventScript_PtNpc1::
+	msgbox SandgemTown_PokemonCenter_1F_Text_PtNpc1, MSGBOX_NPC
 	end
 
-SandgemTown_PokemonCenter_1F_Text_Gentleman:
-	.string "Your POKéMON are healed for free\n"
-	.string "here. Don't be shy about visiting\l"
-	.string "often!$"
+SandgemTown_PokemonCenter_1F_Text_PtNpc1:
+	.string "Nurses here heal your POKéMON for\n"
+	.string "free. Amazing, isn't it?$"
 
+SandgemTown_PokemonCenter_1F_EventScript_PtNpc2::
+	msgbox SandgemTown_PokemonCenter_1F_Text_PtNpc2, MSGBOX_NPC
+	end
+
+SandgemTown_PokemonCenter_1F_Text_PtNpc2:
+	.string "Trainers use the PC to store\n"
+	.string "POKéMON. You can carry up to six.$"
+
+SandgemTown_PokemonCenter_1F_EventScript_PtNpc3::
+	msgbox SandgemTown_PokemonCenter_1F_Text_PtNpc3, MSGBOX_NPC
+	end
+
+SandgemTown_PokemonCenter_1F_Text_PtNpc3:
+	.string "I'm resting before heading back to\n"
+	.string "ROUTE 201.$"

@@ -342,8 +342,9 @@
 // ---- Proyecto Sinnoh: progreso de la historia ----
 // 0 inicio, 1 mamá, 2 Barry en Hojaverde, 3 Ruta 201, 4 escena del lago,
 // 5 inicial y combate con Barry, 6 Pokédex del Prof. Rowan, 7 mamá da las Deportivas,
-// 8 tutorial de captura (Ruta 202), 9 Barry en la Ruta 203, 10 Roco en la mina,
-// 11 medalla Lignito
+// 8 tutorial de captura (Ruta 202), 9 Dawn en Jubileo, 10 Barry en la Escuela,
+// 11 Pokéreloj, 12 Equipo Galaxia en Jubileo, 13 Barry en la Ruta 203,
+// 14 Roco en la mina, 15 medalla Lignito
 #define VAR_SINNOH_STORY                  VAR_UNUSED_0x404E
 // 0 hasta tener el primer Pokémon (bloquea la hierba alta), 1 después
 #define VAR_SINNOH_HAS_POKEMON            VAR_UNUSED_0x40DB

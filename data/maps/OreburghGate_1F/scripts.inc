@@ -33,3 +33,10 @@ OreburghGate_1F_Text_CurtisPost:
 	.string "Rock-type POKéMON live all around\n"
 	.string "OREBURGH.$"
 
+OreburghGate_1F_EventScript_PtNpc1::
+	msgbox OreburghGate_1F_Text_PtNpc1, MSGBOX_NPC
+	end
+
+OreburghGate_1F_Text_PtNpc1:
+	.string "You'll need ROCK SMASH to break\n"
+	.string "these boulders. Come back later!$"

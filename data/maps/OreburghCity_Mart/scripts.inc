@@ -44,3 +44,18 @@ OreburghCity_Mart_Pokemart_Badge:
 	.2byte ITEM_REPEL
 	pokemartlistend
 
+OreburghCity_Mart_EventScript_PtNpc1::
+	msgbox OreburghCity_Mart_Text_PtNpc1, MSGBOX_NPC
+	end
+
+OreburghCity_Mart_Text_PtNpc1:
+	.string "I buy ESCAPE ROPES before going\n"
+	.string "into the mine. Just in case!$"
+
+OreburghCity_Mart_EventScript_PtNpc2::
+	msgbox OreburghCity_Mart_Text_PtNpc2, MSGBOX_NPC
+	end
+
+OreburghCity_Mart_Text_PtNpc2:
+	.string "I found an old coin in the mine.\n"
+	.string "Is it valuable?$"

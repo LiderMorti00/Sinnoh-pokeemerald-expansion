@@ -33,7 +33,7 @@ Route203_EventScript_BarryAfter::
 	waitmovement 0
 	removeobject LOCALID_ROUTE203_BARRY
 	setflag FLAG_HIDE_ROUTE203_BARRY
-	setvar VAR_SINNOH_STORY, 9
+	setvar VAR_SINNOH_STORY, 13
 	releaseall
 	end
 
@@ -224,15 +224,6 @@ Route203_Text_Sign3:
 	.string "ZUBAT fly out in dark caves. REPEL\n"
 	.string "keeps weak wild POKéMON away.$"
 
-Route203_EventScript_Lass::
-	msgbox Route203_Text_Lass, MSGBOX_NPC
-	end
-
-Route203_Text_Lass:
-	.string "The cave in OREBURGH GATE is dark\n"
-	.string "and full of ZUBAT. Be careful in\l"
-	.string "there!$"
-
 Route203_EventScript_SignExtra1::
 	msgbox Route203_Text_SignExtra1, MSGBOX_SIGN
 	end
@@ -241,3 +232,11 @@ Route203_Text_SignExtra1:
 	.string "OREBURGH GATE\p"
 	.string "The tunnel ahead leads to OREBURGH\n"
 	.string "CITY.$"
+
+Route203_EventScript_PtNpc1::
+	msgbox Route203_Text_PtNpc1, MSGBOX_NPC
+	end
+
+Route203_Text_PtNpc1:
+	.string "OREBURGH GATE is just ahead. It's\n"
+	.string "a dark tunnel, so be ready!$"

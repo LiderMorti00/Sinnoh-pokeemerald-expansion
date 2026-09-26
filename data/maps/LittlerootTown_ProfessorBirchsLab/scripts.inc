@@ -67,10 +67,6 @@ SandgemLab_EventScript_Assistant::
 	release
 	end
 
-SandgemLab_EventScript_Aide::
-	msgbox SandgemLab_Text_Aide, MSGBOX_NPC
-	end
-
 SandgemLab_Movement_WalkToRowanLeft:
 	walk_up
 	walk_up
@@ -133,11 +129,6 @@ SandgemLab_Text_AssistantAdvice:
 	.string "{STR_VAR_1}: Weaken a wild POKéMON\n"
 	.string "before you throw a POKé BALL.\l"
 	.string "It works much better that way!$"
-
-SandgemLab_Text_Aide:
-	.string "The Professor spent years studying\n"
-	.string "evolution. He's very strict, but\l"
-	.string "he truly cares about POKéMON.$"
 
 @ Scripts antiguos del laboratorio de Hoenn (sin uso en Sinnoh). Se mantienen
 @ porque otras partes del juego base los referencian.
@@ -1153,3 +1144,21 @@ SandgemLab_Movement_DawnLeaves:
 	walk_down
 	walk_left
 	step_end
+
+LittlerootTown_ProfessorBirchsLab_EventScript_PtNpc1::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_PtNpc1, MSGBOX_NPC
+	end
+
+LittlerootTown_ProfessorBirchsLab_Text_PtNpc1:
+	.string "The Professor studies POKéMON\n"
+	.string "evolution. He says 90 percent of\l"
+	.string "POKéMON are related through it!$"
+
+LittlerootTown_ProfessorBirchsLab_EventScript_PtNpc2::
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_PtNpc2, MSGBOX_NPC
+	end
+
+LittlerootTown_ProfessorBirchsLab_Text_PtNpc2:
+	.string "We record data on every POKéMON we\n"
+	.string "can find. Your POKéDEX helps a\l"
+	.string "lot!$"

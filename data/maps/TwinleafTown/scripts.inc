@@ -43,14 +43,6 @@ TwinleafTown_EventScript_BlockNorth::
 	releaseall
 	end
 
-TwinleafTown_EventScript_Girl::
-	msgbox TwinleafTown_Text_Girl, MSGBOX_NPC
-	end
-
-TwinleafTown_EventScript_Man::
-	msgbox TwinleafTown_Text_Man, MSGBOX_NPC
-	end
-
 TwinleafTown_Movement_BarryRunsOffLeft:
 	walk_fast_right
 	walk_fast_right
@@ -141,18 +133,29 @@ TwinleafTown_Text_FindBarryFirst:
 	.string "Mom said Barry was looking for me.\n"
 	.string "I should find him first.$"
 
-TwinleafTown_Text_Girl:
-	.string "Barry ran past me so fast my hat\n"
-	.string "nearly flew off!$"
-
-TwinleafTown_Text_Man:
-	.string "TWINLEAF TOWN is quiet, but the\n"
-	.string "wind always smells of fresh leaves.$"
-
-TwinleafTown_EventScript_Guitarist::
-	msgbox TwinleafTown_Text_Guitarist, MSGBOX_NPC
+TwinleafTown_EventScript_PtNpc1::
+	msgbox TwinleafTown_Text_PtNpc1, MSGBOX_NPC
 	end
 
-TwinleafTown_Text_Guitarist:
-	.string "Ah, TWINLEAF... Where the breeze\n"
-	.string "always plays the same sweet song.$"
+TwinleafTown_Text_PtNpc1:
+	.string "TWINLEAF is so peaceful. My\n"
+	.string "POKéMON love napping in the sun\l"
+	.string "here.$"
+
+TwinleafTown_EventScript_PtNpc2::
+	msgbox TwinleafTown_Text_PtNpc2, MSGBOX_NPC
+	end
+
+TwinleafTown_Text_PtNpc2:
+	.string "I collect rare items from all over\n"
+	.string "Sinnoh. This town doesn't have\l"
+	.string "many, sadly!$"
+
+TwinleafTown_EventScript_PtNpc3::
+	msgbox TwinleafTown_Text_PtNpc3, MSGBOX_NPC
+	end
+
+TwinleafTown_Text_PtNpc3:
+	.string "Ahh... the wind through the trees\n"
+	.string "makes the best music. Want to hear\l"
+	.string "a song?$"

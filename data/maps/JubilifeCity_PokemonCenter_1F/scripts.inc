@@ -15,20 +15,26 @@ JubilifeCity_PokemonCenter_1F_EventScript_Nurse::
 	release
 	end
 
-JubilifeCity_PokemonCenter_1F_EventScript_Youngster::
-	msgbox JubilifeCity_PokemonCenter_1F_Text_Youngster, MSGBOX_NPC
+JubilifeCity_PokemonCenter_1F_EventScript_PtNpc1::
+	msgbox JubilifeCity_PokemonCenter_1F_Text_PtNpc1, MSGBOX_NPC
 	end
 
-JubilifeCity_PokemonCenter_1F_EventScript_Woman::
-	msgbox JubilifeCity_PokemonCenter_1F_Text_Woman, MSGBOX_NPC
+JubilifeCity_PokemonCenter_1F_Text_PtNpc1:
+	.string "Every Trainer passes through\n"
+	.string "JUBILIFE sooner or later.$"
+
+JubilifeCity_PokemonCenter_1F_EventScript_PtNpc2::
+	msgbox JubilifeCity_PokemonCenter_1F_Text_PtNpc2, MSGBOX_NPC
 	end
 
-JubilifeCity_PokemonCenter_1F_Text_Youngster:
-	.string "The POKéMON CENTER PC lets you\n"
-	.string "store POKéMON you catch. Very\l"
-	.string "handy!$"
+JubilifeCity_PokemonCenter_1F_Text_PtNpc2:
+	.string "I just caught a new POKéMON! I'm\n"
+	.string "going to show it to everyone!$"
 
-JubilifeCity_PokemonCenter_1F_Text_Woman:
-	.string "Upstairs you can trade and battle\n"
-	.string "with friends.$"
+JubilifeCity_PokemonCenter_1F_EventScript_PtNpc3::
+	msgbox JubilifeCity_PokemonCenter_1F_Text_PtNpc3, MSGBOX_NPC
+	end
 
+JubilifeCity_PokemonCenter_1F_Text_PtNpc3:
+	.string "My mom says I have to heal my\n"
+	.string "POKéMON before I go home.$"

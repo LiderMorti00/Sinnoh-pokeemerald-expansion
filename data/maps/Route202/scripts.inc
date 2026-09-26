@@ -28,6 +28,7 @@ Route202_EventScript_DawnScene::
 	removeobject LOCALID_ROUTE202_DAWN
 	setflag FLAG_HIDE_ROUTE202_DAWN
 	setvar VAR_SINNOH_STORY, 8
+	clearflag FLAG_HIDE_JUBILIFE_DAWN
 	releaseall
 	end
 
@@ -210,11 +211,11 @@ Route202_Text_Sign3:
 	.string "Trainers will challenge you as\n"
 	.string "soon as your eyes meet. Be ready!$"
 
-Route202_EventScript_Youngster::
-	msgbox Route202_Text_Youngster, MSGBOX_NPC
+Route202_EventScript_PtNpc1::
+	msgbox Route202_Text_PtNpc1, MSGBOX_NPC
 	end
 
-Route202_Text_Youngster:
-	.string "Trainers who look at you want to\n"
-	.string "battle. Walk past them if you're\l"
-	.string "not ready!$"
+Route202_Text_PtNpc1:
+	.string "See the Trainers over there? If\n"
+	.string "your eyes meet, you'll have to\l"
+	.string "battle!$"

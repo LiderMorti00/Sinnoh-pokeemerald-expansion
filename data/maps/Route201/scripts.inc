@@ -116,28 +116,28 @@ Route201_Text_Sign3:
 	.string "Beware of tall grass! Wild POKéMON\n"
 	.string "may jump out at any time.$"
 
-Route201_EventScript_Breeder::
-	msgbox Route201_Text_Breeder, MSGBOX_NPC
+Route201_EventScript_PtNpc1::
+	msgbox Route201_Text_PtNpc1, MSGBOX_NPC
 	end
 
-Route201_EventScript_SchoolKid::
-	msgbox Route201_Text_SchoolKid, MSGBOX_NPC
+Route201_Text_PtNpc1:
+	.string "Wild POKéMON appear in tall grass.\n"
+	.string "Walk around it if your POKéMON are\l"
+	.string "tired.$"
+
+Route201_EventScript_PtNpc2::
+	msgbox Route201_Text_PtNpc2, MSGBOX_NPC
 	end
 
-Route201_EventScript_Lass::
-	msgbox Route201_Text_Lass, MSGBOX_NPC
+Route201_Text_PtNpc2:
+	.string "Have you been to SANDGEM? The\n"
+	.string "Professor's lab is there!$"
+
+Route201_EventScript_PtNpc3::
+	msgbox Route201_Text_PtNpc3, MSGBOX_NPC
 	end
 
-Route201_Text_Breeder:
-	.string "I love watching STARLY and BIDOOF\n"
-	.string "play in the grass. Aren't they\l"
-	.string "adorable?$"
-
-Route201_Text_SchoolKid:
-	.string "If your POKéMON gets hurt, go to a\n"
-	.string "POKéMON CENTER. SANDGEM has one!$"
-
-Route201_Text_Lass:
-	.string "LAKE VERITY is a mysterious place.\n"
-	.string "Some say a POKéMON lives at the\l"
-	.string "bottom of it.$"
+Route201_Text_PtNpc3:
+	.string "If you look carefully, you can\n"
+	.string "spot items lying around on the\l"
+	.string "routes.$"

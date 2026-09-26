@@ -44,3 +44,18 @@ SandgemTown_Mart_Pokemart_Badge:
 	.2byte ITEM_REPEL
 	pokemartlistend
 
+SandgemTown_Mart_EventScript_PtNpc1::
+	msgbox SandgemTown_Mart_Text_PtNpc1, MSGBOX_NPC
+	end
+
+SandgemTown_Mart_Text_PtNpc1:
+	.string "POKé BALLS are a must! You can't\n"
+	.string "catch POKéMON without them.$"
+
+SandgemTown_Mart_EventScript_PtNpc2::
+	msgbox SandgemTown_Mart_Text_PtNpc2, MSGBOX_NPC
+	end
+
+SandgemTown_Mart_Text_PtNpc2:
+	.string "I always stock up on POTIONS\n"
+	.string "before a long trip.$"
