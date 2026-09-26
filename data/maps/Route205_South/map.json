@@ -25,11 +25,6 @@
     },
     {
       "map": "MAP_VALLEY_WINDWORKS",
-      "offset": 65,
-      "direction": "right"
-    },
-    {
-      "map": "MAP_VALLEY_WINDWORKS",
       "offset": 0,
       "direction": "right"
     }
