@@ -338,13 +338,20 @@
 #define TESTING_VAR_UNUSED_7                (TESTING_VARS_START + 0x7)
 #endif // TESTING
 
-
 // ---- Proyecto Sinnoh: progreso de la historia ----
-// 0 inicio, 1 mamá, 2 Barry en Hojaverde, 3 Ruta 201, 4 escena del lago,
-// 5 inicial y combate con Barry, 6 Pokédex del Prof. Rowan, 7 mamá da las Deportivas,
-// 8 tutorial de captura (Ruta 202), 9 Dawn en Jubileo, 10 Barry en la Escuela,
-// 11 Pokéreloj, 12 Equipo Galaxia en Jubileo, 13 Barry en la Ruta 203,
-// 14 Roco en la mina, 15 medalla Lignito
+// Progreso de la historia (orden de Pokémon Platino):
+// Progreso de la historia (orden de Pokémon Platino):
+// Progreso de la historia (orden de Pokémon Platino):
+// Progreso de la historia (orden de Pokémon Platino):
+// Progreso de la historia (orden de Pokémon Platino):
+// 0 inicio, 1 Barry en tu cuarto, 2 mamá avisa de la hierba, 3 Barry en su casa,
+// 4 inicial y combate con Barry (Ruta 201), 5 mamá da las Deportivas,
+// 6 Barry propone ir al Lago Veraz, 7 escena del lago (Helio y Mesprit),
+// 8 Maya/Leo y Barry en Arena, 9 Pokédex, 10 MT27 fuera del laboratorio,
+// 11 mamá da el Diario y la madre de Barry el Paquete, 12 tutorial de captura,
+// 13 Looker en Jubileo, 14 Barry en la Escuela (Mapa), 15 campaña del Pokéreloj,
+// 16 Pokénav, 17 Barry en la Ruta 203, 18 Roco en la mina, 19 medalla Lignito,
+// 20 Equipo Galaxia en Jubileo
 #define VAR_SINNOH_STORY                  VAR_UNUSED_0x404E
 // 0 hasta tener el primer Pokémon (bloquea la hierba alta), 1 después
 #define VAR_SINNOH_HAS_POKEMON            VAR_UNUSED_0x40DB

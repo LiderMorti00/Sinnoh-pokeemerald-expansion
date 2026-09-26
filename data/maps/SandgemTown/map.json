@@ -71,6 +71,66 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SandgemTown_EventScript_PtNpc3",
       "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_SANDGEM_DAWN",
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_VAR_0",
+      "x": 3,
+      "y": 11,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SandgemTown_EventScript_Escort",
+      "flag": "FLAG_HIDE_SANDGEM_DAWN"
+    },
+    {
+      "local_id": "LOCALID_SANDGEM_BARRY",
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_WALLY",
+      "x": 9,
+      "y": 9,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SandgemTown_EventScript_Escort",
+      "flag": "FLAG_HIDE_SANDGEM_BARRY"
+    },
+    {
+      "local_id": "LOCALID_SANDGEM_ROWAN",
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_PROF_BIRCH",
+      "x": 10,
+      "y": 9,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SandgemTown_EventScript_Rowan",
+      "flag": "FLAG_HIDE_SANDGEM_ROWAN"
+    },
+    {
+      "local_id": "LOCALID_SANDGEM_DAWN2",
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_VAR_0",
+      "x": 8,
+      "y": 10,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SandgemTown_EventScript_Rowan",
+      "flag": "FLAG_HIDE_SANDGEM_ROWAN"
     }
   ],
   "warp_events": [
@@ -113,11 +173,65 @@
   "coord_events": [
     {
       "type": "trigger",
+      "x": 1,
+      "y": 9,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "7",
+      "script": "SandgemTown_EventScript_Escort"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 10,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "7",
+      "script": "SandgemTown_EventScript_Escort"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 11,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "7",
+      "script": "SandgemTown_EventScript_Escort"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 12,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "7",
+      "script": "SandgemTown_EventScript_Escort"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 13,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "7",
+      "script": "SandgemTown_EventScript_Escort"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 9,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "9",
+      "script": "SandgemTown_EventScript_Rowan"
+    },
+    {
+      "type": "trigger",
       "x": 20,
       "y": 4,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
-      "var_value": "5",
+      "var_value": "7",
       "script": "SandgemTown_EventScript_BlockNorth"
     },
     {
@@ -126,7 +240,7 @@
       "y": 4,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
-      "var_value": "5",
+      "var_value": "7",
       "script": "SandgemTown_EventScript_BlockNorth"
     },
     {
@@ -135,7 +249,7 @@
       "y": 4,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
-      "var_value": "5",
+      "var_value": "7",
       "script": "SandgemTown_EventScript_BlockNorth"
     },
     {
@@ -144,7 +258,7 @@
       "y": 4,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
-      "var_value": "5",
+      "var_value": "7",
       "script": "SandgemTown_EventScript_BlockNorth"
     },
     {
@@ -153,7 +267,7 @@
       "y": 4,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
-      "var_value": "5",
+      "var_value": "7",
       "script": "SandgemTown_EventScript_BlockNorth"
     },
     {
@@ -162,7 +276,7 @@
       "y": 4,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
-      "var_value": "5",
+      "var_value": "7",
       "script": "SandgemTown_EventScript_BlockNorth"
     },
     {
@@ -171,8 +285,8 @@
       "y": 4,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
-      "var_value": "6",
-      "script": "SandgemTown_EventScript_BlockNorthMom"
+      "var_value": "8",
+      "script": "SandgemTown_EventScript_BlockNorth"
     },
     {
       "type": "trigger",
@@ -180,8 +294,8 @@
       "y": 4,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
-      "var_value": "6",
-      "script": "SandgemTown_EventScript_BlockNorthMom"
+      "var_value": "8",
+      "script": "SandgemTown_EventScript_BlockNorth"
     },
     {
       "type": "trigger",
@@ -189,8 +303,8 @@
       "y": 4,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
-      "var_value": "6",
-      "script": "SandgemTown_EventScript_BlockNorthMom"
+      "var_value": "8",
+      "script": "SandgemTown_EventScript_BlockNorth"
     },
     {
       "type": "trigger",
@@ -198,8 +312,8 @@
       "y": 4,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
-      "var_value": "6",
-      "script": "SandgemTown_EventScript_BlockNorthMom"
+      "var_value": "8",
+      "script": "SandgemTown_EventScript_BlockNorth"
     },
     {
       "type": "trigger",
@@ -207,8 +321,8 @@
       "y": 4,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
-      "var_value": "6",
-      "script": "SandgemTown_EventScript_BlockNorthMom"
+      "var_value": "8",
+      "script": "SandgemTown_EventScript_BlockNorth"
     },
     {
       "type": "trigger",
@@ -216,8 +330,116 @@
       "y": 4,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
-      "var_value": "6",
-      "script": "SandgemTown_EventScript_BlockNorthMom"
+      "var_value": "8",
+      "script": "SandgemTown_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 20,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "9",
+      "script": "SandgemTown_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "9",
+      "script": "SandgemTown_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 22,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "9",
+      "script": "SandgemTown_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 23,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "9",
+      "script": "SandgemTown_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 24,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "9",
+      "script": "SandgemTown_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "9",
+      "script": "SandgemTown_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 20,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "10",
+      "script": "SandgemTown_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "10",
+      "script": "SandgemTown_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 22,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "10",
+      "script": "SandgemTown_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 23,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "10",
+      "script": "SandgemTown_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 24,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "10",
+      "script": "SandgemTown_EventScript_BlockNorth"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "10",
+      "script": "SandgemTown_EventScript_BlockNorth"
     }
   ],
   "bg_events": [

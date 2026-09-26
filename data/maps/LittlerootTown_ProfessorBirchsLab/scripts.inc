@@ -38,9 +38,6 @@ SandgemLab_EventScript_Scene::
 	closemessage
 	applymovement LOCALID_SANDGEM_LAB_ASSISTANT, Common_Movement_FacePlayer
 	waitmovement 0
-	msgbox SandgemLab_Text_AssistantBalls, MSGBOX_DEFAULT
-	giveitem ITEM_POKE_BALL, 5
-	call Sinnoh_EventScript_BufferCounterpartName
 	msgbox SandgemLab_Text_AssistantGoHome, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_SANDGEM_LAB_ASSISTANT, SandgemLab_Movement_DawnLeaves
@@ -48,7 +45,7 @@ SandgemLab_EventScript_Scene::
 	playse SE_EXIT
 	removeobject LOCALID_SANDGEM_LAB_ASSISTANT
 	setflag FLAG_HIDE_LAB_DAWN
-	setvar VAR_SINNOH_STORY, 6
+	setvar VAR_SINNOH_STORY, 9
 	releaseall
 	end
 
@@ -87,14 +84,14 @@ SandgemLab_Movement_WalkToRowanRight:
 	step_end
 
 SandgemLab_Text_RowanWelcome:
-	.string "ROWAN: So. You are the one who\n"
-	.string "opened my briefcase at the lake.\p"
-	.string "...And yet that POKéMON already\n"
-	.string "trusts you. I can see it in its eyes.\p"
-	.string "Very well. Keep it. In return, I\n"
-	.string "ask you to help me with my research.\p"
-	.string "Take this. It will record every\n"
-	.string "POKéMON you meet on your journey.$"
+	.string "ROWAN: So, you have come. Let me\n"
+	.string "see that POKéMON of yours.\p"
+	.string "...Hm. It already seems quite\n"
+	.string "attached to you. Very well, you\l"
+	.string "may keep it.\p"
+	.string "In return, I have a request. Take\n"
+	.string "this POKéDEX and record every\l"
+	.string "POKéMON you meet in Sinnoh.$"
 
 SandgemLab_Text_ReceivedPokedex:
 	.string "{PLAYER} received the POKéDEX\n"
@@ -114,12 +111,9 @@ SandgemLab_Text_AssistantBalls:
 	.string "POKéMON. Here, take them!$"
 
 SandgemLab_Text_AssistantGoHome:
-	.string "{STR_VAR_1}: You should go home\n"
-	.string "and tell your mom about your\l"
-	.string "journey!\p"
-	.string "I'll wait for you at the entrance\n"
-	.string "to ROUTE 202, north of town. See\l"
-	.string "you there!$"
+	.string "{STR_VAR_1}: The Professor wants\n"
+	.string "to talk to you outside. I'll go on\l"
+	.string "ahead!$"
 
 SandgemLab_Text_RowanAdvice:
 	.string "ROWAN: A POKéMON grows when it is\n"

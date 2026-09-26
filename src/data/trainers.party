@@ -74,7 +74,6 @@ Comments can be added as C comment blocks
 
 /*Comments can also be on a single line*/
 
-
 === TRAINER_NONE ===
 Name:
 Class: Pkmn Trainer 1
@@ -624,21 +623,16 @@ Level: 31
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_DAISY ===
-Name: DAISY
-Class: Aroma Lady
-Pic: Aroma Lady
-Gender: Female
-Music: Female
+Name: HARRISON
+Class: School Kid
+Pic: School Kid M
+Gender: Male
+Music: Male
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Shroomish
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Roselia
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Starly
+Level: 6
 
 === TRAINER_ROSE_1 ===
 Name: ROSE
@@ -1650,20 +1644,16 @@ Level: 33
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_MARY ===
-Name: MARY
-Class: Cooltrainer
-Pic: Cooltrainer F
-Gender: Female
-Music: Cool
-Items: Hyper Potion
+Name: MASON
+Class: Hiker
+Pic: Hiker
+Gender: Male
+Music: Male
 Double Battle: No
 AI: Basic Trainer
 
-Delcatty
-Level: 26
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Feint Attack
-- Shock Wave
+Geodude
+Level: 9
 
 === TRAINER_ALEXIA ===
 Name: ALEXIA
@@ -11827,17 +11817,16 @@ Level: 39
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
 === TRAINER_JOHANNA ===
-Name: JOHANNA
-Class: Beauty
-Pic: Beauty
+Name: CHRISTINE
+Class: School Kid
+Pic: School Kid F
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Goldeen
-Level: 13
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Bidoof
+Level: 6
 
 === TRAINER_GERALD ===
 Name: GERALD
@@ -13781,21 +13770,19 @@ Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_ALIX ===
-Name: ALIX
-Class: Psychic
-Pic: Psychic F
-Gender: Female
-Music: Intense
+Name: COLIN
+Class: Hiker
+Pic: Hiker
+Gender: Male
+Music: Male
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Kadabra
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Geodude
+Level: 6
 
-Kirlia
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Machop
+Level: 8
 
 === TRAINER_HELENE ===
 Name: HELENE

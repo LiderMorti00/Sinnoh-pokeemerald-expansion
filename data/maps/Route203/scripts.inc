@@ -33,7 +33,7 @@ Route203_EventScript_BarryAfter::
 	waitmovement 0
 	removeobject LOCALID_ROUTE203_BARRY
 	setflag FLAG_HIDE_ROUTE203_BARRY
-	setvar VAR_SINNOH_STORY, 13
+	setvar VAR_SINNOH_STORY, 17
 	releaseall
 	end
 

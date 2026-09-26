@@ -119,7 +119,7 @@
       "y": 31,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
-      "var_value": "7",
+      "var_value": "11",
       "script": "Route202_EventScript_DawnScene"
     },
     {
@@ -128,7 +128,7 @@
       "y": 31,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
-      "var_value": "7",
+      "var_value": "11",
       "script": "Route202_EventScript_DawnScene"
     },
     {
@@ -137,7 +137,7 @@
       "y": 31,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
-      "var_value": "7",
+      "var_value": "11",
       "script": "Route202_EventScript_DawnScene"
     },
     {
@@ -146,7 +146,7 @@
       "y": 31,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
-      "var_value": "7",
+      "var_value": "11",
       "script": "Route202_EventScript_DawnScene"
     },
     {
@@ -155,7 +155,7 @@
       "y": 31,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
-      "var_value": "7",
+      "var_value": "11",
       "script": "Route202_EventScript_DawnScene"
     },
     {
@@ -164,7 +164,7 @@
       "y": 31,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
-      "var_value": "7",
+      "var_value": "11",
       "script": "Route202_EventScript_DawnScene"
     },
     {
@@ -173,7 +173,7 @@
       "y": 31,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
-      "var_value": "7",
+      "var_value": "11",
       "script": "Route202_EventScript_DawnScene"
     },
     {
@@ -182,7 +182,7 @@
       "y": 31,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
-      "var_value": "7",
+      "var_value": "11",
       "script": "Route202_EventScript_DawnScene"
     },
     {
@@ -191,7 +191,7 @@
       "y": 31,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
-      "var_value": "7",
+      "var_value": "11",
       "script": "Route202_EventScript_DawnScene"
     },
     {
@@ -200,7 +200,7 @@
       "y": 31,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
-      "var_value": "7",
+      "var_value": "11",
       "script": "Route202_EventScript_DawnScene"
     }
   ],

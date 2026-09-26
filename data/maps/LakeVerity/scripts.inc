@@ -1,63 +1,55 @@
 LakeVerity_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, LakeVerity_OnTransition
 	.byte 0
 
-LakeVerity_OnTransition:
-	checkplayergender
-	goto_if_eq VAR_RESULT, MALE, LakeVerity_EventScript_SetDawn
-	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL
-	end
-
-LakeVerity_EventScript_SetDawn::
-	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RIVAL_MAY_NORMAL
-	end
-
-LakeVerity_EventScript_Rowan::
-LakeVerity_EventScript_RowanScene::
+LakeVerity_EventScript_Scene::
 	lockall
-	call Sinnoh_EventScript_BufferCounterpartName
-	msgbox LakeVerity_Text_Rowan1, MSGBOX_DEFAULT
+	msgbox LakeVerity_Text_Cyrus, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_LAKE_VERITY_ROWAN, Common_Movement_FaceDown
-	applymovement LOCALID_LAKE_VERITY_ASSISTANT, Common_Movement_FaceDown
+	applymovement LOCALID_LAKE_CYRUS, Common_Movement_FaceDown
 	waitmovement 0
-	msgbox LakeVerity_Text_Rowan2, MSGBOX_DEFAULT
-	msgbox LakeVerity_Text_Assistant, MSGBOX_DEFAULT
+	msgbox LakeVerity_Text_Cyrus2, MSGBOX_DEFAULT
 	closemessage
 	fadescreen FADE_TO_BLACK
-	removeobject LOCALID_LAKE_VERITY_ROWAN
-	removeobject LOCALID_LAKE_VERITY_ASSISTANT
-	setflag FLAG_HIDE_LAKE_VERITY_ROWAN
-	clearflag FLAG_HIDE_LAKEFRONT_BARRY
-	clearflag FLAG_HIDE_LAKEFRONT_BRIEFCASE
+	removeobject LOCALID_LAKE_CYRUS
 	fadescreen FADE_FROM_BLACK
-	msgbox LakeVerity_Text_BarryAfterRowan, MSGBOX_DEFAULT
+	playmoncry SPECIES_MESPRIT, CRY_MODE_NORMAL
+	waitmoncry
+	msgbox LakeVerity_Text_Cry, MSGBOX_DEFAULT
+	msgbox LakeVerity_Text_Barry, MSGBOX_DEFAULT
 	closemessage
-	setvar VAR_SINNOH_STORY, 4
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_LAKE_BARRY
+	setflag FLAG_HIDE_LAKE_VERITY_ROWAN
+	fadescreen FADE_FROM_BLACK
+	setvar VAR_SINNOH_STORY, 7
 	releaseall
 	end
 
-LakeVerity_Text_Rowan1:
-	.string "ROWAN: ...It is as I feared.\n"
-	.string "The lake is quiet. Too quiet.\p"
-	.string "Something stirs beneath these\n"
-	.string "waters, and it is watching us.$"
+LakeVerity_Text_Cyrus:
+	.string "???: ...This lake is said to be\n"
+	.string "home to a POKéMON of emotion.\p"
+	.string "Emotion... A useless burden that\n"
+	.string "only brings conflict. One day I\l"
+	.string "will create a world free of it.\p"
+	.string "And time and space will be mine to\n"
+	.string "command.$"
 
-LakeVerity_Text_Rowan2:
-	.string "ROWAN: Hm? And who might you be?\p"
-	.string "The tall grass is no place to\n"
-	.string "wander without POKéMON of your own.\p"
-	.string "...Come. We are finished here.$"
+LakeVerity_Text_Cyrus2:
+	.string "???: ...Children. Step aside.$"
 
-LakeVerity_Text_Assistant:
-	.string "{STR_VAR_1}: Coming, Professor!\n"
-	.string "Sorry, excuse us!$"
+LakeVerity_Text_Cry:
+	.string "Something cried out from the\n"
+	.string "middle of the lake...$"
 
-LakeVerity_Text_BarryAfterRowan:
-	.string "Barry ran back toward the lake's\n"
-	.string "entrance, looking excited.$"
+LakeVerity_Text_Barry:
+	.string "BARRY: Did you hear that?! That\n"
+	.string "has to be the legendary POKéMON!\p"
+	.string "Ah! But we don't have any POKé\n"
+	.string "BALLS! Argh!\p"
+	.string "The Professor said to come to him\n"
+	.string "if we needed anything. Let's go to\l"
+	.string "SANDGEM!$"
 
-@ Guarda en STR_VAR_1 el nombre del ayudante de Rowan: DAWN si el jugador es chico, LUCAS si es chica
 Sinnoh_EventScript_BufferCounterpartName::
 	checkplayergender
 	goto_if_eq VAR_RESULT, MALE, Sinnoh_EventScript_BufferDawn
@@ -84,14 +76,18 @@ LakeVerity_EventScript_NoPokemonGrass::
 	goto_if_eq VAR_RESULT, DIR_WEST, LakeVerity_EventScript_GrassBackRight
 	applymovement LOCALID_PLAYER, Common_Movement_WalkLeft
 	goto LakeVerity_EventScript_GrassBackEnd
+
 LakeVerity_EventScript_GrassBackDown::
 	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
 	goto LakeVerity_EventScript_GrassBackEnd
+
 LakeVerity_EventScript_GrassBackUp::
 	applymovement LOCALID_PLAYER, Common_Movement_WalkUp
 	goto LakeVerity_EventScript_GrassBackEnd
+
 LakeVerity_EventScript_GrassBackRight::
 	applymovement LOCALID_PLAYER, Common_Movement_WalkRight
+
 LakeVerity_EventScript_GrassBackEnd::
 	waitmovement 0
 	releaseall

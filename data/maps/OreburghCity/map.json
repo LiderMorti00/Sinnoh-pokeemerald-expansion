@@ -345,7 +345,7 @@
       "y": 23,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
-      "var_value": "13",
+      "var_value": "17",
       "script": "OreburghCity_EventScript_GymClosed"
     }
   ],

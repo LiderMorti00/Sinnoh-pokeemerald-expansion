@@ -7307,6 +7307,86 @@ const struct ItemInfo gItemsInfo[] =
         .iconPalette = gItemIconPalette_Glimmoranite,
     },
 
+    [ITEM_JOURNAL] =
+    {
+        .name = ITEM_NAME("Journal"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A notebook that\n"
+            "records the events\n"
+            "of your adventure."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_ContestPass,
+        .iconPalette = gItemIconPalette_ContestPass,
+    },
+
+    [ITEM_VS_RECORDER] =
+    {
+        .name = ITEM_NAME("Vs. Recorder"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A device given by\n"
+            "LOOKER that records\n"
+            "battles you fight."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_ContestPass,
+        .iconPalette = gItemIconPalette_ContestPass,
+    },
+
+    [ITEM_COUPON_1] =
+    {
+        .name = ITEM_NAME("Coupon 1"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A coupon from the\n"
+            "POKéTCH campaign.\n"
+            "Collect all three!"),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_SSTicket,
+        .iconPalette = gItemIconPalette_SSTicket,
+    },
+
+    [ITEM_COUPON_2] =
+    {
+        .name = ITEM_NAME("Coupon 2"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A coupon from the\n"
+            "POKéTCH campaign.\n"
+            "Collect all three!"),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_SSTicket,
+        .iconPalette = gItemIconPalette_SSTicket,
+    },
+
+    [ITEM_COUPON_3] =
+    {
+        .name = ITEM_NAME("Coupon 3"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A coupon from the\n"
+            "POKéTCH campaign.\n"
+            "Collect all three!"),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_SSTicket,
+        .iconPalette = gItemIconPalette_SSTicket,
+    },
+
 // Gems
 #if I_PRICE >= GEN_9
     #define GEM_PRICE 15000
@@ -14655,9 +14735,9 @@ const struct ItemInfo gItemsInfo[] =
         .name = ITEM_NAME("Parcel"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "A parcel for Prof.\n"
-            "Oak from a Pokémon\n"
-            "Mart's clerk."),
+            "A parcel for Barry\n"
+            "from his mother.\n"
+            "Deliver it to him."),
         .importance = 2,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,

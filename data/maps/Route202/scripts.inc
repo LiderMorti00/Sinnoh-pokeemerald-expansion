@@ -19,7 +19,7 @@ Route202_EventScript_DawnScene::
 	applymovement LOCALID_ROUTE202_DAWN, Common_Movement_ExclamationMark
 	waitmovement 0
 	msgbox Route202_Text_DawnTutorial, MSGBOX_DEFAULT
-	giveitem ITEM_POTION, 3
+	giveitem ITEM_POKE_BALL, 5
 	call Sinnoh_EventScript_BufferCounterpartName
 	msgbox Route202_Text_DawnBye, MSGBOX_DEFAULT
 	closemessage
@@ -27,8 +27,9 @@ Route202_EventScript_DawnScene::
 	waitmovement 0
 	removeobject LOCALID_ROUTE202_DAWN
 	setflag FLAG_HIDE_ROUTE202_DAWN
-	setvar VAR_SINNOH_STORY, 8
+	setvar VAR_SINNOH_STORY, 12
 	clearflag FLAG_HIDE_JUBILIFE_DAWN
+	clearflag FLAG_HIDE_JUBILIFE_LOOKER
 	releaseall
 	end
 
@@ -121,13 +122,14 @@ Route202_Movement_DawnLeaves:
 
 Route202_Text_DawnTutorial:
 	.string "{STR_VAR_1}: There you are! The\n"
-	.string "Professor asked me to show you the\l"
-	.string "ropes.\p"
-	.string "Wild POKéMON live in tall grass.\n"
-	.string "Battle one first to weaken it,\l"
-	.string "then throw a POKé BALL.\p"
-	.string "The weaker it is, the easier it is\n"
-	.string "to catch! Oh, and take these, too.$"
+	.string "Professor asked me to teach you\l"
+	.string "how to catch POKéMON.\p"
+	.string "Watch closely! First, you battle a\n"
+	.string "wild POKéMON, like this BIDOOF, to\l"
+	.string "weaken it.\p"
+	.string "Then you throw a POKé BALL!\n"
+	.string "...Gotcha! See? Easy! Here, take\l"
+	.string "these so you can try it yourself.$"
 
 Route202_Text_DawnBye:
 	.string "{STR_VAR_1}: JUBILIFE CITY is just\n"

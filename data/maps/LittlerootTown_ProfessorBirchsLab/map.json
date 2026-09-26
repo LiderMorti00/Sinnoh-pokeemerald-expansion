@@ -97,7 +97,7 @@
       "y": 10,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
-      "var_value": "5",
+      "var_value": "8",
       "script": "SandgemLab_EventScript_SceneLeft"
     },
     {
@@ -106,7 +106,7 @@
       "y": 10,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
-      "var_value": "5",
+      "var_value": "8",
       "script": "SandgemLab_EventScript_SceneRight"
     }
   ],

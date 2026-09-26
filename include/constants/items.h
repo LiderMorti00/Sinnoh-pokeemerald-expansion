@@ -1052,6 +1052,13 @@ enum __attribute__((packed)) Item
     ITEM_TATSUGIRINITE = 872,
     ITEM_GLIMMORANITE = 873,
 
+    // Proyecto Sinnoh: objetos clave de Platino
+    ITEM_JOURNAL = 874,
+    ITEM_VS_RECORDER = 875,
+    ITEM_COUPON_1 = 876,
+    ITEM_COUPON_2 = 877,
+    ITEM_COUPON_3 = 878,
+
     ITEMS_COUNT,
     ITEM_FIELD_ARROW = ITEMS_COUNT,
 };

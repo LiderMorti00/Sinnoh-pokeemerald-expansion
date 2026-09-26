@@ -134,18 +134,80 @@ JubilifeCity_EventScript_DawnScene::
 	waitmovement 0
 	msgbox JubilifeCity_Text_DawnWelcome, MSGBOX_DEFAULT
 	closemessage
+	applymovement LOCALID_JUBILIFE_LOOKER, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox JubilifeCity_Text_LookerIntro, MSGBOX_DEFAULT
+	giveitem ITEM_VS_RECORDER
+	msgbox JubilifeCity_Text_LookerBye, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_JUBILIFE_LOOKER
+	setflag FLAG_HIDE_JUBILIFE_LOOKER
+	fadescreen FADE_FROM_BLACK
+	call Sinnoh_EventScript_BufferCounterpartName
+	msgbox JubilifeCity_Text_DawnSchool, MSGBOX_DEFAULT
+	closemessage
 	applymovement LOCALID_JUBILIFE_DAWN, JubilifeCity_Movement_DawnToSchool
 	waitmovement 0
 	removeobject LOCALID_JUBILIFE_DAWN
 	setflag FLAG_HIDE_JUBILIFE_DAWN
 	clearflag FLAG_HIDE_SCHOOL_BARRY
-	setvar VAR_SINNOH_STORY, 9
+	setvar VAR_SINNOH_STORY, 13
 	releaseall
+	end
+
+JubilifeCity_EventScript_PresidentScene::
+	lockall
+	applymovement LOCALID_JUBILIFE_PRESIDENT, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox JubilifeCity_Text_PresidentCampaign, MSGBOX_DEFAULT
+	closemessage
+	setvar VAR_SINNOH_STORY, 15
+	releaseall
+	end
+
+JubilifeCity_EventScript_President::
+	lock
+	faceplayer
+	goto_if_set FLAG_SYS_POKENAV_GET, JubilifeCity_EventScript_PresidentAfter
+	checkitem ITEM_COUPON_1
+	goto_if_eq VAR_RESULT, FALSE, JubilifeCity_EventScript_PresidentNoCoupons
+	checkitem ITEM_COUPON_2
+	goto_if_eq VAR_RESULT, FALSE, JubilifeCity_EventScript_PresidentNoCoupons
+	checkitem ITEM_COUPON_3
+	goto_if_eq VAR_RESULT, FALSE, JubilifeCity_EventScript_PresidentNoCoupons
+	msgbox JubilifeCity_Text_PresidentCoupons, MSGBOX_DEFAULT
+	removeitem ITEM_COUPON_1
+	removeitem ITEM_COUPON_2
+	removeitem ITEM_COUPON_3
+	playfanfare MUS_OBTAIN_ITEM
+	message JubilifeCity_Text_ReceivedPokenav
+	waitfanfare
+	waitmessage
+	setflag FLAG_SYS_POKENAV_GET
+	setflag FLAG_RECEIVED_POKENAV
+	call_if_eq VAR_SINNOH_STORY, 15, JubilifeCity_EventScript_SetStory16
+	msgbox JubilifeCity_Text_PresidentPokenav, MSGBOX_DEFAULT
+	release
+	end
+
+JubilifeCity_EventScript_SetStory16::
+	setvar VAR_SINNOH_STORY, 16
+	return
+
+JubilifeCity_EventScript_PresidentNoCoupons::
+	msgbox JubilifeCity_Text_PresidentNoCoupons, MSGBOX_DEFAULT
+	release
+	end
+
+JubilifeCity_EventScript_PresidentAfter::
+	msgbox JubilifeCity_Text_PresidentAfter, MSGBOX_DEFAULT
+	release
 	end
 
 JubilifeCity_EventScript_BlockEast::
 	lockall
-	goto_if_eq VAR_SINNOH_STORY, 11, JubilifeCity_EventScript_BlockEastPoketch
+	goto_if_eq VAR_SINNOH_STORY, 15, JubilifeCity_EventScript_BlockEastPoketch
 	msgbox JubilifeCity_Text_BlockEastSchool, MSGBOX_DEFAULT
 	goto JubilifeCity_EventScript_BlockEastEnd
 JubilifeCity_EventScript_BlockEastPoketch::
@@ -160,35 +222,40 @@ JubilifeCity_EventScript_BlockEastEnd::
 JubilifeCity_EventScript_Clown1::
 	lock
 	faceplayer
-	goto_if_set FLAG_POKETCH_COUPON_1, JubilifeCity_EventScript_ClownDone
+	checkitem ITEM_COUPON_1
+	goto_if_eq VAR_RESULT, TRUE, JubilifeCity_EventScript_ClownDone
+	goto_if_set FLAG_SYS_POKENAV_GET, JubilifeCity_EventScript_ClownDone
 	msgbox JubilifeCity_Text_ClownQuiz1, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, JubilifeCity_EventScript_ClownWrong
-	setflag FLAG_POKETCH_COUPON_1
+	msgbox JubilifeCity_Text_ClownRight, MSGBOX_DEFAULT
+	giveitem ITEM_COUPON_1
 	goto JubilifeCity_EventScript_ClownRight
 
 JubilifeCity_EventScript_Clown2::
 	lock
 	faceplayer
-	goto_if_set FLAG_POKETCH_COUPON_2, JubilifeCity_EventScript_ClownDone
+	checkitem ITEM_COUPON_2
+	goto_if_eq VAR_RESULT, TRUE, JubilifeCity_EventScript_ClownDone
+	goto_if_set FLAG_SYS_POKENAV_GET, JubilifeCity_EventScript_ClownDone
 	msgbox JubilifeCity_Text_ClownQuiz2, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, JubilifeCity_EventScript_ClownWrong
-	setflag FLAG_POKETCH_COUPON_2
+	msgbox JubilifeCity_Text_ClownRight, MSGBOX_DEFAULT
+	giveitem ITEM_COUPON_2
 	goto JubilifeCity_EventScript_ClownRight
 
 JubilifeCity_EventScript_Clown3::
 	lock
 	faceplayer
-	goto_if_set FLAG_POKETCH_COUPON_3, JubilifeCity_EventScript_ClownDone
+	checkitem ITEM_COUPON_3
+	goto_if_eq VAR_RESULT, TRUE, JubilifeCity_EventScript_ClownDone
+	goto_if_set FLAG_SYS_POKENAV_GET, JubilifeCity_EventScript_ClownDone
 	msgbox JubilifeCity_Text_ClownQuiz3, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, JubilifeCity_EventScript_ClownWrong
-	setflag FLAG_POKETCH_COUPON_3
+	goto_if_eq VAR_RESULT, NO, JubilifeCity_EventScript_ClownWrong
+	msgbox JubilifeCity_Text_ClownRight, MSGBOX_DEFAULT
+	giveitem ITEM_COUPON_3
 	goto JubilifeCity_EventScript_ClownRight
 
 JubilifeCity_EventScript_ClownRight::
-	playfanfare MUS_OBTAIN_ITEM
-	message JubilifeCity_Text_ClownRight
-	waitfanfare
-	waitmessage
 	msgbox JubilifeCity_Text_ClownRight2, MSGBOX_DEFAULT
 	release
 	end
@@ -227,10 +294,8 @@ JubilifeCity_EventScript_GalacticScene::
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_JUBILIFE_ROWAN
 	setflag FLAG_HIDE_JUBILIFE_GRUNTS
-	clearflag FLAG_HIDE_JUBILIFE_LOOKER
-	addobject LOCALID_JUBILIFE_LOOKER
 	fadescreen FADE_FROM_BLACK
-	setvar VAR_SINNOH_STORY, 12
+	setvar VAR_SINNOH_STORY, 20
 	releaseall
 	end
 
@@ -264,50 +329,42 @@ JubilifeCity_Movement_DawnToSchool:
 
 JubilifeCity_Text_DawnWelcome:
 	.string "{STR_VAR_1}: Welcome to JUBILIFE\n"
-	.string "CITY! Oh, and Barry was looking\l"
-	.string "for you!\p"
-	.string "He went to the TRAINERS' SCHOOL,\n"
-	.string "the building near the POKéMON\l"
-	.string "CENTER. Come on, let's go!$"
+	.string "CITY! It's the biggest city in\l"
+	.string "Sinnoh. Come on, I'll show you\n"
+	.string "around!$"
 
 JubilifeCity_Text_BlockEastSchool:
-	.string "Barry is waiting at the TRAINERS'\n"
-	.string "SCHOOL. I should go there first.$"
+	.string "I have to deliver Barry's PARCEL\n"
+	.string "first. He's somewhere in JUBILIFE.$"
 
 JubilifeCity_Text_BlockEastNorth:
-	.string "Something seems to be going on at\n"
-	.string "the north end of town. Maybe I\l"
-	.string "should check it out.$"
+	.string "The POKéTCH campaign man was\n"
+	.string "looking for Trainers. Maybe I\l"
+	.string "should collect those COUPONS\n"
+	.string "first.$"
 
 JubilifeCity_Text_ClownQuiz1:
-	.string "Hello! I'm with the POKéTCH\n"
-	.string "campaign! Answer my quiz to win a\l"
-	.string "COUPON!\p"
-	.string "Question! The POKéTCH is a handy\n"
-	.string "watch made for POKéMON Trainers.\l"
-	.string "True?$"
+	.string "POKéTCH campaign quiz! Answer\n"
+	.string "correctly to win a COUPON!\p"
+	.string "Does a POKéMON grow by defeating\n"
+	.string "others and gaining EXP. Points?$"
 
 JubilifeCity_Text_ClownQuiz2:
-	.string "POKéTCH campaign quiz time! Get it\n"
-	.string "right for a COUPON!\p"
-	.string "Question! JUBILIFE CITY is home to\n"
-	.string "the TRAINERS' SCHOOL. True?$"
+	.string "POKéTCH campaign quiz time!\p"
+	.string "Just like POKéMON have types, do\n"
+	.string "moves have types too?$"
 
 JubilifeCity_Text_ClownQuiz3:
-	.string "Last quiz of the POKéTCH campaign!\n"
-	.string "Ready?\p"
-	.string "Question! A Trainer can carry\n"
-	.string "seven POKéMON in their party at\l"
-	.string "once. True?$"
+	.string "Last POKéTCH campaign quiz! Ready?\p"
+	.string "Can a POKéMON hold an item?$"
 
 JubilifeCity_Text_ClownRight:
-	.string "Correct! {PLAYER} received a\n"
-	.string "COUPON!$"
+	.string "Correct! Here's your COUPON!$"
 
 JubilifeCity_Text_ClownRight2:
 	.string "Collect all three COUPONS and\n"
-	.string "trade them at the POKéTCH COMPANY\l"
-	.string "for your very own POKéTCH!$"
+	.string "bring them to the POKéTCH\l"
+	.string "COMPANY's president!$"
 
 JubilifeCity_Text_ClownWrong:
 	.string "Ooh, so close! Think it over and\n"
@@ -347,9 +404,8 @@ JubilifeCity_Text_RowanThanks:
 	.string "ROWAN: Hmph. TEAM GALACTIC... I\n"
 	.string "have a bad feeling about them. You\l"
 	.string "have my thanks.\p"
-	.string "The GYM in OREBURGH CITY is east\n"
-	.string "of here, past ROUTE 203. Go and\l"
-	.string "grow stronger.$"
+	.string "Now go on. Your journey is only\n"
+	.string "beginning.$"
 
 JubilifeCity_Text_Looker:
 	.string "I am a member of the International\n"
@@ -358,3 +414,50 @@ JubilifeCity_Text_Looker:
 	.string "as TEAM GALACTIC. If you see\l"
 	.string "anything suspicious, you will tell\n"
 	.string "me, yes?$"
+
+JubilifeCity_Text_LookerIntro:
+	.string "???: ...You there! You have sharp\n"
+	.string "eyes. I am LOOKER, of the\l"
+	.string "International Police.\p"
+	.string "I am investigating a suspicious\n"
+	.string "group. Take this. It records your\l"
+	.string "battles, yes?$"
+
+JubilifeCity_Text_LookerBye:
+	.string "LOOKER: Now, I must go. Do not\n"
+	.string "tell anyone you saw me!$"
+
+JubilifeCity_Text_DawnSchool:
+	.string "{STR_VAR_1}: What a strange man...\n"
+	.string "Anyway, Barry went into the\l"
+	.string "TRAINERS' SCHOOL. Let's go!$"
+
+JubilifeCity_Text_PresidentCampaign:
+	.string "Hello there! I'm the president of\n"
+	.string "the POKéTCH COMPANY. We're running\l"
+	.string "a campaign!\p"
+	.string "Find the three clowns in town and\n"
+	.string "answer their quizzes to get three\l"
+	.string "COUPONS. Bring them to me for a\n"
+	.string "prize!$"
+
+JubilifeCity_Text_PresidentNoCoupons:
+	.string "Find all three clowns and bring me\n"
+	.string "their COUPONS. They're somewhere\l"
+	.string "in JUBILIFE!$"
+
+JubilifeCity_Text_PresidentCoupons:
+	.string "Wonderful! You found all three\n"
+	.string "COUPONS! Here's your prize!$"
+
+JubilifeCity_Text_ReceivedPokenav:
+	.string "{PLAYER} received the POKéNAV!$"
+
+JubilifeCity_Text_PresidentPokenav:
+	.string "The POKéNAV has a map and much\n"
+	.string "more. It will help you on your\l"
+	.string "journey!$"
+
+JubilifeCity_Text_PresidentAfter:
+	.string "How do you like your POKéNAV? Use\n"
+	.string "it well!$"

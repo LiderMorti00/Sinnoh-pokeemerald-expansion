@@ -178,7 +178,7 @@
       "y": 19,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
-      "var_value": "12",
+      "var_value": "16",
       "script": "Route203_EventScript_BarryScene"
     },
     {
@@ -187,7 +187,7 @@
       "y": 20,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
-      "var_value": "12",
+      "var_value": "16",
       "script": "Route203_EventScript_BarryScene"
     },
     {
@@ -196,7 +196,7 @@
       "y": 21,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
-      "var_value": "12",
+      "var_value": "16",
       "script": "Route203_EventScript_BarryScene"
     },
     {
@@ -205,7 +205,7 @@
       "y": 22,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
-      "var_value": "12",
+      "var_value": "16",
       "script": "Route203_EventScript_BarryScene"
     }
   ],

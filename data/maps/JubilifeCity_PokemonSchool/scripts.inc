@@ -58,13 +58,17 @@ JubilifeCity_PokemonSchool_EventScript_BarryScene::
 	applymovement LOCALID_SCHOOL_BARRY, Common_Movement_ExclamationMark
 	waitmovement 0
 	msgbox JubilifeCity_PokemonSchool_Text_Barry, MSGBOX_DEFAULT
+	removeitem ITEM_PARCEL
+	msgbox JubilifeCity_PokemonSchool_Text_Barry2, MSGBOX_DEFAULT
+	giveitem ITEM_TOWN_MAP
+	msgbox JubilifeCity_PokemonSchool_Text_Barry3, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_SCHOOL_BARRY, JubilifeCity_PokemonSchool_Movement_BarryLeaves
 	waitmovement 0
 	playse SE_EXIT
 	removeobject LOCALID_SCHOOL_BARRY
 	setflag FLAG_HIDE_SCHOOL_BARRY
-	setvar VAR_SINNOH_STORY, 10
+	setvar VAR_SINNOH_STORY, 14
 	releaseall
 	end
 
@@ -83,13 +87,50 @@ JubilifeCity_PokemonSchool_Movement_BarryLeaves:
 	step_end
 
 JubilifeCity_PokemonSchool_Text_Barry:
-	.string "BARRY: {PLAYER}! There you are! I\n"
-	.string "already learned everything there\l"
-	.string "is to know here!\p"
-	.string "Oh, and there's a POKéTCH campaign\n"
-	.string "going on in town. Find the clowns\l"
-	.string "and answer their quizzes!\p"
-	.string "Get three COUPONS and they give\n"
-	.string "you a POKéTCH for free! I'm off to\l"
-	.string "OREBURGH to get my first BADGE.\n"
-	.string "See ya!$"
+	.string "BARRY: {PLAYER}! What are you\n"
+	.string "doing here? A PARCEL from my mom?\l"
+	.string "For me?\p"
+	.string "...Oh! Two TOWN MAPS! Mom always\n"
+	.string "buys everything twice.$"
+
+JubilifeCity_PokemonSchool_Text_Barry2:
+	.string "BARRY: You can have one of them!\n"
+	.string "Here!$"
+
+JubilifeCity_PokemonSchool_Text_Barry3:
+	.string "BARRY: With that, you'll never get\n"
+	.string "lost! I'm heading to OREBURGH for\l"
+	.string "my first BADGE. See ya!$"
+
+JubilifeCity_PokemonSchool_EventScript_Harrison::
+	trainerbattle_single TRAINER_DAISY, JubilifeCity_PokemonSchool_Text_HarrisonIntro, JubilifeCity_PokemonSchool_Text_HarrisonDefeat
+	msgbox JubilifeCity_PokemonSchool_Text_HarrisonPost, MSGBOX_AUTOCLOSE
+	end
+
+JubilifeCity_PokemonSchool_Text_HarrisonIntro:
+	.string "Let's test what we learned in\n"
+	.string "class!$"
+
+JubilifeCity_PokemonSchool_Text_HarrisonDefeat:
+	.string "I need to study more...$"
+
+JubilifeCity_PokemonSchool_Text_HarrisonPost:
+	.string "Type matchups are harder than they\n"
+	.string "look!$"
+
+JubilifeCity_PokemonSchool_EventScript_Christine::
+	trainerbattle_single TRAINER_JOHANNA, JubilifeCity_PokemonSchool_Text_ChristineIntro, JubilifeCity_PokemonSchool_Text_ChristineDefeat
+	msgbox JubilifeCity_PokemonSchool_Text_ChristinePost, MSGBOX_AUTOCLOSE
+	end
+
+JubilifeCity_PokemonSchool_Text_ChristineIntro:
+	.string "I'm the top student here! Battle\n"
+	.string "me!$"
+
+JubilifeCity_PokemonSchool_Text_ChristineDefeat:
+	.string "Maybe not the top student after\n"
+	.string "all...$"
+
+JubilifeCity_PokemonSchool_Text_ChristinePost:
+	.string "I'll review my notes and try\n"
+	.string "again!$"

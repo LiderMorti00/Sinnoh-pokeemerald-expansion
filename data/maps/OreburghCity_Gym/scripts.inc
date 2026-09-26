@@ -17,7 +17,8 @@ OreburghCity_Gym_EventScript_RoarkDefeated::
 	setflag FLAG_DEFEATED_RUSTBORO_GYM
 	setvar VAR_0x8008, 1
 	call Common_EventScript_SetGymTrainers
-	setvar VAR_SINNOH_STORY, 15
+	setvar VAR_SINNOH_STORY, 19
+	clearflag FLAG_HIDE_JUBILIFE_GRUNTS
 	goto OreburghCity_Gym_EventScript_GiveTM
 	end
 

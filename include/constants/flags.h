@@ -5,7 +5,6 @@
 #include "constants/opponents.h"
 #include "constants/rematches.h"
 
-
 // Temporary Flags
 // These temporary flags are are cleared every time a map is loaded. They are used
 // for things like shortening an NPCs introduction text if the player already spoke
@@ -2448,8 +2447,6 @@
 #define TESTING_FLAG_UNUSED_7                   (TESTING_FLAGS_START + 0x7)
 #endif // TESTING
 
-
-
 // ---- Proyecto Sinnoh: historia (fase 1) ----
 #define FLAG_HIDE_TWINLEAF_BARRY          FLAG_UNUSED_0x020
 #define FLAG_HIDE_ROUTE201_BARRY          FLAG_UNUSED_0x021
@@ -2469,5 +2466,14 @@
 #define FLAG_POKETCH_COUPON_2             FLAG_UNUSED_0x030
 #define FLAG_POKETCH_COUPON_3             FLAG_UNUSED_0x031
 #define FLAG_RECEIVED_POKETCH             FLAG_UNUSED_0x032
+#define FLAG_RECEIVED_ROUTE201_POTION     FLAG_UNUSED_0x033
+#define FLAG_RECEIVED_HM_ROCK_SMASH       FLAG_UNUSED_0x034
+#define FLAG_HIDE_PLAYER_ROOM_BARRY       FLAG_UNUSED_0x035
+#define FLAG_HIDE_RIVAL_ROOM_BARRY        FLAG_UNUSED_0x036
+#define FLAG_HIDE_ROUTE201_ROWAN          FLAG_UNUSED_0x037
+#define FLAG_HIDE_SANDGEM_DAWN            FLAG_UNUSED_0x038
+#define FLAG_HIDE_SANDGEM_BARRY           FLAG_UNUSED_0x039
+#define FLAG_HIDE_SANDGEM_ROWAN           FLAG_UNUSED_0x03A
+#define FLAG_HIDE_HOME_BARRYS_MOM         FLAG_UNUSED_0x03B
 
 #endif // GUARD_CONSTANTS_FLAGS_H

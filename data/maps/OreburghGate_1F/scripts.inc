@@ -40,3 +40,29 @@ OreburghGate_1F_EventScript_PtNpc1::
 OreburghGate_1F_Text_PtNpc1:
 	.string "You'll need ROCK SMASH to break\n"
 	.string "these boulders. Come back later!$"
+
+OreburghGate_1F_EventScript_HikerHM::
+	lock
+	faceplayer
+	goto_if_set FLAG_RECEIVED_HM_ROCK_SMASH, OreburghGate_1F_EventScript_HikerAfter
+	msgbox OreburghGate_1F_Text_Hiker, MSGBOX_DEFAULT
+	giveitem ITEM_HM_ROCK_SMASH
+	setflag FLAG_RECEIVED_HM_ROCK_SMASH
+	msgbox OreburghGate_1F_Text_HikerAfter, MSGBOX_DEFAULT
+	release
+	end
+OreburghGate_1F_EventScript_HikerAfter::
+	msgbox OreburghGate_1F_Text_HikerAfter, MSGBOX_DEFAULT
+	release
+	end
+
+OreburghGate_1F_Text_Hiker:
+	.string "Whoa there! Heading to OREBURGH?\n"
+	.string "This cave is full of rocks. You'll\l"
+	.string "need this!$"
+
+OreburghGate_1F_Text_HikerAfter:
+	.string "That HM teaches ROCK SMASH. You\n"
+	.string "can use it outside of battle once\l"
+	.string "you have the BADGE from OREBURGH\n"
+	.string "GYM.$"
