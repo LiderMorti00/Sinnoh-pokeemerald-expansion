@@ -31,7 +31,6 @@
   ],
   "object_events": [
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MAN_1",
       "x": 27,
       "y": 14,
@@ -45,7 +44,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SCHOOL_KID_M",
       "x": 57,
       "y": 7,
@@ -59,7 +57,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LASS",
       "x": 46,
       "y": 15,
@@ -74,7 +71,6 @@
     },
     {
       "local_id": "LOCALID_ROUTE201_BARRY",
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_WALLY",
       "x": 15,
       "y": 16,
@@ -89,7 +85,6 @@
     },
     {
       "local_id": "LOCALID_ROUTE201_ROWAN",
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_PROF_BIRCH",
       "x": 3,
       "y": 15,
@@ -104,7 +99,6 @@
     },
     {
       "local_id": "LOCALID_ROUTE201_DAWN",
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
       "x": 2,
       "y": 15,
@@ -119,7 +113,6 @@
     },
     {
       "local_id": "LOCALID_ROUTE201_CLERK",
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MART_EMPLOYEE",
       "x": 58,
       "y": 5,

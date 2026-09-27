@@ -36,7 +36,6 @@
   ],
   "object_events": [
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 34,
       "y": 10,
@@ -50,10 +49,9 @@
       "flag": "FLAG_ITEM_ROUTE_109_PP_UP"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_4",
       "x": 21,
-      "y": 22,
+      "y": 21,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
       "movement_range_x": 1,
@@ -64,7 +62,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MAN_3",
       "x": 52,
       "y": 18,
@@ -78,7 +75,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SCHOOL_KID_M",
       "x": 21,
       "y": 53,
@@ -92,7 +88,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_TWIN",
       "x": 37,
       "y": 16,
@@ -106,7 +101,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
       "x": 48,
       "y": 42,
@@ -120,7 +114,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SCHOOL_KID_M",
       "x": 54,
       "y": 30,
@@ -134,7 +127,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
       "x": 45,
       "y": 28,
@@ -148,7 +140,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MAN_3",
       "x": 40,
       "y": 23,
@@ -162,7 +153,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MAN_3",
       "x": 30,
       "y": 40,
@@ -176,7 +166,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_GAMEBOY_KID",
       "x": 56,
       "y": 42,
@@ -190,7 +179,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_GAMEBOY_KID",
       "x": 58,
       "y": 44,
@@ -205,7 +193,6 @@
     },
     {
       "local_id": "LOCALID_JUBILIFE_DAWN",
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
       "x": 49,
       "y": 49,
@@ -220,7 +207,6 @@
     },
     {
       "local_id": "LOCALID_JUBILIFE_CLOWN_1",
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
       "x": 58,
       "y": 29,
@@ -235,7 +221,6 @@
     },
     {
       "local_id": "LOCALID_JUBILIFE_CLOWN_2",
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
       "x": 19,
       "y": 15,
@@ -250,7 +235,6 @@
     },
     {
       "local_id": "LOCALID_JUBILIFE_CLOWN_3",
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
       "x": 41,
       "y": 14,
@@ -265,7 +249,6 @@
     },
     {
       "local_id": "LOCALID_JUBILIFE_ROWAN",
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_PROF_BIRCH",
       "x": 51,
       "y": 2,
@@ -280,7 +263,6 @@
     },
     {
       "local_id": "LOCALID_JUBILIFE_GRUNT_1",
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
       "x": 50,
       "y": 1,
@@ -295,7 +277,6 @@
     },
     {
       "local_id": "LOCALID_JUBILIFE_GRUNT_2",
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
       "x": 50,
       "y": 2,
@@ -310,7 +291,6 @@
     },
     {
       "local_id": "LOCALID_JUBILIFE_LOOKER",
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MAN_4",
       "x": 47,
       "y": 36,
@@ -325,7 +305,6 @@
     },
     {
       "local_id": "LOCALID_JUBILIFE_PRESIDENT",
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
       "x": 41,
       "y": 38,
@@ -1190,32 +1169,32 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 17,
-      "y": 16,
+      "x": 45,
+      "y": 52,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "JubilifeCity_EventScript_Sign1"
     },
     {
       "type": "sign",
-      "x": 43,
-      "y": 16,
+      "x": 39,
+      "y": 37,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "JubilifeCity_EventScript_Sign2"
     },
     {
       "type": "sign",
-      "x": 56,
-      "y": 36,
+      "x": 17,
+      "y": 16,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "JubilifeCity_EventScript_Sign3"
     },
     {
       "type": "sign",
-      "x": 39,
-      "y": 37,
+      "x": 43,
+      "y": 16,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "JubilifeCity_EventScript_Sign4"
@@ -1238,8 +1217,8 @@
     },
     {
       "type": "sign",
-      "x": 63,
-      "y": 18,
+      "x": 62,
+      "y": 17,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "JubilifeCity_EventScript_PtSign2"
@@ -1254,8 +1233,8 @@
     },
     {
       "type": "sign",
-      "x": 45,
-      "y": 52,
+      "x": 56,
+      "y": 36,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "JubilifeCity_EventScript_PtSign4"

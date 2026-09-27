@@ -31,7 +31,6 @@
   ],
   "object_events": [
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
       "x": 27,
       "y": 22,
@@ -45,7 +44,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MAN_1",
       "x": 13,
       "y": 20,
@@ -59,7 +57,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
       "x": 23,
       "y": 19,
@@ -74,7 +71,6 @@
     },
     {
       "local_id": "LOCALID_SANDGEM_DAWN",
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
       "x": 3,
       "y": 11,
@@ -89,7 +85,6 @@
     },
     {
       "local_id": "LOCALID_SANDGEM_BARRY",
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_WALLY",
       "x": 9,
       "y": 9,
@@ -104,7 +99,6 @@
     },
     {
       "local_id": "LOCALID_SANDGEM_ROWAN",
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_PROF_BIRCH",
       "x": 9,
       "y": 8,
@@ -119,7 +113,6 @@
     },
     {
       "local_id": "LOCALID_SANDGEM_DAWN2",
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
       "x": 9,
       "y": 8,
@@ -436,15 +429,15 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 6,
-      "y": 8,
+      "x": 22,
+      "y": 21,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "SandgemTown_EventScript_Sign1"
     },
     {
       "type": "sign",
-      "x": 18,
+      "x": 6,
       "y": 8,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -476,16 +469,16 @@
     },
     {
       "type": "sign",
-      "x": 22,
-      "y": 21,
+      "x": 18,
+      "y": 8,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "SandgemTown_EventScript_SignExtra1"
     },
     {
       "type": "sign",
-      "x": 15,
-      "y": 21,
+      "x": 14,
+      "y": 20,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "SandgemTown_EventScript_PtSign1"

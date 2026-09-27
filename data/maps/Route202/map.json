@@ -27,7 +27,6 @@
   "object_events": [
     {
       "local_id": "LOCALID_ROUTE202_DAWN",
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
       "x": 22,
       "y": 27,
@@ -41,7 +40,6 @@
       "flag": "FLAG_HIDE_ROUTE202_DAWN"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
       "x": 24,
       "y": 16,
@@ -55,7 +53,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LASS",
       "x": 8,
       "y": 15,
@@ -69,7 +66,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
       "x": 10,
       "y": 6,
@@ -83,7 +79,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 9,
       "y": 1,
@@ -97,7 +92,6 @@
       "flag": "FLAG_ITEM_ROUTE_116_X_SPECIAL"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
       "x": 7,
       "y": 7,

@@ -31,7 +31,6 @@
   ],
   "object_events": [
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_HIKER",
       "x": 18,
       "y": 68,
@@ -45,7 +44,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
       "x": 23,
       "y": 64,
@@ -59,7 +57,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
       "x": 23,
       "y": 77,
@@ -73,7 +70,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
       "x": 23,
       "y": 50,
@@ -87,7 +83,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_HIKER",
       "x": 16,
       "y": 41,
@@ -101,7 +96,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
       "x": 15,
       "y": 29,
@@ -115,7 +109,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
       "x": 15,
       "y": 23,
@@ -129,7 +122,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
       "x": 14,
       "y": 56,
@@ -143,7 +135,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
       "x": 15,
       "y": 66,
@@ -157,7 +148,6 @@
       "flag": "FLAG_HIDE_ROUTE205_GRUNTS"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
       "x": 16,
       "y": 66,
@@ -171,7 +161,7 @@
       "flag": "FLAG_HIDE_ROUTE205_GRUNTS"
     },
     {
-      "type": "object",
+      "local_id": "LOCALID_ROUTE205_GIRL",
       "graphics_id": "OBJ_EVENT_GFX_TWIN",
       "x": 18,
       "y": 68,
@@ -182,11 +172,9 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route205_South_EventScript_Girl",
-      "flag": "FLAG_HIDE_ROUTE205_GRUNTS",
-      "local_id": "LOCALID_ROUTE205_GIRL"
+      "flag": "FLAG_HIDE_ROUTE205_GRUNTS"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BUG_CATCHER",
       "x": 17,
       "y": 15,
@@ -200,7 +188,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 22,
       "y": 12,
@@ -214,7 +201,6 @@
       "flag": "FLAG_ITEM_ROUTE_116_HP_UP"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 2,
       "y": 17,
@@ -228,7 +214,6 @@
       "flag": "FLAG_ITEM_ROUTE_119_SUPER_REPEL"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 21,
       "y": 17,
@@ -242,7 +227,6 @@
       "flag": "FLAG_ITEM_ROUTE_119_ZINC"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 6,
       "y": 19,
