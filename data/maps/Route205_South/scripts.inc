@@ -177,3 +177,43 @@ Route205_South_EventScript_GirlScene::
 	setvar VAR_SINNOH_STORY, 21
 	releaseall
 	end
+
+Route205_South_EventScript_PtSign1::
+	msgbox Route205_South_Text_PtSign1, MSGBOX_SIGN
+	end
+
+Route205_South_Text_PtSign1:
+	.string "ROUTE 205\p"
+	.string "FLOAROMA TOWN / ETERNA FOREST$"
+
+Route205_South_EventScript_PtSign2::
+	msgbox Route205_South_Text_PtSign2, MSGBOX_SIGN
+	end
+
+Route205_South_Text_PtSign2:
+	.string "ROUTE 205\p"
+	.string "FLOAROMA TOWN / ETERNA FOREST$"
+
+Route205_South_EventScript_PtSign3::
+	msgbox Route205_South_Text_PtSign3, MSGBOX_SIGN
+	end
+
+Route205_South_Text_PtSign3:
+	.string "TRAINER TIPS\p"
+	.string "Some trees can be cut down with\n"
+	.string "the HM move CUT.$"
+
+Route205_South_EventScript_PtSign4::
+	msgbox Route205_South_Text_PtSign4, MSGBOX_SIGN
+	end
+
+Route205_South_Text_PtSign4:
+	.string "ROUTE 205$"
+
+Route205_South_EventScript_PaintedSign1::
+	msgbox Route205_South_Text_PaintedSign1, MSGBOX_SIGN
+	end
+
+Route205_South_Text_PaintedSign1:
+	.string "ROUTE 205\p"
+	.string "FLOAROMA TOWN / ETERNA FOREST$"

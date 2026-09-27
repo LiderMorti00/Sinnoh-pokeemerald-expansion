@@ -255,6 +255,38 @@
       "elevation": 3,
       "item": "ITEM_HONEY",
       "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_126_BLUE_SHARD"
+    },
+    {
+      "type": "sign",
+      "x": 4,
+      "y": 39,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route204_EventScript_PtSign1"
+    },
+    {
+      "type": "sign",
+      "x": 17,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route204_EventScript_PaintedSign1"
+    },
+    {
+      "type": "sign",
+      "x": 10,
+      "y": 32,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route204_EventScript_PaintedSign2"
+    },
+    {
+      "type": "sign",
+      "x": 14,
+      "y": 48,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route204_EventScript_PaintedSign3"
     }
   ]
 }

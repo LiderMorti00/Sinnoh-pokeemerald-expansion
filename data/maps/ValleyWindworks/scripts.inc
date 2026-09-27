@@ -87,3 +87,10 @@ ValleyWindworks_Text_Looker:
 	.string "My investigation tells me they\n"
 	.string "have a building in ETERNA CITY. I\l"
 	.string "will keep watching them, yes?$"
+
+ValleyWindworks_EventScript_PaintedSign1::
+	msgbox ValleyWindworks_Text_PaintedSign1, MSGBOX_SIGN
+	end
+
+ValleyWindworks_Text_PaintedSign1:
+	.string "VALLEY WINDWORKS$"

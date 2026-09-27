@@ -1227,6 +1227,54 @@
       "elevation": 3,
       "item": "ITEM_PARALYZE_HEAL",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_121_HP_UP"
+    },
+    {
+      "type": "sign",
+      "x": 52,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "JubilifeCity_EventScript_PtSign1"
+    },
+    {
+      "type": "sign",
+      "x": 63,
+      "y": 18,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "JubilifeCity_EventScript_PtSign2"
+    },
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 18,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "JubilifeCity_EventScript_PtSign3"
+    },
+    {
+      "type": "sign",
+      "x": 45,
+      "y": 52,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "JubilifeCity_EventScript_PtSign4"
+    },
+    {
+      "type": "sign",
+      "x": 54,
+      "y": 17,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "JubilifeCity_EventScript_PtSign5"
+    },
+    {
+      "type": "sign",
+      "x": 23,
+      "y": 42,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "JubilifeCity_EventScript_PtSign6"
     }
   ]
 }

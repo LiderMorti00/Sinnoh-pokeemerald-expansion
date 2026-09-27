@@ -121,6 +121,14 @@
       "elevation": 3,
       "item": "ITEM_SUPER_REPEL",
       "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_124_GREEN_SHARD"
+    },
+    {
+      "type": "sign",
+      "x": 18,
+      "y": 84,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ValleyWindworks_EventScript_PaintedSign1"
     }
   ]
 }

@@ -162,3 +162,34 @@ EternaCity_EventScript_PtNpc8::
 EternaCity_Text_PtNpc8:
 	.string "Hunting for BUG POKéMON is the\n"
 	.string "best!$"
+
+EternaCity_EventScript_PaintedSign1::
+	msgbox EternaCity_Text_PaintedSign1, MSGBOX_SIGN
+	end
+
+EternaCity_Text_PaintedSign1:
+	.string "ETERNA CITY\p"
+	.string "A city that remembers the past.$"
+
+EternaCity_EventScript_PaintedSign2::
+	msgbox EternaCity_Text_PaintedSign2, MSGBOX_SIGN
+	end
+
+EternaCity_Text_PaintedSign2:
+	.string "ETERNA CITY\p"
+	.string "A city that remembers the past.$"
+
+EternaCity_EventScript_PaintedSign3::
+	msgbox EternaCity_Text_PaintedSign3, MSGBOX_SIGN
+	end
+
+EternaCity_Text_PaintedSign3:
+	.string "POKéMON CENTER\p"
+	.string "Heal your POKéMON!$"
+
+EternaCity_EventScript_PaintedSign4::
+	msgbox EternaCity_Text_PaintedSign4, MSGBOX_SIGN
+	end
+
+EternaCity_Text_PaintedSign4:
+	.string "UNDERGROUND MAN'S HOUSE$"

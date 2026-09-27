@@ -419,3 +419,11 @@ SandgemTown_Movement_RowanExits:
 	walk_down
 	walk_right
 	step_end
+
+SandgemTown_EventScript_PtSign1::
+	msgbox SandgemTown_Text_PtSign1, MSGBOX_SIGN
+	end
+
+SandgemTown_Text_PtSign1:
+	.string "SANDGEM TOWN\p"
+	.string "Shining, shimmering sands.$"

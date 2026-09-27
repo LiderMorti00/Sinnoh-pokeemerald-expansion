@@ -501,3 +501,50 @@ JubilifeCity_Text_BlockNorth:
 	.string "The road north leads to a rocky\n"
 	.string "cave. I'd better get the BADGE\l"
 	.string "from OREBURGH GYM first.$"
+
+JubilifeCity_EventScript_PtSign1::
+	msgbox JubilifeCity_Text_PtSign1, MSGBOX_SIGN
+	end
+
+JubilifeCity_Text_PtSign1:
+	.string "JUBILIFE CITY\p"
+	.string "The most modern city in Sinnoh.$"
+
+JubilifeCity_EventScript_PtSign2::
+	msgbox JubilifeCity_Text_PtSign2, MSGBOX_SIGN
+	end
+
+JubilifeCity_Text_PtSign2:
+	.string "JUBILIFE CITY\p"
+	.string "The most modern city in Sinnoh.$"
+
+JubilifeCity_EventScript_PtSign3::
+	msgbox JubilifeCity_Text_PtSign3, MSGBOX_SIGN
+	end
+
+JubilifeCity_Text_PtSign3:
+	.string "JUBILIFE CITY\p"
+	.string "The most modern city in Sinnoh.$"
+
+JubilifeCity_EventScript_PtSign4::
+	msgbox JubilifeCity_Text_PtSign4, MSGBOX_SIGN
+	end
+
+JubilifeCity_Text_PtSign4:
+	.string "JUBILIFE CITY\p"
+	.string "The most modern city in Sinnoh.$"
+
+JubilifeCity_EventScript_PtSign5::
+	msgbox JubilifeCity_Text_PtSign5, MSGBOX_SIGN
+	end
+
+JubilifeCity_Text_PtSign5:
+	.string "CONDOMINIUMS$"
+
+JubilifeCity_EventScript_PtSign6::
+	msgbox JubilifeCity_Text_PtSign6, MSGBOX_SIGN
+	end
+
+JubilifeCity_Text_PtSign6:
+	.string "JUBILIFE CITY\p"
+	.string "The most modern city in Sinnoh.$"

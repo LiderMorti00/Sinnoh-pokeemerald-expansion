@@ -157,3 +157,35 @@ OreburghCity_EventScript_PtNpc15::
 OreburghCity_Text_PtNpc15:
 	.string "We help carry coal with our\n"
 	.string "MACHOP. They never get tired!$"
+
+OreburghCity_EventScript_PtSign1::
+	msgbox OreburghCity_Text_PtSign1, MSGBOX_SIGN
+	end
+
+OreburghCity_Text_PtSign1:
+	.string "OREBURGH GATE$"
+
+OreburghCity_EventScript_PtSign2::
+	msgbox OreburghCity_Text_PtSign2, MSGBOX_SIGN
+	end
+
+OreburghCity_Text_PtSign2:
+	.string "OREBURGH CITY POKéMON GYM\p"
+	.string "LEADER: ROARK\p"
+	.string "The rock-hard Trainer!$"
+
+OreburghCity_EventScript_PtSign3::
+	msgbox OreburghCity_Text_PtSign3, MSGBOX_SIGN
+	end
+
+OreburghCity_Text_PtSign3:
+	.string "OREBURGH CITY\p"
+	.string "The energetic town of coal.$"
+
+OreburghCity_EventScript_PtSign4::
+	msgbox OreburghCity_Text_PtSign4, MSGBOX_SIGN
+	end
+
+OreburghCity_Text_PtSign4:
+	.string "OREBURGH CITY\p"
+	.string "The energetic town of coal.$"

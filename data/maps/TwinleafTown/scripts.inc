@@ -41,3 +41,11 @@ TwinleafTown_Text_PtNpc3:
 	.string "Ahh... the wind through the trees\n"
 	.string "makes the best music. Want to hear\l"
 	.string "a song?$"
+
+TwinleafTown_EventScript_PtSign1::
+	msgbox TwinleafTown_Text_PtSign1, MSGBOX_SIGN
+	end
+
+TwinleafTown_Text_PtSign1:
+	.string "TWINLEAF TOWN\p"
+	.string "Fresh and free!$"
