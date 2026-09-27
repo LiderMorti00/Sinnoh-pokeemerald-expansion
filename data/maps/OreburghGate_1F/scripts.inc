@@ -44,10 +44,10 @@ OreburghGate_1F_Text_PtNpc1:
 OreburghGate_1F_EventScript_HikerHM::
 	lock
 	faceplayer
-	goto_if_set FLAG_RECEIVED_HM_ROCK_SMASH, OreburghGate_1F_EventScript_HikerAfter
+	goto_if_set FLAG_RECEIVED_OREBURGH_GATE_HM, OreburghGate_1F_EventScript_HikerAfter
 	msgbox OreburghGate_1F_Text_Hiker, MSGBOX_DEFAULT
 	giveitem ITEM_HM_ROCK_SMASH
-	setflag FLAG_RECEIVED_HM_ROCK_SMASH
+	setflag FLAG_RECEIVED_OREBURGH_GATE_HM
 	msgbox OreburghGate_1F_Text_HikerAfter, MSGBOX_DEFAULT
 	release
 	end
