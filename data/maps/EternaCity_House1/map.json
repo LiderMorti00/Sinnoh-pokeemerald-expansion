@@ -2,7 +2,7 @@
   "id": "MAP_ETERNA_CITY_HOUSE1",
   "name": "EternaCity_House1",
   "layout": "LAYOUT_ETERNA_CITY_HOUSE1",
-  "music": "MUS_DUMMY",
+  "music": "MUS_PETALBURG",
   "region_map_section": "MAPSEC_ETERNA_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

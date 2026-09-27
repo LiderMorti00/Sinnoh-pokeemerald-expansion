@@ -37267,6 +37267,351 @@
               }
             ]
           }
+        },
+        {
+          "map": "MAP_OLD_CHATEAU_ENTRANCE",
+          "base_label": "gOldChateauEntrance",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 14,
+                "max_level": 14,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 14,
+                "max_level": 15,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 15,
+                "max_level": 16,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 14,
+                "max_level": 14,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_HAUNTER"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 18,
+                "max_level": 18,
+                "species": "SPECIES_HAUNTER"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_OLD_CHATEAU_DINING_ROOM",
+          "base_label": "gOldChateauDiningRoom",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 14,
+                "max_level": 14,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 14,
+                "max_level": 15,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 15,
+                "max_level": 16,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 14,
+                "max_level": 14,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_HAUNTER"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 18,
+                "max_level": 18,
+                "species": "SPECIES_HAUNTER"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_OLD_CHATEAU_2F",
+          "base_label": "gOldChateau2F",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 14,
+                "max_level": 14,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 14,
+                "max_level": 15,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 15,
+                "max_level": 16,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 14,
+                "max_level": 14,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_HAUNTER"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 18,
+                "max_level": 18,
+                "species": "SPECIES_HAUNTER"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_OLD_CHATEAU_SIDE_ROOM_1",
+          "base_label": "gOldChateauSideRoom1",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 14,
+                "max_level": 14,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 14,
+                "max_level": 15,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 15,
+                "max_level": 16,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 14,
+                "max_level": 14,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_HAUNTER"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 18,
+                "max_level": 18,
+                "species": "SPECIES_HAUNTER"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_OLD_CHATEAU_SIDE_ROOM_2",
+          "base_label": "gOldChateauSideRoom2",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 14,
+                "max_level": 14,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 14,
+                "max_level": 15,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 15,
+                "max_level": 16,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 14,
+                "max_level": 14,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 15,
+                "max_level": 15,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_HAUNTER"
+              },
+              {
+                "min_level": 16,
+                "max_level": 16,
+                "species": "SPECIES_GASTLY"
+              },
+              {
+                "min_level": 18,
+                "max_level": 18,
+                "species": "SPECIES_HAUNTER"
+              }
+            ]
+          }
         }
       ]
     },

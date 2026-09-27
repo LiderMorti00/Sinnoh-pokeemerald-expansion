@@ -2,7 +2,7 @@
   "id": "MAP_FLOAROMA_MEADOW",
   "name": "FloaromaMeadow",
   "layout": "LAYOUT_FLOAROMA_MEADOW",
-  "music": "MUS_DUMMY",
+  "music": "MUS_FALLARBOR",
   "region_map_section": "MAPSEC_FLOAROMA_MEADOW",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

@@ -2,7 +2,7 @@
   "id": "MAP_OREBURGH_CITY_FLAT3_F1",
   "name": "OreburghCity_Flat3_F1",
   "layout": "LAYOUT_OREBURGH_CITY_FLAT3_F1",
-  "music": "MUS_DUMMY",
+  "music": "MUS_RG_FUCHSIA",
   "region_map_section": "MAPSEC_OREBURGH_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
