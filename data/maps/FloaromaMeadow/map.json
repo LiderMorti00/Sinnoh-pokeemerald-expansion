@@ -16,7 +16,6 @@
   "object_events": [
     {
       "local_id": "LOCALID_MEADOW_HONEY_MAN",
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_POKEFAN_M",
       "x": 30,
       "y": 43,
@@ -31,7 +30,6 @@
     },
     {
       "local_id": "LOCALID_MEADOW_GRUNT_1",
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
       "x": 28,
       "y": 43,
@@ -46,7 +44,6 @@
     },
     {
       "local_id": "LOCALID_MEADOW_GRUNT_2",
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_AQUA_MEMBER_M",
       "x": 28,
       "y": 42,
@@ -60,7 +57,6 @@
       "flag": "FLAG_HIDE_MEADOW_GRUNTS"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 9,
       "y": 13,
@@ -74,7 +70,6 @@
       "flag": "FLAG_ITEM_ROUTE_113_SUPER_REPEL"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 15,
       "y": 13,
@@ -88,7 +83,6 @@
       "flag": "FLAG_ITEM_ROUTE_116_ETHER"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 21,
       "y": 13,
