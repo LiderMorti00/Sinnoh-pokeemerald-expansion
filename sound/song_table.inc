@@ -653,6 +653,7 @@ gSongTable::
 	song mus_dpp_vs_cyrus, MUSIC_PLAYER_BGM, 0
 	song mus_dpp_vs_dialga_palkia, MUSIC_PLAYER_BGM, 0
 	song mus_dpp_vs_cynthia, MUSIC_PLAYER_BGM, 0
+	song mus_dpp_sandgem, MUSIC_PLAYER_BGM, 0
 
 	.align 2
 dummy_song_header:
