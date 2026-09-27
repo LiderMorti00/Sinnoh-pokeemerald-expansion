@@ -2,7 +2,7 @@
   "id": "MAP_JUBILIFE_CITY_FLAT3_F3",
   "name": "JubilifeCity_Flat3_F3",
   "layout": "LAYOUT_JUBILIFE_CITY_FLAT3_F3",
-  "music": "MUS_RUSTBORO",
+  "music": "MUS_DPP_JUBILIFE",
   "region_map_section": "MAPSEC_JUBILIFE_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

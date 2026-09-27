@@ -2,7 +2,7 @@
   "id": "MAP_ROUTE224",
   "name": "Route224",
   "layout": "LAYOUT_ROUTE224",
-  "music": "MUS_ROUTE122",
+  "music": "MUS_DPP_ROUTE210",
   "region_map_section": "MAPSEC_ROUTE_224",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
@@ -19,16 +19,8 @@
       "direction": "left"
     }
   ],
-  "object_events": [
-
-  ],
-  "warp_events": [
-
-  ],
-  "coord_events": [
-
-  ],
-  "bg_events": [
-
-  ]
+  "object_events": [],
+  "warp_events": [],
+  "coord_events": [],
+  "bg_events": []
 }

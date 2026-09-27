@@ -2,7 +2,7 @@
   "id": "MAP_ROUTE210_SOUTH",
   "name": "Route210_South",
   "layout": "LAYOUT_ROUTE210_SOUTH",
-  "music": "MUS_RG_ROUTE11",
+  "music": "MUS_DPP_ROUTE210",
   "region_map_section": "MAPSEC_ROUTE_210",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
@@ -29,16 +29,8 @@
       "direction": "right"
     }
   ],
-  "object_events": [
-
-  ],
-  "warp_events": [
-
-  ],
-  "coord_events": [
-
-  ],
-  "bg_events": [
-
-  ]
+  "object_events": [],
+  "warp_events": [],
+  "coord_events": [],
+  "bg_events": []
 }

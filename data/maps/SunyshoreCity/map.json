@@ -2,7 +2,7 @@
   "id": "MAP_SUNYSHORE_CITY",
   "name": "SunyshoreCity",
   "layout": "LAYOUT_SUNYSHORE_CITY",
-  "music": "MUS_DEWFORD",
+  "music": "MUS_DPP_SUNYSHORE",
   "region_map_section": "MAPSEC_SUNYSHORE_CITY",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
@@ -24,9 +24,7 @@
       "direction": "up"
     }
   ],
-  "object_events": [
-
-  ],
+  "object_events": [],
   "warp_events": [
     {
       "x": 4,
@@ -36,10 +34,6 @@
       "dest_warp_id": "1"
     }
   ],
-  "coord_events": [
-
-  ],
-  "bg_events": [
-
-  ]
+  "coord_events": [],
+  "bg_events": []
 }

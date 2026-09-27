@@ -2,7 +2,7 @@
   "id": "MAP_ROUTE217",
   "name": "Route217",
   "layout": "LAYOUT_ROUTE217",
-  "music": "MUS_ROUTE113",
+  "music": "MUS_DPP_ROUTE216",
   "region_map_section": "MAPSEC_ROUTE_217",
   "requires_flash": false,
   "weather": "WEATHER_SNOW",
@@ -24,16 +24,8 @@
       "direction": "down"
     }
   ],
-  "object_events": [
-
-  ],
-  "warp_events": [
-
-  ],
-  "coord_events": [
-
-  ],
-  "bg_events": [
-
-  ]
+  "object_events": [],
+  "warp_events": [],
+  "coord_events": [],
+  "bg_events": []
 }

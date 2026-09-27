@@ -2,7 +2,7 @@
   "id": "MAP_LAKE_VERITY",
   "name": "LakeVerity",
   "layout": "LAYOUT_LAKE_VERITY",
-  "music": "MUS_RG_SURF",
+  "music": "MUS_DPP_LAKE",
   "region_map_section": "MAPSEC_LAKE_VERITY",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",

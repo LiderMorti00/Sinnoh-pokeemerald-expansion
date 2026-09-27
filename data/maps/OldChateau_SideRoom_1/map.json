@@ -2,7 +2,7 @@
   "id": "MAP_OLD_CHATEAU_SIDE_ROOM_1",
   "name": "OldChateau_SideRoom_1",
   "layout": "LAYOUT_OLD_CHATEAU_SIDE_ROOM_1",
-  "music": "MUS_MT_PYRE",
+  "music": "MUS_DPP_OLD_CHATEAU",
   "region_map_section": "MAPSEC_OLD_CHATEAU",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

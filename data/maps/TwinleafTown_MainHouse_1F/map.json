@@ -2,7 +2,7 @@
   "id": "MAP_TWINLEAF_TOWN_MAIN_HOUSE_1F",
   "name": "TwinleafTown_MainHouse_1F",
   "layout": "LAYOUT_TWINLEAF_TOWN_MAIN_HOUSE_1F",
-  "music": "MUS_LITTLEROOT_TEST",
+  "music": "MUS_DPP_TWINLEAF",
   "region_map_section": "MAPSEC_TWINLEAF_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

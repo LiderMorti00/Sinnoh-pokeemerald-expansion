@@ -2,7 +2,7 @@
   "id": "MAP_SNOWPOINT_CITY",
   "name": "SnowpointCity",
   "layout": "LAYOUT_SNOWPOINT_CITY",
-  "music": "MUS_RG_FUCHSIA",
+  "music": "MUS_DPP_SNOWPOINT",
   "region_map_section": "MAPSEC_SNOWPOINT_CITY",
   "requires_flash": false,
   "weather": "WEATHER_SNOW",
@@ -19,16 +19,8 @@
       "direction": "left"
     }
   ],
-  "object_events": [
-
-  ],
-  "warp_events": [
-
-  ],
-  "coord_events": [
-
-  ],
-  "bg_events": [
-
-  ]
+  "object_events": [],
+  "warp_events": [],
+  "coord_events": [],
+  "bg_events": []
 }

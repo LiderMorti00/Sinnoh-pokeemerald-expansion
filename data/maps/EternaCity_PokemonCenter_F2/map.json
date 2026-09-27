@@ -2,7 +2,7 @@
   "id": "MAP_ETERNA_CITY_POKEMON_CENTER_F2",
   "name": "EternaCity_PokemonCenter_F2",
   "layout": "LAYOUT_ETERNA_CITY_POKEMON_CENTER_F2",
-  "music": "MUS_POKE_CENTER",
+  "music": "MUS_DPP_POKECENTER",
   "region_map_section": "MAPSEC_ETERNA_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

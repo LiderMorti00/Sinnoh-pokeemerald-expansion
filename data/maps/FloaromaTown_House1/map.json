@@ -2,7 +2,7 @@
   "id": "MAP_FLOAROMA_TOWN_HOUSE1",
   "name": "FloaromaTown_House1",
   "layout": "LAYOUT_FLOAROMA_TOWN_HOUSE1",
-  "music": "MUS_FALLARBOR",
+  "music": "MUS_DPP_FLOAROMA",
   "region_map_section": "MAPSEC_FLOAROMA_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

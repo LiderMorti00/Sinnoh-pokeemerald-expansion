@@ -2,7 +2,7 @@
   "id": "MAP_LAKE_ACUITY",
   "name": "LakeAcuity",
   "layout": "LAYOUT_LAKE_ACUITY",
-  "music": "MUS_RG_CINNABAR",
+  "music": "MUS_DPP_LAKE",
   "region_map_section": "MAPSEC_LAKE_ACUITY",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
@@ -13,16 +13,8 @@
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": 0,
-  "object_events": [
-
-  ],
-  "warp_events": [
-
-  ],
-  "coord_events": [
-
-  ],
-  "bg_events": [
-
-  ]
+  "object_events": [],
+  "warp_events": [],
+  "coord_events": [],
+  "bg_events": []
 }

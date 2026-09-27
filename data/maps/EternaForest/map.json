@@ -2,7 +2,7 @@
   "id": "MAP_ETERNA_FOREST",
   "name": "EternaForest",
   "layout": "LAYOUT_ETERNA_FOREST",
-  "music": "MUS_PETALBURG_WOODS",
+  "music": "MUS_DPP_ETERNA_FOREST",
   "region_map_section": "MAPSEC_ETERNA_FOREST",
   "requires_flash": false,
   "weather": "WEATHER_SHADE",

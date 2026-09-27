@@ -2,7 +2,7 @@
   "id": "MAP_VEILSTONE_CITY",
   "name": "VeilstoneCity",
   "layout": "LAYOUT_VEILSTONE_CITY",
-  "music": "MUS_RG_SEVII_123",
+  "music": "MUS_DPP_VEILSTONE",
   "region_map_section": "MAPSEC_VEILSTONE_CITY",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
@@ -24,9 +24,7 @@
       "direction": "down"
     }
   ],
-  "object_events": [
-
-  ],
+  "object_events": [],
   "warp_events": [
     {
       "x": 42,
@@ -57,10 +55,6 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [
-
-  ],
-  "bg_events": [
-
-  ]
+  "coord_events": [],
+  "bg_events": []
 }

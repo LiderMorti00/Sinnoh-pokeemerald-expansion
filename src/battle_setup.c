@@ -1753,7 +1753,7 @@ void PlayTrainerEncounterMusic(void)
         music = MUS_ENCOUNTER_COOL;
         break;
     case TRAINER_ENCOUNTER_MUSIC_AQUA:
-        music = MUS_ENCOUNTER_AQUA;
+        music = MUS_DPP_ENCOUNTER_GALACTIC;
         break;
     case TRAINER_ENCOUNTER_MUSIC_MAGMA:
         music = MUS_ENCOUNTER_MAGMA;

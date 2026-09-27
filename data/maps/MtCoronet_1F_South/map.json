@@ -2,7 +2,7 @@
   "id": "MAP_MT_CORONET_1F_SOUTH",
   "name": "MtCoronet_1F_South",
   "layout": "LAYOUT_MT_CORONET_1F_SOUTH",
-  "music": "MUS_RG_MT_MOON",
+  "music": "MUS_DPP_MT_CORONET",
   "region_map_section": "MAPSEC_MT_CORONET",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -13,9 +13,7 @@
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": 0,
-  "object_events": [
-
-  ],
+  "object_events": [],
   "warp_events": [
     {
       "x": 5,
@@ -32,10 +30,6 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [
-
-  ],
-  "bg_events": [
-
-  ]
+  "coord_events": [],
+  "bg_events": []
 }

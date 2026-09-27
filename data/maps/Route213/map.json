@@ -2,7 +2,7 @@
   "id": "MAP_ROUTE213",
   "name": "Route213",
   "layout": "LAYOUT_ROUTE213",
-  "music": "MUS_RG_ROUTE3",
+  "music": "MUS_DPP_ROUTE213",
   "region_map_section": "MAPSEC_ROUTE_213",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",

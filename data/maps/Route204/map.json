@@ -2,7 +2,7 @@
   "id": "MAP_ROUTE204",
   "name": "Route204",
   "layout": "LAYOUT_ROUTE204",
-  "music": "MUS_RG_ROUTE24",
+  "music": "MUS_DPP_ROUTE203",
   "region_map_section": "MAPSEC_ROUTE_204",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",

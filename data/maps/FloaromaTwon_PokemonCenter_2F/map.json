@@ -2,7 +2,7 @@
   "id": "MAP_FLOAROMA_TWON_POKEMON_CENTER_2F",
   "name": "FloaromaTwon_PokemonCenter_2F",
   "layout": "LAYOUT_FLOAROMA_TWON_POKEMON_CENTER_2F",
-  "music": "MUS_POKE_CENTER",
+  "music": "MUS_DPP_POKECENTER",
   "region_map_section": "MAPSEC_FLOAROMA_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

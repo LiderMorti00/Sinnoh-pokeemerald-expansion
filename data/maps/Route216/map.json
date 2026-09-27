@@ -2,7 +2,7 @@
   "id": "MAP_ROUTE216",
   "name": "Route216",
   "layout": "LAYOUT_ROUTE216",
-  "music": "MUS_RG_ROUTE24",
+  "music": "MUS_DPP_ROUTE216",
   "region_map_section": "MAPSEC_ROUTE_216",
   "requires_flash": false,
   "weather": "WEATHER_SNOW",
@@ -19,9 +19,7 @@
       "direction": "up"
     }
   ],
-  "object_events": [
-
-  ],
+  "object_events": [],
   "warp_events": [
     {
       "x": 87,
@@ -31,10 +29,6 @@
       "dest_warp_id": "1"
     }
   ],
-  "coord_events": [
-
-  ],
-  "bg_events": [
-
-  ]
+  "coord_events": [],
+  "bg_events": []
 }

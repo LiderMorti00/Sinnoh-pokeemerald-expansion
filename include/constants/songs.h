@@ -557,4 +557,43 @@
 #define PHONEME_ID(song)            ((song) - FIRST_PHONEME_SONG)
 #define PHONEME_ID_NONE             0xFF
 
+// Proyecto Sinnoh: música propia
+#define MUS_DPP_TWINLEAF              610
+#define MUS_DPP_LAKE                  611
+#define MUS_DPP_ROUTE201              612
+#define MUS_DPP_JUBILIFE              613
+#define MUS_DPP_LAB                   614
+#define MUS_DPP_POKECENTER            615
+#define MUS_DPP_ROUTE203              616
+#define MUS_DPP_OREBURGH              617
+#define MUS_DPP_FLOAROMA              618
+#define MUS_DPP_ROUTE205              619
+#define MUS_DPP_ETERNA_FOREST         620
+#define MUS_DPP_ETERNA                621
+#define MUS_DPP_OLD_CHATEAU           622
+#define MUS_DPP_MT_CORONET            623
+#define MUS_DPP_HEARTHOME             624
+#define MUS_DPP_VEILSTONE             625
+#define MUS_DPP_GALACTIC_HQ           626
+#define MUS_DPP_CANALAVE              627
+#define MUS_DPP_SNOWPOINT             628
+#define MUS_DPP_SUNYSHORE             629
+#define MUS_DPP_ROUTE216              630
+#define MUS_DPP_ROUTE210              631
+#define MUS_DPP_ROUTE213              632
+#define MUS_DPP_VICTORY_ROAD          633
+#define MUS_DPP_LEAGUE_OUTSIDE        634
+#define MUS_DPP_LEAGUE_INSIDE         635
+#define MUS_DPP_BATTLE_HALL           636
+#define MUS_DPP_CYCLING               637
+#define MUS_DPP_CREDITS               638
+#define MUS_DPP_VS_WILD               639
+#define MUS_DPP_VICTORY_WILD          640
+#define MUS_DPP_VS_GALACTIC           641
+#define MUS_DPP_VICTORY_GALACTIC      642
+#define MUS_DPP_ENCOUNTER_GALACTIC    643
+#define MUS_DPP_VS_CYRUS              644
+#define MUS_DPP_VS_DIALGA_PALKIA      645
+#define MUS_DPP_VS_CYNTHIA            646
+
 #endif  // GUARD_CONSTANTS_SONGS_H

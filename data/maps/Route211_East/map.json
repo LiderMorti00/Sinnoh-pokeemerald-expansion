@@ -2,7 +2,7 @@
   "id": "MAP_ROUTE211_EAST",
   "name": "Route211_East",
   "layout": "LAYOUT_ROUTE211_EAST",
-  "music": "MUS_RG_ROUTE11",
+  "music": "MUS_DPP_ROUTE210",
   "region_map_section": "MAPSEC_ROUTE_211",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
@@ -19,9 +19,7 @@
       "direction": "right"
     }
   ],
-  "object_events": [
-
-  ],
+  "object_events": [],
   "warp_events": [
     {
       "x": 4,
@@ -31,10 +29,6 @@
       "dest_warp_id": "1"
     }
   ],
-  "coord_events": [
-
-  ],
-  "bg_events": [
-
-  ]
+  "coord_events": [],
+  "bg_events": []
 }

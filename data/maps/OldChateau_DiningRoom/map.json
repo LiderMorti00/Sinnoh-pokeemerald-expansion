@@ -2,7 +2,7 @@
   "id": "MAP_OLD_CHATEAU_DINING_ROOM",
   "name": "OldChateau_DiningRoom",
   "layout": "LAYOUT_OLD_CHATEAU_DINING_ROOM",
-  "music": "MUS_MT_PYRE",
+  "music": "MUS_DPP_OLD_CHATEAU",
   "region_map_section": "MAPSEC_OLD_CHATEAU",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

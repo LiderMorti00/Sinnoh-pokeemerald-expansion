@@ -2,7 +2,7 @@
   "id": "MAP_LAKE_VALOR",
   "name": "LakeValor",
   "layout": "LAYOUT_LAKE_VALOR",
-  "music": "MUS_RG_SURF",
+  "music": "MUS_DPP_LAKE",
   "region_map_section": "MAPSEC_LAKE_VALOR",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",

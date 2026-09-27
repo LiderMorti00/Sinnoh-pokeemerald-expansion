@@ -2,7 +2,7 @@
   "id": "MAP_CANALAVE_CITY",
   "name": "CanalaveCity",
   "layout": "LAYOUT_CANALAVE_CITY",
-  "music": "MUS_FORTREE",
+  "music": "MUS_DPP_CANALAVE",
   "region_map_section": "MAPSEC_CANALAVE_CITY",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
@@ -19,9 +19,7 @@
       "direction": "right"
     }
   ],
-  "object_events": [
-
-  ],
+  "object_events": [],
   "warp_events": [
     {
       "x": 33,
@@ -31,10 +29,6 @@
       "dest_warp_id": "1"
     }
   ],
-  "coord_events": [
-
-  ],
-  "bg_events": [
-
-  ]
+  "coord_events": [],
+  "bg_events": []
 }

@@ -2,7 +2,7 @@
   "id": "MAP_ROUTE223",
   "name": "Route223",
   "layout": "LAYOUT_ROUTE223",
-  "music": "MUS_RG_ROUTE11",
+  "music": "MUS_DPP_ROUTE210",
   "region_map_section": "MAPSEC_ROUTE_223",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -24,16 +24,8 @@
       "direction": "up"
     }
   ],
-  "object_events": [
-
-  ],
-  "warp_events": [
-
-  ],
-  "coord_events": [
-
-  ],
-  "bg_events": [
-
-  ]
+  "object_events": [],
+  "warp_events": [],
+  "coord_events": [],
+  "bg_events": []
 }

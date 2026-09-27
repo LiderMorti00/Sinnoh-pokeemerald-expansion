@@ -2,7 +2,7 @@
   "id": "MAP_FLOAROMA_TOWN_FLOWER_SHOP",
   "name": "FloaromaTown_FlowerShop",
   "layout": "LAYOUT_FLOAROMA_TOWN_FLOWER_SHOP",
-  "music": "MUS_FALLARBOR",
+  "music": "MUS_DPP_FLOAROMA",
   "region_map_section": "MAPSEC_FLOAROMA_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

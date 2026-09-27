@@ -2,7 +2,7 @@
   "id": "MAP_VALLEY_WINDWORKS",
   "name": "ValleyWindworks",
   "layout": "LAYOUT_VALLEY_WINDWORKS",
-  "music": "MUS_RG_ROUTE24",
+  "music": "MUS_DPP_ROUTE205",
   "region_map_section": "MAPSEC_VALLEY_WINDWORKS",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",

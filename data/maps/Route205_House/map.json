@@ -2,7 +2,7 @@
   "id": "MAP_ROUTE205_HOUSE",
   "name": "Route205_House",
   "layout": "LAYOUT_ROUTE205_HOUSE",
-  "music": "MUS_DUMMY",
+  "music": "MUS_DPP_ROUTE205",
   "region_map_section": "MAPSEC_ROUTE_205",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
