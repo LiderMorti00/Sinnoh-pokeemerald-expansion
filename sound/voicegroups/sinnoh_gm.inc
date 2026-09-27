@@ -119,7 +119,7 @@ voice_group sinnoh_gm
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_taiko, 255, 0, 255, 0
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_taiko, 255, 0, 255, 0
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_orchestra_cymbal_crash, 255, 246, 0, 216
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_wind, 255, 0, 255, 127
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_tr909_hand_clap, 255, 226, 25, 0
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_wind, 255, 0, 255, 127
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_wind, 255, 0, 255, 127
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_wind, 255, 0, 255, 127
