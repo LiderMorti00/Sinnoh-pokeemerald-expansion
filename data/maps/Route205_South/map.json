@@ -182,7 +182,8 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route205_South_EventScript_Girl",
-      "flag": "FLAG_HIDE_ROUTE205_GRUNTS"
+      "flag": "FLAG_HIDE_ROUTE205_GRUNTS",
+      "local_id": "LOCALID_ROUTE205_GIRL"
     },
     {
       "type": "object",
@@ -371,48 +372,129 @@
     },
     {
       "type": "trigger",
-      "x": 2,
-      "y": 66,
-      "elevation": 3,
-      "var": "VAR_SINNOH_STORY",
-      "var_value": "22",
-      "script": "Route205_South_EventScript_BridgeBlock"
-    },
-    {
-      "type": "trigger",
-      "x": 3,
-      "y": 66,
-      "elevation": 3,
-      "var": "VAR_SINNOH_STORY",
-      "var_value": "22",
-      "script": "Route205_South_EventScript_BridgeBlock"
-    },
-    {
-      "type": "trigger",
-      "x": 4,
-      "y": 66,
-      "elevation": 3,
-      "var": "VAR_SINNOH_STORY",
-      "var_value": "22",
-      "script": "Route205_South_EventScript_BridgeBlock"
-    },
-    {
-      "type": "trigger",
-      "x": 5,
-      "y": 66,
-      "elevation": 3,
-      "var": "VAR_SINNOH_STORY",
-      "var_value": "22",
-      "script": "Route205_South_EventScript_BridgeBlock"
-    },
-    {
-      "type": "trigger",
       "x": 14,
-      "y": 66,
+      "y": 69,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
-      "var_value": "22",
-      "script": "Route205_South_EventScript_BridgeBlock"
+      "var_value": "20",
+      "script": "Route205_South_EventScript_GirlScene"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 69,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "20",
+      "script": "Route205_South_EventScript_GirlScene"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 69,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "20",
+      "script": "Route205_South_EventScript_GirlScene"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 69,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "20",
+      "script": "Route205_South_EventScript_GirlScene"
+    },
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 69,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "20",
+      "script": "Route205_South_EventScript_GirlScene"
+    },
+    {
+      "type": "trigger",
+      "x": 19,
+      "y": 69,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "20",
+      "script": "Route205_South_EventScript_GirlScene"
+    },
+    {
+      "type": "trigger",
+      "x": 20,
+      "y": 69,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "20",
+      "script": "Route205_South_EventScript_GirlScene"
+    },
+    {
+      "type": "trigger",
+      "x": 21,
+      "y": 69,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "20",
+      "script": "Route205_South_EventScript_GirlScene"
+    },
+    {
+      "type": "trigger",
+      "x": 22,
+      "y": 69,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "20",
+      "script": "Route205_South_EventScript_GirlScene"
+    },
+    {
+      "type": "trigger",
+      "x": 23,
+      "y": 69,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "20",
+      "script": "Route205_South_EventScript_GirlScene"
+    },
+    {
+      "type": "trigger",
+      "x": 24,
+      "y": 69,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "20",
+      "script": "Route205_South_EventScript_GirlScene"
+    },
+    {
+      "type": "trigger",
+      "x": 25,
+      "y": 69,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "20",
+      "script": "Route205_South_EventScript_GirlScene"
+    },
+    {
+      "type": "trigger",
+      "x": 26,
+      "y": 69,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "20",
+      "script": "Route205_South_EventScript_GirlScene"
+    },
+    {
+      "type": "trigger",
+      "x": 27,
+      "y": 69,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "20",
+      "script": "Route205_South_EventScript_GirlScene"
     }
   ],
   "bg_events": [

@@ -14,11 +14,8 @@ ValleyWindworks_EventScript_DoorGruntFlees::
 	playse SE_DOOR
 	removeobject LOCALID_WINDWORKS_DOOR_GRUNT
 	setflag FLAG_HIDE_WINDWORKS_DOOR_GRUNT
-	setflag FLAG_HIDE_FLOAROMA_GRUNTS
-	clearflag FLAG_HIDE_MEADOW_GRUNTS
 	playse SE_PIN
 	msgbox ValleyWindworks_Text_Locked, MSGBOX_DEFAULT
-	call_if_eq VAR_SINNOH_STORY, 20, ValleyWindworks_EventScript_SetStory21
 	release
 	end
 
@@ -28,6 +25,9 @@ ValleyWindworks_EventScript_SetStory21::
 
 ValleyWindworks_EventScript_Locked::
 	lockall
+	goto_if_unset FLAG_HIDE_WINDWORKS_DOOR_GRUNT, ValleyWindworks_EventScript_DoorEnd
+	checkitem ITEM_WORKS_KEY
+	goto_if_eq VAR_RESULT, TRUE, ValleyWindworks_EventScript_OpenDoor
 	msgbox ValleyWindworks_Text_Locked, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
@@ -35,6 +35,7 @@ ValleyWindworks_EventScript_Locked::
 	releaseall
 	end
 
+ValleyWindworks_EventScript_OpenDoor::
 ValleyWindworks_EventScript_Unlock::
 	lockall
 	msgbox ValleyWindworks_Text_Unlock, MSGBOX_DEFAULT
@@ -62,3 +63,27 @@ ValleyWindworks_Text_Locked:
 ValleyWindworks_Text_Unlock:
 	.string "{PLAYER} used the WORKS KEY. The\n"
 	.string "door is unlocked!$"
+
+ValleyWindworks_EventScript_DoorEnd::
+	releaseall
+	end
+
+ValleyWindworks_EventScript_Looker::
+	lock
+	faceplayer
+	msgbox ValleyWindworks_Text_Looker, MSGBOX_DEFAULT
+	closemessage
+	fadescreenswapbuffers FADE_TO_BLACK
+	removeobject LOCALID_WINDWORKS_LOOKER
+	setflag FLAG_HIDE_WINDWORKS_LOOKER
+	fadescreenswapbuffers FADE_FROM_BLACK
+	release
+	end
+
+ValleyWindworks_Text_Looker:
+	.string "LOOKER: So it was you who drove\n"
+	.string "TEAM GALACTIC out of the\l"
+	.string "WINDWORKS? Impressive!\p"
+	.string "My investigation tells me they\n"
+	.string "have a building in ETERNA CITY. I\l"
+	.string "will keep watching them, yes?$"

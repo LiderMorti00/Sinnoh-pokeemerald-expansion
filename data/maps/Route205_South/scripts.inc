@@ -165,3 +165,15 @@ Route205_South_Text_PtNpc1:
 	.string "I caught a WURMPLE in ETERNA\n"
 	.string "FOREST! The forest is north of the\l"
 	.string "bridge.$"
+
+Route205_South_EventScript_GirlScene::
+	lockall
+	applymovement LOCALID_ROUTE205_GIRL, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox Route205_South_Text_Girl, MSGBOX_DEFAULT
+	closemessage
+	setflag FLAG_HIDE_FLOAROMA_GRUNTS
+	clearflag FLAG_HIDE_MEADOW_GRUNTS
+	setvar VAR_SINNOH_STORY, 21
+	releaseall
+	end

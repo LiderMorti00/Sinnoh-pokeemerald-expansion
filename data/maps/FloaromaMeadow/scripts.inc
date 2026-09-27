@@ -24,7 +24,6 @@ FloaromaMeadow_EventScript_Grunts::
 	msgbox FloaromaMeadow_Text_HoneyGift, MSGBOX_DEFAULT
 	giveitem ITEM_HONEY, 10
 	msgbox FloaromaMeadow_Text_HoneyInfo, MSGBOX_DEFAULT
-	call_if_eq VAR_SINNOH_STORY, 21, FloaromaMeadow_EventScript_SetStory22
 	release
 	end
 

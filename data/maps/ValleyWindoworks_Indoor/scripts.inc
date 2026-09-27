@@ -13,7 +13,7 @@ ValleyWindoworks_Indoor_EventScript_Grunt2::
 
 ValleyWindoworks_Indoor_EventScript_Mars::
 	lockall
-	goto_if_ge VAR_SINNOH_STORY, 23, ValleyWindoworks_Indoor_EventScript_MarsEnd
+	goto_if_ge VAR_SINNOH_STORY, 22, ValleyWindoworks_Indoor_EventScript_MarsEnd
 	msgbox ValleyWindoworks_Indoor_Text_MarsIntro, MSGBOX_DEFAULT
 	closemessage
 	trainerbattle_no_intro TRAINER_BRAXTON, ValleyWindoworks_Indoor_Text_MarsDefeat
@@ -25,11 +25,12 @@ ValleyWindoworks_Indoor_EventScript_Mars::
 	removeobject LOCALID_WINDWORKS_CHARON
 	setflag FLAG_HIDE_WINDWORKS_TEAM
 	setflag FLAG_HIDE_ROUTE205_GRUNTS
+	clearflag FLAG_HIDE_WINDWORKS_LOOKER
 	fadescreenswapbuffers FADE_FROM_BLACK
 	applymovement LOCALID_WINDWORKS_WORKER, Common_Movement_FacePlayer
 	waitmovement 0
 	msgbox ValleyWindoworks_Indoor_Text_WorkerThanks, MSGBOX_DEFAULT
-	setvar VAR_SINNOH_STORY, 23
+	setvar VAR_SINNOH_STORY, 22
 ValleyWindoworks_Indoor_EventScript_MarsEnd::
 	releaseall
 	end
@@ -37,7 +38,7 @@ ValleyWindoworks_Indoor_EventScript_MarsEnd::
 ValleyWindoworks_Indoor_EventScript_Worker::
 	lock
 	faceplayer
-	goto_if_ge VAR_SINNOH_STORY, 23, ValleyWindoworks_Indoor_EventScript_WorkerAfter
+	goto_if_ge VAR_SINNOH_STORY, 22, ValleyWindoworks_Indoor_EventScript_WorkerAfter
 	msgbox ValleyWindoworks_Indoor_Text_WorkerHelp, MSGBOX_DEFAULT
 	release
 	end
