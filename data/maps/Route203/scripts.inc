@@ -224,11 +224,11 @@ Route203_Text_Sign3:
 	.string "ZUBAT fly out in dark caves. REPEL\n"
 	.string "keeps weak wild POKéMON away.$"
 
-Route203_EventScript_SignExtra1::
-	msgbox Route203_Text_SignExtra1, MSGBOX_SIGN
+Route203_EventScript_Sign4::
+	msgbox Route203_Text_Sign4, MSGBOX_SIGN
 	end
 
-Route203_Text_SignExtra1:
+Route203_Text_Sign4:
 	.string "OREBURGH GATE\p"
 	.string "The tunnel ahead leads to OREBURGH\n"
 	.string "CITY.$"

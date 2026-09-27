@@ -182,19 +182,19 @@ SandgemTown_Text_TellMom:
 	.string "I should go home to TWINLEAF and\n"
 	.string "tell Mom about my journey first.$"
 
+SandgemTown_EventScript_Sign6::
+	msgbox SandgemTown_Text_Sign6, MSGBOX_SIGN
+	end
+
+SandgemTown_Text_Sign6:
+	.string "SANDGEM TOWN\p"
+	.string "The town of sand and sea.$"
+
 SandgemTown_EventScript_Sign1::
 	msgbox SandgemTown_Text_Sign1, MSGBOX_SIGN
 	end
 
 SandgemTown_Text_Sign1:
-	.string "SANDGEM TOWN\p"
-	.string "The town of sand and sea.$"
-
-SandgemTown_EventScript_Sign2::
-	msgbox SandgemTown_Text_Sign2, MSGBOX_SIGN
-	end
-
-SandgemTown_Text_Sign2:
 	.string "POKéMON RESEARCH LAB\p"
 	.string "Professor Rowan$"
 
@@ -215,11 +215,11 @@ SandgemTown_Text_Sign4:
 	.string "Heal your POKéMON for free at any\n"
 	.string "POKéMON CENTER.$"
 
-SandgemTown_EventScript_SignExtra1::
-	msgbox SandgemTown_Text_SignExtra1, MSGBOX_SIGN
+SandgemTown_EventScript_Sign2::
+	msgbox SandgemTown_Text_Sign2, MSGBOX_SIGN
 	end
 
-SandgemTown_Text_SignExtra1:
+SandgemTown_Text_Sign2:
 	.string "TRAINER TIPS\p"
 	.string "Talk to people you meet. They may\n"
 	.string "give you useful hints or items!$"
@@ -420,10 +420,10 @@ SandgemTown_Movement_RowanExits:
 	walk_right
 	step_end
 
-SandgemTown_EventScript_PtSign1::
-	msgbox SandgemTown_Text_PtSign1, MSGBOX_SIGN
+SandgemTown_EventScript_Sign5::
+	msgbox SandgemTown_Text_Sign5, MSGBOX_SIGN
 	end
 
-SandgemTown_Text_PtSign1:
+SandgemTown_Text_Sign5:
 	.string "SANDGEM TOWN\p"
 	.string "Shining, shimmering sands.$"

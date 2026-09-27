@@ -341,7 +341,7 @@
       "y": 15,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "OreburghCity_EventScript_Sign1"
+      "script": "OreburghCity_EventScript_Sign4"
     },
     {
       "type": "sign",
@@ -349,7 +349,7 @@
       "y": 22,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "OreburghCity_EventScript_Sign2"
+      "script": "OreburghCity_EventScript_Sign6"
     },
     {
       "type": "sign",
@@ -357,7 +357,7 @@
       "y": 54,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "OreburghCity_EventScript_Sign3"
+      "script": "OreburghCity_EventScript_Sign7"
     },
     {
       "type": "hidden_item",
@@ -373,7 +373,7 @@
       "y": 13,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "OreburghCity_EventScript_PtSign1"
+      "script": "OreburghCity_EventScript_Sign3"
     },
     {
       "type": "sign",
@@ -381,7 +381,7 @@
       "y": 22,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "OreburghCity_EventScript_PtSign2"
+      "script": "OreburghCity_EventScript_Sign5"
     },
     {
       "type": "sign",
@@ -389,7 +389,7 @@
       "y": 11,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "OreburghCity_EventScript_PtSign3"
+      "script": "OreburghCity_EventScript_Sign2"
     },
     {
       "type": "sign",
@@ -397,7 +397,7 @@
       "y": 0,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "OreburghCity_EventScript_PtSign4"
+      "script": "OreburghCity_EventScript_Sign1"
     }
   ]
 }

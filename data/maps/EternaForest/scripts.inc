@@ -192,16 +192,16 @@ EternaForest_Text_PtNpc1:
 	.string "I got totally lost in here. Every\n"
 	.string "tree looks the same!$"
 
-EternaForest_EventScript_PtSign1::
-	msgbox EternaForest_Text_PtSign1, MSGBOX_SIGN
+EternaForest_EventScript_Sign2::
+	msgbox EternaForest_Text_Sign2, MSGBOX_SIGN
 	end
 
-EternaForest_Text_PtSign1:
+EternaForest_Text_Sign2:
 	.string "ETERNA FOREST$"
 
-EternaForest_EventScript_PaintedSign1::
-	msgbox EternaForest_Text_PaintedSign1, MSGBOX_SIGN
+EternaForest_EventScript_Sign1::
+	msgbox EternaForest_Text_Sign1, MSGBOX_SIGN
 	end
 
-EternaForest_Text_PaintedSign1:
+EternaForest_Text_Sign1:
 	.string "ETERNA FOREST$"

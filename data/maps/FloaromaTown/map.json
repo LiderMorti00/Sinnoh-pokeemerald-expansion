@@ -197,7 +197,7 @@
       "y": 13,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "FloaromaTown_EventScript_PaintedSign1"
+      "script": "FloaromaTown_EventScript_Sign1"
     },
     {
       "type": "sign",
@@ -205,7 +205,7 @@
       "y": 17,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "FloaromaTown_EventScript_PaintedSign2"
+      "script": "FloaromaTown_EventScript_Sign2"
     },
     {
       "type": "sign",
@@ -213,7 +213,7 @@
       "y": 20,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "FloaromaTown_EventScript_PaintedSign3"
+      "script": "FloaromaTown_EventScript_Sign3"
     },
     {
       "type": "sign",
@@ -221,7 +221,7 @@
       "y": 28,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "FloaromaTown_EventScript_PaintedSign4"
+      "script": "FloaromaTown_EventScript_Sign4"
     }
   ]
 }

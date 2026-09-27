@@ -56,25 +56,25 @@ Route205_North_Text_PtNpc1:
 	.string "The fish bite best in the morning.\n"
 	.string "Patience is key!$"
 
-Route205_North_EventScript_PtSign1::
-	msgbox Route205_North_Text_PtSign1, MSGBOX_SIGN
+Route205_North_EventScript_Sign3::
+	msgbox Route205_North_Text_Sign3, MSGBOX_SIGN
 	end
 
-Route205_North_Text_PtSign1:
+Route205_North_Text_Sign3:
 	.string "ROUTE 205\p"
 	.string "ETERNA FOREST / ETERNA CITY$"
 
-Route205_North_EventScript_PtSign2::
-	msgbox Route205_North_Text_PtSign2, MSGBOX_SIGN
+Route205_North_EventScript_Sign2::
+	msgbox Route205_North_Text_Sign2, MSGBOX_SIGN
 	end
 
-Route205_North_Text_PtSign2:
+Route205_North_Text_Sign2:
 	.string "ROUTE 205$"
 
-Route205_North_EventScript_PaintedSign1::
-	msgbox Route205_North_Text_PaintedSign1, MSGBOX_SIGN
+Route205_North_EventScript_Sign1::
+	msgbox Route205_North_Text_Sign1, MSGBOX_SIGN
 	end
 
-Route205_North_Text_PaintedSign1:
+Route205_North_Text_Sign1:
 	.string "ROUTE 205\p"
 	.string "ETERNA FOREST / ETERNA CITY$"

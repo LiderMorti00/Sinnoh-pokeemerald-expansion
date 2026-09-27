@@ -178,42 +178,42 @@ Route205_South_EventScript_GirlScene::
 	releaseall
 	end
 
-Route205_South_EventScript_PtSign1::
-	msgbox Route205_South_Text_PtSign1, MSGBOX_SIGN
+Route205_South_EventScript_Sign5::
+	msgbox Route205_South_Text_Sign5, MSGBOX_SIGN
 	end
 
-Route205_South_Text_PtSign1:
+Route205_South_Text_Sign5:
 	.string "ROUTE 205\p"
 	.string "FLOAROMA TOWN / ETERNA FOREST$"
 
-Route205_South_EventScript_PtSign2::
-	msgbox Route205_South_Text_PtSign2, MSGBOX_SIGN
+Route205_South_EventScript_Sign1::
+	msgbox Route205_South_Text_Sign1, MSGBOX_SIGN
 	end
 
-Route205_South_Text_PtSign2:
+Route205_South_Text_Sign1:
 	.string "ROUTE 205\p"
 	.string "FLOAROMA TOWN / ETERNA FOREST$"
 
-Route205_South_EventScript_PtSign3::
-	msgbox Route205_South_Text_PtSign3, MSGBOX_SIGN
+Route205_South_EventScript_Sign2::
+	msgbox Route205_South_Text_Sign2, MSGBOX_SIGN
 	end
 
-Route205_South_Text_PtSign3:
+Route205_South_Text_Sign2:
 	.string "TRAINER TIPS\p"
 	.string "Some trees can be cut down with\n"
 	.string "the HM move CUT.$"
 
-Route205_South_EventScript_PtSign4::
-	msgbox Route205_South_Text_PtSign4, MSGBOX_SIGN
+Route205_South_EventScript_Sign4::
+	msgbox Route205_South_Text_Sign4, MSGBOX_SIGN
 	end
 
-Route205_South_Text_PtSign4:
+Route205_South_Text_Sign4:
 	.string "ROUTE 205$"
 
-Route205_South_EventScript_PaintedSign1::
-	msgbox Route205_South_Text_PaintedSign1, MSGBOX_SIGN
+Route205_South_EventScript_Sign3::
+	msgbox Route205_South_Text_Sign3, MSGBOX_SIGN
 	end
 
-Route205_South_Text_PaintedSign1:
+Route205_South_Text_Sign3:
 	.string "ROUTE 205\p"
 	.string "FLOAROMA TOWN / ETERNA FOREST$"

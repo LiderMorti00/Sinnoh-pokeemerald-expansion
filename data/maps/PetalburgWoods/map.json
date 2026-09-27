@@ -258,7 +258,7 @@
       "y": 32,
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "PetalburgWoods_EventScript_Sign1"
+      "script": "PetalburgWoods_EventScript_Sign2"
     },
     {
       "type": "hidden_item",
@@ -298,7 +298,7 @@
       "y": 8,
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "PetalburgWoods_EventScript_Sign2"
+      "script": "PetalburgWoods_EventScript_Sign1"
     }
   ]
 }

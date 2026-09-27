@@ -59,33 +59,33 @@ FloaromaTown_Text_PtNpc6:
 	.string "The VALLEY WINDWORKS is east of\n"
 	.string "here, past ROUTE 205.$"
 
-FloaromaTown_EventScript_PaintedSign1::
-	msgbox FloaromaTown_Text_PaintedSign1, MSGBOX_SIGN
+FloaromaTown_EventScript_Sign1::
+	msgbox FloaromaTown_Text_Sign1, MSGBOX_SIGN
 	end
 
-FloaromaTown_Text_PaintedSign1:
+FloaromaTown_Text_Sign1:
 	.string "PICK A PECK OF COLORS FLOWER SHOP$"
 
-FloaromaTown_EventScript_PaintedSign2::
-	msgbox FloaromaTown_Text_PaintedSign2, MSGBOX_SIGN
+FloaromaTown_EventScript_Sign2::
+	msgbox FloaromaTown_Text_Sign2, MSGBOX_SIGN
 	end
 
-FloaromaTown_Text_PaintedSign2:
+FloaromaTown_Text_Sign2:
 	.string "FLOAROMA TOWN\p"
 	.string "The town of flower scents.$"
 
-FloaromaTown_EventScript_PaintedSign3::
-	msgbox FloaromaTown_Text_PaintedSign3, MSGBOX_SIGN
+FloaromaTown_EventScript_Sign3::
+	msgbox FloaromaTown_Text_Sign3, MSGBOX_SIGN
 	end
 
-FloaromaTown_Text_PaintedSign3:
+FloaromaTown_Text_Sign3:
 	.string "FLOAROMA TOWN\p"
 	.string "The town of flower scents.$"
 
-FloaromaTown_EventScript_PaintedSign4::
-	msgbox FloaromaTown_Text_PaintedSign4, MSGBOX_SIGN
+FloaromaTown_EventScript_Sign4::
+	msgbox FloaromaTown_Text_Sign4, MSGBOX_SIGN
 	end
 
-FloaromaTown_Text_PaintedSign4:
+FloaromaTown_Text_Sign4:
 	.string "POKéMON CENTER\p"
 	.string "Heal your POKéMON!$"

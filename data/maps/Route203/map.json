@@ -246,7 +246,7 @@
       "y": 18,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route203_EventScript_SignExtra1"
+      "script": "Route203_EventScript_Sign4"
     }
   ]
 }

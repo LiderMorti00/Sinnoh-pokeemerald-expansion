@@ -142,33 +142,33 @@ Route204_Text_PtNpcN3:
 	.string "Make sure you have two POKéMON\l"
 	.string "ready!$"
 
-Route204_EventScript_PtSign1::
-	msgbox Route204_Text_PtSign1, MSGBOX_SIGN
+Route204_EventScript_Sign3::
+	msgbox Route204_Text_Sign3, MSGBOX_SIGN
 	end
 
-Route204_Text_PtSign1:
+Route204_Text_Sign3:
 	.string "ROUTE 204$"
 
-Route204_EventScript_PaintedSign1::
-	msgbox Route204_Text_PaintedSign1, MSGBOX_SIGN
+Route204_EventScript_Sign1::
+	msgbox Route204_Text_Sign1, MSGBOX_SIGN
 	end
 
-Route204_Text_PaintedSign1:
+Route204_Text_Sign1:
 	.string "ROUTE 204\p"
 	.string "JUBILIFE CITY / FLOAROMA TOWN$"
 
-Route204_EventScript_PaintedSign2::
-	msgbox Route204_Text_PaintedSign2, MSGBOX_SIGN
+Route204_EventScript_Sign2::
+	msgbox Route204_Text_Sign2, MSGBOX_SIGN
 	end
 
-Route204_Text_PaintedSign2:
+Route204_Text_Sign2:
 	.string "ROUTE 204\p"
 	.string "JUBILIFE CITY / FLOAROMA TOWN$"
 
-Route204_EventScript_PaintedSign3::
-	msgbox Route204_Text_PaintedSign3, MSGBOX_SIGN
+Route204_EventScript_Sign4::
+	msgbox Route204_Text_Sign4, MSGBOX_SIGN
 	end
 
-Route204_Text_PaintedSign3:
+Route204_Text_Sign4:
 	.string "ROUTE 204\p"
 	.string "JUBILIFE CITY / FLOAROMA TOWN$"

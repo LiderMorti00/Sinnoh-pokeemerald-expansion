@@ -1173,7 +1173,7 @@
       "y": 52,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "JubilifeCity_EventScript_Sign1"
+      "script": "JubilifeCity_EventScript_Sign10"
     },
     {
       "type": "sign",
@@ -1181,7 +1181,7 @@
       "y": 37,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "JubilifeCity_EventScript_Sign2"
+      "script": "JubilifeCity_EventScript_Sign8"
     },
     {
       "type": "sign",
@@ -1189,7 +1189,7 @@
       "y": 16,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "JubilifeCity_EventScript_Sign3"
+      "script": "JubilifeCity_EventScript_Sign2"
     },
     {
       "type": "sign",
@@ -1197,7 +1197,7 @@
       "y": 16,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "JubilifeCity_EventScript_Sign4"
+      "script": "JubilifeCity_EventScript_Sign3"
     },
     {
       "type": "hidden_item",
@@ -1213,7 +1213,7 @@
       "y": 6,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "JubilifeCity_EventScript_PtSign1"
+      "script": "JubilifeCity_EventScript_Sign1"
     },
     {
       "type": "sign",
@@ -1221,7 +1221,7 @@
       "y": 17,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "JubilifeCity_EventScript_PtSign2"
+      "script": "JubilifeCity_EventScript_Sign5"
     },
     {
       "type": "sign",
@@ -1229,7 +1229,7 @@
       "y": 18,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "JubilifeCity_EventScript_PtSign3"
+      "script": "JubilifeCity_EventScript_Sign6"
     },
     {
       "type": "sign",
@@ -1237,7 +1237,7 @@
       "y": 36,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "JubilifeCity_EventScript_PtSign4"
+      "script": "JubilifeCity_EventScript_Sign7"
     },
     {
       "type": "sign",
@@ -1245,7 +1245,7 @@
       "y": 17,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "JubilifeCity_EventScript_PtSign5"
+      "script": "JubilifeCity_EventScript_Sign4"
     },
     {
       "type": "sign",
@@ -1253,7 +1253,7 @@
       "y": 42,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "JubilifeCity_EventScript_PtSign6"
+      "script": "JubilifeCity_EventScript_Sign9"
     }
   ]
 }

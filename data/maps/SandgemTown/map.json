@@ -433,7 +433,7 @@
       "y": 21,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "SandgemTown_EventScript_Sign1"
+      "script": "SandgemTown_EventScript_Sign6"
     },
     {
       "type": "sign",
@@ -441,7 +441,7 @@
       "y": 8,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "SandgemTown_EventScript_Sign2"
+      "script": "SandgemTown_EventScript_Sign1"
     },
     {
       "type": "sign",
@@ -473,7 +473,7 @@
       "y": 8,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "SandgemTown_EventScript_SignExtra1"
+      "script": "SandgemTown_EventScript_Sign2"
     },
     {
       "type": "sign",
@@ -481,7 +481,7 @@
       "y": 20,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "SandgemTown_EventScript_PtSign1"
+      "script": "SandgemTown_EventScript_Sign5"
     }
   ]
 }

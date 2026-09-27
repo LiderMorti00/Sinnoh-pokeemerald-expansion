@@ -2,37 +2,37 @@ JubilifeCity_MapScripts::
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, JubilifeCity_OnFrame
 	.byte 0
 
-JubilifeCity_EventScript_Sign1::
-	msgbox JubilifeCity_Text_Sign1, MSGBOX_SIGN
+JubilifeCity_EventScript_Sign10::
+	msgbox JubilifeCity_Text_Sign10, MSGBOX_SIGN
 	end
 
-JubilifeCity_Text_Sign1:
+JubilifeCity_Text_Sign10:
 	.string "JUBILIFE CITY\p"
 	.string "The most modern city in Sinnoh.$"
+
+JubilifeCity_EventScript_Sign8::
+	msgbox JubilifeCity_Text_Sign8, MSGBOX_SIGN
+	end
+
+JubilifeCity_Text_Sign8:
+	.string "TRAINERS' SCHOOL\p"
+	.string "Learn the basics of POKéMON\n"
+	.string "battling!$"
 
 JubilifeCity_EventScript_Sign2::
 	msgbox JubilifeCity_Text_Sign2, MSGBOX_SIGN
 	end
 
 JubilifeCity_Text_Sign2:
-	.string "TRAINERS' SCHOOL\p"
-	.string "Learn the basics of POKéMON\n"
-	.string "battling!$"
+	.string "POKéTCH COMPANY\p"
+	.string "Making life easier for Trainers\n"
+	.string "everywhere.$"
 
 JubilifeCity_EventScript_Sign3::
 	msgbox JubilifeCity_Text_Sign3, MSGBOX_SIGN
 	end
 
 JubilifeCity_Text_Sign3:
-	.string "POKéTCH COMPANY\p"
-	.string "Making life easier for Trainers\n"
-	.string "everywhere.$"
-
-JubilifeCity_EventScript_Sign4::
-	msgbox JubilifeCity_Text_Sign4, MSGBOX_SIGN
-	end
-
-JubilifeCity_Text_Sign4:
 	.string "JUBILIFE TV\p"
 	.string "Broadcasting across all of Sinnoh.$"
 
@@ -502,49 +502,49 @@ JubilifeCity_Text_BlockNorth:
 	.string "cave. I'd better get the BADGE\l"
 	.string "from OREBURGH GYM first.$"
 
-JubilifeCity_EventScript_PtSign1::
-	msgbox JubilifeCity_Text_PtSign1, MSGBOX_SIGN
+JubilifeCity_EventScript_Sign1::
+	msgbox JubilifeCity_Text_Sign1, MSGBOX_SIGN
 	end
 
-JubilifeCity_Text_PtSign1:
+JubilifeCity_Text_Sign1:
 	.string "JUBILIFE CITY\p"
 	.string "The most modern city in Sinnoh.$"
 
-JubilifeCity_EventScript_PtSign2::
-	msgbox JubilifeCity_Text_PtSign2, MSGBOX_SIGN
+JubilifeCity_EventScript_Sign5::
+	msgbox JubilifeCity_Text_Sign5, MSGBOX_SIGN
 	end
 
-JubilifeCity_Text_PtSign2:
+JubilifeCity_Text_Sign5:
 	.string "JUBILIFE CITY\p"
 	.string "The most modern city in Sinnoh.$"
 
-JubilifeCity_EventScript_PtSign3::
-	msgbox JubilifeCity_Text_PtSign3, MSGBOX_SIGN
+JubilifeCity_EventScript_Sign6::
+	msgbox JubilifeCity_Text_Sign6, MSGBOX_SIGN
 	end
 
-JubilifeCity_Text_PtSign3:
+JubilifeCity_Text_Sign6:
 	.string "JUBILIFE CITY\p"
 	.string "The most modern city in Sinnoh.$"
 
-JubilifeCity_EventScript_PtSign4::
-	msgbox JubilifeCity_Text_PtSign4, MSGBOX_SIGN
+JubilifeCity_EventScript_Sign7::
+	msgbox JubilifeCity_Text_Sign7, MSGBOX_SIGN
 	end
 
-JubilifeCity_Text_PtSign4:
+JubilifeCity_Text_Sign7:
 	.string "JUBILIFE CITY\p"
 	.string "The most modern city in Sinnoh.$"
 
-JubilifeCity_EventScript_PtSign5::
-	msgbox JubilifeCity_Text_PtSign5, MSGBOX_SIGN
+JubilifeCity_EventScript_Sign4::
+	msgbox JubilifeCity_Text_Sign4, MSGBOX_SIGN
 	end
 
-JubilifeCity_Text_PtSign5:
+JubilifeCity_Text_Sign4:
 	.string "CONDOMINIUMS$"
 
-JubilifeCity_EventScript_PtSign6::
-	msgbox JubilifeCity_Text_PtSign6, MSGBOX_SIGN
+JubilifeCity_EventScript_Sign9::
+	msgbox JubilifeCity_Text_Sign9, MSGBOX_SIGN
 	end
 
-JubilifeCity_Text_PtSign6:
+JubilifeCity_Text_Sign9:
 	.string "JUBILIFE CITY\p"
 	.string "The most modern city in Sinnoh.$"

@@ -42,10 +42,10 @@ TwinleafTown_Text_PtNpc3:
 	.string "makes the best music. Want to hear\l"
 	.string "a song?$"
 
-TwinleafTown_EventScript_PtSign1::
-	msgbox TwinleafTown_Text_PtSign1, MSGBOX_SIGN
+TwinleafTown_EventScript_Sign1::
+	msgbox TwinleafTown_Text_Sign1, MSGBOX_SIGN
 	end
 
-TwinleafTown_Text_PtSign1:
+TwinleafTown_Text_Sign1:
 	.string "TWINLEAF TOWN\p"
 	.string "Fresh and free!$"

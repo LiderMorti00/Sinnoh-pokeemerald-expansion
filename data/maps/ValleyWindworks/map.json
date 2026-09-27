@@ -128,7 +128,7 @@
       "y": 84,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "ValleyWindworks_EventScript_PaintedSign1"
+      "script": "ValleyWindworks_EventScript_Sign1"
     }
   ]
 }

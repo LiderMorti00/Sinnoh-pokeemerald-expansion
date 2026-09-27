@@ -261,11 +261,11 @@ PetalburgWoods_EventScript_ExplainMiracleSeed::
 	release
 	end
 
-PetalburgWoods_EventScript_Sign1::
+PetalburgWoods_EventScript_Sign2::
 	msgbox PetalburgWoods_Text_TrainerTipsExperience, MSGBOX_SIGN
 	end
 
-PetalburgWoods_EventScript_Sign2::
+PetalburgWoods_EventScript_Sign1::
 	msgbox PetalburgWoods_Text_TrainerTipsPP, MSGBOX_SIGN
 	end
 

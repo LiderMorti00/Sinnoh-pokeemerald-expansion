@@ -15,28 +15,28 @@ OreburghCity_Text_GymClosed:
 	.string "GYM LEADER ROARK is working at the\l"
 	.string "OREBURGH MINE, south of town.$"
 
-OreburghCity_EventScript_Sign1::
-	msgbox OreburghCity_Text_Sign1, MSGBOX_SIGN
+OreburghCity_EventScript_Sign4::
+	msgbox OreburghCity_Text_Sign4, MSGBOX_SIGN
 	end
 
-OreburghCity_Text_Sign1:
+OreburghCity_Text_Sign4:
 	.string "OREBURGH CITY\p"
 	.string "The energetic town of coal.$"
 
-OreburghCity_EventScript_Sign2::
-	msgbox OreburghCity_Text_Sign2, MSGBOX_SIGN
+OreburghCity_EventScript_Sign6::
+	msgbox OreburghCity_Text_Sign6, MSGBOX_SIGN
 	end
 
-OreburghCity_Text_Sign2:
+OreburghCity_Text_Sign6:
 	.string "OREBURGH CITY POKéMON GYM\p"
 	.string "LEADER: ROARK\p"
 	.string "The rock-solid POKéMON pro!$"
 
-OreburghCity_EventScript_Sign3::
-	msgbox OreburghCity_Text_Sign3, MSGBOX_SIGN
+OreburghCity_EventScript_Sign7::
+	msgbox OreburghCity_Text_Sign7, MSGBOX_SIGN
 	end
 
-OreburghCity_Text_Sign3:
+OreburghCity_Text_Sign7:
 	.string "OREBURGH MINE\p"
 	.string "Coal mining site. Watch your step!$"
 
@@ -158,34 +158,34 @@ OreburghCity_Text_PtNpc15:
 	.string "We help carry coal with our\n"
 	.string "MACHOP. They never get tired!$"
 
-OreburghCity_EventScript_PtSign1::
-	msgbox OreburghCity_Text_PtSign1, MSGBOX_SIGN
+OreburghCity_EventScript_Sign3::
+	msgbox OreburghCity_Text_Sign3, MSGBOX_SIGN
 	end
 
-OreburghCity_Text_PtSign1:
+OreburghCity_Text_Sign3:
 	.string "OREBURGH GATE$"
 
-OreburghCity_EventScript_PtSign2::
-	msgbox OreburghCity_Text_PtSign2, MSGBOX_SIGN
+OreburghCity_EventScript_Sign5::
+	msgbox OreburghCity_Text_Sign5, MSGBOX_SIGN
 	end
 
-OreburghCity_Text_PtSign2:
+OreburghCity_Text_Sign5:
 	.string "OREBURGH CITY POKéMON GYM\p"
 	.string "LEADER: ROARK\p"
 	.string "The rock-hard Trainer!$"
 
-OreburghCity_EventScript_PtSign3::
-	msgbox OreburghCity_Text_PtSign3, MSGBOX_SIGN
+OreburghCity_EventScript_Sign2::
+	msgbox OreburghCity_Text_Sign2, MSGBOX_SIGN
 	end
 
-OreburghCity_Text_PtSign3:
+OreburghCity_Text_Sign2:
 	.string "OREBURGH CITY\p"
 	.string "The energetic town of coal.$"
 
-OreburghCity_EventScript_PtSign4::
-	msgbox OreburghCity_Text_PtSign4, MSGBOX_SIGN
+OreburghCity_EventScript_Sign1::
+	msgbox OreburghCity_Text_Sign1, MSGBOX_SIGN
 	end
 
-OreburghCity_Text_PtSign4:
+OreburghCity_Text_Sign1:
 	.string "OREBURGH CITY\p"
 	.string "The energetic town of coal.$"
