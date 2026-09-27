@@ -596,5 +596,6 @@
 #define MUS_DPP_VS_DIALGA_PALKIA      645
 #define MUS_DPP_VS_CYNTHIA            646
 #define MUS_DPP_SANDGEM               647
+#define MUS_DPP_PASTORIA              648
 
 #endif  // GUARD_CONSTANTS_SONGS_H

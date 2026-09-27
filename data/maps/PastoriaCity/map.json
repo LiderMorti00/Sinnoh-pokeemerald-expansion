@@ -2,7 +2,7 @@
   "id": "MAP_PASTORIA_CITY",
   "name": "PastoriaCity",
   "layout": "LAYOUT_PASTORIA_CITY",
-  "music": "MUS_LILYCOVE",
+  "music": "MUS_DPP_PASTORIA",
   "region_map_section": "MAPSEC_PASTORIA_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -24,9 +24,7 @@
       "direction": "left"
     }
   ],
-  "object_events": [
-
-  ],
+  "object_events": [],
   "warp_events": [
     {
       "x": 63,
@@ -36,10 +34,6 @@
       "dest_warp_id": "1"
     }
   ],
-  "coord_events": [
-
-  ],
-  "bg_events": [
-
-  ]
+  "coord_events": [],
+  "bg_events": []
 }

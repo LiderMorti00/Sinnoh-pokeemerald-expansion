@@ -2,7 +2,7 @@
   "id": "MAP_SOLACEON_TOWN",
   "name": "SolaceonTown",
   "layout": "LAYOUT_SOLACEON_TOWN",
-  "music": "MUS_LITTLEROOT_TEST",
+  "music": "MUS_DPP_PASTORIA",
   "region_map_section": "MAPSEC_SOLACEON_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
@@ -24,16 +24,8 @@
       "direction": "up"
     }
   ],
-  "object_events": [
-
-  ],
-  "warp_events": [
-
-  ],
-  "coord_events": [
-
-  ],
-  "bg_events": [
-
-  ]
+  "object_events": [],
+  "warp_events": [],
+  "coord_events": [],
+  "bg_events": []
 }
