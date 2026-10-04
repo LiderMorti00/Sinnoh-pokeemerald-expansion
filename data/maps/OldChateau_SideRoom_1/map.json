@@ -5,13 +5,13 @@
   "music": "MUS_DPP_OLD_CHATEAU",
   "region_map_section": "MAPSEC_OLD_CHATEAU",
   "requires_flash": false,
-  "weather": "WEATHER_NONE",
+  "weather": "WEATHER_SHADE",
   "map_type": "MAP_TYPE_NONE",
   "allow_cycling": false,
   "allow_escaping": false,
   "allow_running": false,
   "show_map_name": true,
-  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "battle_scene": "MAP_BATTLE_SCENE_INDOOR_1",
   "connections": null,
   "object_events": [
     {
