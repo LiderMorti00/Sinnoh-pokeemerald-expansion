@@ -492,14 +492,6 @@
     },
     {
       "type": "sign",
-      "x": 26,
-      "y": 89,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route205_South_EventScript_Sign5"
-    },
-    {
-      "type": "sign",
       "x": 17,
       "y": 18,
       "elevation": 0,
@@ -513,14 +505,6 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route205_South_EventScript_Sign2"
-    },
-    {
-      "type": "sign",
-      "x": 0,
-      "y": 86,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route205_South_EventScript_Sign4"
     },
     {
       "type": "sign",

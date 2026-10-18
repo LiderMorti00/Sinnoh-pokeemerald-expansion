@@ -15,7 +15,6 @@
   "connections": null,
   "object_events": [
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SCHOOL_KID_M",
       "x": 4,
       "y": 4,
@@ -29,7 +28,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
       "x": 12,
       "y": 2,
@@ -43,7 +41,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
       "x": 8,
       "y": 5,
@@ -58,7 +55,6 @@
     },
     {
       "local_id": "LOCALID_ETERNA_NURSE",
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_NURSE",
       "x": 7,
       "y": 2,
