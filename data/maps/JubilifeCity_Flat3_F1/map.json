@@ -16,7 +16,7 @@
   "object_events": [
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
+      "graphics_id": "OBJ_EVENT_GFX_OLD_WOMAN_FRLG",
       "x": 11,
       "y": 4,
       "elevation": 3,
@@ -58,7 +58,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_BEAUTY",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_BEAUTY",
       "x": 2,
       "y": 2,
       "elevation": 3,

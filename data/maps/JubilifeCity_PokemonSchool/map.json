@@ -15,7 +15,7 @@
   "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_4",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_MIDDLE_AGED_WOMAN",
       "x": 6,
       "y": 5,
       "elevation": 3,
@@ -28,7 +28,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
+      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER_FRLG",
       "x": 11,
       "y": 8,
       "elevation": 3,
@@ -41,7 +41,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_LASS",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_LASS",
       "x": 0,
       "y": 7,
       "elevation": 3,
@@ -54,7 +54,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
+      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER_FRLG",
       "x": 4,
       "y": 7,
       "elevation": 3,
@@ -67,7 +67,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SCHOOL_KID_M",
+      "graphics_id": "OBJ_EVENT_GFX_BOY",
       "x": 10,
       "y": 3,
       "elevation": 3,
@@ -80,7 +80,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
+      "graphics_id": "OBJ_EVENT_GFX_LASS_FRLG",
       "x": 11,
       "y": 3,
       "elevation": 3,
@@ -94,7 +94,7 @@
     },
     {
       "local_id": "LOCALID_SCHOOL_BARRY",
-      "graphics_id": "OBJ_EVENT_GFX_WALLY",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_BARRY",
       "x": 3,
       "y": 2,
       "elevation": 3,
@@ -107,7 +107,7 @@
       "flag": "FLAG_HIDE_SCHOOL_BARRY"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SCHOOL_KID_M",
+      "graphics_id": "OBJ_EVENT_GFX_BOY",
       "x": 8,
       "y": 3,
       "elevation": 3,
@@ -120,7 +120,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_SCHOOL_KID_F",
       "x": 9,
       "y": 4,
       "elevation": 3,

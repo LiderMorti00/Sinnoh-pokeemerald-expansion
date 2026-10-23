@@ -16,7 +16,7 @@
   "object_events": [
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+      "graphics_id": "OBJ_EVENT_GFX_ROCKER",
       "x": 0,
       "y": 5,
       "elevation": 3,
@@ -30,7 +30,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_LASS",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_LASS",
       "x": 3,
       "y": 5,
       "elevation": 3,

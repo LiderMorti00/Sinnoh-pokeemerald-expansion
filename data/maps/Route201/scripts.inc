@@ -6,11 +6,11 @@ Route201_OnTransition:
 	call_if_eq VAR_SINNOH_HAS_POKEMON, 1, Sinnoh_EventScript_SetPokemonMenu
 	checkplayergender
 	goto_if_eq VAR_RESULT, MALE, Route201_EventScript_SetDawnGfx
-	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_SINNOH_LUCAS
 	end
 
 Route201_EventScript_SetDawnGfx::
-	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RIVAL_MAY_NORMAL
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_SINNOH_DAWN
 	end
 
 Route201_EventScript_Barry::
