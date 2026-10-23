@@ -16,7 +16,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_MINE_ROARK",
-      "graphics_id": "OBJ_EVENT_GFX_HIKER",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_ROARK",
       "x": 18,
       "y": 25,
       "elevation": 3,
@@ -29,7 +29,7 @@
       "flag": "FLAG_HIDE_MINE_ROARK"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_HIKER",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_HIKER",
       "x": 26,
       "y": 21,
       "elevation": 3,
@@ -42,7 +42,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_HIKER",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_HIKER",
       "x": 8,
       "y": 25,
       "elevation": 3,
@@ -56,7 +56,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_HIKER",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_HIKER",
       "x": 21,
       "y": 15,
       "elevation": 3,

@@ -1,6 +1,17 @@
 JubilifeCity_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, JubilifeCity_OnTransition
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, JubilifeCity_OnFrame
 	.byte 0
+
+JubilifeCity_OnTransition:
+	checkplayergender
+	goto_if_eq VAR_RESULT, MALE, JubilifeCity_EventScript_SetDawnGfx
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_SINNOH_LUCAS
+	end
+
+JubilifeCity_EventScript_SetDawnGfx::
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_SINNOH_DAWN
+	end
 
 JubilifeCity_EventScript_Sign10::
 	msgbox JubilifeCity_Text_Sign10, MSGBOX_SIGN

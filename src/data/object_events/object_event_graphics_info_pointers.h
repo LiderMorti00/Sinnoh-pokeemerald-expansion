@@ -401,6 +401,83 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedMauvi
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedMauvilleOldMan2;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ApricornTree;
 
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohArgenta;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohArtist;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohBarry;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohBruja;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohByron;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohWaitress;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohWaiter;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohBugCatcher;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohCharon;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohParasolLady;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohCyclistM;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohScientistF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohScientistM;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohBreederF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohBreederM;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohCynthia;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohCyrus;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohLady;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohDarach;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohDawn;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohDragonTamer;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohGentleman;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohAceTrainerF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohAceTrainerM;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohAceTrainerSnowF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohAceTrainerSnowM;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohSchoolKidF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohSkierM;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohSkierF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohFantina;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohFlint;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohBertha;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohGalaxyGruntF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohGalaxyGruntM;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohFatMan;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohGuitarist;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohJupiter;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohLass;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohLooker;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohLucas;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohBattleGirl;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMaylene;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohSocialite;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMars;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohPsychicF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohPsychicM;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohBeauty;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohHiker;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohLittleGirl;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohRichBoy;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohWorker;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohBirdKeeper;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohPalmer;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohClown;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohPokeKid;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohCollector;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohPokefanM;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohPokefanF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohRangerF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohRangerM;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohPoliceman;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohReceptionist;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohRuinManiac;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohSaturn;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohRowan;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMiddleAgedWoman;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohAromaLady;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMaid;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohVolkner;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohWake;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMira;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohRoark;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohGardenia;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohCandice;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohAaron;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohLucian;
+
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
     [OBJ_EVENT_GFX_BRENDAN_MACH_BIKE] =        &gObjectEventGraphicsInfo_BrendanMachBike,
@@ -645,7 +722,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_OW_MON] =                   &gObjectEventGraphicsInfo_Follower,
     [OBJ_EVENT_GFX_LIGHT_SPRITE] =             &gObjectEventGraphicsInfo_BallLight,
     [OBJ_EVENT_GFX_APRICORN_TREE] =            &gObjectEventGraphicsInfo_ApricornTree,
-#if IS_FRLG
+#if 1 // Proyecto Sinnoh: gráficos de Rojo Fuego siempre disponibles (antes IS_FRLG)
     [OBJ_EVENT_GFX_RED_NORMAL] =               &gObjectEventGraphicsInfo_RedNormal,
     [OBJ_EVENT_GFX_RED_BIKE] =                 &gObjectEventGraphicsInfo_RedBike,
     [OBJ_EVENT_GFX_RED_SURF] =                 &gObjectEventGraphicsInfo_RedSurf,
@@ -791,6 +868,83 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_DEOXYS_N]                 = &gObjectEventGraphicsInfo_DeoxysN,
     [OBJ_EVENT_GFX_SS_ANNE]                  = &gObjectEventGraphicsInfo_SSAnne,
 #endif // IS_FRLG
+    // Proyecto Sinnoh
+    [OBJ_EVENT_GFX_SINNOH_ARGENTA] = &gObjectEventGraphicsInfo_SinnohArgenta,
+    [OBJ_EVENT_GFX_SINNOH_ARTIST] = &gObjectEventGraphicsInfo_SinnohArtist,
+    [OBJ_EVENT_GFX_SINNOH_BARRY] = &gObjectEventGraphicsInfo_SinnohBarry,
+    [OBJ_EVENT_GFX_SINNOH_BRUJA] = &gObjectEventGraphicsInfo_SinnohBruja,
+    [OBJ_EVENT_GFX_SINNOH_BYRON] = &gObjectEventGraphicsInfo_SinnohByron,
+    [OBJ_EVENT_GFX_SINNOH_WAITRESS] = &gObjectEventGraphicsInfo_SinnohWaitress,
+    [OBJ_EVENT_GFX_SINNOH_WAITER] = &gObjectEventGraphicsInfo_SinnohWaiter,
+    [OBJ_EVENT_GFX_SINNOH_BUG_CATCHER] = &gObjectEventGraphicsInfo_SinnohBugCatcher,
+    [OBJ_EVENT_GFX_SINNOH_CHARON] = &gObjectEventGraphicsInfo_SinnohCharon,
+    [OBJ_EVENT_GFX_SINNOH_PARASOL_LADY] = &gObjectEventGraphicsInfo_SinnohParasolLady,
+    [OBJ_EVENT_GFX_SINNOH_CYCLIST_M] = &gObjectEventGraphicsInfo_SinnohCyclistM,
+    [OBJ_EVENT_GFX_SINNOH_SCIENTIST_F] = &gObjectEventGraphicsInfo_SinnohScientistF,
+    [OBJ_EVENT_GFX_SINNOH_SCIENTIST_M] = &gObjectEventGraphicsInfo_SinnohScientistM,
+    [OBJ_EVENT_GFX_SINNOH_BREEDER_F] = &gObjectEventGraphicsInfo_SinnohBreederF,
+    [OBJ_EVENT_GFX_SINNOH_BREEDER_M] = &gObjectEventGraphicsInfo_SinnohBreederM,
+    [OBJ_EVENT_GFX_SINNOH_CYNTHIA] = &gObjectEventGraphicsInfo_SinnohCynthia,
+    [OBJ_EVENT_GFX_SINNOH_CYRUS] = &gObjectEventGraphicsInfo_SinnohCyrus,
+    [OBJ_EVENT_GFX_SINNOH_LADY] = &gObjectEventGraphicsInfo_SinnohLady,
+    [OBJ_EVENT_GFX_SINNOH_DARACH] = &gObjectEventGraphicsInfo_SinnohDarach,
+    [OBJ_EVENT_GFX_SINNOH_DAWN] = &gObjectEventGraphicsInfo_SinnohDawn,
+    [OBJ_EVENT_GFX_SINNOH_DRAGON_TAMER] = &gObjectEventGraphicsInfo_SinnohDragonTamer,
+    [OBJ_EVENT_GFX_SINNOH_GENTLEMAN] = &gObjectEventGraphicsInfo_SinnohGentleman,
+    [OBJ_EVENT_GFX_SINNOH_ACE_TRAINER_F] = &gObjectEventGraphicsInfo_SinnohAceTrainerF,
+    [OBJ_EVENT_GFX_SINNOH_ACE_TRAINER_M] = &gObjectEventGraphicsInfo_SinnohAceTrainerM,
+    [OBJ_EVENT_GFX_SINNOH_ACE_TRAINER_SNOW_F] = &gObjectEventGraphicsInfo_SinnohAceTrainerSnowF,
+    [OBJ_EVENT_GFX_SINNOH_ACE_TRAINER_SNOW_M] = &gObjectEventGraphicsInfo_SinnohAceTrainerSnowM,
+    [OBJ_EVENT_GFX_SINNOH_SCHOOL_KID_F] = &gObjectEventGraphicsInfo_SinnohSchoolKidF,
+    [OBJ_EVENT_GFX_SINNOH_SKIER_M] = &gObjectEventGraphicsInfo_SinnohSkierM,
+    [OBJ_EVENT_GFX_SINNOH_SKIER_F] = &gObjectEventGraphicsInfo_SinnohSkierF,
+    [OBJ_EVENT_GFX_SINNOH_FANTINA] = &gObjectEventGraphicsInfo_SinnohFantina,
+    [OBJ_EVENT_GFX_SINNOH_FLINT] = &gObjectEventGraphicsInfo_SinnohFlint,
+    [OBJ_EVENT_GFX_SINNOH_BERTHA] = &gObjectEventGraphicsInfo_SinnohBertha,
+    [OBJ_EVENT_GFX_SINNOH_GALAXY_GRUNT_F] = &gObjectEventGraphicsInfo_SinnohGalaxyGruntF,
+    [OBJ_EVENT_GFX_SINNOH_GALAXY_GRUNT_M] = &gObjectEventGraphicsInfo_SinnohGalaxyGruntM,
+    [OBJ_EVENT_GFX_SINNOH_FAT_MAN] = &gObjectEventGraphicsInfo_SinnohFatMan,
+    [OBJ_EVENT_GFX_SINNOH_GUITARIST] = &gObjectEventGraphicsInfo_SinnohGuitarist,
+    [OBJ_EVENT_GFX_SINNOH_JUPITER] = &gObjectEventGraphicsInfo_SinnohJupiter,
+    [OBJ_EVENT_GFX_SINNOH_LASS] = &gObjectEventGraphicsInfo_SinnohLass,
+    [OBJ_EVENT_GFX_SINNOH_LOOKER] = &gObjectEventGraphicsInfo_SinnohLooker,
+    [OBJ_EVENT_GFX_SINNOH_LUCAS] = &gObjectEventGraphicsInfo_SinnohLucas,
+    [OBJ_EVENT_GFX_SINNOH_BATTLE_GIRL] = &gObjectEventGraphicsInfo_SinnohBattleGirl,
+    [OBJ_EVENT_GFX_SINNOH_MAYLENE] = &gObjectEventGraphicsInfo_SinnohMaylene,
+    [OBJ_EVENT_GFX_SINNOH_SOCIALITE] = &gObjectEventGraphicsInfo_SinnohSocialite,
+    [OBJ_EVENT_GFX_SINNOH_MARS] = &gObjectEventGraphicsInfo_SinnohMars,
+    [OBJ_EVENT_GFX_SINNOH_PSYCHIC_F] = &gObjectEventGraphicsInfo_SinnohPsychicF,
+    [OBJ_EVENT_GFX_SINNOH_PSYCHIC_M] = &gObjectEventGraphicsInfo_SinnohPsychicM,
+    [OBJ_EVENT_GFX_SINNOH_BEAUTY] = &gObjectEventGraphicsInfo_SinnohBeauty,
+    [OBJ_EVENT_GFX_SINNOH_HIKER] = &gObjectEventGraphicsInfo_SinnohHiker,
+    [OBJ_EVENT_GFX_SINNOH_LITTLE_GIRL] = &gObjectEventGraphicsInfo_SinnohLittleGirl,
+    [OBJ_EVENT_GFX_SINNOH_RICH_BOY] = &gObjectEventGraphicsInfo_SinnohRichBoy,
+    [OBJ_EVENT_GFX_SINNOH_WORKER] = &gObjectEventGraphicsInfo_SinnohWorker,
+    [OBJ_EVENT_GFX_SINNOH_BIRD_KEEPER] = &gObjectEventGraphicsInfo_SinnohBirdKeeper,
+    [OBJ_EVENT_GFX_SINNOH_PALMER] = &gObjectEventGraphicsInfo_SinnohPalmer,
+    [OBJ_EVENT_GFX_SINNOH_CLOWN] = &gObjectEventGraphicsInfo_SinnohClown,
+    [OBJ_EVENT_GFX_SINNOH_POKE_KID] = &gObjectEventGraphicsInfo_SinnohPokeKid,
+    [OBJ_EVENT_GFX_SINNOH_COLLECTOR] = &gObjectEventGraphicsInfo_SinnohCollector,
+    [OBJ_EVENT_GFX_SINNOH_POKEFAN_M] = &gObjectEventGraphicsInfo_SinnohPokefanM,
+    [OBJ_EVENT_GFX_SINNOH_POKEFAN_F] = &gObjectEventGraphicsInfo_SinnohPokefanF,
+    [OBJ_EVENT_GFX_SINNOH_RANGER_F] = &gObjectEventGraphicsInfo_SinnohRangerF,
+    [OBJ_EVENT_GFX_SINNOH_RANGER_M] = &gObjectEventGraphicsInfo_SinnohRangerM,
+    [OBJ_EVENT_GFX_SINNOH_POLICEMAN] = &gObjectEventGraphicsInfo_SinnohPoliceman,
+    [OBJ_EVENT_GFX_SINNOH_RECEPTIONIST] = &gObjectEventGraphicsInfo_SinnohReceptionist,
+    [OBJ_EVENT_GFX_SINNOH_RUIN_MANIAC] = &gObjectEventGraphicsInfo_SinnohRuinManiac,
+    [OBJ_EVENT_GFX_SINNOH_SATURN] = &gObjectEventGraphicsInfo_SinnohSaturn,
+    [OBJ_EVENT_GFX_SINNOH_ROWAN] = &gObjectEventGraphicsInfo_SinnohRowan,
+    [OBJ_EVENT_GFX_SINNOH_MIDDLE_AGED_WOMAN] = &gObjectEventGraphicsInfo_SinnohMiddleAgedWoman,
+    [OBJ_EVENT_GFX_SINNOH_AROMA_LADY] = &gObjectEventGraphicsInfo_SinnohAromaLady,
+    [OBJ_EVENT_GFX_SINNOH_MAID] = &gObjectEventGraphicsInfo_SinnohMaid,
+    [OBJ_EVENT_GFX_SINNOH_VOLKNER] = &gObjectEventGraphicsInfo_SinnohVolkner,
+    [OBJ_EVENT_GFX_SINNOH_WAKE] = &gObjectEventGraphicsInfo_SinnohWake,
+    [OBJ_EVENT_GFX_SINNOH_MIRA] = &gObjectEventGraphicsInfo_SinnohMira,
+    [OBJ_EVENT_GFX_SINNOH_ROARK] = &gObjectEventGraphicsInfo_SinnohRoark,
+    [OBJ_EVENT_GFX_SINNOH_GARDENIA] = &gObjectEventGraphicsInfo_SinnohGardenia,
+    [OBJ_EVENT_GFX_SINNOH_CANDICE] = &gObjectEventGraphicsInfo_SinnohCandice,
+    [OBJ_EVENT_GFX_SINNOH_AARON] = &gObjectEventGraphicsInfo_SinnohAaron,
+    [OBJ_EVENT_GFX_SINNOH_LUCIAN] = &gObjectEventGraphicsInfo_SinnohLucian,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {
