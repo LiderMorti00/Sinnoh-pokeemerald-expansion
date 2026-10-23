@@ -16,7 +16,7 @@
   "object_events": [
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_SINNOH_MIDDLE_AGED_MAN",
+      "graphics_id": "OBJ_EVENT_GFX_MAN",
       "x": 4,
       "y": 5,
       "elevation": 3,
@@ -30,7 +30,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_SINNOH_WOMAN_1",
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_1_FRLG",
       "x": 7,
       "y": 4,
       "elevation": 3,

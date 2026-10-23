@@ -16,7 +16,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_JUBILIFE_NURSE",
-      "graphics_id": "OBJ_EVENT_GFX_SINNOH_NURSE",
+      "graphics_id": "OBJ_EVENT_GFX_NURSE_FRLG",
       "x": 7,
       "y": 2,
       "elevation": 3,
@@ -44,7 +44,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_SINNOH_SCHOOL_KID_M",
+      "graphics_id": "OBJ_EVENT_GFX_BOY",
       "x": 3,
       "y": 3,
       "elevation": 3,
@@ -58,7 +58,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_SINNOH_TWIN",
+      "graphics_id": "OBJ_EVENT_GFX_LITTLE_GIRL_FRLG",
       "x": 8,
       "y": 4,
       "elevation": 3,

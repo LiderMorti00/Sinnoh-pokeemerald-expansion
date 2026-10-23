@@ -15,7 +15,7 @@
   "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_SINNOH_SCHOOL_KID_M",
+      "graphics_id": "OBJ_EVENT_GFX_BOY",
       "x": 4,
       "y": 4,
       "elevation": 3,
@@ -28,7 +28,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
+      "graphics_id": "OBJ_EVENT_GFX_LASS_FRLG",
       "x": 12,
       "y": 2,
       "elevation": 3,
@@ -41,7 +41,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SINNOH_WOMAN_1",
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_1_FRLG",
       "x": 8,
       "y": 5,
       "elevation": 3,
@@ -55,7 +55,7 @@
     },
     {
       "local_id": "LOCALID_ETERNA_NURSE",
-      "graphics_id": "OBJ_EVENT_GFX_SINNOH_NURSE",
+      "graphics_id": "OBJ_EVENT_GFX_NURSE_FRLG",
       "x": 7,
       "y": 2,
       "elevation": 3,

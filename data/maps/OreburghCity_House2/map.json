@@ -15,7 +15,7 @@
   "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_SINNOH_YOUNGSTER",
+      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER_FRLG",
       "x": 6,
       "y": 6,
       "elevation": 3,

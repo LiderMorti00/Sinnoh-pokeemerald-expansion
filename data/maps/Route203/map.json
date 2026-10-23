@@ -35,7 +35,7 @@
       "flag": "FLAG_HIDE_ROUTE203_BARRY"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SINNOH_YOUNGSTER",
+      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER_FRLG",
       "x": 12,
       "y": 19,
       "elevation": 3,
@@ -48,7 +48,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SINNOH_YOUNGSTER",
+      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER_FRLG",
       "x": 24,
       "y": 10,
       "elevation": 3,
@@ -74,7 +74,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SINNOH_YOUNGSTER",
+      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER_FRLG",
       "x": 42,
       "y": 9,
       "elevation": 3,

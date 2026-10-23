@@ -30,7 +30,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_SINNOH_YOUNGSTER",
+      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER_FRLG",
       "x": 11,
       "y": 8,
       "elevation": 3,
@@ -58,7 +58,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_SINNOH_YOUNGSTER",
+      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER_FRLG",
       "x": 4,
       "y": 7,
       "elevation": 3,
@@ -72,7 +72,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_SINNOH_SCHOOL_KID_M",
+      "graphics_id": "OBJ_EVENT_GFX_BOY",
       "x": 10,
       "y": 3,
       "elevation": 3,
@@ -86,7 +86,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
+      "graphics_id": "OBJ_EVENT_GFX_LASS_FRLG",
       "x": 11,
       "y": 3,
       "elevation": 3,
@@ -115,7 +115,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_SINNOH_SCHOOL_KID_M",
+      "graphics_id": "OBJ_EVENT_GFX_BOY",
       "x": 8,
       "y": 3,
       "elevation": 3,
