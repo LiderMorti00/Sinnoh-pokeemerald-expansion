@@ -12,11 +12,10 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
       "local_id": "LOCALID_TWINLEAF_MOM",
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MOM",
       "x": 2,
       "y": 3,
@@ -31,7 +30,6 @@
     },
     {
       "local_id": "LOCALID_HOME_BARRYS_MOM",
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
       "x": 4,
       "y": 6,

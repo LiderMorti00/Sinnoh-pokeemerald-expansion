@@ -310,6 +310,9 @@
 #define METATILE_GenericBuilding1_PlayersPCOff  0x28F
 #define METATILE_GenericBuilding1_PlayersPCOn   0x28A
 
+// gTileset_Hearthome
+#define METATILE_Hearthome_Door  0x29C
+
 // gTileset_InsideOfTruck
 #define METATILE_InsideOfTruck_DoorClosedFloor_Bottom  0x21D
 #define METATILE_InsideOfTruck_DoorClosedFloor_Mid     0x215
@@ -1021,6 +1024,9 @@
 // gTileset_Underwater
 #define METATILE_Underwater_FloorShadow  0x228
 #define METATILE_Underwater_RockWall     0x21E
+
+// gTileset_Valor
+#define METATILE_Valor_Door  0x22B
 
 // gTileset_Veilstone
 #define METATILE_Veilstone_Door_DeptStore  0x25C

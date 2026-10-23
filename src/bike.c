@@ -1221,6 +1221,10 @@ static void Bike_TryAdvanceCyclingRoadCollisions(void)
 
 static bool8 CanBikeFaceDirOnMetatile(enum Direction direction, u8 tile)
 {
+    // Proyecto Sinnoh: por debajo de un puente los raíles no cuentan
+    if (gObjectEvents[gPlayerAvatar.objectEventId].currentElevation < 4)
+        return TRUE;
+
     if (direction == DIR_EAST || direction == DIR_WEST)
     {
         // Bike cannot face east or west on a vertical rail

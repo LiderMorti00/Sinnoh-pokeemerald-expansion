@@ -1050,6 +1050,10 @@ static void CheckAcroBikeCollision(s16 x, s16 y, u8 metatileBehavior, enum Colli
 {
     u8 i;
 
+    // Proyecto Sinnoh: por debajo de un puente los raíles no cuentan
+    if (gObjectEvents[gPlayerAvatar.objectEventId].currentElevation < 4)
+        return;
+
     for (i = 0; i < NUM_ACRO_BIKE_COLLISIONS; i++)
     {
         if (sAcroBikeTrickMetatiles[i](metatileBehavior))

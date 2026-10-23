@@ -15,10 +15,9 @@
   "connections": null,
   "object_events": [
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_4",
-      "x": 3,
-      "y": 3,
+      "x": 6,
+      "y": 5,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -29,7 +28,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
       "x": 11,
       "y": 8,
@@ -43,7 +41,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LASS",
       "x": 0,
       "y": 7,
@@ -57,7 +54,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
       "x": 4,
       "y": 7,
@@ -71,7 +67,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SCHOOL_KID_M",
       "x": 10,
       "y": 3,
@@ -85,7 +80,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
       "x": 11,
       "y": 3,
@@ -100,7 +94,6 @@
     },
     {
       "local_id": "LOCALID_SCHOOL_BARRY",
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_WALLY",
       "x": 3,
       "y": 2,
@@ -114,7 +107,6 @@
       "flag": "FLAG_HIDE_SCHOOL_BARRY"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SCHOOL_KID_M",
       "x": 8,
       "y": 3,
@@ -128,7 +120,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
       "x": 9,
       "y": 4,
