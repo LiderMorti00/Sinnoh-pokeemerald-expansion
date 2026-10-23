@@ -471,55 +471,10 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohAroma
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMaid;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohVolkner;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohWake;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohNinjaBoy;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohTwin;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohRoughneck;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohTuberM;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohTuberF;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohSchoolKidM;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohYoungster;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohSnowpointNpcM;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohCameraman;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohCamper;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohCowgirl;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohCyclistF;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohRancher;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohBlackBelt;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohFisherman;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohWoman1;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohSnowpointNpcF;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohIdol;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMom;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMan1;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMiddleAgedMan;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohJasmine;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohExpertM;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohOldMan;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohExpertF;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohOldWoman;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohProfOak;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohReporter;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohSailor;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohJogger;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohGymGuide;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohCashierM;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohCashierF;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohSwimmerM;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohSwimmerF;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohReceptionist2;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohTeala;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohNurse;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohCheryl;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohRiley;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMarley;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohBuck;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMira;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohRoark;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohGardenia;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohCandice;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohAaron;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohLucian;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohPicnicker;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -765,7 +720,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_OW_MON] =                   &gObjectEventGraphicsInfo_Follower,
     [OBJ_EVENT_GFX_LIGHT_SPRITE] =             &gObjectEventGraphicsInfo_BallLight,
     [OBJ_EVENT_GFX_APRICORN_TREE] =            &gObjectEventGraphicsInfo_ApricornTree,
-#if IS_FRLG
+#if 1 // Proyecto Sinnoh: gráficos de Rojo Fuego siempre disponibles (antes IS_FRLG)
     [OBJ_EVENT_GFX_RED_NORMAL] =               &gObjectEventGraphicsInfo_RedNormal,
     [OBJ_EVENT_GFX_RED_BIKE] =                 &gObjectEventGraphicsInfo_RedBike,
     [OBJ_EVENT_GFX_RED_SURF] =                 &gObjectEventGraphicsInfo_RedSurf,
@@ -982,55 +937,10 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_SINNOH_MAID] = &gObjectEventGraphicsInfo_SinnohMaid,
     [OBJ_EVENT_GFX_SINNOH_VOLKNER] = &gObjectEventGraphicsInfo_SinnohVolkner,
     [OBJ_EVENT_GFX_SINNOH_WAKE] = &gObjectEventGraphicsInfo_SinnohWake,
-    [OBJ_EVENT_GFX_SINNOH_NINJA_BOY] = &gObjectEventGraphicsInfo_SinnohNinjaBoy,
-    [OBJ_EVENT_GFX_SINNOH_TWIN] = &gObjectEventGraphicsInfo_SinnohTwin,
-    [OBJ_EVENT_GFX_SINNOH_ROUGHNECK] = &gObjectEventGraphicsInfo_SinnohRoughneck,
-    [OBJ_EVENT_GFX_SINNOH_TUBER_M] = &gObjectEventGraphicsInfo_SinnohTuberM,
-    [OBJ_EVENT_GFX_SINNOH_TUBER_F] = &gObjectEventGraphicsInfo_SinnohTuberF,
-    [OBJ_EVENT_GFX_SINNOH_SCHOOL_KID_M] = &gObjectEventGraphicsInfo_SinnohSchoolKidM,
-    [OBJ_EVENT_GFX_SINNOH_YOUNGSTER] = &gObjectEventGraphicsInfo_SinnohYoungster,
-    [OBJ_EVENT_GFX_SINNOH_SNOWPOINT_NPC_M] = &gObjectEventGraphicsInfo_SinnohSnowpointNpcM,
-    [OBJ_EVENT_GFX_SINNOH_CAMERAMAN] = &gObjectEventGraphicsInfo_SinnohCameraman,
-    [OBJ_EVENT_GFX_SINNOH_CAMPER] = &gObjectEventGraphicsInfo_SinnohCamper,
-    [OBJ_EVENT_GFX_SINNOH_COWGIRL] = &gObjectEventGraphicsInfo_SinnohCowgirl,
-    [OBJ_EVENT_GFX_SINNOH_CYCLIST_F] = &gObjectEventGraphicsInfo_SinnohCyclistF,
-    [OBJ_EVENT_GFX_SINNOH_RANCHER] = &gObjectEventGraphicsInfo_SinnohRancher,
-    [OBJ_EVENT_GFX_SINNOH_BLACK_BELT] = &gObjectEventGraphicsInfo_SinnohBlackBelt,
-    [OBJ_EVENT_GFX_SINNOH_FISHERMAN] = &gObjectEventGraphicsInfo_SinnohFisherman,
-    [OBJ_EVENT_GFX_SINNOH_WOMAN_1] = &gObjectEventGraphicsInfo_SinnohWoman1,
-    [OBJ_EVENT_GFX_SINNOH_SNOWPOINT_NPC_F] = &gObjectEventGraphicsInfo_SinnohSnowpointNpcF,
-    [OBJ_EVENT_GFX_SINNOH_IDOL] = &gObjectEventGraphicsInfo_SinnohIdol,
-    [OBJ_EVENT_GFX_SINNOH_MOM] = &gObjectEventGraphicsInfo_SinnohMom,
-    [OBJ_EVENT_GFX_SINNOH_MAN_1] = &gObjectEventGraphicsInfo_SinnohMan1,
-    [OBJ_EVENT_GFX_SINNOH_MIDDLE_AGED_MAN] = &gObjectEventGraphicsInfo_SinnohMiddleAgedMan,
-    [OBJ_EVENT_GFX_SINNOH_JASMINE] = &gObjectEventGraphicsInfo_SinnohJasmine,
-    [OBJ_EVENT_GFX_SINNOH_EXPERT_M] = &gObjectEventGraphicsInfo_SinnohExpertM,
-    [OBJ_EVENT_GFX_SINNOH_OLD_MAN] = &gObjectEventGraphicsInfo_SinnohOldMan,
-    [OBJ_EVENT_GFX_SINNOH_EXPERT_F] = &gObjectEventGraphicsInfo_SinnohExpertF,
-    [OBJ_EVENT_GFX_SINNOH_OLD_WOMAN] = &gObjectEventGraphicsInfo_SinnohOldWoman,
-    [OBJ_EVENT_GFX_SINNOH_PROF_OAK] = &gObjectEventGraphicsInfo_SinnohProfOak,
-    [OBJ_EVENT_GFX_SINNOH_REPORTER] = &gObjectEventGraphicsInfo_SinnohReporter,
-    [OBJ_EVENT_GFX_SINNOH_SAILOR] = &gObjectEventGraphicsInfo_SinnohSailor,
-    [OBJ_EVENT_GFX_SINNOH_JOGGER] = &gObjectEventGraphicsInfo_SinnohJogger,
-    [OBJ_EVENT_GFX_SINNOH_GYM_GUIDE] = &gObjectEventGraphicsInfo_SinnohGymGuide,
-    [OBJ_EVENT_GFX_SINNOH_CASHIER_M] = &gObjectEventGraphicsInfo_SinnohCashierM,
-    [OBJ_EVENT_GFX_SINNOH_CASHIER_F] = &gObjectEventGraphicsInfo_SinnohCashierF,
-    [OBJ_EVENT_GFX_SINNOH_SWIMMER_M] = &gObjectEventGraphicsInfo_SinnohSwimmerM,
-    [OBJ_EVENT_GFX_SINNOH_SWIMMER_F] = &gObjectEventGraphicsInfo_SinnohSwimmerF,
-    [OBJ_EVENT_GFX_SINNOH_RECEPTIONIST_2] = &gObjectEventGraphicsInfo_SinnohReceptionist2,
-    [OBJ_EVENT_GFX_SINNOH_TEALA] = &gObjectEventGraphicsInfo_SinnohTeala,
-    [OBJ_EVENT_GFX_SINNOH_NURSE] = &gObjectEventGraphicsInfo_SinnohNurse,
-    [OBJ_EVENT_GFX_SINNOH_CHERYL] = &gObjectEventGraphicsInfo_SinnohCheryl,
-    [OBJ_EVENT_GFX_SINNOH_RILEY] = &gObjectEventGraphicsInfo_SinnohRiley,
-    [OBJ_EVENT_GFX_SINNOH_MARLEY] = &gObjectEventGraphicsInfo_SinnohMarley,
-    [OBJ_EVENT_GFX_SINNOH_BUCK] = &gObjectEventGraphicsInfo_SinnohBuck,
     [OBJ_EVENT_GFX_SINNOH_MIRA] = &gObjectEventGraphicsInfo_SinnohMira,
     [OBJ_EVENT_GFX_SINNOH_ROARK] = &gObjectEventGraphicsInfo_SinnohRoark,
     [OBJ_EVENT_GFX_SINNOH_GARDENIA] = &gObjectEventGraphicsInfo_SinnohGardenia,
     [OBJ_EVENT_GFX_SINNOH_CANDICE] = &gObjectEventGraphicsInfo_SinnohCandice,
-    [OBJ_EVENT_GFX_SINNOH_AARON] = &gObjectEventGraphicsInfo_SinnohAaron,
-    [OBJ_EVENT_GFX_SINNOH_LUCIAN] = &gObjectEventGraphicsInfo_SinnohLucian,
-    [OBJ_EVENT_GFX_SINNOH_PICNICKER] = &gObjectEventGraphicsInfo_SinnohPicnicker,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

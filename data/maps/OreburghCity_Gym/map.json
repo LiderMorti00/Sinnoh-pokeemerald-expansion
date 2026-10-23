@@ -29,7 +29,7 @@
       "flag": "FLAG_HIDE_GYM_ROARK"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SINNOH_YOUNGSTER",
+      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER_FRLG",
       "x": 2,
       "y": 4,
       "elevation": 3,
@@ -42,7 +42,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SINNOH_YOUNGSTER",
+      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER_FRLG",
       "x": 5,
       "y": 11,
       "elevation": 3,
@@ -55,7 +55,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SINNOH_GYM_GUIDE",
+      "graphics_id": "OBJ_EVENT_GFX_GYM_GUY",
       "x": 3,
       "y": 17,
       "elevation": 3,

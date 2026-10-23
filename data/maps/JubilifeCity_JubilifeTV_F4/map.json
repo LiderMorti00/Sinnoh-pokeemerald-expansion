@@ -15,7 +15,7 @@
   "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_4",
+      "graphics_id": "OBJ_EVENT_GFX_BALDING_MAN",
       "x": 1,
       "y": 8,
       "elevation": 3,
@@ -28,7 +28,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_3_FRLG",
       "x": 3,
       "y": 3,
       "elevation": 3,
@@ -41,7 +41,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SINNOH_WOMAN_1",
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_1_FRLG",
       "x": 13,
       "y": 6,
       "elevation": 3,

@@ -17,7 +17,7 @@
     {
       "local_id": "LOCALID_SANDGEM_NURSE",
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_SINNOH_NURSE",
+      "graphics_id": "OBJ_EVENT_GFX_NURSE_FRLG",
       "x": 7,
       "y": 2,
       "elevation": 3,
@@ -31,7 +31,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_SINNOH_MIDDLE_AGED_MAN",
+      "graphics_id": "OBJ_EVENT_GFX_MAN",
       "x": 3,
       "y": 2,
       "elevation": 3,
@@ -45,7 +45,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_SINNOH_EXPERT_M",
+      "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_1",
       "x": 11,
       "y": 2,
       "elevation": 3,

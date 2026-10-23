@@ -30,7 +30,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_SINNOH_SCHOOL_KID_M",
+      "graphics_id": "OBJ_EVENT_GFX_BOY",
       "x": 12,
       "y": 5,
       "elevation": 3,
@@ -58,7 +58,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_SINNOH_NINJA_BOY",
+      "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY_FRLG",
       "x": 9,
       "y": 7,
       "elevation": 3,

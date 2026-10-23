@@ -52,7 +52,7 @@
       "flag": "FLAG_HIDE_FLOAROMA_GRUNTS"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SINNOH_WOMAN_1",
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_1_FRLG",
       "x": 21,
       "y": 23,
       "elevation": 3,
@@ -78,7 +78,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SINNOH_SCHOOL_KID_M",
+      "graphics_id": "OBJ_EVENT_GFX_BOY",
       "x": 21,
       "y": 18,
       "elevation": 3,
@@ -117,7 +117,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SINNOH_CAMPER",
+      "graphics_id": "OBJ_EVENT_GFX_CAMPER_FRLG",
       "x": 8,
       "y": 12,
       "elevation": 3,
