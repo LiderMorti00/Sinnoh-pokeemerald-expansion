@@ -5,11 +5,11 @@ Route202_MapScripts::
 Route202_OnTransition:
 	checkplayergender
 	goto_if_eq VAR_RESULT, MALE, Route202_EventScript_SetDawnGfx
-	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_SINNOH_LUCAS
 	end
 
 Route202_EventScript_SetDawnGfx::
-	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RIVAL_MAY_NORMAL
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_SINNOH_DAWN
 	end
 
 Route202_EventScript_Dawn::

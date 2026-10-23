@@ -31,7 +31,7 @@
   ],
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_1",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_MIDDLE_AGED_MAN",
       "x": 27,
       "y": 14,
       "elevation": 3,
@@ -44,7 +44,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SCHOOL_KID_M",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_SCHOOL_KID_M",
       "x": 57,
       "y": 7,
       "elevation": 3,
@@ -57,7 +57,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_LASS",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_LASS",
       "x": 46,
       "y": 15,
       "elevation": 3,
@@ -71,7 +71,7 @@
     },
     {
       "local_id": "LOCALID_ROUTE201_BARRY",
-      "graphics_id": "OBJ_EVENT_GFX_WALLY",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_BARRY",
       "x": 15,
       "y": 16,
       "elevation": 3,
@@ -85,7 +85,7 @@
     },
     {
       "local_id": "LOCALID_ROUTE201_ROWAN",
-      "graphics_id": "OBJ_EVENT_GFX_PROF_BIRCH",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_ROWAN",
       "x": 3,
       "y": 15,
       "elevation": 3,
@@ -113,7 +113,7 @@
     },
     {
       "local_id": "LOCALID_ROUTE201_CLERK",
-      "graphics_id": "OBJ_EVENT_GFX_MART_EMPLOYEE",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_CASHIER_M",
       "x": 58,
       "y": 5,
       "elevation": 3,
