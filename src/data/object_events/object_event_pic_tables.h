@@ -2792,3 +2792,11 @@ static const struct SpriteFrameImage sPicTable_SinnohCandice[] = {
     overworld_ascending_frames(gObjectEventPic_SinnohCandice, 2, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_SinnohAaron[] = {
+    overworld_ascending_frames(gObjectEventPic_SinnohAaron, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_SinnohLucian[] = {
+    overworld_ascending_frames(gObjectEventPic_SinnohLucian, 2, 4),
+};
+
