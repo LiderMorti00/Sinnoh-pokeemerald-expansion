@@ -659,6 +659,8 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_SinnohRoark, OBJ_EVENT_PAL_TAG_SINNOH_ROARK},
     {gObjectEventPal_SinnohGardenia, OBJ_EVENT_PAL_TAG_SINNOH_GARDENIA},
     {gObjectEventPal_SinnohCandice, OBJ_EVENT_PAL_TAG_SINNOH_CANDICE},
+    {gObjectEventPal_SinnohAaron, OBJ_EVENT_PAL_TAG_SINNOH_AARON},
+    {gObjectEventPal_SinnohLucian, OBJ_EVENT_PAL_TAG_SINNOH_LUCIAN},
     {NULL,                                  OBJ_EVENT_PAL_TAG_NONE},
 #else
     {}, // BUG: FindObjectEventPaletteIndexByTag looks for OBJ_EVENT_PAL_TAG_NONE and not 0x0.

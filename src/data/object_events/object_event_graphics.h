@@ -783,3 +783,7 @@ const u32 gObjectEventPic_SinnohGardenia[] = INCGFX_U32("graphics/object_events/
 const u16 gObjectEventPal_SinnohGardenia[] = INCGFX_U16("graphics/object_events/palettes/sinnoh/gardenia.pal", ".gbapal");
 const u32 gObjectEventPic_SinnohCandice[] = INCGFX_U32("graphics/object_events/pics/people/sinnoh/candice.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u16 gObjectEventPal_SinnohCandice[] = INCGFX_U16("graphics/object_events/palettes/sinnoh/candice.pal", ".gbapal");
+const u32 gObjectEventPic_SinnohAaron[] = INCGFX_U32("graphics/object_events/pics/people/sinnoh/aaron.png", ".4bpp", "-mwidth 2 -mheight 4");
+const u16 gObjectEventPal_SinnohAaron[] = INCGFX_U16("graphics/object_events/palettes/sinnoh/aaron.pal", ".gbapal");
+const u32 gObjectEventPic_SinnohLucian[] = INCGFX_U32("graphics/object_events/pics/people/sinnoh/lucian.png", ".4bpp", "-mwidth 2 -mheight 4");
+const u16 gObjectEventPal_SinnohLucian[] = INCGFX_U16("graphics/object_events/palettes/sinnoh/lucian.pal", ".gbapal");
