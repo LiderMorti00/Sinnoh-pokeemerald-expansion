@@ -601,7 +601,7 @@ void AnimTask_BlendColorCycleExclude(u8 taskId)
     }
 
     if (cmd->unk0 == 1)
-        selectedPalettes |= 0xE;
+        selectedPalettes |= 0x1E; // Proyecto Sinnoh: incluye la paleta 4 del fondo
 
     gTasks[taskId].tPalSelectorHi = selectedPalettes >> 16;
     gTasks[taskId].tPalSelectorLo = selectedPalettes & 0xFF;
