@@ -654,22 +654,16 @@ static void Scene_Starters(u16 t)
     {
         ResetScene();
         LoadBars(2, 0);
-        sOp.group[0] = CreateBigEx(&sSpr_Torterra, TAG_SPR_C, 200, BAR_TOP_CY, 3);
-        sOp.group[1] = CreateBigEx(&sSpr_Chimchar, TAG_SPR_B, 132, BAR_TOP_CY + 2, 2);
-        sOp.group[2] = CreateBigEx(&sSpr_Prinplup, TAG_SPR_A, 82, BAR_TOP_CY + 10, 1);
-        sOp.group[3] = CreateBigEx(&sSpr_Grotle, TAG_SPR_F, 196, BAR_BOTTOM_CY + 4, 3);
-        sOp.group[4] = CreateBigEx(&sSpr_Piplup, TAG_SPR_E, 128, BAR_BOTTOM_CY + 6, 1);
-        sOp.group[5] = CreateBigEx(&sSpr_Infernape, TAG_SPR_D, 62, BAR_BOTTOM_CY, 2);
-        for (i = 0; i < NUM_GROUP; i++)
-            gSprites[sOp.group[i]].x += 40;
+        sOp.group[0] = CreateBigEx(&sSpr_Torterra, TAG_SPR_C, 182, BAR_TOP_Y + 36, 3);
+        sOp.group[1] = CreateBigEx(&sSpr_Chimchar, TAG_SPR_B, 132, BAR_TOP_Y + 36, 2);
+        sOp.group[2] = CreateBigEx(&sSpr_Prinplup, TAG_SPR_A, 76, BAR_TOP_Y + 72 - 27, 1);
+        sOp.group[3] = CreateBigEx(&sSpr_Grotle, TAG_SPR_F, 184, BAR_BOTTOM_Y + 72 - 32, 3);
+        sOp.group[4] = CreateBigEx(&sSpr_Piplup, TAG_SPR_E, 126, BAR_BOTTOM_Y + 37, 1);
+        sOp.group[5] = CreateBigEx(&sSpr_Infernape, TAG_SPR_D, 56, BAR_BOTTOM_Y + 36, 2);
         BlendPalettes(PALETTES_ALL, 10, RGB(12, 12, 12));
         StartFade(1, 10, 0, RGB(12, 12, 12));
     }
     ScrollBars(4);
-    // el grupo entra deslizándose
-    if (t < 80 && (t & 1))
-        for (i = 0; i < NUM_GROUP; i++)
-            gSprites[sOp.group[i]].x--;
 
     // ¡Infernape! (fuego en la barra de arriba)
     if (t == T_FIRE - T_STARTERS)
@@ -678,7 +672,7 @@ static void Scene_Starters(u16 t)
         SetLayers((1 << BG_BACK) | (1 << BG_MIDDLE) | (1 << BG_FOREST));
         for (i = 0; i < 3; i++)
             SetSpritePalBlack(sOp.group[i], TRUE);
-        sOp.sprites[0] = CreateBigEx(&sSpr_Infernape, TAG_SPR_D, DISPLAY_WIDTH / 2, BAR_TOP_CY + 8, 0);
+        sOp.sprites[0] = CreateBigEx(&sSpr_Infernape, TAG_SPR_D, 56, BAR_TOP_Y + 36, 0);
         gSprites[sOp.sprites[0]].oam.priority = 0;
         PlaySE(SE_M_FLAME_WHEEL);
     }
@@ -705,7 +699,7 @@ static void Scene_Starters(u16 t)
         LoadBigSheet(&sSpr_Bubble[0], TAG_BUBBLE0);
         for (i = 3; i < NUM_GROUP; i++)
             SetSpritePalBlack(sOp.group[i], TRUE);
-        sOp.sprites[1] = CreateBigEx(&sSpr_Prinplup, TAG_SPR_A, DISPLAY_WIDTH / 2, BAR_BOTTOM_CY, 0);
+        sOp.sprites[1] = CreateBigEx(&sSpr_Prinplup, TAG_SPR_A, DISPLAY_WIDTH / 2, BAR_BOTTOM_Y + 72 - 27, 0);
         gSprites[sOp.sprites[1]].oam.priority = 0;
         PlaySE(SE_M_BUBBLE);
     }
