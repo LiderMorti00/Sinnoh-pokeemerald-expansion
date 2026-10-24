@@ -55,7 +55,7 @@ Route225_Text_AudreyPost:
 	.string "only just recently flown here.$"
 
 Route225_EventScript_Daisy::
-	trainerbattle_single TRAINER_BRENDAN_ROUTE_103_MUDKIP, Route225_Text_DaisyIntro, Route225_Text_DaisyDefeat
+	trainerbattle_single TRAINER_TIANA, Route225_Text_DaisyIntro, Route225_Text_DaisyDefeat
 	msgbox Route225_Text_DaisyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -73,7 +73,7 @@ Route225_Text_DaisyPost:
 	.string "would be much more fun that way!$"
 
 Route225_EventScript_Geoffrey::
-	trainerbattle_single TRAINER_BRENDAN_ROUTE_110_MUDKIP, Route225_Text_GeoffreyIntro, Route225_Text_GeoffreyDefeat
+	trainerbattle_single TRAINER_JANICE, Route225_Text_GeoffreyIntro, Route225_Text_GeoffreyDefeat
 	msgbox Route225_Text_GeoffreyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -108,7 +108,7 @@ Route225_Text_DeannaPost:
 	.string "battle will turn out.$"
 
 Route225_EventScript_Dwayne::
-	trainerbattle_single TRAINER_BRENDAN_ROUTE_103_TREECKO, Route225_Text_DwayneIntro, Route225_Text_DwayneDefeat
+	trainerbattle_single TRAINER_VIVI, Route225_Text_DwayneIntro, Route225_Text_DwayneDefeat
 	msgbox Route225_Text_DwaynePost, MSGBOX_AUTOCLOSE
 	end
 
@@ -128,7 +128,7 @@ Route225_Text_DwaynePost:
 	.string "cleaning up the environment!$"
 
 Route225_EventScript_Quinn::
-	trainerbattle_single TRAINER_BRENDAN_ROUTE_110_TREECKO, Route225_Text_QuinnIntro, Route225_Text_QuinnDefeat
+	trainerbattle_single TRAINER_SALLY, Route225_Text_QuinnIntro, Route225_Text_QuinnDefeat
 	msgbox Route225_Text_QuinnPost, MSGBOX_AUTOCLOSE
 	end
 

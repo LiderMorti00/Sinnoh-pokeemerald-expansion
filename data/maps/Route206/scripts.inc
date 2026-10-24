@@ -36,7 +36,7 @@ Route206_Text_MeganPost:
 	.string "while sailing downhill.$"
 
 Route206_EventScript_James::
-	trainerbattle_single TRAINER_GRUNT_PETALBURG_WOODS, Route206_Text_JamesIntro, Route206_Text_JamesDefeat
+	trainerbattle_single TRAINER_ISABELLA, Route206_Text_JamesIntro, Route206_Text_JamesDefeat
 	msgbox Route206_Text_JamesPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -54,7 +54,7 @@ Route206_Text_JamesPost:
 	.string "Road in one long shot.$"
 
 Route206_EventScript_Nicole::
-	trainerbattle_single TRAINER_GRUNT_RUSTURF_TUNNEL, Route206_Text_NicoleIntro, Route206_Text_NicoleDefeat
+	trainerbattle_single TRAINER_JONATHAN, Route206_Text_NicoleIntro, Route206_Text_NicoleDefeat
 	msgbox Route206_Text_NicolePost, MSGBOX_AUTOCLOSE
 	end
 

@@ -222,16 +222,16 @@ Level: 26
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_PETALBURG_WOODS ===
-Name: JAMES
-Class: TRAINER_CLASS_CYCLIST
-Pic: TRAINER_PIC_SINNOH_CYCLIST_M
+Name: GRUNT
+Class: TRAINER_CLASS_TEAM_GALACTIC
+Pic: Sinnoh Galactic Grunt M
 Gender: Male
-Music: Male
+Music: Aqua
 Double Battle: No
 AI: Basic Trainer
 
-SPECIES_PONYTA
-Level: 21
+Stunky
+Level: 11
 
 === TRAINER_MARCEL ===
 Name: SARAH
@@ -298,22 +298,16 @@ Kricketot
 Level: 11
 
 === TRAINER_GRUNT_RUSTURF_TUNNEL ===
-Name: NICOLE
-Class: TRAINER_CLASS_CYCLIST
-Pic: TRAINER_PIC_CYCLING_TRIATHLETE_F
-Gender: Female
-Music: Female
+Name: GRUNT
+Class: TRAINER_CLASS_TEAM_GALACTIC
+Pic: Sinnoh Galactic Grunt M
+Gender: Male
+Music: Aqua
 Double Battle: No
 AI: Basic Trainer
 
-SPECIES_STARLY
-Level: 17
-
-SPECIES_STARLY
-Level: 18
-
-SPECIES_STARLY
-Level: 19
+Glameow
+Level: 11
 
 === TRAINER_GRUNT_WEATHER_INST_1 ===
 Name: JOHN
@@ -9232,34 +9226,36 @@ SPECIES_PIDGEOT
 Level: 55
 
 === TRAINER_BRENDAN_ROUTE_103_MUDKIP ===
-Name: DAISY
-Class: TRAINER_CLASS_PSYCHIC
-Pic: TRAINER_PIC_SINNOH_PSYCHIC_F
-Gender: Female
-Music: Intense
+Name: BARRY
+Class: Rival
+Pic: Sinnoh Barry
+Gender: Male
+Music: Male
 Double Battle: No
 AI: Basic Trainer
 
-SPECIES_SLOWPOKE
-Level: 52
-
-SPECIES_SLOWBRO
-Level: 56
+Piplup
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_BRENDAN_ROUTE_110_MUDKIP ===
-Name: GEOFFREY
-Class: TRAINER_CLASS_DRAGON_TAMER
-Pic: TRAINER_PIC_SINNOH_DRAGON_TAMER
+Name: BARRY
+Class: Rival
+Pic: Sinnoh Barry
 Gender: Male
-Music: Intense
+Music: Male
 Double Battle: No
 AI: Basic Trainer
 
-SPECIES_GABITE
-Level: 53
+Starly
+Level: 7
+- Quick Attack
+- Growl
 
-SPECIES_ALTARIA
-Level: 55
+Piplup
+Level: 9
+- Pound
+- Growl
 
 === TRAINER_BRENDAN_ROUTE_119_MUDKIP ===
 Name: DEANNA
@@ -9285,45 +9281,36 @@ Level: 56
 - MOVE_SUNNY_DAY
 
 === TRAINER_BRENDAN_ROUTE_103_TREECKO ===
-Name: DWAYNE
-Class: TRAINER_CLASS_PKMN_RANGER
-Pic: TRAINER_PIC_SINNOH_RANGER_M
+Name: BARRY
+Class: Rival
+Pic: Sinnoh Barry
 Gender: Male
-Music: Cool
+Music: Male
 Double Battle: No
 AI: Basic Trainer
 
-SPECIES_SKARMORY
-Level: 54
-
-SPECIES_GOLDUCK
-Level: 54
-
-SPECIES_DONPHAN
-Level: 54
+Turtwig
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_BRENDAN_ROUTE_110_TREECKO ===
-Name: QUINN
-Class: TRAINER_CLASS_ACE_TRAINER
-Pic: TRAINER_PIC_SINNOH_ACE_TRAINER_M
+Name: BARRY
+Class: Rival
+Pic: Sinnoh Barry
 Gender: Male
-Music: Cool
+Music: Male
 Double Battle: No
 AI: Basic Trainer
 
-SPECIES_PINSIR
-Level: 55
-- MOVE_SUPERPOWER
-- MOVE_X_SCISSOR
-- MOVE_SWORDS_DANCE
-- MOVE_ROCK_TOMB
+Starly
+Level: 7
+- Quick Attack
+- Growl
 
-SPECIES_LANTURN
-Level: 56
-- MOVE_DISCHARGE
-- MOVE_SIGNAL_BEAM
-- MOVE_SURF
-- MOVE_CONFUSE_RAY
+Turtwig
+Level: 9
+- Tackle
+- Withdraw
 
 === TRAINER_BRENDAN_ROUTE_119_TREECKO ===
 Name: LYDIA
@@ -9344,34 +9331,36 @@ SPECIES_WAILMER
 Level: 54
 
 === TRAINER_BRENDAN_ROUTE_103_TORCHIC ===
-Name: GRAHAM
-Class: TRAINER_CLASS_ACE_TRAINER
-Pic: TRAINER_PIC_SINNOH_ACE_TRAINER_M
+Name: BARRY
+Class: Rival
+Pic: Sinnoh Barry
 Gender: Male
-Music: Cool
+Music: Male
 Double Battle: No
 AI: Basic Trainer
 
-SPECIES_TYROGUE
-Level: 55
-
-SPECIES_HITMONCHAN
-Level: 59
+Chimchar
+Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_BRENDAN_ROUTE_110_TORCHIC ===
-Name: GENEVA
-Class: TRAINER_CLASS_BIRD_KEEPER
-Pic: TRAINER_PIC_SINNOH_BIRD_KEEPER
-Gender: Female
-Music: Cool
+Name: BARRY
+Class: Rival
+Pic: Sinnoh Barry
+Gender: Male
+Music: Male
 Double Battle: No
 AI: Basic Trainer
 
-SPECIES_FEAROW
-Level: 55
+Starly
+Level: 7
+- Quick Attack
+- Growl
 
-SPECIES_XATU
-Level: 57
+Chimchar
+Level: 9
+- Scratch
+- Leer
 
 === TRAINER_BRENDAN_ROUTE_119_TORCHIC ===
 Name: STANLEY
@@ -10651,17 +10640,16 @@ SPECIES_SKUNTANK @ ITEM_SITRUS_BERRY
 Level: 23
 
 === TRAINER_ISABELLA ===
-Name: ISABELLA
-Class: Triathlete
-Pic: Swimming Triathlete F
-Gender: Female
-Music: Swimmer
+Name: JAMES
+Class: TRAINER_CLASS_CYCLIST
+Pic: TRAINER_PIC_SINNOH_CYCLIST_M
+Gender: Male
+Music: Male
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Staryu
-Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_PONYTA
+Level: 21
 
 === TRAINER_GRUNT_WEATHER_INST_5 ===
 Name: GRUNT
@@ -10706,22 +10694,22 @@ Level: 22
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_JONATHAN ===
-Name: JONATHAN
-Class: Cooltrainer
-Pic: Cooltrainer M
-Gender: Male
-Music: Cool
-Items: Hyper Potion
+Name: NICOLE
+Class: TRAINER_CLASS_CYCLIST
+Pic: TRAINER_PIC_CYCLING_TRIATHLETE_F
+Gender: Female
+Music: Female
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Force Setup First Turn
+AI: Basic Trainer
 
-Kecleon
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_STARLY
+Level: 17
 
-Loudred
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_STARLY
+Level: 18
+
+SPECIES_STARLY
+Level: 19
 
 === TRAINER_BRENDAN_RUSTBORO_TORCHIC ===
 Name: BRENDAN
@@ -10802,21 +10790,19 @@ Level: 25
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_TIANA ===
-Name: TIANA
-Class: Lass
-Pic: Lass
+Name: DAISY
+Class: TRAINER_CLASS_PSYCHIC
+Pic: TRAINER_PIC_SINNOH_PSYCHIC_F
 Gender: Female
-Music: Female
+Music: Intense
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Zigzagoon
-Level: 4
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_SLOWPOKE
+Level: 52
 
-Shroomish
-Level: 4
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_SLOWBRO
+Level: 56
 
 === TRAINER_HALEY_1 ===
 Name: HALEY
@@ -10836,38 +10822,37 @@ Level: 6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_JANICE ===
-Name: JANICE
-Class: Lass
-Pic: Lass
-Gender: Female
-Music: Female
-Double Battle: No
-AI: Check Bad Move
-
-Marill
-Level: 9
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_VIVI ===
-Name: VIVI
-Class: Winstrate
-Pic: Lass
-Gender: Female
-Music: Female
+Name: GEOFFREY
+Class: TRAINER_CLASS_DRAGON_TAMER
+Pic: TRAINER_PIC_SINNOH_DRAGON_TAMER
+Gender: Male
+Music: Intense
 Double Battle: No
 AI: Basic Trainer
 
-Marill
-Level: 15
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+SPECIES_GABITE
+Level: 53
 
-Shroomish
-Level: 15
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+SPECIES_ALTARIA
+Level: 55
 
-Numel
-Level: 15
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+=== TRAINER_VIVI ===
+Name: DWAYNE
+Class: TRAINER_CLASS_PKMN_RANGER
+Pic: TRAINER_PIC_SINNOH_RANGER_M
+Gender: Male
+Music: Cool
+Double Battle: No
+AI: Basic Trainer
+
+SPECIES_SKARMORY
+Level: 54
+
+SPECIES_GOLDUCK
+Level: 54
+
+SPECIES_DONPHAN
+Level: 54
 
 === TRAINER_HALEY_2 ===
 Name: HALEY
@@ -10942,38 +10927,42 @@ Level: 34
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
 === TRAINER_SALLY ===
-Name: SALLY
-Class: Lass
-Pic: Lass
-Gender: Female
-Music: Female
+Name: QUINN
+Class: TRAINER_CLASS_ACE_TRAINER
+Pic: TRAINER_PIC_SINNOH_ACE_TRAINER_M
+Gender: Male
+Music: Cool
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Oddish
-Level: 16
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_PINSIR
+Level: 55
+- MOVE_SUPERPOWER
+- MOVE_X_SCISSOR
+- MOVE_SWORDS_DANCE
+- MOVE_ROCK_TOMB
+
+SPECIES_LANTURN
+Level: 56
+- MOVE_DISCHARGE
+- MOVE_SIGNAL_BEAM
+- MOVE_SURF
+- MOVE_CONFUSE_RAY
 
 === TRAINER_ROBIN ===
-Name: ROBIN
-Class: Lass
-Pic: Lass
-Gender: Female
-Music: Female
+Name: GRAHAM
+Class: TRAINER_CLASS_ACE_TRAINER
+Pic: TRAINER_PIC_SINNOH_ACE_TRAINER_M
+Gender: Male
+Music: Cool
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Skitty
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_TYROGUE
+Level: 55
 
-Shroomish
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Marill
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_HITMONCHAN
+Level: 59
 
 === TRAINER_ANDREA ===
 Name: ANDREA
@@ -11006,21 +10995,19 @@ Level: 39
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_RICK ===
-Name: RICK
-Class: Bug Catcher
-Pic: Bug Catcher
-Gender: Male
-Music: Male
+Name: GENEVA
+Class: TRAINER_CLASS_BIRD_KEEPER
+Pic: TRAINER_PIC_SINNOH_BIRD_KEEPER
+Gender: Female
+Music: Cool
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Wurmple
-Level: 4
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_FEAROW
+Level: 55
 
-Wurmple
-Level: 4
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_XATU
+Level: 57
 
 === TRAINER_LYLE ===
 Name: LYLE
