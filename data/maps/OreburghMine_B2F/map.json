@@ -29,7 +29,7 @@
       "flag": "FLAG_HIDE_MINE_ROARK"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SINNOH_HIKER",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_WORKER",
       "x": 26,
       "y": 18,
       "elevation": 3,
@@ -42,9 +42,9 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SINNOH_HIKER",
-      "x": 8,
-      "y": 25,
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_WORKER",
+      "x": 9,
+      "y": 24,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
@@ -55,10 +55,9 @@
       "flag": "0"
     },
     {
-      "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_SINNOH_HIKER",
-      "x": 21,
-      "y": 15,
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_WORKER",
+      "x": 22,
+      "y": 13,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -69,10 +68,9 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_MON_MACHOP",
-      "x": 12,
-      "y": 25,
+      "x": 29,
+      "y": 23,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -83,10 +81,9 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_MON_MACHOP",
-      "x": 20,
-      "y": 15,
+      "x": 21,
+      "y": 13,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -97,7 +94,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_MON_MACHOP",
       "x": 27,
       "y": 15,
