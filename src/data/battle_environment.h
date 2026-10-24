@@ -86,6 +86,8 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .entry = ENVIRONMENT_ENTRY(SinnohTallGrass),
         .background = ENVIRONMENT_BACKGROUND(SinnohTallGrass),
         .palette = gBattleEnvironmentPalette_SinnohTallGrass,
+        .paletteEvening = gBattleEnvironmentPaletteEvening_SinnohTallGrass,
+        .paletteNight = gBattleEnvironmentPaletteNight_SinnohTallGrass,
     },
 
     [BATTLE_ENVIRONMENT_LONG_GRASS] =
@@ -107,6 +109,8 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .entry = ENVIRONMENT_ENTRY(SinnohLongGrass),
         .background = ENVIRONMENT_BACKGROUND(SinnohLongGrass),
         .palette = gBattleEnvironmentPalette_SinnohLongGrass,
+        .paletteEvening = gBattleEnvironmentPaletteEvening_SinnohLongGrass,
+        .paletteNight = gBattleEnvironmentPaletteNight_SinnohLongGrass,
     },
 
     [BATTLE_ENVIRONMENT_SAND] =
@@ -122,6 +126,8 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .entry = ENVIRONMENT_ENTRY(SinnohSand),
         .background = ENVIRONMENT_BACKGROUND(SinnohSand),
         .palette = gBattleEnvironmentPalette_SinnohSand,
+        .paletteEvening = gBattleEnvironmentPaletteEvening_SinnohSand,
+        .paletteNight = gBattleEnvironmentPaletteNight_SinnohSand,
     },
 
     [BATTLE_ENVIRONMENT_UNDERWATER] =
@@ -151,6 +157,8 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .entry = ENVIRONMENT_ENTRY(SinnohWater),
         .background = ENVIRONMENT_BACKGROUND(SinnohWater),
         .palette = gBattleEnvironmentPalette_SinnohWater,
+        .paletteEvening = gBattleEnvironmentPaletteEvening_SinnohWater,
+        .paletteNight = gBattleEnvironmentPaletteNight_SinnohWater,
     },
 
     [BATTLE_ENVIRONMENT_POND] =
@@ -166,6 +174,8 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .entry = ENVIRONMENT_ENTRY(SinnohPondWater),
         .background = ENVIRONMENT_BACKGROUND(SinnohPondWater),
         .palette = gBattleEnvironmentPalette_SinnohPondWater,
+        .paletteEvening = gBattleEnvironmentPaletteEvening_SinnohPondWater,
+        .paletteNight = gBattleEnvironmentPaletteNight_SinnohPondWater,
     },
 
     [BATTLE_ENVIRONMENT_MOUNTAIN] =
@@ -193,6 +203,8 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .entry = ENVIRONMENT_ENTRY(SinnohRock),
         .background = ENVIRONMENT_BACKGROUND(SinnohRock),
         .palette = gBattleEnvironmentPalette_SinnohRock,
+        .paletteEvening = gBattleEnvironmentPaletteEvening_SinnohRock,
+        .paletteNight = gBattleEnvironmentPaletteNight_SinnohRock,
     },
 
     [BATTLE_ENVIRONMENT_CAVE] =
@@ -238,6 +250,8 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .entry = ENVIRONMENT_ENTRY(SinnohPlain),
         .background = ENVIRONMENT_BACKGROUND(SinnohPlain),
         .palette = gBattleEnvironmentPalette_SinnohPlain,
+        .paletteEvening = gBattleEnvironmentPaletteEvening_SinnohPlain,
+        .paletteNight = gBattleEnvironmentPaletteNight_SinnohPlain,
     },
 
     [BATTLE_ENVIRONMENT_FRONTIER] =
@@ -492,6 +506,8 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .entry = ENVIRONMENT_ENTRY(SinnohSnow),
         .background = ENVIRONMENT_BACKGROUND(SinnohSnow),
         .palette = gBattleEnvironmentPalette_SinnohSnow,
+        .paletteEvening = gBattleEnvironmentPaletteEvening_SinnohSnow,
+        .paletteNight = gBattleEnvironmentPaletteNight_SinnohSnow,
     },
 
     [BATTLE_ENVIRONMENT_ICE] =
@@ -506,6 +522,8 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .entry = ENVIRONMENT_ENTRY(SinnohSnow),
         .background = ENVIRONMENT_BACKGROUND(SinnohSnow),
         .palette = gBattleEnvironmentPalette_SinnohSnow,
+        .paletteEvening = gBattleEnvironmentPaletteEvening_SinnohSnow,
+        .paletteNight = gBattleEnvironmentPaletteNight_SinnohSnow,
     },
 
     [BATTLE_ENVIRONMENT_VOLCANO] =

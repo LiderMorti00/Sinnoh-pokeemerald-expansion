@@ -16,6 +16,8 @@ struct BattleEnvironment
     struct BattleBackgroundEntry entry;
     struct BattleBackground background;
     const void *palette;
+    const void *paletteEvening; // Proyecto Sinnoh: paletas de tarde y noche como en Platino
+    const void *paletteNight;
     TaskFunc battleIntroSlide;
 };
 

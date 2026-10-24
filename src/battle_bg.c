@@ -16,6 +16,7 @@
 #include "menu.h"
 #include "overworld.h"
 #include "palette.h"
+#include "rtc.h"
 #include "sound.h"
 #include "sprite.h"
 #include "task.h"
@@ -870,6 +871,29 @@ static u8 GetBattleEnvironmentByMapScene(u8 mapBattleScene)
     return BATTLE_ENVIRONMENT_PLAIN;
 }
 
+// Proyecto Sinnoh: como en Platino, los fondos de exterior cambian de paleta por la tarde y por la noche.
+static const void *GetBattleEnvironmentPalette(u32 environment)
+{
+    const struct BattleEnvironment *env = &gBattleEnvironmentInfo[environment];
+    if (gMapHeader.mapType != MAP_TYPE_INDOOR && gMapHeader.mapType != MAP_TYPE_UNDERGROUND && gMapHeader.mapType != MAP_TYPE_SECRET_BASE)
+    {
+        switch (GetTimeOfDay())
+        {
+        case TIME_EVENING:
+            if (env->paletteEvening != NULL)
+                return env->paletteEvening;
+            break;
+        case TIME_NIGHT:
+            if (env->paletteNight != NULL)
+                return env->paletteNight;
+            break;
+        default:
+            break;
+        }
+    }
+    return env->palette;
+}
+
 // Loads the initial battle environment.
 static void LoadBattleEnvironmentGfx(u16 environment)
 {
@@ -878,7 +902,7 @@ static void LoadBattleEnvironmentGfx(u16 environment)
     // Copy to bg3
     DecompressDataWithHeaderVram(gBattleEnvironmentInfo[environment].background.tileset, (void *)(BG_CHAR_ADDR(2)));
     DecompressDataWithHeaderVram(gBattleEnvironmentInfo[environment].background.tilemap, (void *)(BG_SCREEN_ADDR(26)));
-    LoadPalette(gBattleEnvironmentInfo[environment].palette, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
+    LoadPalette(GetBattleEnvironmentPalette(environment), BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
 }
 
 // Loads the entry associated with the battle environment.
@@ -1344,7 +1368,7 @@ bool8 LoadChosenBattleElement(u8 caseId)
         DecompressDataWithHeaderVram(gBattleEnvironmentInfo[GetBattleEnvironmentOverride()].background.tilemap, (void *)(BG_SCREEN_ADDR(26)));
         break;
     case 5:
-        LoadPalette(gBattleEnvironmentInfo[GetBattleEnvironmentOverride()].palette, BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
+        LoadPalette(GetBattleEnvironmentPalette(GetBattleEnvironmentOverride()), BG_PLTT_ID(2), 3 * PLTT_SIZE_4BPP);
         break;
     case 6:
         LoadBattleMenuWindowGfx();
