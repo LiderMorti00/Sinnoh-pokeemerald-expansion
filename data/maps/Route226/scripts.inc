@@ -22,7 +22,7 @@ Route226_Text_LydiaPost:
 	.string "get all mellowed out.$"
 
 Route226_EventScript_Graham::
-	trainerbattle_single TRAINER_BRENDAN_ROUTE_103_TORCHIC, Route226_Text_GrahamIntro, Route226_Text_GrahamDefeat
+	trainerbattle_single TRAINER_ROBIN, Route226_Text_GrahamIntro, Route226_Text_GrahamDefeat
 	msgbox Route226_Text_GrahamPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -40,7 +40,7 @@ Route226_Text_GrahamPost:
 	.string "caught. They mean everything to me!$"
 
 Route226_EventScript_Geneva::
-	trainerbattle_single TRAINER_BRENDAN_ROUTE_110_TORCHIC, Route226_Text_GenevaIntro, Route226_Text_GenevaDefeat
+	trainerbattle_single TRAINER_RICK, Route226_Text_GenevaIntro, Route226_Text_GenevaDefeat
 	msgbox Route226_Text_GenevaPost, MSGBOX_AUTOCLOSE
 	end
 
