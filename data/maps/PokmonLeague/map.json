@@ -30,16 +30,16 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 17,
-      "y": 58,
+      "x": 22,
+      "y": 59,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "PokmonLeague_EventScript_PtSign1"
     },
     {
       "type": "sign",
-      "x": 17,
-      "y": 39,
+      "x": 18,
+      "y": 42,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "PokmonLeague_EventScript_PtSign2"
