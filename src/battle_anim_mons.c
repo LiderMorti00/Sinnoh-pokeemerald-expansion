@@ -1340,7 +1340,7 @@ u32 GetBattlePalettesMask(bool8 battleBackground, bool8 attacker, bool8 target, 
     if (battleBackground)
     {
         if (!IsContest())
-            selectedPalettes = 0xe; // Palettes 1, 2, and 3
+            selectedPalettes = 0x1e; // Proyecto Sinnoh: paletas 1, 2, 3 y 4 (los fondos de Sinnoh usan la 4)
         else
             selectedPalettes = 1 << GetBattleBgPaletteNum();
     }
