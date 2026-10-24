@@ -226,7 +226,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_GRUNT_PETALBURG_WOODS ===
 Name: GRUNT
 Class: Team Aqua
-Pic: Aqua Grunt M
+Pic: Sinnoh Galactic Grunt M
 Gender: Male
 Music: Aqua
 Double Battle: No
@@ -238,7 +238,7 @@ Level: 11
 === TRAINER_MARCEL ===
 Name: SARAH
 Class: Lass
-Pic: Lass
+Pic: Lass Frlg
 Gender: Female
 Music: Female
 Double Battle: No
@@ -250,7 +250,7 @@ Level: 7
 === TRAINER_ALBERTO ===
 Name: SAMANTHA
 Class: Lass
-Pic: Lass
+Pic: Lass Frlg
 Gender: Female
 Music: Female
 Double Battle: No
@@ -262,7 +262,7 @@ Level: 7
 === TRAINER_ED ===
 Name: TYLER
 Class: Youngster
-Pic: Youngster
+Pic: Youngster Frlg
 Gender: Male
 Music: Male
 Double Battle: No
@@ -287,7 +287,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_DECLAN ===
 Name: BRANDON
 Class: Bug Catcher
-Pic: Bug Catcher
+Pic: Sinnoh Bug Catcher
 Gender: Male
 Music: Male
 Double Battle: No
@@ -302,7 +302,7 @@ Level: 11
 === TRAINER_GRUNT_RUSTURF_TUNNEL ===
 Name: GRUNT
 Class: Team Aqua
-Pic: Aqua Grunt M
+Pic: Sinnoh Galactic Grunt M
 Gender: Male
 Music: Aqua
 Double Battle: No
@@ -494,7 +494,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_FREDRICK ===
 Name: TAYLOR
 Class: Aroma Lady
-Pic: Aroma Lady
+Pic: Sinnoh Aroma Lady
 Gender: Female
 Music: Female
 Double Battle: No
@@ -527,7 +527,7 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 === TRAINER_ZANDER ===
 Name: LIV & LIZ
 Class: Twins
-Pic: Twins
+Pic: Twins Frlg
 Gender: Female
 Music: Female
 Double Battle: Yes
@@ -598,7 +598,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 === TRAINER_LEAH ===
 Name: DANIEL
 Class: Hiker
-Pic: Hiker
+Pic: Sinnoh Hiker
 Gender: Male
 Music: Male
 Double Battle: No
@@ -649,7 +649,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_FELIX ===
 Name: ELIZABETH
 Class: Aroma Lady
-Pic: Aroma Lady
+Pic: Sinnoh Aroma Lady
 Gender: Female
 Music: Female
 Double Battle: No
@@ -661,7 +661,7 @@ Level: 14
 === TRAINER_VIOLET ===
 Name: JACOB
 Class: Camper
-Pic: Camper
+Pic: Camper Frlg
 Gender: Male
 Music: Male
 Double Battle: No
@@ -770,7 +770,7 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 === TRAINER_CHIP ===
 Name: SIENA
 Class: Picnicker
-Pic: Picnicker
+Pic: Picnicker Frlg
 Gender: Female
 Music: Female
 Double Battle: No
@@ -785,7 +785,7 @@ Level: 12
 === TRAINER_FOSTER ===
 Name: NICHOLAS
 Class: Hiker
-Pic: Hiker
+Pic: Sinnoh Hiker
 Gender: Male
 Music: Male
 Double Battle: No
@@ -992,7 +992,7 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 === TRAINER_AUSTINA ===
 Name: KELSEY
 Class: Battle Girl
-Pic: Battle Girl
+Pic: Sinnoh Battle Girl
 Gender: Female
 Music: Female
 Double Battle: No
@@ -1004,7 +1004,7 @@ Level: 15
 === TRAINER_GWEN ===
 Name: KARINA
 Class: Picnicker
-Pic: Picnicker
+Pic: Picnicker Frlg
 Gender: Female
 Music: Female
 Double Battle: No
@@ -1101,7 +1101,7 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 === TRAINER_SIMON ===
 Name: ZACKARY
 Class: Camper
-Pic: Camper
+Pic: Camper Frlg
 Gender: Male
 Music: Male
 Double Battle: No
@@ -1113,7 +1113,7 @@ Level: 14
 === TRAINER_CHARLIE ===
 Name: GRUNT
 Class: Team Aqua
-Pic: Aqua Grunt M
+Pic: Sinnoh Galactic Grunt M
 Gender: Male
 Music: Aqua
 Double Battle: No
@@ -1193,7 +1193,7 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 === TRAINER_RANDALL ===
 Name: GRUNT
 Class: Team Aqua
-Pic: Aqua Grunt M
+Pic: Sinnoh Galactic Grunt M
 Gender: Male
 Music: Aqua
 Double Battle: No
@@ -1205,7 +1205,7 @@ Level: 13
 === TRAINER_PARKER ===
 Name: GRUNT
 Class: Team Aqua
-Pic: Aqua Grunt M
+Pic: Sinnoh Galactic Grunt M
 Gender: Male
 Music: Aqua
 Double Battle: No
@@ -1220,7 +1220,7 @@ Level: 11
 === TRAINER_GEORGE ===
 Name: GRUNT
 Class: Team Aqua
-Pic: Aqua Grunt M
+Pic: Sinnoh Galactic Grunt M
 Gender: Male
 Music: Aqua
 Double Battle: No
@@ -1232,7 +1232,7 @@ Level: 13
 === TRAINER_BERKE ===
 Name: GRUNT
 Class: Team Aqua
-Pic: Aqua Grunt M
+Pic: Sinnoh Galactic Grunt M
 Gender: Male
 Music: Aqua
 Double Battle: No
@@ -1247,7 +1247,7 @@ Level: 11
 === TRAINER_BRAXTON ===
 Name: MARS
 Class: Team Aqua
-Pic: Aqua Admin F
+Pic: Sinnoh Commander Mars
 Gender: Female
 Music: Aqua
 Double Battle: No
@@ -1360,7 +1360,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 === TRAINER_SAMUEL ===
 Name: ZACHARY
 Class: Fisherman
-Pic: Fisherman
+Pic: Fisherman Frlg
 Gender: Male
 Music: Male
 Double Battle: No
@@ -1378,7 +1378,7 @@ Level: 14
 === TRAINER_VITO ===
 Name: CAROLINE
 Class: Lass
-Pic: Lass
+Pic: Lass Frlg
 Gender: Female
 Music: Female
 Double Battle: No
@@ -1393,7 +1393,7 @@ Level: 17
 === TRAINER_OWEN ===
 Name: JENNA
 Class: Aroma Lady
-Pic: Aroma Lady
+Pic: Sinnoh Aroma Lady
 Gender: Female
 Music: Female
 Double Battle: No
@@ -1499,7 +1499,7 @@ IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 === TRAINER_WARREN ===
 Name: ANGELA
 Class: Aroma Lady
-Pic: Aroma Lady
+Pic: Sinnoh Aroma Lady
 Gender: Female
 Music: Female
 Double Battle: No
@@ -1511,7 +1511,7 @@ Level: 19
 === TRAINER_MARY ===
 Name: MASON
 Class: Hiker
-Pic: Hiker
+Pic: Sinnoh Hiker
 Gender: Male
 Music: Male
 Double Battle: No
@@ -1523,7 +1523,7 @@ Level: 9
 === TRAINER_ALEXIA ===
 Name: GARDENIA
 Class: Leader
-Pic: Aroma Lady
+Pic: Sinnoh Leader Gardenia
 Gender: Female
 Music: Female
 Double Battle: No
@@ -1553,7 +1553,7 @@ Level: 22
 === TRAINER_JODY ===
 Name: JACK
 Class: Bug Catcher
-Pic: Bug Catcher
+Pic: Sinnoh Bug Catcher
 Gender: Male
 Music: Male
 Double Battle: No
@@ -1582,7 +1582,7 @@ Level: 15
 === TRAINER_WENDY ===
 Name: BRIANA
 Class: Lass
-Pic: Lass
+Pic: Lass Frlg
 Gender: Female
 Music: Female
 Double Battle: No
@@ -1594,7 +1594,7 @@ Level: 16
 === TRAINER_KEIRA ===
 Name: LINDSEY
 Class: Psychic
-Pic: Psychic F
+Pic: Sinnoh Psychic F
 Gender: Female
 Music: Female
 Double Battle: No
@@ -1629,7 +1629,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 === TRAINER_JENNIFER ===
 Name: ELIJAH
 Class: Psychic
-Pic: Psychic M
+Pic: Sinnoh Psychic M
 Gender: Male
 Music: Male
 Double Battle: No
@@ -1642,7 +1642,7 @@ Level: 17
 === TRAINER_HOPE ===
 Name: PHILLIP
 Class: Bug Catcher
-Pic: Bug Catcher
+Pic: Sinnoh Bug Catcher
 Gender: Male
 Music: Male
 Double Battle: No
@@ -1671,7 +1671,7 @@ Level: 15
 === TRAINER_SHANNON ===
 Name: DONALD
 Class: Bug Catcher
-Pic: Bug Catcher
+Pic: Sinnoh Bug Catcher
 Gender: Male
 Music: Male
 Double Battle: No
@@ -1686,7 +1686,7 @@ Level: 14
 === TRAINER_MICHELLE ===
 Name: KODY
 Class: Psychic
-Pic: Psychic M
+Pic: Sinnoh Psychic M
 Gender: Male
 Music: Male
 Double Battle: No
@@ -1701,7 +1701,7 @@ Level: 17
 === TRAINER_CAROLINE ===
 Name: RACHAEL
 Class: Psychic
-Pic: Psychic F
+Pic: Sinnoh Psychic F
 Gender: Female
 Music: Female
 Double Battle: No
@@ -1716,7 +1716,7 @@ Level: 17
 === TRAINER_JULIE ===
 Name: ANDREW
 Class: Fisherman
-Pic: Fisherman
+Pic: Fisherman Frlg
 Gender: Male
 Music: Male
 Double Battle: No
@@ -1831,7 +1831,7 @@ IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 === TRAINER_PATRICIA ===
 Name: JOSEPH
 Class: Fisherman
-Pic: Fisherman
+Pic: Fisherman Frlg
 Gender: Male
 Music: Male
 Double Battle: No
@@ -3669,7 +3669,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_AUTUMN ===
 Name: DIANA
 Class: Picnicker
-Pic: Picnicker
+Pic: Picnicker Frlg
 Gender: Female
 Music: Female
 Double Battle: No
@@ -3681,7 +3681,7 @@ Level: 9
 === TRAINER_TRAVIS ===
 Name: MADELINE
 Class: Lass
-Pic: Lass
+Pic: Lass Frlg
 Gender: Female
 Music: Female
 Double Battle: No
@@ -4648,7 +4648,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 === TRAINER_ROXANNE_1 ===
 Name: ROARK
 Class: Leader
-Pic: Hiker
+Pic: Sinnoh Leader Roark
 Gender: Male
 Music: Male
 Items: Potion / Potion
@@ -4990,7 +4990,7 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 === TRAINER_TED ===
 Name: CURTIS
 Class: Camper
-Pic: Camper
+Pic: Camper Frlg
 Gender: Male
 Music: Male
 Double Battle: No
@@ -5808,7 +5808,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_BILLY ===
 Name: TRISTAN
 Class: Youngster
-Pic: Youngster
+Pic: Youngster Frlg
 Gender: Male
 Music: Male
 Double Battle: No
@@ -5820,7 +5820,7 @@ Level: 5
 === TRAINER_JOSH ===
 Name: JONATHON
 Class: Youngster
-Pic: Youngster
+Pic: Youngster Frlg
 Gender: Male
 Music: Male
 Double Battle: No
@@ -5834,7 +5834,7 @@ Level: 11
 === TRAINER_TOMMY ===
 Name: DARIUS
 Class: Youngster
-Pic: Youngster
+Pic: Youngster Frlg
 Gender: Male
 Music: Male
 Double Battle: No
@@ -5854,7 +5854,7 @@ Level: 9
 === TRAINER_JOEY ===
 Name: NATALIE
 Class: Lass
-Pic: Lass
+Pic: Lass Frlg
 Gender: Female
 Music: Female
 Double Battle: No
@@ -5943,7 +5943,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 === TRAINER_JAYLEN ===
 Name: DALLAS
 Class: Youngster
-Pic: Youngster
+Pic: Youngster Frlg
 Gender: Male
 Music: Male
 Double Battle: No
@@ -5955,7 +5955,7 @@ Level: 8
 === TRAINER_DILLON ===
 Name: KAITLIN
 Class: Lass
-Pic: Lass
+Pic: Lass Frlg
 Gender: Female
 Music: Female
 Double Battle: No
@@ -6048,7 +6048,7 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 === TRAINER_EDDIE ===
 Name: SEBASTIAN
 Class: Youngster
-Pic: Youngster
+Pic: Youngster Frlg
 Gender: Male
 Music: Male
 Double Battle: No
@@ -6060,7 +6060,7 @@ Level: 8
 === TRAINER_ALLEN ===
 Name: MICHAEL
 Class: Youngster
-Pic: Youngster
+Pic: Youngster Frlg
 Gender: Male
 Music: Male
 Double Battle: No
@@ -6075,7 +6075,7 @@ Level: 6
 === TRAINER_TIMMY ===
 Name: LOGAN
 Class: Youngster
-Pic: Youngster
+Pic: Youngster Frlg
 Gender: Male
 Music: Male
 Double Battle: No
@@ -9349,7 +9349,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 === TRAINER_BRENDAN_ROUTE_103_MUDKIP ===
 Name: BARRY
 Class: Rival
-Pic: Wally
+Pic: Sinnoh Barry
 Gender: Male
 Music: Male
 Double Battle: No
@@ -9362,7 +9362,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_BRENDAN_ROUTE_110_MUDKIP ===
 Name: BARRY
 Class: Rival
-Pic: Wally
+Pic: Sinnoh Barry
 Gender: Male
 Music: Male
 Double Battle: No
@@ -9402,7 +9402,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 === TRAINER_BRENDAN_ROUTE_103_TREECKO ===
 Name: BARRY
 Class: Rival
-Pic: Wally
+Pic: Sinnoh Barry
 Gender: Male
 Music: Male
 Double Battle: No
@@ -9415,7 +9415,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_BRENDAN_ROUTE_110_TREECKO ===
 Name: BARRY
 Class: Rival
-Pic: Wally
+Pic: Sinnoh Barry
 Gender: Male
 Music: Male
 Double Battle: No
@@ -9455,7 +9455,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 === TRAINER_BRENDAN_ROUTE_103_TORCHIC ===
 Name: BARRY
 Class: Rival
-Pic: Wally
+Pic: Sinnoh Barry
 Gender: Male
 Music: Male
 Double Battle: No
@@ -9468,7 +9468,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_BRENDAN_ROUTE_110_TORCHIC ===
 Name: BARRY
 Class: Rival
-Pic: Wally
+Pic: Sinnoh Barry
 Gender: Male
 Music: Male
 Double Battle: No
@@ -11688,7 +11688,7 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 === TRAINER_JOHANNA ===
 Name: CHRISTINE
 Class: School Kid
-Pic: School Kid F
+Pic: Sinnoh School Kid F
 Gender: Female
 Music: Female
 Double Battle: No
@@ -13641,7 +13641,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_ALIX ===
 Name: COLIN
 Class: Hiker
-Pic: Hiker
+Pic: Sinnoh Hiker
 Gender: Male
 Music: Male
 Double Battle: No

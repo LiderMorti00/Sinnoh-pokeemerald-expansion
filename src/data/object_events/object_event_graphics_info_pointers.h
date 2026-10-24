@@ -477,6 +477,32 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohGarde
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohCandice;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohAaron;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohLucian;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMonTorchic;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMonDrifloon;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMonStarly;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMonMachop;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMonSkitty;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMonClefairy;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMonShroomish;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMonHappiny;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMonBuneary;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMonPachirisu;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMonPsyduck;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMonJigglypuff;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMonPikachu;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMonMagikarp;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMonPalkia;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMonDialga;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMonUxie;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMonMesprit;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMonAzelf;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMonHeatran;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMonRegigigas;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMonShaymin;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMonGiratinaAltered;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMonDarkrai;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMonCresselia;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMonArceus;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -945,6 +971,32 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_SINNOH_CANDICE] = &gObjectEventGraphicsInfo_SinnohCandice,
     [OBJ_EVENT_GFX_SINNOH_AARON] = &gObjectEventGraphicsInfo_SinnohAaron,
     [OBJ_EVENT_GFX_SINNOH_LUCIAN] = &gObjectEventGraphicsInfo_SinnohLucian,
+    [OBJ_EVENT_GFX_SINNOH_MON_TORCHIC] = &gObjectEventGraphicsInfo_SinnohMonTorchic,
+    [OBJ_EVENT_GFX_SINNOH_MON_DRIFLOON] = &gObjectEventGraphicsInfo_SinnohMonDrifloon,
+    [OBJ_EVENT_GFX_SINNOH_MON_STARLY] = &gObjectEventGraphicsInfo_SinnohMonStarly,
+    [OBJ_EVENT_GFX_SINNOH_MON_MACHOP] = &gObjectEventGraphicsInfo_SinnohMonMachop,
+    [OBJ_EVENT_GFX_SINNOH_MON_SKITTY] = &gObjectEventGraphicsInfo_SinnohMonSkitty,
+    [OBJ_EVENT_GFX_SINNOH_MON_CLEFAIRY] = &gObjectEventGraphicsInfo_SinnohMonClefairy,
+    [OBJ_EVENT_GFX_SINNOH_MON_SHROOMISH] = &gObjectEventGraphicsInfo_SinnohMonShroomish,
+    [OBJ_EVENT_GFX_SINNOH_MON_HAPPINY] = &gObjectEventGraphicsInfo_SinnohMonHappiny,
+    [OBJ_EVENT_GFX_SINNOH_MON_BUNEARY] = &gObjectEventGraphicsInfo_SinnohMonBuneary,
+    [OBJ_EVENT_GFX_SINNOH_MON_PACHIRISU] = &gObjectEventGraphicsInfo_SinnohMonPachirisu,
+    [OBJ_EVENT_GFX_SINNOH_MON_PSYDUCK] = &gObjectEventGraphicsInfo_SinnohMonPsyduck,
+    [OBJ_EVENT_GFX_SINNOH_MON_JIGGLYPUFF] = &gObjectEventGraphicsInfo_SinnohMonJigglypuff,
+    [OBJ_EVENT_GFX_SINNOH_MON_PIKACHU] = &gObjectEventGraphicsInfo_SinnohMonPikachu,
+    [OBJ_EVENT_GFX_SINNOH_MON_MAGIKARP] = &gObjectEventGraphicsInfo_SinnohMonMagikarp,
+    [OBJ_EVENT_GFX_SINNOH_MON_PALKIA] = &gObjectEventGraphicsInfo_SinnohMonPalkia,
+    [OBJ_EVENT_GFX_SINNOH_MON_DIALGA] = &gObjectEventGraphicsInfo_SinnohMonDialga,
+    [OBJ_EVENT_GFX_SINNOH_MON_UXIE] = &gObjectEventGraphicsInfo_SinnohMonUxie,
+    [OBJ_EVENT_GFX_SINNOH_MON_MESPRIT] = &gObjectEventGraphicsInfo_SinnohMonMesprit,
+    [OBJ_EVENT_GFX_SINNOH_MON_AZELF] = &gObjectEventGraphicsInfo_SinnohMonAzelf,
+    [OBJ_EVENT_GFX_SINNOH_MON_HEATRAN] = &gObjectEventGraphicsInfo_SinnohMonHeatran,
+    [OBJ_EVENT_GFX_SINNOH_MON_REGIGIGAS] = &gObjectEventGraphicsInfo_SinnohMonRegigigas,
+    [OBJ_EVENT_GFX_SINNOH_MON_SHAYMIN] = &gObjectEventGraphicsInfo_SinnohMonShaymin,
+    [OBJ_EVENT_GFX_SINNOH_MON_GIRATINA_ALTERED] = &gObjectEventGraphicsInfo_SinnohMonGiratinaAltered,
+    [OBJ_EVENT_GFX_SINNOH_MON_DARKRAI] = &gObjectEventGraphicsInfo_SinnohMonDarkrai,
+    [OBJ_EVENT_GFX_SINNOH_MON_CRESSELIA] = &gObjectEventGraphicsInfo_SinnohMonCresselia,
+    [OBJ_EVENT_GFX_SINNOH_MON_ARCEUS] = &gObjectEventGraphicsInfo_SinnohMonArceus,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {
