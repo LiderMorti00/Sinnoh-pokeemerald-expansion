@@ -10557,12 +10557,15 @@
     {
       "id": "LAYOUT_OREBURGH_CITY_GYM",
       "name": "OreburghCity_Gym_Layout",
-      "width": 11,
-      "height": 20,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_RustboroGym",
+      "width": 13,
+      "height": 16,
+      "primary_tileset": "gTileset_BuildingFrlg",
+      "secondary_tileset": "gTileset_PewterGym",
       "border_filepath": "data/layouts/OreburghCity_Gym/border.bin",
-      "blockdata_filepath": "data/layouts/OreburghCity_Gym/map.bin"
+      "blockdata_filepath": "data/layouts/OreburghCity_Gym/map.bin",
+      "border_height": 2,
+      "border_width": 2,
+      "layout_version": "frlg"
     },
     {
       "id": "LAYOUT_OREBURGH_CITY_POKEMON_CENTER_1F",
@@ -10837,12 +10840,15 @@
     {
       "id": "LAYOUT_ETERNA_CITY_GYM",
       "name": "EternaCity_Gym_Layout",
-      "width": 20,
-      "height": 25,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_FortreeGym",
+      "width": 13,
+      "height": 20,
+      "primary_tileset": "gTileset_BuildingFrlg",
+      "secondary_tileset": "gTileset_CeladonGym",
       "border_filepath": "data/layouts/EternaCity_Gym/border.bin",
-      "blockdata_filepath": "data/layouts/EternaCity_Gym/map.bin"
+      "blockdata_filepath": "data/layouts/EternaCity_Gym/map.bin",
+      "border_height": 2,
+      "border_width": 2,
+      "layout_version": "frlg"
     },
     {
       "id": "LAYOUT_ETERNA_CITY_POKEMON_CENTER_F1",

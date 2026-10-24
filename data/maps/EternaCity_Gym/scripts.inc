@@ -112,3 +112,27 @@ EternaCity_Gym_Text_AngelaDefeat:
 EternaCity_Gym_Text_AngelaPost:
 	.string "GARDENIA's ROSERADE is her\n"
 	.string "strongest POKéMON.$"
+
+EternaCity_Gym_EventScript_GymStatue::
+	lockall
+	goto_if_set FLAG_BADGE02_GET, EternaCity_Gym_EventScript_GymStatuePostVictory
+	msgbox EternaCity_Gym_Text_GymStatue, MSGBOX_DEFAULT
+	releaseall
+	end
+
+EternaCity_Gym_EventScript_GymStatuePostVictory::
+	msgbox EternaCity_Gym_Text_GymStatuePlayerWon, MSGBOX_DEFAULT
+	releaseall
+	end
+
+EternaCity_Gym_Text_GymStatue:
+	.string "ETERNA POKéMON GYM\n"
+	.string "LEADER: GARDENIA\p"
+	.string "WINNING TRAINERS:\n"
+	.string "BARRY$"
+
+EternaCity_Gym_Text_GymStatuePlayerWon:
+	.string "ETERNA POKéMON GYM\n"
+	.string "LEADER: GARDENIA\p"
+	.string "WINNING TRAINERS:\n"
+	.string "BARRY, {PLAYER}$"

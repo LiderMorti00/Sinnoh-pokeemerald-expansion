@@ -17,8 +17,8 @@
     {
       "local_id": "LOCALID_GYM_ROARK",
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_ROARK",
-      "x": 5,
-      "y": 2,
+      "x": 6,
+      "y": 5,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -30,8 +30,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER_FRLG",
-      "x": 4,
-      "y": 13,
+      "x": 3,
+      "y": 8,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -43,8 +43,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER_FRLG",
-      "x": 7,
-      "y": 5,
+      "x": 9,
+      "y": 8,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -56,8 +56,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GYM_GUY",
-      "x": 3,
-      "y": 17,
+      "x": 7,
+      "y": 12,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -71,19 +71,43 @@
   "warp_events": [
     {
       "x": 5,
-      "y": 19,
-      "elevation": 0,
+      "y": 14,
+      "elevation": 3,
       "dest_map": "MAP_OREBURGH_CITY",
       "dest_warp_id": "6"
     },
     {
       "x": 6,
-      "y": 19,
-      "elevation": 0,
+      "y": 14,
+      "elevation": 3,
+      "dest_map": "MAP_OREBURGH_CITY",
+      "dest_warp_id": "6"
+    },
+    {
+      "x": 7,
+      "y": 14,
+      "elevation": 3,
       "dest_map": "MAP_OREBURGH_CITY",
       "dest_warp_id": "6"
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 4,
+      "y": 12,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "OreburghCity_Gym_EventScript_GymStatue"
+    },
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 12,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "OreburghCity_Gym_EventScript_GymStatue"
+    }
+  ]
 }

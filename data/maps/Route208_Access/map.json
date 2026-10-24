@@ -2,7 +2,7 @@
   "id": "MAP_ROUTE208_ACCESS",
   "name": "Route208_Access",
   "layout": "LAYOUT_ROUTE208_ACCESS",
-  "music": "MUS_POKE_CENTER",
+  "music": "MUS_DPP_ROUTE206",
   "region_map_section": "MAPSEC_ROUTE_208",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
