@@ -16,7 +16,6 @@
   "object_events": [
     {
       "local_id": "LOCALID_WINDWORKS_MARS",
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_MARS",
       "x": 11,
       "y": 5,
@@ -31,7 +30,6 @@
     },
     {
       "local_id": "LOCALID_WINDWORKS_CHARON",
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_CHARON",
       "x": 13,
       "y": 3,
@@ -46,7 +44,6 @@
     },
     {
       "local_id": "LOCALID_WINDWORKS_WORKER",
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_SCIENTIST_M",
       "x": 12,
       "y": 3,
@@ -60,7 +57,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_GALAXY_GRUNT_M",
       "x": 1,
       "y": 9,
@@ -74,7 +70,6 @@
       "flag": "FLAG_HIDE_WINDWORKS_TEAM"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_GALAXY_GRUNT_M",
       "x": 6,
       "y": 6,

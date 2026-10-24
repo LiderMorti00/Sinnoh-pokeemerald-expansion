@@ -86,7 +86,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SINNOH_HIKER",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_WORKER",
       "x": 60,
       "y": 56,
       "elevation": 3,
@@ -112,7 +112,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SINNOH_HIKER",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_WORKER",
       "x": 41,
       "y": 38,
       "elevation": 3,
@@ -125,7 +125,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SINNOH_HIKER",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_WORKER",
       "x": 55,
       "y": 42,
       "elevation": 3,
