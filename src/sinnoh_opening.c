@@ -231,9 +231,24 @@ static void SetBackWide(bool8 wide)
                                  | (wide ? BGCNT_TXT512x256 : BGCNT_TXT256x256));
 }
 
+static EWRAM_DATA bool8 sBarWindows = FALSE;
+
 static void SetLayers(u16 bgMask)
 {
-    SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_MODE_0 | DISPCNT_OBJ_1D_MAP | DISPCNT_OBJ_ON | (bgMask << 8));
+    SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_MODE_0 | DISPCNT_OBJ_1D_MAP | DISPCNT_OBJ_ON | (bgMask << 8)
+                                  | (sBarWindows ? (DISPCNT_WIN0_ON | DISPCNT_WIN1_ON) : 0));
+}
+
+// Los sprites solo se ven dentro de las barras (como en Platino, recortados por ellas)
+static void SetBarWindows(bool8 on, u8 topY, u8 bottomY)
+{
+    sBarWindows = on;
+    SetGpuReg(REG_OFFSET_WIN0H, WIN_RANGE(0, DISPLAY_WIDTH));
+    SetGpuReg(REG_OFFSET_WIN1H, WIN_RANGE(0, DISPLAY_WIDTH));
+    SetGpuReg(REG_OFFSET_WIN0V, WIN_RANGE(topY, topY + 72));
+    SetGpuReg(REG_OFFSET_WIN1V, WIN_RANGE(bottomY, bottomY + 72));
+    SetGpuReg(REG_OFFSET_WININ, WININ_WIN0_ALL | WININ_WIN1_ALL);
+    SetGpuReg(REG_OFFSET_WINOUT, WINOUT_WIN01_BG_ALL | WINOUT_WIN01_CLR);
 }
 
 static void ResetScene(void)
@@ -242,6 +257,7 @@ static void ResetScene(void)
     ResetSpriteData();
     FreeAllSpritePalettes();
     SetBackWide(FALSE);
+    sBarWindows = FALSE;
     for (i = 0; i < 4; i++)
     {
         ClearBg(i);
@@ -553,6 +569,7 @@ static void Scene_Run(u16 t, bool8 dawn)
 
 static void LoadBars(u8 top, u8 bottom)
 {
+    SetBarWindows(TRUE, BAR_TOP_Y, BAR_BOTTOM_Y);
     LoadImage(BG_BACK, &sImg_Bars[top], PAL_BACK);
     LoadImage(BG_MIDDLE, &sImg_Bars[bottom], PAL_MIDDLE);
     SetLayers((1 << BG_BACK) | (1 << BG_MIDDLE));
