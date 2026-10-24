@@ -213,3 +213,35 @@ EternaCity_Text_PtNpc9:
 	.string "Explorer Kit?\p"
 	.string "You should have a word with the man\n"
 	.string "next door to the POKéMON CENTER.$"
+
+EternaCity_EventScript_GalacticGruntM1::
+	msgbox EternaCity_Text_GalacticGruntM1, MSGBOX_NPC
+	end
+
+EternaCity_Text_GalacticGruntM1:
+	.string "Hey! You there, kid! Stay away from\n"
+	.string "that POKéMON statue!\p"
+	.string "TEAM GALACTIC is conducting an\n"
+	.string "official investigation here!$"
+
+
+EternaCity_EventScript_GalacticGruntM2::
+	msgbox EternaCity_Text_GalacticGruntM2, MSGBOX_NPC
+	end
+
+EternaCity_Text_GalacticGruntM2:
+	.string "Hey, you! Yeah, you, Trainer!\p"
+	.string "Errr... It's OK. Never mind. You look\n"
+	.string "tough.\p"
+	.string "I won't take... Um, I'll just let you\n"
+	.string "keep your POKéMON. Carry on!$"
+
+
+EternaCity_EventScript_GalacticGruntM3::
+	msgbox EternaCity_Text_GalacticGruntM3, MSGBOX_NPC
+	end
+
+EternaCity_Text_GalacticGruntM3:
+	.string "Have you seen our building?\p"
+	.string "TEAM GALACTIC is so stinking rich\n"
+	.string "that we can have one built instantly!$"
