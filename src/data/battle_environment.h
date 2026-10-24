@@ -81,10 +81,11 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .secretPowerEffect = B_SECRET_POWER_EFFECT >= GEN_4 ? MOVE_EFFECT_SLEEP : MOVE_EFFECT_POISON,
         .camouflageType = TYPE_GRASS,
         .camouflageBlend = RGB(12, 24, 2),
-        .entry = ENVIRONMENT_ENTRY(TallGrass),
-        .background = ENVIRONMENT_BACKGROUND(TallGrass),
-        .palette = gBattleEnvironmentPalette_TallGrass,
         .battleIntroSlide = BattleIntroSlide1,
+        // Proyecto Sinnoh
+        .entry = ENVIRONMENT_ENTRY(SinnohTallGrass),
+        .background = ENVIRONMENT_BACKGROUND(SinnohTallGrass),
+        .palette = gBattleEnvironmentPalette_SinnohTallGrass,
     },
 
     [BATTLE_ENVIRONMENT_LONG_GRASS] =
@@ -101,10 +102,11 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .secretPowerEffect = MOVE_EFFECT_SLEEP,
         .camouflageType = TYPE_GRASS,
         .camouflageBlend = RGB(0, 15, 2),
-        .entry = ENVIRONMENT_ENTRY(LongGrass),
-        .background = ENVIRONMENT_BACKGROUND(LongGrass),
-        .palette = gBattleEnvironmentPalette_LongGrass,
         .battleIntroSlide = BattleIntroSlide1,
+        // Proyecto Sinnoh
+        .entry = ENVIRONMENT_ENTRY(SinnohLongGrass),
+        .background = ENVIRONMENT_BACKGROUND(SinnohLongGrass),
+        .palette = gBattleEnvironmentPalette_SinnohLongGrass,
     },
 
     [BATTLE_ENVIRONMENT_SAND] =
@@ -115,10 +117,11 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .secretPowerEffect = SECRET_POWER_ACC_MINUS_1,
         .camouflageType = TYPE_GROUND,
         .camouflageBlend = RGB(30, 24, 11),
-        .entry = ENVIRONMENT_ENTRY(Sand),
-        .background = ENVIRONMENT_BACKGROUND(Sand),
-        .palette = gBattleEnvironmentPalette_Sand,
         .battleIntroSlide = BattleIntroSlide2,
+        // Proyecto Sinnoh
+        .entry = ENVIRONMENT_ENTRY(SinnohSand),
+        .background = ENVIRONMENT_BACKGROUND(SinnohSand),
+        .palette = gBattleEnvironmentPalette_SinnohSand,
     },
 
     [BATTLE_ENVIRONMENT_UNDERWATER] =
@@ -143,10 +146,11 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .secretPowerEffect = SECRET_POWER_ATK_MINUS_1,
         .camouflageType = TYPE_WATER,
         .camouflageBlend = RGB(11, 22, 31),
-        .entry = ENVIRONMENT_ENTRY(Water),
-        .background = ENVIRONMENT_BACKGROUND(Water),
-        .palette = gBattleEnvironmentPalette_Water,
         .battleIntroSlide = BattleIntroSlide2,
+        // Proyecto Sinnoh
+        .entry = ENVIRONMENT_ENTRY(SinnohWater),
+        .background = ENVIRONMENT_BACKGROUND(SinnohWater),
+        .palette = gBattleEnvironmentPalette_SinnohWater,
     },
 
     [BATTLE_ENVIRONMENT_POND] =
@@ -157,10 +161,11 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .secretPowerEffect = B_SECRET_POWER_EFFECT >= GEN_4 ? SECRET_POWER_ATK_MINUS_1 : SECRET_POWER_SPD_MINUS_1,
         .camouflageType = TYPE_WATER,
         .camouflageBlend = RGB(11, 22, 31),
-        .entry = ENVIRONMENT_ENTRY(PondWater),
-        .background = ENVIRONMENT_BACKGROUND(PondWater),
-        .palette = gBattleEnvironmentPalette_PondWater,
         .battleIntroSlide = BattleIntroSlide1,
+        // Proyecto Sinnoh
+        .entry = ENVIRONMENT_ENTRY(SinnohPondWater),
+        .background = ENVIRONMENT_BACKGROUND(SinnohPondWater),
+        .palette = gBattleEnvironmentPalette_SinnohPondWater,
     },
 
     [BATTLE_ENVIRONMENT_MOUNTAIN] =
@@ -183,10 +188,11 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
     #endif
         .camouflageType = B_CAMOUFLAGE_TYPES >= GEN_5 ? TYPE_GROUND : TYPE_ROCK,
         .camouflageBlend = RGB(22, 16, 10),
-        .entry = ENVIRONMENT_ENTRY(Rock),
-        .background = ENVIRONMENT_BACKGROUND(Rock),
-        .palette = gBattleEnvironmentPalette_Rock,
         .battleIntroSlide = BattleIntroSlide1,
+        // Proyecto Sinnoh
+        .entry = ENVIRONMENT_ENTRY(SinnohRock),
+        .background = ENVIRONMENT_BACKGROUND(SinnohRock),
+        .palette = gBattleEnvironmentPalette_SinnohRock,
     },
 
     [BATTLE_ENVIRONMENT_CAVE] =
@@ -197,10 +203,11 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .secretPowerEffect = CAVE_SECRET_POWER_EFFECT,
         .camouflageType = CAVE_CAMOUFLAGE_TYPE,
         .camouflageBlend = CAVE_CAMOUFLAGE_BLEND,
-        .entry = ENVIRONMENT_ENTRY(Cave),
-        .background = ENVIRONMENT_BACKGROUND(Cave),
-        .palette = gBattleEnvironmentPalette_Cave,
         .battleIntroSlide = CAVE_BATTLE_INTRO_SLIDE,
+        // Proyecto Sinnoh
+        .entry = ENVIRONMENT_ENTRY(SinnohCave),
+        .background = ENVIRONMENT_BACKGROUND(SinnohCave),
+        .palette = gBattleEnvironmentPalette_SinnohCave,
     },
 
     [BATTLE_ENVIRONMENT_BUILDING] =
@@ -211,10 +218,11 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .secretPowerEffect = BUILDING_SECRET_POWER_EFFECT,
         .camouflageType = BUILDING_CAMOUFLAGE_TYPE,
         .camouflageBlend = BUILDING_CAMOUFLAGE_BLEND,
-        .entry = ENVIRONMENT_ENTRY(Building),
-        .background = ENVIRONMENT_BACKGROUND(Building),
-        .palette = gBattleEnvironmentPalette_Building,
         .battleIntroSlide = BUILDING_BATTLE_INTRO_SLIDE,
+        // Proyecto Sinnoh
+        .entry = ENVIRONMENT_ENTRY(SinnohBuilding),
+        .background = ENVIRONMENT_BACKGROUND(SinnohBuilding),
+        .palette = gBattleEnvironmentPalette_SinnohBuilding,
     },
 
     [BATTLE_ENVIRONMENT_PLAIN] =
@@ -225,10 +233,11 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .secretPowerEffect = PLAIN_SECRET_POWER_EFFECT,
         .camouflageType = PLAIN_CAMOUFLAGE_TYPE,
         .camouflageBlend = PLAIN_CAMOUFLAGE_BLEND,
-        .entry = ENVIRONMENT_ENTRY(Building),
-        .background = ENVIRONMENT_BACKGROUND(Building),
-        .palette = gBattleEnvironmentPalette_Plain,
         .battleIntroSlide = PLAIN_BATTLE_INTRO_SLIDE,
+        // Proyecto Sinnoh
+        .entry = ENVIRONMENT_ENTRY(SinnohPlain),
+        .background = ENVIRONMENT_BACKGROUND(SinnohPlain),
+        .palette = gBattleEnvironmentPalette_SinnohPlain,
     },
 
     [BATTLE_ENVIRONMENT_FRONTIER] =
@@ -251,10 +260,11 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .secretPowerEffect = BUILDING_SECRET_POWER_EFFECT,
         .camouflageType = BUILDING_CAMOUFLAGE_TYPE,
         .camouflageBlend = BUILDING_CAMOUFLAGE_BLEND,
-        .entry = ENVIRONMENT_ENTRY(Building),
-        .background = ENVIRONMENT_BACKGROUND(Building),
-        .palette = gBattleEnvironmentPalette_BuildingGym,
         .battleIntroSlide = BUILDING_BATTLE_INTRO_SLIDE,
+        // Proyecto Sinnoh
+        .entry = ENVIRONMENT_ENTRY(SinnohBuilding),
+        .background = ENVIRONMENT_BACKGROUND(SinnohBuilding),
+        .palette = gBattleEnvironmentPalette_SinnohBuilding,
     },
 
     [BATTLE_ENVIRONMENT_LEADER] =
@@ -264,10 +274,11 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .secretPowerEffect = BUILDING_SECRET_POWER_EFFECT,
         .camouflageType = BUILDING_CAMOUFLAGE_TYPE,
         .camouflageBlend = BUILDING_CAMOUFLAGE_BLEND,
-        .entry = ENVIRONMENT_ENTRY(Building),
-        .background = ENVIRONMENT_BACKGROUND(Building),
-        .palette = gBattleEnvironmentPalette_BuildingLeader,
         .battleIntroSlide = BUILDING_BATTLE_INTRO_SLIDE,
+        // Proyecto Sinnoh
+        .entry = ENVIRONMENT_ENTRY(SinnohBuilding),
+        .background = ENVIRONMENT_BACKGROUND(SinnohBuilding),
+        .palette = gBattleEnvironmentPalette_SinnohBuilding,
     },
 
     [BATTLE_ENVIRONMENT_MAGMA] =
@@ -477,6 +488,10 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .secretPowerEffect = MOVE_EFFECT_FREEZE_OR_FROSTBITE,
         .camouflageType = TYPE_ICE,
         .camouflageBlend = DEFAULT_CAMOUFLAGE_BLEND,
+        // Proyecto Sinnoh
+        .entry = ENVIRONMENT_ENTRY(SinnohSnow),
+        .background = ENVIRONMENT_BACKGROUND(SinnohSnow),
+        .palette = gBattleEnvironmentPalette_SinnohSnow,
     },
 
     [BATTLE_ENVIRONMENT_ICE] =
@@ -487,6 +502,10 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .secretPowerEffect = MOVE_EFFECT_FREEZE_OR_FROSTBITE,
         .camouflageType = TYPE_ICE,
         .camouflageBlend = DEFAULT_CAMOUFLAGE_BLEND,
+        // Proyecto Sinnoh
+        .entry = ENVIRONMENT_ENTRY(SinnohSnow),
+        .background = ENVIRONMENT_BACKGROUND(SinnohSnow),
+        .palette = gBattleEnvironmentPalette_SinnohSnow,
     },
 
     [BATTLE_ENVIRONMENT_VOLCANO] =

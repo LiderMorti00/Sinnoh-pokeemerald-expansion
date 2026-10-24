@@ -30,7 +30,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(PIKACHU)",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_MON_PIKACHU",
       "x": 4,
       "y": 3,
       "elevation": 3,
