@@ -114,76 +114,106 @@ static const u16 sOp_GameFreak_Map[] = INCBIN_U16("graphics/sinnoh_opening/GameF
 #define sOp_GameFreak_NUM_TILES 96
 #define sOp_GameFreak_W 29
 #define sOp_GameFreak_H 11
+#define sOp_Torterra_PW 128
+#define sOp_Torterra_PH 96
 static const u16 sOp_Torterra_Pal[] = INCGFX_U16("graphics/sinnoh_opening/Torterra_0.png", ".gbapal");
 static const u32 sOp_Torterra0_Gfx[] = INCGFX_U32("graphics/sinnoh_opening/Torterra_0.png", ".4bpp");
 static const struct Subsprite sOp_Torterra0_Subsprites[] = { {.x = -32, .y = -48, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 0}, {.x = 0, .y = -48, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 16}, {.x = 32, .y = -48, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 32}, {.x = -64, .y = -16, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 48}, {.x = -32, .y = -16, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 64}, {.x = 0, .y = -16, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 80}, {.x = 32, .y = -16, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 96}, {.x = -64, .y = 16, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 112}, {.x = -32, .y = 16, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 128}, {.x = 0, .y = 16, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 144}, {.x = 32, .y = 16, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 160} };
 static const struct SubspriteTable sOp_Torterra0_SubspriteTable[] = { {ARRAY_COUNT(sOp_Torterra0_Subsprites), sOp_Torterra0_Subsprites} };
 #define sOp_Torterra0_SIZE (5632)
+#define sOp_Infernape_PW 128
+#define sOp_Infernape_PH 96
 static const u16 sOp_Infernape_Pal[] = INCGFX_U16("graphics/sinnoh_opening/Infernape_0.png", ".gbapal");
 static const u32 sOp_Infernape0_Gfx[] = INCGFX_U32("graphics/sinnoh_opening/Infernape_0.png", ".4bpp");
-static const struct Subsprite sOp_Infernape0_Subsprites[] = { {.x = -64, .y = -48, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 0}, {.x = -32, .y = -48, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 16}, {.x = 0, .y = -48, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 32}, {.x = 32, .y = -48, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 48}, {.x = -64, .y = -16, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 64}, {.x = -32, .y = -16, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 80}, {.x = 0, .y = -16, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 96}, {.x = 32, .y = -16, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 112}, {.x = -64, .y = 16, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 128}, {.x = -32, .y = 16, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 144}, {.x = 0, .y = 16, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 160}, {.x = 32, .y = 16, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 176} };
+static const struct Subsprite sOp_Infernape0_Subsprites[] = { {.x = -64, .y = -48, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 0}, {.x = -32, .y = -48, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 16}, {.x = 0, .y = -48, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 32}, {.x = -64, .y = -16, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 48}, {.x = -32, .y = -16, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 64}, {.x = 0, .y = -16, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 80}, {.x = 32, .y = -16, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 96}, {.x = -64, .y = 16, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 112}, {.x = -32, .y = 16, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 128}, {.x = 0, .y = 16, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 144}, {.x = 32, .y = 16, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 160} };
 static const struct SubspriteTable sOp_Infernape0_SubspriteTable[] = { {ARRAY_COUNT(sOp_Infernape0_Subsprites), sOp_Infernape0_Subsprites} };
-#define sOp_Infernape0_SIZE (6144)
+#define sOp_Infernape0_SIZE (5632)
+#define sOp_Grotle_PW 128
+#define sOp_Grotle_PH 64
 static const u16 sOp_Grotle_Pal[] = INCGFX_U16("graphics/sinnoh_opening/Grotle_0.png", ".gbapal");
 static const u32 sOp_Grotle0_Gfx[] = INCGFX_U32("graphics/sinnoh_opening/Grotle_0.png", ".4bpp");
-static const struct Subsprite sOp_Grotle0_Subsprites[] = { {.x = -64, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 0}, {.x = -32, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 16}, {.x = 0, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 32}, {.x = -64, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 48}, {.x = -32, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 64}, {.x = 0, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 80}, {.x = 32, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 96} };
+static const struct Subsprite sOp_Grotle0_Subsprites[] = { {.x = -64, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 0}, {.x = -32, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 16}, {.x = 0, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 32}, {.x = 32, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 48}, {.x = -64, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 64}, {.x = -32, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 80}, {.x = 0, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 96}, {.x = 32, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 112} };
 static const struct SubspriteTable sOp_Grotle0_SubspriteTable[] = { {ARRAY_COUNT(sOp_Grotle0_Subsprites), sOp_Grotle0_Subsprites} };
-#define sOp_Grotle0_SIZE (3584)
+#define sOp_Grotle0_SIZE (4096)
+#define sOp_Chimchar_PW 96
+#define sOp_Chimchar_PH 96
 static const u16 sOp_Chimchar_Pal[] = INCGFX_U16("graphics/sinnoh_opening/Chimchar_0.png", ".gbapal");
 static const u32 sOp_Chimchar0_Gfx[] = INCGFX_U32("graphics/sinnoh_opening/Chimchar_0.png", ".4bpp");
-static const struct Subsprite sOp_Chimchar0_Subsprites[] = { {.x = -48, .y = -48, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 0}, {.x = -16, .y = -48, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 16}, {.x = 16, .y = -48, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 32}, {.x = -48, .y = -16, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 48}, {.x = -16, .y = -16, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 64}, {.x = 16, .y = -16, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 80}, {.x = -48, .y = 16, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 96}, {.x = -16, .y = 16, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 112}, {.x = 16, .y = 16, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 128} };
+static const struct Subsprite sOp_Chimchar0_Subsprites[] = { {.x = -48, .y = -48, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 0}, {.x = -16, .y = -48, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 16}, {.x = -48, .y = -16, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 32}, {.x = -16, .y = -16, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 48}, {.x = 16, .y = -16, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 64}, {.x = -48, .y = 16, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 80}, {.x = -16, .y = 16, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 96}, {.x = 16, .y = 16, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 112} };
 static const struct SubspriteTable sOp_Chimchar0_SubspriteTable[] = { {ARRAY_COUNT(sOp_Chimchar0_Subsprites), sOp_Chimchar0_Subsprites} };
-#define sOp_Chimchar0_SIZE (4608)
+#define sOp_Chimchar0_SIZE (4096)
+#define sOp_Prinplup_PW 96
+#define sOp_Prinplup_PH 64
 static const u16 sOp_Prinplup_Pal[] = INCGFX_U16("graphics/sinnoh_opening/Prinplup_0.png", ".gbapal");
 static const u32 sOp_Prinplup0_Gfx[] = INCGFX_U32("graphics/sinnoh_opening/Prinplup_0.png", ".4bpp");
 static const struct Subsprite sOp_Prinplup0_Subsprites[] = { {.x = -48, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 0}, {.x = -16, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 16}, {.x = 16, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 32}, {.x = -48, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 48}, {.x = -16, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 64}, {.x = 16, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 80} };
 static const struct SubspriteTable sOp_Prinplup0_SubspriteTable[] = { {ARRAY_COUNT(sOp_Prinplup0_Subsprites), sOp_Prinplup0_Subsprites} };
 #define sOp_Prinplup0_SIZE (3072)
+#define sOp_Piplup_PW 96
+#define sOp_Piplup_PH 64
 static const u16 sOp_Piplup_Pal[] = INCGFX_U16("graphics/sinnoh_opening/Piplup_0.png", ".gbapal");
 static const u32 sOp_Piplup0_Gfx[] = INCGFX_U32("graphics/sinnoh_opening/Piplup_0.png", ".4bpp");
 static const struct Subsprite sOp_Piplup0_Subsprites[] = { {.x = -48, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 0}, {.x = -16, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 16}, {.x = 16, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 32}, {.x = -48, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 48}, {.x = -16, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 64}, {.x = 16, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 80} };
 static const struct SubspriteTable sOp_Piplup0_SubspriteTable[] = { {ARRAY_COUNT(sOp_Piplup0_Subsprites), sOp_Piplup0_Subsprites} };
 #define sOp_Piplup0_SIZE (3072)
+#define sOp_Rowan_PW 64
+#define sOp_Rowan_PH 128
 static const u16 sOp_Rowan_Pal[] = INCGFX_U16("graphics/sinnoh_opening/Rowan_0.png", ".gbapal");
 static const u32 sOp_Rowan0_Gfx[] = INCGFX_U32("graphics/sinnoh_opening/Rowan_0.png", ".4bpp");
-static const struct Subsprite sOp_Rowan0_Subsprites[] = { {.x = -32, .y = -64, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 0}, {.x = 0, .y = -64, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 16}, {.x = -32, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 32}, {.x = 0, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 48}, {.x = -32, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 64}, {.x = 0, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 80}, {.x = -32, .y = 32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 96}, {.x = 0, .y = 32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 112} };
+static const struct Subsprite sOp_Rowan0_Subsprites[] = { {.x = -32, .y = -64, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 0}, {.x = -32, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 16}, {.x = 0, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 32}, {.x = -32, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 48}, {.x = 0, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 64}, {.x = -32, .y = 32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 80}, {.x = 0, .y = 32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 96} };
 static const struct SubspriteTable sOp_Rowan0_SubspriteTable[] = { {ARRAY_COUNT(sOp_Rowan0_Subsprites), sOp_Rowan0_Subsprites} };
-#define sOp_Rowan0_SIZE (4096)
+#define sOp_Rowan0_SIZE (3584)
+#define sOp_Looker_PW 64
+#define sOp_Looker_PH 128
 static const u16 sOp_Looker_Pal[] = INCGFX_U16("graphics/sinnoh_opening/Looker_0.png", ".gbapal");
 static const u32 sOp_Looker0_Gfx[] = INCGFX_U32("graphics/sinnoh_opening/Looker_0.png", ".4bpp");
 static const struct Subsprite sOp_Looker0_Subsprites[] = { {.x = -32, .y = -64, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 0}, {.x = 0, .y = -64, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 16}, {.x = -32, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 32}, {.x = 0, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 48}, {.x = -32, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 64}, {.x = 0, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 80}, {.x = -32, .y = 32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 96}, {.x = 0, .y = 32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 112} };
 static const struct SubspriteTable sOp_Looker0_SubspriteTable[] = { {ARRAY_COUNT(sOp_Looker0_Subsprites), sOp_Looker0_Subsprites} };
 #define sOp_Looker0_SIZE (4096)
+#define sOp_LucasBody_PW 128
+#define sOp_LucasBody_PH 64
 static const u16 sOp_LucasBody_Pal[] = INCGFX_U16("graphics/sinnoh_opening/LucasBody_0.png", ".gbapal");
 static const u32 sOp_LucasBody0_Gfx[] = INCGFX_U32("graphics/sinnoh_opening/LucasBody_0.png", ".4bpp");
-static const struct Subsprite sOp_LucasBody0_Subsprites[] = { {.x = -64, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 0}, {.x = -32, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 16}, {.x = 0, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 32}, {.x = 32, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 48}, {.x = -64, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 64}, {.x = -32, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 80}, {.x = 0, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 96}, {.x = 32, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 112} };
+static const struct Subsprite sOp_LucasBody0_Subsprites[] = { {.x = -64, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 0}, {.x = -32, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 16}, {.x = 0, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 32}, {.x = 32, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 48}, {.x = -32, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 64}, {.x = 0, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 80}, {.x = 32, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 96} };
 static const struct SubspriteTable sOp_LucasBody0_SubspriteTable[] = { {ARRAY_COUNT(sOp_LucasBody0_Subsprites), sOp_LucasBody0_Subsprites} };
-#define sOp_LucasBody0_SIZE (4096)
+#define sOp_LucasBody0_SIZE (3584)
+#define sOp_DawnBody_PW 128
+#define sOp_DawnBody_PH 64
 static const u16 sOp_DawnBody_Pal[] = INCGFX_U16("graphics/sinnoh_opening/DawnBody_0.png", ".gbapal");
 static const u32 sOp_DawnBody0_Gfx[] = INCGFX_U32("graphics/sinnoh_opening/DawnBody_0.png", ".4bpp");
 static const struct Subsprite sOp_DawnBody0_Subsprites[] = { {.x = -64, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 0}, {.x = -32, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 16}, {.x = 0, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 32}, {.x = 32, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 48}, {.x = -64, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 64}, {.x = -32, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 80}, {.x = 0, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 96}, {.x = 32, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 112} };
 static const struct SubspriteTable sOp_DawnBody0_SubspriteTable[] = { {ARRAY_COUNT(sOp_DawnBody0_Subsprites), sOp_DawnBody0_Subsprites} };
 #define sOp_DawnBody0_SIZE (4096)
+#define sOp_DawnHandBall_PW 64
+#define sOp_DawnHandBall_PH 64
 static const u16 sOp_DawnHandBall_Pal[] = INCGFX_U16("graphics/sinnoh_opening/DawnHandBall_0.png", ".gbapal");
 static const u32 sOp_DawnHandBall0_Gfx[] = INCGFX_U32("graphics/sinnoh_opening/DawnHandBall_0.png", ".4bpp");
 static const struct Subsprite sOp_DawnHandBall0_Subsprites[] = { {.x = -32, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 0}, {.x = 0, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 16}, {.x = -32, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 32}, {.x = 0, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 48} };
 static const struct SubspriteTable sOp_DawnHandBall0_SubspriteTable[] = { {ARRAY_COUNT(sOp_DawnHandBall0_Subsprites), sOp_DawnHandBall0_Subsprites} };
 #define sOp_DawnHandBall0_SIZE (2048)
+#define sOp_LucasHandOpen_PW 64
+#define sOp_LucasHandOpen_PH 64
 static const u16 sOp_LucasHandOpen_Pal[] = INCGFX_U16("graphics/sinnoh_opening/LucasHandOpen_0.png", ".gbapal");
 static const u32 sOp_LucasHandOpen0_Gfx[] = INCGFX_U32("graphics/sinnoh_opening/LucasHandOpen_0.png", ".4bpp");
 static const struct Subsprite sOp_LucasHandOpen0_Subsprites[] = { {.x = -32, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 0}, {.x = 0, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 16}, {.x = -32, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 32}, {.x = 0, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 48} };
 static const struct SubspriteTable sOp_LucasHandOpen0_SubspriteTable[] = { {ARRAY_COUNT(sOp_LucasHandOpen0_Subsprites), sOp_LucasHandOpen0_Subsprites} };
 #define sOp_LucasHandOpen0_SIZE (2048)
+#define sOp_DawnHandOpen_PW 64
+#define sOp_DawnHandOpen_PH 64
 static const u16 sOp_DawnHandOpen_Pal[] = INCGFX_U16("graphics/sinnoh_opening/DawnHandOpen_0.png", ".gbapal");
 static const u32 sOp_DawnHandOpen0_Gfx[] = INCGFX_U32("graphics/sinnoh_opening/DawnHandOpen_0.png", ".4bpp");
 static const struct Subsprite sOp_DawnHandOpen0_Subsprites[] = { {.x = -32, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 0}, {.x = 0, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 16}, {.x = -32, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 32}, {.x = 0, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 48} };
 static const struct SubspriteTable sOp_DawnHandOpen0_SubspriteTable[] = { {ARRAY_COUNT(sOp_DawnHandOpen0_Subsprites), sOp_DawnHandOpen0_Subsprites} };
 #define sOp_DawnHandOpen0_SIZE (2048)
+#define sOp_LucasHandBall_PW 64
+#define sOp_LucasHandBall_PH 64
 static const u16 sOp_LucasHandBall_Pal[] = INCGFX_U16("graphics/sinnoh_opening/LucasHandBall_0.png", ".gbapal");
 static const u32 sOp_LucasHandBall0_Gfx[] = INCGFX_U32("graphics/sinnoh_opening/LucasHandBall_0.png", ".4bpp");
 static const struct Subsprite sOp_LucasHandBall0_Subsprites[] = { {.x = -32, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 0}, {.x = 0, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 16}, {.x = -32, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 32}, {.x = 0, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 48} };
 static const struct SubspriteTable sOp_LucasHandBall0_SubspriteTable[] = { {ARRAY_COUNT(sOp_LucasHandBall0_Subsprites), sOp_LucasHandBall0_Subsprites} };
 #define sOp_LucasHandBall0_SIZE (2048)
+#define sOp_RunDawn_PW 64
+#define sOp_RunDawn_PH 128
 static const u16 sOp_RunDawn_Pal[] = INCGFX_U16("graphics/sinnoh_opening/RunDawn_0.png", ".gbapal");
 static const u32 sOp_RunDawn0_Gfx[] = INCGFX_U32("graphics/sinnoh_opening/RunDawn_0.png", ".4bpp");
 static const struct Subsprite sOp_RunDawn0_Subsprites[] = { {.x = -32, .y = -64, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 0}, {.x = 0, .y = -64, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 16}, {.x = -32, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 32}, {.x = 0, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 48}, {.x = -32, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 64}, {.x = 0, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 80}, {.x = -32, .y = 32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 96}, {.x = 0, .y = 32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 112} };
@@ -193,6 +223,8 @@ static const u32 sOp_RunDawn1_Gfx[] = INCGFX_U32("graphics/sinnoh_opening/RunDaw
 static const struct Subsprite sOp_RunDawn1_Subsprites[] = { {.x = -32, .y = -64, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 0}, {.x = 0, .y = -64, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 16}, {.x = -32, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 32}, {.x = 0, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 48}, {.x = -32, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 64}, {.x = 0, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 80}, {.x = -32, .y = 32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 96}, {.x = 0, .y = 32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 112} };
 static const struct SubspriteTable sOp_RunDawn1_SubspriteTable[] = { {ARRAY_COUNT(sOp_RunDawn1_Subsprites), sOp_RunDawn1_Subsprites} };
 #define sOp_RunDawn1_SIZE (4096)
+#define sOp_RunLucas_PW 64
+#define sOp_RunLucas_PH 128
 static const u16 sOp_RunLucas_Pal[] = INCGFX_U16("graphics/sinnoh_opening/RunLucas_0.png", ".gbapal");
 static const u32 sOp_RunLucas0_Gfx[] = INCGFX_U32("graphics/sinnoh_opening/RunLucas_0.png", ".4bpp");
 static const struct Subsprite sOp_RunLucas0_Subsprites[] = { {.x = -32, .y = -64, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 0}, {.x = 0, .y = -64, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 16}, {.x = -32, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 32}, {.x = 0, .y = -32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 48}, {.x = -32, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 64}, {.x = 0, .y = 0, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 80}, {.x = -32, .y = 32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 96}, {.x = 0, .y = 32, .shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .tileOffset = 112} };
