@@ -30,8 +30,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_BUG_CATCHER",
-      "x": 27,
-      "y": 59,
+      "x": 26,
+      "y": 60,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -44,7 +44,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_LASS_FRLG",
       "x": 30,
-      "y": 59,
+      "y": 60,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -82,7 +82,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_BUG_CATCHER",
-      "x": 54,
+      "x": 55,
       "y": 78,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
@@ -147,8 +147,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG",
-      "x": 64,
-      "y": 25,
+      "x": 58,
+      "y": 23,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -160,8 +160,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG",
-      "x": 65,
-      "y": 25,
+      "x": 59,
+      "y": 23,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -173,8 +173,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG",
-      "x": 67,
-      "y": 25,
+      "x": 61,
+      "y": 23,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 1,
@@ -225,8 +225,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 29,
-      "y": 51,
+      "x": 28,
+      "y": 50,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
