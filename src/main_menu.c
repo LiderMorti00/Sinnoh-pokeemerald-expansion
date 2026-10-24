@@ -14,6 +14,7 @@
 #include "link.h"
 #include "main.h"
 #include "main_menu.h"
+#include "rowan_intro.h"
 #include "menu.h"
 #include "list_menu.h"
 #include "mystery_event_menu.h"
@@ -1089,9 +1090,10 @@ static void Task_HandleMainMenuAPressed(u8 taskId)
                 return;
             }
 
-            gPlttBufferUnfaded[0] = RGB_BLACK;
-            gPlttBufferFaded[0] = RGB_BLACK;
-            gTasks[taskId].func = Task_NewGameBirchSpeech_Init;
+            // Proyecto Sinnoh: intro del Prof. Serbal en lugar del discurso de Abedul
+            DestroyTask(taskId);
+            StartRowanIntro();
+            return;
             break;
         case ACTION_CONTINUE:
             gPlttBufferUnfaded[0] = RGB_BLACK;
@@ -1294,7 +1296,7 @@ static void HighlightSelectedMainMenuItem(enum PartyMenuType menuType, u8 select
 #define tBrendanSpriteId data[10]
 #define tMaySpriteId data[11]
 
-static void Task_NewGameBirchSpeech_Init(u8 taskId)
+static void UNUSED Task_NewGameBirchSpeech_Init(u8 taskId)
 {
     SetGpuReg(REG_OFFSET_DISPCNT, 0);
     SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_ON | DISPCNT_OBJ_1D_MAP);

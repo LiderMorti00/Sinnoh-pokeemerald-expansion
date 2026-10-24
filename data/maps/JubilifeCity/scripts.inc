@@ -357,12 +357,12 @@ JubilifeCity_Text_DawnWelcome:
 	.string "{STR_VAR_1}: Welcome to JUBILIFE\n"
 	.string "CITY! It's the biggest city in\l"
 	.string "Sinnoh.\p"
-	.string "Barry went to the TRAINERS'\n"
+	.string "{RIVAL} went to the TRAINERS'\n"
 	.string "SCHOOL, just up the street. Let's\l"
 	.string "go!$"
 
 JubilifeCity_Text_BlockEastSchool:
-	.string "I have to deliver Barry's PARCEL\n"
+	.string "I have to deliver {RIVAL}'s PARCEL\n"
 	.string "first. He's somewhere in JUBILIFE.$"
 
 JubilifeCity_Text_BlockEastNorth:

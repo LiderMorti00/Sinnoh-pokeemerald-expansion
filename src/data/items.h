@@ -14877,9 +14877,9 @@ const struct ItemInfo gItemsInfo[] =
         .name = ITEM_NAME("Parcel"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "A parcel for Barry\n"
-            "from his mother.\n"
-            "Deliver it to him."),
+            "A parcel for your\n"
+            "friend from his\n"
+            "mother. Deliver it."),
         .importance = 2,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,

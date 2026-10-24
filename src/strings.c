@@ -18,6 +18,7 @@ const u8 gText_ExpandedPlaceholder_Kyogre[] = _("KYOGRE");
 const u8 gText_ExpandedPlaceholder_Groudon[] = _("GROUDON");
 const u8 gText_ExpandedPlaceholder_Brendan[] = _("BRENDAN");
 const u8 gText_ExpandedPlaceholder_May[] = _("MAY");
+const u8 gText_ExpandedPlaceholder_Barry[] = _("BARRY");
 const u8 gText_ExpandedPlaceholder_Red[] = _("RED");
 const u8 gText_ExpandedPlaceholder_Green[] = _("GREEN");
 const u8 gText_EggNickname[POKEMON_NAME_LENGTH + 1] = _("EGG");

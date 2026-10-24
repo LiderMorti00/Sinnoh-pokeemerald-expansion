@@ -28,7 +28,7 @@ TwinleafTown_MainHouse_2F_Movement_BarryLeaves:
 	step_end
 
 TwinleafTown_MainHouse_2F_Text_Barry1:
-	.string "BARRY: {PLAYER}! Did you see that\n"
+	.string "{RIVAL}: {PLAYER}! Did you see that\n"
 	.string "TV show just now? The one about\l"
 	.string "the red GYARADOS at some lake?!$"
 

@@ -55,7 +55,7 @@ EternaCity_EventScript_Statue::
 	end
 
 EternaCity_Text_Barry:
-	.string "BARRY: {PLAYER}! You made it to\n"
+	.string "{RIVAL}: {PLAYER}! You made it to\n"
 	.string "ETERNA! Hey, there's a famous\l"
 	.string "statue of a legendary POKéMON\n"
 	.string "around here. Come on, let's go see\l"
@@ -70,7 +70,7 @@ EternaCity_Text_Cyrus:
 	.string "flawed world into a perfect one.$"
 
 EternaCity_Text_BarryStatue:
-	.string "BARRY: Uh... who's this guy? Are\n"
+	.string "{RIVAL}: Uh... who's this guy? Are\n"
 	.string "you a researcher or something?$"
 
 EternaCity_Text_Cyrus2:
@@ -78,7 +78,7 @@ EternaCity_Text_Cyrus2:
 	.string "name, children. We may meet again.$"
 
 EternaCity_Text_BarryBye:
-	.string "BARRY: What a weird guy... Anyway!\n"
+	.string "{RIVAL}: What a weird guy... Anyway!\n"
 	.string "I'm going to beat the GYM here\l"
 	.string "before you. See ya!$"
 

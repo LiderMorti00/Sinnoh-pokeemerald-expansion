@@ -659,6 +659,9 @@ gSongTable::
 	song mus_dpp_route209, MUSIC_PLAYER_BGM, 0
 	song mus_dpp_route225, MUSIC_PLAYER_BGM, 0
 	song mus_dpp_route228, MUSIC_PLAYER_BGM, 0
+	song mus_dpp_intro, MUSIC_PLAYER_BGM, 0
+	song mus_dpp_tv, MUSIC_PLAYER_BGM, 0
+	song mus_dpp_opening, MUSIC_PLAYER_BGM, 0
 
 	.align 2
 dummy_song_header:

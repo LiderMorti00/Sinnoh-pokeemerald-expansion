@@ -138,7 +138,7 @@ Route201_Movement_BarryToLake:
 	step_end
 
 Route201_Text_BarryPlan:
-	.string "BARRY: {PLAYER}! Took you long\n"
+	.string "{RIVAL}: {PLAYER}! Took you long\n"
 	.string "enough!\p"
 	.string "Listen, we need POKéMON to find\n"
 	.string "that legendary one at the lake. So\l"
@@ -171,7 +171,7 @@ Route201_Text_Rowan2:
 	.string "Choose one from my briefcase.$"
 
 Route201_Text_BarryPicks:
-	.string "BARRY: Then I'll take this one!\n"
+	.string "{RIVAL}: Then I'll take this one!\n"
 	.string "It's got the advantage over yours!$"
 
 Route201_Text_Rowan3:
@@ -182,7 +182,7 @@ Route201_Text_Rowan3:
 	.string "returning to SANDGEM.$"
 
 Route201_Text_BarryBattle:
-	.string "BARRY: Hey, {PLAYER}! Let's have\n"
+	.string "{RIVAL}: Hey, {PLAYER}! Let's have\n"
 	.string "our very first POKéMON battle!\l"
 	.string "Right now!$"
 
@@ -191,11 +191,11 @@ Route201_Text_BarryDefeat:
 	.string "strong!$"
 
 Route201_Text_BarryAfter:
-	.string "BARRY: Our POKéMON are tired.\n"
+	.string "{RIVAL}: Our POKéMON are tired.\n"
 	.string "Let's go home and heal them up!$"
 
 Route201_Text_BarryLake:
-	.string "BARRY: {PLAYER}! Before we thank\n"
+	.string "{RIVAL}: {PLAYER}! Before we thank\n"
 	.string "the Professor, let's go to LAKE\l"
 	.string "VERITY!\p"
 	.string "Maybe that legendary POKéMON is\n"
@@ -203,7 +203,7 @@ Route201_Text_BarryLake:
 	.string "west!$"
 
 Route201_Text_LakeFirst:
-	.string "Barry went west, toward LAKE\n"
+	.string "{RIVAL} went west, toward LAKE\n"
 	.string "VERITY. I should follow him first.$"
 
 Route201_Text_Clerk:
