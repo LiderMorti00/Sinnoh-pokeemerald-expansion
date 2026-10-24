@@ -31,15 +31,15 @@ OreburghMine_B2F_EventScript_Mason::
 	end
 
 OreburghMine_B2F_Text_MasonIntro:
-	.string "You're in my way! This is a work\n"
-	.string "zone!$"
+	.string "I'm gonna let you in on a secret... I\n"
+	.string "snuck my POKéMON to work!$"
 
 OreburghMine_B2F_Text_MasonDefeat:
-	.string "Well, you've got guts, kid.$"
+	.string "Well, now aren't you something!$"
 
 OreburghMine_B2F_Text_MasonPost:
-	.string "Stay safe down here. The ground\n"
-	.string "shifts a lot.$"
+	.string "OK, OK, time for work! I'll work up a\n"
+	.string "thirst with my POKéMON!$"
 
 OreburghMine_B2F_EventScript_Colin::
 	trainerbattle_single TRAINER_ALIX, OreburghMine_B2F_Text_ColinIntro, OreburghMine_B2F_Text_ColinDefeat
@@ -47,15 +47,16 @@ OreburghMine_B2F_EventScript_Colin::
 	end
 
 OreburghMine_B2F_Text_ColinIntro:
-	.string "My POKéMON help me dig! And\n"
-	.string "battle, too!$"
+	.string "Fine, all righty then. Just a quick\n"
+	.string "battle on my break!$"
 
 OreburghMine_B2F_Text_ColinDefeat:
-	.string "Guess I'll get back to digging...$"
+	.string "Wahaha! Mercy, I cry mercy!$"
 
 OreburghMine_B2F_Text_ColinPost:
-	.string "Our boss ROARK is even tougher\n"
-	.string "than me!$"
+	.string "I'd better get on back to work...\p"
+	.string "You know, I'd rather be traveling\n"
+	.string "around with POKéMON the way you do.$"
 
 OreburghMine_B2F_EventScript_Worker::
 	msgbox OreburghMine_B2F_Text_Worker, MSGBOX_NPC
@@ -89,3 +90,16 @@ OreburghMine_B2F_EventScript_Machop3::
 
 OreburghMine_B2F_Text_Machop3:
 	.string "MACHOP: Mach! Machop!$"
+
+OreburghMine_B2F_EventScript_PtNpc1::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_MACHOP, CRY_MODE_NORMAL
+	msgbox OreburghMine_B2F_Text_PtNpc1, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
+OreburghMine_B2F_Text_PtNpc1:
+	.string "MACHOP: Maaacho!$"

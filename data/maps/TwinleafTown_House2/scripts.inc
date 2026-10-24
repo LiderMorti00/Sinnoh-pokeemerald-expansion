@@ -6,6 +6,5 @@ TwinleafTown_House2_EventScript_PtNpc1::
 	end
 
 TwinleafTown_House2_Text_PtNpc1:
-	.string "I write songs about TWINLEAF. This\n"
-	.string "town is small, but it has a big\l"
-	.string "heart.$"
+	.string "You're off to hang with {PLAYER} again,\n"
+	.string "right? You two sure are tight!$"

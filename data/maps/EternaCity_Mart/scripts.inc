@@ -6,16 +6,27 @@ EternaCity_Mart_EventScript_PtNpc1::
 	end
 
 EternaCity_Mart_Text_PtNpc1:
-	.string "I write songs about this quiet old\n"
-	.string "city.$"
+	.string "The more Gym Badges you have, the\n"
+	.string "better they treat you at Poké Marts.\p"
+	.string "You get to buy a better selection of\n"
+	.string "merchandise, you see.\p"
+	.string "But I don't have a single Gym Badge.\n"
+	.string "It's because GARDENIA's too much!\p"
+	.string "Argh! I don't want to see another\n"
+	.string "grass POKéMON ever again!\p"
+	.string "If only I had Flying-type POKéMON...\n"
+	.string "Then my losing streak would end!$"
 
 EternaCity_Mart_EventScript_PtNpc2::
 	msgbox EternaCity_Mart_Text_PtNpc2, MSGBOX_NPC
 	end
 
 EternaCity_Mart_Text_PtNpc2:
-	.string "I'm stocking up before climbing\n"
-	.string "MT. CORONET.$"
+	.string "An Escape Rope is indispensable!\p"
+	.string "I wish I'd had one when I got into a\n"
+	.string "tough spot in the ETERNA FOREST.\p"
+	.string "I would've been able to warp to the\n"
+	.string "entrance instantly!$"
 
 EternaCity_Mart_EventScript_Clerk::
 	lock

@@ -6,21 +6,24 @@ OreburghCity_Flat3_F1_EventScript_PtNpc1::
 	end
 
 OreburghCity_Flat3_F1_Text_PtNpc1:
-	.string "My family has worked in the mine\n"
-	.string "for three generations.$"
+	.string "Hiya! Your POKéMON could use some\n"
+	.string "toughening up.\p"
+	.string "Why not try training in the OREBURGH\n"
+	.string "MINE?$"
 
 OreburghCity_Flat3_F1_EventScript_PtNpc2::
 	msgbox OreburghCity_Flat3_F1_Text_PtNpc2, MSGBOX_NPC
 	end
 
 OreburghCity_Flat3_F1_Text_PtNpc2:
-	.string "I climb mountains on my days off.\n"
-	.string "MT. CORONET is my favorite.$"
+	.string "I always have a rotten time trying to\n"
+	.string "decide which moves my POKéMON should\l"
+	.string "learn.$"
 
 OreburghCity_Flat3_F1_EventScript_PtNpc3::
 	msgbox OreburghCity_Flat3_F1_Text_PtNpc3, MSGBOX_NPC
 	end
 
 OreburghCity_Flat3_F1_Text_PtNpc3:
-	.string "I trained here for years before\n"
-	.string "traveling around Sinnoh.$"
+	.string "You remind me so much of the time I\n"
+	.string "got my first POKéMON.$"

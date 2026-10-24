@@ -7,15 +7,16 @@ OreburghGate_1F_EventScript_Diana::
 	end
 
 OreburghGate_1F_Text_DianaIntro:
-	.string "It's so dark in here! Battle me so\n"
-	.string "I stop feeling scared!$"
+	.string "To celebrate my getting through this\n"
+	.string "cave, I'm going to battle you!$"
 
 OreburghGate_1F_Text_DianaDefeat:
-	.string "I feel braver now, at least...$"
+	.string "Well, I guess losing is something to\n"
+	.string "commemorate, too...$"
 
 OreburghGate_1F_Text_DianaPost:
-	.string "OREBURGH is right through here.\n"
-	.string "You can smell the coal!$"
+	.string "Getting through that cave feels like\n"
+	.string "an adventure.$"
 
 OreburghGate_1F_EventScript_Curtis::
 	trainerbattle_single TRAINER_TED, OreburghGate_1F_Text_CurtisIntro, OreburghGate_1F_Text_CurtisDefeat
@@ -23,23 +24,26 @@ OreburghGate_1F_EventScript_Curtis::
 	end
 
 OreburghGate_1F_Text_CurtisIntro:
-	.string "Camping in a cave is the best!\n"
-	.string "Let's battle!$"
+	.string "We Trainers will accept challenges\n"
+	.string "anywhere! It's what we do.$"
 
 OreburghGate_1F_Text_CurtisDefeat:
-	.string "My campfire went out...$"
+	.string "Hmm... Insufficiently raised?$"
 
 OreburghGate_1F_Text_CurtisPost:
-	.string "Rock-type POKéMON live all around\n"
-	.string "OREBURGH.$"
+	.string "POKéMON can appear anywhere in a\n"
+	.string "cave. It's not like the tall grass by\l"
+	.string "roads.$"
 
 OreburghGate_1F_EventScript_PtNpc1::
 	msgbox OreburghGate_1F_Text_PtNpc1, MSGBOX_NPC
 	end
 
 OreburghGate_1F_Text_PtNpc1:
-	.string "You'll need ROCK SMASH to break\n"
-	.string "these boulders. Come back later!$"
+	.string "Oh! Good golly! That's OREBURGH CITY's\n"
+	.string "Gym Badge!\p"
+	.string "All right! Now you can use the hidden\n"
+	.string "move Rock Smash on small boulders!$"
 
 OreburghGate_1F_EventScript_HikerHM::
 	lock

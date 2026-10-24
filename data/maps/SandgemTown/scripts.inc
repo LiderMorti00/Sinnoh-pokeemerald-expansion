@@ -229,25 +229,29 @@ SandgemTown_EventScript_PtNpc1::
 	end
 
 SandgemTown_Text_PtNpc1:
-	.string "The beach is right next to town. I\n"
-	.string "love the smell of the sea!$"
+	.string "Oh, wow! POKéMON are so cool!\p"
+	.string "You can make yours battle and make\n"
+	.string "them stronger!\p"
+	.string "I wish I had some! It's so cool!$"
 
 SandgemTown_EventScript_PtNpc2::
 	msgbox SandgemTown_Text_PtNpc2, MSGBOX_NPC
 	end
 
 SandgemTown_Text_PtNpc2:
-	.string "PROFESSOR ROWAN is back from\n"
-	.string "KANTO. The whole town is talking\l"
-	.string "about it.$"
+	.string "That thing you have!\p"
+	.string "It's a Pokédex, isn't it?!\p"
+	.string "You're off to see all kinds of POKéMON\n"
+	.string "now! Lucky you!$"
 
 SandgemTown_EventScript_PtNpc3::
 	msgbox SandgemTown_Text_PtNpc3, MSGBOX_NPC
 	end
 
 SandgemTown_Text_PtNpc3:
-	.string "I raise POKéMON with my husband.\n"
-	.string "Healthy POKéMON are happy POKéMON!$"
+	.string "So I don't forget what's happened, till\n"
+	.string "now, I'd better save this...\p"
+	.string "There! Now I can take a break.$"
 
 SandgemTown_Movement_DawnToLab:
 	walk_up

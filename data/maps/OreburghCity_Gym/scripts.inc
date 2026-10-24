@@ -92,14 +92,16 @@ OreburghCity_Gym_EventScript_Jonathon::
 	end
 
 OreburghCity_Gym_Text_JonathonIntro:
-	.string "The LEADER is up ahead, but you'll\n"
-	.string "have to beat me first!$"
+	.string "You avoided the long way around?\n"
+	.string "Let's see why you'd do that!$"
 
 OreburghCity_Gym_Text_JonathonDefeat:
-	.string "Solid as a rock... I wish.$"
+	.string "Now I understand why you decided to\n"
+	.string "battle with me.$"
 
 OreburghCity_Gym_Text_JonathonPost:
-	.string "ROARK is way tougher than me.$"
+	.string "You should go whichever way you want,\n"
+	.string "shortcut or the long way!$"
 
 OreburghCity_Gym_EventScript_Darius::
 	trainerbattle_single TRAINER_TOMMY, OreburghCity_Gym_Text_DariusIntro, OreburghCity_Gym_Text_DariusDefeat
@@ -107,12 +109,12 @@ OreburghCity_Gym_EventScript_Darius::
 	end
 
 OreburghCity_Gym_Text_DariusIntro:
-	.string "My GEODUDE and ONIX are ready to\n"
-	.string "rumble!$"
+	.string "Only those who want to win can\n"
+	.string "challenge a POKéMON Gym!$"
 
 OreburghCity_Gym_Text_DariusDefeat:
-	.string "Crumbled to pieces...$"
+	.string "Gggh... This is humiliating!$"
 
 OreburghCity_Gym_Text_DariusPost:
-	.string "ROCK-types are weak to WATER. Did\n"
-	.string "you know?$"
+	.string "One day, I'm going to become a tough\n"
+	.string "Trainer like you.$"

@@ -58,8 +58,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 9,
-      "y": 13,
+      "x": 20,
+      "y": 25,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -67,25 +67,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "ITEM_MIRACLE_SEED",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROUTE_113_SUPER_REPEL"
+      "flag": "FLAG_ITEM_ROUTE_119_SUPER_REPEL"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 15,
-      "y": 13,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_ULTRA_BALL",
-      "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROUTE_116_ETHER"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 21,
-      "y": 13,
+      "x": 49,
+      "y": 38,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -93,7 +80,33 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "ITEM_LEAF_STONE",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROUTE_116_REPEL"
+      "flag": "FLAG_ITEM_ROUTE_119_ZINC"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 26,
+      "y": 37,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_ULTRA_BALL",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_ROUTE_119_ELIXIR_1"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 17,
+      "y": 42,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_RARE_CANDY",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_ROUTE_119_LEAF_STONE"
     }
   ],
   "warp_events": [
@@ -137,11 +150,91 @@
   "bg_events": [
     {
       "type": "hidden_item",
-      "x": 27,
-      "y": 13,
+      "x": 45,
+      "y": 44,
+      "elevation": 3,
+      "item": "ITEM_HONEY",
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_124_PEARL"
+    },
+    {
+      "type": "hidden_item",
+      "x": 39,
+      "y": 28,
+      "elevation": 3,
+      "item": "ITEM_HONEY",
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_124_BIG_PEARL"
+    },
+    {
+      "type": "hidden_item",
+      "x": 19,
+      "y": 43,
+      "elevation": 3,
+      "item": "ITEM_HONEY",
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_126_BLUE_SHARD"
+    },
+    {
+      "type": "hidden_item",
+      "x": 35,
+      "y": 38,
+      "elevation": 3,
+      "item": "ITEM_MAX_REVIVE",
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_124_HEART_SCALE_1"
+    },
+    {
+      "type": "hidden_item",
+      "x": 45,
+      "y": 31,
+      "elevation": 3,
+      "item": "ITEM_PP_UP",
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_126_HEART_SCALE"
+    },
+    {
+      "type": "hidden_item",
+      "x": 50,
+      "y": 34,
+      "elevation": 3,
+      "item": "ITEM_HONEY",
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_126_ULTRA_BALL"
+    },
+    {
+      "type": "hidden_item",
+      "x": 31,
+      "y": 31,
+      "elevation": 3,
+      "item": "ITEM_HONEY",
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_126_STARDUST"
+    },
+    {
+      "type": "hidden_item",
+      "x": 50,
+      "y": 41,
       "elevation": 3,
       "item": "ITEM_HYPER_POTION",
-      "flag": "FLAG_HIDDEN_ITEM_TRICK_HOUSE_NUGGET"
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_126_PEARL"
+    },
+    {
+      "type": "hidden_item",
+      "x": 23,
+      "y": 28,
+      "elevation": 3,
+      "item": "ITEM_REVIVE",
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_126_YELLOW_SHARD"
+    },
+    {
+      "type": "hidden_item",
+      "x": 25,
+      "y": 42,
+      "elevation": 3,
+      "item": "ITEM_FULL_HEAL",
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_126_IRON"
+    },
+    {
+      "type": "hidden_item",
+      "x": 27,
+      "y": 24,
+      "elevation": 3,
+      "item": "ITEM_HONEY",
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_126_BIG_PEARL"
     }
   ]
 }

@@ -23,5 +23,8 @@ JubilifeCity_JubilifeTV_F4_EventScript_PtNpc3::
 	end
 
 JubilifeCity_JubilifeTV_F4_Text_PtNpc3:
-	.string "My POKéMON appeared on TV once. It\n"
-	.string "was so nervous!$"
+	.string "We're promoting the theme “Smiles are\n"
+	.string "dreamy.” In keeping with that theme,\l"
+	.string "we added variety programs to our\l"
+	.string "scheduling.\p"
+	.string "Please do tune in!$"

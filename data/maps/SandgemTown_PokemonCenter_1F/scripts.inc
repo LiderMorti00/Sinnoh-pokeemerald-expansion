@@ -20,21 +20,27 @@ SandgemTown_PokemonCenter_1F_EventScript_PtNpc1::
 	end
 
 SandgemTown_PokemonCenter_1F_Text_PtNpc1:
-	.string "Nurses here heal your POKéMON for\n"
-	.string "free. Amazing, isn't it?$"
+	.string "Talk to that nice lady at the counter\n"
+	.string "and hand her your POKéMON.\p"
+	.string "She'll heal your POKéMON to perfect\n"
+	.string "health in no time at all!$"
 
 SandgemTown_PokemonCenter_1F_EventScript_PtNpc2::
 	msgbox SandgemTown_PokemonCenter_1F_Text_PtNpc2, MSGBOX_NPC
 	end
 
 SandgemTown_PokemonCenter_1F_Text_PtNpc2:
-	.string "Trainers use the PC to store\n"
-	.string "POKéMON. You can carry up to six.$"
+	.string "Do you see that PC over there? That\n"
+	.string "fancy blue one?\p"
+	.string "If you've got POKéMON with you, it's\n"
+	.string "free to use.$"
 
 SandgemTown_PokemonCenter_1F_EventScript_PtNpc3::
 	msgbox SandgemTown_PokemonCenter_1F_Text_PtNpc3, MSGBOX_NPC
 	end
 
 SandgemTown_PokemonCenter_1F_Text_PtNpc3:
-	.string "I'm resting before heading back to\n"
-	.string "ROUTE 201.$"
+	.string "The top floor of any POKéMON CENTER\n"
+	.string "is the POKéMON Communication Club.\p"
+	.string "There, you can have all sorts of fun\n"
+	.string "with your friends.$"

@@ -6,20 +6,35 @@ JubilifeCity_Flat2_F1_EventScript_PtNpc1::
 	end
 
 JubilifeCity_Flat2_F1_Text_PtNpc1:
-	.string "I train every morning in the park\n"
-	.string "before work.$"
+	.string "POKéMON are wonderful, deeply\n"
+	.string "mysterious creatures.\p"
+	.string "But to Trainers, the key thing is to do\n"
+	.string "battle with their POKéMON.\p"
+	.string "That's what it boils down to.$"
 
 JubilifeCity_Flat2_F1_EventScript_PtNpc2::
 	msgbox JubilifeCity_Flat2_F1_Text_PtNpc2, MSGBOX_NPC
 	end
 
 JubilifeCity_Flat2_F1_Text_PtNpc2:
-	.string "My PACHIRISU is so cute. It stores\n"
-	.string "berries in its cheeks!$"
+	.string "Hello there, Trainer!\p"
+	.string "If you get stumped and don't know\n"
+	.string "what to do...\p"
+	.string "Talk to people! Talk to everyone you\n"
+	.string "see!\p"
+	.string "Go places! Go wherever you can!\p"
+	.string "You'll find many new places by doing\n"
+	.string "just that.$"
 
 JubilifeCity_Flat2_F1_EventScript_PtNpc3::
-	msgbox JubilifeCity_Flat2_F1_Text_PtNpc3, MSGBOX_NPC
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_PACHIRISU, CRY_MODE_NORMAL
+	msgbox JubilifeCity_Flat2_F1_Text_PtNpc3, MSGBOX_DEFAULT
+	waitmoncry
+	release
 	end
 
 JubilifeCity_Flat2_F1_Text_PtNpc3:
-	.string "Pachi!$"
+	.string "PACHIRISU: Kukkuuh!$"

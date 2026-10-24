@@ -6,8 +6,12 @@ JubilifeCity_JubilifeTV_F1_EventScript_PtNpc1::
 	end
 
 JubilifeCity_JubilifeTV_F1_Text_PtNpc1:
-	.string "Welcome to JUBILIFE TV! Feel free\n"
-	.string "to look around.$"
+	.string "They keep track of official records\n"
+	.string "here.\p"
+	.string "Things like winning streaks, or how\n"
+	.string "many POKéMON you've caught.\p"
+	.string "You can check everyone's records up\n"
+	.string "on the third floor.$"
 
 JubilifeCity_JubilifeTV_F1_EventScript_PtNpc2::
 	msgbox JubilifeCity_JubilifeTV_F1_Text_PtNpc2, MSGBOX_NPC
@@ -22,8 +26,14 @@ JubilifeCity_JubilifeTV_F1_EventScript_PtNpc3::
 	end
 
 JubilifeCity_JubilifeTV_F1_Text_PtNpc3:
-	.string "I came all the way here to be on\n"
-	.string "TV. Do I look ready?$"
+	.string "The TV station interviews all sorts of\n"
+	.string "Trainers for its shows.\p"
+	.string "After all, people want to know about\n"
+	.string "good Trainers and what they say.\p"
+	.string "Personally, I'd like to learn more\n"
+	.string "about Gym Leaders.\p"
+	.string "I'd also like to hear about the tough\n"
+	.string "Elite Four of the POKéMON LEAGUE.$"
 
 JubilifeCity_JubilifeTV_F1_EventScript_PtNpc4::
 	msgbox JubilifeCity_JubilifeTV_F1_Text_PtNpc4, MSGBOX_NPC

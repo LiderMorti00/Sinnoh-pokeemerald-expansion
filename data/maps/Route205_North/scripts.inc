@@ -7,15 +7,16 @@ Route205_North_EventScript_Andrew::
 	end
 
 Route205_North_Text_AndrewIntro:
-	.string "I only catch MAGIKARP... but lots\n"
-	.string "of them!$"
+	.string "Nothing's biting... I could use a break,\n"
+	.string "I suppose.$"
 
 Route205_North_Text_AndrewDefeat:
-	.string "Splish splash, I lost.$"
+	.string "Well, that didn't do anything for me...$"
 
 Route205_North_Text_AndrewPost:
-	.string "One of these days, one will\n"
-	.string "evolve!$"
+	.string "!\p"
+	.string "Yank your fishing rod when that\n"
+	.string "appears. That's how you fish.$"
 
 Route205_North_EventScript_Joseph::
 	trainerbattle_single TRAINER_PATRICIA, Route205_North_Text_JosephIntro, Route205_North_Text_JosephDefeat
@@ -23,14 +24,15 @@ Route205_North_EventScript_Joseph::
 	end
 
 Route205_North_Text_JosephIntro:
-	.string "My GOLDEEN is the queen of the\n"
-	.string "river!$"
+	.string "How about that! I've netted me a\n"
+	.string "feisty Trainer!$"
 
 Route205_North_Text_JosephDefeat:
-	.string "She swam away...$"
+	.string "I let a big win slip away...$"
 
 Route205_North_Text_JosephPost:
-	.string "Fishing teaches patience.$"
+	.string "Do you have a fishing rod? Catch some\n"
+	.string "big ones!$"
 
 Route205_North_EventScript_Zachary::
 	trainerbattle_single TRAINER_SAMUEL, Route205_North_Text_ZacharyIntro, Route205_North_Text_ZacharyDefeat
@@ -38,23 +40,23 @@ Route205_North_EventScript_Zachary::
 	end
 
 Route205_North_Text_ZacharyIntro:
-	.string "You scared the fish away! Now you\n"
-	.string "owe me a battle!$"
+	.string "I fished up some tough POKéMON! Let's\n"
+	.string "have ourselves a battle!$"
 
 Route205_North_Text_ZacharyDefeat:
-	.string "Reeled in by you...$"
+	.string "Losing to a kid has me gasping like a\n"
+	.string "MAGIKARP...$"
 
 Route205_North_Text_ZacharyPost:
-	.string "The bridge is the best fishing\n"
-	.string "spot around.$"
+	.string "My feet are tangled, too! Ouch! Ouch!$"
 
 Route205_North_EventScript_PtNpc1::
 	msgbox Route205_North_Text_PtNpc1, MSGBOX_NPC
 	end
 
 Route205_North_Text_PtNpc1:
-	.string "The fish bite best in the morning.\n"
-	.string "Patience is key!$"
+	.string "To sit back and fish casually... It's a\n"
+	.string "grown-up's hobby.$"
 
 Route205_North_EventScript_Sign3::
 	msgbox Route205_North_Text_Sign3, MSGBOX_SIGN

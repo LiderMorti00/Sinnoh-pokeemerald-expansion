@@ -45,11 +45,11 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_BREEDER_M",
-      "x": 13,
+      "x": 11,
       "y": 20,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "movement_range_x": 2,
+      "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
@@ -61,7 +61,7 @@
       "x": 23,
       "y": 19,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -458,14 +458,6 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "SandgemTown_EventScript_Sign4"
-    },
-    {
-      "type": "hidden_item",
-      "x": 26,
-      "y": 1,
-      "elevation": 3,
-      "item": "ITEM_ANTIDOTE",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_104_POTION"
     },
     {
       "type": "sign",

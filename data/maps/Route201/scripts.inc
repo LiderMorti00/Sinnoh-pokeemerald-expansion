@@ -279,26 +279,29 @@ Route201_EventScript_PtNpc1::
 	end
 
 Route201_Text_PtNpc1:
-	.string "Wild POKéMON appear in tall grass.\n"
-	.string "Walk around it if your POKéMON are\l"
-	.string "tired.$"
+	.string "Wild POKéMON lurk in tall grass. They\n"
+	.string "can come bursting out at any time.\p"
+	.string "So, if you're wanting to battle wild\n"
+	.string "POKéMON, just walk in tall grass.\p"
+	.string "If you want to avoid wild POKéMON,\n"
+	.string "then stay out of the tall grass.$"
 
 Route201_EventScript_PtNpc2::
 	msgbox Route201_Text_PtNpc2, MSGBOX_NPC
 	end
 
 Route201_Text_PtNpc2:
-	.string "Have you been to SANDGEM? The\n"
-	.string "Professor's lab is there!$"
+	.string "That ledge is one way. Jump down for a\n"
+	.string "shortcut to TWINLEAF TOWN!$"
 
 Route201_EventScript_PtNpc3::
 	msgbox Route201_Text_PtNpc3, MSGBOX_NPC
 	end
 
 Route201_Text_PtNpc3:
-	.string "If you look carefully, you can\n"
-	.string "spot items lying around on the\l"
-	.string "routes.$"
+	.string "If your POKéMON's health--that's its\n"
+	.string "HP--is getting low, you should go home\l"
+	.string "and get some rest.$"
 
 Route201_Movement_RowanArrives:
 	walk_right

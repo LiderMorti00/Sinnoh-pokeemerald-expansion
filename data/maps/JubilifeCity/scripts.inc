@@ -52,16 +52,20 @@ JubilifeCity_EventScript_PtNpc1::
 	end
 
 JubilifeCity_Text_PtNpc1:
-	.string "JUBILIFE is the biggest city in\n"
-	.string "Sinnoh. Everything is here!$"
+	.string "When you walk with your POKéMON, they\n"
+	.string "gradually grow friendlier.$"
 
 JubilifeCity_EventScript_PtNpc2::
 	msgbox JubilifeCity_Text_PtNpc2, MSGBOX_NPC
 	end
 
 JubilifeCity_Text_PtNpc2:
-	.string "I'm heading to OREBURGH to\n"
-	.string "challenge the GYM. Wish me luck!$"
+	.string "Hiya, where'd you come from?\p"
+	.string "...\p"
+	.string "TWINLEAF TOWN, huh... It's a nice place.\n"
+	.string "Quiet and all.\p"
+	.string "JUBILIFE CITY is a big place, so it\n"
+	.string "might be a bit of a shock to you.$"
 
 JubilifeCity_EventScript_PtNpc3::
 	msgbox JubilifeCity_Text_PtNpc3, MSGBOX_NPC
@@ -76,35 +80,46 @@ JubilifeCity_EventScript_PtNpc4::
 	end
 
 JubilifeCity_Text_PtNpc4:
-	.string "Look at all these buildings! I get\n"
-	.string "lost every time I come here.$"
+	.string "Did you see me on TV? I was in an\n"
+	.string "interview!$"
 
 JubilifeCity_EventScript_PtNpc5::
-	msgbox JubilifeCity_Text_PtNpc5, MSGBOX_NPC
+	lock
+	faceplayer
+	msgbox JubilifeCity_Text_PtNpc5, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, JubilifeCity_EventScript_PtNpc5_No
+	msgbox JubilifeCity_Text_PtNpc5_Yes, MSGBOX_DEFAULT
+	release
+	end
+
+JubilifeCity_EventScript_PtNpc5_No:
+	msgbox JubilifeCity_Text_PtNpc5_No, MSGBOX_DEFAULT
+	release
 	end
 
 JubilifeCity_Text_PtNpc5:
-	.string "The POKéTCH COMPANY makes watches\n"
-	.string "for Trainers. They're really\l"
-	.string "useful!$"
+	.string "Hello, Trainer! Do you know much about\n"
+	.string "POKéMON?$"
 
 JubilifeCity_EventScript_PtNpc6::
 	msgbox JubilifeCity_Text_PtNpc6, MSGBOX_NPC
 	end
 
 JubilifeCity_Text_PtNpc6:
-	.string "Did you see the TV station?\n"
-	.string "JUBILIFE TV broadcasts all over\l"
-	.string "Sinnoh.$"
+	.string "OK, set six POKé BALLS in my belt...\p"
+	.string "Yeah, that'll do it. At most, you can\n"
+	.string "have six POKéMON with you.$"
 
 JubilifeCity_EventScript_PtNpc7::
 	msgbox JubilifeCity_Text_PtNpc7, MSGBOX_NPC
 	end
 
 JubilifeCity_Text_PtNpc7:
-	.string "Some people in strange spacesuits\n"
-	.string "were wandering around town. Who\l"
-	.string "are they?$"
+	.string "JUBILIFE CITY's built on land they\n"
+	.string "carved out of a mountain.\p"
+	.string "The people and POKéMON of OREBURGH\n"
+	.string "CITY helped out with that\l"
+	.string "undertaking.$"
 
 JubilifeCity_EventScript_PtNpc8::
 	msgbox JubilifeCity_Text_PtNpc8, MSGBOX_NPC
@@ -119,24 +134,28 @@ JubilifeCity_EventScript_PtNpc9::
 	end
 
 JubilifeCity_Text_PtNpc9:
-	.string "The road east leads to ROUTE 203\n"
-	.string "and OREBURGH CITY.$"
+	.string "Past here is the Global Terminal. It\n"
+	.string "lets you trade with the whole world!\p"
+	.string "Trading POKéMON means connecting\n"
+	.string "with friends, both old and new.\p"
+	.string "That's awesome!$"
 
 JubilifeCity_EventScript_PtNpc10::
 	msgbox JubilifeCity_Text_PtNpc10, MSGBOX_NPC
 	end
 
 JubilifeCity_Text_PtNpc10:
-	.string "I'm playing a game! Don't bother\n"
-	.string "me, I'm about to win!$"
+	.string "I'm trading POKéMON with my buddy!$"
 
 JubilifeCity_EventScript_PtNpc11::
 	msgbox JubilifeCity_Text_PtNpc11, MSGBOX_NPC
 	end
 
 JubilifeCity_Text_PtNpc11:
-	.string "Beep boop! I'm trading POKéMON\n"
-	.string "with my friend over here!$"
+	.string "I made my POKéMON hold an item before\n"
+	.string "trading it.\p"
+	.string "That will make the other Trainer\n"
+	.string "double happy!$"
 
 JubilifeCity_EventScript_Dawn::
 JubilifeCity_EventScript_DawnScene::
@@ -559,3 +578,17 @@ JubilifeCity_EventScript_Sign9::
 JubilifeCity_Text_Sign9:
 	.string "JUBILIFE CITY\p"
 	.string "The most modern city in Sinnoh.$"
+
+JubilifeCity_Text_PtNpc5_Yes:
+	.string "Ah, I see! You are knowledgeable!\p"
+	.string "I imagine you wouldn't see the need to\n"
+	.string "visit the Trainers' School, then.\p"
+	.string "But do visit if you have the time. You\n"
+	.string "may discover something new!$"
+
+JubilifeCity_Text_PtNpc5_No:
+	.string "Oh, you're not knowledgeable... But not\n"
+	.string "to worry!\p"
+	.string "There's the Trainers' School.\p"
+	.string "The school will teach you the basics\n"
+	.string "of POKéMON.$"

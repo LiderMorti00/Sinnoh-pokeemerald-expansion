@@ -49,10 +49,10 @@
     {
       "type": "hidden_item",
       "x": 8,
-      "y": 7,
+      "y": 9,
       "elevation": 3,
-      "item": "ITEM_POTION",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_113_ETHER"
+      "item": "ITEM_TINY_MUSHROOM",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_123_SUPER_REPEL"
     }
   ]
 }

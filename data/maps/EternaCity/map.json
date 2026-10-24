@@ -89,7 +89,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_BREEDER_M",
       "x": 14,
-      "y": 42,
+      "y": 45,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -101,8 +101,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_1",
-      "x": 12,
-      "y": 37,
+      "x": 11,
+      "y": 35,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -153,8 +153,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_BUG_CATCHER",
-      "x": 14,
-      "y": 23,
+      "x": 13,
+      "y": 25,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -191,9 +191,87 @@
       "flag": "0"
     },
     {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_BREEDER_F",
+      "x": 13,
+      "y": 48,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EternaCity_EventScript_PtNpc9",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG",
+      "x": 15,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_CutTree",
+      "flag": "FLAG_TEMP_11"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG",
+      "x": 16,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_CutTree",
+      "flag": "FLAG_TEMP_12"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG",
+      "x": 17,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_CutTree",
+      "flag": "FLAG_TEMP_13"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG",
+      "x": 24,
+      "y": 3,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_CutTree",
+      "flag": "FLAG_TEMP_14"
+    },
+    {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 53,
-      "y": 7,
+      "x": 37,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_TM_THIEF",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_OLD_MAGMA_HIDEOUT_B2F_NEST_BALL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 27,
+      "y": 45,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -201,7 +279,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "ITEM_SUPER_POTION",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_MT_PYRE_5F_LAX_INCENSE"
+      "flag": "FLAG_ITEM_MOSSDEEP_STEVENS_HOUSE_HM08"
     }
   ],
   "warp_events": [
@@ -366,14 +444,6 @@
   ],
   "bg_events": [
     {
-      "type": "hidden_item",
-      "x": 57,
-      "y": 8,
-      "elevation": 3,
-      "item": "ITEM_DRACO_PLATE",
-      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_126_ULTRA_BALL"
-    },
-    {
       "type": "sign",
       "x": 14,
       "y": 9,
@@ -404,6 +474,22 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "EternaCity_EventScript_Sign4"
+    },
+    {
+      "type": "hidden_item",
+      "x": 38,
+      "y": 9,
+      "elevation": 3,
+      "item": "ITEM_DRACO_PLATE",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_113_ETHER"
+    },
+    {
+      "type": "hidden_item",
+      "x": 58,
+      "y": 6,
+      "elevation": 3,
+      "item": "ITEM_MOON_STONE",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_114_CARBOS"
     }
   ]
 }

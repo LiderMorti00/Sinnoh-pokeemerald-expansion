@@ -103,49 +103,56 @@ EternaCity_EventScript_PtNpc1::
 	end
 
 EternaCity_Text_PtNpc1:
-	.string "ETERNA is an old city. People here\n"
-	.string "treasure history and nature.$"
+	.string "If you're visiting ETERNA, you need to\n"
+	.string "get yourself a Bicycle and take a ride\l"
+	.string "down the Cycling Road.$"
 
 EternaCity_EventScript_PtNpc2::
 	msgbox EternaCity_Text_PtNpc2, MSGBOX_NPC
 	end
 
 EternaCity_Text_PtNpc2:
-	.string "The statue here shows a legendary\n"
-	.string "POKéMON. Nobody knows which one\l"
-	.string "for sure.$"
+	.string "ETERNA CITY's not anything like it was\n"
+	.string "before, way back in the day.$"
 
 EternaCity_EventScript_PtNpc3::
 	msgbox EternaCity_Text_PtNpc3, MSGBOX_NPC
 	end
 
 EternaCity_Text_PtNpc3:
-	.string "I trained in the forest to become\n"
-	.string "stronger. Hi-yah!$"
+	.string "They say this is an awesome POKéMON\n"
+	.string "that people saw long ago.$"
 
 EternaCity_EventScript_PtNpc4::
 	msgbox EternaCity_Text_PtNpc4, MSGBOX_NPC
 	end
 
 EternaCity_Text_PtNpc4:
-	.string "The GYM LEADER GARDENIA loves\n"
-	.string "flowers and GRASS POKéMON.$"
+	.string "Since that TEAM GALACTIC building\n"
+	.string "went up, the city's atmosphere has\l"
+	.string "gotten all creepy and tense.\p"
+	.string "I don't know what those people are\n"
+	.string "doing up in that place...$"
 
 EternaCity_EventScript_PtNpc5::
 	msgbox EternaCity_Text_PtNpc5, MSGBOX_NPC
 	end
 
 EternaCity_Text_PtNpc5:
-	.string "Those GALACTIC people built a\n"
-	.string "weird building up north. It gives\l"
-	.string "me the creeps.$"
+	.string "They say this is an old city.\p"
+	.string "It doesn't look it, though. Not with all\n"
+	.string "these tall buildings.$"
 
 EternaCity_EventScript_PtNpc6::
 	msgbox EternaCity_Text_PtNpc6, MSGBOX_NPC
 	end
 
 EternaCity_Text_PtNpc6:
-	.string "I caught a BURMY in ETERNA FOREST!$"
+	.string "My friend said TEAM GALACTIC took his\n"
+	.string "favorite POKéMON away.\p"
+	.string "I don't think he's telling the truth.\n"
+	.string "TEAM GALACTIC looks so cool.\p"
+	.string "They don't look like common thugs.$"
 
 EternaCity_EventScript_PtNpc7::
 	msgbox EternaCity_Text_PtNpc7, MSGBOX_NPC
@@ -160,8 +167,11 @@ EternaCity_EventScript_PtNpc8::
 	end
 
 EternaCity_Text_PtNpc8:
-	.string "Hunting for BUG POKéMON is the\n"
-	.string "best!$"
+	.string "Oh, wow! You got a Bicycle!\p"
+	.string "You can ride down Cycling Road and end\n"
+	.string "up in HEARTHOME CITY.\p"
+	.string "It's a fast and fun ride. You should\n"
+	.string "check it out!$"
 
 EternaCity_EventScript_Sign1::
 	msgbox EternaCity_Text_Sign1, MSGBOX_SIGN
@@ -193,3 +203,13 @@ EternaCity_EventScript_Sign4::
 
 EternaCity_Text_Sign4:
 	.string "UNDERGROUND MAN'S HOUSE$"
+
+EternaCity_EventScript_PtNpc9::
+	msgbox EternaCity_Text_PtNpc9, MSGBOX_NPC
+	end
+
+EternaCity_Text_PtNpc9:
+	.string "Oh, don't tell me you don't have an\n"
+	.string "Explorer Kit?\p"
+	.string "You should have a word with the man\n"
+	.string "next door to the POKéMON CENTER.$"

@@ -20,22 +20,27 @@ FloaromaTown_PokemonCenter_1F_EventScript_PtNpc1::
 	end
 
 FloaromaTown_PokemonCenter_1F_Text_PtNpc1:
-	.string "The windmills at VALLEY WINDWORKS\n"
-	.string "make electricity for all of\l"
-	.string "Sinnoh.$"
+	.string "There've been problems with the\n"
+	.string "electric power lately.\p"
+	.string "Is there some trouble at the VALLEY\n"
+	.string "WINDWORKS?$"
 
 FloaromaTown_PokemonCenter_1F_EventScript_PtNpc2::
 	msgbox FloaromaTown_PokemonCenter_1F_Text_PtNpc2, MSGBOX_NPC
 	end
 
 FloaromaTown_PokemonCenter_1F_Text_PtNpc2:
-	.string "I've been training in the flower\n"
-	.string "fields all morning!$"
+	.string "I had a battle the other day, and my\n"
+	.string "POKéMON's HP got low.\p"
+	.string "I thought we were done for.\p"
+	.string "And then, all of a sudden, my POKéMON\n"
+	.string "ate the Berry it was holding! Whew!$"
 
 FloaromaTown_PokemonCenter_1F_EventScript_PtNpc3::
 	msgbox FloaromaTown_PokemonCenter_1F_Text_PtNpc3, MSGBOX_NPC
 	end
 
 FloaromaTown_PokemonCenter_1F_Text_PtNpc3:
-	.string "FLOAROMA HONEY is famous. Slather\n"
-	.string "it on a tree and see what comes!$"
+	.string "If you've got POKéMON with you, it's\n"
+	.string "safe for even a kid like you to go off\l"
+	.string "traveling alone.$"

@@ -36,19 +36,6 @@
   ],
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 34,
-      "y": 10,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_POTION",
-      "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROUTE_109_PP_UP"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_ACE_TRAINER_F",
       "x": 21,
       "y": 21,
@@ -63,8 +50,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_ACE_TRAINER_M",
-      "x": 52,
-      "y": 18,
+      "x": 49,
+      "y": 17,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
       "movement_range_x": 1,
@@ -77,7 +64,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY",
       "x": 21,
-      "y": 53,
+      "y": 51,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -90,7 +77,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_GIRL_FRLG",
       "x": 37,
-      "y": 16,
+      "y": 14,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -103,7 +90,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_1",
       "x": 48,
-      "y": 42,
+      "y": 40,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
@@ -129,7 +116,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_1",
       "x": 45,
-      "y": 28,
+      "y": 26,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -142,11 +129,11 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_ACE_TRAINER_M",
       "x": 40,
-      "y": 23,
+      "y": 21,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP_LEFT_AND_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "JubilifeCity_EventScript_PtNpc8",
@@ -155,11 +142,11 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_ACE_TRAINER_M",
       "x": 30,
-      "y": 40,
+      "y": 35,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "JubilifeCity_EventScript_PtNpc9",
@@ -180,8 +167,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GBA_KID",
-      "x": 58,
-      "y": 44,
+      "x": 57,
+      "y": 41,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -316,6 +303,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "JubilifeCity_EventScript_President",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 18,
+      "y": 22,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_POTION",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_ROUTE_123_RARE_CANDY"
     }
   ],
   "warp_events": [
@@ -1200,14 +1200,6 @@
       "script": "JubilifeCity_EventScript_Sign3"
     },
     {
-      "type": "hidden_item",
-      "x": 50,
-      "y": 11,
-      "elevation": 3,
-      "item": "ITEM_PARALYZE_HEAL",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_121_HP_UP"
-    },
-    {
       "type": "sign",
       "x": 52,
       "y": 6,
@@ -1254,6 +1246,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "JubilifeCity_EventScript_Sign9"
+    },
+    {
+      "type": "hidden_item",
+      "x": 44,
+      "y": 55,
+      "elevation": 3,
+      "item": "ITEM_STARDUST",
+      "flag": "FLAG_HIDDEN_ITEM_TRICK_HOUSE_NUGGET"
     }
   ]
 }

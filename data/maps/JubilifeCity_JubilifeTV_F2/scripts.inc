@@ -14,13 +14,16 @@ JubilifeCity_JubilifeTV_F2_EventScript_PtNpc2::
 	end
 
 JubilifeCity_JubilifeTV_F2_Text_PtNpc2:
-	.string "This floor is for programs about\n"
-	.string "POKéMON. Very popular!$"
+	.string "The room at the back is our dreamy\n"
+	.string "fitting room.\p"
+	.string "Once you're done in there, get our\n"
+	.string "dreamy Hiker to take a dreamy photo!$"
 
 JubilifeCity_JubilifeTV_F2_EventScript_PtNpc3::
 	msgbox JubilifeCity_JubilifeTV_F2_Text_PtNpc3, MSGBOX_NPC
 	end
 
 JubilifeCity_JubilifeTV_F2_Text_PtNpc3:
-	.string "Hey! I'm the security guard.\n"
-	.string "Behave yourself, all right?$"
+	.string "I don't know what to do.\p"
+	.string "What Accessories will go well with my\n"
+	.string "dress today?$"

@@ -49,13 +49,17 @@ OreburghCity_Mart_EventScript_PtNpc1::
 	end
 
 OreburghCity_Mart_Text_PtNpc1:
-	.string "I buy ESCAPE ROPES before going\n"
-	.string "into the mine. Just in case!$"
+	.string "The Badges that POKéMON Gyms give\n"
+	.string "you are a measure of a Trainer's worth.\p"
+	.string "By getting more Badges, you get to\n"
+	.string "buy more items in Poké Marts.$"
 
 OreburghCity_Mart_EventScript_PtNpc2::
 	msgbox OreburghCity_Mart_Text_PtNpc2, MSGBOX_NPC
 	end
 
 OreburghCity_Mart_Text_PtNpc2:
-	.string "I found an old coin in the mine.\n"
-	.string "Is it valuable?$"
+	.string "The POKÉ MART is staffed by a lady and\n"
+	.string "a young fellow.\p"
+	.string "They offer different kinds of\n"
+	.string "merchandise. Did you know?$"

@@ -65,15 +65,16 @@ EternaForest_EventScript_Jack::
 	end
 
 EternaForest_Text_JackIntro:
-	.string "My BUG POKéMON love this forest!\n"
-	.string "Let's battle!$"
+	.string "What's cool, you might ask? No? I'll\n"
+	.string "tell you anyway: bug POKéMON!$"
 
 EternaForest_Text_JackDefeat:
-	.string "Squashed flat...$"
+	.string "Don't ignore bug POKéMON! That really\n"
+	.string "bugs me!$"
 
 EternaForest_Text_JackPost:
-	.string "BEAUTIFLY is so pretty when it\n"
-	.string "flies.$"
+	.string "It would seem that coolness alone\n"
+	.string "doesn't add up to any wins...$"
 
 EternaForest_EventScript_Briana::
 	trainerbattle_single TRAINER_WENDY, EternaForest_Text_BrianaIntro, EternaForest_Text_BrianaDefeat
@@ -81,15 +82,16 @@ EternaForest_EventScript_Briana::
 	end
 
 EternaForest_Text_BrianaIntro:
-	.string "PACHIRISU and I are lost... Battle\n"
-	.string "me while we wait!$"
+	.string "We're just out on a power walk!$"
 
 EternaForest_Text_BrianaDefeat:
-	.string "Lost the battle, too...$"
+	.string "Oh, you!$"
 
 EternaForest_Text_BrianaPost:
-	.string "Is the exit this way? I'm so\n"
-	.string "confused.$"
+	.string "You can't avoid bug POKéMON ever in\n"
+	.string "the forest.\p"
+	.string "I didn't have any Antidotes with me,\n"
+	.string "either. It was the worst!$"
 
 EternaForest_EventScript_Lindsey::
 	trainerbattle_single TRAINER_KEIRA, EternaForest_Text_LindseyIntro, EternaForest_Text_LindseyDefeat
@@ -97,15 +99,17 @@ EternaForest_EventScript_Lindsey::
 	end
 
 EternaForest_Text_LindseyIntro:
-	.string "I sensed you coming. Shall we\n"
-	.string "battle?$"
+	.string "I see it... I see it...\p"
+	.string "I see you going down in defeat...$"
 
 EternaForest_Text_LindseyDefeat:
-	.string "I didn't foresee that...$"
+	.string "It is I that has gone down in defeat.$"
 
 EternaForest_Text_LindseyPost:
-	.string "ABRA teleports away when it's\n"
-	.string "scared.$"
+	.string "The OLD CHATEAU... There should be\n"
+	.string "none alive in it...\p"
+	.string "And yet there is a pervasive sense of\n"
+	.string "a presence...$"
 
 EternaForest_EventScript_Elijah::
 	trainerbattle_single TRAINER_JENNIFER, EternaForest_Text_ElijahIntro, EternaForest_Text_ElijahDefeat
@@ -113,14 +117,15 @@ EternaForest_EventScript_Elijah::
 	end
 
 EternaForest_Text_ElijahIntro:
-	.string "My mind is sharper than any sword!$"
+	.string "When a Trainer and a POKéMON bond as\n"
+	.string "one, a wondrous power is born...$"
 
 EternaForest_Text_ElijahDefeat:
-	.string "My focus broke...$"
+	.string "Urmmm... Urrrrmmmmm...$"
 
 EternaForest_Text_ElijahPost:
-	.string "Even psychics get lost in this\n"
-	.string "forest.$"
+	.string "There still remain many mysteries yet\n"
+	.string "to be solved in this strange world...$"
 
 EternaForest_EventScript_Phillip::
 	trainerbattle_single TRAINER_HOPE, EternaForest_Text_PhillipIntro, EternaForest_Text_PhillipDefeat
@@ -128,13 +133,13 @@ EternaForest_EventScript_Phillip::
 	end
 
 EternaForest_Text_PhillipIntro:
-	.string "DUSTOX shines in the dark! Look!$"
+	.string "Here comes the swarm!$"
 
 EternaForest_Text_PhillipDefeat:
-	.string "It's powder everywhere...$"
+	.string "Whoooh...$"
 
 EternaForest_Text_PhillipPost:
-	.string "Watch out for poison powder!$"
+	.string "There's a POKéMON ability named Swarm.$"
 
 EternaForest_EventScript_Donald::
 	trainerbattle_single TRAINER_SHANNON, EternaForest_Text_DonaldIntro, EternaForest_Text_DonaldDefeat
@@ -142,15 +147,15 @@ EternaForest_EventScript_Donald::
 	end
 
 EternaForest_Text_DonaldIntro:
-	.string "My BURMY change their cloaks here!\n"
-	.string "Wanna see?$"
+	.string "My senses tingle... I've spotted a rare\n"
+	.string "POKéMON!$"
 
 EternaForest_Text_DonaldDefeat:
-	.string "Unwrapped...$"
+	.string "Awawawawah...$"
 
 EternaForest_Text_DonaldPost:
-	.string "BURMY takes on the cloak of the\n"
-	.string "place where it battled.$"
+	.string "I thought it was a rare POKéMON, but\n"
+	.string "it turned out to be just a Trainer!$"
 
 EternaForest_EventScript_Kody::
 	trainerbattle_single TRAINER_MICHELLE, EternaForest_Text_KodyIntro, EternaForest_Text_KodyDefeat
@@ -158,15 +163,15 @@ EternaForest_EventScript_Kody::
 	end
 
 EternaForest_Text_KodyIntro:
-	.string "MEDITITE and I meditate here every\n"
-	.string "day.$"
+	.string "A strange presence has been felt... It\n"
+	.string "is emanating from...you!$"
 
 EternaForest_Text_KodyDefeat:
-	.string "My concentration broke!$"
+	.string "Oh, no! My MEDITITE!$"
 
 EternaForest_Text_KodyPost:
-	.string "Clear your mind and you'll find\n"
-	.string "the path.$"
+	.string "The OLD CHATEAU... I sense... a\n"
+	.string "particularly strong presence there.$"
 
 EternaForest_EventScript_Rachael::
 	trainerbattle_single TRAINER_CAROLINE, EternaForest_Text_RachaelIntro, EternaForest_Text_RachaelDefeat
@@ -174,23 +179,26 @@ EternaForest_EventScript_Rachael::
 	end
 
 EternaForest_Text_RachaelIntro:
-	.string "PSYDUCK has a headache again.\n"
-	.string "Let's battle!$"
+	.string "This forest is strange, you know... It\n"
+	.string "seems to fill me with energy...$"
 
 EternaForest_Text_RachaelDefeat:
-	.string "Ouch...$"
+	.string "Your victory... There is nothing\n"
+	.string "strange about it.$"
 
 EternaForest_Text_RachaelPost:
-	.string "PSYDUCK gets stronger when its\n"
-	.string "headache is worse.$"
+	.string "Forests are mystifying... They seem to\n"
+	.string "gather such unexplainable energy.$"
 
 EternaForest_EventScript_PtNpc1::
 	msgbox EternaForest_Text_PtNpc1, MSGBOX_NPC
 	end
 
 EternaForest_Text_PtNpc1:
-	.string "I got totally lost in here. Every\n"
-	.string "tree looks the same!$"
+	.string "I'm searching for bug POKéMON so I can\n"
+	.string "win at the ETERNA Gym.\p"
+	.string "Bug POKéMON are great, you know? They\n"
+	.string "grow really fast!$"
 
 EternaForest_EventScript_Sign2::
 	msgbox EternaForest_Text_Sign2, MSGBOX_SIGN

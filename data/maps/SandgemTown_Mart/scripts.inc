@@ -49,13 +49,16 @@ SandgemTown_Mart_EventScript_PtNpc1::
 	end
 
 SandgemTown_Mart_Text_PtNpc1:
-	.string "POKé BALLS are a must! You can't\n"
-	.string "catch POKéMON without them.$"
+	.string "If you come across a POKéMON you've\n"
+	.string "just gotta have, toss a POKé BALL!\p"
+	.string "Never leave home without one!$"
 
 SandgemTown_Mart_EventScript_PtNpc2::
 	msgbox SandgemTown_Mart_Text_PtNpc2, MSGBOX_NPC
 	end
 
 SandgemTown_Mart_Text_PtNpc2:
-	.string "I always stock up on POTIONS\n"
-	.string "before a long trip.$"
+	.string "If a POKéMON loses all its HP, it can't\n"
+	.string "battle anymore.\p"
+	.string "I'm buying lots of Potions to avoid\n"
+	.string "having that happen!$"

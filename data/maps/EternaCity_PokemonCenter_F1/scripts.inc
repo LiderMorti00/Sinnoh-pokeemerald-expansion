@@ -8,16 +8,21 @@ EternaCity_PokemonCenter_F1_EventScript_PtNpc1::
 	end
 
 EternaCity_PokemonCenter_F1_Text_PtNpc1:
-	.string "ETERNA FOREST is full of BUG\n"
-	.string "POKéMON. Great for training!$"
+	.string "TEAM GALACTIC took my POKéMON away.\n"
+	.string "They took other people's, too.\p"
+	.string "Something should be done, but TEAM\n"
+	.string "GALACTIC creeps everyone out...\p"
+	.string "What are they doing to my POKéMON?$"
 
 EternaCity_PokemonCenter_F1_EventScript_PtNpc2::
 	msgbox EternaCity_PokemonCenter_F1_Text_PtNpc2, MSGBOX_NPC
 	end
 
 EternaCity_PokemonCenter_F1_Text_PtNpc2:
-	.string "I heard GARDENIA's ROSERADE is\n"
-	.string "super strong.$"
+	.string "When a POKéMON faints, it just means\n"
+	.string "it doesn't have the power to battle.\p"
+	.string "But it can still use hidden moves\n"
+	.string "outside of battle!$"
 
 EternaCity_PokemonCenter_F1_EventScript_PtNpc3::
 	msgbox EternaCity_PokemonCenter_F1_Text_PtNpc3, MSGBOX_NPC

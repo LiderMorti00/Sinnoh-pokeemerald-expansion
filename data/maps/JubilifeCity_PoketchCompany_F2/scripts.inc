@@ -6,28 +6,43 @@ JubilifeCity_PoketchCompany_F2_EventScript_PtNpc1::
 	end
 
 JubilifeCity_PoketchCompany_F2_Text_PtNpc1:
-	.string "The POKéTCH was invented to make\n"
-	.string "Trainers' lives easier.$"
+	.string "We'll try to think like a Trainer and\n"
+	.string "find what POKéTCH apps would be good.$"
 
 JubilifeCity_PoketchCompany_F2_EventScript_PtNpc2::
 	msgbox JubilifeCity_PoketchCompany_F2_Text_PtNpc2, MSGBOX_NPC
 	end
 
 JubilifeCity_PoketchCompany_F2_Text_PtNpc2:
-	.string "In my day, we didn't have fancy\n"
-	.string "watches! We just used the sun.$"
+	.string "POKéMON Watch! That's POKéTCH for\n"
+	.string "short.\p"
+	.string "Say it the long way and... What does\n"
+	.string "POKéMON stand for again?\p"
+	.string "Anyway, I'm the father of the\n"
+	.string "president of the POKéTCH Company!$"
 
 JubilifeCity_PoketchCompany_F2_EventScript_PtNpc3::
-	msgbox JubilifeCity_PoketchCompany_F2_Text_PtNpc3, MSGBOX_NPC
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_CLEFAIRY, CRY_MODE_NORMAL
+	msgbox JubilifeCity_PoketchCompany_F2_Text_PtNpc3, MSGBOX_DEFAULT
+	waitmoncry
+	release
 	end
 
 JubilifeCity_PoketchCompany_F2_Text_PtNpc3:
-	.string "Clefairy! Fairy fairy!$"
+	.string "CLEFAIRY: Cleffy?$"
 
 JubilifeCity_PoketchCompany_F2_EventScript_PtNpc4::
-	msgbox JubilifeCity_PoketchCompany_F2_Text_PtNpc4, MSGBOX_NPC
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_PACHIRISU, CRY_MODE_NORMAL
+	msgbox JubilifeCity_PoketchCompany_F2_Text_PtNpc4, MSGBOX_DEFAULT
+	waitmoncry
+	release
 	end
 
 JubilifeCity_PoketchCompany_F2_Text_PtNpc4:
-	.string "Pachi-pachi! It's running around\n"
-	.string "the office!$"
+	.string "PACHIRISU: Patchii?$"

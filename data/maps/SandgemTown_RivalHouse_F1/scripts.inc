@@ -6,8 +6,12 @@ SandgemTown_RivalHouse_F1_EventScript_PtNpc1::
 	end
 
 SandgemTown_RivalHouse_F1_Text_PtNpc1:
-	.string "My kid works with PROFESSOR ROWAN.\n"
-	.string "I couldn't be prouder.$"
+	.string "Ah, so that ROWAN fellow is back? He's\n"
+	.string "quite the remarkable man.\p"
+	.string "He's been studying POKéMON since way,\n"
+	.string "way back.\p"
+	.string "My son and grandchild help ROWAN with\n"
+	.string "his studies now.$"
 
 SandgemTown_RivalHouse_F1_EventScript_PtNpc2::
 	msgbox SandgemTown_RivalHouse_F1_Text_PtNpc2, MSGBOX_NPC
