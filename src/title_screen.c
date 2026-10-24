@@ -3,6 +3,7 @@
 #include "config/quickstart.h"
 #include "quickstart.h"
 #include "title_screen.h"
+#include "sinnoh_title.h"
 #include "sprite.h"
 #include "gba/m4a_internal.h"
 #include "clear_save_data_menu.h"
@@ -566,6 +567,12 @@ void CB2_InitTitleScreen(void)
     if (IS_FRLG)
     {
         CB2_InitTitleScreenFrlg();
+        return;
+    }
+    else
+    {
+        // Proyecto Sinnoh: pantalla de título de Platino
+        CB2_InitSinnohTitleScreen();
         return;
     }
     switch (gMain.state)

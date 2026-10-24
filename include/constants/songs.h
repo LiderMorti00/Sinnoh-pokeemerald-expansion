@@ -604,5 +604,6 @@
 #define MUS_DPP_INTRO                 653
 #define MUS_DPP_TV                    654
 #define MUS_DPP_OPENING               655
+#define MUS_DPP_TITLE                 656
 
 #endif  // GUARD_CONSTANTS_SONGS_H
