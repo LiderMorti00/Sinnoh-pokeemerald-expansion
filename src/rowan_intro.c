@@ -913,6 +913,8 @@ static void Task_RowanIntro(u8 taskId)
     case RI_BALL_WAIT_INPUT:
         if (JOY_NEW(A_BUTTON))
         {
+            FillWindowPixelBuffer(WIN_TEXT, PIXEL_FILL(1));
+            CopyWindowToVram(WIN_TEXT, COPYWIN_GFX);
             sRI.subState = 0;
             sRI.timer = 0;
             sRI.state = RI_BALL_PUSH;
