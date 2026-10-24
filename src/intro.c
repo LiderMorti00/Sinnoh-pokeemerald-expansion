@@ -19,6 +19,7 @@
 #include "intro_credits_graphics.h"
 #include "trig.h"
 #include "intro.h"
+#include "sinnoh_opening.h"
 #include "graphics.h"
 #include "sound.h"
 #include "util.h"
@@ -1160,6 +1161,12 @@ void CB2_InitCopyrightScreenAfterTitleScreen(void)
 
 void Task_Scene1_Load(u8 taskId)
 {
+    if (!IS_FRLG)
+    {
+        // Proyecto Sinnoh: película de inicio de Platino
+        StartSinnohOpening(taskId);
+        return;
+    }
     SetVBlankCallback(NULL);
     sIntroCharacterGender = MOD(Random(), GENDER_COUNT);
     IntroResetGpuRegs();
