@@ -135,10 +135,10 @@ OreburghCity_Gym_Text_GymStatue:
 	.string "OREBURGH POKéMON GYM\n"
 	.string "LEADER: ROARK\p"
 	.string "WINNING TRAINERS:\n"
-	.string "BARRY$"
+	.string "{RIVAL}$"
 
 OreburghCity_Gym_Text_GymStatuePlayerWon:
 	.string "OREBURGH POKéMON GYM\n"
 	.string "LEADER: ROARK\p"
 	.string "WINNING TRAINERS:\n"
-	.string "BARRY, {PLAYER}$"
+	.string "{RIVAL}, {PLAYER}$"

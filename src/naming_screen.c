@@ -1470,6 +1470,15 @@ static void NamingScreen_CreateRivalIcon(void)
     const struct SubspriteTable * tables_p;
     u8 spriteId;
 
+    if (!IS_FRLG)
+    {
+        // Proyecto Sinnoh: icono de Barry
+        spriteId = CreateObjectGraphicsSprite(OBJ_EVENT_GFX_SINNOH_BARRY, SpriteCallbackDummy, 56, 37, 0);
+        gSprites[spriteId].oam.priority = 3;
+        StartSpriteAnim(&gSprites[spriteId], ANIM_STD_GO_SOUTH);
+        return;
+    }
+
     CopyObjectGraphicsInfoToSpriteTemplate(OBJ_EVENT_GFX_RED_NORMAL, SpriteCallbackDummy, &template, &tables_p);
 
     template.tileTag = sheet.tag;

@@ -1206,8 +1206,8 @@ struct SaveBlock1
     u32 towerChallengeId;
     struct TrainerTower trainerTower[NUM_TOWER_CHALLENGE_TYPES];
 #endif //FREE_TRAINER_TOWER
+    u8 rivalName[PLAYER_NAME_LENGTH + 1]; // Proyecto Sinnoh: nombre del rival también en Esmeralda
 #if IS_FRLG
-    u8 rivalName[PLAYER_NAME_LENGTH + 1];
     struct DaycareMon route5DayCareMon;
 #endif
     // sizeof: 0x3???

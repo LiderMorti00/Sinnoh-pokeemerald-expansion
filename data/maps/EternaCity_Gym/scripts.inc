@@ -129,10 +129,10 @@ EternaCity_Gym_Text_GymStatue:
 	.string "ETERNA POKéMON GYM\n"
 	.string "LEADER: GARDENIA\p"
 	.string "WINNING TRAINERS:\n"
-	.string "BARRY$"
+	.string "{RIVAL}$"
 
 EternaCity_Gym_Text_GymStatuePlayerWon:
 	.string "ETERNA POKéMON GYM\n"
 	.string "LEADER: GARDENIA\p"
 	.string "WINNING TRAINERS:\n"
-	.string "BARRY, {PLAYER}$"
+	.string "{RIVAL}, {PLAYER}$"

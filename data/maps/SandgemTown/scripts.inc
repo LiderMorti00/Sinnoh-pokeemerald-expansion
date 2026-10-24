@@ -146,7 +146,7 @@ SandgemTown_Text_Dawn:
 	.string "in his lab. Come on, follow me!$"
 
 SandgemTown_Text_Barry:
-	.string "BARRY: Whoa, {PLAYER}! The\n"
+	.string "{RIVAL}: Whoa, {PLAYER}! The\n"
 	.string "Professor isn't as scary as he\l"
 	.string "looks, you know!\p"
 	.string "I'm off to find that legendary\n"
@@ -410,7 +410,7 @@ SandgemTown_Movement_DawnLeaves:
 	step_end
 
 SandgemTown_Text_DawnGoIn:
-	.string "{STR_VAR_1}: That was Barry,\n"
+	.string "{STR_VAR_1}: That was {RIVAL},\n"
 	.string "right? He's always in such a\l"
 	.string "hurry! Come on, let's go in.$"
 

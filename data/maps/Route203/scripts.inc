@@ -101,7 +101,7 @@ Route203_Movement_BarryLeaves:
 	step_end
 
 Route203_Text_BarryIntro:
-	.string "BARRY: Oh! {PLAYER}! Perfect\n"
+	.string "{RIVAL}: Oh! {PLAYER}! Perfect\n"
 	.string "timing!\p"
 	.string "I've been training nonstop. Let's\n"
 	.string "see which of us got stronger!$"
@@ -111,7 +111,7 @@ Route203_Text_BarryDefeat:
 	.string "fining you!$"
 
 Route203_Text_BarryAfter:
-	.string "BARRY: OREBURGH CITY is past the\n"
+	.string "{RIVAL}: OREBURGH CITY is past the\n"
 	.string "gate ahead. There's a GYM there!\p"
 	.string "I'm going to get my first BADGE\n"
 	.string "before you. See ya!$"

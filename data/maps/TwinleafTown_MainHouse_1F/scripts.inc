@@ -71,7 +71,7 @@ TwinleafTown_MainHouse_1F_EventScript_BarrysMom::
 	end
 
 TwinleafTown_MainHouse_1F_Text_MomGrass:
-	.string "MOM: Oh, {PLAYER}! Barry just ran\n"
+	.string "MOM: Oh, {PLAYER}! {RIVAL} just ran\n"
 	.string "out of here in a big hurry. He was\l"
 	.string "looking for you.\p"
 	.string "Just remember: wild POKéMON live\n"
@@ -106,14 +106,14 @@ TwinleafTown_MainHouse_1F_Text_MomJournal:
 	.string "tell me all about it later.$"
 
 TwinleafTown_MainHouse_1F_Text_BarrysMom:
-	.string "BARRY'S MOM: Oh, {PLAYER}! Barry\n"
+	.string "{RIVAL}'S MOM: Oh, {PLAYER}! {RIVAL}\n"
 	.string "forgot his PARCEL again. That boy!\p"
 	.string "He said he was heading to JUBILIFE\n"
 	.string "CITY. Could you take it to him,\l"
 	.string "please?$"
 
 TwinleafTown_MainHouse_1F_Text_BarrysMom2:
-	.string "Thank you, dear. Tell Barry to\n"
+	.string "Thank you, dear. Tell {RIVAL} to\n"
 	.string "slow down once in a while!$"
 
 TwinleafTown_MainHouse_1F_Text_MomTalk:

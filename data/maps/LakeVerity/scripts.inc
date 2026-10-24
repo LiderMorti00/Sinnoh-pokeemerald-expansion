@@ -42,7 +42,7 @@ LakeVerity_Text_Cry:
 	.string "middle of the lake...$"
 
 LakeVerity_Text_Barry:
-	.string "BARRY: Did you hear that?! That\n"
+	.string "{RIVAL}: Did you hear that?! That\n"
 	.string "has to be the legendary POKéMON!\p"
 	.string "Ah! But we don't have any POKé\n"
 	.string "BALLS! Argh!\p"

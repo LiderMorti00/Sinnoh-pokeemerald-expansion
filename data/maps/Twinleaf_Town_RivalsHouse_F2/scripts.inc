@@ -17,7 +17,7 @@ Twinleaf_Town_RivalsHouse_F2_EventScript_Barry::
 	end
 
 Twinleaf_Town_RivalsHouse_F2_Text_Barry:
-	.string "BARRY: There you are, {PLAYER}! I\n"
+	.string "{RIVAL}: There you are, {PLAYER}! I\n"
 	.string "was just about to head out.\p"
 	.string "I'm going to the lake to find that\n"
 	.string "legendary POKéMON! Meet me on\l"

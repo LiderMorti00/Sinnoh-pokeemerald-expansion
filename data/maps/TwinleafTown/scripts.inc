@@ -11,7 +11,7 @@ TwinleafTown_EventScript_BlockNorth::
 	end
 
 TwinleafTown_Text_FindBarry:
-	.string "Barry said to meet him... but I\n"
+	.string "{RIVAL} said to meet him... but I\n"
 	.string "should check his house first. It's\l"
 	.string "the one to the northwest.$"
 
@@ -39,7 +39,7 @@ TwinleafTown_EventScript_PtNpc3::
 	end
 
 TwinleafTown_Text_PtNpc3:
-	.string "Hiya, {PLAYER}. BARRY was looking for\n"
+	.string "Hiya, {PLAYER}. {RIVAL} was looking for\n"
 	.string "you.\p"
 	.string "I think he's home now. Why don't you go\n"
 	.string "check it out?$"

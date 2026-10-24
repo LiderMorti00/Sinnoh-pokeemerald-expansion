@@ -114,18 +114,18 @@ JubilifeCity_PokemonSchool_Movement_BarryLeaves:
 	step_end
 
 JubilifeCity_PokemonSchool_Text_Barry:
-	.string "BARRY: {PLAYER}! What are you\n"
+	.string "{RIVAL}: {PLAYER}! What are you\n"
 	.string "doing here? A PARCEL from my mom?\l"
 	.string "For me?\p"
 	.string "...Oh! Two TOWN MAPS! Mom always\n"
 	.string "buys everything twice.$"
 
 JubilifeCity_PokemonSchool_Text_Barry2:
-	.string "BARRY: You can have one of them!\n"
+	.string "{RIVAL}: You can have one of them!\n"
 	.string "Here!$"
 
 JubilifeCity_PokemonSchool_Text_Barry3:
-	.string "BARRY: With that, you'll never get\n"
+	.string "{RIVAL}: With that, you'll never get\n"
 	.string "lost! I'm heading to OREBURGH for\l"
 	.string "my first BADGE. See ya!$"
 
