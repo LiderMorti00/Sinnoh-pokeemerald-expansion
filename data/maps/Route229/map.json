@@ -2,7 +2,7 @@
   "id": "MAP_ROUTE229",
   "name": "Route229",
   "layout": "LAYOUT_ROUTE229",
-  "music": "MUS_ROUTE110",
+  "music": "MUS_DPP_ROUTE228",
   "region_map_section": "MAPSEC_ROUTE_229",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY_CLOUDS",

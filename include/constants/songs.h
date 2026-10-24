@@ -597,5 +597,9 @@
 #define MUS_DPP_VS_CYNTHIA            646
 #define MUS_DPP_SANDGEM               647
 #define MUS_DPP_PASTORIA              648
+#define MUS_DPP_ROUTE206              649
+#define MUS_DPP_ROUTE209              650
+#define MUS_DPP_ROUTE225              651
+#define MUS_DPP_ROUTE228              652
 
 #endif  // GUARD_CONSTANTS_SONGS_H

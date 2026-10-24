@@ -2,7 +2,7 @@
   "id": "MAP_ROUTE209",
   "name": "Route209",
   "layout": "LAYOUT_ROUTE209",
-  "music": "MUS_RG_ROUTE24",
+  "music": "MUS_DPP_ROUTE209",
   "region_map_section": "MAPSEC_ROUTE_209",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",

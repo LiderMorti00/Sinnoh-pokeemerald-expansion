@@ -2,7 +2,7 @@
   "id": "MAP_ROUTE211_WEST",
   "name": "Route211_West",
   "layout": "LAYOUT_ROUTE211_WEST",
-  "music": "MUS_DPP_ROUTE210",
+  "music": "MUS_DPP_ROUTE205",
   "region_map_section": "MAPSEC_ROUTE_211",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",

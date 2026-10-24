@@ -1639,3 +1639,38 @@ const struct Tileset gTileset_HallOfFame =
 };
 
 #endif // IS_FRLG
+
+#if !IS_FRLG // Proyecto Sinnoh: tilesets de Rojo Fuego usados en mapas de Esmeralda (gimnasios)
+const struct Tileset gTileset_BuildingFrlg =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_Building_Frlg,
+    .palettes = gTilesetPalettes_Building_Frlg,
+    .metatiles = gMetatiles_Building_Frlg,
+    .metatileAttributes = gMetatileAttributes_Building_Frlg,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_PewterGym =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_PewterGym,
+    .palettes = gTilesetPalettes_PewterGym,
+    .metatiles = gMetatiles_PewterGym,
+    .metatileAttributes = gMetatileAttributes_PewterGym,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_CeladonGym =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_CeladonGym,
+    .palettes = gTilesetPalettes_CeladonGym,
+    .metatiles = gMetatiles_CeladonGym,
+    .metatileAttributes = gMetatileAttributes_CeladonGym,
+    .callback = InitTilesetAnim_CeladonGym,
+};
+#endif

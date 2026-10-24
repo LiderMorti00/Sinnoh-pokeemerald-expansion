@@ -118,3 +118,27 @@ OreburghCity_Gym_Text_DariusDefeat:
 OreburghCity_Gym_Text_DariusPost:
 	.string "One day, I'm going to become a tough\n"
 	.string "Trainer like you.$"
+
+OreburghCity_Gym_EventScript_GymStatue::
+	lockall
+	goto_if_set FLAG_BADGE01_GET, OreburghCity_Gym_EventScript_GymStatuePostVictory
+	msgbox OreburghCity_Gym_Text_GymStatue, MSGBOX_DEFAULT
+	releaseall
+	end
+
+OreburghCity_Gym_EventScript_GymStatuePostVictory::
+	msgbox OreburghCity_Gym_Text_GymStatuePlayerWon, MSGBOX_DEFAULT
+	releaseall
+	end
+
+OreburghCity_Gym_Text_GymStatue:
+	.string "OREBURGH POKéMON GYM\n"
+	.string "LEADER: ROARK\p"
+	.string "WINNING TRAINERS:\n"
+	.string "BARRY$"
+
+OreburghCity_Gym_Text_GymStatuePlayerWon:
+	.string "OREBURGH POKéMON GYM\n"
+	.string "LEADER: ROARK\p"
+	.string "WINNING TRAINERS:\n"
+	.string "BARRY, {PLAYER}$"

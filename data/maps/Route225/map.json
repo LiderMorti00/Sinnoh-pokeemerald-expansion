@@ -2,7 +2,7 @@
   "id": "MAP_ROUTE225",
   "name": "Route225",
   "layout": "LAYOUT_ROUTE225",
-  "music": "MUS_ROUTE104",
+  "music": "MUS_DPP_ROUTE225",
   "region_map_section": "MAPSEC_ROUTE_225",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",

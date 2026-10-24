@@ -655,6 +655,10 @@ gSongTable::
 	song mus_dpp_vs_cynthia, MUSIC_PLAYER_BGM, 0
 	song mus_dpp_sandgem, MUSIC_PLAYER_BGM, 0
 	song mus_dpp_pastoria, MUSIC_PLAYER_BGM, 0
+	song mus_dpp_route206, MUSIC_PLAYER_BGM, 0
+	song mus_dpp_route209, MUSIC_PLAYER_BGM, 0
+	song mus_dpp_route225, MUSIC_PLAYER_BGM, 0
+	song mus_dpp_route228, MUSIC_PLAYER_BGM, 0
 
 	.align 2
 dummy_song_header:

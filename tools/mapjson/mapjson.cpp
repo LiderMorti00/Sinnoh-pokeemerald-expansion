@@ -1,3 +1,5 @@
+#include <set>
+#include <fstream>
 // mapjson.cpp
 
 #include <iostream>
@@ -773,6 +775,24 @@ void process_groups(string groups_filepath, vector<string> &map_filepaths, strin
     write_text_file(output_c + sep + "map_groups.h", map_header_text);
 }
 
+// Proyecto Sinnoh: layouts de FRLG usados en la versión Esmeralda
+// (lista de ids en data/layouts/frlg_in_emerald.txt, una por línea).
+static bool frlg_layout_in_emerald(const Json &layout) {
+    static std::set<string> ids;
+    static bool loaded = false;
+    if (!loaded) {
+        loaded = true;
+        std::ifstream f("data/layouts/frlg_in_emerald.txt");
+        string line;
+        while (std::getline(f, line)) {
+            while (!line.empty() && (line.back() == '\r' || line.back() == ' ')) line.pop_back();
+            if (!line.empty() && line[0] != '#') ids.insert(line);
+        }
+    }
+    return version == "emerald" && json_to_string(layout, "layout_version", true) == "frlg"
+        && ids.count(json_to_string(layout, "id", true)) > 0;
+}
+
 string generate_layout_headers_text(Json layouts_data) {
     ostringstream text;
 
@@ -790,8 +810,9 @@ string generate_layout_headers_text(Json layouts_data) {
             else if (version == "firered")
                 layout_version = "frlg";
         }
-        if ((version == "emerald" && layout_version != "emerald")
+        if (((version == "emerald" && layout_version != "emerald")
          || (version == "firered" && layout_version != "frlg"))
+         && !frlg_layout_in_emerald(layout))
             continue;
         string layoutName = json_to_string(layout, "name");
         string border_label = layoutName + "_Border";
@@ -848,7 +869,8 @@ string generate_layouts_table_text(Json layouts_data) {
             else if (version == "firered")
                 layout_version = "frlg";
         }
-        if ((version == "emerald" && layout_version != "emerald") || (version == "firered" && layout_version != "frlg")) {
+        if (((version == "emerald" && layout_version != "emerald") || (version == "firered" && layout_version != "frlg"))
+         && !frlg_layout_in_emerald(layout)) {
             text << "\t.4byte NULL\n";
         } else {
             string layout_name = json_to_string(layout, "name", true);

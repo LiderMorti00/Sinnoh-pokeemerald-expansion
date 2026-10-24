@@ -1510,8 +1510,8 @@ Level: 19
 
 === TRAINER_MARY ===
 Name: MASON
-Class: Hiker
-Pic: Sinnoh Hiker
+Class: Worker
+Pic: Sinnoh Worker
 Gender: Male
 Music: Male
 Double Battle: No
@@ -13640,8 +13640,8 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_ALIX ===
 Name: COLIN
-Class: Hiker
-Pic: Sinnoh Hiker
+Class: Worker
+Pic: Sinnoh Worker
 Gender: Male
 Music: Male
 Double Battle: No

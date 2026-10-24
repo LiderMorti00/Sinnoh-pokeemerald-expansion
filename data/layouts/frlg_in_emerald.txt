@@ -1,0 +1,3 @@
+# Proyecto Sinnoh: layouts con formato de Rojo Fuego que se usan en Esmeralda
+LAYOUT_OREBURGH_CITY_GYM
+LAYOUT_ETERNA_CITY_GYM
