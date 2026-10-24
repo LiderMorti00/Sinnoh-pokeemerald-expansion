@@ -6,16 +6,18 @@ OreburghCity_Flat2_F2_EventScript_PtNpc1::
 	end
 
 OreburghCity_Flat2_F2_Text_PtNpc1:
-	.string "I'm writing a song called COAL\n"
-	.string "HEART. What do you think?$"
+	.string "All POKéMON have a special power\n"
+	.string "called an ability.$"
 
 OreburghCity_Flat2_F2_EventScript_PtNpc2::
 	msgbox OreburghCity_Flat2_F2_Text_PtNpc2, MSGBOX_NPC
 	end
 
 OreburghCity_Flat2_F2_Text_PtNpc2:
-	.string "I raise GEODUDE. They're heavier\n"
-	.string "than they look!$"
+	.string "My favorite POKéMON ability is my\n"
+	.string "PACHIRISU's Pickup.\p"
+	.string "My darling picks up a lot of dropped\n"
+	.string "items without me noticing!$"
 
 OreburghCity_Flat2_F2_EventScript_PtNpc3::
 	msgbox OreburghCity_Flat2_F2_Text_PtNpc3, MSGBOX_NPC

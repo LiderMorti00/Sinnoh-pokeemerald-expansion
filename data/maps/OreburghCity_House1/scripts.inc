@@ -6,13 +6,15 @@ OreburghCity_House1_EventScript_PtNpc1::
 	end
 
 OreburghCity_House1_Text_PtNpc1:
-	.string "ROARK'S dad was a GYM LEADER too,\n"
-	.string "in a faraway city.$"
+	.string "ROARK is a user of Rock-type POKéMON.\p"
+	.string "Don't you think Rock-type POKéMON\n"
+	.string "are nice? I like how lumpy they are!$"
 
 OreburghCity_House1_EventScript_PtNpc2::
 	msgbox OreburghCity_House1_Text_PtNpc2, MSGBOX_NPC
 	end
 
 OreburghCity_House1_Text_PtNpc2:
-	.string "The mine never sleeps. Somebody is\n"
-	.string "always working down there.$"
+	.string "ROARK is our town's Gym Leader.\p"
+	.string "He may be young, but he keeps the mine\n"
+	.string "running safely and efficiently.$"

@@ -14,13 +14,16 @@ EternaCity_Flat1_F2_EventScript_PtNpc2::
 	end
 
 EternaCity_Flat1_F2_Text_PtNpc2:
-	.string "I love this building. It has such\n"
-	.string "a nice view of the statue!$"
+	.string "GARDENIA, our Gym Leader, goes out to\n"
+	.string "ETERNA FOREST every so often.\p"
+	.string "I always wonder what she does there.$"
 
 EternaCity_Flat1_F2_EventScript_PtNpc3::
 	msgbox EternaCity_Flat1_F2_Text_PtNpc3, MSGBOX_NPC
 	end
 
 EternaCity_Flat1_F2_Text_PtNpc3:
-	.string "The stories say three POKéMON live\n"
-	.string "in the lakes of Sinnoh.$"
+	.string "The move Recycle is to be used during\n"
+	.string "battle.\p"
+	.string "When you use Recycle, a POKéMON can\n"
+	.string "use its item once again.$"

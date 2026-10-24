@@ -48,26 +48,30 @@ ValleyWindoworks_Indoor_EventScript_WorkerAfter::
 	end
 
 ValleyWindoworks_Indoor_Text_G1Intro:
-	.string "GRUNT: How did you get in here?!\n"
-	.string "Nobody gets past me!$"
+	.string "Oi! This is no fun and games! This is\n"
+	.string "proper work, I tell you!$"
 
 ValleyWindoworks_Indoor_Text_G1Defeat:
-	.string "Ugh! Defeated!$"
+	.string "What...?! Some brat messed up my job...$"
 
 ValleyWindoworks_Indoor_Text_G1Post:
-	.string "Commander MARS will take care of\n"
-	.string "you!$"
+	.string "TEAM GALACTIC needs electricity for\n"
+	.string "doing something big!$"
 
 ValleyWindoworks_Indoor_Text_G2Intro:
-	.string "GRUNT: We're collecting energy for\n"
-	.string "TEAM GALACTIC! Don't interfere!$"
+	.string "Collecting electricity from the\n"
+	.string "VALLEY WINDWORKS... That's our\l"
+	.string "mission.$"
 
 ValleyWindoworks_Indoor_Text_G2Defeat:
-	.string "Huh? I lost?$"
+	.string "I really don't like kids who also\n"
+	.string "happen to be tough Trainers...$"
 
 ValleyWindoworks_Indoor_Text_G2Post:
-	.string "We need this energy for the boss's\n"
-	.string "big plan...$"
+	.string "You don't have an inkling of what TEAM\n"
+	.string "GALACTIC is trying to achieve!\p"
+	.string "Of course, they don't tell a grunt like\n"
+	.string "me anything, either... But still!$"
 
 ValleyWindoworks_Indoor_Text_MarsIntro:
 	.string "MARS: Oh? A kid made it all the\n"

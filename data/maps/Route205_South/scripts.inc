@@ -7,14 +7,18 @@ Route205_South_EventScript_Daniel::
 	end
 
 Route205_South_Text_DanielIntro:
-	.string "My GEODUDE are rock solid!$"
+	.string "There's no mountain here, but I'm\n"
+	.string "dressed to hike! Gahaha! Here goes!$"
 
 Route205_South_Text_DanielDefeat:
-	.string "Crumbled...$"
+	.string "Oh, yeah! A refreshing battle that\n"
+	.string "was!$"
 
 Route205_South_Text_DanielPost:
-	.string "ETERNA FOREST is thick with trees.\n"
-	.string "Don't get lost!$"
+	.string "You can find the same kinds of\n"
+	.string "POKéMON in all sorts of places.\p"
+	.string "There's no law saying a Hiker can't go\n"
+	.string "searching off in the mountains!$"
 
 Route205_South_EventScript_Elizabeth::
 	trainerbattle_single TRAINER_FELIX, Route205_South_Text_ElizabethIntro, Route205_South_Text_ElizabethDefeat
@@ -22,15 +26,16 @@ Route205_South_EventScript_Elizabeth::
 	end
 
 Route205_South_Text_ElizabethIntro:
-	.string "ROSELIA's scent is heavenly. Care\n"
-	.string "to battle?$"
+	.string "I love POKéMON that smell sweet. Like\n"
+	.string "this one--get a whiff of this!$"
 
 Route205_South_Text_ElizabethDefeat:
-	.string "Oh my.$"
+	.string "Did you understand what I meant?\n"
+	.string "Didn't my POKéMON smell nice?$"
 
 Route205_South_Text_ElizabethPost:
-	.string "Flowers and POKéMON go so well\n"
-	.string "together.$"
+	.string "If you plant lots of Berries, you can\n"
+	.string "be surrounded by sweet scents.$"
 
 Route205_South_EventScript_Jacob::
 	trainerbattle_single TRAINER_VIOLET, Route205_South_Text_JacobIntro, Route205_South_Text_JacobDefeat
@@ -38,14 +43,16 @@ Route205_South_EventScript_Jacob::
 	end
 
 Route205_South_Text_JacobIntro:
-	.string "My PONYTA runs faster than the\n"
-	.string "wind!$"
+	.string "Hey, how about you and me battle\n"
+	.string "before I go into ETERNA FOREST?$"
 
 Route205_South_Text_JacobDefeat:
-	.string "Outrun!$"
+	.string "That really dampened my spirits.$"
 
 Route205_South_Text_JacobPost:
-	.string "I'm camping by the river tonight.$"
+	.string "I heard that really tough POKéMON\n"
+	.string "appear in ETERNA FOREST.\p"
+	.string "I need to be more prepared than this!$"
 
 Route205_South_EventScript_Siena::
 	trainerbattle_single TRAINER_CHIP, Route205_South_Text_SienaIntro, Route205_South_Text_SienaDefeat
@@ -53,14 +60,17 @@ Route205_South_EventScript_Siena::
 	end
 
 Route205_South_Text_SienaIntro:
-	.string "I'm having a picnic! Want to\n"
-	.string "battle first?$"
+	.string "What kinds of POKéMON live around\n"
+	.string "here, I wonder?$"
 
 Route205_South_Text_SienaDefeat:
-	.string "Lost my appetite...$"
+	.string "I'm shocked! How did I lose?$"
 
 Route205_South_Text_SienaPost:
-	.string "The river here is so relaxing.$"
+	.string "I know all sorts of things about\n"
+	.string "POKéMON!\p"
+	.string "Let's see... There are males and\n"
+	.string "females, and some aren't either!$"
 
 Route205_South_EventScript_Nicholas::
 	trainerbattle_single TRAINER_FOSTER, Route205_South_Text_NicholasIntro, Route205_South_Text_NicholasDefeat
@@ -68,15 +78,15 @@ Route205_South_EventScript_Nicholas::
 	end
 
 Route205_South_Text_NicholasIntro:
-	.string "ONIX and I climb mountains\n"
-	.string "together!$"
+	.string "I've lost my way... Here of all places...$"
 
 Route205_South_Text_NicholasDefeat:
-	.string "Tumbled down...$"
+	.string "Having lost his way, the Trainer lost\n"
+	.string "the battle too...$"
 
 Route205_South_Text_NicholasPost:
-	.string "MT. CORONET is huge. You'll see it\n"
-	.string "from ETERNA.$"
+	.string "From being lost in the mountains so\n"
+	.string "long, I became a Hiker...$"
 
 Route205_South_EventScript_Kelsey::
 	trainerbattle_single TRAINER_AUSTINA, Route205_South_Text_KelseyIntro, Route205_South_Text_KelseyDefeat
@@ -84,14 +94,16 @@ Route205_South_EventScript_Kelsey::
 	end
 
 Route205_South_Text_KelseyIntro:
-	.string "My MACHOP and I train every day!\n"
-	.string "Hi-yah!$"
+	.string "Hiyah! There's no holding anything\n"
+	.string "back!$"
 
 Route205_South_Text_KelseyDefeat:
-	.string "Knocked out!$"
+	.string "I... I concede! I think you're on a\n"
+	.string "different level...$"
 
 Route205_South_Text_KelseyPost:
-	.string "Training never ends!$"
+	.string "Hiyah! You put me in my place! I\n"
+	.string "appreciate it!$"
 
 Route205_South_EventScript_Karina::
 	trainerbattle_single TRAINER_GWEN, Route205_South_Text_KarinaIntro, Route205_South_Text_KarinaDefeat
@@ -99,13 +111,15 @@ Route205_South_EventScript_Karina::
 	end
 
 Route205_South_Text_KarinaIntro:
-	.string "PIPLUP loves playing in the river!$"
+	.string "Oh, I don't know. Should I play a\n"
+	.string "little?$"
 
 Route205_South_Text_KarinaDefeat:
-	.string "Splashed!$"
+	.string "Oh, boo! How insulting!$"
 
 Route205_South_Text_KarinaPost:
-	.string "PIPLUP is a proud little POKéMON.$"
+	.string "Listen very closely... Can you hear the\n"
+	.string "cries of POKéMON?$"
 
 Route205_South_EventScript_Zackary::
 	trainerbattle_single TRAINER_SIMON, Route205_South_Text_ZackaryIntro, Route205_South_Text_ZackaryDefeat
@@ -113,14 +127,16 @@ Route205_South_EventScript_Zackary::
 	end
 
 Route205_South_Text_ZackaryIntro:
-	.string "AIPOM swings from the trees here!$"
+	.string "It's a long way between FLOAROMA and\n"
+	.string "ETERNA CITY. So, let's battle!$"
 
 Route205_South_Text_ZackaryDefeat:
-	.string "Swung and missed!$"
+	.string "Wawawaah! I'm out of POKéMON that can\n"
+	.string "go!$"
 
 Route205_South_Text_ZackaryPost:
-	.string "AIPOM's tail is like a hand. Neat,\n"
-	.string "huh?$"
+	.string "Camping with POKéMON! Do you have any\n"
+	.string "idea how fun that is?$"
 
 Route205_South_EventScript_BridgeGrunts::
 	msgbox Route205_South_Text_BridgeGrunts, MSGBOX_NPC
@@ -162,9 +178,11 @@ Route205_South_EventScript_PtNpc1::
 	end
 
 Route205_South_Text_PtNpc1:
-	.string "I caught a WURMPLE in ETERNA\n"
-	.string "FOREST! The forest is north of the\l"
-	.string "bridge.$"
+	.string "Many Poison-type POKéMON make the\n"
+	.string "ETERNA FOREST their home.\p"
+	.string "But I didn't buy any Antidotes. What\n"
+	.string "should I do?\p"
+	.string "Do I press on, or do I go back?$"
 
 Route205_South_EventScript_GirlScene::
 	lockall

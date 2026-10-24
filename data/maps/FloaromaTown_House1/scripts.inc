@@ -6,24 +6,46 @@ FloaromaTown_House1_EventScript_PtNpc1::
 	end
 
 FloaromaTown_House1_Text_PtNpc1:
-	.string "My daughter loves flowers. She\n"
-	.string "wants to open her own shop\l"
-	.string "someday.$"
+	.string "FLOAROMA TOWN was a barren, desolate\n"
+	.string "hill long ago, avoided even by POKéMON.\p"
+	.string "People started planting flowers on it\n"
+	.string "because it was such a sad place.\p"
+	.string "But nothing would grow... People didn't\n"
+	.string "know what to do...\p"
+	.string "And then one day, someone expressed\n"
+	.string "thanks for the blessings of nature.\p"
+	.string "Then, the whole hill burst into bloom.$"
 
 FloaromaTown_House1_EventScript_PtNpc2::
-	msgbox FloaromaTown_House1_Text_PtNpc2, MSGBOX_NPC
+	lock
+	faceplayer
+	msgbox FloaromaTown_House1_Text_PtNpc2, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, FloaromaTown_House1_EventScript_PtNpc2_No
+	msgbox FloaromaTown_House1_Text_PtNpc2_Yes, MSGBOX_DEFAULT
+	release
+	end
+
+FloaromaTown_House1_EventScript_PtNpc2_No:
+	msgbox FloaromaTown_House1_Text_PtNpc2_No, MSGBOX_DEFAULT
+	release
 	end
 
 FloaromaTown_House1_Text_PtNpc2:
-	.string "I'm going to plant a whole field\n"
-	.string "of flowers when I grow up!$"
+	.string "Do you think it's cute how POKéMON\n"
+	.string "pluck Berries?$"
 
 FloaromaTown_House1_EventScript_PtNpc3::
-	msgbox FloaromaTown_House1_Text_PtNpc3, MSGBOX_NPC
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_CLEFAIRY, CRY_MODE_NORMAL
+	msgbox FloaromaTown_House1_Text_PtNpc3, MSGBOX_DEFAULT
+	waitmoncry
+	release
 	end
 
 FloaromaTown_House1_Text_PtNpc3:
-	.string "Clefairy! Fairy!$"
+	.string "CLEFAIRY: Rii?$"
 
 FloaromaTown_House1_EventScript_TMGirl::
 	lock
@@ -61,3 +83,10 @@ FloaromaTown_House1_Text_TMGirlNo:
 FloaromaTown_House1_Text_TMGirlAfter:
 	.string "Plant BERRIES and they'll grow\n"
 	.string "into big BERRY trees!$"
+
+FloaromaTown_House1_Text_PtNpc2_Yes:
+	.string "Yes! You agreed! Here's the TM for the\n"
+	.string "move Pluck!$"
+
+FloaromaTown_House1_Text_PtNpc2_No:
+	.string "Oh... I guess I just like weird things...$"

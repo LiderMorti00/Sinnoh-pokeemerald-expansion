@@ -684,14 +684,6 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route201_EventScript_Sign3"
-    },
-    {
-      "type": "hidden_item",
-      "x": 43,
-      "y": 3,
-      "elevation": 3,
-      "item": "ITEM_POTION",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_111_STARDUST"
     }
   ]
 }

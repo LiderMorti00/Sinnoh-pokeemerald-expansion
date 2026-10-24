@@ -20,27 +20,29 @@ TwinleafTown_EventScript_PtNpc1::
 	end
 
 TwinleafTown_Text_PtNpc1:
-	.string "TWINLEAF is so peaceful. My\n"
-	.string "POKéMON love napping in the sun\l"
-	.string "here.$"
+	.string "It's true that wild POKéMON do attack\n"
+	.string "people sometimes...\p"
+	.string "But, POKéMON also open their hearts\n"
+	.string "to you, so you can become friends.$"
 
 TwinleafTown_EventScript_PtNpc2::
 	msgbox TwinleafTown_Text_PtNpc2, MSGBOX_NPC
 	end
 
 TwinleafTown_Text_PtNpc2:
-	.string "I collect rare items from all over\n"
-	.string "Sinnoh. This town doesn't have\l"
-	.string "many, sadly!$"
+	.string "Technology just blows me away!\p"
+	.string "I mean, now you can play with people\n"
+	.string "around the world...wirelessly!$"
 
 TwinleafTown_EventScript_PtNpc3::
 	msgbox TwinleafTown_Text_PtNpc3, MSGBOX_NPC
 	end
 
 TwinleafTown_Text_PtNpc3:
-	.string "Ahh... the wind through the trees\n"
-	.string "makes the best music. Want to hear\l"
-	.string "a song?$"
+	.string "Hiya, {PLAYER}. BARRY was looking for\n"
+	.string "you.\p"
+	.string "I think he's home now. Why don't you go\n"
+	.string "check it out?$"
 
 TwinleafTown_EventScript_Sign1::
 	msgbox TwinleafTown_Text_Sign1, MSGBOX_SIGN

@@ -36,7 +36,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_SCHOOL_KID_F",
       "x": 36,
-      "y": 17,
+      "y": 20,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -48,8 +48,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_POKEFAN_F",
-      "x": 49,
-      "y": 37,
+      "x": 50,
+      "y": 40,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -61,12 +61,12 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER_FRLG",
-      "x": 14,
-      "y": 15,
+      "x": 15,
+      "y": 18,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
+      "movement_range_x": 0,
+      "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "OreburghCity_EventScript_PtNpc4",
@@ -74,10 +74,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_WORKER",
-      "x": 15,
-      "y": 24,
+      "x": 14,
+      "y": 26,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_AND_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -87,8 +87,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_WORKER",
-      "x": 60,
-      "y": 56,
+      "x": 61,
+      "y": 57,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -100,12 +100,12 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CAMPER_FRLG",
-      "x": 38,
-      "y": 18,
+      "x": 41,
+      "y": 22,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT",
       "movement_range_x": 3,
-      "movement_range_y": 0,
+      "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "OreburghCity_EventScript_PtNpc7",
@@ -113,8 +113,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_WORKER",
-      "x": 41,
-      "y": 38,
+      "x": 42,
+      "y": 41,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -152,8 +152,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_BATTLE_GIRL",
-      "x": 40,
-      "y": 22,
+      "x": 41,
+      "y": 25,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -166,7 +166,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_MON_MACHOP",
       "x": 60,
-      "y": 55,
+      "y": 57,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 2,
@@ -178,12 +178,12 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_MON_MACHOP",
-      "x": 60,
-      "y": 45,
+      "x": 61,
+      "y": 47,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 2,
-      "movement_range_y": 2,
+      "movement_range_x": 0,
+      "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "OreburghCity_EventScript_PtNpc13",
@@ -192,7 +192,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_MON_MACHOP",
       "x": 41,
-      "y": 45,
+      "y": 47,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 2,
@@ -214,6 +214,32 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "OreburghCity_EventScript_PtNpc15",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 44,
+      "y": 37,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_DIRE_HIT",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_OLD_MAGMA_HIDEOUT_B1F_MASTER_BALL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 41,
+      "y": 39,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_YELLOW_SHARD",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_OLD_MAGMA_HIDEOUT_B1F_MAX_ELIXIR"
     }
   ],
   "warp_events": [
@@ -360,14 +386,6 @@
       "script": "OreburghCity_EventScript_Sign7"
     },
     {
-      "type": "hidden_item",
-      "x": 7,
-      "y": 14,
-      "elevation": 3,
-      "item": "ITEM_ESCAPE_ROPE",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_121_NUGGET"
-    },
-    {
       "type": "sign",
       "x": 5,
       "y": 13,
@@ -398,6 +416,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "OreburghCity_EventScript_Sign1"
+    },
+    {
+      "type": "hidden_item",
+      "x": 40,
+      "y": 38,
+      "elevation": 3,
+      "item": "ITEM_PEARL",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_111_STARDUST"
     }
   ]
 }

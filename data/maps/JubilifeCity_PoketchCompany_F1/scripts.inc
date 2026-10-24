@@ -22,5 +22,7 @@ JubilifeCity_PoketchCompany_F1_EventScript_PtNpc3::
 	end
 
 JubilifeCity_PoketchCompany_F1_Text_PtNpc3:
-	.string "I want a POKéTCH so badly. They\n"
-	.string "say there's a campaign in town!$"
+	.string "Hey, do you watch TV? “POKéTCH\n"
+	.string "Detective” is a great show.\p"
+	.string "Seeing that program compels me to use\n"
+	.string "my POKéTCH more!$"

@@ -140,15 +140,17 @@ Route202_EventScript_Tristan::
 	end
 
 Route202_Text_TristanIntro:
-	.string "Hey! Your eyes met mine, so we\n"
-	.string "have to battle!$"
+	.string "You're a POKéMON Trainer, and so am I!\n"
+	.string "Our eyes met, so battle we must!$"
 
 Route202_Text_TristanDefeat:
-	.string "Aww, I lost...$"
+	.string "Too strong! Too strong!$"
 
 Route202_Text_TristanPost:
-	.string "I'll train with my STARLY until\n"
-	.string "we're unbeatable!$"
+	.string "Don't be shy about talking to Trainers\n"
+	.string "you'd like to battle.\p"
+	.string "POKéMON grow stronger and stronger\n"
+	.string "from battling.$"
 
 Route202_EventScript_Natalie::
 	trainerbattle_single TRAINER_JOEY, Route202_Text_NatalieIntro, Route202_Text_NatalieDefeat
@@ -156,16 +158,15 @@ Route202_EventScript_Natalie::
 	end
 
 Route202_Text_NatalieIntro:
-	.string "Oh, a new Trainer! Want to see how\n"
-	.string "cute my POKéMON is?$"
+	.string "I spy, with my little eye... A Trainer!\p"
+	.string "A battle, please!$"
 
 Route202_Text_NatalieDefeat:
-	.string "Cute AND tough... but not tough\n"
-	.string "enough.$"
+	.string "Oh, boo! I can't win!$"
 
 Route202_Text_NataliePost:
-	.string "Winning isn't everything. Cuteness\n"
-	.string "counts too!$"
+	.string "My POKéMON are all tuckered out! I\n"
+	.string "need to go to a POKéMON CENTER!$"
 
 Route202_EventScript_Logan::
 	trainerbattle_single TRAINER_TIMMY, Route202_Text_LoganIntro, Route202_Text_LoganDefeat
@@ -173,17 +174,15 @@ Route202_EventScript_Logan::
 	end
 
 Route202_Text_LoganIntro:
-	.string "I found a BURMY in a tree! Let's\n"
-	.string "see how it battles!$"
+	.string "Let's have a POKéMON battle! Humph!\n"
+	.string "But I'm gonna win!$"
 
 Route202_Text_LoganDefeat:
-	.string "Its cloak wasn't enough\n"
-	.string "protection...$"
+	.string "You beat me?! You've got talent!$"
 
 Route202_Text_LoganPost:
-	.string "BURMY changes its cloak depending\n"
-	.string "on where it last battled. Neat,\l"
-	.string "huh?$"
+	.string "It was fun battling! Yup! I'm going to\n"
+	.string "battle everyone!$"
 
 Route202_EventScript_Sign1::
 	msgbox Route202_Text_Sign1, MSGBOX_SIGN
@@ -217,6 +216,8 @@ Route202_EventScript_PtNpc1::
 	end
 
 Route202_Text_PtNpc1:
-	.string "See the Trainers over there? If\n"
-	.string "your eyes meet, you'll have to\l"
-	.string "battle!$"
+	.string "Some POKéMON only appear in the\n"
+	.string "morning.\p"
+	.string "Some only come out at night.\p"
+	.string "I'll keep looking till I've seen them\n"
+	.string "all!$"

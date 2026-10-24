@@ -7,51 +7,77 @@ JubilifeCity_PokemonSchool_EventScript_PtNpc1::
 	end
 
 JubilifeCity_PokemonSchool_Text_PtNpc1:
-	.string "Welcome to the TRAINERS' SCHOOL!\n"
-	.string "Take a look at the blackboard and\l"
-	.string "learn the basics.$"
+	.string "It's perfectly fine for Trainers and\n"
+	.string "POKéMON to develop at their own pace.\p"
+	.string "If there is anything you're not\n"
+	.string "familiar with, you can look it up here.$"
 
 JubilifeCity_PokemonSchool_EventScript_PtNpc2::
 	msgbox JubilifeCity_PokemonSchool_Text_PtNpc2, MSGBOX_NPC
 	end
 
 JubilifeCity_PokemonSchool_Text_PtNpc2:
-	.string "I'm studying hard to become a\n"
-	.string "great Trainer!$"
+	.string "We learned about POKéMON types\n"
+	.string "today. Umm...\p"
+	.string "Grass is weak to Fire, Fire is weak to\n"
+	.string "Water, and Water is weak to Grass!$"
 
 JubilifeCity_PokemonSchool_EventScript_PtNpc3::
 	msgbox JubilifeCity_PokemonSchool_Text_PtNpc3, MSGBOX_NPC
 	end
 
 JubilifeCity_PokemonSchool_Text_PtNpc3:
-	.string "Status conditions are tricky.\n"
-	.string "POISON keeps hurting even after a\l"
-	.string "battle!$"
+	.string "POKéMON are smart enough to use items\n"
+	.string "they're holding.\p"
+	.string "But they won't know what to do with\n"
+	.string "man-made items like Potions and\l"
+	.string "Antidotes.$"
 
 JubilifeCity_PokemonSchool_EventScript_PtNpc4::
 	msgbox JubilifeCity_PokemonSchool_Text_PtNpc4, MSGBOX_NPC
 	end
 
 JubilifeCity_PokemonSchool_Text_PtNpc4:
-	.string "If a POKéMON is asleep, it can't\n"
-	.string "attack. Use that to your\l"
-	.string "advantage!$"
+	.string "I wrote an essay in my notebook on\n"
+	.string "what makes a true POKéMON Trainer.$"
 
 JubilifeCity_PokemonSchool_EventScript_PtNpc5::
-	msgbox JubilifeCity_PokemonSchool_Text_PtNpc5, MSGBOX_NPC
+	lock
+	faceplayer
+	msgbox JubilifeCity_PokemonSchool_Text_PtNpc5, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, JubilifeCity_PokemonSchool_EventScript_PtNpc5_No
+	msgbox JubilifeCity_PokemonSchool_Text_PtNpc5_Yes, MSGBOX_DEFAULT
+	release
+	end
+
+JubilifeCity_PokemonSchool_EventScript_PtNpc5_No:
+	msgbox JubilifeCity_PokemonSchool_Text_PtNpc5_No, MSGBOX_DEFAULT
+	release
 	end
 
 JubilifeCity_PokemonSchool_Text_PtNpc5:
-	.string "Type matchups are the most\n"
-	.string "important thing. WATER beats FIRE!$"
+	.string "Doing it is the best way to learn! Can\n"
+	.string "we get a battle with you?$"
 
 JubilifeCity_PokemonSchool_EventScript_PtNpc6::
-	msgbox JubilifeCity_PokemonSchool_Text_PtNpc6, MSGBOX_NPC
+	lock
+	faceplayer
+	msgbox JubilifeCity_PokemonSchool_Text_PtNpc6, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, JubilifeCity_PokemonSchool_EventScript_PtNpc6_No
+	msgbox JubilifeCity_PokemonSchool_Text_PtNpc6_Yes, MSGBOX_DEFAULT
+	release
+	end
+
+JubilifeCity_PokemonSchool_EventScript_PtNpc6_No:
+	msgbox JubilifeCity_PokemonSchool_Text_PtNpc6_No, MSGBOX_DEFAULT
+	release
 	end
 
 JubilifeCity_PokemonSchool_Text_PtNpc6:
-	.string "I want to be a GYM LEADER someday.\n"
-	.string "I'm taking notes on everything!$"
+	.string "I just became friends with my\n"
+	.string "POKéMON.\p"
+	.string "I'm not sure if we can do this\n"
+	.string "properly, but may we battle?$"
 
 JubilifeCity_PokemonSchool_EventScript_Barry::
 JubilifeCity_PokemonSchool_EventScript_BarryScene::
@@ -144,3 +170,19 @@ JubilifeCity_PokemonSchool_OnTransition:
 JubilifeCity_PokemonSchool_EventScript_NoBarry::
 	setflag FLAG_HIDE_SCHOOL_BARRY
 	end
+
+JubilifeCity_PokemonSchool_Text_PtNpc5_Yes:
+	.string "Go! My POKéMON, go!$"
+
+JubilifeCity_PokemonSchool_Text_PtNpc5_No:
+	.string "Aww! But battling is the best way to\n"
+	.string "learn about POKéMON!$"
+
+JubilifeCity_PokemonSchool_Text_PtNpc6_Yes:
+	.string "I need to try the things I learned\n"
+	.string "before I forget them!$"
+
+JubilifeCity_PokemonSchool_Text_PtNpc6_No:
+	.string "Boo! Where's your sense of adventure?\p"
+	.string "Don't be shy about talking to people\n"
+	.string "and getting into battles!$"

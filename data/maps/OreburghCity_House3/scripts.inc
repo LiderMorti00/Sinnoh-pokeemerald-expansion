@@ -6,5 +6,7 @@ OreburghCity_House3_EventScript_PtNpc1::
 	end
 
 OreburghCity_House3_Text_PtNpc1:
-	.string "After work, I like to relax at\n"
-	.string "home with a hot drink.$"
+	.string "You're taking a tour of our coal mine?\p"
+	.string "Wonderful! That's excellent of you.\p"
+	.string "It's always good to learn about new\n"
+	.string "things and broaden your horizons!$"

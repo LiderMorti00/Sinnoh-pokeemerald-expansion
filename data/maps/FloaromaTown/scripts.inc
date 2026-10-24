@@ -15,24 +15,32 @@ FloaromaTown_EventScript_PtNpc1::
 	end
 
 FloaromaTown_Text_PtNpc1:
-	.string "FLOAROMA was once a barren hill.\n"
-	.string "Now it's covered in flowers!$"
+	.string "Welcome to FLOAROMA, the town of\n"
+	.string "flowers, flowers, and more flowers!\p"
+	.string "You should plant some flowers of your\n"
+	.string "own, too. Yay for flowers!$"
 
 FloaromaTown_EventScript_PtNpc2::
 	msgbox FloaromaTown_Text_PtNpc2, MSGBOX_NPC
 	end
 
 FloaromaTown_Text_PtNpc2:
-	.string "The FLOWER SHOP sells things to\n"
-	.string "help you grow BERRIES.$"
+	.string "I simply love it here... The atmosphere\n"
+	.string "is so uplifting.\p"
+	.string "You came to get emotionally healed\n"
+	.string "too, didn't you?$"
 
 FloaromaTown_EventScript_PtNpc3::
 	msgbox FloaromaTown_Text_PtNpc3, MSGBOX_NPC
 	end
 
 FloaromaTown_Text_PtNpc3:
-	.string "I love making sweet HONEY with my\n"
-	.string "POKéMON!$"
+	.string "I wanted to get some flowers from the\n"
+	.string "FLOAROMA MEADOW...\p"
+	.string "But some TEAM GALACTIC guys in\n"
+	.string "snazzy outfits came along...\p"
+	.string "Those GALACTIC guys went to the\n"
+	.string "meadow past these flowers here...$"
 
 FloaromaTown_EventScript_PtNpc4::
 	msgbox FloaromaTown_Text_PtNpc4, MSGBOX_NPC
@@ -48,16 +56,22 @@ FloaromaTown_EventScript_PtNpc5::
 	end
 
 FloaromaTown_Text_PtNpc5:
-	.string "The meadow north of town is full\n"
-	.string "of flowers and HONEY trees.$"
+	.string "The Berries you pick can be used as\n"
+	.string "food for POKéMON.\p"
+	.string "You can also trade them in at the\n"
+	.string "florist's.\p"
+	.string "They'll exchange Berries for\n"
+	.string "Accessories to dress up your POKéMON.$"
 
 FloaromaTown_EventScript_PtNpc6::
 	msgbox FloaromaTown_Text_PtNpc6, MSGBOX_NPC
 	end
 
 FloaromaTown_Text_PtNpc6:
-	.string "The VALLEY WINDWORKS is east of\n"
-	.string "here, past ROUTE 205.$"
+	.string "I got drawn here by the sweet scent\n"
+	.string "of Honey...\p"
+	.string "Seriously, what's that? What am I? A\n"
+	.string "POKéMON or something? Mmm... Honey.$"
 
 FloaromaTown_EventScript_Sign1::
 	msgbox FloaromaTown_Text_Sign1, MSGBOX_SIGN

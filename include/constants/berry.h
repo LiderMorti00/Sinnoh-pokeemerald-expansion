@@ -145,6 +145,18 @@ enum __attribute__((__packed__)) Flavor
 
 // Remainder are unused
 
+// Proyecto Sinnoh: parcelas de bayas de Platino
+#define BERRY_TREE_FLOAROMATOWN_1          90
+#define BERRY_TREE_FLOAROMATOWN_2          91
+#define BERRY_TREE_ROUTE205_NORTH_1        92
+#define BERRY_TREE_ROUTE205_NORTH_2        93
+#define BERRY_TREE_ROUTE205_NORTH_3        94
+#define BERRY_TREE_ROUTE205_NORTH_4        95
+#define BERRY_TREE_ROUTE205_SOUTH_1        96
+#define BERRY_TREE_ROUTE205_SOUTH_2        97
+#define BERRY_TREE_ROUTE205_SOUTH_3        98
+#define BERRY_TREE_ROUTE205_SOUTH_4        99
+
 #define BERRY_TREES_COUNT 128
 
 #endif // GUARD_CONSTANTS_BERRY_H

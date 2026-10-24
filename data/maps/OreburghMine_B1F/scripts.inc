@@ -6,13 +6,17 @@ OreburghMine_B1F_EventScript_PtNpc1::
 	end
 
 OreburghMine_B1F_Text_PtNpc1:
-	.string "Careful down here! The ground is\n"
-	.string "uneven.$"
+	.string "Everyone that works in the coal mine\n"
+	.string "keeps their own POKéMON with them.\p"
+	.string "You may be challenged to battles!\n"
+	.string "Hahaha!$"
 
 OreburghMine_B1F_EventScript_PtNpc2::
 	msgbox OreburghMine_B1F_Text_PtNpc2, MSGBOX_NPC
 	end
 
 OreburghMine_B1F_Text_PtNpc2:
-	.string "I'm here on a field trip. The mine\n"
-	.string "is so big!$"
+	.string "I found what I thought were some\n"
+	.string "rocks, then they started moving!\p"
+	.string "They were POKéMON that looked just\n"
+	.string "like rocks!$"

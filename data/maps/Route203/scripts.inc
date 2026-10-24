@@ -122,16 +122,16 @@ Route203_EventScript_Sebastian::
 	end
 
 Route203_Text_SebastianIntro:
-	.string "My MACHOP has been doing push-ups\n"
-	.string "all day. Ready?$"
+	.string "Before I challenge the POKéMON Gym\n"
+	.string "Leader, I'll test my strength on you!$"
 
 Route203_Text_SebastianDefeat:
-	.string "Too many push-ups, not enough\n"
-	.string "battling...$"
+	.string "I guess it means I'm not ready for the\n"
+	.string "Gym challenge yet...$"
 
 Route203_Text_SebastianPost:
-	.string "Muscles aren't everything, I\n"
-	.string "guess.$"
+	.string "I guess if you don't have a single Gym\n"
+	.string "Badge, you're a total nobody...$"
 
 Route203_EventScript_Michael::
 	trainerbattle_single TRAINER_ALLEN, Route203_Text_MichaelIntro, Route203_Text_MichaelDefeat
@@ -139,15 +139,17 @@ Route203_EventScript_Michael::
 	end
 
 Route203_Text_MichaelIntro:
-	.string "The cave nearby is full of ZUBAT.\n"
-	.string "I caught one!$"
+	.string "I get my get-up-and-go from my\n"
+	.string "POKéMON!\p"
+	.string "Here we go! KRICKETOT! ZUBAT!$"
 
 Route203_Text_MichaelDefeat:
-	.string "Hey, not fair!$"
+	.string "Ack! My POKéMON...$"
 
 Route203_Text_MichaelPost:
-	.string "Try the cave near OREBURGH GATE.\n"
-	.string "It's dark in there!$"
+	.string "Keep out of the grass or dodge the\n"
+	.string "eyes of Trainers...?\p"
+	.string "I always have a tough time choosing.$"
 
 Route203_EventScript_Kaitlin::
 	trainerbattle_single TRAINER_DILLON, Route203_Text_KaitlinIntro, Route203_Text_KaitlinDefeat
@@ -155,14 +157,15 @@ Route203_EventScript_Kaitlin::
 	end
 
 Route203_Text_KaitlinIntro:
-	.string "I have four POKéMON! Can you\n"
-	.string "handle all of them?$"
+	.string "I found a Trainer while looking for\n"
+	.string "some POKéMON!$"
 
 Route203_Text_KaitlinDefeat:
-	.string "All four... gone.$"
+	.string "Hunh? You're finished so soon?$"
 
 Route203_Text_KaitlinPost:
-	.string "Quantity isn't quality, is it?$"
+	.string "I walk through tall grass until I find\n"
+	.string "the POKéMON I want.$"
 
 Route203_EventScript_Dallas::
 	trainerbattle_single TRAINER_JAYLEN, Route203_Text_DallasIntro, Route203_Text_DallasDefeat
@@ -170,15 +173,15 @@ Route203_EventScript_Dallas::
 	end
 
 Route203_Text_DallasIntro:
-	.string "My SHINX's fur crackles with\n"
-	.string "electricity. Feel it!$"
+	.string "I'm never apart from my SHINX. Our\n"
+	.string "bond is strong!$"
 
 Route203_Text_DallasDefeat:
-	.string "Zapped out...$"
+	.string "So sad... And so crushed...$"
 
 Route203_Text_DallasPost:
-	.string "SHINX glows when it's excited. So\n"
-	.string "cool.$"
+	.string "I don't bear grudges over losing. But I\n"
+	.string "promise I'll get tougher!$"
 
 Route203_EventScript_Madeline::
 	trainerbattle_single TRAINER_TRAVIS, Route203_Text_MadelineIntro, Route203_Text_MadelineDefeat
@@ -186,15 +189,15 @@ Route203_EventScript_Madeline::
 	end
 
 Route203_Text_MadelineIntro:
-	.string "PSYDUCK always has a headache, but\n"
-	.string "it battles hard!$"
+	.string "I got a nifty-keen Gym Badge from the\n"
+	.string "Gym Leader in OREBURGH CITY!$"
 
 Route203_Text_MadelineDefeat:
-	.string "Poor PSYDUCK...$"
+	.string "Oh, I lost! Lalala!$"
 
 Route203_Text_MadelinePost:
-	.string "Its headache got worse. I'll take\n"
-	.string "it to the POKéMON CENTER.$"
+	.string "I'm collecting lots of Gym Badges.\n"
+	.string "They're so sparkly and pretty!$"
 
 Route203_EventScript_Sign1::
 	msgbox Route203_Text_Sign1, MSGBOX_SIGN
@@ -238,5 +241,8 @@ Route203_EventScript_PtNpc1::
 	end
 
 Route203_Text_PtNpc1:
-	.string "OREBURGH GATE is just ahead. It's\n"
-	.string "a dark tunnel, so be ready!$"
+	.string "Your favorite POKéMON should be\n"
+	.string "placed at the top left of your party\l"
+	.string "list.\p"
+	.string "That way, it will be the first to go out\n"
+	.string "in a battle.$"

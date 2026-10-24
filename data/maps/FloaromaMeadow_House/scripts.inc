@@ -6,13 +6,20 @@ FloaromaMeadow_House_EventScript_PtNpc1::
 	end
 
 FloaromaMeadow_House_Text_PtNpc1:
-	.string "I sell the HONEY from this meadow.\n"
-	.string "It's the best in all of Sinnoh!$"
+	.string "The flowers that grow in the fields\n"
+	.string "here are special.\p"
+	.string "Do you see how they're more vivid than\n"
+	.string "flowers elsewhere in SINNOH?\p"
+	.string "You can thank POKéMON for that.$"
 
 FloaromaMeadow_House_EventScript_PtNpc2::
 	msgbox FloaromaMeadow_House_Text_PtNpc2, MSGBOX_NPC
 	end
 
 FloaromaMeadow_House_Text_PtNpc2:
-	.string "The HONEY man is my hero! One day\n"
-	.string "I'll collect HONEY too!$"
+	.string "If you put Honey on a tree, check back\n"
+	.string "later to see if it's rustling.\p"
+	.string "If it is, it's quite often a rare\n"
+	.string "POKéMON.\p"
+	.string "It gets my hopes up if I see that\n"
+	.string "happening.$"

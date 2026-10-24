@@ -17,8 +17,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_POKEFAN_F",
-      "x": 7,
-      "y": 6,
+      "x": 0,
+      "y": 8,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
       "movement_range_x": 1,
@@ -31,8 +31,8 @@
     {
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_POKEFAN_M",
-      "x": 4,
-      "y": 5,
+      "x": 0,
+      "y": 7,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,

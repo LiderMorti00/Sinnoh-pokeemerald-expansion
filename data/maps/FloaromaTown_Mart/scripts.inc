@@ -49,13 +49,18 @@ FloaromaTown_Mart_EventScript_PtNpc1::
 	end
 
 FloaromaTown_Mart_Text_PtNpc1:
-	.string "I'm buying POKé BALLS for my trip\n"
-	.string "through ETERNA FOREST.$"
+	.string "I'm going to dress up my POKéMON with\n"
+	.string "cute Accessories and take it to the\l"
+	.string "TV station in JUBILIFE CITY.\p"
+	.string "That way, everyone in the region will\n"
+	.string "be able to see my POKéMON!$"
 
 FloaromaTown_Mart_EventScript_PtNpc2::
 	msgbox FloaromaTown_Mart_Text_PtNpc2, MSGBOX_NPC
 	end
 
 FloaromaTown_Mart_Text_PtNpc2:
-	.string "This shop has everything you need\n"
-	.string "for a long journey!$"
+	.string "You can't buy Berries or Accessories\n"
+	.string "at Poké Marts.\p"
+	.string "It's better for me that way. I won't\n"
+	.string "waste money impulse shopping.$"

@@ -6,16 +6,22 @@ JubilifeCity_JubilifeTV_F3_EventScript_PtNpc1::
 	end
 
 JubilifeCity_JubilifeTV_F3_Text_PtNpc1:
-	.string "The camera loves me! Wait... is it\n"
-	.string "even on?$"
+	.string "The room closest to the stairs is the\n"
+	.string "Group Ranking Room.\p"
+	.string "The room on the opposite side is the\n"
+	.string "Global Ranking Room.$"
 
 JubilifeCity_JubilifeTV_F3_EventScript_PtNpc2::
 	msgbox JubilifeCity_JubilifeTV_F3_Text_PtNpc2, MSGBOX_NPC
 	end
 
 JubilifeCity_JubilifeTV_F3_Text_PtNpc2:
-	.string "We're filming a show about the\n"
-	.string "most beautiful POKéMON.$"
+	.string "I just realized something awesome! I\n"
+	.string "should be trading POKéMON more!\p"
+	.string "The more trades I make, the better my\n"
+	.string "odds of winning the POKéMON Lottery!\p"
+	.string "Why? Because the ID No. of a POKéMON\n"
+	.string "is different from Trainer to Trainer!$"
 
 JubilifeCity_JubilifeTV_F3_EventScript_PtNpc3::
 	msgbox JubilifeCity_JubilifeTV_F3_Text_PtNpc3, MSGBOX_NPC

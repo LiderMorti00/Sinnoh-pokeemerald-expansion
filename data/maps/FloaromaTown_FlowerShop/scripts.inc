@@ -24,3 +24,15 @@ FloaromaTown_FlowerShop_Text_FloristAfter:
 	.string "BERRIES grow best in soft,\n"
 	.string "soil-rich ground. Take good care\l"
 	.string "of them!$"
+
+FloaromaTown_FlowerShop_EventScript_PtNpc1::
+	msgbox FloaromaTown_FlowerShop_Text_PtNpc1, MSGBOX_NPC
+	end
+
+FloaromaTown_FlowerShop_Text_PtNpc1:
+	.string "A single Berry will grow into a plant\n"
+	.string "that makes several Berries.\p"
+	.string "By planting one, there will be more and\n"
+	.string "more Berries in the world.\p"
+	.string "I hope you will help us spread more\n"
+	.string "Berries everywhere!$"

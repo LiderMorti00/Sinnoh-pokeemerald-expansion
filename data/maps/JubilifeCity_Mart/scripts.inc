@@ -49,21 +49,29 @@ JubilifeCity_Mart_EventScript_PtNpc1::
 	end
 
 JubilifeCity_Mart_Text_PtNpc1:
-	.string "I buy strings for my guitar here.\n"
-	.string "Oh, and POTIONS too.$"
+	.string "Aww, man. I wasted money on some POKé\n"
+	.string "BALLS.\p"
+	.string "I should've lowered the HP of wild\n"
+	.string "POKéMON more before throwing them.$"
 
 JubilifeCity_Mart_EventScript_PtNpc2::
 	msgbox JubilifeCity_Mart_Text_PtNpc2, MSGBOX_NPC
 	end
 
 JubilifeCity_Mart_Text_PtNpc2:
-	.string "This mart has everything! I could\n"
-	.string "shop all day.$"
+	.string "The one thing you must remember is to\n"
+	.string "pack some Potions.\p"
+	.string "If all your POKéMON faint, it'll be\n"
+	.string "lights out for you, too!$"
 
 JubilifeCity_Mart_EventScript_PtNpc3::
 	msgbox JubilifeCity_Mart_Text_PtNpc3, MSGBOX_NPC
 	end
 
 JubilifeCity_Mart_Text_PtNpc3:
-	.string "Shopping in the big city is so\n"
-	.string "exciting!$"
+	.string "Potions are important, but sometimes,\n"
+	.string "it's better to simply avoid battles.\p"
+	.string "If you want to avoid wild POKéMON for\n"
+	.string "a while, just use a Repel.\p"
+	.string "After all, if you don't battle, your\n"
+	.string "POKéMON can't lose HP.$"
