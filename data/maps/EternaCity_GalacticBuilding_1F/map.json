@@ -13,7 +13,60 @@
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": null,
-  "object_events": [],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_GALAXY_GRUNT_M",
+      "x": 4,
+      "y": 9,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EternaCity_GalacticBuilding_1F_EventScript_GruntWelcome",
+      "flag": "FLAG_HIDE_ETERNA_GALACTIC"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_GALAXY_GRUNT_M",
+      "x": 11,
+      "y": 9,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EternaCity_GalacticBuilding_1F_EventScript_GruntStars",
+      "flag": "FLAG_HIDE_ETERNA_GALACTIC"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_GALAXY_GRUNT_M",
+      "x": 13,
+      "y": 4,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "EternaCity_GalacticBuilding_1F_EventScript_Grunt",
+      "flag": "FLAG_HIDE_ETERNA_GALACTIC"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_GALAXY_GRUNT_F",
+      "x": 9,
+      "y": 3,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "EternaCity_GalacticBuilding_1F_EventScript_Grunt2",
+      "flag": "FLAG_HIDE_ETERNA_GALACTIC"
+    }
+  ],
   "warp_events": [
     {
       "x": 7,

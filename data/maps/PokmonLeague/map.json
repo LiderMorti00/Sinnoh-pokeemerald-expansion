@@ -27,5 +27,30 @@
   "object_events": [],
   "warp_events": [],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 17,
+      "y": 58,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "PokmonLeague_EventScript_PtSign1"
+    },
+    {
+      "type": "sign",
+      "x": 17,
+      "y": 39,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "PokmonLeague_EventScript_PtSign2"
+    },
+    {
+      "type": "hidden_item",
+      "x": 11,
+      "y": 39,
+      "elevation": 3,
+      "item": "ITEM_SKY_PLATE",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_113_TM_DOUBLE_TEAM"
+    }
+  ]
 }

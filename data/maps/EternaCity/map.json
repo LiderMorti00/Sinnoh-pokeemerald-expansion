@@ -280,6 +280,45 @@
       "trainer_sight_or_berry_tree_id": "ITEM_SUPER_POTION",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_MOSSDEEP_STEVENS_HOUSE_HM08"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_GALAXY_GRUNT_M",
+      "x": 42,
+      "y": 24,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EternaCity_EventScript_GalacticGruntM1",
+      "flag": "FLAG_HIDE_ETERNA_GALACTIC"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_GALAXY_GRUNT_M",
+      "x": 12,
+      "y": 16,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EternaCity_EventScript_GalacticGruntM2",
+      "flag": "FLAG_HIDE_ETERNA_GALACTIC"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_GALAXY_GRUNT_M",
+      "x": 25,
+      "y": 22,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EternaCity_EventScript_GalacticGruntM3",
+      "flag": "FLAG_HIDE_ETERNA_GALACTIC"
     }
   ],
   "warp_events": [
