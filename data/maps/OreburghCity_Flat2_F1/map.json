@@ -28,7 +28,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_LASS_FRLG",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_SCHOOL_KID_F",
       "x": 6,
       "y": 2,
       "elevation": 3,
@@ -41,7 +41,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAN",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_BREEDER_M",
       "x": 3,
       "y": 5,
       "elevation": 3,

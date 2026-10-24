@@ -2800,3 +2800,107 @@ static const struct SpriteFrameImage sPicTable_SinnohLucian[] = {
     overworld_ascending_frames(gObjectEventPic_SinnohLucian, 2, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_SinnohMonTorchic[] = {
+    overworld_ascending_frames(gObjectEventPic_SinnohMonTorchic, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_SinnohMonDrifloon[] = {
+    overworld_ascending_frames(gObjectEventPic_SinnohMonDrifloon, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_SinnohMonStarly[] = {
+    overworld_ascending_frames(gObjectEventPic_SinnohMonStarly, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_SinnohMonMachop[] = {
+    overworld_ascending_frames(gObjectEventPic_SinnohMonMachop, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_SinnohMonSkitty[] = {
+    overworld_ascending_frames(gObjectEventPic_SinnohMonSkitty, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_SinnohMonClefairy[] = {
+    overworld_ascending_frames(gObjectEventPic_SinnohMonClefairy, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_SinnohMonShroomish[] = {
+    overworld_ascending_frames(gObjectEventPic_SinnohMonShroomish, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_SinnohMonHappiny[] = {
+    overworld_ascending_frames(gObjectEventPic_SinnohMonHappiny, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_SinnohMonBuneary[] = {
+    overworld_ascending_frames(gObjectEventPic_SinnohMonBuneary, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_SinnohMonPachirisu[] = {
+    overworld_ascending_frames(gObjectEventPic_SinnohMonPachirisu, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_SinnohMonPsyduck[] = {
+    overworld_ascending_frames(gObjectEventPic_SinnohMonPsyduck, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_SinnohMonJigglypuff[] = {
+    overworld_ascending_frames(gObjectEventPic_SinnohMonJigglypuff, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_SinnohMonPikachu[] = {
+    overworld_ascending_frames(gObjectEventPic_SinnohMonPikachu, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_SinnohMonMagikarp[] = {
+    overworld_ascending_frames(gObjectEventPic_SinnohMonMagikarp, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_SinnohMonPalkia[] = {
+    overworld_ascending_frames(gObjectEventPic_SinnohMonPalkia, 8, 8),
+};
+
+static const struct SpriteFrameImage sPicTable_SinnohMonDialga[] = {
+    overworld_ascending_frames(gObjectEventPic_SinnohMonDialga, 8, 8),
+};
+
+static const struct SpriteFrameImage sPicTable_SinnohMonUxie[] = {
+    overworld_ascending_frames(gObjectEventPic_SinnohMonUxie, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_SinnohMonMesprit[] = {
+    overworld_ascending_frames(gObjectEventPic_SinnohMonMesprit, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_SinnohMonAzelf[] = {
+    overworld_ascending_frames(gObjectEventPic_SinnohMonAzelf, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_SinnohMonHeatran[] = {
+    overworld_ascending_frames(gObjectEventPic_SinnohMonHeatran, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_SinnohMonRegigigas[] = {
+    overworld_ascending_frames(gObjectEventPic_SinnohMonRegigigas, 8, 8),
+};
+
+static const struct SpriteFrameImage sPicTable_SinnohMonShaymin[] = {
+    overworld_ascending_frames(gObjectEventPic_SinnohMonShaymin, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_SinnohMonGiratinaAltered[] = {
+    overworld_ascending_frames(gObjectEventPic_SinnohMonGiratinaAltered, 8, 8),
+};
+
+static const struct SpriteFrameImage sPicTable_SinnohMonDarkrai[] = {
+    overworld_ascending_frames(gObjectEventPic_SinnohMonDarkrai, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_SinnohMonCresselia[] = {
+    overworld_ascending_frames(gObjectEventPic_SinnohMonCresselia, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_SinnohMonArceus[] = {
+    overworld_ascending_frames(gObjectEventPic_SinnohMonArceus, 8, 8),
+};
+

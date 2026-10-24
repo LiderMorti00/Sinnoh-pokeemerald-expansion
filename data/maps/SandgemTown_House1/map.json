@@ -16,7 +16,7 @@
   "object_events": [
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_MAN",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_BREEDER_M",
       "x": 4,
       "y": 5,
       "elevation": 3,
@@ -30,7 +30,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_1_FRLG",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_BREEDER_F",
       "x": 7,
       "y": 4,
       "elevation": 3,
