@@ -654,12 +654,12 @@ static void Scene_Starters(u16 t)
     {
         ResetScene();
         LoadBars(2, 0);
-        sOp.group[0] = CreateBigEx(&sSpr_Torterra, TAG_SPR_C, 182, BAR_TOP_Y + 36, 3);
-        sOp.group[1] = CreateBigEx(&sSpr_Chimchar, TAG_SPR_B, 132, BAR_TOP_Y + 36, 2);
-        sOp.group[2] = CreateBigEx(&sSpr_Prinplup, TAG_SPR_A, 76, BAR_TOP_Y + 72 - 27, 1);
-        sOp.group[3] = CreateBigEx(&sSpr_Grotle, TAG_SPR_F, 184, BAR_BOTTOM_Y + 72 - 32, 3);
-        sOp.group[4] = CreateBigEx(&sSpr_Piplup, TAG_SPR_E, 126, BAR_BOTTOM_Y + 37, 1);
-        sOp.group[5] = CreateBigEx(&sSpr_Infernape, TAG_SPR_D, 56, BAR_BOTTOM_Y + 36, 2);
+        sOp.group[0] = CreateBigEx(&sSpr_Torterra, TAG_SPR_C, 192, BAR_TOP_Y + 72 - 2 - 35, 3);
+        sOp.group[1] = CreateBigEx(&sSpr_Chimchar, TAG_SPR_B, 122, BAR_TOP_Y + 72 - 2 - 23, 2);
+        sOp.group[2] = CreateBigEx(&sSpr_Prinplup, TAG_SPR_A, 52, BAR_TOP_Y + 72 - 2 - 30, 1);
+        sOp.group[3] = CreateBigEx(&sSpr_Grotle, TAG_SPR_F, 190, BAR_BOTTOM_Y + 72 - 2 - 28, 3);
+        sOp.group[4] = CreateBigEx(&sSpr_Piplup, TAG_SPR_E, 122, BAR_BOTTOM_Y + 72 - 2 - 18, 1);
+        sOp.group[5] = CreateBigEx(&sSpr_Infernape, TAG_SPR_D, 52, BAR_BOTTOM_Y + 72 - 2 - 34, 2);
         BlendPalettes(PALETTES_ALL, 10, RGB(12, 12, 12));
         StartFade(1, 10, 0, RGB(12, 12, 12));
     }
@@ -672,7 +672,7 @@ static void Scene_Starters(u16 t)
         SetLayers((1 << BG_BACK) | (1 << BG_MIDDLE) | (1 << BG_FOREST));
         for (i = 0; i < 3; i++)
             SetSpritePalBlack(sOp.group[i], TRUE);
-        sOp.sprites[0] = CreateBigEx(&sSpr_Infernape, TAG_SPR_D, 56, BAR_TOP_Y + 36, 0);
+        sOp.sprites[0] = CreateBigEx(&sSpr_Infernape, TAG_SPR_D, DISPLAY_WIDTH / 2, BAR_TOP_Y + 36, 0);
         gSprites[sOp.sprites[0]].oam.priority = 0;
         PlaySE(SE_M_FLAME_WHEEL);
     }
@@ -699,7 +699,7 @@ static void Scene_Starters(u16 t)
         LoadBigSheet(&sSpr_Bubble[0], TAG_BUBBLE0);
         for (i = 3; i < NUM_GROUP; i++)
             SetSpritePalBlack(sOp.group[i], TRUE);
-        sOp.sprites[1] = CreateBigEx(&sSpr_Prinplup, TAG_SPR_A, DISPLAY_WIDTH / 2, BAR_BOTTOM_Y + 72 - 27, 0);
+        sOp.sprites[1] = CreateBigEx(&sSpr_Prinplup, TAG_SPR_A, DISPLAY_WIDTH / 2, BAR_BOTTOM_Y + 36, 0);
         gSprites[sOp.sprites[1]].oam.priority = 0;
         PlaySE(SE_M_BUBBLE);
     }
