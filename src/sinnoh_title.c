@@ -19,6 +19,7 @@
 #include "reset_rtc_screen.h"
 #include "scanline_effect.h"
 #include "sinnoh_title.h"
+#include "sinnoh_opening.h"
 #include "sound.h"
 #include "sprite.h"
 #include "string_util.h"
@@ -183,7 +184,11 @@ void CB2_InitSinnohTitleScreen(void)
     EnableInterrupts(INTR_FLAG_VBLANK);
     SetVBlankCallback(VBlankCB_SinnohTitle);
     SetMainCallback2(CB2_SinnohTitle);
-    PlayBGM(MUS_DPP_TITLE);
+    // Si viene de la película completa, sigue sonando su música (en Platino el
+    // final del opening es Giratina) y después empieza el tema de título.
+    if (!gSinnohOpeningFinished)
+        PlayBGM(MUS_DPP_TITLE);
+    gSinnohOpeningFinished = FALSE;
 }
 
 static void CB2_GoTo(MainCallback cb)
@@ -226,6 +231,8 @@ static void Task_SinnohTitle(u8 taskId)
         return;
 
     tCounter++;
+    if ((gMPlayInfo_BGM.status & 0xFFFF) == 0)
+        PlayBGM(MUS_DPP_TITLE);
     if ((tCounter % 6) == 0)
         CyclePortal();
     // Giratina flota
