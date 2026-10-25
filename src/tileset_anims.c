@@ -1425,6 +1425,20 @@ static void TilesetAnim_CeladonGym(u16 timer)
         QueueAnimTiles_CeladonGym_Flowers(timer / 16);
 }
 
+// Proyecto Sinnoh: flores del gimnasio de Vetusta (mismas que el de Azulona)
+static void TilesetAnim_EternaGym(u16 timer)
+{
+    if (timer % 16 == 0)
+        AppendTilesetAnimToBuffer(sTilesetAnims_CeladonGym_Flowers[(timer / 16) % ARRAY_COUNT(sTilesetAnims_CeladonGym_Flowers)], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(512)), 4 * TILE_SIZE_4BPP);
+}
+
+void InitTilesetAnim_EternaGym(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = 256;
+    sSecondaryTilesetAnimCallback = TilesetAnim_EternaGym;
+}
+
 void InitTilesetAnim_CeladonGym(void)
 {
     sSecondaryTilesetAnimCounter = 0;

@@ -37,6 +37,7 @@ void InitTilesetAnim_General_Frlg(void);
 void InitTilesetAnim_CeladonCity(void);
 void InitTilesetAnim_VermilionGym(void);
 void InitTilesetAnim_CeladonGym(void);
+void InitTilesetAnim_EternaGym(void);
 void InitTilesetAnim_SilphCo(void);
 void InitTilesetAnim_MtEmber(void);
 
