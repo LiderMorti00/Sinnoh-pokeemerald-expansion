@@ -1640,37 +1640,25 @@ const struct Tileset gTileset_HallOfFame =
 
 #endif // IS_FRLG
 
-#if !IS_FRLG // Proyecto Sinnoh: tilesets de Rojo Fuego usados en mapas de Esmeralda (gimnasios)
-const struct Tileset gTileset_BuildingFrlg =
-{
-    .isCompressed = TRUE,
-    .isSecondary = FALSE,
-    .tiles = gTilesetTiles_Building_Frlg,
-    .palettes = gTilesetPalettes_Building_Frlg,
-    .metatiles = gMetatiles_Building_Frlg,
-    .metatileAttributes = gMetatileAttributes_Building_Frlg,
-    .callback = NULL,
-};
-
-const struct Tileset gTileset_PewterGym =
+// Proyecto Sinnoh: gimnasios de Pirita y Vetusta
+const struct Tileset gTileset_OreburghGym =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_PewterGym,
-    .palettes = gTilesetPalettes_PewterGym,
-    .metatiles = gMetatiles_PewterGym,
-    .metatileAttributes = gMetatileAttributes_PewterGym,
+    .tiles = gTilesetTiles_OreburghGym,
+    .palettes = gTilesetPalettes_OreburghGym,
+    .metatiles = gMetatiles_OreburghGym,
+    .metatileAttributes = gMetatileAttributes_OreburghGym,
     .callback = NULL,
 };
 
-const struct Tileset gTileset_CeladonGym =
+const struct Tileset gTileset_EternaGym =
 {
     .isCompressed = TRUE,
     .isSecondary = TRUE,
-    .tiles = gTilesetTiles_CeladonGym,
-    .palettes = gTilesetPalettes_CeladonGym,
-    .metatiles = gMetatiles_CeladonGym,
-    .metatileAttributes = gMetatileAttributes_CeladonGym,
-    .callback = InitTilesetAnim_CeladonGym,
+    .tiles = gTilesetTiles_EternaGym,
+    .palettes = gTilesetPalettes_EternaGym,
+    .metatiles = gMetatiles_EternaGym,
+    .metatileAttributes = gMetatileAttributes_EternaGym,
+    .callback = InitTilesetAnim_EternaGym,
 };
-#endif

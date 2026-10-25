@@ -436,11 +436,8 @@ const u16 gMetatileAttributes_HallOfFame[] = INCBIN_U16("data/tilesets/secondary
 
 #endif // IS_FRLG
 
-#if !IS_FRLG // Proyecto Sinnoh: tilesets de Rojo Fuego usados en Esmeralda
-const u16 gMetatiles_Building_Frlg[] = INCBIN_U16("data/tilesets/primary/building_frlg/metatiles.bin");
-const u16 gMetatileAttributes_Building_Frlg[] = INCBIN_U16("data/tilesets/primary/building_frlg/metatile_attributes.bin");
-const u16 gMetatiles_PewterGym[] = INCBIN_U16("data/tilesets/secondary/pewter_gym_frlg/metatiles.bin");
-const u16 gMetatileAttributes_PewterGym[] = INCBIN_U16("data/tilesets/secondary/pewter_gym_frlg/metatile_attributes.bin");
-const u16 gMetatiles_CeladonGym[] = INCBIN_U16("data/tilesets/secondary/celadon_gym_frlg/metatiles.bin");
-const u16 gMetatileAttributes_CeladonGym[] = INCBIN_U16("data/tilesets/secondary/celadon_gym_frlg/metatile_attributes.bin");
-#endif
+// Proyecto Sinnoh: gimnasios de Pirita y Vetusta
+const u16 gMetatiles_OreburghGym[] = INCBIN_U16("data/tilesets/secondary/oreburgh_gym/metatiles.bin");
+const u16 gMetatileAttributes_OreburghGym[] = INCBIN_U16("data/tilesets/secondary/oreburgh_gym/metatile_attributes.bin");
+const u16 gMetatiles_EternaGym[] = INCBIN_U16("data/tilesets/secondary/eterna_gym/metatiles.bin");
+const u16 gMetatileAttributes_EternaGym[] = INCBIN_U16("data/tilesets/secondary/eterna_gym/metatile_attributes.bin");

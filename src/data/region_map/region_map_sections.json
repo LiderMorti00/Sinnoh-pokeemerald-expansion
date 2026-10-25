@@ -1141,7 +1141,11 @@
     },
     {
       "id": "MAPSEC_FUEGO_IRONWORKS",
-      "name": "FUEGO IRONWORKS"
+      "name": "FUEGO IRONWORKS",
+      "x": 3,
+      "y": 8,
+      "width": 1,
+      "height": 1
     },
     {
       "id": "MAPSEC_ETERNA_FOREST",
@@ -1153,11 +1157,19 @@
     },
     {
       "id": "MAPSEC_OLD_CHATEAU",
-      "name": "OLD CHATEAU"
+      "name": "OLD CHATEAU",
+      "x": 5,
+      "y": 6,
+      "width": 1,
+      "height": 1
     },
     {
       "id": "MAPSEC_WAYWARD_CAVE",
-      "name": "WAYWARD CAVE"
+      "name": "WAYWARD CAVE",
+      "x": 6,
+      "y": 9,
+      "width": 1,
+      "height": 1
     },
     {
       "id": "MAPSEC_MT_CORONET",
