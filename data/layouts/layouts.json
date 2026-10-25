@@ -10929,6 +10929,16 @@
       "secondary_tileset": "gTileset_Facility",
       "border_filepath": "data/layouts/EternaCity_GalacticBuilding_B1F/border.bin",
       "blockdata_filepath": "data/layouts/EternaCity_GalacticBuilding_B1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_OREBURG_GATE_B1F",
+      "name": "OreburgGate_B1F_Layout",
+      "width": 28,
+      "height": 24,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/OreburgGate_B1F/border.bin",
+      "blockdata_filepath": "data/layouts/OreburgGate_B1F/map.bin"
     }
   ]
 }

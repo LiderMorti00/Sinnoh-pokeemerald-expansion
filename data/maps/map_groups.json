@@ -161,6 +161,7 @@
   ],
   "gMapGroup_DungeonsSinnoh": [
     "OreburghGate_1F",
+    "OreburgGate_B1F",
     "OreburghMine_B1F",
     "OreburghMine_B2F",
     "RavagedPath",
@@ -173,6 +174,7 @@
     "OldChateau_SideRoom_2",
     "OldChateau_DiningRoom",
     "OldChateau_2F"
+    
   ],
   "gMapGroup_IndoorSinnoh": [
     "Route206_North",
