@@ -1975,3 +1975,5 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/EternaCity_GalacticBuilding_3F/scripts.inc"
 
 	.include "data/maps/EternaCity_GalacticBuilding_B1F/scripts.inc"
+
+	.include "data/maps/OreburgGate_B1F/scripts.inc"
