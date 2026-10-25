@@ -1,0 +1,62 @@
+{
+  "id": "MAP_HEARTHOME_CITY_EAST_GATE",
+  "name": "HearthomeCity_EastGate",
+  "layout": "LAYOUT_HEARTHOME_CITY_EAST_GATE",
+  "music": "MUS_DPP_HEARTHOME",
+  "region_map_section": "MAPSEC_HEARTHOME_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_RECEPTIONIST",
+      "x": 5,
+      "y": 3,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "HearthomeCity_EastGate_EventScript_PtNpc1",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT_FRLG",
+      "x": 5,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 3,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "HearthomeCity_EastGate_EventScript_PtNpc2",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 4,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_HEARTHOME_CITY",
+      "dest_warp_id": "7"
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_AMITY_SQUARE",
+      "dest_warp_id": "2"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

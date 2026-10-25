@@ -125,7 +125,36 @@
       "flag": "0"
     }
   ],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 9,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_RESORT_AREA_HOUSE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 28,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_RESORT_AREA_RIBBON_SYNDICATE_F1",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 4,
+      "y": 17,
+      "elevation": 0,
+      "dest_map": "MAP_RESORT_AREA_POKEMON_CENTER_1F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 19,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_RESORT_AREA_VILLA",
+      "dest_warp_id": "0"
+    }
+  ],
   "coord_events": [],
   "bg_events": []
 }

@@ -1662,3 +1662,47 @@ const struct Tileset gTileset_EternaGym =
     .metatileAttributes = gMetatileAttributes_EternaGym,
     .callback = InitTilesetAnim_EternaGym,
 };
+
+const struct Tileset gTileset_HearthomeCityGym =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_HearthomeCityGym,
+    .palettes = gTilesetPalettes_HearthomeCityGym,
+    .metatiles = gMetatiles_HearthomeCityGym,
+    .metatileAttributes = gMetatileAttributes_HearthomeCityGym,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_PastoriaCityGym =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_PastoriaCityGym,
+    .palettes = gTilesetPalettes_PastoriaCityGym,
+    .metatiles = gMetatiles_PastoriaCityGym,
+    .metatileAttributes = gMetatileAttributes_PastoriaCityGym,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_CanalaveCityGym =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_CanalaveCityGym,
+    .palettes = gTilesetPalettes_CanalaveCityGym,
+    .metatiles = gMetatiles_CanalaveCityGym,
+    .metatileAttributes = gMetatileAttributes_CanalaveCityGym,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_VeilstoneDepartmentStore =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_VeilstoneDepartmentStore,
+    .palettes = gTilesetPalettes_VeilstoneDepartmentStore,
+    .metatiles = gMetatiles_VeilstoneDepartmentStore,
+    .metatileAttributes = gMetatileAttributes_VeilstoneDepartmentStore,
+    .callback = NULL,
+};

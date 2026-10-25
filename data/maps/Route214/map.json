@@ -22,6 +22,11 @@
       "map": "MAP_VALOR_LAKEFRONT",
       "offset": -24,
       "direction": "down"
+    },
+    {
+      "map": "MAP_SPRING_PATH",
+      "offset": 32,
+      "direction": "right"
     }
   ],
   "object_events": [
@@ -300,6 +305,13 @@
       "elevation": 0,
       "dest_map": "MAP_ROUTE214_ACCESS",
       "dest_warp_id": "1"
+    },
+    {
+      "x": 9,
+      "y": 35,
+      "elevation": 0,
+      "dest_map": "MAP_MANIAC_TUNNEL",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

@@ -17,6 +17,11 @@
       "map": "MAP_POKMON_LEAGUE",
       "offset": 44,
       "direction": "left"
+    },
+    {
+      "map": "MAP_SEABREAK_PATH_SOUTH",
+      "offset": 32,
+      "direction": "up"
     }
   ],
   "object_events": [
@@ -268,7 +273,15 @@
       "flag": "0"
     }
   ],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 11,
+      "y": 70,
+      "elevation": 0,
+      "dest_map": "MAP_SINNOH_VICTORY_ROAD_1F_ROOM3",
+      "dest_warp_id": "1"
+    }
+  ],
   "coord_events": [],
   "bg_events": [
     {

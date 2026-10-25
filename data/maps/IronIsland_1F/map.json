@@ -1,0 +1,42 @@
+{
+  "id": "MAP_IRON_ISLAND_1F",
+  "name": "IronIsland_1F",
+  "layout": "LAYOUT_IRON_ISLAND_1F",
+  "music": "MUS_RG_MT_MOON",
+  "region_map_section": "MAPSEC_IRON_ISLAND",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 7,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_IRON_ISLAND",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 5,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_IRON_ISLAND_B1F_LEFT",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 9,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_IRON_ISLAND_B1F_RIGHT",
+      "dest_warp_id": "2"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

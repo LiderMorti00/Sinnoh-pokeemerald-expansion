@@ -1,0 +1,41 @@
+{
+  "id": "MAP_SPRING_PATH",
+  "name": "SpringPath",
+  "layout": "LAYOUT_SPRING_PATH",
+  "music": "MUS_DPP_ROUTE210",
+  "region_map_section": "MAPSEC_SPRING_PATH",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_ROUTE214",
+      "offset": -32,
+      "direction": "left"
+    }
+  ],
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 26,
+      "y": 41,
+      "elevation": 0,
+      "dest_map": "MAP_SENDOFF_SPRING",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 27,
+      "y": 41,
+      "elevation": 0,
+      "dest_map": "MAP_SENDOFF_SPRING",
+      "dest_warp_id": "1"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

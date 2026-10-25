@@ -299,7 +299,22 @@
       "flag": "0"
     }
   ],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 21,
+      "y": 36,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE228_HOUSE1",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 7,
+      "y": 64,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE228_HOUSE2",
+      "dest_warp_id": "0"
+    }
+  ],
   "coord_events": [],
   "bg_events": [
     {

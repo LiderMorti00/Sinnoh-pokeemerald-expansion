@@ -1,0 +1,35 @@
+{
+  "id": "MAP_SINNOH_VICTORY_ROAD_1F_ROOM1",
+  "name": "SinnohVictoryRoad_1F_Room1",
+  "layout": "LAYOUT_SINNOH_VICTORY_ROAD_1F_ROOM1",
+  "music": "MUS_DPP_VICTORY_ROAD",
+  "region_map_section": "MAPSEC_VICTORY_ROAD",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 3,
+      "y": 16,
+      "elevation": 0,
+      "dest_map": "MAP_SINNOH_VICTORY_ROAD_1F",
+      "dest_warp_id": "6"
+    },
+    {
+      "x": 19,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_SINNOH_VICTORY_ROAD_1F_ROOM2",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

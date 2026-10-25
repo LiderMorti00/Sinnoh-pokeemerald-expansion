@@ -332,6 +332,20 @@
       "elevation": 0,
       "dest_map": "MAP_ROUTE222_ACCESS",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 65,
+      "y": 17,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE222_HOUSE1",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 59,
+      "y": 17,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE222_HOUSE2",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

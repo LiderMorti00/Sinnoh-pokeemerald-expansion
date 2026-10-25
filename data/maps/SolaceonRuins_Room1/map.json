@@ -1,0 +1,74 @@
+{
+  "id": "MAP_SOLACEON_RUINS_ROOM1",
+  "name": "SolaceonRuins_Room1",
+  "layout": "LAYOUT_SOLACEON_RUINS_ROOM1",
+  "music": "MUS_RG_SEVII_CAVE",
+  "region_map_section": "MAPSEC_SOLACEON_RUINS",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 4,
+      "y": 12,
+      "elevation": 0,
+      "dest_map": "MAP_SOLACEON_TOWN",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 5,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_SOLACEON_RUINS_ROOM2",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 5,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_SOLACEON_RUINS_ROOM1_SOUTHEAST",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 3,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_SOLACEON_RUINS_ROOM1_NORTHWEST",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 3,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SolaceonRuins_Room1_EventScript_PtSign1"
+    },
+    {
+      "type": "sign",
+      "x": 4,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SolaceonRuins_Room1_EventScript_PtSign2"
+    },
+    {
+      "type": "sign",
+      "x": 5,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SolaceonRuins_Room1_EventScript_PtSign3"
+    }
+  ]
+}

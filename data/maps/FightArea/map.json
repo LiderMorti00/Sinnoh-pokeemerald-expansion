@@ -182,7 +182,43 @@
       "flag": "0"
     }
   ],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 50,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_FIGHT_AREA_FRONTIER_GATE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 51,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_FIGHT_AREA_FRONTIER_GATE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 46,
+      "y": 24,
+      "elevation": 0,
+      "dest_map": "MAP_FIGHT_AREA_HOUSE1",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 39,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_FIGHT_AREA_POKEMON_CENTER_1F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 55,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_FIGHT_AREA_MART",
+      "dest_warp_id": "0"
+    }
+  ],
   "coord_events": [],
   "bg_events": []
 }

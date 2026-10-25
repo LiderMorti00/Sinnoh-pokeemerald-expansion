@@ -1228,6 +1228,174 @@
       "height": 1
     },
     {
+      "id": "MAPSEC_SOLACEON_RUINS",
+      "name": "SOLACEON RUINS",
+      "x": 14,
+      "y": 8,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_GREAT_MARSH",
+      "name": "GREAT MARSH",
+      "x": 14,
+      "y": 12,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_TROPHY_GARDEN",
+      "name": "TROPHY GARDEN",
+      "x": 13,
+      "y": 12,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_POKEMON_MANSION",
+      "name": "POKéMON MANSION",
+      "x": 12,
+      "y": 12,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_AMITY_SQUARE",
+      "name": "AMITY SQUARE",
+      "x": 12,
+      "y": 10,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_GALACTIC_HQ",
+      "name": "GALACTIC HQ",
+      "x": 17,
+      "y": 7,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_LOST_TOWER",
+      "name": "LOST TOWER",
+      "x": 14,
+      "y": 9,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_SNOWPOINT_TEMPLE",
+      "name": "SNOWPOINT TEMPLE",
+      "x": 10,
+      "y": 0,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_SPEAR_PILLAR",
+      "name": "SPEAR PILLAR",
+      "x": 10,
+      "y": 3,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_HALL_OF_ORIGIN",
+      "name": "HALL OF ORIGIN",
+      "x": 10,
+      "y": 3,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_SENDOFF_SPRING",
+      "name": "SENDOFF SPRING",
+      "x": 18,
+      "y": 9,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_TURNBACK_CAVE",
+      "name": "TURNBACK CAVE",
+      "x": 18,
+      "y": 9,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_SPRING_PATH",
+      "name": "SPRING PATH",
+      "x": 18,
+      "y": 9,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_FULLMOON_ISLAND",
+      "name": "FULLMOON ISLAND",
+      "x": 1,
+      "y": 7,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_NEWMOON_ISLAND",
+      "name": "NEWMOON ISLAND",
+      "x": 3,
+      "y": 7,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_SEABREAK_PATH",
+      "name": "SEABREAK PATH",
+      "x": 22,
+      "y": 5,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_FLOWER_PARADISE",
+      "name": "FLOWER PARADISE",
+      "x": 22,
+      "y": 4,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_MANIAC_TUNNEL",
+      "name": "MANIAC TUNNEL",
+      "x": 16,
+      "y": 9,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_IRON_RUINS",
+      "name": "IRON RUINS",
+      "x": 1,
+      "y": 5,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_ICEBERG_RUINS",
+      "name": "ICEBERG RUINS",
+      "x": 9,
+      "y": 3,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_ROCK_PEAK_RUINS",
+      "name": "ROCK PEAK RUINS",
+      "x": 19,
+      "y": 2,
+      "width": 1,
+      "height": 1
+    },
+    {
       "id": "MAPSEC_AQUA_HIDEOUT",
       "name": "AQUA HIDEOUT",
       "x": 19,

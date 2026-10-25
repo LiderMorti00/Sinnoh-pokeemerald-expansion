@@ -8,6 +8,7 @@ BattleFrontier_OutsideWest_OnTransition:
 	end
 
 BattleFrontier_OutsideWest_EventScript_FerryAttendant::
+	goto BattleFrontier_OutsideWest_EventScript_SinnohFerry
 	lock
 	faceplayer
 	msgbox BattleFrontier_OutsideWest_Text_MayISeeYourTicket, MSGBOX_DEFAULT
@@ -515,3 +516,23 @@ BattleFrontier_OutsideWest_Text_MonWithLongTailInFrontier:
 	.string "Oh, challenges can wait. I feel driven\n"
 	.string "to find the delightful creature!$"
 
+
+BattleFrontier_OutsideWest_EventScript_SinnohFerry::
+	lock
+	faceplayer
+	msgbox BattleFrontier_OutsideWest_Text_SinnohBackToFightArea, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, BattleFrontier_OutsideWest_EventScript_SinnohFerryNo
+	msgbox BattleFrontier_OutsideWest_Text_PleaseBoardFerry, MSGBOX_DEFAULT
+	call BattleFrontier_OutsideWest_EventScript_BoardFerry
+	warp MAP_FIGHT_AREA_FRONTIER_GATE, 4, 2
+	waitstate
+	release
+	end
+
+BattleFrontier_OutsideWest_EventScript_SinnohFerryNo::
+	release
+	end
+
+BattleFrontier_OutsideWest_Text_SinnohBackToFightArea:
+	.string "Would you like to go back to the\n"
+	.string "FIGHT AREA?$"

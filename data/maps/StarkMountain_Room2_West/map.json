@@ -1,0 +1,228 @@
+{
+  "id": "MAP_STARK_MOUNTAIN_ROOM2_WEST",
+  "name": "StarkMountain_Room2_West",
+  "layout": "LAYOUT_STARK_MOUNTAIN_ROOM2_WEST",
+  "music": "MUS_RG_MT_MOON",
+  "region_map_section": "MAPSEC_MT_STARK",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_STARK_MOUNTAIN_ROOM2_EAST",
+      "offset": 0,
+      "direction": "right"
+    }
+  ],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_ACE_TRAINER_M",
+      "x": 31,
+      "y": 74,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "StarkMountain_Room2_EventScript_Keenan",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_ACE_TRAINER_F",
+      "x": 33,
+      "y": 77,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
+      "script": "StarkMountain_Room2_EventScript_Kassandra",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_ACE_TRAINER_M",
+      "x": 13,
+      "y": 37,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "StarkMountain_Room2_EventScript_Stefan",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_ACE_TRAINER_F",
+      "x": 9,
+      "y": 37,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "StarkMountain_Room2_EventScript_Jasmin",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_DRAGON_TAMER",
+      "x": 15,
+      "y": 23,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "1",
+      "script": "StarkMountain_Room2_EventScript_Drake",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT_FRLG",
+      "x": 17,
+      "y": 23,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "1",
+      "script": "StarkMountain_Room2_EventScript_Jarrett",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 11,
+      "y": 45,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_TM50",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_STARKMOUNTAIN_ROOM2_TM50"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 12,
+      "y": 77,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_RARE_CANDY",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_STARKMOUNTAIN_ROOM2_RARE_CANDY"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 38,
+      "y": 45,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_ULTRA_BALL",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_STARKMOUNTAIN_ROOM2_ULTRA_BALL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+      "x": 43,
+      "y": 31,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_RockSmash",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
+      "x": 20,
+      "y": 31,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_StrengthBoulder",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
+      "x": 29,
+      "y": 13,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_StrengthBoulder",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+      "x": 41,
+      "y": 16,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_RockSmash",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 47,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_STARK_MOUNTAIN_ROOM3",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 42,
+      "y": 87,
+      "elevation": 0,
+      "dest_map": "MAP_STARK_MOUNTAIN_ROOM1",
+      "dest_warp_id": "1"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 5,
+      "y": 49,
+      "elevation": 3,
+      "item": "ITEM_FLAME_PLATE",
+      "flag": "FLAG_HIDDEN_ITEM_STARKMOUNTAIN_ROOM2_FLAME_PLATE"
+    },
+    {
+      "type": "hidden_item",
+      "x": 18,
+      "y": 74,
+      "elevation": 3,
+      "item": "ITEM_ULTRA_BALL",
+      "flag": "FLAG_HIDDEN_ITEM_STARKMOUNTAIN_ROOM2_ULTRA_BALL"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "MAP_SEABREAK_PATH_NORTH",
+  "name": "SeabreakPath_North",
+  "layout": "LAYOUT_SEABREAK_PATH_NORTH",
+  "music": "MUS_DPP_FLOAROMA",
+  "region_map_section": "MAPSEC_SEABREAK_PATH",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_SEABREAK_PATH_SOUTH",
+      "offset": 0,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_FLOWER_PARADISE",
+      "offset": 0,
+      "direction": "up"
+    }
+  ],
+  "object_events": [],
+  "warp_events": [],
+  "coord_events": [],
+  "bg_events": []
+}

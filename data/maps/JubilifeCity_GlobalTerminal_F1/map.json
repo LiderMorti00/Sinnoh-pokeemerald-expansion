@@ -1,0 +1,272 @@
+{
+  "id": "MAP_JUBILIFE_CITY_GLOBAL_TERMINAL_F1",
+  "name": "JubilifeCity_GlobalTerminal_F1",
+  "layout": "LAYOUT_JUBILIFE_CITY_GLOBAL_TERMINAL_F1",
+  "music": "MUS_DPP_JUBILIFE",
+  "region_map_section": "MAPSEC_JUBILIFE_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_RECEPTIONIST",
+      "x": 4,
+      "y": 3,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "JubilifeCity_GlobalTerminal_F1_EventScript_PtNpc1",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_COLLECTOR",
+      "x": 2,
+      "y": 4,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 1,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "JubilifeCity_GlobalTerminal_F1_EventScript_PtNpc2",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_BUG_CATCHER",
+      "x": 3,
+      "y": 4,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "JubilifeCity_GlobalTerminal_F1_EventScript_PtNpc3",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_GUITARIST",
+      "x": 2,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "JubilifeCity_GlobalTerminal_F1_EventScript_PtNpc4",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
+      "x": 12,
+      "y": 4,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "JubilifeCity_GlobalTerminal_F1_EventScript_PtNpc5",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_ACE_TRAINER_M",
+      "x": 3,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "JubilifeCity_GlobalTerminal_F1_EventScript_PtNpc6",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_BEAUTY",
+      "x": 7,
+      "y": 4,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "JubilifeCity_GlobalTerminal_F1_EventScript_PtNpc7",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_RECEPTIONIST",
+      "x": 4,
+      "y": 7,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "JubilifeCity_GlobalTerminal_F1_EventScript_PtNpc8",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_RECEPTIONIST",
+      "x": 4,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "JubilifeCity_GlobalTerminal_F1_EventScript_PtNpc9",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PICNICKER_FRLG",
+      "x": 13,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "JubilifeCity_GlobalTerminal_F1_EventScript_PtNpc10",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER_FRLG",
+      "x": 7,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "JubilifeCity_GlobalTerminal_F1_EventScript_PtNpc11",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_BREEDER_F",
+      "x": 7,
+      "y": 3,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "JubilifeCity_GlobalTerminal_F1_EventScript_PtNpc12",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 6,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_JUBILIFE_CITY",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 7,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_JUBILIFE_CITY",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_JUBILIFE_CITY_GLOBAL_TERMINAL_F2",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 9,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "JubilifeCity_GlobalTerminal_F1_EventScript_PtSign1"
+    },
+    {
+      "type": "sign",
+      "x": 9,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "JubilifeCity_GlobalTerminal_F1_EventScript_PtSign2"
+    },
+    {
+      "type": "sign",
+      "x": 9,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "JubilifeCity_GlobalTerminal_F1_EventScript_PtSign3"
+    },
+    {
+      "type": "sign",
+      "x": 9,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "JubilifeCity_GlobalTerminal_F1_EventScript_PtSign4"
+    },
+    {
+      "type": "sign",
+      "x": 11,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "JubilifeCity_GlobalTerminal_F1_EventScript_PtSign5"
+    },
+    {
+      "type": "sign",
+      "x": 11,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "JubilifeCity_GlobalTerminal_F1_EventScript_PtSign6"
+    },
+    {
+      "type": "sign",
+      "x": 11,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "JubilifeCity_GlobalTerminal_F1_EventScript_PtSign7"
+    },
+    {
+      "type": "sign",
+      "x": 11,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "JubilifeCity_GlobalTerminal_F1_EventScript_PtSign8"
+    },
+    {
+      "type": "sign",
+      "x": 9,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "JubilifeCity_GlobalTerminal_F1_EventScript_PtSign9"
+    }
+  ]
+}

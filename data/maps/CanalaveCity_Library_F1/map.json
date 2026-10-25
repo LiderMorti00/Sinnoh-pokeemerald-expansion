@@ -1,0 +1,251 @@
+{
+  "id": "MAP_CANALAVE_CITY_LIBRARY_F1",
+  "name": "CanalaveCity_Library_F1",
+  "layout": "LAYOUT_CANALAVE_CITY_LIBRARY_F1",
+  "music": "MUS_DPP_CANALAVE",
+  "region_map_section": "MAPSEC_CANALAVE_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_RECEPTIONIST",
+      "x": 9,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CanalaveCity_Library_F1_EventScript_PtNpc1",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_LASS",
+      "x": 2,
+      "y": 3,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CanalaveCity_Library_F1_EventScript_PtNpc2",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_LUCIAN",
+      "x": 11,
+      "y": 3,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CanalaveCity_Library_F1_EventScript_PtNpc3",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 6,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_CANALAVE_CITY",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 7,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_CANALAVE_CITY",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 3,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_CANALAVE_CITY_LIBRARY_F2",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CanalaveCity_Library_F1_EventScript_PtSign1"
+    },
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CanalaveCity_Library_F1_EventScript_PtSign2"
+    },
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CanalaveCity_Library_F1_EventScript_PtSign3"
+    },
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CanalaveCity_Library_F1_EventScript_PtSign4"
+    },
+    {
+      "type": "sign",
+      "x": 3,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CanalaveCity_Library_F1_EventScript_PtSign5"
+    },
+    {
+      "type": "sign",
+      "x": 4,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CanalaveCity_Library_F1_EventScript_PtSign6"
+    },
+    {
+      "type": "sign",
+      "x": 4,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CanalaveCity_Library_F1_EventScript_PtSign7"
+    },
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CanalaveCity_Library_F1_EventScript_PtSign8"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CanalaveCity_Library_F1_EventScript_PtSign9"
+    },
+    {
+      "type": "sign",
+      "x": 3,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CanalaveCity_Library_F1_EventScript_PtSign10"
+    },
+    {
+      "type": "sign",
+      "x": 10,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CanalaveCity_Library_F1_EventScript_PtSign11"
+    },
+    {
+      "type": "sign",
+      "x": 10,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CanalaveCity_Library_F1_EventScript_PtSign12"
+    },
+    {
+      "type": "sign",
+      "x": 11,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CanalaveCity_Library_F1_EventScript_PtSign13"
+    },
+    {
+      "type": "sign",
+      "x": 12,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CanalaveCity_Library_F1_EventScript_PtSign14"
+    },
+    {
+      "type": "sign",
+      "x": 12,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CanalaveCity_Library_F1_EventScript_PtSign15"
+    },
+    {
+      "type": "sign",
+      "x": 13,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CanalaveCity_Library_F1_EventScript_PtSign16"
+    },
+    {
+      "type": "sign",
+      "x": 3,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CanalaveCity_Library_F1_EventScript_PtSign17"
+    },
+    {
+      "type": "sign",
+      "x": 3,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CanalaveCity_Library_F1_EventScript_PtSign18"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CanalaveCity_Library_F1_EventScript_PtSign19"
+    },
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CanalaveCity_Library_F1_EventScript_PtSign20"
+    },
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CanalaveCity_Library_F1_EventScript_PtSign21"
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "id": "MAP_WAYWARD_CAVE_B1F",
+  "name": "WaywardCave_B1F",
+  "layout": "LAYOUT_WAYWARD_CAVE_B1F",
+  "music": "MUS_RG_MT_MOON",
+  "region_map_section": "MAPSEC_WAYWARD_CAVE",
+  "requires_flash": true,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 21,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_GRIP_CLAW",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_WAYWARDCAVE_B1F_GRIP_CLAW"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 30,
+      "y": 15,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_MAX_ETHER",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_WAYWARDCAVE_B1F_MAX_ETHER"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 32,
+      "y": 7,
+      "elevation": 4,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_RARE_CANDY",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_WAYWARDCAVE_B1F_RARE_CANDY"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 42,
+      "y": 37,
+      "elevation": 0,
+      "dest_map": "MAP_WAYWARD_CAVE_1F",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 15,
+      "y": 39,
+      "elevation": 0,
+      "dest_map": "MAP_WAYWARD_CAVE_1F",
+      "dest_warp_id": "2"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 2,
+      "y": 9,
+      "elevation": 3,
+      "item": "ITEM_STARDUST",
+      "flag": "FLAG_HIDDEN_ITEM_WAYWARDCAVE_B1F_STARDUST"
+    },
+    {
+      "type": "hidden_item",
+      "x": 3,
+      "y": 38,
+      "elevation": 3,
+      "item": "ITEM_DUSK_STONE",
+      "flag": "FLAG_HIDDEN_ITEM_WAYWARDCAVE_B1F_DUSK_STONE"
+    }
+  ]
+}

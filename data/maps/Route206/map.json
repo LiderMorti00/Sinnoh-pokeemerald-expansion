@@ -334,6 +334,13 @@
       "elevation": 0,
       "dest_map": "MAP_ROUTE206_SOUTH",
       "dest_warp_id": "1"
+    },
+    {
+      "x": 18,
+      "y": 30,
+      "elevation": 0,
+      "dest_map": "MAP_WAYWARD_CAVE_1F",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [],

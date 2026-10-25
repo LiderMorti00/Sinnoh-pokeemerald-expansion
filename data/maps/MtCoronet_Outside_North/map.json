@@ -1,0 +1,175 @@
+{
+  "id": "MAP_MT_CORONET_OUTSIDE_NORTH",
+  "name": "MtCoronet_Outside_North",
+  "layout": "LAYOUT_MT_CORONET_OUTSIDE_NORTH",
+  "music": "MUS_DPP_MT_CORONET",
+  "region_map_section": "MAPSEC_MT_CORONET",
+  "requires_flash": false,
+  "weather": "WEATHER_FOG_HORIZONTAL",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+      "x": 36,
+      "y": 38,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_RockSmash",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+      "x": 37,
+      "y": 36,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_RockSmash",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+      "x": 39,
+      "y": 37,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_RockSmash",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+      "x": 39,
+      "y": 33,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_RockSmash",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+      "x": 36,
+      "y": 31,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_RockSmash",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+      "x": 33,
+      "y": 14,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_RockSmash",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
+      "x": 29,
+      "y": 11,
+      "elevation": 4,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_StrengthBoulder",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 36,
+      "y": 34,
+      "elevation": 0,
+      "dest_map": "MAP_MT_CORONET_4F_ROOM1",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 7,
+      "y": 13,
+      "elevation": 0,
+      "dest_map": "MAP_MT_CORONET_4F_ROOM3",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 39,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_MT_CORONET_1F_TUNNEL_ROOM",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 35,
+      "y": 38,
+      "elevation": 3,
+      "item": "ITEM_STAR_PIECE",
+      "flag": "FLAG_HIDDEN_ITEM_MTCORONET_OUTSIDE_NORTH_STAR_PIECE"
+    },
+    {
+      "type": "hidden_item",
+      "x": 38,
+      "y": 41,
+      "elevation": 3,
+      "item": "ITEM_STAR_PIECE",
+      "flag": "FLAG_HIDDEN_ITEM_MTCORONET_OUTSIDE_NORTH_STAR_PIECE_2"
+    },
+    {
+      "type": "hidden_item",
+      "x": 27,
+      "y": 3,
+      "elevation": 3,
+      "item": "ITEM_STARDUST",
+      "flag": "FLAG_HIDDEN_ITEM_MTCORONET_OUTSIDE_NORTH_STARDUST"
+    },
+    {
+      "type": "hidden_item",
+      "x": 13,
+      "y": 6,
+      "elevation": 4,
+      "item": "ITEM_FULL_RESTORE",
+      "flag": "FLAG_HIDDEN_ITEM_MTCORONET_OUTSIDE_NORTH_FULL_RESTORE"
+    },
+    {
+      "type": "hidden_item",
+      "x": 37,
+      "y": 11,
+      "elevation": 3,
+      "item": "ITEM_MOON_STONE",
+      "flag": "FLAG_HIDDEN_ITEM_MTCORONET_OUTSIDE_NORTH_MOON_STONE"
+    }
+  ]
+}

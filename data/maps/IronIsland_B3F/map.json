@@ -1,0 +1,63 @@
+{
+  "id": "MAP_IRON_ISLAND_B3F",
+  "name": "IronIsland_B3F",
+  "layout": "LAYOUT_IRON_ISLAND_B3F",
+  "music": "MUS_RG_MT_MOON",
+  "region_map_section": "MAPSEC_IRON_ISLAND",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 15,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_SHINY_STONE",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_IRONISLAND_B3F_SHINY_STONE"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 3,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_IRON_ISLAND",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 15,
+      "y": 16,
+      "elevation": 0,
+      "dest_map": "MAP_IRON_ISLAND_B2F_LEFT",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 15,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_IRON_RUINS",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 15,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_IRON_RUINS",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

@@ -1,0 +1,244 @@
+{
+  "id": "MAP_MT_CORONET_4F_ROOM1",
+  "name": "MtCoronet_4F_Room1",
+  "layout": "LAYOUT_MT_CORONET_4F_ROOM1",
+  "music": "MUS_DPP_MT_CORONET",
+  "region_map_section": "MAPSEC_MT_CORONET",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_GALAXY_GRUNT_M",
+      "x": 21,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP_AND_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
+      "script": "MtCoronet_4F_Room1_EventScript_Grunt",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_GALAXY_GRUNT_M",
+      "x": 8,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "MtCoronet_4F_Room1_EventScript_Grunt2",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 55,
+      "y": 3,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_ADAMANT_ORB",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_MTCORONET_4F_ROOM1_ADAMANT_ORB"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 59,
+      "y": 3,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_LUSTROUS_ORB",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_MTCORONET_4F_ROOM1_LUSTROUS_ORB"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+      "x": 4,
+      "y": 7,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_RockSmash",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+      "x": 6,
+      "y": 9,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_RockSmash",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+      "x": 3,
+      "y": 10,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_RockSmash",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+      "x": 24,
+      "y": 20,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_RockSmash",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+      "x": 27,
+      "y": 24,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_RockSmash",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+      "x": 28,
+      "y": 25,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "EventScript_RockSmash",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 5,
+      "y": 26,
+      "elevation": 0,
+      "dest_map": "MAP_MT_CORONET_OUTSIDE_SOUTH",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 33,
+      "y": 25,
+      "elevation": 0,
+      "dest_map": "MAP_MT_CORONET_OUTSIDE_SOUTH",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 15,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_MT_CORONET_4F_ROOM1",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 57,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_MT_CORONET_4F_ROOM1",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 38,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_MT_CORONET_OUTSIDE_NORTH",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 3,
+      "y": 7,
+      "elevation": 3,
+      "item": "ITEM_SUN_STONE",
+      "flag": "FLAG_HIDDEN_ITEM_MTCORONET_4F_ROOM1_SUN_STONE"
+    },
+    {
+      "type": "hidden_item",
+      "x": 17,
+      "y": 4,
+      "elevation": 3,
+      "item": "ITEM_FULL_HEAL",
+      "flag": "FLAG_HIDDEN_ITEM_MTCORONET_4F_ROOM1_FULL_HEAL"
+    },
+    {
+      "type": "hidden_item",
+      "x": 27,
+      "y": 13,
+      "elevation": 3,
+      "item": "ITEM_MAX_REVIVE",
+      "flag": "FLAG_HIDDEN_ITEM_MTCORONET_4F_ROOM1_MAX_REVIVE"
+    },
+    {
+      "type": "hidden_item",
+      "x": 24,
+      "y": 19,
+      "elevation": 3,
+      "item": "ITEM_HEAL_POWDER",
+      "flag": "FLAG_HIDDEN_ITEM_MTCORONET_4F_ROOM1_HEAL_POWDER"
+    },
+    {
+      "type": "hidden_item",
+      "x": 27,
+      "y": 25,
+      "elevation": 3,
+      "item": "ITEM_YELLOW_SHARD",
+      "flag": "FLAG_HIDDEN_ITEM_MTCORONET_4F_ROOM1_YELLOW_SHARD"
+    },
+    {
+      "type": "hidden_item",
+      "x": 36,
+      "y": 15,
+      "elevation": 3,
+      "item": "ITEM_STARDUST",
+      "flag": "FLAG_HIDDEN_ITEM_MTCORONET_4F_ROOM1_STARDUST"
+    },
+    {
+      "type": "hidden_item",
+      "x": 57,
+      "y": 4,
+      "elevation": 3,
+      "item": "ITEM_STONE_PLATE",
+      "flag": "FLAG_HIDDEN_ITEM_MTCORONET_4F_ROOM1_STONE_PLATE"
+    }
+  ]
+}

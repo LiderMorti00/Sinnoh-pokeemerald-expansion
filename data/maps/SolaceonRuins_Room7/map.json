@@ -1,0 +1,106 @@
+{
+  "id": "MAP_SOLACEON_RUINS_ROOM7",
+  "name": "SolaceonRuins_Room7",
+  "layout": "LAYOUT_SOLACEON_RUINS_ROOM7",
+  "music": "MUS_RG_SEVII_CAVE",
+  "region_map_section": "MAPSEC_SOLACEON_RUINS",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 5,
+      "y": 10,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_MIND_PLATE",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_SOLACEONRUINS_ROOM7_MIND_PLATE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 7,
+      "y": 10,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_ODD_INCENSE",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_SOLACEONRUINS_ROOM7_ODD_INCENSE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 5,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_NUGGET",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_SOLACEONRUINS_ROOM7_NUGGET"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 7,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_HM05",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_SOLACEONRUINS_ROOM7_HM05"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 9,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_SOLACEON_RUINS_ROOM6",
+      "dest_warp_id": "2"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 5,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SolaceonRuins_Room7_EventScript_PtSign1"
+    },
+    {
+      "type": "sign",
+      "x": 6,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SolaceonRuins_Room7_EventScript_PtSign2"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "SolaceonRuins_Room7_EventScript_PtSign3"
+    }
+  ]
+}

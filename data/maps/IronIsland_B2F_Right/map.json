@@ -1,0 +1,90 @@
+{
+  "id": "MAP_IRON_ISLAND_B2F_RIGHT",
+  "name": "IronIsland_B2F_Right",
+  "layout": "LAYOUT_IRON_ISLAND_B2F_RIGHT",
+  "music": "MUS_RG_MT_MOON",
+  "region_map_section": "MAPSEC_IRON_ISLAND",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_WORKER",
+      "x": 5,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 3,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
+      "script": "IronIsland_B2F_Right_EventScript_Noel",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_WORKER",
+      "x": 2,
+      "y": 20,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 3,
+      "movement_range_y": 3,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "IronIsland_B2F_Right_EventScript_Braden",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 17,
+      "y": 3,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_ELIXIR",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_IRONISLAND_B2F_RIGHT_ELIXIR"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 8,
+      "y": 18,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_TM23",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_IRONISLAND_B2F_RIGHT_TM23"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 3,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_IRON_ISLAND_B1F_RIGHT",
+      "dest_warp_id": "1"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 13,
+      "y": 18,
+      "elevation": 3,
+      "item": "ITEM_STAR_PIECE",
+      "flag": "FLAG_HIDDEN_ITEM_IRONISLAND_B2F_RIGHT_STAR_PIECE"
+    }
+  ]
+}
