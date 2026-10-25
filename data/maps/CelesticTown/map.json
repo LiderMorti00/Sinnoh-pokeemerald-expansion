@@ -26,7 +26,7 @@
   ],
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_1",
+      "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
       "x": 23,
       "y": 9,
       "elevation": 4,
@@ -39,7 +39,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY_FRLG",
+      "graphics_id": "OBJ_EVENT_GFX_NINJA_BOY",
       "x": 9,
       "y": 30,
       "elevation": 4,

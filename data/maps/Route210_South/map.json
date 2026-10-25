@@ -31,7 +31,7 @@
   ],
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY_FRLG",
+      "graphics_id": "OBJ_EVENT_GFX_NINJA_BOY",
       "x": 26,
       "y": 25,
       "elevation": 3,
@@ -44,7 +44,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY_FRLG",
+      "graphics_id": "OBJ_EVENT_GFX_NINJA_BOY",
       "x": 14,
       "y": 26,
       "elevation": 3,
@@ -57,7 +57,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_LITTLE_GIRL_FRLG",
+      "graphics_id": "OBJ_EVENT_GFX_TWIN",
       "x": 22,
       "y": 64,
       "elevation": 3,
@@ -70,7 +70,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_LITTLE_GIRL_FRLG",
+      "graphics_id": "OBJ_EVENT_GFX_TWIN",
       "x": 21,
       "y": 64,
       "elevation": 3,
@@ -83,7 +83,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY_FRLG",
+      "graphics_id": "OBJ_EVENT_GFX_NINJA_BOY",
       "x": 36,
       "y": 16,
       "elevation": 3,
@@ -96,7 +96,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BOY",
+      "graphics_id": "OBJ_EVENT_GFX_RUNNING_TRIATHLETE_M",
       "x": 35,
       "y": 79,
       "elevation": 5,

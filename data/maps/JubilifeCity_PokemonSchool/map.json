@@ -15,7 +15,7 @@
   "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_SINNOH_MIDDLE_AGED_WOMAN",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_ACE_TRAINER_F",
       "x": 3,
       "y": 3,
       "elevation": 3,
@@ -41,7 +41,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_LASS_FRLG",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_LASS",
       "x": 0,
       "y": 7,
       "elevation": 3,
@@ -67,7 +67,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BOY",
+      "graphics_id": "OBJ_EVENT_GFX_SCHOOL_KID_M",
       "x": 10,
       "y": 3,
       "elevation": 3,
@@ -80,7 +80,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_LASS_FRLG",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_SCHOOL_KID_F",
       "x": 11,
       "y": 3,
       "elevation": 3,
@@ -107,7 +107,7 @@
       "flag": "FLAG_HIDE_SCHOOL_BARRY"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BOY",
+      "graphics_id": "OBJ_EVENT_GFX_SCHOOL_KID_M",
       "x": 8,
       "y": 3,
       "elevation": 3,
