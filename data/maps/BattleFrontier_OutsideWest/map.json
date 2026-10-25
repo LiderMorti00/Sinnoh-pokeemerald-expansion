@@ -418,6 +418,13 @@
       "elevation": 0,
       "dest_map": "MAP_ARTISAN_CAVE_B1F",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 20,
+      "y": 68,
+      "elevation": 3,
+      "dest_map": "MAP_FIGHT_AREA_FRONTIER_GATE",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [],

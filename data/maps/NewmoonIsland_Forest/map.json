@@ -1,0 +1,35 @@
+{
+  "id": "MAP_NEWMOON_ISLAND_FOREST",
+  "name": "NewmoonIsland_Forest",
+  "layout": "LAYOUT_NEWMOON_ISLAND_FOREST",
+  "music": "MUS_DPP_ETERNA_FOREST",
+  "region_map_section": "MAPSEC_NEWMOON_ISLAND",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 8,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_NEWMOON_ISLAND",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 9,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_NEWMOON_ISLAND",
+      "dest_warp_id": "1"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

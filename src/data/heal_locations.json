@@ -389,6 +389,118 @@
       "y": 18,
       "respawn_map": "MAP_ETERNA_CITY_POKEMON_CENTER_F1",
       "respawn_npc": "LOCALID_ETERNA_NURSE"
+    },
+    {
+      "id": "HEAL_LOCATION_HEARTHOME_CITY",
+      "map": "MAP_HEARTHOME_CITY",
+      "x": 14,
+      "y": 20,
+      "respawn_map": "MAP_HEARTHOME_CITY_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_HEARTHOME_CITY_NURSE"
+    },
+    {
+      "id": "HEAL_LOCATION_SOLACEON_TOWN",
+      "map": "MAP_SOLACEON_TOWN",
+      "x": 24,
+      "y": 25,
+      "respawn_map": "MAP_SOLACEON_TOWN_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_SOLACEON_TOWN_NURSE"
+    },
+    {
+      "id": "HEAL_LOCATION_VEILSTONE_CITY",
+      "map": "MAP_VEILSTONE_CITY",
+      "x": 41,
+      "y": 37,
+      "respawn_map": "MAP_VEILSTONE_CITY_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_VEILSTONE_CITY_NURSE"
+    },
+    {
+      "id": "HEAL_LOCATION_PASTORIA_CITY",
+      "map": "MAP_PASTORIA_CITY",
+      "x": 26,
+      "y": 15,
+      "respawn_map": "MAP_PASTORIA_CITY_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_PASTORIA_CITY_NURSE"
+    },
+    {
+      "id": "HEAL_LOCATION_CELESTIC_TOWN",
+      "map": "MAP_CELESTIC_TOWN",
+      "x": 27,
+      "y": 28,
+      "respawn_map": "MAP_CELESTIC_TOWN_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_CELESTIC_TOWN_NURSE"
+    },
+    {
+      "id": "HEAL_LOCATION_CANALAVE_CITY",
+      "map": "MAP_CANALAVE_CITY",
+      "x": 28,
+      "y": 23,
+      "respawn_map": "MAP_CANALAVE_CITY_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_CANALAVE_CITY_NURSE"
+    },
+    {
+      "id": "HEAL_LOCATION_SNOWPOINT_CITY",
+      "map": "MAP_SNOWPOINT_CITY",
+      "x": 29,
+      "y": 46,
+      "respawn_map": "MAP_SNOWPOINT_CITY_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_SNOWPOINT_CITY_NURSE"
+    },
+    {
+      "id": "HEAL_LOCATION_SUNYSHORE_CITY",
+      "map": "MAP_SUNYSHORE_CITY",
+      "x": 32,
+      "y": 43,
+      "respawn_map": "MAP_SUNYSHORE_CITY_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_SUNYSHORE_CITY_NURSE"
+    },
+    {
+      "id": "HEAL_LOCATION_POKEMON_LEAGUE_SOUTH_POKEMON_CENTER_1F",
+      "map": "MAP_POKMON_LEAGUE",
+      "x": 11,
+      "y": 59,
+      "respawn_map": "MAP_POKEMON_LEAGUE_SOUTH_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_POKEMON_LEAGUE_SOUTH_POKEMON_CENTER_1F_NURSE"
+    },
+    {
+      "id": "HEAL_LOCATION_FIGHT_AREA",
+      "map": "MAP_FIGHT_AREA",
+      "x": 39,
+      "y": 15,
+      "respawn_map": "MAP_FIGHT_AREA_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_FIGHT_AREA_NURSE"
+    },
+    {
+      "id": "HEAL_LOCATION_SURVIVAL_AREA",
+      "map": "MAP_SURVIVAL_AREA",
+      "x": 17,
+      "y": 19,
+      "respawn_map": "MAP_SURVIVAL_AREA_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_SURVIVAL_AREA_NURSE"
+    },
+    {
+      "id": "HEAL_LOCATION_RESORT_AREA",
+      "map": "MAP_RESORT_AREA",
+      "x": 4,
+      "y": 18,
+      "respawn_map": "MAP_RESORT_AREA_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_RESORT_AREA_NURSE"
+    },
+    {
+      "id": "HEAL_LOCATION_POKEMON_LEAGUE_NORTH",
+      "map": "MAP_POKMON_LEAGUE",
+      "x": 16,
+      "y": 14,
+      "respawn_map": "MAP_POKEMON_LEAGUE_NORTH_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_POKEMON_LEAGUE_NORTH_POKEMON_CENTER_1F_LEAGUE_NURSE"
+    },
+    {
+      "id": "HEAL_LOCATION_TWINLEAF_TOWN",
+      "map": "MAP_TWINLEAF_TOWN",
+      "x": 16,
+      "y": 19,
+      "respawn_map": "MAP_TWINLEAF_TOWN_MAIN_HOUSE_1F",
+      "respawn_npc": "LOCALID_TWINLEAF_MOM"
     }
   ]
 }

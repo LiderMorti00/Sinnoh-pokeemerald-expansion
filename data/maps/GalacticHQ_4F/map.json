@@ -1,0 +1,88 @@
+{
+  "id": "MAP_GALACTIC_HQ_4F",
+  "name": "GalacticHQ_4F",
+  "layout": "LAYOUT_GALACTIC_HQ_4F",
+  "music": "MUS_DPP_GALACTIC_HQ",
+  "region_map_section": "MAPSEC_GALACTIC_HQ",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_CYRUS",
+      "x": 9,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GalacticHQ_4F_EventScript_PtNpc1",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 4,
+      "y": 15,
+      "elevation": 0,
+      "dest_map": "MAP_GALACTIC_HQ_3F",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 23,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_GALACTIC_HQ_LABORATORY",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 22,
+      "y": 17,
+      "elevation": 0,
+      "dest_map": "MAP_GALACTIC_HQ_1F",
+      "dest_warp_id": "14"
+    },
+    {
+      "x": 9,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_GALACTIC_HQ_HALL",
+      "dest_warp_id": "2"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 21,
+      "y": 7,
+      "elevation": 3,
+      "item": "ITEM_RAZOR_CLAW",
+      "flag": "FLAG_HIDDEN_ITEM_GALACTICHQ_4F_RAZOR_CLAW"
+    },
+    {
+      "type": "sign",
+      "x": 22,
+      "y": 14,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "GalacticHQ_4F_EventScript_PtSign1"
+    },
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 6,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "GalacticHQ_4F_EventScript_PtSign2"
+    }
+  ]
+}

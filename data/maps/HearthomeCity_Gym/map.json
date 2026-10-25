@@ -1,0 +1,376 @@
+{
+  "id": "MAP_HEARTHOME_CITY_GYM",
+  "name": "HearthomeCity_Gym",
+  "layout": "LAYOUT_HEARTHOME_CITY_GYM",
+  "music": "MUS_GYM",
+  "region_map_section": "MAPSEC_HEARTHOME_CITY",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER_FRLG",
+      "x": 24,
+      "y": 18,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "HearthomeCity_Gym_EventScript_Donny",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_LASS",
+      "x": 24,
+      "y": 2,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "HearthomeCity_Gym_EventScript_Molly",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_SCHOOL_KID_F",
+      "x": 4,
+      "y": 2,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "HearthomeCity_Gym_EventScript_Mackenzie",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_ACE_TRAINER_M",
+      "x": 14,
+      "y": 2,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "HearthomeCity_Gym_EventScript_Allen",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SCHOOL_KID_M",
+      "x": 4,
+      "y": 10,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "HearthomeCity_Gym_EventScript_Chance",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_ACE_TRAINER_F",
+      "x": 4,
+      "y": 18,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "HearthomeCity_Gym_EventScript_Catherine",
+      "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_FANTINA",
+      "x": 14,
+      "y": 11,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "HearthomeCity_Gym_EventScript_Leader",
+      "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_GYM_GUY",
+      "x": 15,
+      "y": 20,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "HearthomeCity_Gym_EventScript_PtGymGuide",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 13,
+      "y": 23,
+      "elevation": 3,
+      "dest_map": "MAP_HEARTHOME_CITY",
+      "dest_warp_id": "12"
+    },
+    {
+      "x": 14,
+      "y": 23,
+      "elevation": 3,
+      "dest_map": "MAP_HEARTHOME_CITY",
+      "dest_warp_id": "12"
+    },
+    {
+      "x": 15,
+      "y": 23,
+      "elevation": 3,
+      "dest_map": "MAP_HEARTHOME_CITY",
+      "dest_warp_id": "12"
+    },
+    {
+      "x": 18,
+      "y": 20,
+      "elevation": 3,
+      "dest_map": "MAP_HEARTHOME_CITY_GYM",
+      "dest_warp_id": "32"
+    },
+    {
+      "x": 0,
+      "y": 4,
+      "elevation": 3,
+      "dest_map": "MAP_HEARTHOME_CITY_GYM",
+      "dest_warp_id": "22"
+    },
+    {
+      "x": 0,
+      "y": 7,
+      "elevation": 3,
+      "dest_map": "MAP_HEARTHOME_CITY_GYM",
+      "dest_warp_id": "20"
+    },
+    {
+      "x": 0,
+      "y": 12,
+      "elevation": 3,
+      "dest_map": "MAP_HEARTHOME_CITY_GYM",
+      "dest_warp_id": "30"
+    },
+    {
+      "x": 0,
+      "y": 15,
+      "elevation": 3,
+      "dest_map": "MAP_HEARTHOME_CITY_GYM",
+      "dest_warp_id": "11"
+    },
+    {
+      "x": 0,
+      "y": 20,
+      "elevation": 3,
+      "dest_map": "MAP_HEARTHOME_CITY_GYM",
+      "dest_warp_id": "28"
+    },
+    {
+      "x": 0,
+      "y": 23,
+      "elevation": 3,
+      "dest_map": "MAP_HEARTHOME_CITY_GYM",
+      "dest_warp_id": "19"
+    },
+    {
+      "x": 8,
+      "y": 4,
+      "elevation": 3,
+      "dest_map": "MAP_HEARTHOME_CITY_GYM",
+      "dest_warp_id": "18"
+    },
+    {
+      "x": 8,
+      "y": 7,
+      "elevation": 3,
+      "dest_map": "MAP_HEARTHOME_CITY_GYM",
+      "dest_warp_id": "7"
+    },
+    {
+      "x": 8,
+      "y": 12,
+      "elevation": 3,
+      "dest_map": "MAP_HEARTHOME_CITY_GYM",
+      "dest_warp_id": "17"
+    },
+    {
+      "x": 8,
+      "y": 15,
+      "elevation": 3,
+      "dest_map": "MAP_HEARTHOME_CITY_GYM",
+      "dest_warp_id": "15"
+    },
+    {
+      "x": 8,
+      "y": 20,
+      "elevation": 3,
+      "dest_map": "MAP_HEARTHOME_CITY_GYM",
+      "dest_warp_id": "26"
+    },
+    {
+      "x": 8,
+      "y": 23,
+      "elevation": 3,
+      "dest_map": "MAP_HEARTHOME_CITY_GYM",
+      "dest_warp_id": "13"
+    },
+    {
+      "x": 12,
+      "y": 4,
+      "elevation": 3,
+      "dest_map": "MAP_HEARTHOME_CITY_GYM",
+      "dest_warp_id": "24"
+    },
+    {
+      "x": 12,
+      "y": 7,
+      "elevation": 3,
+      "dest_map": "MAP_HEARTHOME_CITY_GYM",
+      "dest_warp_id": "12"
+    },
+    {
+      "x": 16,
+      "y": 4,
+      "elevation": 3,
+      "dest_map": "MAP_HEARTHOME_CITY_GYM",
+      "dest_warp_id": "10"
+    },
+    {
+      "x": 16,
+      "y": 7,
+      "elevation": 3,
+      "dest_map": "MAP_HEARTHOME_CITY_GYM",
+      "dest_warp_id": "9"
+    },
+    {
+      "x": 18,
+      "y": 15,
+      "elevation": 3,
+      "dest_map": "MAP_HEARTHOME_CITY_GYM",
+      "dest_warp_id": "5"
+    },
+    {
+      "x": 20,
+      "y": 4,
+      "elevation": 3,
+      "dest_map": "MAP_HEARTHOME_CITY_GYM",
+      "dest_warp_id": "23"
+    },
+    {
+      "x": 20,
+      "y": 7,
+      "elevation": 3,
+      "dest_map": "MAP_HEARTHOME_CITY_GYM",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 20,
+      "y": 12,
+      "elevation": 3,
+      "dest_map": "MAP_HEARTHOME_CITY_GYM",
+      "dest_warp_id": "21"
+    },
+    {
+      "x": 20,
+      "y": 15,
+      "elevation": 3,
+      "dest_map": "MAP_HEARTHOME_CITY_GYM",
+      "dest_warp_id": "16"
+    },
+    {
+      "x": 20,
+      "y": 20,
+      "elevation": 3,
+      "dest_map": "MAP_HEARTHOME_CITY_GYM",
+      "dest_warp_id": "27"
+    },
+    {
+      "x": 20,
+      "y": 23,
+      "elevation": 3,
+      "dest_map": "MAP_HEARTHOME_CITY_GYM",
+      "dest_warp_id": "14"
+    },
+    {
+      "x": 28,
+      "y": 4,
+      "elevation": 3,
+      "dest_map": "MAP_HEARTHOME_CITY_GYM",
+      "dest_warp_id": "25"
+    },
+    {
+      "x": 28,
+      "y": 7,
+      "elevation": 3,
+      "dest_map": "MAP_HEARTHOME_CITY_GYM",
+      "dest_warp_id": "8"
+    },
+    {
+      "x": 28,
+      "y": 12,
+      "elevation": 3,
+      "dest_map": "MAP_HEARTHOME_CITY_GYM",
+      "dest_warp_id": "31"
+    },
+    {
+      "x": 28,
+      "y": 15,
+      "elevation": 3,
+      "dest_map": "MAP_HEARTHOME_CITY_GYM",
+      "dest_warp_id": "6"
+    },
+    {
+      "x": 28,
+      "y": 20,
+      "elevation": 3,
+      "dest_map": "MAP_HEARTHOME_CITY_GYM",
+      "dest_warp_id": "29"
+    },
+    {
+      "x": 28,
+      "y": 23,
+      "elevation": 3,
+      "dest_map": "MAP_HEARTHOME_CITY_GYM",
+      "dest_warp_id": "3"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 12,
+      "y": 20,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "HearthomeCity_Gym_EventScript_PtGymStatue"
+    },
+    {
+      "type": "sign",
+      "x": 16,
+      "y": 20,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "HearthomeCity_Gym_EventScript_PtGymStatue"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "id": "MAP_SENDOFF_SPRING",
+  "name": "SendoffSpring",
+  "layout": "LAYOUT_SENDOFF_SPRING",
+  "music": "MUS_DPP_ROUTE210",
+  "region_map_section": "MAPSEC_SENDOFF_SPRING",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_CYNTHIA",
+      "x": 21,
+      "y": 9,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SendoffSpring_EventScript_PtNpc1",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 3,
+      "y": 48,
+      "elevation": 0,
+      "dest_map": "MAP_SPRING_PATH",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 4,
+      "y": 48,
+      "elevation": 0,
+      "dest_map": "MAP_SPRING_PATH",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 22,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_TURNBACK_CAVE_ENTRANCE",
+      "dest_warp_id": "4"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

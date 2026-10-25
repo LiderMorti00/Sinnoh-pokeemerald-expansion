@@ -208,7 +208,91 @@
       "x": 25,
       "y": 30,
       "elevation": 0,
-      "dest_map": "MAP_LILYCOVE_CITY_DEPARTMENT_STORE_1F",
+      "dest_map": "MAP_VEILSTONE_CITY_DEPARTMENT_STORE_1F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 31,
+      "y": 47,
+      "elevation": 0,
+      "dest_map": "MAP_VEILSTONE_CITY_GAME_CORNER",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 40,
+      "y": 47,
+      "elevation": 0,
+      "dest_map": "MAP_VEILSTONE_CITY_PRIZE_EXCHANGE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 14,
+      "y": 47,
+      "elevation": 0,
+      "dest_map": "MAP_VEILSTONE_CITY_HOUSE3",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 20,
+      "y": 47,
+      "elevation": 0,
+      "dest_map": "MAP_VEILSTONE_CITY_HOUSE4",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 35,
+      "y": 27,
+      "elevation": 0,
+      "dest_map": "MAP_VEILSTONE_CITY_HOUSE1",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 41,
+      "y": 27,
+      "elevation": 0,
+      "dest_map": "MAP_VEILSTONE_CITY_HOUSE2",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 41,
+      "y": 36,
+      "elevation": 0,
+      "dest_map": "MAP_VEILSTONE_CITY_POKEMON_CENTER_1F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 8,
+      "y": 36,
+      "elevation": 0,
+      "dest_map": "MAP_VEILSTONE_CITY_GYM",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 38,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_GALACTIC_HQ_1F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 41,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_GALACTIC_HQ_1F",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 44,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_GALACTIC_HQ_1F",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 25,
+      "y": 16,
+      "elevation": 0,
+      "dest_map": "MAP_VEILSTONE_CITY_GALACTIC_WAREHOUSE",
       "dest_warp_id": "0"
     }
   ],

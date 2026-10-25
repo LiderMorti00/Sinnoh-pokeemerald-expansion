@@ -17,6 +17,11 @@
       "map": "MAP_ROUTE226",
       "offset": -56,
       "direction": "down"
+    },
+    {
+      "map": "MAP_STARK_MOUNTAIN",
+      "offset": 0,
+      "direction": "up"
     }
   ],
   "object_events": [
@@ -112,7 +117,15 @@
       "flag": "FLAG_ITEM_ROUTE_114_ENERGY_POWDER"
     }
   ],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 12,
+      "y": 43,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE227_HOUSE",
+      "dest_warp_id": "0"
+    }
+  ],
   "coord_events": [],
   "bg_events": [
     {

@@ -1,0 +1,65 @@
+{
+  "id": "MAP_IRON_ISLAND",
+  "name": "IronIsland",
+  "layout": "LAYOUT_IRON_ISLAND",
+  "music": "MUS_DPP_ROUTE203",
+  "region_map_section": "MAPSEC_IRON_ISLAND",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SAILOR_FRLG",
+      "x": 3,
+      "y": 22,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "IronIsland_EventScript_SailorBack",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 15,
+      "y": 19,
+      "elevation": 0,
+      "dest_map": "MAP_IRON_ISLAND_HOUSE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 21,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_IRON_ISLAND_1F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 7,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_IRON_ISLAND_B3F",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 18,
+      "y": 24,
+      "elevation": 3,
+      "item": "ITEM_STAR_PIECE",
+      "flag": "FLAG_HIDDEN_ITEM_IRONISLAND_STAR_PIECE"
+    }
+  ]
+}

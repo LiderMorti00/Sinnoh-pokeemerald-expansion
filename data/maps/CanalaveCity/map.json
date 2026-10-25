@@ -97,6 +97,19 @@
       "trainer_sight_or_berry_tree_id": "ITEM_TM_U_TURN",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_CANALAVECITY_TM_U_TURN"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SAILOR_FRLG",
+      "x": 15,
+      "y": 46,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CanalaveCity_EventScript_SailorEldritch",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -106,6 +119,69 @@
       "elevation": 0,
       "dest_map": "MAP_ROUTE218_WEST",
       "dest_warp_id": "1"
+    },
+    {
+      "x": 9,
+      "y": 31,
+      "elevation": 0,
+      "dest_map": "MAP_CANALAVE_CITY_GYM",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 28,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_CANALAVE_CITY_POKEMON_CENTER_1F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 24,
+      "y": 39,
+      "elevation": 0,
+      "dest_map": "MAP_CANALAVE_CITY_MART",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 7,
+      "y": 17,
+      "elevation": 0,
+      "dest_map": "MAP_CANALAVE_CITY_LIBRARY_F1",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 24,
+      "y": 45,
+      "elevation": 0,
+      "dest_map": "MAP_CANALAVE_CITY_HOUSE4",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 28,
+      "y": 13,
+      "elevation": 0,
+      "dest_map": "MAP_CANALAVE_CITY_HARBOR_INN",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 9,
+      "y": 45,
+      "elevation": 0,
+      "dest_map": "MAP_CANALAVE_CITY_HOUSE3",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 24,
+      "y": 31,
+      "elevation": 0,
+      "dest_map": "MAP_CANALAVE_CITY_HOUSE2",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 8,
+      "y": 39,
+      "elevation": 0,
+      "dest_map": "MAP_CANALAVE_CITY_HOUSE1",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

@@ -1,0 +1,129 @@
+{
+  "id": "MAP_POKEMON_MANSION",
+  "name": "PokemonMansion",
+  "layout": "LAYOUT_POKEMON_MANSION",
+  "music": "MUS_DPP_ROUTE209",
+  "region_map_section": "MAPSEC_POKEMON_MANSION",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_MAID",
+      "x": 50,
+      "y": 7,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PokemonMansion_EventScript_PtNpc1",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_MAID",
+      "x": 35,
+      "y": 7,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PokemonMansion_EventScript_PtNpc2",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_MAID",
+      "x": 2,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PokemonMansion_EventScript_PtNpc3",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_MAID",
+      "x": 57,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PokemonMansion_EventScript_PtNpc4",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_MAID",
+      "x": 43,
+      "y": 7,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT",
+      "movement_range_x": 3,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PokemonMansion_EventScript_PtNpc5",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 34,
+      "y": 17,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE212_NORTH",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 6,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_POKEMON_MANSION_MAIDS_ROOM",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 14,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_POKEMON_MANSION_MAIDS_ROOM",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 22,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_POKEMON_MANSION_MAIDS_ROOM",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 49,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_POKEMON_MANSION_OFFICE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 34,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_TROPHY_GARDEN",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

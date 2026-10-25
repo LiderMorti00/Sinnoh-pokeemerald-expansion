@@ -1,0 +1,164 @@
+{
+  "id": "MAP_SINNOH_VICTORY_ROAD_B1F",
+  "name": "SinnohVictoryRoad_B1F",
+  "layout": "LAYOUT_SINNOH_VICTORY_ROAD_B1F",
+  "music": "MUS_DPP_VICTORY_ROAD",
+  "region_map_section": "MAPSEC_VICTORY_ROAD",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_ACE_TRAINER_M",
+      "x": 33,
+      "y": 43,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "1",
+      "script": "SinnohVictoryRoad_B1F_EventScript_JoPat",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_ACE_TRAINER_F",
+      "x": 33,
+      "y": 44,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 3,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "1",
+      "script": "SinnohVictoryRoad_B1F_EventScript_JoPat",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_DRAGON_TAMER",
+      "x": 10,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "SinnohVictoryRoad_B1F_EventScript_Ondrej",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_PSYCHIC_M",
+      "x": 22,
+      "y": 29,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "SinnohVictoryRoad_B1F_EventScript_Valencia",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_ACE_TRAINER_M",
+      "x": 32,
+      "y": 14,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WALK_LEFT_AND_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 3,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
+      "script": "SinnohVictoryRoad_B1F_EventScript_Henry",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 13,
+      "y": 18,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_TM59",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_SINNOHVICTORYROAD_B1F_TM59"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 33,
+      "y": 16,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_ULTRA_BALL",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_SINNOHVICTORYROAD_B1F_ULTRA_BALL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 35,
+      "y": 39,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_CALCIUM",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_SINNOHVICTORYROAD_B1F_CALCIUM"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 4,
+      "y": 39,
+      "elevation": 0,
+      "dest_map": "MAP_SINNOH_VICTORY_ROAD_1F",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 6,
+      "y": 46,
+      "elevation": 0,
+      "dest_map": "MAP_SINNOH_VICTORY_ROAD_1F",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 3,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_SINNOH_VICTORY_ROAD_1F",
+      "dest_warp_id": "4"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 24,
+      "y": 35,
+      "elevation": 3,
+      "item": "ITEM_HEART_SCALE",
+      "flag": "FLAG_HIDDEN_ITEM_SINNOHVICTORYROAD_B1F_HEART_SCALE"
+    },
+    {
+      "type": "hidden_item",
+      "x": 5,
+      "y": 24,
+      "elevation": 3,
+      "item": "ITEM_MAX_ELIXIR",
+      "flag": "FLAG_HIDDEN_ITEM_SINNOHVICTORYROAD_B1F_MAX_ELIXIR"
+    }
+  ]
+}

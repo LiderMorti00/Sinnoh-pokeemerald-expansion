@@ -78,7 +78,50 @@
       "flag": "FLAG_ITEM_LILYCOVE_CITY_MAX_REPEL"
     }
   ],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 18,
+      "y": 13,
+      "elevation": 0,
+      "dest_map": "MAP_CELESTIC_TOWN_RUINS",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 27,
+      "y": 27,
+      "elevation": 0,
+      "dest_map": "MAP_CELESTIC_TOWN_POKEMON_CENTER_1F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 18,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_CELESTIC_TOWN_HOUSE2",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 5,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_CELESTIC_TOWN_HOUSE1",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 28,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_CELESTIC_TOWN_HOUSE3",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 9,
+      "y": 26,
+      "elevation": 0,
+      "dest_map": "MAP_CELESTIC_TOWN_HOUSE4",
+      "dest_warp_id": "0"
+    }
+  ],
   "coord_events": [],
   "bg_events": [
     {

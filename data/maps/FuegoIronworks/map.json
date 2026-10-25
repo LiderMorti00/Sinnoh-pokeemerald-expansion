@@ -1,0 +1,70 @@
+{
+  "id": "MAP_FUEGO_IRONWORKS",
+  "name": "FuegoIronworks",
+  "layout": "LAYOUT_FUEGO_IRONWORKS",
+  "music": "MUS_DPP_ROUTE205",
+  "region_map_section": "MAPSEC_FUEGO_IRONWORKS",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_FLOAROMA_TOWN",
+      "offset": 0,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_ROUTE205_SOUTH",
+      "offset": 0,
+      "direction": "right"
+    }
+  ],
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 9,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_FUEGO_IRONWORKS_INSIDE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 8,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_FUEGO_IRONWORKS_INSIDE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 10,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_FUEGO_IRONWORKS_INSIDE",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 19,
+      "y": 18,
+      "elevation": 3,
+      "item": "ITEM_ULTRA_BALL",
+      "flag": "FLAG_HIDDEN_ITEM_FUEGOIRONWORKS_ULTRA_BALL"
+    },
+    {
+      "type": "hidden_item",
+      "x": 17,
+      "y": 2,
+      "elevation": 3,
+      "item": "ITEM_BIG_MUSHROOM",
+      "flag": "FLAG_HIDDEN_ITEM_FUEGOIRONWORKS_BIG_MUSHROOM"
+    }
+  ]
+}

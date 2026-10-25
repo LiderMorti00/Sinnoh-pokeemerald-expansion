@@ -91,3 +91,30 @@ CanalaveCity_Text_PtSign6:
 	.string "Harbor Inn A Roost for Restless\n"
 	.string "Sailors “Enjoy sweet dreams in our\l"
 	.string "sumptuous beds!”$"
+
+CanalaveCity_EventScript_SailorEldritch::
+	lock
+	faceplayer
+	msgbox CanalaveCity_Text_SailorIronIsland, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, CanalaveCity_EventScript_SailorNo
+	msgbox CanalaveCity_Text_SailorAllAboard, MSGBOX_DEFAULT
+	closemessage
+	warp MAP_IRON_ISLAND, 3, 23
+	waitstate
+	release
+	end
+
+CanalaveCity_EventScript_SailorNo::
+	msgbox CanalaveCity_Text_SailorNo, MSGBOX_DEFAULT
+	release
+	end
+
+CanalaveCity_Text_SailorIronIsland:
+	.string "Ahoy! I’m Eldritch, a sailor.\n"
+	.string "Want me to take you to IRON ISLAND?$"
+
+CanalaveCity_Text_SailorAllAboard:
+	.string "All right! All aboard!$"
+
+CanalaveCity_Text_SailorNo:
+	.string "If you want to go, just say so!$"

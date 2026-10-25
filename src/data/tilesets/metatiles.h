@@ -441,3 +441,15 @@ const u16 gMetatiles_OreburghGym[] = INCBIN_U16("data/tilesets/secondary/oreburg
 const u16 gMetatileAttributes_OreburghGym[] = INCBIN_U16("data/tilesets/secondary/oreburgh_gym/metatile_attributes.bin");
 const u16 gMetatiles_EternaGym[] = INCBIN_U16("data/tilesets/secondary/eterna_gym/metatiles.bin");
 const u16 gMetatileAttributes_EternaGym[] = INCBIN_U16("data/tilesets/secondary/eterna_gym/metatile_attributes.bin");
+
+const u16 gMetatiles_HearthomeCityGym[] = INCBIN_U16("data/tilesets/secondary/hearthome_city_gym/metatiles.bin");
+const u16 gMetatileAttributes_HearthomeCityGym[] = INCBIN_U16("data/tilesets/secondary/hearthome_city_gym/metatile_attributes.bin");
+
+const u16 gMetatiles_PastoriaCityGym[] = INCBIN_U16("data/tilesets/secondary/pastoria_city_gym/metatiles.bin");
+const u16 gMetatileAttributes_PastoriaCityGym[] = INCBIN_U16("data/tilesets/secondary/pastoria_city_gym/metatile_attributes.bin");
+
+const u16 gMetatiles_CanalaveCityGym[] = INCBIN_U16("data/tilesets/secondary/canalave_city_gym/metatiles.bin");
+const u16 gMetatileAttributes_CanalaveCityGym[] = INCBIN_U16("data/tilesets/secondary/canalave_city_gym/metatile_attributes.bin");
+
+const u16 gMetatiles_VeilstoneDepartmentStore[] = INCBIN_U16("data/tilesets/secondary/veilstone_department_store/metatiles.bin");
+const u16 gMetatileAttributes_VeilstoneDepartmentStore[] = INCBIN_U16("data/tilesets/secondary/veilstone_department_store/metatile_attributes.bin");

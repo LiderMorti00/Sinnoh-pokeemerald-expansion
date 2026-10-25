@@ -182,7 +182,71 @@
       "flag": "0"
     }
   ],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 24,
+      "y": 24,
+      "elevation": 0,
+      "dest_map": "MAP_SOLACEON_TOWN_POKEMON_CENTER_1F",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 29,
+      "y": 33,
+      "elevation": 0,
+      "dest_map": "MAP_SOLACEON_TOWN_MART",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 55,
+      "y": 19,
+      "elevation": 0,
+      "dest_map": "MAP_SOLACEON_RUINS_MANIAC_TUNNEL_ROOM",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 54,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_SOLACEON_RUINS_ROOM1",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 11,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_SOLACEON_TOWN_DAY_CARE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 37,
+      "y": 16,
+      "elevation": 0,
+      "dest_map": "MAP_SOLACEON_TOWN_HOUSE2",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 29,
+      "y": 24,
+      "elevation": 0,
+      "dest_map": "MAP_SOLACEON_TOWN_NEWS_PRESS",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 23,
+      "y": 12,
+      "elevation": 0,
+      "dest_map": "MAP_SOLACEON_TOWN_HOUSE3",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 39,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_SOLACEON_TOWN_HOUSE1",
+      "dest_warp_id": "0"
+    }
+  ],
   "coord_events": [],
   "bg_events": [
     {

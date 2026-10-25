@@ -42,6 +42,13 @@
       "elevation": 0,
       "dest_map": "MAP_VALOR_LAKEFRONT",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 23,
+      "y": 25,
+      "elevation": 0,
+      "dest_map": "MAP_LAKE_VALOR_CAVERN",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [],

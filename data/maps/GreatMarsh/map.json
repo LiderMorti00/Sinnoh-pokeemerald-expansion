@@ -1,0 +1,267 @@
+{
+  "id": "MAP_GREAT_MARSH",
+  "name": "GreatMarsh",
+  "layout": "LAYOUT_GREAT_MARSH",
+  "music": "MUS_DPP_PASTORIA",
+  "region_map_section": "MAPSEC_GREAT_MARSH",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 17,
+      "y": 7,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_YELLOW_SHARD",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_GREATMARSH_YELLOW_SHARD"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 18,
+      "y": 23,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_POKE_BALL",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_GREATMARSH_POKE_BALL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_RUIN_MANIAC",
+      "x": 24,
+      "y": 27,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GreatMarsh_EventScript_PtNpc1",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 45,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_BLUE_SHARD",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_GREATMARSH_BLUE_SHARD"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_PARASOL_LADY",
+      "x": 54,
+      "y": 12,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+      "movement_range_x": 1,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GreatMarsh_EventScript_PtNpc2",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 7,
+      "y": 48,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_GREAT_BALL",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_GREATMARSH_GREAT_BALL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_COLLECTOR",
+      "x": 7,
+      "y": 44,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GreatMarsh_EventScript_PtNpc3",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 49,
+      "y": 47,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_GREEN_SHARD",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_GREATMARSH_GREEN_SHARD"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 52,
+      "y": 55,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_POKE_BALL",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_GREATMARSH_POKE_BALL_2"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_BUG_CATCHER",
+      "x": 52,
+      "y": 51,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_UP_AND_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GreatMarsh_EventScript_PtNpc4",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 16,
+      "y": 81,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_GREAT_BALL",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_GREATMARSH_GREAT_BALL_2"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER_FRLG",
+      "x": 31,
+      "y": 84,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_UP_AND_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GreatMarsh_EventScript_PtNpc5",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 60,
+      "y": 74,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_RED_SHARD",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_GREATMARSH_RED_SHARD"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_ACE_TRAINER_M",
+      "x": 43,
+      "y": 84,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "GreatMarsh_EventScript_PtNpc6",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 37,
+      "y": 87,
+      "elevation": 0,
+      "dest_map": "MAP_PASTORIA_CITY_GREAT_MARSH_GATE",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 38,
+      "y": 87,
+      "elevation": 0,
+      "dest_map": "MAP_PASTORIA_CITY_GREAT_MARSH_GATE",
+      "dest_warp_id": "1"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 2,
+      "y": 6,
+      "elevation": 3,
+      "item": "ITEM_RARE_CANDY",
+      "flag": "FLAG_HIDDEN_ITEM_GREATMARSH_RARE_CANDY"
+    },
+    {
+      "type": "hidden_item",
+      "x": 59,
+      "y": 8,
+      "elevation": 3,
+      "item": "ITEM_TOXIC_PLATE",
+      "flag": "FLAG_HIDDEN_ITEM_GREATMARSH_TOXIC_PLATE"
+    },
+    {
+      "type": "hidden_item",
+      "x": 18,
+      "y": 44,
+      "elevation": 3,
+      "item": "ITEM_LEAF_STONE",
+      "flag": "FLAG_HIDDEN_ITEM_GREATMARSH_LEAF_STONE"
+    },
+    {
+      "type": "hidden_item",
+      "x": 43,
+      "y": 45,
+      "elevation": 3,
+      "item": "ITEM_HYPER_POTION",
+      "flag": "FLAG_HIDDEN_ITEM_GREATMARSH_HYPER_POTION"
+    },
+    {
+      "type": "hidden_item",
+      "x": 16,
+      "y": 89,
+      "elevation": 3,
+      "item": "ITEM_BIG_MUSHROOM",
+      "flag": "FLAG_HIDDEN_ITEM_GREATMARSH_BIG_MUSHROOM"
+    },
+    {
+      "type": "hidden_item",
+      "x": 60,
+      "y": 82,
+      "elevation": 3,
+      "item": "ITEM_MAX_REPEL",
+      "flag": "FLAG_HIDDEN_ITEM_GREATMARSH_MAX_REPEL"
+    }
+  ]
+}

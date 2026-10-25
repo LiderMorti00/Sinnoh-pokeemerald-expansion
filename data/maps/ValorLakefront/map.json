@@ -84,6 +84,27 @@
       "elevation": 0,
       "dest_map": "MAP_LAKE_VALOR",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 28,
+      "y": 57,
+      "elevation": 0,
+      "dest_map": "MAP_VALOR_LAKEFRONT_RESTAURANT",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 39,
+      "y": 47,
+      "elevation": 0,
+      "dest_map": "MAP_VALOR_LAKEFRONT_HOUSE1",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 12,
+      "y": 56,
+      "elevation": 0,
+      "dest_map": "MAP_VALOR_LAKEFRONT_HOUSE2",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],
