@@ -35,7 +35,9 @@ PokemonLeague_LucianRoom_EventScript_Drake::
 	goto_if_set FLAG_DEFEATED_ELITE_4_DRAKE, PokemonLeague_LucianRoom_EventScript_PostBattleSpeech
 	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
 	msgbox PokemonLeague_LucianRoom_Text_IntroSpeech, MSGBOX_DEFAULT
+	goto_if_set FLAG_SYS_GAME_CLEAR, PokemonLeague_LucianRoom_EventScript_SNRematchBattle
 	trainerbattle_no_intro TRAINER_DRAKE, PokemonLeague_LucianRoom_Text_Defeat
+PokemonLeague_LucianRoom_EventScript_SNAfterBattle:
 	goto PokemonLeague_LucianRoom_EventScript_Defeated
 	end
 
@@ -86,3 +88,7 @@ PokemonLeague_LucianRoom_Text_PostBattleSpeech:
 	.string "That will calm my nerves, so that I may\n"
 	.string "deal with all situations without\p"
 	.string "panicking.$"
+
+PokemonLeague_LucianRoom_EventScript_SNRematchBattle:
+	trainerbattle_no_intro TRAINER_NICOLAS_5, PokemonLeague_LucianRoom_Text_Defeat
+	goto PokemonLeague_LucianRoom_EventScript_SNAfterBattle

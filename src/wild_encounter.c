@@ -440,6 +440,13 @@ u16 GetCurrentMapWildMonHeaderId(void)
 
                 i += alteringCaveId;
             }
+            // Proyecto Sinnoh: tras la Liga se usa la tabla siguiente del mismo mapa, si existe
+            else if (FlagGet(FLAG_SYS_GAME_CLEAR)
+                  && gWildMonHeaders[i + 1].mapGroup == gWildMonHeaders[i].mapGroup
+                  && gWildMonHeaders[i + 1].mapNum == gWildMonHeaders[i].mapNum)
+            {
+                i++;
+            }
 
             return i;
         }

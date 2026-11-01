@@ -78,3 +78,28 @@ SolaceonTown_EventScript_PtSign3::
 SolaceonTown_Text_PtSign3:
 	.string "POKéMON News Press Wanted: Pro\n"
 	.string "POKéMON Catcher!$"
+
+SolaceonTown_EventScript_SNSecretPower::
+	lock
+	faceplayer
+	goto_if_set FLAG_RECEIVED_SECRET_POWER, SolaceonTown_EventScript_SNSecretPower_Done
+	msgbox SolaceonTown_EventScript_SNSecretPower_T1, MSGBOX_DEFAULT
+	giveitem ITEM_TM_SECRET_POWER
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	setflag FLAG_RECEIVED_SECRET_POWER
+SolaceonTown_EventScript_SNSecretPower_Done:
+	msgbox SolaceonTown_EventScript_SNSecretPower_T2, MSGBOX_DEFAULT
+	release
+	end
+SolaceonTown_EventScript_SNSecretPower_T1:
+	.string "Hey there! Have you ever seen those\n"
+	.string "little hollows in the cliffs along the\l"
+	.string "routes?\p"
+	.string "With this move, you can make a hidden\n"
+	.string "room of your very own in one of them!$"
+
+SolaceonTown_EventScript_SNSecretPower_T2:
+	.string "Use SECRET POWER on a hollow in a cliff\n"
+	.string "to make your own SECRET BASE!\p"
+	.string "You can buy decorations for it at the\n"
+	.string "VEILSTONE DEPARTMENT STORE.$"

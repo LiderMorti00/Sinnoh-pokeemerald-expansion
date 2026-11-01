@@ -131,6 +131,7 @@ CanalaveCity_Gym_Text_BreannaPost:
 	.string "how you should battle with it.$"
 
 CanalaveCity_Gym_EventScript_Leader::
+	goto_if_set FLAG_SYS_GAME_CLEAR, CanalaveCity_Gym_EventScript_SNRematch
 	trainerbattle_single TRAINER_JERRY_2, CanalaveCity_Gym_Text_LeaderIntro, CanalaveCity_Gym_Text_LeaderDefeat, CanalaveCity_Gym_EventScript_LeaderDefeated, NO_MUSIC
 	goto_if_unset FLAG_RECEIVED_ITEM_TM91_FROM_BYRON, CanalaveCity_Gym_EventScript_GiveTM
 	msgbox CanalaveCity_Gym_Text_LeaderPostBattle, MSGBOX_DEFAULT
@@ -247,3 +248,38 @@ CanalaveCity_Gym_Text_PtGymStatue:
 	.string "Canalave City POKéMON Gym Leader:\n"
 	.string "Byron\p"
 	.string "Certified Trainers: {PLAYER}$"
+
+CanalaveCity_Gym_EventScript_SNRematch::
+	lock
+	faceplayer
+	msgbox CanalaveCity_Gym_EventScript_SNRematch_Ask, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, CanalaveCity_Gym_EventScript_SNRematch_No
+	msgbox CanalaveCity_Gym_EventScript_SNRematch_Go, MSGBOX_DEFAULT
+	closemessage
+	trainerbattle_no_intro TRAINER_KATELYN_4, CanalaveCity_Gym_EventScript_SNRematch_Defeat
+	msgbox CanalaveCity_Gym_EventScript_SNRematch_After, MSGBOX_DEFAULT
+	release
+	end
+CanalaveCity_Gym_EventScript_SNRematch_No:
+	msgbox CanalaveCity_Gym_EventScript_SNRematch_NoT, MSGBOX_DEFAULT
+	release
+	end
+CanalaveCity_Gym_EventScript_SNRematch_Ask:
+	.string "Byron: You became the Champion!\n"
+	.string "Welcome back!\p"
+	.string "I’ve been training even harder since\n"
+	.string "our last battle.\p"
+	.string "Will you battle me again?$"
+
+CanalaveCity_Gym_EventScript_SNRematch_Go:
+	.string "Then I won’t hold back this time!$"
+
+CanalaveCity_Gym_EventScript_SNRematch_Defeat:
+	.string "Amazing... You really are the Champion!$"
+
+CanalaveCity_Gym_EventScript_SNRematch_After:
+	.string "That was a great battle! Come back\n"
+	.string "anytime for another match!$"
+
+CanalaveCity_Gym_EventScript_SNRematch_NoT:
+	.string "Come back whenever you’re ready!$"

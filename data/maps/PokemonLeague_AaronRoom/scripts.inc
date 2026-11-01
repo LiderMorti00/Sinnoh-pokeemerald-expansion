@@ -48,7 +48,9 @@ PokemonLeague_AaronRoom_EventScript_Sidney::
 	goto_if_set FLAG_DEFEATED_ELITE_4_SIDNEY, PokemonLeague_AaronRoom_EventScript_PostBattleSpeech
 	playbgm MUS_ENCOUNTER_ELITE_FOUR, FALSE
 	msgbox PokemonLeague_AaronRoom_Text_IntroSpeech, MSGBOX_DEFAULT
+	goto_if_set FLAG_SYS_GAME_CLEAR, PokemonLeague_AaronRoom_EventScript_SNRematchBattle
 	trainerbattle_no_intro TRAINER_SIDNEY, PokemonLeague_AaronRoom_Text_Defeat
+PokemonLeague_AaronRoom_EventScript_SNAfterBattle:
 	goto PokemonLeague_AaronRoom_EventScript_Defeated
 	end
 
@@ -94,3 +96,7 @@ PokemonLeague_AaronRoom_Text_PostBattleSpeech:
 	.string "I’m going to become a top-level Trainer\n"
 	.string "who can’t be outclassed with\p"
 	.string "my beautiful and tough bug POKéMON!$"
+
+PokemonLeague_AaronRoom_EventScript_SNRematchBattle:
+	trainerbattle_no_intro TRAINER_NICOLAS_2, PokemonLeague_AaronRoom_Text_Defeat
+	goto PokemonLeague_AaronRoom_EventScript_SNAfterBattle

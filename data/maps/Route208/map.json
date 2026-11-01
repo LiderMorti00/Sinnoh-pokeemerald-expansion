@@ -353,6 +353,20 @@
       "elevation": 3,
       "item": "ITEM_TINY_MUSHROOM",
       "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_124_HEART_SCALE_2"
+    },
+    {
+      "type": "secret_base",
+      "x": 16,
+      "y": 1,
+      "elevation": 0,
+      "secret_base_id": "SECRET_BASE_RED_CAVE2_3"
+    },
+    {
+      "type": "secret_base",
+      "x": 20,
+      "y": 10,
+      "elevation": 0,
+      "secret_base_id": "SECRET_BASE_RED_CAVE3_1"
     }
   ]
 }

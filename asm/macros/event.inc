@@ -825,6 +825,11 @@
 
 	@ Starts a double battle with the player against two trainers
 	@ Takes two trainers and defeat text for each
+	@ Proyecto Sinnoh: dos entrenadores sin presentación, desde cualquier script (casilla o NPC), y el script sigue después
+	.macro trainerbattle_two_trainers_sn trainer_a:req, lose_text_a:req, trainer_b:req, lose_text_b:req
+	trainerbattle OBJ_ID_NONE, \trainer_a, NULL, \lose_text_a, NULL, OBJ_ID_NONE, \trainer_b, NULL, \lose_text_b, NULL, NULL, NULL, FALSE, TRUE, FALSE, FALSE, TRUE, FALSE, FALSE, TRUE
+	.endm
+
 	.macro trainerbattle_two_trainers trainer_a:req, lose_text_a:req, trainer_b:req, lose_text_b:req
 	trainerbattle OBJ_ID_NONE, \trainer_a, NULL, \lose_text_a, NULL, OBJ_ID_NONE, \trainer_b, NULL, \lose_text_b, NULL, NULL, NULL, FALSE, TRUE, FALSE, FALSE, FALSE, TRUE, FALSE, FALSE
 	.endm

@@ -297,6 +297,13 @@
       "elevation": 5,
       "item": "ITEM_CALCIUM",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_109_REVIVE"
+    },
+    {
+      "type": "secret_base",
+      "x": 10,
+      "y": 5,
+      "elevation": 0,
+      "secret_base_id": "SECRET_BASE_RED_CAVE4_3"
     }
   ]
 }

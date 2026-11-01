@@ -375,6 +375,20 @@
       "elevation": 3,
       "item": "ITEM_TINY_MUSHROOM",
       "flag": "FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_2_KEY"
+    },
+    {
+      "type": "secret_base",
+      "x": 9,
+      "y": 6,
+      "elevation": 0,
+      "secret_base_id": "SECRET_BASE_RED_CAVE1_2"
+    },
+    {
+      "type": "secret_base",
+      "x": 1,
+      "y": 36,
+      "elevation": 0,
+      "secret_base_id": "SECRET_BASE_RED_CAVE1_3"
     }
   ]
 }

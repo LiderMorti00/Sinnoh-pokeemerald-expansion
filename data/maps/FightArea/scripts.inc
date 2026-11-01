@@ -176,3 +176,69 @@ FightArea_EventScript_SNFisher_After:
 	.string "What’s that? Any advice for fishing?\p"
 	.string "Well, I’ll tell you. It’s all about the\n"
 	.string "rod and technique!$"
+
+FightArea_EventScript_SNFIGHTAREABARRY_T0::
+	goto_if_set FLAG_SN_HIDE_FIGHT_BARRY, FightArea_EventScript_SNFIGHTAREABARRY_T0_End
+	lockall
+	applymovement LOCALID_SN_FIGHTAREA_BARRY, FightArea_EventScript_SNFIGHTAREABARRY_T0_M
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, FightArea_EventScript_SNFIGHTAREABARRY_T0_P
+	waitmovement 0
+	goto FightArea_EventScript_SNBarry
+FightArea_EventScript_SNFIGHTAREABARRY_T0_End:
+	end
+
+FightArea_EventScript_SNFIGHTAREABARRY_T0_M:
+	emote_exclamation_mark
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	face_left
+	step_end
+
+FightArea_EventScript_SNFIGHTAREABARRY_T0_P:
+	face_right
+	step_end
+
+FightArea_EventScript_SNFIGHTAREABARRY_T1::
+	goto_if_set FLAG_SN_HIDE_FIGHT_BARRY, FightArea_EventScript_SNFIGHTAREABARRY_T1_End
+	lockall
+	applymovement LOCALID_SN_FIGHTAREA_BARRY, FightArea_EventScript_SNFIGHTAREABARRY_T1_M
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, FightArea_EventScript_SNFIGHTAREABARRY_T1_P
+	waitmovement 0
+	goto FightArea_EventScript_SNBarry
+FightArea_EventScript_SNFIGHTAREABARRY_T1_End:
+	end
+
+FightArea_EventScript_SNFIGHTAREABARRY_T1_M:
+	emote_exclamation_mark
+	walk_fast_up
+	walk_fast_up
+	face_left
+	step_end
+
+FightArea_EventScript_SNFIGHTAREABARRY_T1_P:
+	face_right
+	step_end
+
+FightArea_EventScript_SNFIGHTAREABARRY_T2::
+	goto_if_set FLAG_SN_HIDE_FIGHT_BARRY, FightArea_EventScript_SNFIGHTAREABARRY_T2_End
+	lockall
+	applymovement LOCALID_SN_FIGHTAREA_BARRY, FightArea_EventScript_SNFIGHTAREABARRY_T2_M
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, FightArea_EventScript_SNFIGHTAREABARRY_T2_P
+	waitmovement 0
+	goto FightArea_EventScript_SNBarry
+FightArea_EventScript_SNFIGHTAREABARRY_T2_End:
+	end
+
+FightArea_EventScript_SNFIGHTAREABARRY_T2_M:
+	emote_exclamation_mark
+	walk_fast_left
+	face_up
+	step_end
+
+FightArea_EventScript_SNFIGHTAREABARRY_T2_P:
+	face_down
+	step_end

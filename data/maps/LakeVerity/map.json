@@ -76,8 +76,8 @@
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
       "script": "LakeVerity_EventScript_SNVERITY_GRUNT1",
       "flag": "FLAG_SN_HIDE_VERITY_GRUNT1"
     },
@@ -89,8 +89,8 @@
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
       "script": "LakeVerity_EventScript_SNVERITY_GRUNT2",
       "flag": "FLAG_SN_HIDE_VERITY_GRUNT2"
     },
@@ -102,8 +102,8 @@
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
       "script": "LakeVerity_EventScript_SNVERITY_GRUNT3",
       "flag": "FLAG_SN_HIDE_VERITY_GRUNT3"
     },
@@ -115,10 +115,38 @@
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
       "script": "LakeVerity_EventScript_SNVERITY_GRUNT4",
       "flag": "FLAG_SN_HIDE_VERITY_GRUNT4"
+    },
+    {
+      "local_id": "LOCALID_SN_VERITY_ROWAN",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_ROWAN",
+      "x": 36,
+      "y": 41,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LakeVerity_EventScript_SNRowan",
+      "flag": "FLAG_SN_HIDE_VERITY_ROWAN"
+    },
+    {
+      "local_id": "LOCALID_SN_VERITY_COUNTERPART",
+      "graphics_id": "OBJ_EVENT_GFX_VAR_1",
+      "x": 38,
+      "y": 35,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LakeVerity_EventScript_SNCounterpart",
+      "flag": "FLAG_SN_HIDE_VERITY_ROWAN"
     }
   ],
   "warp_events": [
@@ -450,6 +478,24 @@
       "var": "VAR_SINNOH_STORY",
       "var_value": "6",
       "script": "LakeVerity_EventScript_Scene"
+    },
+    {
+      "type": "trigger",
+      "x": 38,
+      "y": 41,
+      "elevation": 3,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "LakeVerity_EventScript_SNRowanScene"
+    },
+    {
+      "type": "trigger",
+      "x": 39,
+      "y": 41,
+      "elevation": 3,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "LakeVerity_EventScript_SNRowanScene"
     }
   ],
   "bg_events": []

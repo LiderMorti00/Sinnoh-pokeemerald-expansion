@@ -39,7 +39,9 @@ PokemonLeague_ChampionRoom_Movement_PlayerApproachWallace:
 PokemonLeague_ChampionRoom_EventScript_Wallace::
 	playbgm MUS_ENCOUNTER_CHAMPION, FALSE
 	msgbox PokemonLeague_ChampionRoom_Text_IntroSpeech, MSGBOX_DEFAULT
+	goto_if_set FLAG_SYS_GAME_CLEAR, PokemonLeague_ChampionRoom_EventScript_SNRematchBattle
 	trainerbattle_no_intro TRAINER_WALLACE, PokemonLeague_ChampionRoom_Text_Defeat
+PokemonLeague_ChampionRoom_EventScript_SNAfterBattle:
 	goto PokemonLeague_ChampionRoom_EventScript_Defeated
 	end
 
@@ -147,3 +149,7 @@ PokemonLeague_ChampionRoom_Text_BrendanCongratulations:
 	.string "It can't be helped if that's the rule.\p"
 	.string "{PLAYER}, way to go!\n"
 	.string "Congratulations!$"
+
+PokemonLeague_ChampionRoom_EventScript_SNRematchBattle:
+	trainerbattle_no_intro TRAINER_ROBERT_1, PokemonLeague_ChampionRoom_Text_Defeat
+	goto PokemonLeague_ChampionRoom_EventScript_SNAfterBattle

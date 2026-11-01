@@ -339,3 +339,60 @@ CanalaveCity_Library_F3_EventScript_SNRowan_T9:
 	.string "BARRY: What was that about?!\p"
 	.string "No, wait, I mean, TV! The TV! News!\n"
 	.string "Anything!$"
+
+CanalaveCity_Library_F3_EventScript_SNEnter0::
+	goto_if_set FLAG_SN_HIDE_LIB_ROWAN, CanalaveCity_Library_F3_EventScript_SNEnter0_End
+	lockall
+	applymovement LOCALID_SN_LIB_BARRY, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox CanalaveCity_Library_F3_Text_SNOverHere, MSGBOX_DEFAULT
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, CanalaveCity_Library_F3_EventScript_SNEnter0_M
+	waitmovement 0
+	goto CanalaveCity_Library_F3_EventScript_SNRowan
+CanalaveCity_Library_F3_EventScript_SNEnter0_End:
+	end
+
+CanalaveCity_Library_F3_EventScript_SNEnter0_M:
+	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	face_up
+	step_end
+
+CanalaveCity_Library_F3_EventScript_SNEnter1::
+	goto_if_set FLAG_SN_HIDE_LIB_ROWAN, CanalaveCity_Library_F3_EventScript_SNEnter1_End
+	lockall
+	applymovement LOCALID_SN_LIB_BARRY, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox CanalaveCity_Library_F3_Text_SNOverHere, MSGBOX_DEFAULT
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, CanalaveCity_Library_F3_EventScript_SNEnter1_M
+	waitmovement 0
+	goto CanalaveCity_Library_F3_EventScript_SNRowan
+CanalaveCity_Library_F3_EventScript_SNEnter1_End:
+	end
+
+CanalaveCity_Library_F3_EventScript_SNEnter1_M:
+	walk_down
+	walk_right
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_right
+	walk_right
+	face_up
+	step_end
+
+CanalaveCity_Library_F3_Text_SNOverHere:
+	.string "BARRY: Hey, {PLAYER}! Over here! This\n"
+	.string "way!$"

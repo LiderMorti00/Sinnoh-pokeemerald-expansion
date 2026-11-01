@@ -2896,4 +2896,10 @@
 #define FLAG_HIDDEN_ITEM_RESORTAREA_NUGGET                      FLAG_HIDE_ROUTE_103_RIVAL
 #define FLAG_HIDDEN_ITEM_RESORTAREA_THUNDER_STONE               FLAG_HIDE_PETALBURG_WOODS_DEVON_EMPLOYEE
 
+
+// ---- Proyecto Sinnoh: historia de Platino (objetos, regalos y objetos ocultos) ----
+#define FLAG_SN_HIDE_ACUITY_JUPITER                             FLAG_UNUSED_RS_LEGENDARY_BATTLE_DONE
+#define FLAG_SN_HIDE_VERITY_ROWAN                               FLAG_HIDE_PETALBURG_WOODS_AQUA_GRUNT
+#define FLAG_SN_DONE_VERITY_HELP                                FLAG_HIDE_PETALBURG_CITY_WALLYS_MOM
+
 #endif // GUARD_CONSTANTS_FLAGS_H

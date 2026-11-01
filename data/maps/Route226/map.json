@@ -253,6 +253,20 @@
       "elevation": 3,
       "item": "ITEM_RARE_CANDY",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE226_RARE_CANDY"
+    },
+    {
+      "type": "secret_base",
+      "x": 1,
+      "y": 3,
+      "elevation": 0,
+      "secret_base_id": "SECRET_BASE_YELLOW_CAVE2_2"
+    },
+    {
+      "type": "secret_base",
+      "x": 27,
+      "y": 10,
+      "elevation": 0,
+      "secret_base_id": "SECRET_BASE_YELLOW_CAVE2_3"
     }
   ]
 }

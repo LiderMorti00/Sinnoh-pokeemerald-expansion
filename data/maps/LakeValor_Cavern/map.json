@@ -46,13 +46,6 @@
       "x": 15,
       "y": 30,
       "elevation": 0,
-      "dest_map": "MAP_LAKE_VALOR_DRAINED",
-      "dest_warp_id": "1"
-    },
-    {
-      "x": 15,
-      "y": 30,
-      "elevation": 0,
       "dest_map": "MAP_LAKE_VALOR",
       "dest_warp_id": "2"
     }

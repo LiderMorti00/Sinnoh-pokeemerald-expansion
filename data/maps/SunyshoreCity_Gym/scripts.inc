@@ -426,6 +426,7 @@ SunyshoreCity_Gym_Text_ZacheryPost:
 	.string "Trainer.$"
 
 SunyshoreCity_Gym_EventScript_Leader::
+	goto_if_set FLAG_SYS_GAME_CLEAR, SunyshoreCity_Gym_EventScript_SNRematch
 	trainerbattle_single TRAINER_MIGUEL_2, SunyshoreCity_Gym_Text_LeaderIntro, SunyshoreCity_Gym_Text_LeaderDefeat, SunyshoreCity_Gym_EventScript_LeaderDefeated, NO_MUSIC
 	goto_if_unset FLAG_RECEIVED_ITEM_TM57_FROM_VOLKNER, SunyshoreCity_Gym_EventScript_GiveTM
 	msgbox SunyshoreCity_Gym_Text_LeaderPostBattle, MSGBOX_DEFAULT
@@ -554,3 +555,38 @@ SunyshoreCity_Gym_Text_PtGymGuideAfter:
 SunyshoreCity_Gym_Text_PtGymStatue:
 	.string "Sunyshore City POKéMON Gym\p"
 	.string "Leader: Volkner$"
+
+SunyshoreCity_Gym_EventScript_SNRematch::
+	lock
+	faceplayer
+	msgbox SunyshoreCity_Gym_EventScript_SNRematch_Ask, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, SunyshoreCity_Gym_EventScript_SNRematch_No
+	msgbox SunyshoreCity_Gym_EventScript_SNRematch_Go, MSGBOX_DEFAULT
+	closemessage
+	trainerbattle_no_intro TRAINER_NICOLAS_1, SunyshoreCity_Gym_EventScript_SNRematch_Defeat
+	msgbox SunyshoreCity_Gym_EventScript_SNRematch_After, MSGBOX_DEFAULT
+	release
+	end
+SunyshoreCity_Gym_EventScript_SNRematch_No:
+	msgbox SunyshoreCity_Gym_EventScript_SNRematch_NoT, MSGBOX_DEFAULT
+	release
+	end
+SunyshoreCity_Gym_EventScript_SNRematch_Ask:
+	.string "Volkner: You became the Champion!\n"
+	.string "Welcome back!\p"
+	.string "I’ve been training even harder since\n"
+	.string "our last battle.\p"
+	.string "Will you battle me again?$"
+
+SunyshoreCity_Gym_EventScript_SNRematch_Go:
+	.string "Then I won’t hold back this time!$"
+
+SunyshoreCity_Gym_EventScript_SNRematch_Defeat:
+	.string "Amazing... You really are the Champion!$"
+
+SunyshoreCity_Gym_EventScript_SNRematch_After:
+	.string "That was a great battle! Come back\n"
+	.string "anytime for another match!$"
+
+SunyshoreCity_Gym_EventScript_SNRematch_NoT:
+	.string "Come back whenever you’re ready!$"

@@ -110,6 +110,7 @@ HearthomeCity_Gym_Text_CatherinePost:
 	.string "mistakes to learn what is right.$"
 
 HearthomeCity_Gym_EventScript_Leader::
+	goto_if_set FLAG_SYS_GAME_CLEAR, HearthomeCity_Gym_EventScript_SNRematch
 	trainerbattle_single TRAINER_JEFFREY_3, HearthomeCity_Gym_Text_LeaderIntro, HearthomeCity_Gym_Text_LeaderDefeat, HearthomeCity_Gym_EventScript_LeaderDefeated, NO_MUSIC
 	goto_if_unset FLAG_RECEIVED_ITEM_TM65_FROM_FANTINA, HearthomeCity_Gym_EventScript_GiveTM
 	msgbox HearthomeCity_Gym_Text_LeaderPostBattle, MSGBOX_DEFAULT
@@ -245,3 +246,38 @@ HearthomeCity_Gym_Text_PtGymStatue:
 	.string "Hearthome City POKéMON Gym Leader:\n"
 	.string "Fantina\p"
 	.string "Certified Trainers: {PLAYER}$"
+
+HearthomeCity_Gym_EventScript_SNRematch::
+	lock
+	faceplayer
+	msgbox HearthomeCity_Gym_EventScript_SNRematch_Ask, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, HearthomeCity_Gym_EventScript_SNRematch_No
+	msgbox HearthomeCity_Gym_EventScript_SNRematch_Go, MSGBOX_DEFAULT
+	closemessage
+	trainerbattle_no_intro TRAINER_KATELYN_1, HearthomeCity_Gym_EventScript_SNRematch_Defeat
+	msgbox HearthomeCity_Gym_EventScript_SNRematch_After, MSGBOX_DEFAULT
+	release
+	end
+HearthomeCity_Gym_EventScript_SNRematch_No:
+	msgbox HearthomeCity_Gym_EventScript_SNRematch_NoT, MSGBOX_DEFAULT
+	release
+	end
+HearthomeCity_Gym_EventScript_SNRematch_Ask:
+	.string "Fantina: You became the Champion!\n"
+	.string "Welcome back!\p"
+	.string "I’ve been training even harder since\n"
+	.string "our last battle.\p"
+	.string "Will you battle me again?$"
+
+HearthomeCity_Gym_EventScript_SNRematch_Go:
+	.string "Then I won’t hold back this time!$"
+
+HearthomeCity_Gym_EventScript_SNRematch_Defeat:
+	.string "Amazing... You really are the Champion!$"
+
+HearthomeCity_Gym_EventScript_SNRematch_After:
+	.string "That was a great battle! Come back\n"
+	.string "anytime for another match!$"
+
+HearthomeCity_Gym_EventScript_SNRematch_NoT:
+	.string "Come back whenever you’re ready!$"

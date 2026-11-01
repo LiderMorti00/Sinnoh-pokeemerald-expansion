@@ -355,6 +355,20 @@
       "elevation": 3,
       "item": "ITEM_RAZOR_FANG",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_121_FULL_HEAL"
+    },
+    {
+      "type": "secret_base",
+      "x": 11,
+      "y": 35,
+      "elevation": 0,
+      "secret_base_id": "SECRET_BASE_YELLOW_CAVE1_1"
+    },
+    {
+      "type": "secret_base",
+      "x": 9,
+      "y": 53,
+      "elevation": 0,
+      "secret_base_id": "SECRET_BASE_YELLOW_CAVE1_2"
     }
   ]
 }

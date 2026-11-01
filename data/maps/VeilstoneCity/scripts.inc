@@ -198,3 +198,22 @@ VeilstoneCity_EventScript_PtNpc10_BagIsFull:
 	goto Common_EventScript_ShowBagIsFull
 	release
 	end
+
+VeilstoneCity_EventScript_SNHQLocked::
+	checkitem ITEM_GALACTIC_KEY
+	goto_if_eq VAR_RESULT, TRUE, VeilstoneCity_EventScript_SNHQOpen
+	lockall
+	msgbox VeilstoneCity_Text_SNHQLocked, MSGBOX_DEFAULT
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, VeilstoneCity_Movement_SNPushBack
+	waitmovement 0
+	releaseall
+VeilstoneCity_EventScript_SNHQOpen:
+	end
+
+VeilstoneCity_Movement_SNPushBack:
+	walk_down
+	step_end
+VeilstoneCity_Text_SNHQLocked:
+	.string "The door is locked tight. It seems to\n"
+	.string "need some sort of key.$"

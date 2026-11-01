@@ -328,6 +328,20 @@
       "elevation": 3,
       "item": "ITEM_NUGGET",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE207_NUGGET"
+    },
+    {
+      "type": "secret_base",
+      "x": 23,
+      "y": 3,
+      "elevation": 0,
+      "secret_base_id": "SECRET_BASE_RED_CAVE2_1"
+    },
+    {
+      "type": "secret_base",
+      "x": 35,
+      "y": 4,
+      "elevation": 0,
+      "secret_base_id": "SECRET_BASE_RED_CAVE2_2"
     }
   ]
 }

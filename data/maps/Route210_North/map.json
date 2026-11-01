@@ -406,6 +406,20 @@
       "elevation": 3,
       "item": "ITEM_MEADOW_PLATE",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_104_SUPER_POTION"
+    },
+    {
+      "type": "secret_base",
+      "x": 15,
+      "y": 4,
+      "elevation": 0,
+      "secret_base_id": "SECRET_BASE_RED_CAVE4_1"
+    },
+    {
+      "type": "secret_base",
+      "x": 55,
+      "y": 4,
+      "elevation": 0,
+      "secret_base_id": "SECRET_BASE_RED_CAVE4_2"
     }
   ]
 }

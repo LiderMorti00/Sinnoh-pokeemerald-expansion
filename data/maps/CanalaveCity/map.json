@@ -125,11 +125,11 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MR_BRINEYS_BOAT",
+      "graphics_id": "OBJ_EVENT_GFX_SS_TIDAL",
       "x": 17,
-      "y": 46,
+      "y": 50,
       "elevation": 1,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -139,8 +139,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_BARRY",
-      "x": 8,
-      "y": 22,
+      "x": 12,
+      "y": 25,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -148,7 +148,8 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "CanalaveCity_EventScript_SNBarry",
-      "flag": "FLAG_SN_HIDE_CANAL_BARRY"
+      "flag": "FLAG_SN_HIDE_CANAL_BARRY",
+      "local_id": "LOCALID_SN_CANALAVECITY_BARRY"
     }
   ],
   "warp_events": [
@@ -223,7 +224,35 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 24,
+      "elevation": 3,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "CanalaveCity_EventScript_SNCANALAVECITYBARRY_T0"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 25,
+      "elevation": 3,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "CanalaveCity_EventScript_SNCANALAVECITYBARRY_T1"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 26,
+      "elevation": 3,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "CanalaveCity_EventScript_SNCANALAVECITYBARRY_T2"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",

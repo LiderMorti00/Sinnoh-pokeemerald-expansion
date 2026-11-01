@@ -2,6 +2,7 @@ OreburghCity_Gym_MapScripts::
 	.byte 0
 
 OreburghCity_Gym_EventScript_Roark::
+	goto_if_set FLAG_SYS_GAME_CLEAR, OreburghCity_Gym_EventScript_SNRematch
 	trainerbattle_single TRAINER_ROARK_1, OreburghCity_Gym_Text_RoarkIntro, OreburghCity_Gym_Text_RoarkDefeat, OreburghCity_Gym_EventScript_RoarkDefeated, NO_MUSIC
 	goto_if_unset FLAG_RECEIVED_TM_ROCK_TOMB, OreburghCity_Gym_EventScript_GiveTM
 	msgbox OreburghCity_Gym_Text_RoarkPost, MSGBOX_DEFAULT
@@ -142,3 +143,38 @@ OreburghCity_Gym_Text_GymStatuePlayerWon:
 	.string "LEADER: ROARK\p"
 	.string "WINNING TRAINERS:\n"
 	.string "{RIVAL}, {PLAYER}$"
+
+OreburghCity_Gym_EventScript_SNRematch::
+	lock
+	faceplayer
+	msgbox OreburghCity_Gym_EventScript_SNRematch_Ask, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, OreburghCity_Gym_EventScript_SNRematch_No
+	msgbox OreburghCity_Gym_EventScript_SNRematch_Go, MSGBOX_DEFAULT
+	closemessage
+	trainerbattle_no_intro TRAINER_ISAIAH_4, OreburghCity_Gym_EventScript_SNRematch_Defeat
+	msgbox OreburghCity_Gym_EventScript_SNRematch_After, MSGBOX_DEFAULT
+	release
+	end
+OreburghCity_Gym_EventScript_SNRematch_No:
+	msgbox OreburghCity_Gym_EventScript_SNRematch_NoT, MSGBOX_DEFAULT
+	release
+	end
+OreburghCity_Gym_EventScript_SNRematch_Ask:
+	.string "Roark: You became the Champion!\n"
+	.string "Welcome back!\p"
+	.string "I’ve been training even harder since\n"
+	.string "our last battle.\p"
+	.string "Will you battle me again?$"
+
+OreburghCity_Gym_EventScript_SNRematch_Go:
+	.string "Then I won’t hold back this time!$"
+
+OreburghCity_Gym_EventScript_SNRematch_Defeat:
+	.string "Amazing... You really are the Champion!$"
+
+OreburghCity_Gym_EventScript_SNRematch_After:
+	.string "That was a great battle! Come back\n"
+	.string "anytime for another match!$"
+
+OreburghCity_Gym_EventScript_SNRematch_NoT:
+	.string "Come back whenever you’re ready!$"

@@ -314,3 +314,46 @@ IronIsland_B2F_Left_EventScript_SNRiley_Bye:
 	.string "places from now on.\p"
 	.string "Let’s meet again! Take care on the way\n"
 	.string "out.$"
+
+IronIsland_B2F_Left_EventScript_SNIronGrunts::
+	goto_if_set FLAG_SN_HIDE_IRON_GRUNT1, IronIsland_B2F_Left_EventScript_SNIronGrunts_End
+	lockall
+	applymovement LOCALID_SN_IRON_GRUNT1, Common_Movement_ExclamationMark
+	applymovement LOCALID_SN_IRON_GRUNT2, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox IronIsland_B2F_Left_Text_SNG1, MSGBOX_DEFAULT
+	msgbox IronIsland_B2F_Left_Text_SNG2, MSGBOX_DEFAULT
+	closemessage
+	trainerbattle_two_trainers_sn TRAINER_ELLIOT_3, IronIsland_B2F_Left_EventScript_SNIronGrunts_DA, TRAINER_ELLIOT_4, IronIsland_B2F_Left_EventScript_SNIronGrunts_DB
+	msgbox IronIsland_B2F_Left_EventScript_SNIronGrunts_After, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_SN_IRON_GRUNT1
+	removeobject LOCALID_SN_IRON_GRUNT2
+	setflag FLAG_SN_HIDE_IRON_GRUNT1
+	setflag FLAG_SN_HIDE_IRON_GRUNT2
+	fadescreen FADE_FROM_BLACK
+	releaseall
+IronIsland_B2F_Left_EventScript_SNIronGrunts_End:
+	end
+IronIsland_B2F_Left_Text_SNG1:
+	.string "Grunt 1: We’re Team Galactic! We’ll take\n"
+	.string "all the POKéMON we want!\p"
+	.string "Isn’t that right, partner?$"
+
+IronIsland_B2F_Left_Text_SNG2:
+	.string "Grunt 2: You said it, brother! So that’s\n"
+	.string "what we’re gonna do!\p"
+	.string "We’re abducting all the POKéMON from\n"
+	.string "this rusted-out Iron Island!$"
+
+IronIsland_B2F_Left_EventScript_SNIronGrunts_DA:
+	.string "Grunt 1: Stop! I said stop!$"
+
+IronIsland_B2F_Left_EventScript_SNIronGrunts_DB:
+	.string "Grunt 2: You said it, brother!$"
+
+IronIsland_B2F_Left_EventScript_SNIronGrunts_After:
+	.string "Grunt 2: You said it, brother!\p"
+	.string "We don’t even know what Team\n"
+	.string "Galactic’s big plan is anyway!$"

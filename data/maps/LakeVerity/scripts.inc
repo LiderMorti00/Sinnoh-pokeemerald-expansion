@@ -95,6 +95,8 @@ LakeVerity_EventScript_GrassBackEnd::
 	end
 
 LakeVerity_OnTransitionSN:
+	call LakeVerity_EventScript_SNGfx
+	call LakeVerity_EventScript_SNVis_VERITY_ROWAN
 	call LakeVerity_EventScript_SNVis_VERITY_MARS
 	call LakeVerity_EventScript_SNVis_VERITY_GRUNT1
 	call LakeVerity_EventScript_SNVis_VERITY_GRUNT2
@@ -293,3 +295,85 @@ LakeVerity_EventScript_SNVERITY_GRUNT4_Defeat:
 
 LakeVerity_EventScript_SNVERITY_GRUNT4_Post:
 	.string "Mars will deal with you!$"
+
+LakeVerity_EventScript_SNGfx:
+	checkplayergender
+	goto_if_eq VAR_RESULT, MALE, LakeVerity_EventScript_SNGfxDawn
+	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_SINNOH_LUCAS
+	return
+LakeVerity_EventScript_SNGfxDawn:
+	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_SINNOH_DAWN
+	return
+
+LakeVerity_EventScript_SNVis_VERITY_ROWAN:
+	setflag FLAG_SN_HIDE_VERITY_ROWAN
+	goto_if_lt VAR_SINNOH_STORY, 31, LakeVerity_EventScript_SNVis_VERITY_ROWAN_End
+	goto_if_set FLAG_SN_DONE_VERITY_HELP, LakeVerity_EventScript_SNVis_VERITY_ROWAN_End
+	clearflag FLAG_SN_HIDE_VERITY_ROWAN
+LakeVerity_EventScript_SNVis_VERITY_ROWAN_End:
+	return
+
+LakeVerity_EventScript_SNRowanScene::
+	goto_if_set FLAG_SN_HIDE_VERITY_ROWAN, LakeVerity_EventScript_SNRowanEnd
+	goto_if_set FLAG_SN_DONE_VERITY_HELP, LakeVerity_EventScript_SNRowanEnd
+	lockall
+	applymovement LOCALID_SN_VERITY_ROWAN, Common_Movement_ExclamationMark
+	waitmovement 0
+	call LakeVerity_EventScript_SNRowanTalk
+	setflag FLAG_SN_DONE_VERITY_HELP
+	releaseall
+LakeVerity_EventScript_SNRowanEnd:
+	end
+
+LakeVerity_EventScript_SNRowan::
+	lock
+	faceplayer
+	call LakeVerity_EventScript_SNRowanTalk
+	release
+	end
+
+LakeVerity_EventScript_SNRowanTalk:
+	checkplayergender
+	goto_if_eq VAR_RESULT, FEMALE, LakeVerity_EventScript_SNRowanLucas
+	msgbox LakeVerity_Text_SNHelpDawn, MSGBOX_DEFAULT
+	return
+LakeVerity_EventScript_SNRowanLucas:
+	msgbox LakeVerity_Text_SNHelpLucas, MSGBOX_DEFAULT
+	return
+
+LakeVerity_EventScript_SNCounterpart::
+	lock
+	faceplayer
+	checkplayergender
+	goto_if_eq VAR_RESULT, FEMALE, LakeVerity_EventScript_SNCounterpartLucas
+	msgbox LakeVerity_Text_SNDawn, MSGBOX_DEFAULT
+	release
+	end
+LakeVerity_EventScript_SNCounterpartLucas:
+	msgbox LakeVerity_Text_SNLucas, MSGBOX_DEFAULT
+	release
+	end
+LakeVerity_Text_SNHelpDawn:
+	.string "Rowan: Ah, {PLAYER}! What timing!\p"
+	.string "Those Team Galactic scoundrels are\n"
+	.string "after the legendary POKéMON!\p"
+	.string "You’ve got to help Dawn!$"
+
+LakeVerity_Text_SNHelpLucas:
+	.string "Rowan: Ah, {PLAYER}! What timing!\p"
+	.string "Those Team Galactic scoundrels are\n"
+	.string "after the legendary POKéMON!\p"
+	.string "{PLAYER}, help us! You’ve got to help\n"
+	.string "Lucas!$"
+
+LakeVerity_Text_SNDawn:
+	.string "Dawn: {PLAYER}! It’s T-Team Galactic!\p"
+	.string "They’re taking the POKéMON of the\n"
+	.string "lake...\p"
+	.string "I... I couldn’t beat this person...$"
+
+LakeVerity_Text_SNLucas:
+	.string "Lucas: It’s Team Galactic! They took\n"
+	.string "the POKéMON of the lake...\p"
+	.string "This woman... I lost to her, but just\n"
+	.string "barely!$"

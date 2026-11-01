@@ -163,3 +163,65 @@ PastoriaCity_EventScript_SNBarry_Post:
 	.string "Oh, yeah, I joined Mr. Wake as an\n"
 	.string "apprentice!\p"
 	.string "Like, I want my own theme song!$"
+
+PastoriaCity_EventScript_SNPASTORIACITYBARRY_T0::
+	goto_if_set FLAG_SN_HIDE_PAST_BARRY, PastoriaCity_EventScript_SNPASTORIACITYBARRY_T0_End
+	lockall
+	applymovement LOCALID_SN_PASTORIACITY_BARRY, PastoriaCity_EventScript_SNPASTORIACITYBARRY_T0_M
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, PastoriaCity_EventScript_SNPASTORIACITYBARRY_T0_P
+	waitmovement 0
+	goto PastoriaCity_EventScript_SNBarry
+PastoriaCity_EventScript_SNPASTORIACITYBARRY_T0_End:
+	end
+
+PastoriaCity_EventScript_SNPASTORIACITYBARRY_T0_M:
+	emote_exclamation_mark
+	walk_fast_left
+	face_down
+	step_end
+
+PastoriaCity_EventScript_SNPASTORIACITYBARRY_T0_P:
+	face_up
+	step_end
+
+PastoriaCity_EventScript_SNPASTORIACITYBARRY_T1::
+	goto_if_set FLAG_SN_HIDE_PAST_BARRY, PastoriaCity_EventScript_SNPASTORIACITYBARRY_T1_End
+	lockall
+	applymovement LOCALID_SN_PASTORIACITY_BARRY, PastoriaCity_EventScript_SNPASTORIACITYBARRY_T1_M
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, PastoriaCity_EventScript_SNPASTORIACITYBARRY_T1_P
+	waitmovement 0
+	goto PastoriaCity_EventScript_SNBarry
+PastoriaCity_EventScript_SNPASTORIACITYBARRY_T1_End:
+	end
+
+PastoriaCity_EventScript_SNPASTORIACITYBARRY_T1_M:
+	emote_exclamation_mark
+	face_down
+	step_end
+
+PastoriaCity_EventScript_SNPASTORIACITYBARRY_T1_P:
+	face_up
+	step_end
+
+PastoriaCity_EventScript_SNPASTORIACITYBARRY_T2::
+	goto_if_set FLAG_SN_HIDE_PAST_BARRY, PastoriaCity_EventScript_SNPASTORIACITYBARRY_T2_End
+	lockall
+	applymovement LOCALID_SN_PASTORIACITY_BARRY, PastoriaCity_EventScript_SNPASTORIACITYBARRY_T2_M
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, PastoriaCity_EventScript_SNPASTORIACITYBARRY_T2_P
+	waitmovement 0
+	goto PastoriaCity_EventScript_SNBarry
+PastoriaCity_EventScript_SNPASTORIACITYBARRY_T2_End:
+	end
+
+PastoriaCity_EventScript_SNPASTORIACITYBARRY_T2_M:
+	emote_exclamation_mark
+	walk_fast_right
+	face_down
+	step_end
+
+PastoriaCity_EventScript_SNPASTORIACITYBARRY_T2_P:
+	face_up
+	step_end

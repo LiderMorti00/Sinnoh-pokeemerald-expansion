@@ -55,3 +55,33 @@ VeilstoneCity_DepartmentStore_4F_Text_PtSign1:
 	.string "3F: TM Corner\p"
 	.string "4F: Poké Dolls & Goods\p"
 	.string "5F: Rooftop Plaza$"
+
+VeilstoneCity_DepartmentStore_4F_EventScript_SNDecor0::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemartdecoration2 LilycoveCity_DepartmentStore_5F_Pokemart_Dolls
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+VeilstoneCity_DepartmentStore_4F_EventScript_SNDecor1::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemartdecoration2 LilycoveCity_DepartmentStore_5F_Pokemart_Cushions
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+VeilstoneCity_DepartmentStore_4F_EventScript_SNDecor2::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemartdecoration2 LilycoveCity_DepartmentStore_5F_Pokemart_Posters
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end

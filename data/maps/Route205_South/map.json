@@ -570,6 +570,13 @@
       "elevation": 4,
       "item": "ITEM_STARDUST",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_119_ULTRA_BALL"
+    },
+    {
+      "type": "secret_base",
+      "x": 26,
+      "y": 20,
+      "elevation": 0,
+      "secret_base_id": "SECRET_BASE_RED_CAVE1_1"
     }
   ]
 }

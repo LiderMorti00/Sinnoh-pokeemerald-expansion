@@ -28,9 +28,9 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MR_BRINEYS_BOAT",
+      "graphics_id": "OBJ_EVENT_GFX_SS_TIDAL",
       "x": 11,
-      "y": 21,
+      "y": 26,
       "elevation": 1,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,

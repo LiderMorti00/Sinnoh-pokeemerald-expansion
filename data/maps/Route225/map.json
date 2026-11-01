@@ -435,6 +435,20 @@
       "elevation": 3,
       "item": "ITEM_ULTRA_BALL",
       "flag": "FLAG_HIDDEN_ITEM_NAVEL_ROCK_TOP_SACRED_ASH"
+    },
+    {
+      "type": "secret_base",
+      "x": 11,
+      "y": 7,
+      "elevation": 0,
+      "secret_base_id": "SECRET_BASE_YELLOW_CAVE1_3"
+    },
+    {
+      "type": "secret_base",
+      "x": 28,
+      "y": 7,
+      "elevation": 0,
+      "secret_base_id": "SECRET_BASE_YELLOW_CAVE2_1"
     }
   ]
 }

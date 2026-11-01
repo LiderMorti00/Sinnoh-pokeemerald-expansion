@@ -92,7 +92,26 @@
       "dest_warp_id": "1"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 2,
+      "elevation": 3,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "CanalaveCity_Library_F3_EventScript_SNEnter0"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 2,
+      "elevation": 3,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "CanalaveCity_Library_F3_EventScript_SNEnter1"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",

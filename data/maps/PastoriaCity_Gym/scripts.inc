@@ -112,6 +112,7 @@ PastoriaCity_Gym_Text_WalterPost:
 	.string "when you’re set to lose.$"
 
 PastoriaCity_Gym_EventScript_Leader::
+	goto_if_set FLAG_SYS_GAME_CLEAR, PastoriaCity_Gym_EventScript_SNRematch
 	trainerbattle_single TRAINER_JACKI_5, PastoriaCity_Gym_Text_LeaderIntro, PastoriaCity_Gym_Text_LeaderDefeat, PastoriaCity_Gym_EventScript_LeaderDefeated, NO_MUSIC
 	goto_if_unset FLAG_RECEIVED_ITEM_TM55_FROM_WAKE, PastoriaCity_Gym_EventScript_GiveTM
 	msgbox PastoriaCity_Gym_Text_LeaderPostBattle, MSGBOX_DEFAULT
@@ -227,3 +228,38 @@ PastoriaCity_Gym_Text_PtGymStatue:
 	.string "Pastoria City POKéMON Gym Leader:\n"
 	.string "Crasher Wake\p"
 	.string "Certified Trainers: {PLAYER}$"
+
+PastoriaCity_Gym_EventScript_SNRematch::
+	lock
+	faceplayer
+	msgbox PastoriaCity_Gym_EventScript_SNRematch_Ask, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, PastoriaCity_Gym_EventScript_SNRematch_No
+	msgbox PastoriaCity_Gym_EventScript_SNRematch_Go, MSGBOX_DEFAULT
+	closemessage
+	trainerbattle_no_intro TRAINER_KATELYN_3, PastoriaCity_Gym_EventScript_SNRematch_Defeat
+	msgbox PastoriaCity_Gym_EventScript_SNRematch_After, MSGBOX_DEFAULT
+	release
+	end
+PastoriaCity_Gym_EventScript_SNRematch_No:
+	msgbox PastoriaCity_Gym_EventScript_SNRematch_NoT, MSGBOX_DEFAULT
+	release
+	end
+PastoriaCity_Gym_EventScript_SNRematch_Ask:
+	.string "Wake: You became the Champion! Welcome\n"
+	.string "back!\p"
+	.string "I’ve been training even harder since\n"
+	.string "our last battle.\p"
+	.string "Will you battle me again?$"
+
+PastoriaCity_Gym_EventScript_SNRematch_Go:
+	.string "Then I won’t hold back this time!$"
+
+PastoriaCity_Gym_EventScript_SNRematch_Defeat:
+	.string "Amazing... You really are the Champion!$"
+
+PastoriaCity_Gym_EventScript_SNRematch_After:
+	.string "That was a great battle! Come back\n"
+	.string "anytime for another match!$"
+
+PastoriaCity_Gym_EventScript_SNRematch_NoT:
+	.string "Come back whenever you’re ready!$"

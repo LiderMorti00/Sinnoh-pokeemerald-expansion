@@ -343,3 +343,82 @@ SpearPillar_EventScript_SNPALKIA_Ran:
 	setvar VAR_0x8004, SPECIES_PALKIA
 	goto Common_EventScript_LegendaryFlewAway
 	end
+
+SpearPillar_EventScript_SNSPGrunts::
+	goto_if_set FLAG_SN_HIDE_SP_GRUNT1, SpearPillar_EventScript_SNSPGrunts_End
+	lockall
+	applymovement LOCALID_SN_SP_GRUNT_F, Common_Movement_ExclamationMark
+	applymovement LOCALID_SN_SP_GRUNT_M, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox SpearPillar_Text_SNGruntsIntro, MSGBOX_DEFAULT
+	closemessage
+	trainerbattle_two_trainers_sn TRAINER_DYLAN_1, SpearPillar_EventScript_SNSPGrunts_DA, TRAINER_DYLAN_2, SpearPillar_EventScript_SNSPGrunts_DB
+	msgbox SpearPillar_EventScript_SNSPGrunts_After, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_SN_SP_GRUNT_F
+	removeobject LOCALID_SN_SP_GRUNT_M
+	setflag FLAG_SN_HIDE_SP_GRUNT1
+	setflag FLAG_SN_HIDE_SP_GRUNT2
+	fadescreen FADE_FROM_BLACK
+	releaseall
+SpearPillar_EventScript_SNSPGrunts_End:
+	end
+SpearPillar_Text_SNGruntsIntro:
+	.string "Grunts: Halt! Our boss is about to\n"
+	.string "create a new world! No one gets past\l"
+	.string "us!$"
+
+SpearPillar_EventScript_SNSPGrunts_DA:
+	.string "Grunt: No way...!$"
+
+SpearPillar_EventScript_SNSPGrunts_DB:
+	.string "Grunt: We lost...?!$"
+
+SpearPillar_EventScript_SNSPGrunts_After:
+	.string "Grunt: Go ahead... Mars and Jupiter will\n"
+	.string "stop you anyway!$"
+
+SpearPillar_EventScript_SNSPCommanders::
+	goto_if_set FLAG_SN_HIDE_SP_MARS, SpearPillar_EventScript_SNSPCommanders_End
+	lockall
+	applymovement LOCALID_SN_SP_MARS, Common_Movement_ExclamationMark
+	applymovement LOCALID_SN_SP_JUPITER, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox SpearPillar_Text_SNMars, MSGBOX_DEFAULT
+	msgbox SpearPillar_Text_SNJupiter, MSGBOX_DEFAULT
+	closemessage
+	trainerbattle_two_trainers_sn TRAINER_DYLAN_3, SpearPillar_EventScript_SNSPCommanders_DA, TRAINER_DYLAN_4, SpearPillar_EventScript_SNSPCommanders_DB
+	msgbox SpearPillar_EventScript_SNSPCommanders_After, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_SN_SP_MARS
+	removeobject LOCALID_SN_SP_JUPITER
+	setflag FLAG_SN_HIDE_SP_MARS
+	setflag FLAG_SN_HIDE_SP_JUPITER
+	fadescreen FADE_FROM_BLACK
+	releaseall
+SpearPillar_EventScript_SNSPCommanders_End:
+	end
+SpearPillar_Text_SNMars:
+	.string "Mars: Where do you think you’re going?\n"
+	.string "I won’t let you disturb our boss.\p"
+	.string "If you’re not going to listen, you’ll\n"
+	.string "have to go through me first.\p"
+	.string "After all, you’ve made me look bad more\n"
+	.string "times than I care to remember!$"
+
+SpearPillar_Text_SNJupiter:
+	.string "Jupiter: And I’ll be next.\p"
+	.string "You might be tough, but this time, the\n"
+	.string "gloves are coming off!$"
+
+SpearPillar_EventScript_SNSPCommanders_DA:
+	.string "Mars: Ugh! Not you again!$"
+
+SpearPillar_EventScript_SNSPCommanders_DB:
+	.string "Jupiter: ...Unbelievable.$"
+
+SpearPillar_EventScript_SNSPCommanders_After:
+	.string "Jupiter: Be quiet and watch what our\n"
+	.string "boss is about to do.$"

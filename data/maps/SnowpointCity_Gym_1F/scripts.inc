@@ -140,6 +140,7 @@ SnowpointCity_Gym_1F_Text_JuanRematchNeedTwoMons:
 	.string "two, perhaps more, POKéMON, please.$"
 
 SnowpointCity_Gym_1F_EventScript_Leader::
+	goto_if_set FLAG_SYS_GAME_CLEAR, SnowpointCity_Gym_1F_EventScript_SNRematch
 	trainerbattle_single TRAINER_KAREN_5, SnowpointCity_Gym_1F_Text_LeaderIntro, SnowpointCity_Gym_1F_Text_LeaderDefeat, SnowpointCity_Gym_1F_EventScript_LeaderDefeated, NO_MUSIC
 	goto_if_unset FLAG_RECEIVED_ITEM_TM72_FROM_CANDICE, SnowpointCity_Gym_1F_EventScript_GiveTM
 	msgbox SnowpointCity_Gym_1F_Text_LeaderPostBattle, MSGBOX_DEFAULT
@@ -255,3 +256,38 @@ SnowpointCity_Gym_1F_Text_PtGymStatue:
 	.string "Snowpoint City POKéMON Gym Leader:\n"
 	.string "Candice\p"
 	.string "Certified Trainers: {PLAYER}$"
+
+SnowpointCity_Gym_1F_EventScript_SNRematch::
+	lock
+	faceplayer
+	msgbox SnowpointCity_Gym_1F_EventScript_SNRematch_Ask, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, SnowpointCity_Gym_1F_EventScript_SNRematch_No
+	msgbox SnowpointCity_Gym_1F_EventScript_SNRematch_Go, MSGBOX_DEFAULT
+	closemessage
+	trainerbattle_no_intro TRAINER_KATELYN_5, SnowpointCity_Gym_1F_EventScript_SNRematch_Defeat
+	msgbox SnowpointCity_Gym_1F_EventScript_SNRematch_After, MSGBOX_DEFAULT
+	release
+	end
+SnowpointCity_Gym_1F_EventScript_SNRematch_No:
+	msgbox SnowpointCity_Gym_1F_EventScript_SNRematch_NoT, MSGBOX_DEFAULT
+	release
+	end
+SnowpointCity_Gym_1F_EventScript_SNRematch_Ask:
+	.string "Candice: You became the Champion!\n"
+	.string "Welcome back!\p"
+	.string "I’ve been training even harder since\n"
+	.string "our last battle.\p"
+	.string "Will you battle me again?$"
+
+SnowpointCity_Gym_1F_EventScript_SNRematch_Go:
+	.string "Then I won’t hold back this time!$"
+
+SnowpointCity_Gym_1F_EventScript_SNRematch_Defeat:
+	.string "Amazing... You really are the Champion!$"
+
+SnowpointCity_Gym_1F_EventScript_SNRematch_After:
+	.string "That was a great battle! Come back\n"
+	.string "anytime for another match!$"
+
+SnowpointCity_Gym_1F_EventScript_SNRematch_NoT:
+	.string "Come back whenever you’re ready!$"

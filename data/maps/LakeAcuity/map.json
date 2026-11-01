@@ -30,15 +30,30 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_BARRY",
       "x": 7,
-      "y": 45,
+      "y": 44,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LakeAcuity_EventScript_SNBarry",
+      "flag": "FLAG_SN_HIDE_ACUITY_BARRY",
+      "local_id": "LOCALID_SN_ACUITY_BARRY"
+    },
+    {
+      "local_id": "LOCALID_SN_ACUITY_JUPITER",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_JUPITER",
+      "x": 7,
+      "y": 43,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LakeAcuity_EventScript_SNBarry",
-      "flag": "FLAG_SN_HIDE_ACUITY_BARRY"
+      "script": "LakeAcuity_EventScript_SNScene",
+      "flag": "FLAG_SN_HIDE_ACUITY_JUPITER"
     }
   ],
   "warp_events": [
@@ -64,6 +79,34 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 47,
+      "elevation": 3,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "LakeAcuity_EventScript_SNScene"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 47,
+      "elevation": 3,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "LakeAcuity_EventScript_SNScene"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 47,
+      "elevation": 3,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "LakeAcuity_EventScript_SNScene"
+    }
+  ],
   "bg_events": []
 }

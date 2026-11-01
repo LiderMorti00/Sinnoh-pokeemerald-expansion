@@ -387,6 +387,7 @@ VeilstoneCity_Gym_Text_RafaelPost:
 	.string "Maylene’s gonna trample me again...$"
 
 VeilstoneCity_Gym_EventScript_Leader::
+	goto_if_set FLAG_SYS_GAME_CLEAR, VeilstoneCity_Gym_EventScript_SNRematch
 	trainerbattle_single TRAINER_CAMERON_5, VeilstoneCity_Gym_Text_LeaderIntro, VeilstoneCity_Gym_Text_LeaderDefeat, VeilstoneCity_Gym_EventScript_LeaderDefeated, NO_MUSIC
 	goto_if_unset FLAG_RECEIVED_ITEM_TM60_FROM_MAYLENE, VeilstoneCity_Gym_EventScript_GiveTM
 	msgbox VeilstoneCity_Gym_Text_LeaderPostBattle, MSGBOX_DEFAULT
@@ -506,3 +507,38 @@ VeilstoneCity_Gym_Text_PtGymStatue:
 	.string "Veilstone City POKéMON Gym Leader:\n"
 	.string "Maylene\p"
 	.string "Certified Trainers: {PLAYER}$"
+
+VeilstoneCity_Gym_EventScript_SNRematch::
+	lock
+	faceplayer
+	msgbox VeilstoneCity_Gym_EventScript_SNRematch_Ask, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, VeilstoneCity_Gym_EventScript_SNRematch_No
+	msgbox VeilstoneCity_Gym_EventScript_SNRematch_Go, MSGBOX_DEFAULT
+	closemessage
+	trainerbattle_no_intro TRAINER_KATELYN_2, VeilstoneCity_Gym_EventScript_SNRematch_Defeat
+	msgbox VeilstoneCity_Gym_EventScript_SNRematch_After, MSGBOX_DEFAULT
+	release
+	end
+VeilstoneCity_Gym_EventScript_SNRematch_No:
+	msgbox VeilstoneCity_Gym_EventScript_SNRematch_NoT, MSGBOX_DEFAULT
+	release
+	end
+VeilstoneCity_Gym_EventScript_SNRematch_Ask:
+	.string "Maylene: You became the Champion!\n"
+	.string "Welcome back!\p"
+	.string "I’ve been training even harder since\n"
+	.string "our last battle.\p"
+	.string "Will you battle me again?$"
+
+VeilstoneCity_Gym_EventScript_SNRematch_Go:
+	.string "Then I won’t hold back this time!$"
+
+VeilstoneCity_Gym_EventScript_SNRematch_Defeat:
+	.string "Amazing... You really are the Champion!$"
+
+VeilstoneCity_Gym_EventScript_SNRematch_After:
+	.string "That was a great battle! Come back\n"
+	.string "anytime for another match!$"
+
+VeilstoneCity_Gym_EventScript_SNRematch_NoT:
+	.string "Come back whenever you’re ready!$"

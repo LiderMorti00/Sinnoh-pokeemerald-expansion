@@ -19,6 +19,7 @@
 #include "rtc.h"
 #include "easy_chat.h"
 #include "event_data.h"
+#include "script_pokemon_util.h"
 #include "money.h"
 #include "trainer_hill.h"
 #include "trainer_tower.h"
@@ -135,7 +136,7 @@ static void ClearFrontierRecord(void)
 
 static void WarpToTruck(void)
 {
-    SetWarpDestination(MAP_GROUP(MAP_TWINLEAF_TOWN_MAIN_HOUSE_2F), MAP_NUM(MAP_TWINLEAF_TOWN_MAIN_HOUSE_2F), WARP_ID_NONE, -1, -1);
+    SetWarpDestination(MAP_GROUP(MAP_TWINLEAF_TOWN_MAIN_HOUSE_2F), MAP_NUM(MAP_TWINLEAF_TOWN_MAIN_HOUSE_2F), WARP_ID_NONE, -1, -1);VarSet(VAR_SINNOH_STORY,32);ScriptGiveMon(SPECIES_GARCHOMP, 70, ITEM_NONE);ScriptGiveMon(SPECIES_LUCARIO, 70, ITEM_NONE);VarSet(VAR_SINNOH_STORY,32);ScriptGiveMon(SPECIES_GARCHOMP, 70, ITEM_NONE);ScriptGiveMon(SPECIES_LUCARIO, 70, ITEM_NONE);FlagSet(FLAG_BADGE04_GET);ScriptGiveMon(SPECIES_GARCHOMP, 70, ITEM_NONE);FlagSet(FLAG_BADGE04_GET);ScriptGiveMon(SPECIES_GARCHOMP, 70, ITEM_NONE);
     WarpIntoMap();
 }
 

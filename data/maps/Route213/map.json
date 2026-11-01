@@ -559,6 +559,20 @@
       "elevation": 3,
       "item": "ITEM_MAX_REVIVE",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE213_MAX_REVIVE"
+    },
+    {
+      "type": "secret_base",
+      "x": 54,
+      "y": 6,
+      "elevation": 0,
+      "secret_base_id": "SECRET_BASE_YELLOW_CAVE4_2"
+    },
+    {
+      "type": "secret_base",
+      "x": 62,
+      "y": 21,
+      "elevation": 0,
+      "secret_base_id": "SECRET_BASE_YELLOW_CAVE4_3"
     }
   ]
 }
