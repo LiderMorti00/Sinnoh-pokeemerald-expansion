@@ -3,6 +3,13 @@ Route214_MapScripts::
 
 Route214_EventScript_Carlos::
 	trainerbattle_single TRAINER_KATELYNN, Route214_Text_CarlosIntro, Route214_Text_CarlosDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route214_EventScript_Carlos_Rematch
+	msgbox Route214_Text_CarlosPost, MSGBOX_AUTOCLOSE
+	end
+
+Route214_EventScript_Carlos_Rematch:
+	trainerbattle_rematch TRAINER_KATELYNN, Route214_Text_CarlosIntro, Route214_Text_CarlosDefeat
 	msgbox Route214_Text_CarlosPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -135,6 +142,13 @@ Route214_Text_DevonPost:
 
 Route214_EventScript_Mitchell::
 	trainerbattle_single TRAINER_BARNY, Route214_Text_MitchellIntro, Route214_Text_MitchellDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route214_EventScript_Mitchell_Rematch
+	msgbox Route214_Text_MitchellPost, MSGBOX_AUTOCLOSE
+	end
+
+Route214_EventScript_Mitchell_Rematch:
+	trainerbattle_rematch TRAINER_BARNY, Route214_Text_MitchellIntro, Route214_Text_MitchellDefeat
 	msgbox Route214_Text_MitchellPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -151,6 +165,13 @@ Route214_Text_MitchellPost:
 
 Route214_EventScript_Abigail::
 	trainerbattle_single TRAINER_WADE, Route214_Text_AbigailIntro, Route214_Text_AbigailDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route214_EventScript_Abigail_Rematch
+	msgbox Route214_Text_AbigailPost, MSGBOX_AUTOCLOSE
+	end
+
+Route214_EventScript_Abigail_Rematch:
+	trainerbattle_rematch TRAINER_WADE, Route214_Text_AbigailIntro, Route214_Text_AbigailDefeat
 	msgbox Route214_Text_AbigailPost, MSGBOX_AUTOCLOSE
 	end
 

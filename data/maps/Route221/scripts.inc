@@ -57,6 +57,13 @@ Route221_Text_CoryPost:
 
 Route221_EventScript_Ivan::
 	trainerbattle_single TRAINER_NIKKI, Route221_Text_IvanIntro, Route221_Text_IvanDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route221_EventScript_Ivan_Rematch
+	msgbox Route221_Text_IvanPost, MSGBOX_AUTOCLOSE
+	end
+
+Route221_EventScript_Ivan_Rematch:
+	trainerbattle_rematch TRAINER_NIKKI, Route221_Text_IvanIntro, Route221_Text_IvanDefeat
 	msgbox Route221_Text_IvanPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -75,6 +82,13 @@ Route221_Text_IvanPost:
 
 Route221_EventScript_Jake::
 	trainerbattle_single TRAINER_BRENDA, Route221_Text_JakeIntro, Route221_Text_JakeDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route221_EventScript_Jake_Rematch
+	msgbox Route221_Text_JakePost, MSGBOX_AUTOCLOSE
+	end
+
+Route221_EventScript_Jake_Rematch:
+	trainerbattle_rematch TRAINER_BRENDA, Route221_Text_JakeIntro, Route221_Text_JakeDefeat
 	msgbox Route221_Text_JakePost, MSGBOX_AUTOCLOSE
 	end
 
@@ -93,6 +107,13 @@ Route221_Text_JakePost:
 
 Route221_EventScript_Shannon::
 	trainerbattle_single TRAINER_KATIE, Route221_Text_ShannonIntro, Route221_Text_ShannonDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route221_EventScript_Shannon_Rematch
+	msgbox Route221_Text_ShannonPost, MSGBOX_AUTOCLOSE
+	end
+
+Route221_EventScript_Shannon_Rematch:
+	trainerbattle_rematch TRAINER_KATIE, Route221_Text_ShannonIntro, Route221_Text_ShannonDefeat
 	msgbox Route221_Text_ShannonPost, MSGBOX_AUTOCLOSE
 	end
 

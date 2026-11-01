@@ -8,7 +8,7 @@ SafariZone_EventScript_OutOfBallsMidBattle::
 #if IS_FRLG
 	setwarp MAP_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE, 4, 1
 #else
-	setwarp MAP_ROUTE121_SAFARI_ZONE_ENTRANCE, 2, 5
+	setwarp MAP_PASTORIA_CITY_GREAT_MARSH_GATE, 4, 4
 #endif
 	end
 
@@ -22,7 +22,7 @@ SafariZone_EventScript_Exit::
 #if IS_FRLG
 	warp MAP_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE, 4, 1
 #else
-	warp MAP_ROUTE121_SAFARI_ZONE_ENTRANCE, 2, 5
+	warp MAP_PASTORIA_CITY_GREAT_MARSH_GATE, 4, 4
 #endif
 	waitstate
 	end

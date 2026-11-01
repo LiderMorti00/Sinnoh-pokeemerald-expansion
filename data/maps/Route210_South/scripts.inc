@@ -107,7 +107,7 @@ Route210_South_Text_KahlilDefeat:
 Route210_South_Text_KahlilPost:
 	.string "The VEILSTONE Department Store is\n"
 	.string "pretty impressive!\p"
-	.string "Did you know they even sell Poffins?$"
+	.string "Did you know they even sell POKéBLOCKS?$"
 
 Route210_South_EventScript_Amber::
 	trainerbattle_single TRAINER_FRANKLIN, Route210_South_Text_AmberIntro, Route210_South_Text_AmberDefeat
@@ -150,6 +150,13 @@ Route210_South_Text_AvaMattNotEnough:
 
 Route210_South_EventScript_Marco::
 	trainerbattle_single TRAINER_JACK, Route210_South_Text_MarcoIntro, Route210_South_Text_MarcoDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route210_South_EventScript_Marco_Rematch
+	msgbox Route210_South_Text_MarcoPost, MSGBOX_AUTOCLOSE
+	end
+
+Route210_South_EventScript_Marco_Rematch:
+	trainerbattle_rematch TRAINER_JACK, Route210_South_Text_MarcoIntro, Route210_South_Text_MarcoDefeat
 	msgbox Route210_South_Text_MarcoPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -183,6 +190,13 @@ Route210_South_Text_PtSign2:
 
 Route210_South_EventScript_TeriTia2::
 	trainerbattle_double TRAINER_CALVIN_1, Route210_South_Text_TeriTia2Intro, Route210_South_Text_TeriTia2Defeat, Route210_South_Text_TeriTia2NotEnough
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route210_South_EventScript_TeriTia2_Rematch
+	msgbox Route210_South_Text_TeriTia2Post, MSGBOX_AUTOCLOSE
+	end
+
+Route210_South_EventScript_TeriTia2_Rematch:
+	trainerbattle_rematch_double TRAINER_CALVIN_1, Route210_South_Text_TeriTia2Intro, Route210_South_Text_TeriTia2Defeat, Route210_South_Text_TeriTia2NotEnough
 	msgbox Route210_South_Text_TeriTia2Post, MSGBOX_AUTOCLOSE
 	end
 

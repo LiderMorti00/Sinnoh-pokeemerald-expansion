@@ -194,6 +194,20 @@
       "script": "PastoriaCity_EventScript_SNBarry",
       "flag": "FLAG_SN_HIDE_PAST_BARRY",
       "local_id": "LOCALID_SN_PASTORIACITY_BARRY"
+    },
+    {
+      "local_id": "LOCALID_SN_PAST_GRUNT",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_GALAXY_GRUNT_M",
+      "x": 40,
+      "y": 9,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PastoriaCity_EventScript_SNGrunt",
+      "flag": "FLAG_SN_HIDE_PAST_GRUNT"
     }
   ],
   "warp_events": [

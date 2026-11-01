@@ -54,6 +54,13 @@ Route211_East_Text_SeanPost:
 
 Route211_East_EventScript_Harry::
 	trainerbattle_single TRAINER_KIYO, Route211_East_Text_HarryIntro, Route211_East_Text_HarryDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route211_East_EventScript_Harry_Rematch
+	msgbox Route211_East_Text_HarryPost, MSGBOX_AUTOCLOSE
+	end
+
+Route211_East_EventScript_Harry_Rematch:
+	trainerbattle_rematch TRAINER_KIYO, Route211_East_Text_HarryIntro, Route211_East_Text_HarryDefeat
 	msgbox Route211_East_Text_HarryPost, MSGBOX_AUTOCLOSE
 	end
 

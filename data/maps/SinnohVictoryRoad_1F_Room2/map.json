@@ -425,7 +425,7 @@
       "type": "hidden_item",
       "x": 38,
       "y": 43,
-      "elevation": 4,
+      "elevation": 3,
       "item": "ITEM_RARE_CANDY",
       "flag": "FLAG_HIDDEN_ITEM_SINNOHVICTORYROAD_1F_ROOM2_RARE_CANDY"
     },

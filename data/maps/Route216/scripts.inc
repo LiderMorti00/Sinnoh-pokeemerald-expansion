@@ -36,6 +36,13 @@ Route216_Text_LauraPost:
 
 Route216_EventScript_Philip::
 	trainerbattle_single TRAINER_TALIA, Route216_Text_PhilipIntro, Route216_Text_PhilipDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route216_EventScript_Philip_Rematch
+	msgbox Route216_Text_PhilipPost, MSGBOX_AUTOCLOSE
+	end
+
+Route216_EventScript_Philip_Rematch:
+	trainerbattle_rematch TRAINER_TALIA, Route216_Text_PhilipIntro, Route216_Text_PhilipDefeat
 	msgbox Route216_Text_PhilipPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -119,6 +126,13 @@ Route216_Text_KaitlynPost:
 
 Route216_EventScript_Edward::
 	trainerbattle_single TRAINER_PHIL, Route216_Text_EdwardIntro, Route216_Text_EdwardDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route216_EventScript_Edward_Rematch
+	msgbox Route216_Text_EdwardPost, MSGBOX_AUTOCLOSE
+	end
+
+Route216_EventScript_Edward_Rematch:
+	trainerbattle_rematch TRAINER_PHIL, Route216_Text_EdwardIntro, Route216_Text_EdwardDefeat
 	msgbox Route216_Text_EdwardPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -135,6 +149,13 @@ Route216_Text_EdwardPost:
 
 Route216_EventScript_Andrea::
 	trainerbattle_single TRAINER_PRESLEY, Route216_Text_AndreaIntro, Route216_Text_AndreaDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route216_EventScript_Andrea_Rematch
+	msgbox Route216_Text_AndreaPost, MSGBOX_AUTOCLOSE
+	end
+
+Route216_EventScript_Andrea_Rematch:
+	trainerbattle_rematch TRAINER_PRESLEY, Route216_Text_AndreaIntro, Route216_Text_AndreaDefeat
 	msgbox Route216_Text_AndreaPost, MSGBOX_AUTOCLOSE
 	end
 

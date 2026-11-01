@@ -314,7 +314,7 @@
       "type": "trigger",
       "x": 38,
       "y": 15,
-      "elevation": 3,
+      "elevation": 4,
       "var": "VAR_TEMP_F",
       "var_value": "0",
       "script": "VeilstoneCity_EventScript_SNHQLocked"
@@ -323,7 +323,7 @@
       "type": "trigger",
       "x": 41,
       "y": 15,
-      "elevation": 3,
+      "elevation": 4,
       "var": "VAR_TEMP_F",
       "var_value": "0",
       "script": "VeilstoneCity_EventScript_SNHQLocked"
@@ -332,7 +332,7 @@
       "type": "trigger",
       "x": 44,
       "y": 15,
-      "elevation": 3,
+      "elevation": 4,
       "var": "VAR_TEMP_F",
       "var_value": "0",
       "script": "VeilstoneCity_EventScript_SNHQLocked"

@@ -13,6 +13,7 @@ LakeValor_Cavern_EventScript_PtNpc1::
 	end
 
 LakeValor_Cavern_OnTransitionSN:
+	call LakeValor_Cavern_EventScript_SNExitWarp
 	call LakeValor_Cavern_EventScript_SNVis_VALOR_SATURN
 	call LakeValor_Cavern_EventScript_SNVis_AZELF
 	end
@@ -98,3 +99,11 @@ LakeValor_Cavern_EventScript_SNAZELF_Ran:
 	setvar VAR_0x8004, SPECIES_AZELF
 	goto Common_EventScript_LegendaryFlewAway
 	end
+
+LakeValor_Cavern_EventScript_SNExitWarp:
+	goto_if_eq VAR_SINNOH_STORY, 31, LakeValor_Cavern_EventScript_SNExitDrained
+	setdynamicwarp MAP_LAKE_VALOR, 2
+	return
+LakeValor_Cavern_EventScript_SNExitDrained:
+	setdynamicwarp MAP_LAKE_VALOR_DRAINED, 1
+	return

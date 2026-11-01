@@ -2904,3 +2904,14 @@ static const struct SpriteFrameImage sPicTable_SinnohMonArceus[] = {
     overworld_ascending_frames(gObjectEventPic_SinnohMonArceus, 8, 8),
 };
 
+static const struct SpriteFrameImage sPicTable_SinnohCheryl[] = {
+    overworld_ascending_frames(gObjectEventPic_SinnohCheryl, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_SinnohRiley[] = {
+    overworld_ascending_frames(gObjectEventPic_SinnohRiley, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_SinnohBuck[] = {
+    overworld_ascending_frames(gObjectEventPic_SinnohBuck, 4, 4),
+};

@@ -71,6 +71,13 @@ Route213_Text_HaleyPost:
 
 Route213_EventScript_Jared::
 	trainerbattle_single TRAINER_COLTON, Route213_Text_JaredIntro, Route213_Text_JaredDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route213_EventScript_Jared_Rematch
+	msgbox Route213_Text_JaredPost, MSGBOX_AUTOCLOSE
+	end
+
+Route213_EventScript_Jared_Rematch:
+	trainerbattle_rematch TRAINER_COLTON, Route213_Text_JaredIntro, Route213_Text_JaredDefeat
 	msgbox Route213_Text_JaredPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -88,6 +95,13 @@ Route213_Text_JaredPost:
 
 Route213_EventScript_Chelsea::
 	trainerbattle_single TRAINER_VICTORIA, Route213_Text_ChelseaIntro, Route213_Text_ChelseaDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route213_EventScript_Chelsea_Rematch
+	msgbox Route213_Text_ChelseaPost, MSGBOX_AUTOCLOSE
+	end
+
+Route213_EventScript_Chelsea_Rematch:
+	trainerbattle_rematch TRAINER_VICTORIA, Route213_Text_ChelseaIntro, Route213_Text_ChelseaDefeat
 	msgbox Route213_Text_ChelseaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -103,6 +117,13 @@ Route213_Text_ChelseaPost:
 
 Route213_EventScript_Cyndy::
 	trainerbattle_single TRAINER_VANESSA, Route213_Text_CyndyIntro, Route213_Text_CyndyDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route213_EventScript_Cyndy_Rematch
+	msgbox Route213_Text_CyndyPost, MSGBOX_AUTOCLOSE
+	end
+
+Route213_EventScript_Cyndy_Rematch:
+	trainerbattle_rematch TRAINER_VANESSA, Route213_Text_CyndyIntro, Route213_Text_CyndyDefeat
 	msgbox Route213_Text_CyndyPost, MSGBOX_AUTOCLOSE
 	end
 

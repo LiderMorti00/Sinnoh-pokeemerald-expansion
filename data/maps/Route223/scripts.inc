@@ -3,6 +3,13 @@ Route223_MapScripts::
 
 Route223_EventScript_Wesley::
 	trainerbattle_single TRAINER_CAROL, Route223_Text_WesleyIntro, Route223_Text_WesleyDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route223_EventScript_Wesley_Rematch
+	msgbox Route223_Text_WesleyPost, MSGBOX_AUTOCLOSE
+	end
+
+Route223_EventScript_Wesley_Rematch:
+	trainerbattle_rematch TRAINER_CAROL, Route223_Text_WesleyIntro, Route223_Text_WesleyDefeat
 	msgbox Route223_Text_WesleyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -37,6 +44,13 @@ Route223_Text_RicardoPost:
 
 Route223_EventScript_Francisco::
 	trainerbattle_single TRAINER_MARTHA, Route223_Text_FranciscoIntro, Route223_Text_FranciscoDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route223_EventScript_Francisco_Rematch
+	msgbox Route223_Text_FranciscoPost, MSGBOX_AUTOCLOSE
+	end
+
+Route223_EventScript_Francisco_Rematch:
+	trainerbattle_rematch TRAINER_MARTHA, Route223_Text_FranciscoIntro, Route223_Text_FranciscoDefeat
 	msgbox Route223_Text_FranciscoPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -103,6 +117,13 @@ Route223_Text_OscarPost:
 
 Route223_EventScript_Miranda::
 	trainerbattle_single TRAINER_MIU_AND_YUKI, Route223_Text_MirandaIntro, Route223_Text_MirandaDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route223_EventScript_Miranda_Rematch
+	msgbox Route223_Text_MirandaPost, MSGBOX_AUTOCLOSE
+	end
+
+Route223_EventScript_Miranda_Rematch:
+	trainerbattle_rematch TRAINER_MIU_AND_YUKI, Route223_Text_MirandaIntro, Route223_Text_MirandaDefeat
 	msgbox Route223_Text_MirandaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -154,6 +175,13 @@ Route223_Text_PaigePost:
 
 Route223_EventScript_Crystal::
 	trainerbattle_single TRAINER_DWAYNE, Route223_Text_CrystalIntro, Route223_Text_CrystalDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route223_EventScript_Crystal_Rematch
+	msgbox Route223_Text_CrystalPost, MSGBOX_AUTOCLOSE
+	end
+
+Route223_EventScript_Crystal_Rematch:
+	trainerbattle_rematch TRAINER_DWAYNE, Route223_Text_CrystalIntro, Route223_Text_CrystalDefeat
 	msgbox Route223_Text_CrystalPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -214,6 +242,13 @@ Route223_Text_GabriellePost:
 
 Route223_EventScript_Zachariah::
 	trainerbattle_single TRAINER_JAZMYN, Route223_Text_ZachariahIntro, Route223_Text_ZachariahDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route223_EventScript_Zachariah_Rematch
+	msgbox Route223_Text_ZachariahPost, MSGBOX_AUTOCLOSE
+	end
+
+Route223_EventScript_Zachariah_Rematch:
+	trainerbattle_rematch TRAINER_JAZMYN, Route223_Text_ZachariahIntro, Route223_Text_ZachariahDefeat
 	msgbox Route223_Text_ZachariahPost, MSGBOX_AUTOCLOSE
 	end
 

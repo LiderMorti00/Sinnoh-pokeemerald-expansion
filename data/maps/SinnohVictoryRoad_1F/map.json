@@ -270,7 +270,7 @@
       "type": "hidden_item",
       "x": 35,
       "y": 41,
-      "elevation": 3,
+      "elevation": 4,
       "item": "ITEM_ULTRA_BALL",
       "flag": "FLAG_HIDDEN_ITEM_SINNOHVICTORYROAD_1F_ULTRA_BALL"
     },

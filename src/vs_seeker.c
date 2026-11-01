@@ -547,10 +547,11 @@ void ClearRematchMovementByTrainerId(void)
 static u32 GetGameProgressFlags()
 {
     const u32 gameProgressFlags[] = {
-        FLAG_VISITED_LAVARIDGE_TOWN,
-        FLAG_VISITED_FORTREE_CITY,
+        // Proyecto Sinnoh: niveles de revancha como en Platino
+        FLAG_BADGE05_GET,
+        FLAG_BADGE07_GET,
         FLAG_SYS_GAME_CLEAR,
-        FLAG_DEFEATED_METEOR_FALLS_STEVEN
+        FLAG_SYS_NATIONAL_DEX
     };
     u32 i = 0, numGameProgressFlags = 0;
     u32 maxGameProgressFlags = ARRAY_COUNT(gameProgressFlags);

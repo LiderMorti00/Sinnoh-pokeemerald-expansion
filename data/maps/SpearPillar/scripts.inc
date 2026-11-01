@@ -49,6 +49,7 @@ SpearPillar_EventScript_PtNpc4::
 	end
 
 SpearPillar_OnTransitionSN:
+	call SpearPillar_EventScript_SNVis_SP_BARRY
 	call SpearPillar_EventScript_SNVis_SP_GRUNT1
 	call SpearPillar_EventScript_SNVis_SP_GRUNT2
 	call SpearPillar_EventScript_SNVis_SP_MARS
@@ -382,13 +383,65 @@ SpearPillar_EventScript_SNSPGrunts_After:
 SpearPillar_EventScript_SNSPCommanders::
 	goto_if_set FLAG_SN_HIDE_SP_MARS, SpearPillar_EventScript_SNSPCommanders_End
 	lockall
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	applymovement LOCALID_SN_SP_MARS, Common_Movement_ExclamationMark
 	applymovement LOCALID_SN_SP_JUPITER, Common_Movement_ExclamationMark
 	waitmovement 0
-	msgbox SpearPillar_Text_SNMars, MSGBOX_DEFAULT
-	msgbox SpearPillar_Text_SNJupiter, MSGBOX_DEFAULT
+	msgbox SpearPillar_EventScript_SNSPCommanders_T1, MSGBOX_DEFAULT
+	msgbox SpearPillar_EventScript_SNSPCommanders_T2, MSGBOX_DEFAULT
 	closemessage
+	playbgm MUS_RG_ENCOUNTER_RIVAL, FALSE
+	msgbox SpearPillar_EventScript_SNSPCommanders_T3, MSGBOX_DEFAULT
+	closemessage
+	clearflag FLAG_SN_HIDE_SP_BARRY
+	addobject LOCALID_SN_SP_BARRY
+	getplayerxy VAR_0x8004, VAR_0x8005
+	goto_if_eq VAR_0x8004, 11, SpearPillar_EventScript_SNSPCommanders_BarryBelow
+	applymovement LOCALID_SN_SP_BARRY, SpearPillar_EventScript_SNSPCommanders_MBarrySide
+	waitmovement 0
+	goto_if_lt VAR_0x8004, 11, SpearPillar_EventScript_SNSPCommanders_FaceRight
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_SN_SP_BARRY, Common_Movement_WalkInPlaceFasterRight
+	waitmovement 0
+	goto SpearPillar_EventScript_SNSPCommanders_Talk
+SpearPillar_EventScript_SNSPCommanders_FaceRight:
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+	applymovement LOCALID_SN_SP_BARRY, Common_Movement_WalkInPlaceFasterLeft
+	waitmovement 0
+	goto SpearPillar_EventScript_SNSPCommanders_Talk
+SpearPillar_EventScript_SNSPCommanders_BarryBelow:
+	applymovement LOCALID_SN_SP_BARRY, SpearPillar_EventScript_SNSPCommanders_MBarryBelow
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
+SpearPillar_EventScript_SNSPCommanders_Talk:
+	msgbox SpearPillar_EventScript_SNSPCommanders_T4, MSGBOX_DEFAULT
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	applymovement LOCALID_SN_SP_BARRY, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
+	msgbox SpearPillar_EventScript_SNSPCommanders_T5, MSGBOX_DEFAULT
+	msgbox SpearPillar_EventScript_SNSPCommanders_T6, MSGBOX_DEFAULT
+	closemessage
+	switch VAR_STARTER_MON
+	case 1, SpearPillar_EventScript_SNSPCommanders_P1
+	case 2, SpearPillar_EventScript_SNSPCommanders_P2
+	setfollowernpc LOCALID_SN_SP_BARRY, FNPC_ALL_LAND, 0, PARTNER_BARRY_CHIMCHAR
+	goto SpearPillar_EventScript_SNSPCommanders_Battle
+SpearPillar_EventScript_SNSPCommanders_P1:
+	setfollowernpc LOCALID_SN_SP_BARRY, FNPC_ALL_LAND, 0, PARTNER_BARRY_PIPLUP
+	goto SpearPillar_EventScript_SNSPCommanders_Battle
+SpearPillar_EventScript_SNSPCommanders_P2:
+	setfollowernpc LOCALID_SN_SP_BARRY, FNPC_ALL_LAND, 0, PARTNER_BARRY_TURTWIG
+SpearPillar_EventScript_SNSPCommanders_Battle:
 	trainerbattle_two_trainers_sn TRAINER_DYLAN_3, SpearPillar_EventScript_SNSPCommanders_DA, TRAINER_DYLAN_4, SpearPillar_EventScript_SNSPCommanders_DB
+	getplayerxy VAR_0x8004, VAR_0x8005
+	addvar VAR_0x8005, 1
+	destroyfollowernpc
+	setobjectxyperm LOCALID_SN_SP_BARRY, VAR_0x8004, VAR_0x8005
+	clearflag FLAG_SN_HIDE_SP_BARRY
+	addobject LOCALID_SN_SP_BARRY
+SpearPillar_EventScript_SNSPCommanders_Won:
 	msgbox SpearPillar_EventScript_SNSPCommanders_After, MSGBOX_DEFAULT
 	closemessage
 	fadescreen FADE_TO_BLACK
@@ -397,10 +450,47 @@ SpearPillar_EventScript_SNSPCommanders::
 	setflag FLAG_SN_HIDE_SP_MARS
 	setflag FLAG_SN_HIDE_SP_JUPITER
 	fadescreen FADE_FROM_BLACK
+	applymovement LOCALID_SN_SP_BARRY, Common_Movement_FacePlayer
+	waitmovement 0
+	msgbox SpearPillar_EventScript_SNSPCommanders_T7, MSGBOX_DEFAULT
+	special HealPlayerParty
+	playfanfare MUS_HEAL
+	waitfanfare
+	msgbox SpearPillar_EventScript_SNSPCommanders_T8, MSGBOX_DEFAULT
+	msgbox SpearPillar_EventScript_SNSPCommanders_T9, MSGBOX_DEFAULT
+	closemessage
+	fadedefaultbgm
 	releaseall
 SpearPillar_EventScript_SNSPCommanders_End:
 	end
-SpearPillar_Text_SNMars:
+
+SpearPillar_EventScript_SNSPBarryTalk::
+	lock
+	faceplayer
+	msgbox SpearPillar_EventScript_SNSPCommanders_T9, MSGBOX_DEFAULT
+	release
+	end
+
+SpearPillar_EventScript_SNSPCommanders_MBarryBelow:
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	step_end
+
+SpearPillar_EventScript_SNSPCommanders_MBarrySide:
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	step_end
+
+SpearPillar_EventScript_SNSPCommanders_T1:
 	.string "Mars: Where do you think you’re going?\n"
 	.string "I won’t let you disturb our boss.\p"
 	.string "If you’re not going to listen, you’ll\n"
@@ -408,17 +498,56 @@ SpearPillar_Text_SNMars:
 	.string "After all, you’ve made me look bad more\n"
 	.string "times than I care to remember!$"
 
-SpearPillar_Text_SNJupiter:
+SpearPillar_EventScript_SNSPCommanders_T2:
 	.string "Jupiter: And I’ll be next.\p"
 	.string "You might be tough, but this time, the\n"
 	.string "gloves are coming off!$"
 
+SpearPillar_EventScript_SNSPCommanders_T3:
+	.string "BARRY: Hold on one second!\p"
+	.string "Don’t you start the party without me!$"
+
+SpearPillar_EventScript_SNSPCommanders_T4:
+	.string "BARRY: Remember me? I’m here to get my\n"
+	.string "revenge!$"
+
+SpearPillar_EventScript_SNSPCommanders_T5:
+	.string "Jupiter: Huh?$"
+
+SpearPillar_EventScript_SNSPCommanders_T6:
+	.string "Jupiter: Ha! If it isn’t that little boy.\p"
+	.string "The little crybaby from Lake Acuity.\p"
+	.string "Did you toughen up a bit? Sure, let’s\n"
+	.string "battle two-on-two!$"
+
+SpearPillar_EventScript_SNSPCommanders_T7:
+	.string "BARRY: ...Heh. My POKéMON are tough,\n"
+	.string "right?\p"
+	.string "I can get even tougher!\p"
+	.string "...But, you know, that’s it for us. We’ve\n"
+	.string "hit the wall...\p"
+	.string "{PLAYER}, I’ll help you with this!$"
+
+SpearPillar_EventScript_SNSPCommanders_T8:
+	.string "BARRY fully healed {PLAYER}’s POKéMON!$"
+
+SpearPillar_EventScript_SNSPCommanders_T9:
+	.string "BARRY: Hey, {PLAYER}! This is it! It’s\n"
+	.string "your show now!$"
+
 SpearPillar_EventScript_SNSPCommanders_DA:
-	.string "Mars: Ugh! Not you again!$"
+	.string "Mars: Oh, come on! Not again!$"
 
 SpearPillar_EventScript_SNSPCommanders_DB:
-	.string "Jupiter: ...Unbelievable.$"
+	.string "Jupiter: Gah... you two are tough.$"
 
 SpearPillar_EventScript_SNSPCommanders_After:
-	.string "Jupiter: Be quiet and watch what our\n"
-	.string "boss is about to do.$"
+	.string "Jupiter: Fine. Go on ahead... Our boss\n"
+	.string "will finish you off anyway!$"
+
+SpearPillar_EventScript_SNVis_SP_BARRY:
+	setflag FLAG_SN_HIDE_SP_BARRY
+	goto SpearPillar_EventScript_SNVis_SP_BARRY_End
+	clearflag FLAG_SN_HIDE_SP_BARRY
+SpearPillar_EventScript_SNVis_SP_BARRY_End:
+	return

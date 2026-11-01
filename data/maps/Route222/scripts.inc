@@ -19,6 +19,13 @@ Route222_Text_BrettPost:
 
 Route222_EventScript_Alec::
 	trainerbattle_single TRAINER_KARA, Route222_Text_AlecIntro, Route222_Text_AlecDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route222_EventScript_Alec_Rematch
+	msgbox Route222_Text_AlecPost, MSGBOX_AUTOCLOSE
+	end
+
+Route222_EventScript_Alec_Rematch:
+	trainerbattle_rematch TRAINER_KARA, Route222_Text_AlecIntro, Route222_Text_AlecDefeat
 	msgbox Route222_Text_AlecPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -102,6 +109,13 @@ Route222_Text_ConnerPost:
 
 Route222_EventScript_Trey::
 	trainerbattle_single TRAINER_KAYLEE, Route222_Text_TreyIntro, Route222_Text_TreyDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route222_EventScript_Trey_Rematch
+	msgbox Route222_Text_TreyPost, MSGBOX_AUTOCLOSE
+	end
+
+Route222_EventScript_Trey_Rematch:
+	trainerbattle_rematch TRAINER_KAYLEE, Route222_Text_TreyIntro, Route222_Text_TreyDefeat
 	msgbox Route222_Text_TreyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -170,6 +184,13 @@ Route222_Text_HollyPost:
 
 Route222_EventScript_Marc::
 	trainerbattle_single TRAINER_BECKY, Route222_Text_MarcIntro, Route222_Text_MarcDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route222_EventScript_Marc_Rematch
+	msgbox Route222_Text_MarcPost, MSGBOX_AUTOCLOSE
+	end
+
+Route222_EventScript_Marc_Rematch:
+	trainerbattle_rematch TRAINER_BECKY, Route222_Text_MarcIntro, Route222_Text_MarcDefeat
 	msgbox Route222_Text_MarcPost, MSGBOX_AUTOCLOSE
 	end
 

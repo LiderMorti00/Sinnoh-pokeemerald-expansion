@@ -113,6 +113,13 @@ Route208_Text_HannahPost:
 
 Route208_EventScript_William::
 	trainerbattle_single TRAINER_MELISSA, Route208_Text_WilliamIntro, Route208_Text_WilliamDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route208_EventScript_William_Rematch
+	msgbox Route208_Text_WilliamPost, MSGBOX_AUTOCLOSE
+	end
+
+Route208_EventScript_William_Rematch:
+	trainerbattle_rematch TRAINER_MELISSA, Route208_Text_WilliamIntro, Route208_Text_WilliamDefeat
 	msgbox Route208_Text_WilliamPost, MSGBOX_AUTOCLOSE
 	end
 

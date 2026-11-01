@@ -36,6 +36,13 @@ Route211_West_Text_LouisPost:
 
 Route211_West_EventScript_Zach::
 	trainerbattle_single TRAINER_DAISUKE, Route211_West_Text_ZachIntro, Route211_West_Text_ZachDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route211_West_EventScript_Zach_Rematch
+	msgbox Route211_West_Text_ZachPost, MSGBOX_AUTOCLOSE
+	end
+
+Route211_West_EventScript_Zach_Rematch:
+	trainerbattle_rematch TRAINER_DAISUKE, Route211_West_Text_ZachIntro, Route211_West_Text_ZachDefeat
 	msgbox Route211_West_Text_ZachPost, MSGBOX_AUTOCLOSE
 	end
 

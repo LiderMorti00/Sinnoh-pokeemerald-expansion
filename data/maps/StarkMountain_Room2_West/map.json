@@ -188,6 +188,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_RockSmash",
       "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_SN_STARK_R2_BUCK",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_BUCK",
+      "x": 42,
+      "y": 80,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "StarkMountain_Room2_EventScript_SNBuckTalk",
+      "flag": "FLAG_SN_HIDE_STARK_BUCK"
     }
   ],
   "warp_events": [
@@ -206,7 +220,26 @@
       "dest_warp_id": "1"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 42,
+      "y": 74,
+      "elevation": 3,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "StarkMountain_Room2_EventScript_SNBuck"
+    },
+    {
+      "type": "trigger",
+      "x": 42,
+      "y": 85,
+      "elevation": 3,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "StarkMountain_Room2_EventScript_SNBuckStay"
+    }
+  ],
   "bg_events": [
     {
       "type": "hidden_item",

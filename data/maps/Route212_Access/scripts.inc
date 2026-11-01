@@ -10,7 +10,7 @@ Route212_Access_Text_PtNpc1:
 	.string "these Contests.$"
 
 Route212_Access_Text_PtNpc2_0:
-	.string "I’ve given my POKéMON lots of Poffins.\p"
+	.string "I’ve given my POKéMON lots of POKéBLOCKS.\p"
 	.string "I’m confident that we’ll win our share\n"
 	.string "of Contests.$"
 

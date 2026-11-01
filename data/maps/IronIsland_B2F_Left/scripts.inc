@@ -197,109 +197,164 @@ IronIsland_B2F_Left_EventScript_SNVis_IRON_GRUNT2_End:
 
 IronIsland_B2F_Left_EventScript_SNVis_IRON_RILEY_B2F:
 	setflag FLAG_SN_HIDE_IRON_RILEY_B2F
+	checkfollowernpc
+	goto_if_eq VAR_RESULT, TRUE, IronIsland_B2F_Left_EventScript_SNVis_IRON_RILEY_B2F_End
 	goto_if_unset FLAG_SN_RECEIVED_HM_STRENGTH, IronIsland_B2F_Left_EventScript_SNVis_IRON_RILEY_B2F_End
 	goto_if_set FLAG_SN_RECEIVED_RIOLU_EGG, IronIsland_B2F_Left_EventScript_SNVis_IRON_RILEY_B2F_End
 	clearflag FLAG_SN_HIDE_IRON_RILEY_B2F
 IronIsland_B2F_Left_EventScript_SNVis_IRON_RILEY_B2F_End:
 	return
 
-IronIsland_B2F_Left_EventScript_SNGrunt1::
-	trainerbattle_single TRAINER_ELLIOT_3, IronIsland_B2F_Left_EventScript_SNGrunt1_Intro, IronIsland_B2F_Left_EventScript_SNGrunt1_Defeat, IronIsland_B2F_Left_EventScript_SNGrunt1_Won
-	end
-
-IronIsland_B2F_Left_EventScript_SNGrunt1_Won:
-	lock
-	msgbox IronIsland_B2F_Left_EventScript_SNGrunt1_Post, MSGBOX_DEFAULT
+IronIsland_B2F_Left_EventScript_SNIronGrunts::
+	goto_if_set FLAG_SN_HIDE_IRON_GRUNT1, IronIsland_B2F_Left_EventScript_SNIronGrunts_End
+	lockall
+	setvar VAR_TEMP_E, 1
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	applymovement LOCALID_SN_IRON_GRUNT1, Common_Movement_ExclamationMark
+	applymovement LOCALID_SN_IRON_GRUNT2, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_SN_IRON_GRUNT1, Common_Movement_FaceRight
+	applymovement LOCALID_SN_IRON_GRUNT2, Common_Movement_FaceRight
+	waitmovement 0
+	msgbox IronIsland_B2F_Left_Text_SNG1, MSGBOX_DEFAULT
+	msgbox IronIsland_B2F_Left_Text_SNG2, MSGBOX_DEFAULT
+	checkfollowernpc
+	goto_if_eq VAR_RESULT, FALSE, IronIsland_B2F_Left_EventScript_SNIronGrunts_Battle
+	msgbox IronIsland_B2F_Left_EventScript_SNRiley_Ethics, MSGBOX_DEFAULT
+IronIsland_B2F_Left_EventScript_SNIronGrunts_Battle:
+	closemessage
+	trainerbattle_two_trainers_sn TRAINER_ELLIOT_3, IronIsland_B2F_Left_EventScript_SNIronGrunts_DA, TRAINER_ELLIOT_4, IronIsland_B2F_Left_EventScript_SNIronGrunts_DB
+	msgbox IronIsland_B2F_Left_EventScript_SNIronGrunts_Post1, MSGBOX_DEFAULT
+	msgbox IronIsland_B2F_Left_EventScript_SNIronGrunts_After, MSGBOX_DEFAULT
 	closemessage
 	fadescreen FADE_TO_BLACK
-	removeobject VAR_LAST_TALKED
+	removeobject LOCALID_SN_IRON_GRUNT1
+	removeobject LOCALID_SN_IRON_GRUNT2
 	setflag FLAG_SN_HIDE_IRON_GRUNT1
-	fadescreen FADE_FROM_BLACK
-	release
-	end
-IronIsland_B2F_Left_EventScript_SNGrunt1_Intro:
-	.string "Grunt 1: We’re Team Galactic! We’ll take\n"
-	.string "all the POKéMON we want!\p"
-	.string "Isn’t that right, partner?$"
-
-IronIsland_B2F_Left_EventScript_SNGrunt1_Defeat:
-	.string "Grunt: Gwah! You two are too much!$"
-
-IronIsland_B2F_Left_EventScript_SNGrunt1_Post:
-	.string "Grunt 1: Stop! I said stop! Your\n"
-	.string "combination is so sick!\p"
-	.string "The both of you, and your POKéMON...\p"
-	.string "Let’s beat it, partner!$"
-
-IronIsland_B2F_Left_EventScript_SNGrunt2::
-	trainerbattle_single TRAINER_ELLIOT_4, IronIsland_B2F_Left_EventScript_SNGrunt2_Intro, IronIsland_B2F_Left_EventScript_SNGrunt2_Defeat, IronIsland_B2F_Left_EventScript_SNGrunt2_Won
-	end
-
-IronIsland_B2F_Left_EventScript_SNGrunt2_Won:
-	lock
-	msgbox IronIsland_B2F_Left_EventScript_SNGrunt2_Post, MSGBOX_DEFAULT
-	closemessage
-	fadescreen FADE_TO_BLACK
-	removeobject VAR_LAST_TALKED
 	setflag FLAG_SN_HIDE_IRON_GRUNT2
 	fadescreen FADE_FROM_BLACK
-	release
+	checkfollowernpc
+	goto_if_eq VAR_RESULT, FALSE, IronIsland_B2F_Left_EventScript_SNIronGrunts_Done
+	facefollowernpc
+	call IronIsland_B2F_Left_EventScript_SNRiley_GiveEgg
+IronIsland_B2F_Left_EventScript_SNIronGrunts_Done:
+	releaseall
+IronIsland_B2F_Left_EventScript_SNIronGrunts_End:
 	end
-IronIsland_B2F_Left_EventScript_SNGrunt2_Intro:
-	.string "Grunt 2: You said it, brother! So that’s\n"
-	.string "what we’re gonna do!\p"
-	.string "We’re abducting all the POKéMON from\n"
-	.string "this rusted-out Iron Island!$"
 
-IronIsland_B2F_Left_EventScript_SNGrunt2_Defeat:
-	.string "Grunt: Gwah! You two are too much!$"
-
-IronIsland_B2F_Left_EventScript_SNGrunt2_Post:
-	.string "Grunt 2: You said it, brother!\p"
-	.string "We don’t even know what Team\n"
-	.string "Galactic’s big plan is anyway!$"
-
+@ Riley quieto (antes de unirse o esperando para dar el Huevo)
 IronIsland_B2F_Left_EventScript_SNRiley::
 	lock
 	faceplayer
-	goto_if_not_defeated TRAINER_ELLIOT_3, IronIsland_B2F_Left_EventScript_SNRiley_TeamUp
-	goto_if_not_defeated TRAINER_ELLIOT_4, IronIsland_B2F_Left_EventScript_SNRiley_TeamUp
+IronIsland_B2F_Left_EventScript_SNRiley_Main:
+	goto_if_set FLAG_SN_HIDE_IRON_GRUNT1, IronIsland_B2F_Left_EventScript_SNRiley_EggTalk
+	msgbox IronIsland_B2F_Left_EventScript_SNRiley_Team, MSGBOX_DEFAULT
+	msgbox IronIsland_B2F_Left_EventScript_SNRiley_Decided, MSGBOX_DEFAULT
+	closemessage
+	special HealPlayerParty
+	setfollowernpc LOCALID_SN_IRON_RILEY_B2F, FNPC_ALL_LAND, IronIsland_B2F_Left_EventScript_SNRiley_Heal, PARTNER_RILEY
+	msgbox IronIsland_B2F_Left_EventScript_SNRiley_HealInfo, MSGBOX_DEFAULT
+	release
+	end
+IronIsland_B2F_Left_EventScript_SNRiley_EggTalk:
+	call IronIsland_B2F_Left_EventScript_SNRiley_GiveEgg
+	release
+	end
+
+@ Riley como acompañante
+IronIsland_B2F_Left_EventScript_SNRiley_Heal::
+	lock
+	msgbox IronIsland_B2F_Left_EventScript_SNRiley_Restless, MSGBOX_DEFAULT
+	special HealPlayerParty
+	playfanfare MUS_HEAL
+	waitfanfare
+	msgbox IronIsland_B2F_Left_EventScript_SNRiley_HealInfo, MSGBOX_DEFAULT
+	release
+	end
+
+IronIsland_B2F_Left_EventScript_SNRiley_GiveEgg:
 	msgbox IronIsland_B2F_Left_EventScript_SNRiley_Egg, MSGBOX_DEFAULT
 	getpartysize
 	goto_if_eq VAR_RESULT, PARTY_SIZE, IronIsland_B2F_Left_EventScript_SNRiley_NoRoom
 	giveegg SPECIES_RIOLU
 	playfanfare MUS_OBTAIN_ITEM
+	message IronIsland_B2F_Left_EventScript_SNRiley_GotEgg
 	waitfanfare
+	waitmessage
 	setflag FLAG_SN_RECEIVED_RIOLU_EGG
+	msgbox IronIsland_B2F_Left_EventScript_SNRiley_Places, MSGBOX_DEFAULT
 	msgbox IronIsland_B2F_Left_EventScript_SNRiley_Bye, MSGBOX_DEFAULT
 	closemessage
 	fadescreen FADE_TO_BLACK
-	removeobject VAR_LAST_TALKED
+	destroyfollowernpc
+	removeobject LOCALID_SN_IRON_RILEY_B2F
 	setflag FLAG_SN_HIDE_IRON_RILEY_B2F
 	fadescreen FADE_FROM_BLACK
-	release
-	end
-
-IronIsland_B2F_Left_EventScript_SNRiley_TeamUp:
-	msgbox IronIsland_B2F_Left_EventScript_SNRiley_Team, MSGBOX_DEFAULT
-	call Common_EventScript_OutOfCenterPartyHeal
-	release
-	end
-
+	return
 IronIsland_B2F_Left_EventScript_SNRiley_NoRoom:
 	msgbox IronIsland_B2F_Left_EventScript_SNRiley_NoRoomT, MSGBOX_DEFAULT
-	release
-	end
+	closemessage
+	checkfollowernpc
+	goto_if_eq VAR_RESULT, FALSE, IronIsland_B2F_Left_EventScript_SNRiley_NoRoomEnd
+	@ deja de seguirnos y espera aquí
+	getplayerxy VAR_0x8004, VAR_0x8005
+	fadescreen FADE_TO_BLACK
+	destroyfollowernpc
+	addvar VAR_0x8004, 1
+	setobjectxyperm LOCALID_SN_IRON_RILEY_B2F, VAR_0x8004, VAR_0x8005
+	clearflag FLAG_SN_HIDE_IRON_RILEY_B2F
+	addobject LOCALID_SN_IRON_RILEY_B2F
+	fadescreen FADE_FROM_BLACK
+IronIsland_B2F_Left_EventScript_SNRiley_NoRoomEnd:
+	return
+
 IronIsland_B2F_Left_EventScript_SNRiley_Team:
 	.string "Riley: {PLAYER}, I’m glad to see you\n"
 	.string "here.\p"
 	.string "If you don’t mind, let’s team up. The\n"
 	.string "POKéMON seem to be restless.$"
 
+IronIsland_B2F_Left_EventScript_SNRiley_Decided:
+	.string "{PLAYER} decided to go with Riley!$"
+
+IronIsland_B2F_Left_EventScript_SNRiley_HealInfo:
+	.string "Riley: If your POKéMON get hurt, I’ll\n"
+	.string "heal them up.$"
+
+IronIsland_B2F_Left_EventScript_SNRiley_Restless:
+	.string "Riley: What’s going on here, though?\n"
+	.string "The native POKéMON are restless...\p"
+	.string "I don’t like this... Let’s hurry.$"
+
+IronIsland_B2F_Left_EventScript_SNRiley_Ethics:
+	.string "Riley: To share in all the joys and all\n"
+	.string "the sorrows...\p"
+	.string "That is how all the Trainers and\n"
+	.string "POKéMON live in Sinnoh!\p"
+	.string "I won’t allow anyone to defy that code\n"
+	.string "of ethics!\p"
+	.string "Come on, {PLAYER}! This is one battle we\n"
+	.string "can’t lose!$"
+
+IronIsland_B2F_Left_EventScript_SNIronGrunts_Post1:
+	.string "Grunt 1: Stop! I said stop! Your\n"
+	.string "combination is so sick!\p"
+	.string "The both of you, and your POKéMON...\p"
+	.string "Let’s beat it, partner!$"
+
 IronIsland_B2F_Left_EventScript_SNRiley_Egg:
 	.string "Riley: Thanks. You really helped me out.\p"
 	.string "Listen, I have a POKéMON Egg here.\p"
 	.string "Would you take it with you?$"
+
+IronIsland_B2F_Left_EventScript_SNRiley_GotEgg:
+	.string "{PLAYER} received an Egg from Riley!$"
+
+IronIsland_B2F_Left_EventScript_SNRiley_Places:
+	.string "Riley: Thanks!\p"
+	.string "I’d like you to show the POKéMON that’s\n"
+	.string "inside the Egg all sorts\p"
+	.string "of new places.$"
 
 IronIsland_B2F_Left_EventScript_SNRiley_NoRoomT:
 	.string "Riley: Thank you...\p"
@@ -314,28 +369,6 @@ IronIsland_B2F_Left_EventScript_SNRiley_Bye:
 	.string "places from now on.\p"
 	.string "Let’s meet again! Take care on the way\n"
 	.string "out.$"
-
-IronIsland_B2F_Left_EventScript_SNIronGrunts::
-	goto_if_set FLAG_SN_HIDE_IRON_GRUNT1, IronIsland_B2F_Left_EventScript_SNIronGrunts_End
-	lockall
-	applymovement LOCALID_SN_IRON_GRUNT1, Common_Movement_ExclamationMark
-	applymovement LOCALID_SN_IRON_GRUNT2, Common_Movement_ExclamationMark
-	waitmovement 0
-	msgbox IronIsland_B2F_Left_Text_SNG1, MSGBOX_DEFAULT
-	msgbox IronIsland_B2F_Left_Text_SNG2, MSGBOX_DEFAULT
-	closemessage
-	trainerbattle_two_trainers_sn TRAINER_ELLIOT_3, IronIsland_B2F_Left_EventScript_SNIronGrunts_DA, TRAINER_ELLIOT_4, IronIsland_B2F_Left_EventScript_SNIronGrunts_DB
-	msgbox IronIsland_B2F_Left_EventScript_SNIronGrunts_After, MSGBOX_DEFAULT
-	closemessage
-	fadescreen FADE_TO_BLACK
-	removeobject LOCALID_SN_IRON_GRUNT1
-	removeobject LOCALID_SN_IRON_GRUNT2
-	setflag FLAG_SN_HIDE_IRON_GRUNT1
-	setflag FLAG_SN_HIDE_IRON_GRUNT2
-	fadescreen FADE_FROM_BLACK
-	releaseall
-IronIsland_B2F_Left_EventScript_SNIronGrunts_End:
-	end
 IronIsland_B2F_Left_Text_SNG1:
 	.string "Grunt 1: We’re Team Galactic! We’ll take\n"
 	.string "all the POKéMON we want!\p"
@@ -357,3 +390,38 @@ IronIsland_B2F_Left_EventScript_SNIronGrunts_After:
 	.string "Grunt 2: You said it, brother!\p"
 	.string "We don’t even know what Team\n"
 	.string "Galactic’s big plan is anyway!$"
+
+IronIsland_B2F_Left_EventScript_SNRileyMeetLow::
+	call IronIsland_B2F_Left_EventScript_SNRileyMeet_Check
+	lockall
+	applymovement LOCALID_SN_IRON_RILEY_B2F, IronIsland_B2F_Left_EventScript_SNRileyMeet_ML
+	waitmovement 0
+	goto IronIsland_B2F_Left_EventScript_SNRileyMeet_Go
+IronIsland_B2F_Left_EventScript_SNRileyMeetHigh::
+	call IronIsland_B2F_Left_EventScript_SNRileyMeet_Check
+	lockall
+	applymovement LOCALID_SN_IRON_RILEY_B2F, IronIsland_B2F_Left_EventScript_SNRileyMeet_MH
+	waitmovement 0
+IronIsland_B2F_Left_EventScript_SNRileyMeet_Go:
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+	waitmovement 0
+	setvar VAR_TEMP_F, 1
+	goto IronIsland_B2F_Left_EventScript_SNRiley_Main
+IronIsland_B2F_Left_EventScript_SNRileyMeet_Check:
+	goto_if_set FLAG_SN_HIDE_IRON_RILEY_B2F, IronIsland_B2F_Left_EventScript_SNRileyMeet_Stop
+	goto_if_set FLAG_SN_HIDE_IRON_GRUNT1, IronIsland_B2F_Left_EventScript_SNRileyMeet_Stop
+	checkfollowernpc
+	goto_if_eq VAR_RESULT, TRUE, IronIsland_B2F_Left_EventScript_SNRileyMeet_Stop
+	return
+IronIsland_B2F_Left_EventScript_SNRileyMeet_Stop:
+	setvar VAR_TEMP_F, 1
+	end
+IronIsland_B2F_Left_EventScript_SNRileyMeet_ML:
+	emote_exclamation_mark
+	walk_right
+	step_end
+IronIsland_B2F_Left_EventScript_SNRileyMeet_MH:
+	emote_exclamation_mark
+	walk_up
+	walk_right
+	step_end

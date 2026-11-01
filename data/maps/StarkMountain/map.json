@@ -58,6 +58,62 @@
       "trainer_sight_or_berry_tree_id": "ITEM_MAX_ELIXIR",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_STARKMOUNTAIN_MAX_ELIXIR"
+    },
+    {
+      "local_id": "LOCALID_SN_STARK_GRUNT1",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_GALAXY_GRUNT_M",
+      "x": 12,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "StarkMountain_EventScript_SNGrunts",
+      "flag": "FLAG_SN_HIDE_STARK_OUT_GRUNTS"
+    },
+    {
+      "local_id": "LOCALID_SN_STARK_GRUNT2",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_GALAXY_GRUNT_M",
+      "x": 13,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "StarkMountain_EventScript_SNGrunts",
+      "flag": "FLAG_SN_HIDE_STARK_OUT_GRUNTS"
+    },
+    {
+      "local_id": "LOCALID_SN_STARK_LOOKER",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_LOOKER",
+      "x": 11,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "StarkMountain_EventScript_SNFarewell",
+      "flag": "FLAG_SN_HIDE_STARK_FAREWELL"
+    },
+    {
+      "local_id": "LOCALID_SN_STARK_BUCK",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_BUCK",
+      "x": 13,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "StarkMountain_EventScript_SNFarewell",
+      "flag": "FLAG_SN_HIDE_STARK_FAREWELL"
     }
   ],
   "warp_events": [
@@ -69,6 +125,25 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 11,
+      "elevation": 3,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "StarkMountain_EventScript_SNGrunts"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 11,
+      "elevation": 3,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "StarkMountain_EventScript_SNGrunts"
+    }
+  ],
   "bg_events": []
 }

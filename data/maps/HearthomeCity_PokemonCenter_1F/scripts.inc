@@ -29,7 +29,7 @@ HearthomeCity_PokemonCenter_1F_EventScript_PtNpc1::
 	end
 
 HearthomeCity_PokemonCenter_1F_Text_PtNpc2_0:
-	.string "Hello, do you have a Poffin Case?\p"
+	.string "Hello, do you have a POKéBLOCK CASE?\p"
 	.string "If you haven’t got one, you really must\n"
 	.string "visit the POKéMON Fan Club.$"
 

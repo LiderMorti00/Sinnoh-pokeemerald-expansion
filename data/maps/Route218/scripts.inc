@@ -3,6 +3,13 @@ Route218_MapScripts::
 
 Route218_EventScript_Tony::
 	trainerbattle_single TRAINER_LUNG, Route218_Text_TonyIntro, Route218_Text_TonyDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route218_EventScript_Tony_Rematch
+	msgbox Route218_Text_TonyPost, MSGBOX_AUTOCLOSE
+	end
+
+Route218_EventScript_Tony_Rematch:
+	trainerbattle_rematch TRAINER_LUNG, Route218_Text_TonyIntro, Route218_Text_TonyDefeat
 	msgbox Route218_Text_TonyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -35,6 +42,13 @@ Route218_Text_SkylerPost:
 
 Route218_EventScript_Miguel::
 	trainerbattle_single TRAINER_PAULA, Route218_Text_MiguelIntro, Route218_Text_MiguelDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route218_EventScript_Miguel_Rematch
+	msgbox Route218_Text_MiguelPost, MSGBOX_AUTOCLOSE
+	end
+
+Route218_EventScript_Miguel_Rematch:
+	trainerbattle_rematch TRAINER_PAULA, Route218_Text_MiguelIntro, Route218_Text_MiguelDefeat
 	msgbox Route218_Text_MiguelPost, MSGBOX_AUTOCLOSE
 	end
 

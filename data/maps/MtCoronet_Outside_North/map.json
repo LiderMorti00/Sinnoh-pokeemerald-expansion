@@ -141,7 +141,7 @@
       "type": "hidden_item",
       "x": 56,
       "y": 38,
-      "elevation": 3,
+      "elevation": 4,
       "item": "ITEM_STAR_PIECE",
       "flag": "FLAG_HIDDEN_ITEM_MTCORONET_OUTSIDE_NORTH_STAR_PIECE"
     },
@@ -173,7 +173,7 @@
       "type": "hidden_item",
       "x": 16,
       "y": 15,
-      "elevation": 3,
+      "elevation": 4,
       "item": "ITEM_MOON_STONE",
       "flag": "FLAG_HIDDEN_ITEM_MTCORONET_OUTSIDE_NORTH_MOON_STONE"
     }

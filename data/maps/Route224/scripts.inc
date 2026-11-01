@@ -21,6 +21,13 @@ Route224_Text_RubenPost:
 
 Route224_EventScript_Maxwell::
 	trainerbattle_single TRAINER_KAYLEY, Route224_Text_MaxwellIntro, Route224_Text_MaxwellDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route224_EventScript_Maxwell_Rematch
+	msgbox Route224_Text_MaxwellPost, MSGBOX_AUTOCLOSE
+	end
+
+Route224_EventScript_Maxwell_Rematch:
+	trainerbattle_rematch TRAINER_KAYLEY, Route224_Text_MaxwellIntro, Route224_Text_MaxwellDefeat
 	msgbox Route224_Text_MaxwellPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -56,6 +63,13 @@ Route224_Text_CarlPost:
 
 Route224_EventScript_Armando::
 	trainerbattle_single TRAINER_KELVIN, Route224_Text_ArmandoIntro, Route224_Text_ArmandoDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route224_EventScript_Armando_Rematch
+	msgbox Route224_Text_ArmandoPost, MSGBOX_AUTOCLOSE
+	end
+
+Route224_EventScript_Armando_Rematch:
+	trainerbattle_rematch TRAINER_KELVIN, Route224_Text_ArmandoIntro, Route224_Text_ArmandoDefeat
 	msgbox Route224_Text_ArmandoPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -75,6 +89,13 @@ Route224_Text_ArmandoPost:
 
 Route224_EventScript_Brittney::
 	trainerbattle_single TRAINER_MARLEY, Route224_Text_BrittneyIntro, Route224_Text_BrittneyDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route224_EventScript_Brittney_Rematch
+	msgbox Route224_Text_BrittneyPost, MSGBOX_AUTOCLOSE
+	end
+
+Route224_EventScript_Brittney_Rematch:
+	trainerbattle_rematch TRAINER_MARLEY, Route224_Text_BrittneyIntro, Route224_Text_BrittneyDefeat
 	msgbox Route224_Text_BrittneyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -131,6 +152,13 @@ Route224_Text_LarryPost:
 
 Route224_EventScript_Hayden::
 	trainerbattle_single TRAINER_CONOR, Route224_Text_HaydenIntro, Route224_Text_HaydenDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route224_EventScript_Hayden_Rematch
+	msgbox Route224_Text_HaydenPost, MSGBOX_AUTOCLOSE
+	end
+
+Route224_EventScript_Hayden_Rematch:
+	trainerbattle_rematch TRAINER_CONOR, Route224_Text_HaydenIntro, Route224_Text_HaydenDefeat
 	msgbox Route224_Text_HaydenPost, MSGBOX_AUTOCLOSE
 	end
 
