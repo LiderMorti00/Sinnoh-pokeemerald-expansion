@@ -1,2 +1,40 @@
 HallOfOrigin_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, HallOfOrigin_OnTransitionSN
 	.byte 0
+
+HallOfOrigin_OnTransitionSN:
+	call HallOfOrigin_EventScript_SNVis_ARCEUS
+	end
+
+HallOfOrigin_EventScript_SNVis_ARCEUS:
+	setflag FLAG_SN_HIDE_ARCEUS
+	goto_if_unset FLAG_SYS_GAME_CLEAR, HallOfOrigin_EventScript_SNVis_ARCEUS_End
+	goto_if_set FLAG_SN_DONE_ARCEUS, HallOfOrigin_EventScript_SNVis_ARCEUS_End
+	clearflag FLAG_SN_HIDE_ARCEUS
+HallOfOrigin_EventScript_SNVis_ARCEUS_End:
+	return
+
+HallOfOrigin_EventScript_SNARCEUS::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_ARCEUS, CRY_MODE_ENCOUNTER
+	delay 40
+	waitmoncry
+	setwildbattle SPECIES_ARCEUS, 80
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, HallOfOrigin_EventScript_SNARCEUS_Ran
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, HallOfOrigin_EventScript_SNARCEUS_Ran
+	setflag FLAG_SN_DONE_ARCEUS
+	setflag FLAG_SN_HIDE_ARCEUS
+	goto Common_EventScript_RemoveStaticPokemon
+	end
+
+HallOfOrigin_EventScript_SNARCEUS_Ran:
+	setvar VAR_0x8004, SPECIES_ARCEUS
+	goto Common_EventScript_LegendaryFlewAway
+	end

@@ -1,4 +1,5 @@
 Route210_South_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Route210_South_OnTransitionSN
 	.byte 0
 
 Route210_South_EventScript_Fabian::
@@ -179,3 +180,91 @@ Route210_South_EventScript_PtSign2::
 
 Route210_South_Text_PtSign2:
 	.string "Café Cabin Freshly Squeezed Milk$"
+
+Route210_South_EventScript_TeriTia2::
+	trainerbattle_double TRAINER_CALVIN_1, Route210_South_Text_TeriTia2Intro, Route210_South_Text_TeriTia2Defeat, Route210_South_Text_TeriTia2NotEnough
+	msgbox Route210_South_Text_TeriTia2Post, MSGBOX_AUTOCLOSE
+	end
+
+Route210_South_Text_TeriTia2Intro:
+	.string "Let’s battle!$"
+
+Route210_South_Text_TeriTia2Defeat:
+	.string "I lost!$"
+
+Route210_South_Text_TeriTia2Post:
+	.string "That was a good battle.$"
+
+Route210_South_Text_TeriTia2NotEnough:
+	.string "You need two POKéMON to battle us!$"
+
+Route210_South_EventScript_AvaMatt2::
+	trainerbattle_double TRAINER_CALVIN_2, Route210_South_Text_AvaMatt2Intro, Route210_South_Text_AvaMatt2Defeat, Route210_South_Text_AvaMatt2NotEnough
+	msgbox Route210_South_Text_AvaMatt2Post, MSGBOX_AUTOCLOSE
+	end
+
+Route210_South_Text_AvaMatt2Intro:
+	.string "Let’s battle!$"
+
+Route210_South_Text_AvaMatt2Defeat:
+	.string "I lost!$"
+
+Route210_South_Text_AvaMatt2Post:
+	.string "That was a good battle.$"
+
+Route210_South_Text_AvaMatt2NotEnough:
+	.string "You need two POKéMON to battle us!$"
+
+Route210_South_OnTransitionSN:
+	call Route210_South_EventScript_SNVis_PSYDUCK
+	end
+
+Route210_South_EventScript_SNVis_PSYDUCK:
+	setflag FLAG_SN_HIDE_PSYDUCK
+	goto_if_set FLAG_SN_PSYDUCK_GONE, Route210_South_EventScript_SNVis_PSYDUCK_End
+	clearflag FLAG_SN_HIDE_PSYDUCK
+Route210_South_EventScript_SNVis_PSYDUCK_End:
+	return
+
+Route210_South_EventScript_SNPsyduck::
+	lock
+	faceplayer
+	playmoncry SPECIES_PSYDUCK, CRY_MODE_NORMAL
+	waitmoncry
+	checkitem ITEM_SECRET_POTION
+	goto_if_eq VAR_RESULT, FALSE, Route210_South_EventScript_SNPsyduck_Firm
+	msgbox Route210_South_EventScript_SNPsyduck_Ask, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Route210_South_EventScript_SNPsyduck_End
+	msgbox Route210_South_EventScript_SNPsyduck_Used, MSGBOX_DEFAULT
+	closemessage
+	removeitem ITEM_SECRET_POTION
+	setflag FLAG_SN_PSYDUCK_GONE
+	setflag FLAG_SN_HIDE_PSYDUCK
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_SN_PSYDUCK_1
+	removeobject LOCALID_SN_PSYDUCK_2
+	removeobject LOCALID_SN_PSYDUCK_3
+	removeobject LOCALID_SN_PSYDUCK_4
+	fadescreen FADE_FROM_BLACK
+	release
+	end
+
+Route210_South_EventScript_SNPsyduck_Firm:
+	msgbox Route210_South_EventScript_SNPsyduck_FirmT, MSGBOX_DEFAULT
+Route210_South_EventScript_SNPsyduck_End:
+	release
+	end
+Route210_South_EventScript_SNPsyduck_FirmT:
+	.string "The PSYDUCK are standing firm. They\n"
+	.string "aren’t inclined to move at all.$"
+
+Route210_South_EventScript_SNPsyduck_Ask:
+	.string "The PSYDUCK are standing firm. They\n"
+	.string "aren’t inclined to move.\p"
+	.string "Would you like to use the\n"
+	.string "SecretPotion?$"
+
+Route210_South_EventScript_SNPsyduck_Used:
+	.string "{PLAYER} used the SecretPotion!\p"
+	.string "The PSYDUCK appear to be cured of\n"
+	.string "their chronic headache!$"

@@ -152,3 +152,16 @@ Route217_EventScript_PtSign1::
 
 Route217_Text_PtSign1:
 	.string "Rt. 217 LAKE ACUITY$"
+
+Route217_Text_PtNpc1_0:
+	.string "I’m using the Dowsing Machine on my\n"
+	.string "POKéTCH.\p"
+	.string "I’m looking for things buried under the\n"
+	.string "snow.$"
+
+Route217_EventScript_PtNpc1::
+	lock
+	faceplayer
+	msgbox Route217_Text_PtNpc1_0, MSGBOX_DEFAULT
+	release
+	end

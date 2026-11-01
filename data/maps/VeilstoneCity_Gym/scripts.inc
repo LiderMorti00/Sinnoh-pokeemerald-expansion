@@ -168,7 +168,7 @@ VeilstoneCity_Gym_Text_TakaoPostBattle:
 	.string "Your technique is commendable!$"
 
 VeilstoneCity_Gym_Text_JocelynIntro:
-	.string "There's no need for BRAWLY to be\n"
+	.string "There's no need for MAYLENE to be\n"
 	.string "involved!\p"
 	.string "I'll crush you!$"
 
@@ -195,7 +195,7 @@ VeilstoneCity_Gym_Text_LauraPostBattle:
 	.string "I battle in the dark to make my heart\n"
 	.string "stronger.\p"
 	.string "But because it's so dark, I can never\n"
-	.string "see BRAWLY's face…$"
+	.string "see MAYLENE's face…$"
 
 VeilstoneCity_Gym_Text_LilithIntro:
 	.string "Ufufu…\n"
@@ -234,8 +234,8 @@ VeilstoneCity_Gym_Text_CristianPostBattle:
 	.string "Go after that BADGE!$"
 
 VeilstoneCity_Gym_Text_BrawlyIntro:
-	.string "I'm BRAWLY!\n"
-	.string "DEWFORD's GYM LEADER!\p"
+	.string "I'm MAYLENE!\n"
+	.string "VEILSTONE's GYM LEADER!\p"
 	.string "I've been churned in the rough waves\n"
 	.string "of these parts, and I've grown tough\l"
 	.string "in the pitch-black cave!\p"
@@ -250,11 +250,11 @@ VeilstoneCity_Gym_Text_BrawlyDefeat:
 	.string "Take this GYM BADGE!$"
 
 VeilstoneCity_Gym_Text_ReceivedKnuckleBadge:
-	.string "{PLAYER} received the KNUCKLE BADGE\n"
-	.string "from BRAWLY.$"
+	.string "{PLAYER} received the COBBLE BADGE\n"
+	.string "from MAYLENE.$"
 
 VeilstoneCity_Gym_Text_KnuckleBadgeInfoTakeThis:
-	.string "The KNUCKLE BADGE makes all POKéMON\n"
+	.string "The COBBLE BADGE makes all POKéMON\n"
 	.string "up to Level 30, even those you get in\l"
 	.string "trades, obey without question.\p"
 	.string "And, you'll be able to use the HM move\n"
@@ -269,8 +269,8 @@ VeilstoneCity_Gym_Text_ExplainBulkUp:
 	.string "… … … … … …$"
 
 VeilstoneCity_Gym_Text_RegisteredBrawly:
-	.string "Registered GYM LEADER BRAWLY\n"
-	.string "in the POKéNAV.$"
+	.string "Registered GYM LEADER MAYLENE\n"
+	.string "in the POKéTCH.$"
 
 VeilstoneCity_Gym_Text_BrawlyPostBattle:
 	.string "I can see your talent becoming a giant\n"
@@ -278,15 +278,15 @@ VeilstoneCity_Gym_Text_BrawlyPostBattle:
 	.string "among TRAINERS one day!$"
 
 VeilstoneCity_Gym_Text_GymStatue:
-	.string "DEWFORD TOWN POKéMON GYM$"
+	.string "VEILSTONE CITY POKéMON GYM$"
 
 VeilstoneCity_Gym_Text_GymStatueCertified:
-	.string "DEWFORD TOWN POKéMON GYM\p"
-	.string "BRAWLY'S CERTIFIED TRAINERS:\n"
+	.string "VEILSTONE CITY POKéMON GYM\p"
+	.string "MAYLENE'S CERTIFIED TRAINERS:\n"
 	.string "{PLAYER}$"
 
 VeilstoneCity_Gym_Text_BrawlyPreRematch:
-	.string "BRAWLY: A wave may draw back, but it\n"
+	.string "MAYLENE: A wave may draw back, but it\n"
 	.string "always returns to the shore.\p"
 	.string "A giant wave of a talent like you…\n"
 	.string "I knew you would return!\p"
@@ -298,12 +298,12 @@ VeilstoneCity_Gym_Text_BrawlyRematchDefeat:
 	.string "Swamped again!$"
 
 VeilstoneCity_Gym_Text_BrawlyPostRematch:
-	.string "BRAWLY: Battling is vast and it's deep.\n"
+	.string "MAYLENE: Battling is vast and it's deep.\n"
 	.string "You can't see the bottom.\l"
-	.string "It's just like the sea of HOENN!$"
+	.string "It's just like the sea of SINNOH!$"
 
 VeilstoneCity_Gym_Text_BrawlyRematchNeedTwoMons:
-	.string "BRAWLY: A wave may draw back, but it\n"
+	.string "MAYLENE: A wave may draw back, but it\n"
 	.string "always returns to the shore.\p"
 	.string "A giant wave of a talent like you…\n"
 	.string "I knew you would return!\p"

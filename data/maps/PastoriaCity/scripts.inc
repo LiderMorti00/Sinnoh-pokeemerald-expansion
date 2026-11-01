@@ -1,4 +1,5 @@
 PastoriaCity_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, PastoriaCity_OnTransitionSN
 	.byte 0
 
 PastoriaCity_EventScript_PtNpc1::
@@ -100,3 +101,65 @@ PastoriaCity_EventScript_PtSign4::
 PastoriaCity_Text_PtSign4:
 	.string "Try the Safari Game in PASTORIA's\n"
 	.string "Great Marsh!$"
+
+PastoriaCity_OnTransitionSN:
+	call PastoriaCity_EventScript_SNVis_PAST_BARRY
+	end
+
+PastoriaCity_EventScript_SNVis_PAST_BARRY:
+	setflag FLAG_SN_HIDE_PAST_BARRY
+	goto_if_unset FLAG_BADGE04_GET, PastoriaCity_EventScript_SNVis_PAST_BARRY_End
+	goto_if_defeated TRAINER_CALVIN_3, PastoriaCity_EventScript_SNVis_PAST_BARRY_End
+	goto_if_defeated TRAINER_CALVIN_4, PastoriaCity_EventScript_SNVis_PAST_BARRY_End
+	goto_if_defeated TRAINER_CALVIN_5, PastoriaCity_EventScript_SNVis_PAST_BARRY_End
+	clearflag FLAG_SN_HIDE_PAST_BARRY
+PastoriaCity_EventScript_SNVis_PAST_BARRY_End:
+	return
+
+PastoriaCity_EventScript_SNBarry::
+	lock
+	faceplayer
+	msgbox PastoriaCity_EventScript_SNBarry_Intro, MSGBOX_DEFAULT
+	closemessage
+	switch VAR_STARTER_MON
+	case 0, PastoriaCity_EventScript_SNBarry_B0
+	case 1, PastoriaCity_EventScript_SNBarry_B1
+	case 2, PastoriaCity_EventScript_SNBarry_B2
+PastoriaCity_EventScript_SNBarry_B0:
+	trainerbattle_no_intro TRAINER_CALVIN_3, PastoriaCity_EventScript_SNBarry_Defeat
+	goto PastoriaCity_EventScript_SNBarry_After
+PastoriaCity_EventScript_SNBarry_B1:
+	trainerbattle_no_intro TRAINER_CALVIN_4, PastoriaCity_EventScript_SNBarry_Defeat
+	goto PastoriaCity_EventScript_SNBarry_After
+PastoriaCity_EventScript_SNBarry_B2:
+	trainerbattle_no_intro TRAINER_CALVIN_5, PastoriaCity_EventScript_SNBarry_Defeat
+	goto PastoriaCity_EventScript_SNBarry_After
+PastoriaCity_EventScript_SNBarry_After:
+	msgbox PastoriaCity_EventScript_SNBarry_Post, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	setflag FLAG_SN_HIDE_PAST_BARRY
+	fadescreen FADE_FROM_BLACK
+	release
+	end
+PastoriaCity_EventScript_SNBarry_Intro:
+	.string "BARRY: Whoops!\p"
+	.string "Hehehe! I’m not always going to plow\n"
+	.string "into you every time we meet!\p"
+	.string "So how’s it going, {PLAYER}? Buffing up\n"
+	.string "your POKéMON, eh?\p"
+	.string "I’ll test you and your POKéMON out to\n"
+	.string "see how buff and tough you are!$"
+
+PastoriaCity_EventScript_SNBarry_Defeat:
+	.string "BARRY: Wh-what?! I lost?!$"
+
+PastoriaCity_EventScript_SNBarry_Post:
+	.string "BARRY: Heh, yeah, maybe you did get a\n"
+	.string "bit tougher since last time.\p"
+	.string "That even shocked me a bit, so yeah, I\n"
+	.string "got beat ’cause I was careless.\p"
+	.string "Oh, yeah, I joined Mr. Wake as an\n"
+	.string "apprentice!\p"
+	.string "Like, I want my own theme song!$"

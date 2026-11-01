@@ -1,4 +1,5 @@
 GalacticHQ_ControlRoom_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, GalacticHQ_ControlRoom_OnTransitionSN
 	.byte 0
 
 GalacticHQ_ControlRoom_Text_PtNpc1:
@@ -62,3 +63,57 @@ GalacticHQ_ControlRoom_EventScript_PtSign4::
 GalacticHQ_ControlRoom_Text_PtSign4:
 	.string "The button has been pressed already.\n"
 	.string "You have to leave.$"
+
+GalacticHQ_ControlRoom_OnTransitionSN:
+	call GalacticHQ_ControlRoom_EventScript_SNVis_HQ_SATURN
+	end
+
+GalacticHQ_ControlRoom_EventScript_SNVis_HQ_SATURN:
+	setflag FLAG_SN_HIDE_HQ_SATURN
+	goto_if_lt VAR_SINNOH_STORY, 31, GalacticHQ_ControlRoom_EventScript_SNVis_HQ_SATURN_End
+	goto_if_defeated TRAINER_ABIGAIL_4, GalacticHQ_ControlRoom_EventScript_SNVis_HQ_SATURN_End
+	clearflag FLAG_SN_HIDE_HQ_SATURN
+GalacticHQ_ControlRoom_EventScript_SNVis_HQ_SATURN_End:
+	return
+
+GalacticHQ_ControlRoom_EventScript_SNSaturn::
+	trainerbattle_single TRAINER_ABIGAIL_4, GalacticHQ_ControlRoom_EventScript_SNSaturn_Intro, GalacticHQ_ControlRoom_EventScript_SNSaturn_Defeat, GalacticHQ_ControlRoom_EventScript_SNSaturn_Won
+	end
+
+GalacticHQ_ControlRoom_EventScript_SNSaturn_Won:
+	lock
+	msgbox GalacticHQ_ControlRoom_EventScript_SNSaturn_Post, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	setflag FLAG_SN_HIDE_HQ_SATURN
+	fadescreen FADE_FROM_BLACK
+	release
+	end
+GalacticHQ_ControlRoom_EventScript_SNSaturn_Intro:
+	.string "You... You came all the way here just to\n"
+	.string "save some POKéMON?\p"
+	.string "...Though it’s nothing new, I can’t say I\n"
+	.string "understand our boss...\p"
+	.string "Why would he let a kid like you come and\n"
+	.string "go freely...?\p"
+	.string "We, Team Galactic, take all that we\n"
+	.string "need, and eliminate what we do not.\p"
+	.string "But anyway. You’ve taken the trouble\n"
+	.string "to come. Let me welcome you!\p"
+	.string "Consider it payback for your insulting\n"
+	.string "me at the lake.$"
+
+GalacticHQ_ControlRoom_EventScript_SNSaturn_Defeat:
+	.string "Saturn: ...I see. So that is your power.$"
+
+GalacticHQ_ControlRoom_EventScript_SNSaturn_Post:
+	.string "Our boss crafted a Red Chain from\n"
+	.string "crystals he took from the three\p"
+	.string "POKéMON.\p"
+	.string "That Red Chain is what he needed to\n"
+	.string "shackle something on Mt. Coronet.\p"
+	.string "It’s also apparently needed for\n"
+	.string "creating something.\p"
+	.string "But that’s all I know. Who knows what\n"
+	.string "he’s planning to do up there.$"

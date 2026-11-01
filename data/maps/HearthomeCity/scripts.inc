@@ -237,3 +237,34 @@ HearthomeCity_EventScript_PtSign9::
 HearthomeCity_Text_PtSign9:
 	.string "The Poffin House Delicious\n"
 	.string "Poffins--Smiles for All$"
+
+HearthomeCity_Text_PtNpc15_0:
+	.string "Apapapu!$"
+
+HearthomeCity_EventScript_PtNpc15::
+	lock
+	faceplayer
+	msgbox HearthomeCity_Text_PtNpc15_0, MSGBOX_DEFAULT
+	release
+	end
+
+HearthomeCity_Text_PtNpc16_0:
+	.string "PACHIRISU: Kyukyuuh!$"
+
+HearthomeCity_EventScript_PtNpc16::
+	lock
+	faceplayer
+	playmoncry SPECIES_PACHIRISU, CRY_MODE_NORMAL
+	msgbox HearthomeCity_Text_PtNpc16_0, MSGBOX_DEFAULT
+	release
+	end
+
+HearthomeCity_Text_PtNpc17_0:
+	.string "Papa! Mama!$"
+
+HearthomeCity_EventScript_PtNpc17::
+	lock
+	faceplayer
+	msgbox HearthomeCity_Text_PtNpc17_0, MSGBOX_DEFAULT
+	release
+	end

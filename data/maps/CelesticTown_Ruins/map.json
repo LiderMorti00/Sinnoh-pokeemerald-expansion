@@ -24,7 +24,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "CelesticTown_Ruins_EventScript_PtNpc1",
+      "script": "CelesticTown_Ruins_EventScript_SNElder",
       "flag": "0"
     },
     {
@@ -37,8 +37,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "CelesticTown_Ruins_EventScript_PtNpc2",
-      "flag": "0"
+      "script": "CelesticTown_Ruins_EventScript_SNCyrus",
+      "flag": "FLAG_SN_HIDE_CEL_CYRUS"
     }
   ],
   "warp_events": [

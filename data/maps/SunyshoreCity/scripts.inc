@@ -1,4 +1,5 @@
 SunyshoreCity_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, SunyshoreCity_OnTransitionSN
 	.byte 0
 
 SunyshoreCity_EventScript_PtNpc1::
@@ -71,3 +72,47 @@ SunyshoreCity_EventScript_PtSign3::
 
 SunyshoreCity_Text_PtSign3:
 	.string "It's a blank sign painted white.$"
+
+SunyshoreCity_OnTransitionSN:
+	call SunyshoreCity_EventScript_SNVis_JASMINE
+	end
+
+SunyshoreCity_EventScript_SNVis_JASMINE:
+	setflag FLAG_SN_HIDE_JASMINE
+	goto_if_unset FLAG_BADGE08_GET, SunyshoreCity_EventScript_SNVis_JASMINE_End
+	goto_if_set FLAG_SN_RECEIVED_HM_WATERFALL, SunyshoreCity_EventScript_SNVis_JASMINE_End
+	clearflag FLAG_SN_HIDE_JASMINE
+SunyshoreCity_EventScript_SNVis_JASMINE_End:
+	return
+
+SunyshoreCity_EventScript_SNJasmine::
+	lock
+	faceplayer
+	msgbox SunyshoreCity_EventScript_SNJasmine_T1, MSGBOX_DEFAULT
+	giveitem ITEM_HM_WATERFALL
+	setflag FLAG_SN_RECEIVED_HM_WATERFALL
+	msgbox SunyshoreCity_EventScript_SNJasmine_T2, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	setflag FLAG_SN_HIDE_JASMINE
+	fadescreen FADE_FROM_BLACK
+	release
+	end
+SunyshoreCity_EventScript_SNJasmine_T1:
+	.string "...Er...um... M-my name is Jasmine, and I’m\n"
+	.string "a Gym Leader.\p"
+	.string "Oh, I’m sorry, not the Gym Leader of\n"
+	.string "this town...\p"
+	.string "I’m a Gym Leader in the Johto region...\p"
+	.string "...Er...um... It would be nice if you knew\n"
+	.string "about\p"
+	.string "the Johto region...$"
+
+SunyshoreCity_EventScript_SNJasmine_T2:
+	.string "...That Hidden Machine... It contains\n"
+	.string "Waterfall.\p"
+	.string "If you use it, you can get to the\n"
+	.string "POKéMON League.\p"
+	.string "...Um... I... I don’t know how I should say\n"
+	.string "this, but good luck.$"

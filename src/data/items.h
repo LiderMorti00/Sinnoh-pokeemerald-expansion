@@ -7403,6 +7403,70 @@ const struct ItemInfo gItemsInfo[] =
         .iconPalette = gItemIconPalette_SecretKey,
     },
 
+    [ITEM_SECRET_POTION] =
+    {
+        .name = ITEM_NAME("SecretPotion"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A fantastic medicine\n"
+            "dispensed by the\n"
+            "Pokémon CENTER."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_Potion,
+        .iconPalette = gItemIconPalette_Potion,
+    },
+
+    [ITEM_GALACTIC_KEY] =
+    {
+        .name = ITEM_NAME("Galactic Key"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A card key that\n"
+            "opens doors in the\n"
+            "Galactic HQ."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_CardKey,
+        .iconPalette = gItemIconPalette_CardKey,
+    },
+
+    [ITEM_LUNAR_WING] =
+    {
+        .name = ITEM_NAME("Lunar Wing"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A feather that\n"
+            "glows like the moon.\n"
+            "It wards off dreams."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_PrettyFeather,
+        .iconPalette = gItemIconPalette_PrettyFeather,
+    },
+
+    [ITEM_SUITE_KEY] =
+    {
+        .name = ITEM_NAME("Suite Key"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A key to a suite\n"
+            "at the Hotel Grand\n"
+            "Lake."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_KeyToRoom1,
+        .iconPalette = gItemIconPalette_Key,
+    },
+
 // Gems
 #if I_PRICE >= GEN_9
     #define GEM_PRICE 15000
@@ -14447,7 +14511,7 @@ const struct ItemInfo gItemsInfo[] =
 
     [ITEM_WAILMER_PAIL] =
     {
-        .name = ITEM_NAME("Wailmer Pail"),
+        .name = ITEM_NAME("Sprayduck"),
         .price = 0,
         .description = COMPOUND_STRING(
             "A tool used for\n"

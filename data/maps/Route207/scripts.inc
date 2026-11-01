@@ -1,4 +1,5 @@
 Route207_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Route207_OnTransitionSN
 	.byte 0
 
 Route207_EventScript_Anthony::
@@ -138,3 +139,80 @@ Route207_Text_PtSign3:
 	.string "could be disastrous.\p"
 	.string "If your opponent's POKéMON can't\n"
 	.string "move, it's a big opportunity!$"
+
+Route207_OnTransitionSN:
+	call Route207_EventScript_SNGfx
+	call Route207_EventScript_SNVis_R207_COUNTERPART
+	end
+
+Route207_EventScript_SNGfx:
+	checkplayergender
+	goto_if_eq VAR_RESULT, MALE, Route207_EventScript_SNGfxDawn
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_SINNOH_LUCAS
+	return
+Route207_EventScript_SNGfxDawn:
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_SINNOH_DAWN
+	return
+
+Route207_EventScript_SNVis_R207_COUNTERPART:
+	setflag FLAG_SN_HIDE_R207_COUNTERPART
+	goto_if_unset FLAG_BADGE02_GET, Route207_EventScript_SNVis_R207_COUNTERPART_End
+	goto_if_set FLAG_SN_RECEIVED_VS_SEEKER, Route207_EventScript_SNVis_R207_COUNTERPART_End
+	clearflag FLAG_SN_HIDE_R207_COUNTERPART
+Route207_EventScript_SNVis_R207_COUNTERPART_End:
+	return
+
+Route207_EventScript_SNCounterpart::
+	lock
+	faceplayer
+	checkplayergender
+	goto_if_eq VAR_RESULT, FEMALE, Route207_EventScript_SNCounterpart_Lucas
+	msgbox Route207_EventScript_SNCounterpart_D1, MSGBOX_DEFAULT
+	giveitem ITEM_VS_SEEKER
+	msgbox Route207_EventScript_SNCounterpart_D2, MSGBOX_DEFAULT
+	goto Route207_EventScript_SNCounterpart_End
+Route207_EventScript_SNCounterpart_Lucas:
+	msgbox Route207_EventScript_SNCounterpart_L1, MSGBOX_DEFAULT
+	giveitem ITEM_VS_SEEKER
+	msgbox Route207_EventScript_SNCounterpart_L2, MSGBOX_DEFAULT
+Route207_EventScript_SNCounterpart_End:
+	setflag FLAG_SN_RECEIVED_VS_SEEKER
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	setflag FLAG_SN_HIDE_R207_COUNTERPART
+	fadescreen FADE_FROM_BLACK
+	release
+	end
+Route207_EventScript_SNCounterpart_D1:
+	.string "Dawn: I see... You want the Vs. Seeker.\p"
+	.string "I’m impressed, {PLAYER}. You know what’s\n"
+	.string "important.$"
+
+Route207_EventScript_SNCounterpart_D2:
+	.string "Dawn: Using that Vs. Seeker, you can\n"
+	.string "find Trainers who want a rematch\p"
+	.string "with you.\p"
+	.string "Oh, {PLAYER}, do you also have a\n"
+	.string "POKéTCH?\p"
+	.string "Yup, you do. You can have this too,\n"
+	.string "then.\p"
+	.string "You deserve it for all your hard work,\n"
+	.string "{PLAYER}.$"
+
+Route207_EventScript_SNCounterpart_L1:
+	.string "Lucas: Oh yeah. You want the Vs.\n"
+	.string "Seeker.\p"
+	.string "Yup, {PLAYER}, you know what’s\n"
+	.string "important.$"
+
+Route207_EventScript_SNCounterpart_L2:
+	.string "Lucas: Using that Vs. Seeker, you can\n"
+	.string "find Trainers who want to battle with\p"
+	.string "you again.\p"
+	.string "{PLAYER}, what about a POKéTCH? Do you\n"
+	.string "have one?\p"
+	.string "Yup, you do. You can have this too,\n"
+	.string "then.\p"
+	.string "You deserve it for all of your effort,\n"
+	.string "{PLAYER}.$"

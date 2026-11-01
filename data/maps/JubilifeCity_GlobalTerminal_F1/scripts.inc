@@ -232,3 +232,24 @@ JubilifeCity_GlobalTerminal_F1_Text_PtSign9:
 	.string "for Box Data and Dress-Up Data on 2F.\p"
 	.string "The pink panel leads to the Battle\n"
 	.string "Video Gallery on 3F.$"
+
+JubilifeCity_GlobalTerminal_F1_Text_PtNpc13:
+	.string "Yo, yo, yo!\p"
+	.string "Wanna let the world know about you?\n"
+	.string "Then you gotta tell me, yo!$"
+
+JubilifeCity_GlobalTerminal_F1_EventScript_PtNpc13::
+	msgbox JubilifeCity_GlobalTerminal_F1_Text_PtNpc13, MSGBOX_NPC
+	end
+
+JubilifeCity_GlobalTerminal_F1_Text_PtNpc14:
+	.string "Hi, have you visited the Dress-Up Data\n"
+	.string "Studio?\p"
+	.string "Have you put yours on exhibit? Or do\n"
+	.string "you only look at other entries?\p"
+	.string "If you had a Fashion Case, I could give\n"
+	.string "you something nice.$"
+
+JubilifeCity_GlobalTerminal_F1_EventScript_PtNpc14::
+	msgbox JubilifeCity_GlobalTerminal_F1_Text_PtNpc14, MSGBOX_NPC
+	end

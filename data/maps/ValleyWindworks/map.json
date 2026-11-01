@@ -91,6 +91,19 @@
       "trainer_sight_or_berry_tree_id": "ITEM_ELECTIRIZER",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_ROUTE_115_TM_FOCUS_PUNCH"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_MON_DRIFLOON",
+      "x": 24,
+      "y": 83,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ValleyWindworks_EventScript_SNDRIFLOON",
+      "flag": "FLAG_SN_HIDE_DRIFLOON"
     }
   ],
   "warp_events": [

@@ -1,2 +1,40 @@
 SnowpointTemple_B5F_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, SnowpointTemple_B5F_OnTransitionSN
 	.byte 0
+
+SnowpointTemple_B5F_OnTransitionSN:
+	call SnowpointTemple_B5F_EventScript_SNVis_REGIGIGAS
+	end
+
+SnowpointTemple_B5F_EventScript_SNVis_REGIGIGAS:
+	setflag FLAG_SN_HIDE_REGIGIGAS
+	goto_if_unset FLAG_SYS_GAME_CLEAR, SnowpointTemple_B5F_EventScript_SNVis_REGIGIGAS_End
+	goto_if_set FLAG_SN_DONE_REGIGIGAS, SnowpointTemple_B5F_EventScript_SNVis_REGIGIGAS_End
+	clearflag FLAG_SN_HIDE_REGIGIGAS
+SnowpointTemple_B5F_EventScript_SNVis_REGIGIGAS_End:
+	return
+
+SnowpointTemple_B5F_EventScript_SNREGIGIGAS::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_REGIGIGAS, CRY_MODE_ENCOUNTER
+	delay 40
+	waitmoncry
+	setwildbattle SPECIES_REGIGIGAS, 1
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, SnowpointTemple_B5F_EventScript_SNREGIGIGAS_Ran
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, SnowpointTemple_B5F_EventScript_SNREGIGIGAS_Ran
+	setflag FLAG_SN_DONE_REGIGIGAS
+	setflag FLAG_SN_HIDE_REGIGIGAS
+	goto Common_EventScript_RemoveStaticPokemon
+	end
+
+SnowpointTemple_B5F_EventScript_SNREGIGIGAS_Ran:
+	setvar VAR_0x8004, SPECIES_REGIGIGAS
+	goto Common_EventScript_LegendaryFlewAway
+	end

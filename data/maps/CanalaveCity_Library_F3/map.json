@@ -39,6 +39,48 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "CanalaveCity_Library_F3_EventScript_PtNpc2",
       "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_SN_LIB_ROWAN",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_ROWAN",
+      "x": 6,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CanalaveCity_Library_F3_EventScript_SNRowan",
+      "flag": "FLAG_SN_HIDE_LIB_ROWAN"
+    },
+    {
+      "local_id": "LOCALID_SN_LIB_COUNTERPART",
+      "graphics_id": "OBJ_EVENT_GFX_VAR_0",
+      "x": 5,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CanalaveCity_Library_F3_EventScript_SNRowan",
+      "flag": "FLAG_SN_HIDE_LIB_ROWAN"
+    },
+    {
+      "local_id": "LOCALID_SN_LIB_BARRY",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_BARRY",
+      "x": 7,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CanalaveCity_Library_F3_EventScript_SNRowan",
+      "flag": "FLAG_SN_HIDE_LIB_ROWAN"
     }
   ],
   "warp_events": [

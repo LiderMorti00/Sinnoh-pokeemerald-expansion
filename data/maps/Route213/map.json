@@ -551,6 +551,14 @@
       "elevation": 3,
       "item": "ITEM_HEART_SCALE",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_120_ZINC"
+    },
+    {
+      "type": "hidden_item",
+      "x": 54,
+      "y": 1,
+      "elevation": 3,
+      "item": "ITEM_MAX_REVIVE",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE213_MAX_REVIVE"
     }
   ]
 }

@@ -6230,85 +6230,94 @@ Level: 23
 
 
 === TRAINER_SHELBY_2 ===
-Name: SHELBY
-Class: Expert
-Pic: Expert F
+Name: LIV AND LI
+Class: TRAINER_CLASS_TWINS
+Pic: TRAINER_PIC_TWINS_FRLG
 Gender: Female
-Music: Intense
-Double Battle: No
+Music: Twins
+Double Battle: Yes
 AI: Basic Trainer
 
-Meditite
-Level: 30
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+SPECIES_PACHIRISU
+Level: 11
 
-Makuhita
-Level: 30
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+SPECIES_PACHIRISU
+Level: 11
+
 
 === TRAINER_SHELBY_3 ===
-Name: SHELBY
-Class: Expert
-Pic: Expert F
+Name: EMMA AND L
+Class: TRAINER_CLASS_TWINS
+Pic: TRAINER_PIC_TWINS_FRLG
 Gender: Female
-Music: Intense
-Double Battle: No
+Music: Twins
+Double Battle: Yes
 AI: Basic Trainer
 
-Medicham
-Level: 33
-IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+SPECIES_BONSLY
+Level: 22
 
-Hariyama
-Level: 33
-IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+SPECIES_MIME_JR
+Level: 22
+
 
 === TRAINER_SHELBY_4 ===
-Name: SHELBY
-Class: Expert
-Pic: Expert F
+Name: TY AND SUE
+Class: TRAINER_CLASS_YOUNG_COUPLE
+Pic: TRAINER_PIC_YOUNG_COUPLE_FRLG
 Gender: Female
-Music: Intense
-Double Battle: No
+Music: Girl
+Double Battle: Yes
 AI: Basic Trainer
 
-Medicham
-Level: 36
-IVs: 27 HP / 27 Atk / 27 Def / 27 SpA / 27 SpD / 27 Spe
+SPECIES_BUNEARY
+Level: 23
+- MOVE_FORESIGHT
+- MOVE_JUMP_KICK
+- MOVE_QUICK_ATTACK
+- MOVE_DEFENSE_CURL
 
-Hariyama
-Level: 36
-IVs: 27 HP / 27 Atk / 27 Def / 27 SpA / 27 SpD / 27 Spe
+SPECIES_BUIZEL
+Level: 23
+- MOVE_AQUA_JET
+- MOVE_SWIFT
+- MOVE_PURSUIT
+- MOVE_SONIC_BOOM
+
 
 === TRAINER_SHELBY_5 ===
-Name: SHELBY
-Class: Expert
-Pic: Expert F
-Gender: Female
-Music: Intense
-Double Battle: No
+Name: ZAC AND JE
+Class: TRAINER_CLASS_DOUBLE_TEAM
+Pic: TRAINER_PIC_COOL_COUPLE_FRLG
+Gender: Male
+Music: Cool
+Double Battle: Yes
 AI: Basic Trainer
 
-Medicham
-Level: 39
-IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+SPECIES_GYARADOS
+Level: 36
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Hariyama
-Level: 39
-IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+SPECIES_RAICHU
+Level: 36
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
 
 === TRAINER_CALVIN_1 ===
-Name: CALVIN
-Class: Youngster
-Pic: Youngster
-Gender: Male
-Music: Male
-Double Battle: No
-AI: Check Bad Move
+Name: TERI AND T
+Class: TRAINER_CLASS_TWINS
+Pic: TRAINER_PIC_TWINS_FRLG
+Gender: Female
+Music: Twins
+Double Battle: Yes
+AI: Basic Trainer
 
-Poochyena
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_PIKACHU
+Level: 23
+
+SPECIES_CLEFAIRY
+Level: 23
+
 
 === TRAINER_BILLY ===
 Name: TRISTAN
@@ -6459,76 +6468,146 @@ Abra
 Level: 4
 
 === TRAINER_CALVIN_2 ===
-Name: CALVIN
-Class: Youngster
-Pic: Youngster
-Gender: Male
-Music: Male
-Double Battle: No
-AI: Check Bad Move
+Name: AVA AND MA
+Class: TRAINER_CLASS_BELLE_AND_PA
+Pic: TRAINER_PIC_SR_AND_JR
+Gender: Female
+Music: Twins
+Double Battle: Yes
+AI: Basic Trainer
 
-Mightyena
-Level: 27
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+SPECIES_PONYTA
+Level: 24
+
+SPECIES_RAPIDASH
+Level: 24
+
 
 === TRAINER_CALVIN_3 ===
-Name: CALVIN
-Class: Youngster
-Pic: Youngster
+Name: BARRY
+Class: TRAINER_CLASS_PKMN_TRAINER_1
+Pic: TRAINER_PIC_SINNOH_ACE_TRAINER_M
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Swellow
-Level: 28
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+SPECIES_STARAVIA
+Level: 34
+IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+- MOVE_WING_ATTACK
+- MOVE_QUICK_ATTACK
+- MOVE_ENDEAVOR
+- MOVE_DOUBLE_TEAM
 
-Mightyena
-Level: 30
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+SPECIES_ROSELIA
+Level: 32
+IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+- MOVE_MEGA_DRAIN
+- MOVE_POISON_STING
+- MOVE_LEECH_SEED
+- MOVE_MAGICAL_LEAF
+
+SPECIES_PONYTA
+Level: 32
+IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+- MOVE_EMBER
+- MOVE_STOMP
+- MOVE_TAIL_WHIP
+- MOVE_GROWL
+
+SPECIES_PRINPLUP
+Level: 36
+IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+- MOVE_BUBBLE_BEAM
+- MOVE_PECK
+- MOVE_METAL_CLAW
+- MOVE_GROWL
+
 
 === TRAINER_CALVIN_4 ===
-Name: CALVIN
-Class: Youngster
-Pic: Youngster
+Name: BARRY
+Class: TRAINER_CLASS_PKMN_TRAINER_1
+Pic: TRAINER_PIC_SINNOH_ACE_TRAINER_M
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Swellow
-Level: 31
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+SPECIES_STARAVIA
+Level: 34
+IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+- MOVE_WING_ATTACK
+- MOVE_QUICK_ATTACK
+- MOVE_ENDEAVOR
+- MOVE_DOUBLE_TEAM
 
-Linoone
-Level: 29
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+SPECIES_BUIZEL
+Level: 32
+IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+- MOVE_AQUA_JET
+- MOVE_QUICK_ATTACK
+- MOVE_PURSUIT
+- MOVE_GROWL
 
-Mightyena
-Level: 33
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+SPECIES_PONYTA
+Level: 32
+IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+- MOVE_EMBER
+- MOVE_STOMP
+- MOVE_TAIL_WHIP
+- MOVE_GROWL
+
+SPECIES_GROTLE
+Level: 36
+IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+- MOVE_RAZOR_LEAF
+- MOVE_BITE
+- MOVE_MEGA_DRAIN
+- MOVE_WITHDRAW
+
 
 === TRAINER_CALVIN_5 ===
-Name: CALVIN
-Class: Youngster
-Pic: Youngster
+Name: BARRY
+Class: TRAINER_CLASS_PKMN_TRAINER_1
+Pic: TRAINER_PIC_SINNOH_ACE_TRAINER_M
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Swellow
+SPECIES_STARAVIA
 Level: 34
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+- MOVE_WING_ATTACK
+- MOVE_QUICK_ATTACK
+- MOVE_ENDEAVOR
+- MOVE_DOUBLE_TEAM
 
-Linoone
+SPECIES_BUIZEL
 Level: 32
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+- MOVE_AQUA_JET
+- MOVE_QUICK_ATTACK
+- MOVE_PURSUIT
+- MOVE_GROWL
 
-Mightyena
+SPECIES_ROSELIA
+Level: 32
+IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+- MOVE_MEGA_DRAIN
+- MOVE_POISON_STING
+- MOVE_LEECH_SEED
+- MOVE_MAGICAL_LEAF
+
+SPECIES_MONFERNO
 Level: 36
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+- MOVE_FLAME_WHEEL
+- MOVE_MACH_PUNCH
+- MOVE_FURY_SWIPES
+- MOVE_LEER
+
 
 === TRAINER_EDDIE ===
 Name: SEBASTIAN
@@ -6689,25 +6768,22 @@ SPECIES_CRANIDOS
 Level: 26
 
 === TRAINER_ELLIOT_1 ===
-Name: ELLIOT
-Class: Fisherman
-Pic: Fisherman
+Name: GRUNT
+Class: TRAINER_CLASS_TEAM_GALACTIC
+Pic: TRAINER_PIC_SINNOH_GALACTIC_GRUNT_M
 Gender: Male
-Music: Hiker
+Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Magikarp
-Level: 10
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_HOUNDOUR
+Level: 32
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Tentacool
-Level: 7
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_GOLBAT
+Level: 30
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Magikarp
-Level: 10
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_NED ===
 Name: RONALD
@@ -6797,100 +6873,133 @@ SPECIES_CROAGUNK
 Level: 26
 
 === TRAINER_ELLIOT_2 ===
-Name: ELLIOT
-Class: Fisherman
-Pic: Fisherman
+Name: CYRUS
+Class: TRAINER_CLASS_BOSS_FRLG
+Pic: TRAINER_PIC_SINNOH_GALACTIC_BOSS_CYRUS
 Gender: Male
-Music: Hiker
+Music: Aqua
+Items: ITEM_HYPER_POTION
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Tentacool
-Level: 24
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+SPECIES_SNEASEL
+Level: 34
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- MOVE_SLASH
+- MOVE_ICE_PUNCH
+- MOVE_QUICK_ATTACK
+- MOVE_SCREECH
 
-Gyarados
-Level: 27
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+SPECIES_GOLBAT
+Level: 34
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- MOVE_POISON_FANG
+- MOVE_AIR_CUTTER
+- MOVE_BITE
+- MOVE_SUPERSONIC
 
-Gyarados
-Level: 27
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+SPECIES_MURKROW @ ITEM_SITRUS_BERRY
+Level: 36
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- MOVE_DRILL_PECK
+- MOVE_NIGHT_SHADE
+- MOVE_ASTONISH
+- MOVE_FEINT_ATTACK
+
 
 === TRAINER_ELLIOT_3 ===
-Name: ELLIOT
-Class: Fisherman
-Pic: Fisherman
+Name: GRUNT
+Class: TRAINER_CLASS_TEAM_GALACTIC
+Pic: TRAINER_PIC_SINNOH_GALACTIC_GRUNT_M
 Gender: Male
-Music: Hiker
+Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Gyarados
-Level: 29
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+SPECIES_ZUBAT
+Level: 34
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Carvanha
-Level: 26
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+SPECIES_HOUNDOUR
+Level: 34
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Tentacool
-Level: 26
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+SPECIES_GOLBAT
+Level: 34
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Gyarados
-Level: 29
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
 === TRAINER_ELLIOT_4 ===
-Name: ELLIOT
-Class: Fisherman
-Pic: Fisherman
+Name: GRUNT
+Class: TRAINER_CLASS_TEAM_GALACTIC
+Pic: TRAINER_PIC_SINNOH_GALACTIC_GRUNT_M
 Gender: Male
-Music: Hiker
+Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Gyarados
-Level: 31
+SPECIES_GLAMEOW
+Level: 34
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Carvanha
-Level: 30
+SPECIES_STUNKY
+Level: 34
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Tentacruel
-Level: 30
+SPECIES_CROAGUNK
+Level: 34
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Gyarados
-Level: 31
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 === TRAINER_ELLIOT_5 ===
-Name: ELLIOT
-Class: Fisherman
-Pic: Fisherman
+Name: BARRY
+Class: TRAINER_CLASS_PKMN_TRAINER_1
+Pic: TRAINER_PIC_SINNOH_ACE_TRAINER_M
 Gender: Male
-Music: Hiker
+Music: Male
 Double Battle: No
-AI: Check Bad Move / Try To Faint
+AI: Basic Trainer
 
-Gyarados
-Level: 33
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+SPECIES_STARAPTOR
+Level: 36
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- MOVE_AERIAL_ACE
+- MOVE_TAKE_DOWN
+- MOVE_QUICK_ATTACK
+- MOVE_DOUBLE_TEAM
 
-Sharpedo
-Level: 33
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
-
-Gyarados
-Level: 33
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
-
-Tentacruel
+SPECIES_ROSERADE
 Level: 35
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- MOVE_GIGA_DRAIN
+- MOVE_TOXIC_SPIKES
+- MOVE_LEECH_SEED
+- MOVE_GRASS_WHISTLE
+
+SPECIES_HERACROSS
+Level: 37
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- MOVE_BRICK_BREAK
+- MOVE_AERIAL_ACE
+- MOVE_NIGHT_SLASH
+- MOVE_HORN_ATTACK
+
+SPECIES_RAPIDASH
+Level: 35
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- MOVE_FIRE_SPIN
+- MOVE_TAKE_DOWN
+- MOVE_STOMP
+- MOVE_TAIL_WHIP
+
+SPECIES_EMPOLEON
+Level: 38
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- MOVE_BUBBLE_BEAM
+- MOVE_AERIAL_ACE
+- MOVE_METAL_CLAW
+- MOVE_FURY_ATTACK
+
 
 === TRAINER_RONALD ===
 Name: GREGORY
@@ -6941,82 +7050,219 @@ SPECIES_STARAVIA
 Level: 25
 
 === TRAINER_BENJAMIN_1 ===
-Name: BENJAMIN
-Class: Triathlete
-Pic: Cycling Triathlete M
+Name: BARRY
+Class: TRAINER_CLASS_PKMN_TRAINER_1
+Pic: TRAINER_PIC_SINNOH_ACE_TRAINER_M
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Magnemite
-Level: 16
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_STARAPTOR
+Level: 36
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- MOVE_AERIAL_ACE
+- MOVE_TAKE_DOWN
+- MOVE_QUICK_ATTACK
+- MOVE_DOUBLE_TEAM
+
+SPECIES_FLOATZEL
+Level: 35
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- MOVE_AQUA_JET
+- MOVE_PURSUIT
+- MOVE_QUICK_ATTACK
+- MOVE_SWIFT
+
+SPECIES_HERACROSS
+Level: 37
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- MOVE_BRICK_BREAK
+- MOVE_AERIAL_ACE
+- MOVE_NIGHT_SLASH
+- MOVE_HORN_ATTACK
+
+SPECIES_RAPIDASH
+Level: 35
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- MOVE_FIRE_SPIN
+- MOVE_TAKE_DOWN
+- MOVE_STOMP
+- MOVE_TAIL_WHIP
+
+SPECIES_TORTERRA
+Level: 38
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- MOVE_RAZOR_LEAF
+- MOVE_BITE
+- MOVE_MEGA_DRAIN
+- MOVE_LEECH_SEED
+
 
 === TRAINER_BENJAMIN_2 ===
-Name: BENJAMIN
-Class: Triathlete
-Pic: Cycling Triathlete M
+Name: BARRY
+Class: TRAINER_CLASS_PKMN_TRAINER_1
+Pic: TRAINER_PIC_SINNOH_ACE_TRAINER_M
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Magnemite
-Level: 30
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+SPECIES_STARAPTOR
+Level: 36
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- MOVE_AERIAL_ACE
+- MOVE_TAKE_DOWN
+- MOVE_QUICK_ATTACK
+- MOVE_DOUBLE_TEAM
+
+SPECIES_FLOATZEL
+Level: 35
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- MOVE_AQUA_JET
+- MOVE_PURSUIT
+- MOVE_QUICK_ATTACK
+- MOVE_SWIFT
+
+SPECIES_HERACROSS
+Level: 37
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- MOVE_BRICK_BREAK
+- MOVE_AERIAL_ACE
+- MOVE_NIGHT_SLASH
+- MOVE_HORN_ATTACK
+
+SPECIES_ROSERADE
+Level: 35
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- MOVE_GIGA_DRAIN
+- MOVE_TOXIC_SPIKES
+- MOVE_LEECH_SEED
+- MOVE_GRASS_WHISTLE
+
+SPECIES_INFERNAPE
+Level: 38
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- MOVE_BRICK_BREAK
+- MOVE_FLAME_WHEEL
+- MOVE_MACH_PUNCH
+- MOVE_AERIAL_ACE
+
 
 === TRAINER_BENJAMIN_3 ===
-Name: BENJAMIN
-Class: Triathlete
-Pic: Cycling Triathlete M
+Name: SATURN
+Class: TRAINER_CLASS_GALACTIC_COMMANDER
+Pic: TRAINER_PIC_SINNOH_COMMANDER_SATURN
 Gender: Male
-Music: Male
+Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Magnemite
-Level: 33
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+SPECIES_GOLBAT
+Level: 38
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_AIR_CUTTER
+- MOVE_BITE
+- MOVE_TOXIC
+- MOVE_SUPERSONIC
+
+SPECIES_BRONZOR
+Level: 38
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_GYRO_BALL
+- MOVE_SHADOW_BALL
+- MOVE_ROCK_TOMB
+- MOVE_IRON_DEFENSE
+
+SPECIES_TOXICROAK @ ITEM_SITRUS_BERRY
+Level: 40
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_POISON_JAB
+- MOVE_REVENGE
+- MOVE_MUD_BOMB
+- MOVE_FEINT_ATTACK
+
 
 === TRAINER_BENJAMIN_4 ===
-Name: BENJAMIN
-Class: Triathlete
-Pic: Cycling Triathlete M
-Gender: Male
-Music: Male
+Name: MARS
+Class: TRAINER_CLASS_GALACTIC_COMMANDER
+Pic: TRAINER_PIC_SINNOH_COMMANDER_MARS
+Gender: Female
+Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Magneton
-Level: 36
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+SPECIES_GOLBAT
+Level: 38
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_AIR_CUTTER
+- MOVE_BITE
+- MOVE_TOXIC
+- MOVE_SUPERSONIC
+
+SPECIES_BRONZOR
+Level: 38
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_GYRO_BALL
+- MOVE_EXTRASENSORY
+- MOVE_IRON_DEFENSE
+- MOVE_CONFUSE_RAY
+
+SPECIES_PURUGLY @ ITEM_SITRUS_BERRY
+Level: 40
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_SLASH
+- MOVE_FEINT_ATTACK
+- MOVE_HYPNOSIS
+- MOVE_FAKE_OUT
+
 
 === TRAINER_BENJAMIN_5 ===
-Name: BENJAMIN
-Class: Triathlete
-Pic: Cycling Triathlete M
+Name: GRUNT
+Class: TRAINER_CLASS_TEAM_GALACTIC
+Pic: TRAINER_PIC_SINNOH_GALACTIC_GRUNT_M
 Gender: Male
-Music: Male
+Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Magneton
-Level: 39
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+SPECIES_CROAGUNK
+Level: 37
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+
 
 === TRAINER_ABIGAIL_1 ===
-Name: ABIGAIL
-Class: Triathlete
-Pic: Cycling Triathlete F
+Name: GRUNT
+Class: TRAINER_CLASS_TEAM_GALACTIC
+Pic: TRAINER_PIC_SINNOH_GALACTIC_GRUNT_F
 Gender: Female
-Music: Female
+Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Magnemite
-Level: 16
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_GLAMEOW
+Level: 33
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- MOVE_FURY_SWIPES
+- MOVE_FEINT_ATTACK
+- MOVE_GROWL
+- MOVE_FAKE_OUT
+
+SPECIES_GOLBAT
+Level: 33
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- MOVE_AIR_CUTTER
+- MOVE_WING_ATTACK
+- MOVE_BITE
+- MOVE_SUPERSONIC
+
+SPECIES_MURKROW
+Level: 36
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- MOVE_FEINT_ATTACK
+- MOVE_NIGHT_SHADE
+- MOVE_WING_ATTACK
+
 
 === TRAINER_JASMINE ===
 Name: CALVIN
@@ -7034,186 +7280,554 @@ SPECIES_SHIELDON
 Level: 23
 
 === TRAINER_ABIGAIL_2 ===
-Name: ABIGAIL
-Class: Triathlete
-Pic: Cycling Triathlete F
-Gender: Female
-Music: Female
+Name: GRUNT
+Class: TRAINER_CLASS_TEAM_GALACTIC
+Pic: TRAINER_PIC_SINNOH_GALACTIC_GRUNT_M
+Gender: Male
+Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Magnemite
-Level: 28
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+SPECIES_STUNKY
+Level: 35
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+
+SPECIES_HOUNDOUR
+Level: 35
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+
 
 === TRAINER_ABIGAIL_3 ===
-Name: ABIGAIL
-Class: Triathlete
-Pic: Cycling Triathlete F
+Name: GRUNT
+Class: TRAINER_CLASS_TEAM_GALACTIC
+Pic: TRAINER_PIC_SINNOH_GALACTIC_GRUNT_F
 Gender: Female
-Music: Female
+Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Magnemite
-Level: 31
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+SPECIES_HOUNDOUR
+Level: 34
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+
+SPECIES_GLAMEOW
+Level: 36
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+
 
 === TRAINER_ABIGAIL_4 ===
-Name: ABIGAIL
-Class: Triathlete
-Pic: Cycling Triathlete F
-Gender: Female
-Music: Female
+Name: SATURN
+Class: TRAINER_CLASS_GALACTIC_COMMANDER
+Pic: TRAINER_PIC_SINNOH_COMMANDER_SATURN
+Gender: Male
+Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Magneton
-Level: 34
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+SPECIES_GOLBAT
+Level: 42
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_AIR_CUTTER
+- MOVE_BITE
+- MOVE_POISON_FANG
+- MOVE_CONFUSE_RAY
+
+SPECIES_BRONZOR
+Level: 42
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_GYRO_BALL
+- MOVE_EXTRASENSORY
+- MOVE_SHADOW_BALL
+- MOVE_CONFUSE_RAY
+
+SPECIES_TOXICROAK @ ITEM_SITRUS_BERRY
+Level: 44
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_POISON_JAB
+- MOVE_BRICK_BREAK
+- MOVE_X_SCISSOR
+- MOVE_FEINT_ATTACK
+
 
 === TRAINER_ABIGAIL_5 ===
-Name: ABIGAIL
-Class: Triathlete
-Pic: Cycling Triathlete F
-Gender: Female
-Music: Female
+Name: CYRUS
+Class: TRAINER_CLASS_BOSS_FRLG
+Pic: TRAINER_PIC_SINNOH_GALACTIC_BOSS_CYRUS
+Gender: Male
+Music: Aqua
+Items: ITEM_HYPER_POTION / ITEM_FULL_RESTORE
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Magneton
-Level: 37
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+SPECIES_SNEASEL
+Level: 44
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- MOVE_SLASH
+- MOVE_ICE_PUNCH
+- MOVE_QUICK_ATTACK
+- MOVE_SCREECH
+
+SPECIES_CROBAT
+Level: 44
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- MOVE_POISON_FANG
+- MOVE_AIR_CUTTER
+- MOVE_BITE
+- MOVE_SUPERSONIC
+
+SPECIES_HONCHKROW @ ITEM_SITRUS_BERRY
+Level: 46
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- MOVE_DRILL_PECK
+- MOVE_NIGHT_SHADE
+- MOVE_ASTONISH
+- MOVE_FEINT_ATTACK
+
 
 === TRAINER_DYLAN_1 ===
-Name: DYLAN
-Class: Triathlete
-Pic: Running Triathlete M
+Name: GRUNT
+Class: TRAINER_CLASS_TEAM_GALACTIC
+Pic: TRAINER_PIC_SINNOH_GALACTIC_GRUNT_M
 Gender: Male
-Music: Male
+Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Doduo
-Level: 17
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_CROAGUNK
+Level: 39
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+
+SPECIES_CROAGUNK
+Level: 43
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+
 
 === TRAINER_DYLAN_2 ===
-Name: DYLAN
-Class: Triathlete
-Pic: Running Triathlete M
-Gender: Male
-Music: Male
+Name: GRUNT
+Class: TRAINER_CLASS_TEAM_GALACTIC
+Pic: TRAINER_PIC_SINNOH_GALACTIC_GRUNT_F
+Gender: Female
+Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Doduo
-Level: 28
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+SPECIES_STUNKY
+Level: 41
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+
+SPECIES_GLAMEOW
+Level: 41
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+
 
 === TRAINER_DYLAN_3 ===
-Name: DYLAN
-Class: Triathlete
-Pic: Running Triathlete M
-Gender: Male
-Music: Male
+Name: MARS
+Class: TRAINER_CLASS_GALACTIC_COMMANDER
+Pic: TRAINER_PIC_SINNOH_COMMANDER_MARS
+Gender: Female
+Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Doduo
-Level: 31
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+SPECIES_BRONZOR
+Level: 44
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_GYRO_BALL
+- MOVE_EXTRASENSORY
+- MOVE_LIGHT_SCREEN
+- MOVE_CONFUSE_RAY
+
+SPECIES_GOLBAT
+Level: 44
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_AIR_CUTTER
+- MOVE_BITE
+- MOVE_POISON_FANG
+- MOVE_CONFUSE_RAY
+
+SPECIES_PURUGLY @ ITEM_SITRUS_BERRY
+Level: 46
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_SLASH
+- MOVE_SHADOW_CLAW
+- MOVE_AERIAL_ACE
+- MOVE_HYPNOSIS
+
 
 === TRAINER_DYLAN_4 ===
-Name: DYLAN
-Class: Triathlete
-Pic: Running Triathlete M
-Gender: Male
-Music: Male
+Name: JUPITER
+Class: TRAINER_CLASS_GALACTIC_COMMANDER
+Pic: TRAINER_PIC_SINNOH_COMMANDER_JUPITER
+Gender: Female
+Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Dodrio
-Level: 34
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+SPECIES_BRONZOR
+Level: 44
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_GYRO_BALL
+- MOVE_EXTRASENSORY
+- MOVE_ROCK_SLIDE
+- MOVE_REFLECT
+
+SPECIES_GOLBAT
+Level: 44
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_SLUDGE_BOMB
+- MOVE_AIR_CUTTER
+- MOVE_GIGA_DRAIN
+- MOVE_MEAN_LOOK
+
+SPECIES_SKUNTANK @ ITEM_SITRUS_BERRY
+Level: 46
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_NIGHT_SLASH
+- MOVE_POISON_JAB
+- MOVE_FLAMETHROWER
+- MOVE_SMOKESCREEN
+
 
 === TRAINER_DYLAN_5 ===
-Name: DYLAN
-Class: Triathlete
-Pic: Running Triathlete M
+Name: CYRUS
+Class: TRAINER_CLASS_BOSS_FRLG
+Pic: TRAINER_PIC_SINNOH_GALACTIC_BOSS_CYRUS
+Gender: Male
+Music: Aqua
+Items: ITEM_FULL_RESTORE / ITEM_FULL_RESTORE
+Double Battle: No
+AI: Basic Trainer
+
+SPECIES_HOUNDOOM
+Level: 45
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- MOVE_FLAMETHROWER
+- MOVE_DARK_PULSE
+- MOVE_WILL_O_WISP
+- MOVE_THUNDER_FANG
+
+SPECIES_HONCHKROW
+Level: 47
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- MOVE_DRILL_PECK
+- MOVE_NIGHT_SLASH
+- MOVE_HEAT_WAVE
+- MOVE_PSYCHIC
+
+SPECIES_CROBAT
+Level: 46
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- MOVE_CROSS_POISON
+- MOVE_AIR_SLASH
+- MOVE_TOXIC
+- MOVE_CONFUSE_RAY
+
+SPECIES_GYARADOS
+Level: 46
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- MOVE_GIGA_IMPACT
+- MOVE_WATERFALL
+- MOVE_ICE_FANG
+- MOVE_EARTHQUAKE
+
+SPECIES_WEAVILE @ ITEM_SITRUS_BERRY
+Level: 48
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- MOVE_NIGHT_SLASH
+- MOVE_ICE_PUNCH
+- MOVE_FAKE_OUT
+- MOVE_X_SCISSOR
+
+
+=== TRAINER_MARIA_1 ===
+Name: BARRY
+Class: TRAINER_CLASS_PKMN_TRAINER_1
+Pic: TRAINER_PIC_SINNOH_ACE_TRAINER_M
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Dodrio
-Level: 37
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+SPECIES_STARAPTOR
+Level: 48
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_CLOSE_COMBAT
+- MOVE_AERIAL_ACE
+- MOVE_STEEL_WING
+- MOVE_U_TURN
 
-=== TRAINER_MARIA_1 ===
-Name: MARIA
-Class: Triathlete
-Pic: Running Triathlete F
-Gender: Female
-Music: Female
-Double Battle: No
-AI: Check Bad Move
+SPECIES_ROSERADE
+Level: 47
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_POISON_JAB
+- MOVE_GIGA_DRAIN
+- MOVE_SHADOW_BALL
+- MOVE_GRASS_WHISTLE
 
-Doduo
-Level: 17
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_HERACROSS
+Level: 48
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_CLOSE_COMBAT
+- MOVE_ROCK_SLIDE
+- MOVE_NIGHT_SLASH
+- MOVE_AERIAL_ACE
+
+SPECIES_RAPIDASH
+Level: 47
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_FIRE_BLAST
+- MOVE_SUNNY_DAY
+- MOVE_BOUNCE
+- MOVE_WILL_O_WISP
+
+SPECIES_SNORLAX
+Level: 49
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_BODY_SLAM
+- MOVE_CRUNCH
+- MOVE_EARTHQUAKE
+- MOVE_REST
+
+SPECIES_EMPOLEON
+Level: 51
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_BRINE
+- MOVE_AERIAL_ACE
+- MOVE_METAL_CLAW
+- MOVE_SHADOW_CLAW
+
 
 === TRAINER_MARIA_2 ===
-Name: MARIA
-Class: Triathlete
-Pic: Running Triathlete F
-Gender: Female
-Music: Female
+Name: BARRY
+Class: TRAINER_CLASS_PKMN_TRAINER_1
+Pic: TRAINER_PIC_SINNOH_ACE_TRAINER_M
+Gender: Male
+Music: Male
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Doduo
-Level: 28
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+SPECIES_STARAPTOR
+Level: 48
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_CLOSE_COMBAT
+- MOVE_AERIAL_ACE
+- MOVE_STEEL_WING
+- MOVE_U_TURN
+
+SPECIES_FLOATZEL
+Level: 47
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_AQUA_JET
+- MOVE_CRUNCH
+- MOVE_ICE_FANG
+- MOVE_BRICK_BREAK
+
+SPECIES_HERACROSS
+Level: 48
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_CLOSE_COMBAT
+- MOVE_ROCK_SLIDE
+- MOVE_NIGHT_SLASH
+- MOVE_AERIAL_ACE
+
+SPECIES_RAPIDASH
+Level: 47
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_FIRE_BLAST
+- MOVE_SUNNY_DAY
+- MOVE_BOUNCE
+- MOVE_WILL_O_WISP
+
+SPECIES_SNORLAX
+Level: 49
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_BODY_SLAM
+- MOVE_CRUNCH
+- MOVE_EARTHQUAKE
+- MOVE_REST
+
+SPECIES_TORTERRA
+Level: 51
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_LEAF_STORM
+- MOVE_EARTHQUAKE
+- MOVE_CRUNCH
+- MOVE_SYNTHESIS
+
 
 === TRAINER_MARIA_3 ===
-Name: MARIA
-Class: Triathlete
-Pic: Running Triathlete F
-Gender: Female
-Music: Female
+Name: BARRY
+Class: TRAINER_CLASS_PKMN_TRAINER_1
+Pic: TRAINER_PIC_SINNOH_ACE_TRAINER_M
+Gender: Male
+Music: Male
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Doduo
-Level: 31
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+SPECIES_STARAPTOR
+Level: 48
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_CLOSE_COMBAT
+- MOVE_AERIAL_ACE
+- MOVE_STEEL_WING
+- MOVE_U_TURN
+
+SPECIES_FLOATZEL
+Level: 47
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_AQUA_JET
+- MOVE_CRUNCH
+- MOVE_ICE_FANG
+- MOVE_BRICK_BREAK
+
+SPECIES_HERACROSS
+Level: 48
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_CLOSE_COMBAT
+- MOVE_ROCK_SLIDE
+- MOVE_NIGHT_SLASH
+- MOVE_AERIAL_ACE
+
+SPECIES_ROSERADE
+Level: 47
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_POISON_JAB
+- MOVE_GIGA_DRAIN
+- MOVE_SHADOW_BALL
+- MOVE_GRASS_WHISTLE
+
+SPECIES_SNORLAX
+Level: 49
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_BODY_SLAM
+- MOVE_CRUNCH
+- MOVE_EARTHQUAKE
+- MOVE_REST
+
+SPECIES_INFERNAPE
+Level: 51
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_FLAMETHROWER
+- MOVE_FOCUS_BLAST
+- MOVE_SHADOW_CLAW
+- MOVE_AERIAL_ACE
+
 
 === TRAINER_MARIA_4 ===
-Name: MARIA
-Class: Triathlete
-Pic: Running Triathlete F
-Gender: Female
-Music: Female
+Name: BARRY
+Class: TRAINER_CLASS_PKMN_TRAINER_1
+Pic: TRAINER_PIC_SINNOH_ACE_TRAINER_M
+Gender: Male
+Music: Male
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Dodrio
-Level: 34
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+SPECIES_STARAPTOR
+Level: 53
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_CLOSE_COMBAT
+- MOVE_AERIAL_ACE
+- MOVE_STEEL_WING
+- MOVE_U_TURN
+
+SPECIES_ROSERADE
+Level: 52
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_POISON_JAB
+- MOVE_GIGA_DRAIN
+- MOVE_SHADOW_BALL
+- MOVE_GRASS_WHISTLE
+
+SPECIES_HERACROSS
+Level: 53
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_CLOSE_COMBAT
+- MOVE_ROCK_SLIDE
+- MOVE_NIGHT_SLASH
+- MOVE_AERIAL_ACE
+
+SPECIES_RAPIDASH
+Level: 52
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_FIRE_BLAST
+- MOVE_SUNNY_DAY
+- MOVE_BOUNCE
+- MOVE_WILL_O_WISP
+
+SPECIES_SNORLAX
+Level: 54
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_BODY_SLAM
+- MOVE_CRUNCH
+- MOVE_EARTHQUAKE
+- MOVE_REST
+
+SPECIES_EMPOLEON
+Level: 56
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_BRINE
+- MOVE_AERIAL_ACE
+- MOVE_METAL_CLAW
+- MOVE_SHADOW_CLAW
+
 
 === TRAINER_MARIA_5 ===
-Name: MARIA
-Class: Triathlete
-Pic: Running Triathlete F
-Gender: Female
-Music: Female
+Name: BARRY
+Class: TRAINER_CLASS_PKMN_TRAINER_1
+Pic: TRAINER_PIC_SINNOH_ACE_TRAINER_M
+Gender: Male
+Music: Male
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Dodrio
-Level: 37
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+SPECIES_STARAPTOR
+Level: 53
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_CLOSE_COMBAT
+- MOVE_AERIAL_ACE
+- MOVE_STEEL_WING
+- MOVE_U_TURN
+
+SPECIES_FLOATZEL
+Level: 52
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_AQUA_JET
+- MOVE_CRUNCH
+- MOVE_ICE_FANG
+- MOVE_BRICK_BREAK
+
+SPECIES_HERACROSS
+Level: 53
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_CLOSE_COMBAT
+- MOVE_ROCK_SLIDE
+- MOVE_NIGHT_SLASH
+- MOVE_AERIAL_ACE
+
+SPECIES_RAPIDASH
+Level: 52
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_FIRE_BLAST
+- MOVE_SUNNY_DAY
+- MOVE_BOUNCE
+- MOVE_WILL_O_WISP
+
+SPECIES_SNORLAX
+Level: 54
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_BODY_SLAM
+- MOVE_CRUNCH
+- MOVE_EARTHQUAKE
+- MOVE_REST
+
+SPECIES_TORTERRA
+Level: 56
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_LEAF_STORM
+- MOVE_EARTHQUAKE
+- MOVE_CRUNCH
+- MOVE_SYNTHESIS
+
 
 === TRAINER_CAMDEN ===
 Name: DENNIS
@@ -7275,34 +7889,121 @@ Level: 25
 - MOVE_DEFENSE_CURL
 
 === TRAINER_ISAIAH_1 ===
-Name: ISAIAH
-Class: Triathlete
-Pic: Swimming Triathlete M
+Name: BARRY
+Class: TRAINER_CLASS_PKMN_TRAINER_1
+Pic: TRAINER_PIC_SINNOH_ACE_TRAINER_M
 Gender: Male
-Music: Swimmer
+Music: Male
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Staryu
-Level: 35
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_STARAPTOR
+Level: 53
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_CLOSE_COMBAT
+- MOVE_AERIAL_ACE
+- MOVE_STEEL_WING
+- MOVE_U_TURN
+
+SPECIES_FLOATZEL
+Level: 52
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_AQUA_JET
+- MOVE_CRUNCH
+- MOVE_ICE_FANG
+- MOVE_BRICK_BREAK
+
+SPECIES_HERACROSS
+Level: 53
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_CLOSE_COMBAT
+- MOVE_ROCK_SLIDE
+- MOVE_NIGHT_SLASH
+- MOVE_AERIAL_ACE
+
+SPECIES_ROSERADE
+Level: 52
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_POISON_JAB
+- MOVE_GIGA_DRAIN
+- MOVE_SHADOW_BALL
+- MOVE_GRASS_WHISTLE
+
+SPECIES_SNORLAX
+Level: 54
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_BODY_SLAM
+- MOVE_CRUNCH
+- MOVE_EARTHQUAKE
+- MOVE_REST
+
+SPECIES_INFERNAPE
+Level: 56
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- MOVE_FLAMETHROWER
+- MOVE_FOCUS_BLAST
+- MOVE_SHADOW_CLAW
+- MOVE_AERIAL_ACE
+
 
 === TRAINER_PABLO_1 ===
-Name: PABLO
-Class: Triathlete
-Pic: Swimming Triathlete M
+Name: BARRY
+Class: TRAINER_CLASS_PKMN_TRAINER_1
+Pic: TRAINER_PIC_SINNOH_ACE_TRAINER_M
 Gender: Male
-Music: Swimmer
+Music: Male
+Items: ITEM_FULL_RESTORE / ITEM_FULL_RESTORE
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Staryu
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_STARAPTOR
+Level: 61
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- MOVE_CLOSE_COMBAT
+- MOVE_AERIAL_ACE
+- MOVE_STEEL_WING
+- MOVE_U_TURN
 
-Staryu
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_ROSERADE
+Level: 59
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- MOVE_POISON_JAB
+- MOVE_GIGA_DRAIN
+- MOVE_SHADOW_BALL
+- MOVE_GRASS_WHISTLE
+
+SPECIES_HERACROSS
+Level: 61
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- MOVE_MEGAHORN
+- MOVE_CLOSE_COMBAT
+- MOVE_NIGHT_SLASH
+- MOVE_ROCK_SLIDE
+
+SPECIES_RAPIDASH
+Level: 59
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- MOVE_FIRE_BLAST
+- MOVE_SUNNY_DAY
+- MOVE_BOUNCE
+- MOVE_WILL_O_WISP
+
+SPECIES_SNORLAX
+Level: 63
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- MOVE_BODY_SLAM
+- MOVE_CRUNCH
+- MOVE_EARTHQUAKE
+- MOVE_REST
+
+SPECIES_EMPOLEON @ ITEM_SITRUS_BERRY
+Level: 65
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- MOVE_HYDRO_PUMP
+- MOVE_METAL_CLAW
+- MOVE_DRILL_PECK
+- MOVE_SHADOW_CLAW
+
 
 === TRAINER_CHASE ===
 Name: CRAIG
@@ -7320,30 +8021,122 @@ SPECIES_LUXIO
 Level: 24
 
 === TRAINER_ISAIAH_2 ===
-Name: ISAIAH
-Class: Triathlete
-Pic: Swimming Triathlete M
+Name: BARRY
+Class: TRAINER_CLASS_PKMN_TRAINER_1
+Pic: TRAINER_PIC_SINNOH_ACE_TRAINER_M
 Gender: Male
-Music: Swimmer
+Music: Male
+Items: ITEM_FULL_RESTORE / ITEM_FULL_RESTORE
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Staryu
-Level: 39
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+SPECIES_STARAPTOR
+Level: 61
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- MOVE_CLOSE_COMBAT
+- MOVE_AERIAL_ACE
+- MOVE_STEEL_WING
+- MOVE_U_TURN
+
+SPECIES_FLOATZEL
+Level: 59
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- MOVE_AQUA_JET
+- MOVE_CRUNCH
+- MOVE_ICE_FANG
+- MOVE_BRICK_BREAK
+
+SPECIES_HERACROSS
+Level: 61
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- MOVE_MEGAHORN
+- MOVE_CLOSE_COMBAT
+- MOVE_NIGHT_SLASH
+- MOVE_ROCK_SLIDE
+
+SPECIES_RAPIDASH
+Level: 59
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- MOVE_FIRE_BLAST
+- MOVE_SUNNY_DAY
+- MOVE_BOUNCE
+- MOVE_WILL_O_WISP
+
+SPECIES_SNORLAX
+Level: 63
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- MOVE_BODY_SLAM
+- MOVE_CRUNCH
+- MOVE_EARTHQUAKE
+- MOVE_REST
+
+SPECIES_TORTERRA @ ITEM_SITRUS_BERRY
+Level: 65
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- MOVE_LEAF_STORM
+- MOVE_EARTHQUAKE
+- MOVE_CRUNCH
+- MOVE_LEECH_SEED
+
 
 === TRAINER_ISAIAH_3 ===
-Name: ISAIAH
-Class: Triathlete
-Pic: Swimming Triathlete M
+Name: BARRY
+Class: TRAINER_CLASS_PKMN_TRAINER_1
+Pic: TRAINER_PIC_SINNOH_ACE_TRAINER_M
 Gender: Male
-Music: Swimmer
+Music: Male
+Items: ITEM_FULL_RESTORE / ITEM_FULL_RESTORE
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Staryu
-Level: 42
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+SPECIES_STARAPTOR
+Level: 61
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- MOVE_CLOSE_COMBAT
+- MOVE_AERIAL_ACE
+- MOVE_STEEL_WING
+- MOVE_U_TURN
+
+SPECIES_FLOATZEL
+Level: 59
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- MOVE_AQUA_JET
+- MOVE_CRUNCH
+- MOVE_ICE_FANG
+- MOVE_BRICK_BREAK
+
+SPECIES_HERACROSS
+Level: 61
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- MOVE_MEGAHORN
+- MOVE_CLOSE_COMBAT
+- MOVE_NIGHT_SLASH
+- MOVE_ROCK_SLIDE
+
+SPECIES_ROSERADE
+Level: 59
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- MOVE_POISON_JAB
+- MOVE_GIGA_DRAIN
+- MOVE_SHADOW_BALL
+- MOVE_GRASS_WHISTLE
+
+SPECIES_SNORLAX
+Level: 63
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- MOVE_BODY_SLAM
+- MOVE_CRUNCH
+- MOVE_EARTHQUAKE
+- MOVE_REST
+
+SPECIES_INFERNAPE @ ITEM_SITRUS_BERRY
+Level: 65
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- MOVE_FLAMETHROWER
+- MOVE_FOCUS_BLAST
+- MOVE_SHADOW_CLAW
+- MOVE_AERIAL_ACE
+
 
 === TRAINER_ISAIAH_4 ===
 Name: ISAIAH

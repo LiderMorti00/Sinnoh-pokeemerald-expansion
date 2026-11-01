@@ -478,15 +478,15 @@ JubilifeCity_Text_PresidentCoupons:
 	.string "COUPONS! Here's your prize!$"
 
 JubilifeCity_Text_ReceivedPokenav:
-	.string "{PLAYER} received the POKéNAV!$"
+	.string "{PLAYER} received the POKéTCH!$"
 
 JubilifeCity_Text_PresidentPokenav:
-	.string "The POKéNAV has a map and much\n"
+	.string "The POKéTCH has a map and much\n"
 	.string "more. It will help you on your\l"
 	.string "journey!$"
 
 JubilifeCity_Text_PresidentAfter:
-	.string "How do you like your POKéNAV? Use\n"
+	.string "How do you like your POKéTCH? Use\n"
 	.string "it well!$"
 
 JubilifeCity_OnFrame:

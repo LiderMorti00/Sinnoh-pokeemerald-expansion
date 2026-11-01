@@ -1,2 +1,40 @@
 NewmoonIsland_Forest_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, NewmoonIsland_Forest_OnTransitionSN
 	.byte 0
+
+NewmoonIsland_Forest_OnTransitionSN:
+	call NewmoonIsland_Forest_EventScript_SNVis_DARKRAI
+	end
+
+NewmoonIsland_Forest_EventScript_SNVis_DARKRAI:
+	setflag FLAG_SN_HIDE_DARKRAI
+	goto_if_unset FLAG_SYS_GAME_CLEAR, NewmoonIsland_Forest_EventScript_SNVis_DARKRAI_End
+	goto_if_set FLAG_SN_DONE_DARKRAI, NewmoonIsland_Forest_EventScript_SNVis_DARKRAI_End
+	clearflag FLAG_SN_HIDE_DARKRAI
+NewmoonIsland_Forest_EventScript_SNVis_DARKRAI_End:
+	return
+
+NewmoonIsland_Forest_EventScript_SNDARKRAI::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_DARKRAI, CRY_MODE_ENCOUNTER
+	delay 40
+	waitmoncry
+	setwildbattle SPECIES_DARKRAI, 50
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, NewmoonIsland_Forest_EventScript_SNDARKRAI_Ran
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, NewmoonIsland_Forest_EventScript_SNDARKRAI_Ran
+	setflag FLAG_SN_DONE_DARKRAI
+	setflag FLAG_SN_HIDE_DARKRAI
+	goto Common_EventScript_RemoveStaticPokemon
+	end
+
+NewmoonIsland_Forest_EventScript_SNDARKRAI_Ran:
+	setvar VAR_0x8004, SPECIES_DARKRAI
+	goto Common_EventScript_LegendaryFlewAway
+	end

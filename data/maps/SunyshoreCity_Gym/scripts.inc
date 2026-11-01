@@ -142,14 +142,14 @@ SunyshoreCity_Gym_Text_KirkPostBattle:
 	.string "whoa-yeah!$"
 
 SunyshoreCity_Gym_Text_ShawnIntro:
-	.string "I trained under WATTSON!\n"
+	.string "I trained under VOLKNER!\n"
 	.string "There ain't no way I'll lose easily!$"
 
 SunyshoreCity_Gym_Text_ShawnDefeat:
 	.string "Unplugged and turned off…$"
 
 SunyshoreCity_Gym_Text_ShawnPostBattle:
-	.string "WATTSON, our GYM LEADER, has been\n"
+	.string "VOLKNER, our GYM LEADER, has been\n"
 	.string "around for a long, long time.\p"
 	.string "He was battling even before your\n"
 	.string "daddy was born, that tough coot.$"
@@ -162,7 +162,7 @@ SunyshoreCity_Gym_Text_BenDefeat:
 	.string "It's no fun to lose…$"
 
 SunyshoreCity_Gym_Text_BenPostBattle:
-	.string "WATTSON says he likes setting up\n"
+	.string "VOLKNER says he likes setting up\n"
 	.string "little traps with switches.$"
 
 SunyshoreCity_Gym_Text_VivianIntro:
@@ -173,8 +173,8 @@ SunyshoreCity_Gym_Text_VivianDefeat:
 	.string "I'm shocked by your power!$"
 
 SunyshoreCity_Gym_Text_VivianPostBattle:
-	.string "I've heard that MAUVILLE was founded\n"
-	.string "by WATTSON.\p"
+	.string "I've heard that SUNYSHORE was founded\n"
+	.string "by VOLKNER.\p"
 	.string "He was a TRAINER long before we\n"
 	.string "became TRAINERS.\l"
 	.string "He must know all sorts of things!$"
@@ -187,7 +187,7 @@ SunyshoreCity_Gym_Text_AngeloDefeat:
 	.string "My eyes are frazzled…$"
 
 SunyshoreCity_Gym_Text_AngeloPostBattle:
-	.string "MAUVILLE GYM's WATTSON has a shiny\n"
+	.string "SUNYSHORE GYM's VOLKNER has a shiny\n"
 	.string "forehead. It makes me happy!$"
 
 SunyshoreCity_Gym_Text_WattsonIntro:
@@ -200,8 +200,8 @@ SunyshoreCity_Gym_Text_WattsonIntro:
 	.string "past all my rigged doors?\p"
 	.string "Wahahahah!\n"
 	.string "Now, that is amusing!\p"
-	.string "Then, I, WATTSON, the LEADER of\n"
-	.string "MAUVILLE GYM, shall electrify you!$"
+	.string "Then, I, VOLKNER, the LEADER of\n"
+	.string "SUNYSHORE GYM, shall electrify you!$"
 
 SunyshoreCity_Gym_Text_WattsonDefeat:
 	.string "Wahahahah!\n"
@@ -210,11 +210,11 @@ SunyshoreCity_Gym_Text_WattsonDefeat:
 	.string "Take this BADGE!$"
 
 SunyshoreCity_Gym_Text_ReceivedDynamoBadge:
-	.string "{PLAYER} received the DYNAMO BADGE\n"
-	.string "from WATTSON.$"
+	.string "{PLAYER} received the BEACON BADGE\n"
+	.string "from VOLKNER.$"
 
 SunyshoreCity_Gym_Text_ExplainDynamoBadgeTakeThis:
-	.string "With the DYNAMO BADGE, POKéMON can\n"
+	.string "With the BEACON BADGE, POKéMON can\n"
 	.string "use ROCK SMASH out of battle.\p"
 	.string "And, it will make your POKéMON a little\n"
 	.string "bit faster, too.\p"
@@ -228,8 +228,8 @@ SunyshoreCity_Gym_Text_ExplainShockWave:
 	.string "… … … … … …$"
 
 SunyshoreCity_Gym_Text_RegisteredWattson:
-	.string "Registered GYM LEADER WATTSON\n"
-	.string "in the POKéNAV.$"
+	.string "Registered GYM LEADER VOLKNER\n"
+	.string "in the POKéTCH.$"
 
 SunyshoreCity_Gym_Text_WattsonPostBattle:
 	.string "I swell with optimism, seeing a promising\n"
@@ -240,15 +240,15 @@ SunyshoreCity_Gym_Text_WattsonGoForthAndEndeavor:
 	.string "Go forth and endeavor, youngster!$"
 
 SunyshoreCity_Gym_Text_GymStatue:
-	.string "MAUVILLE CITY POKéMON GYM$"
+	.string "SUNYSHORE CITY POKéMON GYM$"
 
 SunyshoreCity_Gym_Text_GymStatueCertified:
-	.string "MAUVILLE CITY POKéMON GYM\p"
-	.string "WATTSON'S CERTIFIED TRAINERS:\n"
+	.string "SUNYSHORE CITY POKéMON GYM\p"
+	.string "VOLKNER'S CERTIFIED TRAINERS:\n"
 	.string "{PLAYER}$"
 
 SunyshoreCity_Gym_Text_WattsonPreRematch:
-	.string "WATTSON: Ah-ha! Here at last!\n"
+	.string "VOLKNER: Ah-ha! Here at last!\n"
 	.string "I know what you want.\l"
 	.string "You want to battle my POKéMON!\p"
 	.string "Wahahahaha!\p"
@@ -260,7 +260,7 @@ SunyshoreCity_Gym_Text_WattsonRematchDefeat:
 	.string "Our batteries ran dry…$"
 
 SunyshoreCity_Gym_Text_WattsonPostRematch:
-	.string "WATTSON: We'll have to recharge our\n"
+	.string "VOLKNER: We'll have to recharge our\n"
 	.string "batteries again.\p"
 	.string "When we're fully charged up, we'll\n"
 	.string "gladly accept your challenge.\p"
@@ -268,7 +268,7 @@ SunyshoreCity_Gym_Text_WattsonPostRematch:
 	.string "won't you?$"
 
 SunyshoreCity_Gym_Text_WattsonRematchNeedTwoMons:
-	.string "WATTSON: Ah-ha! Here at last!\n"
+	.string "VOLKNER: Ah-ha! Here at last!\n"
 	.string "I know what you want.\l"
 	.string "You want to battle my POKéMON!\p"
 	.string "Wahahahaha!\p"

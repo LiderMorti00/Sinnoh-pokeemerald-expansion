@@ -1,4 +1,5 @@
 LakeVerity_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, LakeVerity_OnTransitionSN
 	.byte 0
 
 LakeVerity_EventScript_Scene::
@@ -92,3 +93,203 @@ LakeVerity_EventScript_GrassBackEnd::
 	waitmovement 0
 	releaseall
 	end
+
+LakeVerity_OnTransitionSN:
+	call LakeVerity_EventScript_SNVis_VERITY_MARS
+	call LakeVerity_EventScript_SNVis_VERITY_GRUNT1
+	call LakeVerity_EventScript_SNVis_VERITY_GRUNT2
+	call LakeVerity_EventScript_SNVis_VERITY_GRUNT3
+	call LakeVerity_EventScript_SNVis_VERITY_GRUNT4
+	end
+
+LakeVerity_EventScript_SNVis_VERITY_MARS:
+	setflag FLAG_SN_HIDE_VERITY_MARS
+	goto_if_lt VAR_SINNOH_STORY, 31, LakeVerity_EventScript_SNVis_VERITY_MARS_End
+	goto_if_defeated TRAINER_BENJAMIN_4, LakeVerity_EventScript_SNVis_VERITY_MARS_End
+	clearflag FLAG_SN_HIDE_VERITY_MARS
+LakeVerity_EventScript_SNVis_VERITY_MARS_End:
+	return
+
+LakeVerity_EventScript_SNVis_VERITY_GRUNT1:
+	setflag FLAG_SN_HIDE_VERITY_GRUNT1
+	goto_if_lt VAR_SINNOH_STORY, 31, LakeVerity_EventScript_SNVis_VERITY_GRUNT1_End
+	goto_if_defeated TRAINER_BENJAMIN_4, LakeVerity_EventScript_SNVis_VERITY_GRUNT1_End
+	goto_if_defeated TRAINER_BENJAMIN_5, LakeVerity_EventScript_SNVis_VERITY_GRUNT1_End
+	clearflag FLAG_SN_HIDE_VERITY_GRUNT1
+LakeVerity_EventScript_SNVis_VERITY_GRUNT1_End:
+	return
+
+LakeVerity_EventScript_SNVis_VERITY_GRUNT2:
+	setflag FLAG_SN_HIDE_VERITY_GRUNT2
+	goto_if_lt VAR_SINNOH_STORY, 31, LakeVerity_EventScript_SNVis_VERITY_GRUNT2_End
+	goto_if_defeated TRAINER_BENJAMIN_4, LakeVerity_EventScript_SNVis_VERITY_GRUNT2_End
+	goto_if_defeated TRAINER_ABIGAIL_1, LakeVerity_EventScript_SNVis_VERITY_GRUNT2_End
+	clearflag FLAG_SN_HIDE_VERITY_GRUNT2
+LakeVerity_EventScript_SNVis_VERITY_GRUNT2_End:
+	return
+
+LakeVerity_EventScript_SNVis_VERITY_GRUNT3:
+	setflag FLAG_SN_HIDE_VERITY_GRUNT3
+	goto_if_lt VAR_SINNOH_STORY, 31, LakeVerity_EventScript_SNVis_VERITY_GRUNT3_End
+	goto_if_defeated TRAINER_BENJAMIN_4, LakeVerity_EventScript_SNVis_VERITY_GRUNT3_End
+	goto_if_defeated TRAINER_ABIGAIL_2, LakeVerity_EventScript_SNVis_VERITY_GRUNT3_End
+	clearflag FLAG_SN_HIDE_VERITY_GRUNT3
+LakeVerity_EventScript_SNVis_VERITY_GRUNT3_End:
+	return
+
+LakeVerity_EventScript_SNVis_VERITY_GRUNT4:
+	setflag FLAG_SN_HIDE_VERITY_GRUNT4
+	goto_if_lt VAR_SINNOH_STORY, 31, LakeVerity_EventScript_SNVis_VERITY_GRUNT4_End
+	goto_if_defeated TRAINER_BENJAMIN_4, LakeVerity_EventScript_SNVis_VERITY_GRUNT4_End
+	goto_if_defeated TRAINER_ABIGAIL_3, LakeVerity_EventScript_SNVis_VERITY_GRUNT4_End
+	clearflag FLAG_SN_HIDE_VERITY_GRUNT4
+LakeVerity_EventScript_SNVis_VERITY_GRUNT4_End:
+	return
+
+LakeVerity_EventScript_SNVERITY_MARS::
+	trainerbattle_single TRAINER_BENJAMIN_4, LakeVerity_EventScript_SNVERITY_MARS_Intro, LakeVerity_EventScript_SNVERITY_MARS_Defeat, LakeVerity_EventScript_SNVERITY_MARS_Won
+	msgbox LakeVerity_EventScript_SNVERITY_MARS_Post, MSGBOX_AUTOCLOSE
+	end
+
+LakeVerity_EventScript_SNVERITY_MARS_Won:
+	lock
+	msgbox LakeVerity_EventScript_SNVERITY_MARS_Post, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	setflag FLAG_SN_HIDE_VERITY_MARS
+	fadescreen FADE_FROM_BLACK
+	release
+	end
+LakeVerity_EventScript_SNVERITY_MARS_Intro:
+	.string "Mars: That face...! It brings back bad\n"
+	.string "memories!\p"
+	.string "I’m talking about the windworks!\p"
+	.string "I caught a whole lot of trouble for\n"
+	.string "that little incident.\p"
+	.string "What’s with that look on your face?\n"
+	.string "You do remember me, don’t you?\p"
+	.string "Fine, whatever. I’ll tell you who I am\n"
+	.string "again!\p"
+	.string "I’m Mars, one of Team Galactic’s\n"
+	.string "Commanders.\p"
+	.string "So, what is it? Are you some\n"
+	.string "lovey-dovey couple to the rescue?\p"
+	.string "Not a chance! Not even a teeny one!\n"
+	.string "You’re all going down!$"
+
+LakeVerity_EventScript_SNVERITY_MARS_Defeat:
+	.string "Mars: I lost again...$"
+
+LakeVerity_EventScript_SNVERITY_MARS_Post:
+	.string "I lost again...\p"
+	.string "So, first the windworks, and now Lake\n"
+	.string "Verity that I owe you for!\p"
+	.string "This shouldn’t be happening to Team\n"
+	.string "Galactic’s Commander...\p"
+	.string "...Calm down, Mars... I’ve done my part in\n"
+	.string "all of this...\p"
+	.string "My mission was to transport the lake’s\n"
+	.string "POKéMON to our HQ...\p"
+	.string "...That’s right! I accomplished my\n"
+	.string "mission without a problem!$"
+
+LakeVerity_EventScript_SNVERITY_GRUNT1::
+	trainerbattle_single TRAINER_BENJAMIN_5, LakeVerity_EventScript_SNVERITY_GRUNT1_Intro, LakeVerity_EventScript_SNVERITY_GRUNT1_Defeat, LakeVerity_EventScript_SNVERITY_GRUNT1_Won
+	msgbox LakeVerity_EventScript_SNVERITY_GRUNT1_Post, MSGBOX_AUTOCLOSE
+	end
+
+LakeVerity_EventScript_SNVERITY_GRUNT1_Won:
+	lock
+	msgbox LakeVerity_EventScript_SNVERITY_GRUNT1_Post, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	setflag FLAG_SN_HIDE_VERITY_GRUNT1
+	fadescreen FADE_FROM_BLACK
+	release
+	end
+LakeVerity_EventScript_SNVERITY_GRUNT1_Intro:
+	.string "Team Galactic is busy here! Get lost,\n"
+	.string "kid!$"
+
+LakeVerity_EventScript_SNVERITY_GRUNT1_Defeat:
+	.string "Gah! Not again!$"
+
+LakeVerity_EventScript_SNVERITY_GRUNT1_Post:
+	.string "Mars will deal with you!$"
+
+LakeVerity_EventScript_SNVERITY_GRUNT2::
+	trainerbattle_single TRAINER_ABIGAIL_1, LakeVerity_EventScript_SNVERITY_GRUNT2_Intro, LakeVerity_EventScript_SNVERITY_GRUNT2_Defeat, LakeVerity_EventScript_SNVERITY_GRUNT2_Won
+	msgbox LakeVerity_EventScript_SNVERITY_GRUNT2_Post, MSGBOX_AUTOCLOSE
+	end
+
+LakeVerity_EventScript_SNVERITY_GRUNT2_Won:
+	lock
+	msgbox LakeVerity_EventScript_SNVERITY_GRUNT2_Post, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	setflag FLAG_SN_HIDE_VERITY_GRUNT2
+	fadescreen FADE_FROM_BLACK
+	release
+	end
+LakeVerity_EventScript_SNVERITY_GRUNT2_Intro:
+	.string "Team Galactic is busy here! Get lost,\n"
+	.string "kid!$"
+
+LakeVerity_EventScript_SNVERITY_GRUNT2_Defeat:
+	.string "Gah! Not again!$"
+
+LakeVerity_EventScript_SNVERITY_GRUNT2_Post:
+	.string "Mars will deal with you!$"
+
+LakeVerity_EventScript_SNVERITY_GRUNT3::
+	trainerbattle_single TRAINER_ABIGAIL_2, LakeVerity_EventScript_SNVERITY_GRUNT3_Intro, LakeVerity_EventScript_SNVERITY_GRUNT3_Defeat, LakeVerity_EventScript_SNVERITY_GRUNT3_Won
+	msgbox LakeVerity_EventScript_SNVERITY_GRUNT3_Post, MSGBOX_AUTOCLOSE
+	end
+
+LakeVerity_EventScript_SNVERITY_GRUNT3_Won:
+	lock
+	msgbox LakeVerity_EventScript_SNVERITY_GRUNT3_Post, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	setflag FLAG_SN_HIDE_VERITY_GRUNT3
+	fadescreen FADE_FROM_BLACK
+	release
+	end
+LakeVerity_EventScript_SNVERITY_GRUNT3_Intro:
+	.string "Team Galactic is busy here! Get lost,\n"
+	.string "kid!$"
+
+LakeVerity_EventScript_SNVERITY_GRUNT3_Defeat:
+	.string "Gah! Not again!$"
+
+LakeVerity_EventScript_SNVERITY_GRUNT3_Post:
+	.string "Mars will deal with you!$"
+
+LakeVerity_EventScript_SNVERITY_GRUNT4::
+	trainerbattle_single TRAINER_ABIGAIL_3, LakeVerity_EventScript_SNVERITY_GRUNT4_Intro, LakeVerity_EventScript_SNVERITY_GRUNT4_Defeat, LakeVerity_EventScript_SNVERITY_GRUNT4_Won
+	msgbox LakeVerity_EventScript_SNVERITY_GRUNT4_Post, MSGBOX_AUTOCLOSE
+	end
+
+LakeVerity_EventScript_SNVERITY_GRUNT4_Won:
+	lock
+	msgbox LakeVerity_EventScript_SNVERITY_GRUNT4_Post, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	setflag FLAG_SN_HIDE_VERITY_GRUNT4
+	fadescreen FADE_FROM_BLACK
+	release
+	end
+LakeVerity_EventScript_SNVERITY_GRUNT4_Intro:
+	.string "Team Galactic is busy here! Get lost,\n"
+	.string "kid!$"
+
+LakeVerity_EventScript_SNVERITY_GRUNT4_Defeat:
+	.string "Gah! Not again!$"
+
+LakeVerity_EventScript_SNVERITY_GRUNT4_Post:
+	.string "Mars will deal with you!$"

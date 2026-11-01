@@ -36,3 +36,24 @@ FloaromaTown_FlowerShop_Text_PtNpc1:
 	.string "more Berries in the world.\p"
 	.string "I hope you will help us spread more\n"
 	.string "Berries everywhere!$"
+
+FloaromaTown_FlowerShop_EventScript_SNSprayduck::
+	lock
+	faceplayer
+	goto_if_set FLAG_SN_RECEIVED_SPRAYDUCK, FloaromaTown_FlowerShop_EventScript_SNSprayduckDone
+	msgbox FloaromaTown_FlowerShop_Text_SNSpray1, MSGBOX_DEFAULT
+	giveitem ITEM_WAILMER_PAIL
+	setflag FLAG_SN_RECEIVED_SPRAYDUCK
+FloaromaTown_FlowerShop_EventScript_SNSprayduckDone:
+	msgbox FloaromaTown_FlowerShop_Text_SNSpray2, MSGBOX_DEFAULT
+	release
+	end
+FloaromaTown_FlowerShop_Text_SNSpray1:
+	.string "Trainer, please water Berries using\n"
+	.string "this Sprayduck watering can.$"
+
+FloaromaTown_FlowerShop_Text_SNSpray2:
+	.string "Use that Sprayduck to water the soil\n"
+	.string "where you’ve planted Berries.\p"
+	.string "You should also water Berry plants\n"
+	.string "while they are growing.$"

@@ -206,8 +206,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "IronIsland_B2F_Left_EventScript_PtNpc1",
-      "flag": "0"
+      "script": "IronIsland_B2F_Left_EventScript_SNGrunt1",
+      "flag": "FLAG_SN_HIDE_IRON_GRUNT1"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_GALAXY_GRUNT_M",
@@ -219,8 +219,21 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "IronIsland_B2F_Left_EventScript_PtNpc2",
-      "flag": "0"
+      "script": "IronIsland_B2F_Left_EventScript_SNGrunt2",
+      "flag": "FLAG_SN_HIDE_IRON_GRUNT2"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_ACE_TRAINER_M",
+      "x": 22,
+      "y": 41,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "IronIsland_B2F_Left_EventScript_SNRiley",
+      "flag": "FLAG_SN_HIDE_IRON_RILEY_B2F"
     }
   ],
   "warp_events": [

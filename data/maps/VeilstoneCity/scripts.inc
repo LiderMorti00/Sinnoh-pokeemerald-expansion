@@ -165,3 +165,36 @@ VeilstoneCity_EventScript_PtSign8::
 VeilstoneCity_Text_PtSign8:
 	.string "Visit Beautiful LAKE VALOR! Right off\n"
 	.string "Rt. 214!$"
+
+VeilstoneCity_Text_PtNpc10_0:
+	.string "Veilstone is the city of stone. We even\n"
+	.string "have meteorites!\p"
+	.string "This has nothing to do with anything,\n"
+	.string "but take this Technical Machine!$"
+
+VeilstoneCity_Text_PtNpc10_1:
+	.string "If someone uses Embargo on your\n"
+	.string "POKéMON, it becomes impossible to\p"
+	.string "use any items on it.\p"
+	.string "Anyway, enjoy your visit to Veilstone,\n"
+	.string "the city of...well, stone.$"
+
+VeilstoneCity_EventScript_PtNpc10::
+	lock
+	faceplayer
+	goto_if_set FLAG_RECEIVED_SN_VEILSTONE_CITY_TM63, VeilstoneCity_EventScript_PtNpc10_EmbargoMakesItemsUnusable
+	msgbox VeilstoneCity_Text_PtNpc10_0, MSGBOX_DEFAULT
+	giveitem ITEM_TM63, 1
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	setflag FLAG_RECEIVED_SN_VEILSTONE_CITY_TM63
+	goto VeilstoneCity_EventScript_PtNpc10_EmbargoMakesItemsUnusable
+
+VeilstoneCity_EventScript_PtNpc10_EmbargoMakesItemsUnusable:
+	msgbox VeilstoneCity_Text_PtNpc10_1, MSGBOX_DEFAULT
+	release
+	end
+
+VeilstoneCity_EventScript_PtNpc10_BagIsFull:
+	goto Common_EventScript_ShowBagIsFull
+	release
+	end

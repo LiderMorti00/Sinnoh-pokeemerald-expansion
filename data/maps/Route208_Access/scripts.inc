@@ -19,3 +19,14 @@ Route208_Access_Text_PtNpc2:
 	.string "this: POKéMON Contests!\p"
 	.string "I'm going to enter my darling POKéMON\n"
 	.string "in them!$"
+
+Route208_Access_Text_PtNpc3_0:
+	.string "CLEFAIRY: Pippii?!$"
+
+Route208_Access_EventScript_PtNpc3::
+	lock
+	faceplayer
+	playmoncry SPECIES_CLEFAIRY, CRY_MODE_NORMAL
+	msgbox Route208_Access_Text_PtNpc3_0, MSGBOX_DEFAULT
+	release
+	end

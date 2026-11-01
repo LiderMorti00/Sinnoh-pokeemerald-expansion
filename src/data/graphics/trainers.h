@@ -583,6 +583,8 @@ const union AnimCmd *const sBackAnims_OldManPokedude[] = {
         .animation = anim,                                                                   \
     }}
 
+const u8 gTrainerBackPic_SinnohLucas[] = INCGFX_U8("graphics/trainers/back_pics/sinnoh/lucas.png", ".4bpp");
+const u16 gTrainerBackPicPalette_SinnohLucas[] = INCGFX_U16("graphics/trainers/back_pics/sinnoh/lucas.png", ".gbapal");
 const u8 gTrainerBackPic_SinnohCheryl[] = INCGFX_U8("graphics/trainers/back_pics/sinnoh/cheryl.png", ".4bpp");
 const u16 gTrainerBackPicPalette_SinnohCheryl[] = INCGFX_U16("graphics/trainers/back_pics/sinnoh/cheryl.png", ".gbapal");
 const u8 gTrainerBackPic_SinnohRiley[] = INCGFX_U8("graphics/trainers/back_pics/sinnoh/riley.png", ".4bpp");
@@ -726,15 +728,16 @@ const struct TrainerPicInfo gTrainerPicInfo[TRAINER_PIC_COUNT] =
         .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_None, gTrainerPalette_None),
         .backPic = TRAINER_BACK_PIC(1, gTrainerBackPic_None, gTrainerPalette_None, sBackAnims_None),
     },
+    // Proyecto Sinnoh: el protagonista es Lucas y la protagonista, de momento, Leaf
     [TRAINER_PIC_BRENDAN] =
     {
-        .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_Brendan, gTrainerPalette_Brendan),
-        .backPic = TRAINER_BACK_PIC(4, gTrainerBackPic_Brendan, gTrainerPalette_Brendan, sBackAnims_Hoenn),
+        .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_SinnohLucas, gTrainerPalette_SinnohLucas),
+        .backPic = TRAINER_BACK_PIC(4, gTrainerBackPic_SinnohLucas, gTrainerBackPicPalette_SinnohLucas, sBackAnims_Hoenn),
     },
     [TRAINER_PIC_MAY] =
     {
-        .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_May, gTrainerPalette_May),
-        .backPic = TRAINER_BACK_PIC(4, gTrainerBackPic_May, gTrainerPalette_May, sBackAnims_Hoenn),
+        .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_Leaf, gTrainerPalette_Leaf),
+        .backPic = TRAINER_BACK_PIC(5, gTrainerBackPic_Leaf, gTrainerBackPicPalette_Leaf, sBackAnims_Kanto),
     },
     [TRAINER_PIC_RED] =
     {

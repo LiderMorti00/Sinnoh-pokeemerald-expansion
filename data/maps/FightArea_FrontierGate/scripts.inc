@@ -90,3 +90,25 @@ FightArea_FrontierGate_EventScript_PtNpc4_EnjoyVisitBattleCastle:
 FightArea_FrontierGate_EventScript_PtNpc4_AttendantBattleCastleEnd:
 	release
 	end
+
+FightArea_FrontierGate_Text_PtNpc5:
+	.string "Which topic should I explain?$"
+
+FightArea_FrontierGate_EventScript_PtNpc5::
+	msgbox FightArea_FrontierGate_Text_PtNpc5, MSGBOX_NPC
+	end
+
+FightArea_FrontierGate_Text_PtNpc6_0:
+	.string "My dream is to battle Palmer of the\n"
+	.string "Battle Tower.\p"
+	.string "I want to record it for posterity on my\n"
+	.string "Vs. Recorder.\p"
+	.string "But I’m not good enough to battle my\n"
+	.string "way to see Palmer... I’m heartbroken!$"
+
+FightArea_FrontierGate_EventScript_PtNpc6::
+	lock
+	faceplayer
+	msgbox FightArea_FrontierGate_Text_PtNpc6_0, MSGBOX_DEFAULT
+	release
+	end

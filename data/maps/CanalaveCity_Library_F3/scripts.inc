@@ -1,4 +1,5 @@
 CanalaveCity_Library_F3_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, CanalaveCity_Library_F3_OnTransitionSN
 	.byte 0
 
 CanalaveCity_Library_F3_Text_PtNpc1_0:
@@ -224,3 +225,117 @@ CanalaveCity_Library_F3_EventScript_PtSign22::
 CanalaveCity_Library_F3_Text_PtSign22:
 	.string "This book is titled “Sinnoh Folk\n"
 	.string "Stories.”$"
+
+CanalaveCity_Library_F3_OnTransitionSN:
+	call CanalaveCity_Library_F3_EventScript_SNGfx
+	call CanalaveCity_Library_F3_EventScript_SNVis_LIB_ROWAN
+	end
+
+CanalaveCity_Library_F3_EventScript_SNGfx:
+	checkplayergender
+	goto_if_eq VAR_RESULT, MALE, CanalaveCity_Library_F3_EventScript_SNGfxDawn
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_SINNOH_LUCAS
+	return
+CanalaveCity_Library_F3_EventScript_SNGfxDawn:
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_SINNOH_DAWN
+	return
+
+CanalaveCity_Library_F3_EventScript_SNVis_LIB_ROWAN:
+	setflag FLAG_SN_HIDE_LIB_ROWAN
+	goto_if_unset FLAG_BADGE06_GET, CanalaveCity_Library_F3_EventScript_SNVis_LIB_ROWAN_End
+	goto_if_ge VAR_SINNOH_STORY, 31, CanalaveCity_Library_F3_EventScript_SNVis_LIB_ROWAN_End
+	clearflag FLAG_SN_HIDE_LIB_ROWAN
+CanalaveCity_Library_F3_EventScript_SNVis_LIB_ROWAN_End:
+	return
+
+CanalaveCity_Library_F3_EventScript_SNRowan::
+	lockall
+	msgbox CanalaveCity_Library_F3_EventScript_SNRowan_T1, MSGBOX_DEFAULT
+	msgbox CanalaveCity_Library_F3_EventScript_SNRowan_T2, MSGBOX_DEFAULT
+	msgbox CanalaveCity_Library_F3_EventScript_SNRowan_T3, MSGBOX_DEFAULT
+	msgbox CanalaveCity_Library_F3_EventScript_SNRowan_T4, MSGBOX_DEFAULT
+	msgbox CanalaveCity_Library_F3_EventScript_SNRowan_T5, MSGBOX_DEFAULT
+	msgbox CanalaveCity_Library_F3_EventScript_SNRowan_T6, MSGBOX_DEFAULT
+	closemessage
+	playse SE_THUNDER
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special ShakeCamera
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	delay 60
+	msgbox CanalaveCity_Library_F3_EventScript_SNRowan_T7, MSGBOX_DEFAULT
+	msgbox CanalaveCity_Library_F3_EventScript_SNRowan_T8, MSGBOX_DEFAULT
+	msgbox CanalaveCity_Library_F3_EventScript_SNRowan_T9, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_SN_LIB_ROWAN
+	removeobject LOCALID_SN_LIB_COUNTERPART
+	removeobject LOCALID_SN_LIB_BARRY
+	setflag FLAG_SN_HIDE_LIB_ROWAN
+	setvar VAR_SINNOH_STORY, 31
+	fadescreen FADE_FROM_BLACK
+	releaseall
+	end
+CanalaveCity_Library_F3_EventScript_SNRowan_T1:
+	.string "Rowan: Hm! Everyone’s here finally.\n"
+	.string "{PLAYER}, everyone, listen.\p"
+	.string "You may have forgotten already, but I\n"
+	.string "study the evolution of POKéMON.$"
+
+CanalaveCity_Library_F3_EventScript_SNRowan_T2:
+	.string "This is where you three come in.\p"
+	.string "In the three lakes of Sinnoh, there are\n"
+	.string "said to be mirage POKéMON.\p"
+	.string "If we can obtain data on them, it may\n"
+	.string "shed some light on how the\p"
+	.string "process of POKéMON evolution works.\p"
+	.string "I need help from each one of you on\n"
+	.string "this grand undertaking.\p"
+	.string "Help me find these POKéMON that are\n"
+	.string "considered to be mirages.$"
+
+CanalaveCity_Library_F3_EventScript_SNRowan_T3:
+	.string "Rowan: Hm! I would have made all of you\n"
+	.string "go regardless... Anyway.\p"
+	.string "Now, there are three lakes.\n"
+	.string "Fortuitously, there are three of you.\p"
+	.string "You should therefore split up and\n"
+	.string "investigate the lakes individually.$"
+
+CanalaveCity_Library_F3_EventScript_SNRowan_T4:
+	.string "Rowan: BARRY, I want you to\n"
+	.string "investigate Lake Acuity.\p"
+	.string "That would take you almost to\n"
+	.string "Snowpoint City.\p"
+	.string "The road there is harsh. I need a tough\n"
+	.string "Trainer to go.$"
+
+CanalaveCity_Library_F3_EventScript_SNRowan_T5:
+	.string "BARRY: Uh... Yeah, of course! Gramps,\n"
+	.string "you know how to call it!\p"
+	.string "You can tell I’m the hotness!\p"
+	.string "And, you know what? I was going to\n"
+	.string "catch those legendary POKéMON for\l"
+	.string "you.\p"
+	.string "You know, as thanks for giving us our\n"
+	.string "POKéMON back on Route 201.\p"
+	.string "...Even though I forgot completely\n"
+	.string "about it until just now.$"
+
+CanalaveCity_Library_F3_EventScript_SNRowan_T6:
+	.string "Rowan: Very well. I’m counting on you.\p"
+	.string "And that leaves {PLAYER} with Lake\n"
+	.string "Valor.\p"
+	.string "The lake is between Veilstone and\n"
+	.string "Pastoria, if memory serves...$"
+
+CanalaveCity_Library_F3_EventScript_SNRowan_T7:
+	.string "DDDOOOMMM!!$"
+
+CanalaveCity_Library_F3_EventScript_SNRowan_T8:
+	.string "Rowan: ... ...Has it stopped?\p"
+	.string "Are all of you unharmed?$"
+
+CanalaveCity_Library_F3_EventScript_SNRowan_T9:
+	.string "BARRY: What was that about?!\p"
+	.string "No, wait, I mean, TV! The TV! News!\n"
+	.string "Anything!$"

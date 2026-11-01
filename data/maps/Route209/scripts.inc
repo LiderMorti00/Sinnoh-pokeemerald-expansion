@@ -176,3 +176,113 @@ Route209_Text_PtSign3:
 	.string "use.\p"
 	.string "Simply press the Y Button to use the\n"
 	.string "registered item instantly.$"
+
+Route209_EventScript_EmmaLil2::
+	trainerbattle_double TRAINER_SHELBY_3, Route209_Text_EmmaLil2Intro, Route209_Text_EmmaLil2Defeat, Route209_Text_EmmaLil2NotEnough
+	msgbox Route209_Text_EmmaLil2Post, MSGBOX_AUTOCLOSE
+	end
+
+Route209_Text_EmmaLil2Intro:
+	.string "Let’s battle!$"
+
+Route209_Text_EmmaLil2Defeat:
+	.string "I lost!$"
+
+Route209_Text_EmmaLil2Post:
+	.string "That was a good battle.$"
+
+Route209_Text_EmmaLil2NotEnough:
+	.string "You need two POKéMON to battle us!$"
+
+Route209_EventScript_TySue2::
+	trainerbattle_double TRAINER_SHELBY_4, Route209_Text_TySue2Intro, Route209_Text_TySue2Defeat, Route209_Text_TySue2NotEnough
+	msgbox Route209_Text_TySue2Post, MSGBOX_AUTOCLOSE
+	end
+
+Route209_Text_TySue2Intro:
+	.string "Let’s battle!$"
+
+Route209_Text_TySue2Defeat:
+	.string "I lost!$"
+
+Route209_Text_TySue2Post:
+	.string "That was a good battle.$"
+
+Route209_Text_TySue2NotEnough:
+	.string "You need two POKéMON to battle us!$"
+
+Route209_EventScript_SNTower::
+	lock
+	goto_if_set FLAG_SN_DONE_SPIRITOMB, Route209_EventScript_SNTowerText
+	checkitem ITEM_ODD_KEYSTONE
+	goto_if_eq VAR_RESULT, FALSE, Route209_EventScript_SNTowerText
+	goto_if_unset FLAG_SYS_GAME_CLEAR, Route209_EventScript_SNTowerText
+	msgbox Route209_Text_SNPutKeystone, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Route209_EventScript_SNTowerEnd
+	removeitem ITEM_ODD_KEYSTONE
+	goto Route209_EventScript_SNSpiritomb
+	end
+
+Route209_EventScript_SNTowerText:
+	msgbox Route209_Text_SNTower, MSGBOX_DEFAULT
+Route209_EventScript_SNTowerEnd:
+	release
+	end
+Route209_Text_SNTower:
+	.string "It’s the Hallowed Tower.\p"
+	.string "...Is that crying coming from inside the\n"
+	.string "tower?$"
+
+Route209_Text_SNPutKeystone:
+	.string "It’s the Hallowed Tower.\p"
+	.string "The ODD KEYSTONE seems to fit in the\n"
+	.string "gap.\p"
+	.string "Would you like to put it in?$"
+
+Route209_EventScript_SNSpiritomb::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_SPIRITOMB, CRY_MODE_ENCOUNTER
+	delay 40
+	waitmoncry
+	setwildbattle SPECIES_SPIRITOMB, 25
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Route209_EventScript_SNSpiritomb_Ran
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, Route209_EventScript_SNSpiritomb_Ran
+	setflag FLAG_SN_DONE_SPIRITOMB
+	
+	release
+	end
+
+Route209_EventScript_SNSpiritomb_Ran:
+	setvar VAR_0x8004, SPECIES_SPIRITOMB
+	release
+	end
+
+Route209_EventScript_SNFisher::
+	lock
+	faceplayer
+	goto_if_set FLAG_SN_RECEIVED_GOOD_ROD, Route209_EventScript_SNFisher_Done
+	msgbox Route209_EventScript_SNFisher_Ask, MSGBOX_YESNO
+	giveitem ITEM_GOOD_ROD
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	setflag FLAG_SN_RECEIVED_GOOD_ROD
+Route209_EventScript_SNFisher_Done:
+	msgbox Route209_EventScript_SNFisher_After, MSGBOX_DEFAULT
+	release
+	end
+Route209_EventScript_SNFisher_Ask:
+	.string "Hmm! GOOD ROD is really good!\p"
+	.string "Wouldn’t you agree?$"
+
+Route209_EventScript_SNFisher_After:
+	.string "First, you face any body of water, then\n"
+	.string "you use your fishing rod.\p"
+	.string "Next, you must focus! If a POKéMON\n"
+	.string "bites, “!” appears.\p"
+	.string "That’s your cue to reel it in!$"

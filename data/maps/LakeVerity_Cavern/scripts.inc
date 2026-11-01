@@ -1,2 +1,40 @@
 LakeVerity_Cavern_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, LakeVerity_Cavern_OnTransitionSN
 	.byte 0
+
+LakeVerity_Cavern_OnTransitionSN:
+	call LakeVerity_Cavern_EventScript_SNVis_MESPRIT
+	end
+
+LakeVerity_Cavern_EventScript_SNVis_MESPRIT:
+	setflag FLAG_SN_HIDE_MESPRIT
+	goto_if_lt VAR_SINNOH_STORY, 32, LakeVerity_Cavern_EventScript_SNVis_MESPRIT_End
+	goto_if_set FLAG_SN_DONE_MESPRIT, LakeVerity_Cavern_EventScript_SNVis_MESPRIT_End
+	clearflag FLAG_SN_HIDE_MESPRIT
+LakeVerity_Cavern_EventScript_SNVis_MESPRIT_End:
+	return
+
+LakeVerity_Cavern_EventScript_SNMESPRIT::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_MESPRIT, CRY_MODE_ENCOUNTER
+	delay 40
+	waitmoncry
+	setwildbattle SPECIES_MESPRIT, 50
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, LakeVerity_Cavern_EventScript_SNMESPRIT_Ran
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, LakeVerity_Cavern_EventScript_SNMESPRIT_Ran
+	setflag FLAG_SN_DONE_MESPRIT
+	setflag FLAG_SN_HIDE_MESPRIT
+	goto Common_EventScript_RemoveStaticPokemon
+	end
+
+LakeVerity_Cavern_EventScript_SNMESPRIT_Ran:
+	setvar VAR_0x8004, SPECIES_MESPRIT
+	goto Common_EventScript_LegendaryFlewAway
+	end

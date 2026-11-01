@@ -1573,7 +1573,7 @@
 #define FLAG_UNUSED_0x920                           (DAILY_FLAGS_START + 0x0)  // Unused Flag
 #define FLAG_DAILY_CONTEST_LOBBY_RECEIVED_BERRY     (DAILY_FLAGS_START + 0x1)
 #define FLAG_DAILY_SECRET_BASE                      (DAILY_FLAGS_START + 0x2)
-#define FLAG_UNUSED_0x923                           (DAILY_FLAGS_START + 0x3)  // Unused Flag
+#define FLAG_DAILY_SN_BARRY                         (DAILY_FLAGS_START + 0x3)  // Proyecto Sinnoh: Barry en la Zona Supervivencia
 #define FLAG_UNUSED_0x924                           (DAILY_FLAGS_START + 0x4)  // Unused Flag
 #define FLAG_UNUSED_0x925                           (DAILY_FLAGS_START + 0x5)  // Unused Flag
 #define FLAG_UNUSED_0x926                           (DAILY_FLAGS_START + 0x6)  // Unused Flag
@@ -2794,5 +2794,106 @@
 #define FLAG_RECEIVED_SN_ROUTE_209_LOST_TOWER_5F_SPELL_TAG      FLAG_MET_RIVAL_LILYCOVE
 #define FLAG_SN_USED_DEFOG_IN_ROUTE_209_LOST_TOWER_5F           FLAG_MET_RIVAL_IN_HOUSE_AFTER_LILYCOVE
 #define FLAG_RECEIVED_SN_ROUTE_209_LOST_TOWER_5F_CLEANSE_TAG    FLAG_EXCHANGED_SCANNER
+
+
+// ---- Proyecto Sinnoh: revisión de eventos (objetos, regalos y objetos ocultos) ----
+#define FLAG_SN_LAKE_VALOR_EXPLODED_4                           FLAG_UNUSED_RS_LEGENDARY_BATTLE_DONE
+#define FLAG_ITEM_ETERNACITY_GALACTICBUILDING_4F_UPGRADE        FLAG_KECLEON_FLED_FORTREE
+#define FLAG_HIDDEN_ITEM_ROUTE207_NUGGET                        FLAG_UNUSED_0x4CD
+#define FLAG_HIDDEN_ITEM_ROUTE213_MAX_REVIVE                    FLAG_UNUSED_0x4CE
+#define FLAG_ITEM_ROUTE217_HM08                                 FLAG_PETALBURG_MART_EXPANDED_ITEMS
+#define FLAG_ITEM_ROUTE224_UPGRADE                              FLAG_RECEIVED_MIRACLE_SEED
+#define FLAG_ITEM_SUNYSHORECITY_THUNDER_STONE                   FLAG_RECEIVED_FANCLUB_TM_THIS_WEEK
+#define FLAG_HIDDEN_ITEM_SUNYSHORECITY_ZAP_PLATE                FLAG_UNUSED_0x4CF
+#define FLAG_RECEIVED_SN_VEILSTONE_CITY_TM63                    FLAG_MET_FANCLUB_YOUNGER_BROTHER
+
+
+// ---- Proyecto Sinnoh: historia de Platino (objetos, regalos y objetos ocultos) ----
+#define FLAG_SN_HIDE_PAST_BARRY                                 FLAG_UNUSED_RS_LEGENDARY_BATTLE_DONE
+#define FLAG_SN_RECEIVED_SECRET_POTION                          FLAG_RIVAL_LEFT_FOR_ROUTE103
+#define FLAG_SN_PSYDUCK_GONE                                    FLAG_OMIT_DIVE_FROM_STEVEN_LETTER
+#define FLAG_SN_HIDE_VALOR_CYNTHIA                              FLAG_STEVEN_GUIDES_TO_CAVE_OF_ORIGIN
+#define FLAG_SN_HIDE_PSYDUCK                                    FLAG_MET_ARCHIE_SOOTOPOLIS
+#define FLAG_SN_HIDE_CEL_GRUNT                                  FLAG_MET_MAXIE_SOOTOPOLIS
+#define FLAG_SN_RECEIVED_HM_SURF                                FLAG_MET_SCOTT_RUSTBORO
+#define FLAG_SN_HIDE_CEL_CYRUS                                  FLAG_WALLACE_GOES_TO_SKY_PILLAR
+#define FLAG_SN_RECEIVED_HM_STRENGTH                            FLAG_RECEIVED_HM_WATERFALL
+#define FLAG_SN_HIDE_IRON_RILEY                                 FLAG_BEAT_MAGMA_GRUNT_JAGGED_PASS
+#define FLAG_SN_RECEIVED_RIOLU_EGG                              FLAG_CHOSE_ROOT_FOSSIL
+#define FLAG_SN_HIDE_IRON_GRUNT1                                FLAG_CHOSE_CLAW_FOSSIL
+#define FLAG_SN_HIDE_IRON_GRUNT2                                FLAG_RECEIVED_POWDER_JAR
+#define FLAG_SN_HIDE_IRON_RILEY_B2F                             FLAG_MET_BATTLE_FRONTIER_BREEDER
+#define FLAG_SN_HIDE_CANAL_BARRY                                FLAG_MET_BATTLE_FRONTIER_MANIAC
+#define FLAG_SN_HIDE_LIB_ROWAN                                  FLAG_MET_BATTLE_FRONTIER_GAMBLER
+#define FLAG_SN_HIDE_VALOR_SATURN                               FLAG_MET_FRONTIER_BEAUTY_MOVE_TUTOR
+#define FLAG_SN_HIDE_VERITY_MARS                                FLAG_MET_FRONTIER_SWIMMER_MOVE_TUTOR
+#define FLAG_SN_HIDE_VERITY_GRUNT1                              FLAG_DEFEATED_REGIROCK
+#define FLAG_SN_HIDE_VERITY_GRUNT2                              FLAG_DEFEATED_REGICE
+#define FLAG_SN_HIDE_VERITY_GRUNT3                              FLAG_DEFEATED_REGISTEEL
+#define FLAG_SN_HIDE_VERITY_GRUNT4                              FLAG_DEFEATED_RAYQUAZA
+#define FLAG_SN_RECEIVED_GALACTIC_KEY                           FLAG_DEFEATED_VOLTORB_1_NEW_MAUVILLE
+#define FLAG_SN_HIDE_ACUITY_BARRY                               FLAG_DEFEATED_VOLTORB_2_NEW_MAUVILLE
+#define FLAG_SN_HIDE_HQ_SATURN                                  FLAG_DEFEATED_VOLTORB_3_NEW_MAUVILLE
+#define FLAG_SN_HIDE_HQ_CYRUS                                   FLAG_DEFEATED_ELECTRODE_1_AQUA_HIDEOUT
+#define FLAG_SN_DONE_AZELF                                      FLAG_DEFEATED_ELECTRODE_2_AQUA_HIDEOUT
+#define FLAG_SN_HIDE_AZELF                                      FLAG_DEFEATED_SUDOWOODO
+#define FLAG_SN_DONE_MESPRIT                                    FLAG_CAUGHT_LATIAS_OR_LATIOS
+#define FLAG_SN_HIDE_MESPRIT                                    FLAG_MET_SCOTT_AFTER_OBTAINING_STONE_BADGE
+#define FLAG_SN_DONE_UXIE                                       FLAG_MET_SCOTT_IN_VERDANTURF
+#define FLAG_SN_HIDE_UXIE                                       FLAG_MET_SCOTT_IN_FALLARBOR
+#define FLAG_SN_HIDE_SP_GRUNT1                                  FLAG_MET_SCOTT_IN_LILYCOVE
+#define FLAG_SN_HIDE_SP_GRUNT2                                  FLAG_SCOTT_GIVES_BATTLE_POINTS
+#define FLAG_SN_HIDE_SP_MARS                                    FLAG_COLLECTED_ALL_GOLD_SYMBOLS
+#define FLAG_SN_HIDE_SP_JUPITER                                 FLAG_UNUSED_0x4D0
+#define FLAG_SN_DONE_GIRATINA                                   FLAG_UNUSED_0x4D1
+#define FLAG_SN_HIDE_SP_CYRUS                                   FLAG_UNUSED_0x4D2
+#define FLAG_SN_DONE_DIALGA                                     FLAG_UNUSED_0x4D3
+#define FLAG_SN_HIDE_DIALGA                                     FLAG_UNUSED_0x4D4
+#define FLAG_SN_DONE_PALKIA                                     FLAG_UNUSED_0x4D5
+#define FLAG_SN_HIDE_PALKIA                                     FLAG_UNUSED_0x4D6
+#define FLAG_SN_HIDE_GIRATINA                                   FLAG_UNUSED_0x4D7
+#define FLAG_SN_RECEIVED_HM_WATERFALL                           FLAG_UNUSED_0x4D8
+#define FLAG_SN_HIDE_JASMINE                                    FLAG_UNUSED_0x4D9
+#define FLAG_SN_HIDE_LEAGUE_BARRY                               FLAG_UNUSED_0x4DA
+#define FLAG_SN_HIDE_FIGHT_BARRY                                FLAG_UNUSED_0x4DB
+#define FLAG_SN_DONE_HEATRAN                                    FLAG_UNUSED_0x4DC
+#define FLAG_SN_HIDE_HEATRAN                                    FLAG_UNUSED_0x4DD
+#define FLAG_SN_DONE_REGIGIGAS                                  FLAG_UNUSED_0x4DE
+#define FLAG_SN_HIDE_REGIGIGAS                                  FLAG_UNUSED_0x4DF
+#define FLAG_SN_DONE_ARCEUS                                     FLAG_UNUSED_0x4E0
+#define FLAG_SN_HIDE_ARCEUS                                     FLAG_UNUSED_0x4E1
+#define FLAG_SN_DONE_CRESSELIA                                  FLAG_UNUSED_0x4E2
+#define FLAG_SN_HIDE_CRESSELIA                                  FLAG_UNUSED_0x4E3
+#define FLAG_SN_DONE_DARKRAI                                    FLAG_UNUSED_0x4E4
+#define FLAG_SN_HIDE_DARKRAI                                    FLAG_UNUSED_0x4E5
+#define FLAG_SN_DONE_DRIFLOON                                   FLAG_UNUSED_0x4E6
+#define FLAG_SN_HIDE_DRIFLOON                                   FLAG_UNUSED_0x4E7
+
+
+// ---- Proyecto Sinnoh: historia de Platino (objetos, regalos y objetos ocultos) ----
+#define FLAG_SN_DONE_REGICE                                     FLAG_UNUSED_RS_LEGENDARY_BATTLE_DONE
+#define FLAG_SN_HIDE_REGICE                                     FLAG_UNUSED_0x4E8
+#define FLAG_SN_DONE_REGIROCK                                   FLAG_UNUSED_0x4E9
+#define FLAG_SN_HIDE_REGIROCK                                   FLAG_UNUSED_0x4EA
+#define FLAG_SN_DONE_REGISTEEL                                  FLAG_UNUSED_0x4EB
+#define FLAG_SN_HIDE_REGISTEEL                                  FLAG_UNUSED_0x4EC
+#define FLAG_SN_DONE_ROTOM                                      FLAG_UNUSED_0x4ED
+#define FLAG_SN_DONE_SPIRITOMB                                  FLAG_UNUSED_0x4EE
+#define FLAG_SN_RECEIVED_GOOD_ROD                               FLAG_UNUSED_0x4EF
+#define FLAG_SN_RECEIVED_OLD_ROD                                FLAG_UNUSED_0x4F9
+#define FLAG_SN_RECEIVED_SUPER_ROD                              FLAG_UNUSED_0x4FA
+#define FLAG_SN_RECEIVED_VS_SEEKER                              FLAG_UNUSED_0x4FF
+#define FLAG_SN_HIDE_R207_COUNTERPART                           FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_1
+#define FLAG_SN_RECEIVED_SPRAYDUCK                              FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_2
+#define FLAG_SN_RECEIVED_PORYGON                                FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_3
+
+
+// ---- Proyecto Sinnoh: historia de Platino (objetos, regalos y objetos ocultos) ----
+#define FLAG_ITEM_ROUTE218_RARE_CANDY                           FLAG_UNUSED_RS_LEGENDARY_BATTLE_DONE
+#define FLAG_ITEM_ROUTE218_X_ACCURACY                           FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_4
+#define FLAG_ITEM_ROUTE218_HYPER_POTION                         FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_5
+#define FLAG_ITEM_RESORTAREA_NUGGET                             FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_6
+#define FLAG_HIDDEN_ITEM_RESORTAREA_NUGGET                      FLAG_HIDE_ROUTE_103_RIVAL
+#define FLAG_HIDDEN_ITEM_RESORTAREA_THUNDER_STONE               FLAG_HIDE_PETALBURG_WOODS_DEVON_EMPLOYEE
 
 #endif // GUARD_CONSTANTS_FLAGS_H

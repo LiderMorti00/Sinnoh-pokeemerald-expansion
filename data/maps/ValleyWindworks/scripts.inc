@@ -1,4 +1,5 @@
 ValleyWindworks_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, ValleyWindworks_OnTransitionSN
 	.byte 0
 
 ValleyWindworks_EventScript_DoorGrunt::
@@ -94,3 +95,40 @@ ValleyWindworks_EventScript_Sign1::
 
 ValleyWindworks_Text_Sign1:
 	.string "VALLEY WINDWORKS$"
+
+ValleyWindworks_OnTransitionSN:
+	call ValleyWindworks_EventScript_SNVis_DRIFLOON
+	end
+
+ValleyWindworks_EventScript_SNVis_DRIFLOON:
+	setflag FLAG_SN_HIDE_DRIFLOON
+	goto_if_lt VAR_SINNOH_STORY, 22, ValleyWindworks_EventScript_SNVis_DRIFLOON_End
+	goto_if_set FLAG_SN_DONE_DRIFLOON, ValleyWindworks_EventScript_SNVis_DRIFLOON_End
+	clearflag FLAG_SN_HIDE_DRIFLOON
+ValleyWindworks_EventScript_SNVis_DRIFLOON_End:
+	return
+
+ValleyWindworks_EventScript_SNDRIFLOON::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_DRIFLOON, CRY_MODE_ENCOUNTER
+	delay 40
+	waitmoncry
+	setwildbattle SPECIES_DRIFLOON, 22
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, ValleyWindworks_EventScript_SNDRIFLOON_Ran
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, ValleyWindworks_EventScript_SNDRIFLOON_Ran
+	setflag FLAG_SN_DONE_DRIFLOON
+	setflag FLAG_SN_HIDE_DRIFLOON
+	goto Common_EventScript_RemoveStaticPokemon
+	end
+
+ValleyWindworks_EventScript_SNDRIFLOON_Ran:
+	setvar VAR_0x8004, SPECIES_DRIFLOON
+	goto Common_EventScript_LegendaryFlewAway
+	end

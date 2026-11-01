@@ -50,3 +50,18 @@ JubilifeCity_JubilifeTV_F1_EventScript_PtNpc5::
 JubilifeCity_JubilifeTV_F1_Text_PtNpc5:
 	.string "I heard a famous Trainer is being\n"
 	.string "interviewed today!$"
+
+JubilifeCity_JubilifeTV_F1_Text_PtNpc6_0:
+	.string "Why don’t you try dressing up your\n"
+	.string "POKéMON now?\p"
+	.string "We have a Fitting Room on the second\n"
+	.string "floor.\p"
+	.string "Dress up your POKéMON nicely with\n"
+	.string "Accessories!$"
+
+JubilifeCity_JubilifeTV_F1_EventScript_PtNpc6::
+	lock
+	faceplayer
+	msgbox JubilifeCity_JubilifeTV_F1_Text_PtNpc6_0, MSGBOX_DEFAULT
+	release
+	end

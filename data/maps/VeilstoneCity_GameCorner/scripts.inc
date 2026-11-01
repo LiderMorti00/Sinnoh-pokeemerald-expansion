@@ -619,7 +619,7 @@ VeilstoneCity_GameCorner_EventScript_NoCoinCase::
 	end
 
 VeilstoneCity_GameCorner_Text_ThisIsMauvilleGameCorner:
-	.string "This is MAUVILLE GAME CORNER.$"
+	.string "This is VEILSTONE GAME CORNER.$"
 
 VeilstoneCity_GameCorner_Text_NeedCoinCaseForCoins:
 	.string "Okay, you wanted some COINS for\n"
@@ -712,7 +712,7 @@ VeilstoneCity_GameCorner_Text_LuckOnlyLastSoLongTakeCoins:
 	.string "Here, take some COINS!$"
 
 VeilstoneCity_GameCorner_Text_MauvilleSomethingForEveryone:
-	.string "MAUVILLE has something for\n"
+	.string "VEILSTONE has something for\n"
 	.string "everyone.\p"
 	.string "For me, it's the GAME CORNER.$"
 

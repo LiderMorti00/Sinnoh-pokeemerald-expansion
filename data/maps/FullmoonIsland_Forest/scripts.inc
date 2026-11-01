@@ -1,2 +1,40 @@
 FullmoonIsland_Forest_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, FullmoonIsland_Forest_OnTransitionSN
 	.byte 0
+
+FullmoonIsland_Forest_OnTransitionSN:
+	call FullmoonIsland_Forest_EventScript_SNVis_CRESSELIA
+	end
+
+FullmoonIsland_Forest_EventScript_SNVis_CRESSELIA:
+	setflag FLAG_SN_HIDE_CRESSELIA
+	goto_if_unset FLAG_SYS_GAME_CLEAR, FullmoonIsland_Forest_EventScript_SNVis_CRESSELIA_End
+	goto_if_set FLAG_SN_DONE_CRESSELIA, FullmoonIsland_Forest_EventScript_SNVis_CRESSELIA_End
+	clearflag FLAG_SN_HIDE_CRESSELIA
+FullmoonIsland_Forest_EventScript_SNVis_CRESSELIA_End:
+	return
+
+FullmoonIsland_Forest_EventScript_SNCRESSELIA::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_CRESSELIA, CRY_MODE_ENCOUNTER
+	delay 40
+	waitmoncry
+	setwildbattle SPECIES_CRESSELIA, 50
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, FullmoonIsland_Forest_EventScript_SNCRESSELIA_Ran
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, FullmoonIsland_Forest_EventScript_SNCRESSELIA_Ran
+	setflag FLAG_SN_DONE_CRESSELIA
+	setflag FLAG_SN_HIDE_CRESSELIA
+	goto Common_EventScript_RemoveStaticPokemon
+	end
+
+FullmoonIsland_Forest_EventScript_SNCRESSELIA_Ran:
+	setvar VAR_0x8004, SPECIES_CRESSELIA
+	goto Common_EventScript_LegendaryFlewAway
+	end

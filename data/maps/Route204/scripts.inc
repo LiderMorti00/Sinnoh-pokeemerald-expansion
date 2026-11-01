@@ -182,3 +182,20 @@ Route204_EventScript_Sign4::
 Route204_Text_Sign4:
 	.string "ROUTE 204\p"
 	.string "JUBILIFE CITY / FLOAROMA TOWN$"
+
+Route204_EventScript_LivLiz::
+	trainerbattle_double TRAINER_SHELBY_2, Route204_Text_LivLizIntro, Route204_Text_LivLizDefeat, Route204_Text_LivLizNotEnough
+	msgbox Route204_Text_LivLizPost, MSGBOX_AUTOCLOSE
+	end
+
+Route204_Text_LivLizIntro:
+	.string "Let’s battle!$"
+
+Route204_Text_LivLizDefeat:
+	.string "I lost!$"
+
+Route204_Text_LivLizPost:
+	.string "That was a good battle.$"
+
+Route204_Text_LivLizNotEnough:
+	.string "You need two POKéMON to battle us!$"

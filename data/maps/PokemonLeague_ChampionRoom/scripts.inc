@@ -126,14 +126,14 @@ PokemonLeague_ChampionRoom_Text_PostBattleSpeech:
 	.string "Come with me. We’ll take the lift.$"
 
 PokemonLeague_ChampionRoom_Text_WallaceWaitOutside:
-	.string "WALLACE: I'm sorry, but…\p"
+	.string "CYNTHIA: I'm sorry, but…\p"
 	.string "From here on, only those TRAINERS who\n"
 	.string "have become CHAMPIONS may enter.\p"
 	.string "You'll have to wait outside with\n"
-	.string "PROF. BIRCH.$"
+	.string "PROF. ROWAN.$"
 
 PokemonLeague_ChampionRoom_Text_MayCongratulations:
-	.string "MAY: Groan…\p"
+	.string "DAWN: Groan…\p"
 	.string "… … … … … … … …\n"
 	.string "… … … … … … … …\p"
 	.string "I'm just joking! That's okay!\n"
@@ -142,7 +142,7 @@ PokemonLeague_ChampionRoom_Text_MayCongratulations:
 	.string "Honestly, congratulations!$"
 
 PokemonLeague_ChampionRoom_Text_BrendanCongratulations:
-	.string "BRENDAN: Whaaaat?! … … … … …\n"
+	.string "BARRY: Whaaaat?! … … … … …\n"
 	.string "… … … … … … … …\p"
 	.string "It can't be helped if that's the rule.\p"
 	.string "{PLAYER}, way to go!\n"

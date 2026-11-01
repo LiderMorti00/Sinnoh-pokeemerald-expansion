@@ -7,13 +7,13 @@ SnowpointCity_Gym_B1F_Text_ConnieDefeat:
 
 SnowpointCity_Gym_B1F_Text_ConniePostBattle:
 	.string "I'll tell you something good.\p"
-	.string "If you want to reach JUAN, you\n"
+	.string "If you want to reach CANDICE, you\n"
 	.string "need to walk on each floor tile once.$"
 
 SnowpointCity_Gym_B1F_Text_BridgetIntro:
 	.string "The POKéMON GYM of the highest level\n"
-	.string "in the HOENN region…\p"
-	.string "That's the SOOTOPOLIS GYM.$"
+	.string "in the SINNOH region…\p"
+	.string "That's the SNOWPOINT GYM.$"
 
 SnowpointCity_Gym_B1F_Text_BridgetDefeat:
 	.string "What a high level you are!$"
@@ -26,7 +26,7 @@ SnowpointCity_Gym_B1F_Text_BridgetPostBattle:
 
 SnowpointCity_Gym_B1F_Text_OliviaIntro:
 	.string "I train my POKéMON together with\n"
-	.string "JUAN.\p"
+	.string "CANDICE.\p"
 	.string "Don't think I'm a pushover.$"
 
 SnowpointCity_Gym_B1F_Text_OliviaDefeat:
@@ -70,9 +70,9 @@ SnowpointCity_Gym_B1F_Text_AnnikaDefeat:
 	.string "at my POKéMON?$"
 
 SnowpointCity_Gym_B1F_Text_AnnikaPostBattle:
-	.string "I came to this GYM because JUAN\n"
+	.string "I came to this GYM because CANDICE\n"
 	.string "praised me for my darling POKéMON.\p"
-	.string "Oh, if only I'd met JUAN years ago\n"
+	.string "Oh, if only I'd met CANDICE years ago\n"
 	.string "when I was younger…$"
 
 SnowpointCity_Gym_B1F_Text_BriannaIntro:
@@ -84,7 +84,7 @@ SnowpointCity_Gym_B1F_Text_BriannaDefeat:
 	.string "I went much too easy on you.$"
 
 SnowpointCity_Gym_B1F_Text_BriannaPostBattle:
-	.string "You couldn't lay a finger on JUAN,\n"
+	.string "You couldn't lay a finger on CANDICE,\n"
 	.string "I'm sure. Giggle…$"
 
 SnowpointCity_Gym_B1F_EventScript_Anton::

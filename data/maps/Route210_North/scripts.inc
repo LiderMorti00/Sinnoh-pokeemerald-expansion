@@ -204,3 +204,20 @@ Route210_North_EventScript_PtSign2::
 
 Route210_North_Text_PtSign2:
 	.string "Grandma Wilma's House$"
+
+Route210_North_EventScript_ZacJen2::
+	trainerbattle_double TRAINER_SHELBY_5, Route210_North_Text_ZacJen2Intro, Route210_North_Text_ZacJen2Defeat, Route210_North_Text_ZacJen2NotEnough
+	msgbox Route210_North_Text_ZacJen2Post, MSGBOX_AUTOCLOSE
+	end
+
+Route210_North_Text_ZacJen2Intro:
+	.string "Let’s battle!$"
+
+Route210_North_Text_ZacJen2Defeat:
+	.string "I lost!$"
+
+Route210_North_Text_ZacJen2Post:
+	.string "That was a good battle.$"
+
+Route210_North_Text_ZacJen2NotEnough:
+	.string "You need two POKéMON to battle us!$"
