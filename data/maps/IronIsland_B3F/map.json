@@ -30,15 +30,15 @@
   ],
   "warp_events": [
     {
-      "x": 3,
-      "y": 6,
+      "x": 4,
+      "y": 9,
       "elevation": 0,
       "dest_map": "MAP_IRON_ISLAND",
       "dest_warp_id": "2"
     },
     {
-      "x": 15,
-      "y": 16,
+      "x": 17,
+      "y": 15,
       "elevation": 0,
       "dest_map": "MAP_IRON_ISLAND_B2F_LEFT",
       "dest_warp_id": "1"

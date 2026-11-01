@@ -29,8 +29,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT_FRLG",
-      "x": 29,
-      "y": 41,
+      "x": 25,
+      "y": 40,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -42,8 +42,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_BIRD_KEEPER",
-      "x": 30,
-      "y": 58,
+      "x": 25,
+      "y": 63,
       "elevation": 4,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -55,8 +55,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_ACE_TRAINER_F",
-      "x": 9,
-      "y": 42,
+      "x": 13,
+      "y": 46,
       "elevation": 4,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -68,8 +68,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
-      "x": 26,
-      "y": 25,
+      "x": 28,
+      "y": 36,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -81,8 +81,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_DRAGON_TAMER",
-      "x": 39,
-      "y": 31,
+      "x": 38,
+      "y": 27,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -94,8 +94,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 41,
-      "y": 48,
+      "x": 33,
+      "y": 47,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -107,8 +107,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 27,
-      "y": 46,
+      "x": 21,
+      "y": 53,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -133,8 +133,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 12,
-      "y": 38,
+      "x": 21,
+      "y": 33,
       "elevation": 4,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -146,8 +146,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 43,
-      "y": 36,
+      "x": 33,
+      "y": 34,
       "elevation": 4,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -159,8 +159,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_COLLECTOR",
-      "x": 43,
-      "y": 32,
+      "x": 9,
+      "y": 35,
       "elevation": 4,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -215,8 +215,8 @@
       "dest_warp_id": "2"
     },
     {
-      "x": 44,
-      "y": 33,
+      "x": 43,
+      "y": 32,
       "elevation": 0,
       "dest_map": "MAP_SINNOH_VICTORY_ROAD_1F_ROOM1",
       "dest_warp_id": "0"
@@ -229,8 +229,8 @@
       "dest_warp_id": "2"
     },
     {
-      "x": 33,
-      "y": 5,
+      "x": 30,
+      "y": 7,
       "elevation": 0,
       "dest_map": "MAP_POKMON_LEAGUE",
       "dest_warp_id": "3"
@@ -250,15 +250,15 @@
       "dest_warp_id": "2"
     },
     {
-      "x": 33,
-      "y": 4,
+      "x": 31,
+      "y": 7,
       "elevation": 0,
       "dest_map": "MAP_POKMON_LEAGUE",
       "dest_warp_id": "3"
     },
     {
-      "x": 33,
-      "y": 6,
+      "x": 29,
+      "y": 7,
       "elevation": 0,
       "dest_map": "MAP_POKMON_LEAGUE",
       "dest_warp_id": "3"
@@ -284,7 +284,7 @@
     },
     {
       "type": "hidden_item",
-      "x": 9,
+      "x": 8,
       "y": 26,
       "elevation": 3,
       "item": "ITEM_NUGGET",

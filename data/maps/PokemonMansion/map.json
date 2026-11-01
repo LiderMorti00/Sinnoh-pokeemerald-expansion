@@ -122,6 +122,20 @@
       "elevation": 0,
       "dest_map": "MAP_TROPHY_GARDEN",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 33,
+      "y": 17,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE212_NORTH",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 35,
+      "y": 17,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE212_NORTH",
+      "dest_warp_id": "2"
     }
   ],
   "coord_events": [],

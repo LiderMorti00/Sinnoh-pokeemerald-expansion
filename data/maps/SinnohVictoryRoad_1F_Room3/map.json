@@ -16,15 +16,15 @@
   "object_events": [],
   "warp_events": [
     {
-      "x": 3,
-      "y": 5,
+      "x": 4,
+      "y": 6,
       "elevation": 0,
       "dest_map": "MAP_SINNOH_VICTORY_ROAD_1F_ROOM2",
       "dest_warp_id": "1"
     },
     {
-      "x": 20,
-      "y": 5,
+      "x": 19,
+      "y": 7,
       "elevation": 0,
       "dest_map": "MAP_ROUTE224",
       "dest_warp_id": "0"

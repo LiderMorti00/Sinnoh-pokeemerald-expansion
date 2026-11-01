@@ -30,14 +30,14 @@
   ],
   "warp_events": [
     {
-      "x": 21,
+      "x": 20,
       "y": 12,
       "elevation": 0,
       "dest_map": "MAP_FULLMOON_ISLAND_FOREST",
       "dest_warp_id": "0"
     },
     {
-      "x": 22,
+      "x": 21,
       "y": 12,
       "elevation": 0,
       "dest_map": "MAP_FULLMOON_ISLAND_FOREST",

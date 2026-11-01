@@ -95,42 +95,21 @@
   ],
   "warp_events": [
     {
-      "x": 1,
-      "y": 15,
+      "x": 6,
+      "y": 14,
       "elevation": 0,
       "dest_map": "MAP_VEILSTONE_CITY",
       "dest_warp_id": "3"
     },
     {
-      "x": 2,
-      "y": 14,
+      "x": 5,
+      "y": 15,
       "elevation": 3,
       "dest_map": "MAP_VEILSTONE_CITY",
       "dest_warp_id": "3"
     },
     {
-      "x": 3,
-      "y": 15,
-      "elevation": 0,
-      "dest_map": "MAP_VEILSTONE_CITY",
-      "dest_warp_id": "3"
-    },
-    {
-      "x": 9,
-      "y": 15,
-      "elevation": 0,
-      "dest_map": "MAP_VEILSTONE_CITY",
-      "dest_warp_id": "3"
-    },
-    {
-      "x": 10,
-      "y": 14,
-      "elevation": 3,
-      "dest_map": "MAP_VEILSTONE_CITY",
-      "dest_warp_id": "3"
-    },
-    {
-      "x": 11,
+      "x": 7,
       "y": 15,
       "elevation": 0,
       "dest_map": "MAP_VEILSTONE_CITY",

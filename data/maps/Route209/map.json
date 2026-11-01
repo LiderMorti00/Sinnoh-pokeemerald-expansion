@@ -322,7 +322,7 @@
     },
     {
       "x": 61,
-      "y": 14,
+      "y": 15,
       "elevation": 0,
       "dest_map": "MAP_LOST_TOWER_1F",
       "dest_warp_id": "0"

@@ -12,7 +12,13 @@
   "allow_running": false,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": null,
+  "connections": [
+    {
+      "map": "MAP_FUEGO_IRONWORKS",
+      "offset": 28,
+      "direction": "up"
+    }
+  ],
   "object_events": [
     {
       "local_id": "LOCALID_MEADOW_HONEY_MAN",
@@ -135,15 +141,15 @@
       "x": 48,
       "y": 10,
       "elevation": 0,
-      "dest_map": "MAP_FLOAROMA_MEADOW",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_FUEGO_IRONWORKS",
+      "dest_warp_id": "3"
     },
     {
       "x": 49,
       "y": 10,
       "elevation": 0,
-      "dest_map": "MAP_FLOAROMA_MEADOW",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_FUEGO_IRONWORKS",
+      "dest_warp_id": "4"
     }
   ],
   "coord_events": [],

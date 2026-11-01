@@ -185,8 +185,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 2,
-      "y": 24,
+      "x": 40,
+      "y": 38,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -232,7 +232,7 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 15,
+      "x": 12,
       "y": 49,
       "elevation": 0,
       "dest_map": "MAP_IRON_ISLAND_B3F",

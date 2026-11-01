@@ -52,7 +52,22 @@
       "flag": "FLAG_ITEM_ACUITYLAKEFRONT_REAPER_CLOTH"
     }
   ],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 20,
+      "y": 39,
+      "elevation": 0,
+      "dest_map": "MAP_LAKE_ACUITY",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 21,
+      "y": 39,
+      "elevation": 0,
+      "dest_map": "MAP_LAKE_ACUITY",
+      "dest_warp_id": "2"
+    }
+  ],
   "coord_events": [],
   "bg_events": [
     {

@@ -17,7 +17,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_RECEPTIONIST",
       "x": 9,
-      "y": 5,
+      "y": 9,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -29,7 +29,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_LASS",
-      "x": 2,
+      "x": 1,
       "y": 3,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
@@ -57,14 +57,14 @@
   "warp_events": [
     {
       "x": 6,
-      "y": 8,
+      "y": 11,
       "elevation": 0,
       "dest_map": "MAP_CANALAVE_CITY",
       "dest_warp_id": "4"
     },
     {
       "x": 7,
-      "y": 8,
+      "y": 11,
       "elevation": 0,
       "dest_map": "MAP_CANALAVE_CITY",
       "dest_warp_id": "4"
@@ -81,7 +81,7 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 1,
+      "x": 0,
       "y": 2,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -89,7 +89,7 @@
     },
     {
       "type": "sign",
-      "x": 2,
+      "x": 1,
       "y": 6,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -97,7 +97,7 @@
     },
     {
       "type": "sign",
-      "x": 2,
+      "x": 5,
       "y": 2,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -105,7 +105,7 @@
     },
     {
       "type": "sign",
-      "x": 2,
+      "x": 1,
       "y": 2,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -113,23 +113,23 @@
     },
     {
       "type": "sign",
-      "x": 3,
-      "y": 2,
+      "x": 12,
+      "y": 6,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "CanalaveCity_Library_F1_EventScript_PtSign5"
     },
     {
       "type": "sign",
-      "x": 4,
-      "y": 2,
+      "x": 13,
+      "y": 6,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "CanalaveCity_Library_F1_EventScript_PtSign6"
     },
     {
       "type": "sign",
-      "x": 4,
+      "x": 6,
       "y": 2,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -137,7 +137,7 @@
     },
     {
       "type": "sign",
-      "x": 2,
+      "x": 10,
       "y": 6,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -145,7 +145,7 @@
     },
     {
       "type": "sign",
-      "x": 1,
+      "x": 0,
       "y": 6,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -153,7 +153,7 @@
     },
     {
       "type": "sign",
-      "x": 3,
+      "x": 11,
       "y": 6,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -169,8 +169,8 @@
     },
     {
       "type": "sign",
-      "x": 10,
-      "y": 2,
+      "x": 2,
+      "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "CanalaveCity_Library_F1_EventScript_PtSign12"
@@ -193,8 +193,8 @@
     },
     {
       "type": "sign",
-      "x": 12,
-      "y": 2,
+      "x": 10,
+      "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "CanalaveCity_Library_F1_EventScript_PtSign15"
@@ -210,7 +210,7 @@
     {
       "type": "sign",
       "x": 3,
-      "y": 5,
+      "y": 9,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "CanalaveCity_Library_F1_EventScript_PtSign17"
@@ -218,23 +218,23 @@
     {
       "type": "sign",
       "x": 3,
-      "y": 5,
+      "y": 6,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "CanalaveCity_Library_F1_EventScript_PtSign18"
     },
     {
       "type": "sign",
-      "x": 1,
-      "y": 5,
+      "x": 7,
+      "y": 2,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "CanalaveCity_Library_F1_EventScript_PtSign19"
     },
     {
       "type": "sign",
-      "x": 2,
-      "y": 5,
+      "x": 8,
+      "y": 2,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "CanalaveCity_Library_F1_EventScript_PtSign20"
@@ -242,7 +242,7 @@
     {
       "type": "sign",
       "x": 2,
-      "y": 5,
+      "y": 6,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "CanalaveCity_Library_F1_EventScript_PtSign21"

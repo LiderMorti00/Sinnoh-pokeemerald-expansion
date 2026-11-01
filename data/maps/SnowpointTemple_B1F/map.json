@@ -30,15 +30,15 @@
   ],
   "warp_events": [
     {
-      "x": 5,
-      "y": 4,
+      "x": 14,
+      "y": 3,
       "elevation": 0,
       "dest_map": "MAP_SNOWPOINT_TEMPLE_1F",
       "dest_warp_id": "1"
     },
     {
-      "x": 15,
-      "y": 4,
+      "x": 4,
+      "y": 3,
       "elevation": 0,
       "dest_map": "MAP_SNOWPOINT_TEMPLE_B2F",
       "dest_warp_id": "0"

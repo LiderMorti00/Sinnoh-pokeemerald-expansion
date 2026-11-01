@@ -102,11 +102,11 @@
       "dest_warp_id": "2"
     },
     {
-      "x": 3,
-      "y": 60,
+      "x": 4,
+      "y": 62,
       "elevation": 0,
       "dest_map": "MAP_ROUTE207",
-      "dest_warp_id": "0"
+      "dest_warp_id": "1"
     },
     {
       "x": 8,

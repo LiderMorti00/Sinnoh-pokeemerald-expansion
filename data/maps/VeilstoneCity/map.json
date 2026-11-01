@@ -290,7 +290,7 @@
     },
     {
       "x": 25,
-      "y": 16,
+      "y": 17,
       "elevation": 0,
       "dest_map": "MAP_VEILSTONE_CITY_GALACTIC_WAREHOUSE",
       "dest_warp_id": "0"

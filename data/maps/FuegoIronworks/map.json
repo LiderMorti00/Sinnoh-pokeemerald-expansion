@@ -14,13 +14,13 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_FLOAROMA_TOWN",
-      "offset": 0,
+      "map": "MAP_FLOAROMA_MEADOW",
+      "offset": -28,
       "direction": "down"
     },
     {
       "map": "MAP_ROUTE205_SOUTH",
-      "offset": 0,
+      "offset": -4,
       "direction": "right"
     }
   ],
@@ -45,6 +45,20 @@
       "y": 11,
       "elevation": 0,
       "dest_map": "MAP_FUEGO_IRONWORKS_INSIDE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 20,
+      "y": 30,
+      "elevation": 0,
+      "dest_map": "MAP_FLOAROMA_MEADOW",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 21,
+      "y": 30,
+      "elevation": 0,
+      "dest_map": "MAP_FUEGO_IRONWORKS",
       "dest_warp_id": "0"
     }
   ],

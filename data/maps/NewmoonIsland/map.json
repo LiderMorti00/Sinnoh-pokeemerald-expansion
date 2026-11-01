@@ -30,14 +30,14 @@
   ],
   "warp_events": [
     {
-      "x": 9,
+      "x": 10,
       "y": 12,
       "elevation": 0,
       "dest_map": "MAP_NEWMOON_ISLAND_FOREST",
       "dest_warp_id": "0"
     },
     {
-      "x": 10,
+      "x": 11,
       "y": 12,
       "elevation": 0,
       "dest_map": "MAP_NEWMOON_ISLAND_FOREST",

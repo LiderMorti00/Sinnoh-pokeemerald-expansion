@@ -35,6 +35,20 @@
       "elevation": 0,
       "dest_map": "MAP_LAKE_ACUITY_CAVERN",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 6,
+      "y": 49,
+      "elevation": 0,
+      "dest_map": "MAP_ACUITY_LAKEFRONT",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 7,
+      "y": 49,
+      "elevation": 0,
+      "dest_map": "MAP_ACUITY_LAKEFRONT",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

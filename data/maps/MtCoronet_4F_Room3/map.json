@@ -16,14 +16,14 @@
   "object_events": [],
   "warp_events": [
     {
-      "x": 3,
-      "y": 4,
+      "x": 4,
+      "y": 5,
       "elevation": 0,
       "dest_map": "MAP_MT_CORONET_OUTSIDE_NORTH",
       "dest_warp_id": "1"
     },
     {
-      "x": 19,
+      "x": 25,
       "y": 9,
       "elevation": 0,
       "dest_map": "MAP_MT_CORONET_5F",
@@ -34,7 +34,7 @@
   "bg_events": [
     {
       "type": "hidden_item",
-      "x": 12,
+      "x": 18,
       "y": 9,
       "elevation": 3,
       "item": "ITEM_MAX_ELIXIR",

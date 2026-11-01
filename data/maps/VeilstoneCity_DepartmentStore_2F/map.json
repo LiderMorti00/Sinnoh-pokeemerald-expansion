@@ -112,7 +112,7 @@
       "y": 2,
       "elevation": 3,
       "dest_map": "MAP_VEILSTONE_CITY_DEPARTMENT_STORE_1F",
-      "dest_warp_id": "6"
+      "dest_warp_id": "3"
     },
     {
       "x": 9,
@@ -126,7 +126,7 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 8,
+      "x": 4,
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",

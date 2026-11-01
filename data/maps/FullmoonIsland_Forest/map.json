@@ -16,15 +16,15 @@
   "object_events": [],
   "warp_events": [
     {
-      "x": 9,
-      "y": 14,
+      "x": 8,
+      "y": 13,
       "elevation": 0,
       "dest_map": "MAP_FULLMOON_ISLAND",
       "dest_warp_id": "0"
     },
     {
-      "x": 10,
-      "y": 14,
+      "x": 9,
+      "y": 13,
       "elevation": 0,
       "dest_map": "MAP_FULLMOON_ISLAND",
       "dest_warp_id": "1"

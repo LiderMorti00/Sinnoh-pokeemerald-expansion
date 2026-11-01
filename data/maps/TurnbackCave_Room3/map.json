@@ -414,7 +414,7 @@
       "dest_warp_id": "1"
     },
     {
-      "x": 21,
+      "x": 22,
       "y": 12,
       "elevation": 0,
       "dest_map": "MAP_TURNBACK_CAVE_PILLAR3",
@@ -428,7 +428,7 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 3,
+      "x": 2,
       "y": 12,
       "elevation": 0,
       "dest_map": "MAP_TURNBACK_CAVE_PILLAR3",

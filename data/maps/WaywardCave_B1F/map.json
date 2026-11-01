@@ -57,14 +57,14 @@
   "warp_events": [
     {
       "x": 42,
-      "y": 37,
+      "y": 36,
       "elevation": 0,
       "dest_map": "MAP_WAYWARD_CAVE_1F",
       "dest_warp_id": "3"
     },
     {
       "x": 15,
-      "y": 39,
+      "y": 38,
       "elevation": 0,
       "dest_map": "MAP_WAYWARD_CAVE_1F",
       "dest_warp_id": "2"
@@ -74,7 +74,7 @@
   "bg_events": [
     {
       "type": "hidden_item",
-      "x": 2,
+      "x": 3,
       "y": 9,
       "elevation": 3,
       "item": "ITEM_STARDUST",
@@ -82,7 +82,7 @@
     },
     {
       "type": "hidden_item",
-      "x": 3,
+      "x": 4,
       "y": 38,
       "elevation": 3,
       "item": "ITEM_DUSK_STONE",

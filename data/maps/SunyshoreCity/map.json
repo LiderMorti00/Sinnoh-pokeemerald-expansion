@@ -154,6 +154,13 @@
       "elevation": 0,
       "dest_map": "MAP_SUNYSHORE_CITY_GYM",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 21,
+      "y": 24,
+      "elevation": 0,
+      "dest_map": "MAP_SUNYSHORE_CITY_MARKET",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],
@@ -161,7 +168,7 @@
     {
       "type": "sign",
       "x": 20,
-      "y": 24,
+      "y": 25,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "SunyshoreCity_EventScript_PtSign1"

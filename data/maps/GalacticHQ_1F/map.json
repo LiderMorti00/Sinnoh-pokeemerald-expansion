@@ -155,36 +155,36 @@
       "dest_warp_id": "14"
     },
     {
-      "x": 5,
-      "y": 3,
+      "x": 6,
+      "y": 2,
       "elevation": 0,
       "dest_map": "MAP_GALACTIC_HQ_2F",
       "dest_warp_id": "0"
     },
     {
-      "x": 20,
-      "y": 14,
+      "x": 21,
+      "y": 13,
       "elevation": 0,
       "dest_map": "MAP_GALACTIC_HQ_2F",
       "dest_warp_id": "2"
     },
     {
-      "x": 28,
-      "y": 3,
+      "x": 29,
+      "y": 2,
       "elevation": 0,
       "dest_map": "MAP_GALACTIC_HQ_2F",
       "dest_warp_id": "1"
     },
     {
-      "x": 12,
-      "y": 3,
+      "x": 11,
+      "y": 2,
       "elevation": 0,
       "dest_map": "MAP_GALACTIC_HQ_B2F",
       "dest_warp_id": "0"
     },
     {
-      "x": 47,
-      "y": 3,
+      "x": 48,
+      "y": 2,
       "elevation": 0,
       "dest_map": "MAP_GALACTIC_HQ_B1F",
       "dest_warp_id": "0"
@@ -197,7 +197,7 @@
       "dest_warp_id": "9"
     },
     {
-      "x": 42,
+      "x": 43,
       "y": 3,
       "elevation": 0,
       "dest_map": "MAP_GALACTIC_HQ_1F",
@@ -237,6 +237,27 @@
       "elevation": 0,
       "dest_map": "MAP_GALACTIC_HQ_4F",
       "dest_warp_id": "2"
+    },
+    {
+      "x": 10,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_VEILSTONE_CITY",
+      "dest_warp_id": "12"
+    },
+    {
+      "x": 31,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_VEILSTONE_CITY",
+      "dest_warp_id": "13"
+    },
+    {
+      "x": 44,
+      "y": 22,
+      "elevation": 0,
+      "dest_map": "MAP_VEILSTONE_CITY",
+      "dest_warp_id": "14"
     }
   ],
   "coord_events": [],

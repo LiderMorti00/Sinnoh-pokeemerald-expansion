@@ -446,7 +446,7 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 3,
+      "x": 4,
       "y": 51,
       "elevation": 0,
       "dest_map": "MAP_BATTLE_FRONTIER_POKEMON_CENTER_1F",
@@ -512,7 +512,7 @@
     },
     {
       "type": "sign",
-      "x": 4,
+      "x": 2,
       "y": 51,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -520,7 +520,7 @@
     },
     {
       "type": "sign",
-      "x": 5,
+      "x": 3,
       "y": 51,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",

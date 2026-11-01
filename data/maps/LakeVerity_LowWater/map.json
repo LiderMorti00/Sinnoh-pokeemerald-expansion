@@ -16,8 +16,8 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 18,
-      "y": 21,
+      "x": 6,
+      "y": 41,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -29,8 +29,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_ROWAN",
-      "x": 41,
-      "y": 10,
+      "x": 40,
+      "y": 32,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
@@ -43,15 +43,15 @@
   ],
   "warp_events": [
     {
-      "x": 39,
-      "y": 21,
+      "x": 38,
+      "y": 43,
       "elevation": 0,
       "dest_map": "MAP_VERITY_LAKEFRONT",
       "dest_warp_id": "0"
     },
     {
-      "x": 40,
-      "y": 21,
+      "x": 39,
+      "y": 43,
       "elevation": 0,
       "dest_map": "MAP_VERITY_LAKEFRONT",
       "dest_warp_id": "0"

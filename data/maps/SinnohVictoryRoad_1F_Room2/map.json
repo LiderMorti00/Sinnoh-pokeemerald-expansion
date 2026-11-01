@@ -16,7 +16,7 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_ACE_TRAINER_M",
-      "x": 10,
+      "x": 9,
       "y": 47,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
@@ -120,8 +120,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_PSYCHIC_M",
-      "x": 38,
-      "y": 17,
+      "x": 42,
+      "y": 18,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -133,8 +133,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_PSYCHIC_M",
-      "x": 36,
-      "y": 17,
+      "x": 39,
+      "y": 18,
       "elevation": 4,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -199,7 +199,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 44,
-      "y": 9,
+      "y": 8,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -237,7 +237,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 27,
+      "x": 43,
       "y": 60,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -381,15 +381,15 @@
   ],
   "warp_events": [
     {
-      "x": 3,
-      "y": 58,
+      "x": 4,
+      "y": 60,
       "elevation": 0,
       "dest_map": "MAP_SINNOH_VICTORY_ROAD_1F_ROOM1",
       "dest_warp_id": "1"
     },
     {
-      "x": 56,
-      "y": 13,
+      "x": 53,
+      "y": 10,
       "elevation": 0,
       "dest_map": "MAP_SINNOH_VICTORY_ROAD_1F_ROOM3",
       "dest_warp_id": "0"
@@ -407,8 +407,8 @@
     },
     {
       "type": "hidden_item",
-      "x": 50,
-      "y": 15,
+      "x": 54,
+      "y": 34,
       "elevation": 3,
       "item": "ITEM_HP_UP",
       "flag": "FLAG_HIDDEN_ITEM_SINNOHVICTORYROAD_1F_ROOM2_HP_UP"
@@ -423,16 +423,16 @@
     },
     {
       "type": "hidden_item",
-      "x": 40,
-      "y": 41,
+      "x": 38,
+      "y": 43,
       "elevation": 4,
       "item": "ITEM_RARE_CANDY",
       "flag": "FLAG_HIDDEN_ITEM_SINNOHVICTORYROAD_1F_ROOM2_RARE_CANDY"
     },
     {
       "type": "hidden_item",
-      "x": 24,
-      "y": 46,
+      "x": 27,
+      "y": 43,
       "elevation": 3,
       "item": "ITEM_ULTRA_BALL",
       "flag": "FLAG_HIDDEN_ITEM_SINNOHVICTORYROAD_1F_ROOM2_ULTRA_BALL_2"

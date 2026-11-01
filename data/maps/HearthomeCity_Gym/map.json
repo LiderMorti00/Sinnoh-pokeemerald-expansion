@@ -93,7 +93,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_FANTINA",
       "x": 14,
       "y": 11,
@@ -107,7 +106,6 @@
       "flag": "0"
     },
     {
-      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_GYM_GUY",
       "x": 15,
       "y": 20,

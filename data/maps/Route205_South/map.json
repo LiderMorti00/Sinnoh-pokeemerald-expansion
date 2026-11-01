@@ -30,7 +30,7 @@
     },
     {
       "map": "MAP_FUEGO_IRONWORKS",
-      "offset": 0,
+      "offset": 4,
       "direction": "left"
     }
   ],

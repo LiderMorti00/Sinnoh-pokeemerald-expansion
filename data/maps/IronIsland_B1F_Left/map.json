@@ -57,7 +57,7 @@
   "warp_events": [
     {
       "x": 16,
-      "y": 4,
+      "y": 5,
       "elevation": 0,
       "dest_map": "MAP_IRON_ISLAND_1F",
       "dest_warp_id": "1"

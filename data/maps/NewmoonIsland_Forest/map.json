@@ -17,14 +17,14 @@
   "warp_events": [
     {
       "x": 8,
-      "y": 14,
+      "y": 13,
       "elevation": 0,
       "dest_map": "MAP_NEWMOON_ISLAND",
       "dest_warp_id": "0"
     },
     {
       "x": 9,
-      "y": 14,
+      "y": 13,
       "elevation": 0,
       "dest_map": "MAP_NEWMOON_ISLAND",
       "dest_warp_id": "1"

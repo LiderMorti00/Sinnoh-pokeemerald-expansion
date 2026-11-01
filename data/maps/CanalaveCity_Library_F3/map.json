@@ -16,8 +16,8 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_SCIENTIST_F",
-      "x": 10,
-      "y": 4,
+      "x": 8,
+      "y": 7,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -29,8 +29,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER_FRLG",
-      "x": 2,
-      "y": 5,
+      "x": 5,
+      "y": 4,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 1,
@@ -54,7 +54,7 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 6,
+      "x": 4,
       "y": 2,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -62,7 +62,7 @@
     },
     {
       "type": "sign",
-      "x": 7,
+      "x": 6,
       "y": 2,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -70,7 +70,7 @@
     },
     {
       "type": "sign",
-      "x": 7,
+      "x": 5,
       "y": 2,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -78,7 +78,7 @@
     },
     {
       "type": "sign",
-      "x": 8,
+      "x": 7,
       "y": 2,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -86,7 +86,7 @@
     },
     {
       "type": "sign",
-      "x": 11,
+      "x": 9,
       "y": 2,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -94,7 +94,7 @@
     },
     {
       "type": "sign",
-      "x": 12,
+      "x": 11,
       "y": 2,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -102,7 +102,7 @@
     },
     {
       "type": "sign",
-      "x": 12,
+      "x": 10,
       "y": 2,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -110,7 +110,7 @@
     },
     {
       "type": "sign",
-      "x": 13,
+      "x": 12,
       "y": 2,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -118,24 +118,24 @@
     },
     {
       "type": "sign",
-      "x": 10,
-      "y": 6,
+      "x": 0,
+      "y": 8,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "CanalaveCity_Library_F3_EventScript_PtSign9"
     },
     {
       "type": "sign",
-      "x": 10,
-      "y": 6,
+      "x": 11,
+      "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "CanalaveCity_Library_F3_EventScript_PtSign10"
     },
     {
       "type": "sign",
-      "x": 11,
-      "y": 6,
+      "x": 1,
+      "y": 8,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "CanalaveCity_Library_F3_EventScript_PtSign11"
@@ -143,7 +143,7 @@
     {
       "type": "sign",
       "x": 12,
-      "y": 6,
+      "y": 8,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "CanalaveCity_Library_F3_EventScript_PtSign12"
@@ -151,7 +151,7 @@
     {
       "type": "sign",
       "x": 12,
-      "y": 6,
+      "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "CanalaveCity_Library_F3_EventScript_PtSign13"
@@ -159,15 +159,15 @@
     {
       "type": "sign",
       "x": 13,
-      "y": 6,
+      "y": 8,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "CanalaveCity_Library_F3_EventScript_PtSign14"
     },
     {
       "type": "sign",
-      "x": 9,
-      "y": 1,
+      "x": 8,
+      "y": 2,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "CanalaveCity_Library_F3_EventScript_PtSign15"
@@ -175,14 +175,14 @@
     {
       "type": "sign",
       "x": 10,
-      "y": 6,
+      "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "CanalaveCity_Library_F3_EventScript_PtSign16"
     },
     {
       "type": "sign",
-      "x": 10,
+      "x": 0,
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -190,15 +190,15 @@
     },
     {
       "type": "sign",
-      "x": 10,
-      "y": 5,
+      "x": 13,
+      "y": 2,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "CanalaveCity_Library_F3_EventScript_PtSign18"
     },
     {
       "type": "sign",
-      "x": 11,
+      "x": 1,
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -206,7 +206,7 @@
     },
     {
       "type": "sign",
-      "x": 12,
+      "x": 3,
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -214,7 +214,7 @@
     },
     {
       "type": "sign",
-      "x": 12,
+      "x": 2,
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
