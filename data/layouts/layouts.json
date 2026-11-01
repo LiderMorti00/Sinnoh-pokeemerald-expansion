@@ -13003,7 +13003,7 @@
     {
       "id": "LAYOUT_STARK_MOUNTAIN",
       "name": "StarkMountain_Layout",
-      "width": 32,
+      "width": 48,
       "height": 32,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Lavaridge",
