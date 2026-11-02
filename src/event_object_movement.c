@@ -688,6 +688,8 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_SinnohMonDarkrai, OBJ_EVENT_PAL_TAG_SINNOH_MON_DARKRAI},
     {gObjectEventPal_SinnohMonCresselia, OBJ_EVENT_PAL_TAG_SINNOH_MON_CRESSELIA},
     {gObjectEventPal_SinnohMonArceus, OBJ_EVENT_PAL_TAG_SINNOH_MON_ARCEUS},
+    {gObjectEventPal_SinnohMossRock, OBJ_EVENT_PAL_TAG_SINNOH_MOSS_ROCK},
+    {gObjectEventPal_SinnohIceRock, OBJ_EVENT_PAL_TAG_SINNOH_ICE_ROCK},
     {gObjectEventPal_SinnohMarley, OBJ_EVENT_PAL_TAG_SINNOH_MARLEY},
     {gObjectEventPal_SinnohJasmine, OBJ_EVENT_PAL_TAG_SINNOH_JASMINE},
     {gObjectEventPal_SinnohBuck, OBJ_EVENT_PAL_TAG_SINNOH_BUCK},

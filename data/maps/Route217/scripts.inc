@@ -237,3 +237,11 @@ Route217_EventScript_SNMaylene_T2:
 	.string "Oh, that was nothing. Really, I’m not\n"
 	.string "cold at all.\p"
 	.string "I’ll be going now. Please take care!$"
+
+Route217_EventScript_SNIceRock::
+	msgbox Route217_EventScript_SNIceRock_Text, MSGBOX_SIGN
+	end
+
+Route217_EventScript_SNIceRock_Text:
+	.string "The boulder is encrusted with ice. It is\n"
+	.string "bone chilling to touch.$"

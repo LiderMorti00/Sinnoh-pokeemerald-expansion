@@ -289,3 +289,11 @@ EternaForest_Text_SNGardenia2:
 	.string "not because I’m s-scared!\p"
 	.string "S-so, good luck with your\n"
 	.string "investigation!$"
+
+EternaForest_EventScript_SNMossRock::
+	msgbox EternaForest_EventScript_SNMossRock_Text, MSGBOX_SIGN
+	end
+
+EternaForest_EventScript_SNMossRock_Text:
+	.string "The rock is covered in moss. It feels\n"
+	.string "pleasantly cool.$"

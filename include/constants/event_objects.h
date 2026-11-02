@@ -522,6 +522,8 @@ enum
     OBJ_EVENT_GFX_SINNOH_BUCK,
     OBJ_EVENT_GFX_SINNOH_RILEY,
     OBJ_EVENT_GFX_SINNOH_CHERYL,
+    OBJ_EVENT_GFX_SINNOH_MOSS_ROCK,
+    OBJ_EVENT_GFX_SINNOH_ICE_ROCK,
     NUM_OBJ_EVENT_GFX,
 };
 
@@ -821,6 +823,8 @@ enum
 #define OBJ_EVENT_PAL_TAG_SINNOH_BUCK                 0x1268
 #define OBJ_EVENT_PAL_TAG_SINNOH_JASMINE              0x1269
 #define OBJ_EVENT_PAL_TAG_SINNOH_MARLEY               0x126A
+#define OBJ_EVENT_PAL_TAG_SINNOH_MOSS_ROCK            0x126B
+#define OBJ_EVENT_PAL_TAG_SINNOH_ICE_ROCK             0x126C
 
 // Used as a placeholder follower graphic
 #define OBJ_EVENT_PAL_TAG_SUBSTITUTE              0x7611

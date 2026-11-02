@@ -8649,6 +8649,42 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMonStarly = 
     .images = sPicTable_SinnohMonStarly,
 };
 
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMossRock = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_SINNOH_MOSS_ROCK,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_1,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = TRUE,
+    .compressed = FALSE,
+    .tracks = TRACKS_NONE,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Inanimate,
+    .images = sPicTable_SinnohMossRock,
+};
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohIceRock = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_SINNOH_ICE_ROCK,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_1,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = TRUE,
+    .compressed = FALSE,
+    .tracks = TRACKS_NONE,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Inanimate,
+    .images = sPicTable_SinnohIceRock,
+};
+
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMonMachop = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_SINNOH_MON_MACHOP,

@@ -1,57 +1,44 @@
 # Proyecto Sinnoh — Lo que queda por hacer y mejorar
 
 Lista única de tareas pendientes. Cuando se termine una tarea, se borra de aquí.
-Fuentes de referencia: Bulbapedia (guía de Platino), WikiDex, pret/pokeplatinum (textos y eventos originales).
+Fuentes de referencia: Bulbapedia (guía de Platino), WikiDex, pret/pokeplatinum (textos, eventos y datos originales).
 
 Última revisión: 3 de noviembre de 2026.
 
 ---
 
-## 1. Historia
-
-No queda ninguna escena de la historia sin hacer. Lo que falta es probarlas todas en el emulador (apartado 5).
-
-## 2. Gráficos
+## 1. Esperando material del usuario
 
 | # | Qué | Notas |
 |---|-----|-------|
-| 2.1 | Sprite de Dawn en el mapa (sigue usando el de Leaf). | Hace falta una hoja de sprites de Dawn al estilo GBA (16×32, mismos fotogramas que Leaf). |
-| 2.2 | Buzones delante de las casas de Hojaverde. | Son decorativos; en Platino se pueden leer. |
-| 2.3 | Roca musgo (Bosque Vetusta) y roca helada (Ruta 217). | Eevee ya evoluciona en esas zonas, pero las rocas no se ven en el mapa. |
+| 1.1 | Sprite de Dawn en el mapa (sigue usando el de Leaf). | El usuario lo pasará más adelante. Hace falta la hoja completa al estilo GBA: andar, correr, bici, surf, pescar, etc. |
 
-## 3. Funciones y servicios
+## 2. Escenas hechas pero sin probar en el emulador
 
-| # | Dónde | Qué falta | Notas |
-|---|-------|-----------|-------|
-| 3.1 | TV de Jubileo, 2F | Galería (fondos) y los NPC de esa planta. | Algunos textos hablan del Terminal Global, que se eliminó. |
-| 3.2 | Túnel Maníaco (Ruta 214) | Se alarga según los Unown que hayas visto. | Necesita varios mapas o cambiar baldosas por script. |
-| 3.3 | Gran Pantano | La vaquera da el reto de capturar 5 Pokémon en una partida del Safari. | En Platino el premio es una app del Pokétch; buscar otro premio. |
-| 3.4 | Revanchas | Revisar qué entrenadores de Sinnoh tienen revancha con el Buscapelea. | En una revisión anterior faltaban 13. |
+Ya probadas: Barry en Pirita (antes y después de la medalla), Barry en Sosiego, lotería de la TV de Jubileo, garitas de la Ruta Ciclista, Casino de Rocavelo, roca musgo, baldosas del Gimnasio Corazón y puertas.
 
-## 4. Mapas
-
-| # | Qué | Notas |
-|---|-----|-------|
-| 4.1 | Montaña Dura «este» (`StarkMountain_Room2_East`) no tiene salidas. | No se puede llegar a él, así que no estorba. Hay que conectarlo o borrarlo. |
-| 4.2 | Gimnasio de Puntaneva: es el de hielo de Arrecípolis. | En Platino tiene bolas de nieve y entrenadores en el 1F. Funciona, pero no es el de Platino. |
-| 4.3 | Revisión de posiciones contra Platino. | La auditoría (`posaudit.py`) marca unos 300 NPC de historia en otros sitios o con otra forma de aparecer. La mayoría son escenas hechas a mano, pero hay que revisarlos uno a uno en el juego. |
-
-## 5. Escenas hechas pero sin probar en el emulador
-
-- Jubileo: combate doble con Dawn/Lucas (la zona de activación se movió al cambiar el mapa).
+Faltan:
+- Jubileo: combate doble con Dawn/Lucas.
 - Versiones de Lucas cuando juegas con chica (Arena, Ruta 202, Jubileo, Canal, Lago Veraz).
 - Cueva del Lago Veraz (Rowan), Monte Corona 2F (Looker), Ruta 224 (Oak, la losa y Shaymin).
-- Barry al salir del Gimnasio Pirita con la medalla.
 - Roark en la mina, Gardenia ante la Vieja Chateau, Looker en el Casino, soldados de la niebla en el Monte Corona.
-- Buck y Barry en el Área Supervivencia, recepcionista del Gran Pantano.
-- NPC nuevos de Pradera, Liga (Centro Pokémon norte), Zona Guay, Rutas 210 y 211, Puntaneva, restaurante de Ribera Valor, TV de Jubileo y Compañía PokéNav, Pokémon de Sosiego.
-- Laboratorio de Arena después de la Columna Lanza (Rowan y Dawn).
+- Buck y Barry en el Área Supervivencia, recepcionista y vaquera del Gran Pantano.
 - Reencuentro de la niña con su padre en el Valle Eólico (tras vencer a Mars).
-- Charla de Riley en la Isla Hierro (frase al azar al hablarle mientras te acompaña).
-- Garitas de la Ruta Ciclista: hay que ir en bici para entrar en la cuesta.
-- Casino de Rocavelo: gente de Platino y muñecos de Pikachu, Clefairy y Jigglypuff.
+- Charla de Riley en la Isla Hierro.
+- Túnel Maníaco con menos y con más de 26 formas de Unown.
+- Laboratorio de Arena después de la Columna Lanza (Rowan y Dawn).
 
-## 6. Prueba final
+## 3. Prueba final
 
 - Jugar una partida completa, de principio a fin, con chico y con chica.
-- Partidas guardadas antiguas: el nombre del rival corrupto ya se corrige solo (pasa a BARRY). Revisar si hay otros datos nuevos que en partidas viejas quedan sin iniciar.
+
+---
+
+## Decisiones tomadas (no son tareas)
+
+- Gimnasio de Puntaneva: se queda el de hielo de Arrecípolis (decisión del usuario).
+- Montaña Dura este: está conectada con la parte oeste por el borde del mapa; no hay que tocarla.
+- TV de Jubileo 2F: la Galería de fotos y el probador de Platino necesitan Accesorios, que no existen en Esmeralda. Sus NPC sí están.
+- Túnel Maníaco: Esmeralda no guarda las formas de Unown «vistas», así que se cuentan las que tienes (equipo y PC). Con 26 o más, el túnel llega a las Ruinas Sosiego.
+- Rocas de Golpe Roca y peñascos de Fuerza de Platino que no están: en esos mapas el camino es distinto al de Platino y no caben sin cortar el paso. No se añaden.
+- Vaquera del Gran Pantano: capturar 5 Pokémon en una partida del Safari da 3 Caramelos Raros, una sola vez.

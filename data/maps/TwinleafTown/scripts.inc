@@ -51,3 +51,17 @@ TwinleafTown_EventScript_Sign1::
 TwinleafTown_Text_Sign1:
 	.string "TWINLEAF TOWN\p"
 	.string "Fresh and free!$"
+
+TwinleafTown_EventScript_SNMailboxPlayer::
+	msgbox TwinleafTown_Text_SNMailboxPlayer, MSGBOX_SIGN
+	end
+
+TwinleafTown_EventScript_SNMailboxRival::
+	msgbox TwinleafTown_Text_SNMailboxRival, MSGBOX_SIGN
+	end
+
+TwinleafTown_Text_SNMailboxPlayer:
+	.string "{PLAYER}’s House$"
+
+TwinleafTown_Text_SNMailboxRival:
+	.string "{RIVAL}’s House$"

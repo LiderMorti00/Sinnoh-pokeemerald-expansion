@@ -3095,4 +3095,47 @@
 #define FLAG_SN_HIDE_SOL_BARRY                                  (TRAINER_FLAGS_START + TRAINER_ALVARO)
 #define FLAG_SN_HIDE_WW_GIRL                                    (TRAINER_FLAGS_START + TRAINER_MARIELA)
 
+
+// ---- Proyecto Sinnoh: historia de Platino (objetos, regalos y objetos ocultos) ----
+#define FLAG_SN_HIDE_MT_WALL                                    (TRAINER_FLAGS_START + TRAINER_EVERETT)
+#define FLAG_SN_HIDE_MT_DIGGER                                  (TRAINER_FLAGS_START + TRAINER_ALVARO)
+#define FLAG_SN_HIDE_MT_DONE                                    (TRAINER_FLAGS_START + TRAINER_MARIELA)
+
+
+// ---- Proyecto Sinnoh: historia de Platino (objetos, regalos y objetos ocultos) ----
+#define FLAG_SN_MARSH_FIVE                                      (TRAINER_FLAGS_START + TRAINER_EVERETT)
+#define FLAG_SN_MARSH_FIVE_PRIZE                                (TRAINER_FLAGS_START + TRAINER_ALVARO)
+
+
+// ---- Proyecto Sinnoh: historia de Platino (objetos, regalos y objetos ocultos) ----
+#define FLAG_ITEM_SN_CANALAVECITY_TM89                          (TRAINER_FLAGS_START + TRAINER_EVERETT)
+#define FLAG_ITEM_SN_ETERNACITY_TM46                            (TRAINER_FLAGS_START + TRAINER_ALVARO)
+#define FLAG_ITEM_SN_LAKEACUITY_TM14                            (TRAINER_FLAGS_START + TRAINER_MARIELA)
+#define FLAG_ITEM_SN_LAKEVALOR_TM25                             (TRAINER_FLAGS_START + TRAINER_THALIA_5)
+#define FLAG_ITEM_SN_LAKEVERITY_TM38                            (TRAINER_FLAGS_START + TRAINER_THALIA_4)
+#define FLAG_ITEM_SN_MTCORONET_1F_NORTH_ROOM1_TM69              (TRAINER_FLAGS_START + TRAINER_THALIA_3)
+#define FLAG_ITEM_SN_MTCORONET_1F_NORTH_ROOM1_TM02              (TRAINER_FLAGS_START + TRAINER_THALIA_2)
+#define FLAG_ITEM_SN_RAVAGEDPATH_TM39                           (TRAINER_FLAGS_START + TRAINER_GABRIELLE_5)
+#define FLAG_ITEM_SN_RAVAGEDPATH_TM03                           (TRAINER_FLAGS_START + TRAINER_GABRIELLE_4)
+#define FLAG_ITEM_SN_ROUTE204_TM09                              (TRAINER_FLAGS_START + TRAINER_GABRIELLE_3)
+#define FLAG_ITEM_SN_ROUTE209_TM47                              (TRAINER_FLAGS_START + TRAINER_GABRIELLE_2)
+#define FLAG_ITEM_SN_ROUTE209_TM19                              (TRAINER_FLAGS_START + TRAINER_SAWYER_5)
+#define FLAG_ITEM_SN_ROUTE210_NORTH_TM30                        (TRAINER_FLAGS_START + TRAINER_SAWYER_4)
+#define FLAG_ITEM_SN_ROUTE211_EAST_TM29                         (TRAINER_FLAGS_START + TRAINER_SAWYER_3)
+#define FLAG_ITEM_SN_ROUTE211_WEST_TM12                         (TRAINER_FLAGS_START + TRAINER_SAWYER_2)
+#define FLAG_ITEM_SN_ROUTE212_NORTH_TM11                        (TRAINER_FLAGS_START + TRAINER_FERNANDO_5)
+#define FLAG_ITEM_SN_ROUTE212_SOUTH_TM84                        (TRAINER_FLAGS_START + TRAINER_FERNANDO_4)
+#define FLAG_ITEM_SN_ROUTE212_SOUTH_TM62                        (TRAINER_FLAGS_START + TRAINER_FERNANDO_3)
+#define FLAG_ITEM_SN_ROUTE212_SOUTH_TM06                        (TRAINER_FLAGS_START + TRAINER_FERNANDO_2)
+#define FLAG_ITEM_SN_ROUTE213_TM40                              (TRAINER_FLAGS_START + TRAINER_CRISTIN_5)
+#define FLAG_ITEM_SN_ROUTE213_TM05                              (TRAINER_FLAGS_START + TRAINER_CRISTIN_4)
+#define FLAG_ITEM_SN_ROUTE215_TM34                              (TRAINER_FLAGS_START + TRAINER_CRISTIN_3)
+#define FLAG_ITEM_SN_ROUTE216_TM13                              (TRAINER_FLAGS_START + TRAINER_CRISTIN_2)
+#define FLAG_ITEM_SN_ROUTE217_TM07                              (TRAINER_FLAGS_START + TRAINER_KOJI_5)
+#define FLAG_ITEM_SN_ROUTE221_TM81                              (TRAINER_FLAGS_START + TRAINER_KOJI_4)
+#define FLAG_ITEM_SN_ROUTE226_TM53                              (TRAINER_FLAGS_START + TRAINER_KOJI_3)
+#define FLAG_ITEM_SN_ROUTE228_TM37                              (TRAINER_FLAGS_START + TRAINER_KOJI_2)
+#define FLAG_ITEM_SN_VALLEYWINDWORKS_TM24                       (TRAINER_FLAGS_START + TRAINER_PABLO_5)
+#define FLAG_ITEM_SN_VALORLAKEFRONT_TM85                        (TRAINER_FLAGS_START + TRAINER_PABLO_4)
+
 #endif // GUARD_CONSTANTS_FLAGS_H

@@ -18,4 +18,6 @@ void SinnohHoneySlather(void);
 void SinnohDayOfWeek(void);
 void SinnohPartyMaxRibbons(void);
 void SinnohSpaTreatment(void);
+void SinnohUnownFormsCount(void);
+void SinnohCountAllMons(void);
 #endif // GUARD_SINNOH_SPECIALS_H

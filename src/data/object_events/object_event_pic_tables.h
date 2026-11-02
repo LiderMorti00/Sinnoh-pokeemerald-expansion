@@ -2812,6 +2812,14 @@ static const struct SpriteFrameImage sPicTable_SinnohMonStarly[] = {
     overworld_ascending_frames(gObjectEventPic_SinnohMonStarly, 4, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_SinnohMossRock[] = {
+    overworld_ascending_frames(gObjectEventPic_SinnohMossRock, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_SinnohIceRock[] = {
+    overworld_ascending_frames(gObjectEventPic_SinnohIceRock, 4, 4),
+};
+
 static const struct SpriteFrameImage sPicTable_SinnohMonMachop[] = {
     overworld_ascending_frames(gObjectEventPic_SinnohMonMachop, 4, 4),
 };

@@ -481,6 +481,8 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMonTo
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMonDrifloon;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMonStarly;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMonMachop;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMossRock;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohIceRock;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMonSkitty;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMonClefairy;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SinnohMonShroomish;
@@ -980,6 +982,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_SINNOH_MON_DRIFLOON] = &gObjectEventGraphicsInfo_SinnohMonDrifloon,
     [OBJ_EVENT_GFX_SINNOH_MON_STARLY] = &gObjectEventGraphicsInfo_SinnohMonStarly,
     [OBJ_EVENT_GFX_SINNOH_MON_MACHOP] = &gObjectEventGraphicsInfo_SinnohMonMachop,
+    [OBJ_EVENT_GFX_SINNOH_MOSS_ROCK] = &gObjectEventGraphicsInfo_SinnohMossRock,
+    [OBJ_EVENT_GFX_SINNOH_ICE_ROCK] = &gObjectEventGraphicsInfo_SinnohIceRock,
     [OBJ_EVENT_GFX_SINNOH_MON_SKITTY] = &gObjectEventGraphicsInfo_SinnohMonSkitty,
     [OBJ_EVENT_GFX_SINNOH_MON_CLEFAIRY] = &gObjectEventGraphicsInfo_SinnohMonClefairy,
     [OBJ_EVENT_GFX_SINNOH_MON_SHROOMISH] = &gObjectEventGraphicsInfo_SinnohMonShroomish,

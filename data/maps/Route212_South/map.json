@@ -505,6 +505,45 @@
       "trainer_sight_or_berry_tree_id": "ITEM_TM_SILVER_WIND",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_ROUTE212_SOUTH_TM_SILVER_WIND"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 29,
+      "y": 18,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_TM84",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_SN_ROUTE212_SOUTH_TM84"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 60,
+      "y": 12,
+      "elevation": 4,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_TM62",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_SN_ROUTE212_SOUTH_TM62"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 100,
+      "y": 29,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_TM06",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_SN_ROUTE212_SOUTH_TM06"
     }
   ],
   "warp_events": [

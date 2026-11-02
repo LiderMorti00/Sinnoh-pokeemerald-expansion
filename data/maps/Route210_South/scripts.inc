@@ -39,6 +39,13 @@ Route210_South_Text_BrennanPost:
 
 Route210_South_EventScript_TeriTia::
 	trainerbattle_double TRAINER_RICHARD, Route210_South_Text_TeriTiaIntro, Route210_South_Text_TeriTiaDefeat, Route210_South_Text_TeriTiaNotEnough
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route210_South_EventScript_TeriTia_Rematch
+	msgbox Route210_South_Text_TeriTiaPost, MSGBOX_AUTOCLOSE
+	end
+
+Route210_South_EventScript_TeriTia_Rematch:
+	trainerbattle_rematch_double TRAINER_RICHARD, Route210_South_Text_TeriTiaIntro, Route210_South_Text_TeriTiaDefeat, Route210_South_Text_TeriTiaNotEnough
 	msgbox Route210_South_Text_TeriTiaPost, MSGBOX_AUTOCLOSE
 	end
 

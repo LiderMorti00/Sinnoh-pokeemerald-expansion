@@ -249,6 +249,32 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MtCoronet_1F_North_Room1_EventScript_SNFog2",
       "flag": "FLAG_SN_HIDE_FOG_GRUNTS"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 5,
+      "y": 24,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_TM69",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_SN_MTCORONET_1F_NORTH_ROOM1_TM69"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 16,
+      "y": 47,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_TM02",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_SN_MTCORONET_1F_NORTH_ROOM1_TM02"
     }
   ],
   "warp_events": [

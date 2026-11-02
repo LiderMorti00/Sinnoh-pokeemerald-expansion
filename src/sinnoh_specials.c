@@ -13,6 +13,8 @@
 #include "script_pokemon_util.h"
 #include "constants/flags.h"
 #include "constants/map_groups.h"
+#include "pokemon_icon.h"
+#include "pokemon_storage_system.h"
 
 // Proyecto Sinnoh: specials propios para eventos de Platino.
 
@@ -253,4 +255,55 @@ void SinnohSpaTreatment(void)
     SetMonData(mon, MON_DATA_FRIENDSHIP, &f);
     GetMonData(mon, MON_DATA_NICKNAME, gStringVar1);
     StringGet_Nickname(gStringVar1);
+}
+
+// VAR_RESULT = número de formas distintas de Unown que tienes (equipo y cajas).
+static u32 UnownLetterOf(u32 species, u32 personality)
+{
+    if (species == SPECIES_UNOWN)
+        return GetUnownLetterByPersonality(personality);
+    if (species >= SPECIES_UNOWN_B && species <= SPECIES_UNOWN_QUESTION)
+        return species - SPECIES_UNOWN_B + 1;
+    return 0xFF;
+}
+
+void SinnohUnownFormsCount(void)
+{
+    u32 seen = 0, i, box, pos, n = 0;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        u32 sp = GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_SPECIES);
+        u32 l = UnownLetterOf(sp, GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_PERSONALITY));
+        if (l < 32) seen |= 1u << l;
+    }
+    for (box = 0; box < TOTAL_BOXES_COUNT; box++)
+    {
+        for (pos = 0; pos < IN_BOX_COUNT; pos++)
+        {
+            u32 sp = GetBoxMonDataAt(box, pos, MON_DATA_SPECIES);
+            if (sp == SPECIES_NONE)
+                continue;
+            {
+                u32 l = UnownLetterOf(sp, GetBoxMonDataAt(box, pos, MON_DATA_PERSONALITY));
+                if (l < 32) seen |= 1u << l;
+            }
+        }
+    }
+    for (i = 0; i < 32; i++)
+        if (seen & (1u << i)) n++;
+    gSpecialVar_Result = n;
+}
+
+// VAR_RESULT = Pokémon que tienes en total (equipo y cajas).
+void SinnohCountAllMons(void)
+{
+    u32 i, box, pos, n = 0;
+    for (i = 0; i < PARTY_SIZE; i++)
+        if (GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_SPECIES) != SPECIES_NONE)
+            n++;
+    for (box = 0; box < TOTAL_BOXES_COUNT; box++)
+        for (pos = 0; pos < IN_BOX_COUNT; pos++)
+            if (GetBoxMonDataAt(box, pos, MON_DATA_SPECIES) != SPECIES_NONE)
+                n++;
+    gSpecialVar_Result = n;
 }

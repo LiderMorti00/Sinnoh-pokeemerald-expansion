@@ -175,6 +175,7 @@
 #define VAR_LILYCOVE_CONTEST_LOBBY_STATE                 0x4099
 #define VAR_RUSTURF_TUNNEL_STATE                         0x409A
 #define VAR_UNUSED_0x409B                                0x409B // Unused Var
+#define VAR_SN_SAFARI_START VAR_UNUSED_0x409B // Proyecto Sinnoh: Pokémon que tenías al entrar al Gran Pantano
 #define VAR_ELITE_4_STATE                                0x409C
 #define VAR_UNUSED_0x409D                                0x409D // Unused Var
 #define VAR_MOSSDEEP_SPACE_CENTER_STAIR_GUARD_STATE      0x409E

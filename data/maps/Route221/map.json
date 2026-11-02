@@ -219,6 +219,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route221_EventScript_SNHoneyTree",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 70,
+      "y": 28,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_TM81",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_SN_ROUTE221_TM81"
     }
   ],
   "warp_events": [

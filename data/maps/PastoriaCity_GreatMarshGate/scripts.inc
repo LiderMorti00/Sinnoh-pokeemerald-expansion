@@ -10,29 +10,33 @@ PastoriaCity_GreatMarshGate_Text_PtNpc1_0:
 	.string "real simple.\p"
 	.string "All you have to do is capture five or\n"
 	.string "more POKéMON in one Safari Game.\p"
-	.string "If you can do that, I’ll give you the\n"
-	.string "POKéNAV app Matchup Checker.$"
+	.string "If you can do that, I’ll give you\n"
+	.string "something real rare!$"
 
 PastoriaCity_GreatMarshGate_Text_PtNpc1_1:
-	.string "The Matchup Checker app figures out\n"
-	.string "how POKéMON types match up.\p"
-	.string "It won’t help tell us how we match up as\n"
-	.string "friends, though.$"
+	.string "Rare Candies make a POKéMON grow\n"
+	.string "stronger in a snap.\p"
+	.string "Use ’em well, and come back to the\n"
+	.string "Great Marsh anytime, y’hear?$"
 
 PastoriaCity_GreatMarshGate_EventScript_PtNpc1::
 	lock
 	faceplayer
-	goto_if_set FLAG_RECEIVED_SN_PASTORIA_CITY_OBSERVATORY_GATE_1F_MATCHUPCHECKER, PastoriaCity_GreatMarshGate_EventScript_PtNpc1_ExplainMatchupChecker
+	goto_if_set FLAG_SN_MARSH_FIVE_PRIZE, PastoriaCity_GreatMarshGate_EventScript_PtNpc1_ExplainMatchupChecker
+	goto_if_set FLAG_SN_MARSH_FIVE, PastoriaCity_GreatMarshGate_EventScript_SNCowgirlPrize
 	msgbox PastoriaCity_GreatMarshGate_Text_PtNpc1_0, MSGBOX_DEFAULT
 	goto PastoriaCity_GreatMarshGate_EventScript_PtNpc1_CowgirlEnd
-	release
-	end
+
+PastoriaCity_GreatMarshGate_EventScript_SNCowgirlPrize:
+	msgbox PastoriaCity_GreatMarshGate_Text_SNCowgirlWin, MSGBOX_DEFAULT
+	giveitem ITEM_RARE_CANDY, 3
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	setflag FLAG_SN_MARSH_FIVE_PRIZE
+	goto PastoriaCity_GreatMarshGate_EventScript_PtNpc1_ExplainMatchupChecker
 
 PastoriaCity_GreatMarshGate_EventScript_PtNpc1_ExplainMatchupChecker:
 	msgbox PastoriaCity_GreatMarshGate_Text_PtNpc1_1, MSGBOX_DEFAULT
 	goto PastoriaCity_GreatMarshGate_EventScript_PtNpc1_CowgirlEnd
-	release
-	end
 
 PastoriaCity_GreatMarshGate_EventScript_PtNpc1_CowgirlEnd:
 	release
@@ -46,6 +50,10 @@ PastoriaCity_GreatMarshGate_EventScript_SNReturn:
 	goto_if_unset FLAG_SYS_SAFARI_MODE, PastoriaCity_GreatMarshGate_EventScript_SNReturnEnd
 	special ExitSafariMode
 	setvar VAR_TEMP_F, 1
+	specialvar VAR_RESULT, SinnohCountAllMons
+	subvar VAR_RESULT, VAR_SN_SAFARI_START
+	goto_if_lt VAR_RESULT, 5, PastoriaCity_GreatMarshGate_EventScript_SNReturnEnd
+	setflag FLAG_SN_MARSH_FIVE
 PastoriaCity_GreatMarshGate_EventScript_SNReturnEnd:
 	return
 
@@ -89,6 +97,8 @@ PastoriaCity_GreatMarshGate_EventScript_SNRoom:
 	msgbox PastoriaCity_GreatMarshGate_EventScript_SNEnjoyT, MSGBOX_DEFAULT
 	closemessage
 	hidemoneybox
+	specialvar VAR_RESULT, SinnohCountAllMons
+	copyvar VAR_SN_SAFARI_START, VAR_RESULT
 	special EnterSafariMode
 	warp MAP_GREAT_MARSH, 37, 86
 	waitstate
@@ -169,3 +179,10 @@ PastoriaCity_GreatMarshGate_Text_SNExplain:
 
 PastoriaCity_GreatMarshGate_Text_SNEnjoy:
 	.string "I see. Enjoy your Safari Game!$"
+
+PastoriaCity_GreatMarshGate_Text_SNCowgirlWin:
+	.string "So, how many POKéMON did you catch in\n"
+	.string "your Safari Game? At least five?\p"
+	.string "Ayup! You’ve done that all right! Isn’t\n"
+	.string "that something!\p"
+	.string "Well, here you are, then.$"
