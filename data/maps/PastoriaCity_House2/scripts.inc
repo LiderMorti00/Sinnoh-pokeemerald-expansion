@@ -6,10 +6,6 @@ PastoriaCity_House2_Text_PtNpc1:
 	.string "Let me examine your POKéMON to see if\n"
 	.string "it’s worthy of a scarf!$"
 
-PastoriaCity_House2_EventScript_PtNpc1::
-	msgbox PastoriaCity_House2_Text_PtNpc1, MSGBOX_NPC
-	end
-
 PastoriaCity_House2_Text_PtNpc2_0:
 	.string "My brother’s girlfriend is the Massage\n"
 	.string "Girl in Veilstone City.\p"
@@ -33,3 +29,16 @@ PastoriaCity_House2_EventScript_PtNpc3::
 	msgbox PastoriaCity_House2_Text_PtNpc3_0, MSGBOX_DEFAULT
 	release
 	end
+
+PastoriaCity_House2_EventScript_SNScarfGuy::
+	lock
+	faceplayer
+	goto_if_ne VAR_SLATEPORT_FAN_CLUB_STATE, 0, SlateportCity_PokemonFanClub_EventScript_ChairmanTryAssessPokemon
+	setvar VAR_SLATEPORT_FAN_CLUB_STATE, 1
+	msgbox PastoriaCity_House2_Text_SNScarf, MSGBOX_DEFAULT
+	goto SlateportCity_PokemonFanClub_EventScript_ChairmanAssessLeadMon
+	end
+PastoriaCity_House2_Text_SNScarf:
+	.string "Howdy, there!\p"
+	.string "Let me examine your POKéMON to see if\n"
+	.string "it’s worthy of a scarf!$"

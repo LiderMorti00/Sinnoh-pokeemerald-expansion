@@ -968,6 +968,54 @@ static const union AffineAnimCmd *const sAffineAnims_CrossingMonPics[] =
 
 static const struct InGameTrade sIngameTrades[] =
 {
+    [INGAME_TRADE_KAZZA] =
+    {
+        .nickname = _("KAZZA"),
+        .species = SPECIES_ABRA,
+        .ivs = {15, 20, 10, 20, 15, 15},
+        .abilityNum = 0,
+        .otId = 26198,
+        .conditions = {10, 10, 10, 10, 10},
+        .personality = 0x9F,
+        .heldItem = ITEM_NONE,
+        .mailNum = -1,
+        .otName = _("HILARY"),
+        .otGender = FEMALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_MACHOP
+    },
+    [INGAME_TRADE_CHARAP] =
+    {
+        .nickname = _("CHARAP"),
+        .species = SPECIES_CHATOT,
+        .ivs = {20, 15, 15, 15, 15, 20},
+        .abilityNum = 0,
+        .otId = 26309,
+        .conditions = {10, 10, 10, 10, 10},
+        .personality = 0xA0,
+        .heldItem = ITEM_NONE,
+        .mailNum = -1,
+        .otName = _("NORTON"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_BUIZEL
+    },
+    [INGAME_TRADE_GASPAR] =
+    {
+        .nickname = _("GASPAR"),
+        .species = SPECIES_HAUNTER,
+        .ivs = {20, 15, 15, 20, 20, 20},
+        .abilityNum = 0,
+        .otId = 26309,
+        .conditions = {10, 10, 10, 10, 10},
+        .personality = 0xA0,
+        .heldItem = ITEM_EVERSTONE,
+        .mailNum = -1,
+        .otName = _("MINDY"),
+        .otGender = FEMALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_MEDICHAM
+    },
     [INGAME_TRADE_SEEDOT] =
     {
         .nickname = _("DOTS"),

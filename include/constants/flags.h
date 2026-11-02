@@ -1574,9 +1574,9 @@
 #define FLAG_DAILY_CONTEST_LOBBY_RECEIVED_BERRY     (DAILY_FLAGS_START + 0x1)
 #define FLAG_DAILY_SECRET_BASE                      (DAILY_FLAGS_START + 0x2)
 #define FLAG_DAILY_SN_BARRY                         (DAILY_FLAGS_START + 0x3)  // Proyecto Sinnoh: Barry en la Zona Supervivencia
-#define FLAG_UNUSED_0x924                           (DAILY_FLAGS_START + 0x4)  // Unused Flag
-#define FLAG_UNUSED_0x925                           (DAILY_FLAGS_START + 0x5)  // Unused Flag
-#define FLAG_UNUSED_0x926                           (DAILY_FLAGS_START + 0x6)  // Unused Flag
+#define FLAG_DAILY_SN_FOSSIL                        (DAILY_FLAGS_START + 0x4)  // Proyecto Sinnoh: fósil diario del hombre del Subsuelo
+#define FLAG_DAILY_SN_NEWSPRESS                     (DAILY_FLAGS_START + 0x5) // Proyecto Sinnoh: Gaceta Pokémon de Sosiego
+#define FLAG_DAILY_SN_AMITY                         (DAILY_FLAGS_START + 0x6) // Proyecto Sinnoh: regalo diario de la Plaza Amistad
 #define FLAG_UNUSED_0x927                           (DAILY_FLAGS_START + 0x7)  // Unused Flag
 #define FLAG_UNUSED_0x928                           (DAILY_FLAGS_START + 0x8)  // Unused Flag
 #define FLAG_UNUSED_0x929                           (DAILY_FLAGS_START + 0x9)  // Unused Flag
@@ -2939,5 +2939,30 @@
 #define FLAG_SN_MARLEY_ESCORTED                                 FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA
 #define FLAG_SN_MARLEY_MET                                      FLAG_HIDE_MARINE_CAVE_KYOGRE
 #define FLAG_SN_HIDE_VR_MARLEY                                  FLAG_HIDE_TERRA_CAVE_GROUDON
+
+
+// ---- Proyecto Sinnoh: historia de Platino (objetos, regalos y objetos ocultos) ----
+#define FLAG_SN_HIDE_LAB_OAK                                    FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_MOM
+
+
+// ---- Proyecto Sinnoh: historia de Platino (objetos, regalos y objetos ocultos) ----
+#define FLAG_SN_TRADE_KAZZA                                     FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_MOM
+#define FLAG_SN_TRADE_CHARAP                                    FLAG_HIDE_LILYCOVE_MOTEL_SCOTT
+#define FLAG_SN_TRADE_GASPAR                                    FLAG_HIDE_MOSSDEEP_CITY_SCOTT
+
+
+// ---- Proyecto Sinnoh: historia de Platino (objetos, regalos y objetos ocultos) ----
+#define FLAG_SN_MRGOODS_GIFT                                    FLAG_HIDE_LUGIA
+
+
+// ---- Proyecto Sinnoh: historia de Platino (objetos, regalos y objetos ocultos) ----
+#define FLAG_SN_RECEIVED_TOGEPI_EGG                             FLAG_HIDE_HO_OH
+#define FLAG_SN_HIDE_ETERNA_CYNTHIA_EGG                         FLAG_HIDE_MAUVILLE_CITY_WALLYS_UNCLE
+#define FLAG_SN_RECEIVED_EEVEE                                  FLAG_HIDE_SS_TIDAL_CORRIDOR_SCOTT
+#define FLAG_SN_RECEIVED_EXP_SHARE                              FLAG_HIDE_ROUTE_116_DROPPED_GLASSES_MAN
+#define FLAG_SN_RECEIVED_OLD_CHARM                              FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F_POKE_BALL
+#define FLAG_SN_HIDE_R210_CYNTHIA                               FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_2F_POKE_BALL
+#define FLAG_SN_RETURNED_SUITE_KEY                              FLAG_HIDE_ROUTE_112_TEAM_MAGMA
+#define FLAG_SN_SUITE_KEY_FOUND                                 FLAG_HIDE_CAVE_OF_ORIGIN_B1F_WALLACE
 
 #endif // GUARD_CONSTANTS_FLAGS_H

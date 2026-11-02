@@ -1,15 +1,6 @@
 EternaCity_Flat1_F1_MapScripts::
 	.byte 0
 
-EternaCity_Flat1_F1_EventScript_PtNpc1::
-	lock
-	faceplayer
-	msgbox EternaCity_Flat1_F1_Text_PtNpc1, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, EternaCity_Flat1_F1_EventScript_PtNpc1_No
-	msgbox EternaCity_Flat1_F1_Text_PtNpc1_Yes, MSGBOX_DEFAULT
-	release
-	end
-
 EternaCity_Flat1_F1_EventScript_PtNpc1_No:
 	msgbox EternaCity_Flat1_F1_Text_PtNpc1_No, MSGBOX_DEFAULT
 	release
@@ -49,3 +40,44 @@ EternaCity_Flat1_F1_Text_PtNpc1_No:
 	.string "you don't want to.\p"
 	.string "But if you change your mind, let's\n"
 	.string "totally trade some POKéMON.$"
+
+EternaCity_Flat1_F1_EventScript_SNTradeCharap::
+	lock
+	faceplayer
+	goto_if_set FLAG_SN_TRADE_CHARAP, EternaCity_Flat1_F1_EventScript_SNTradeCharap_Done
+	ingame_trade INGAME_TRADE_CHARAP, EternaCity_Flat1_F1_EventScript_SNTradeCharap_Ask, EternaCity_Flat1_F1_EventScript_SNTradeCharap_No, EternaCity_Flat1_F1_EventScript_SNTradeCharap_Wrong, EternaCity_Flat1_F1_EventScript_SNTradeCharap_Thanks
+	setflag FLAG_SN_TRADE_CHARAP
+	release
+	end
+EternaCity_Flat1_F1_EventScript_SNTradeCharap_No:
+	msgbox EternaCity_Flat1_F1_EventScript_SNTradeCharap_NoT, MSGBOX_DEFAULT
+	release
+	end
+EternaCity_Flat1_F1_EventScript_SNTradeCharap_Wrong:
+	bufferspeciesname STR_VAR_1, VAR_0x8009
+	msgbox EternaCity_Flat1_F1_EventScript_SNTradeCharap_WrongT, MSGBOX_DEFAULT
+	release
+	end
+EternaCity_Flat1_F1_EventScript_SNTradeCharap_Done:
+	msgbox EternaCity_Flat1_F1_EventScript_SNTradeCharap_DoneT, MSGBOX_DEFAULT
+	release
+	end
+
+EternaCity_Flat1_F1_EventScript_SNTradeCharap_Ask:
+	.string "Do you have a {STR_VAR_1}? Would you\n"
+	.string "trade it for my {STR_VAR_2}?$"
+
+EternaCity_Flat1_F1_EventScript_SNTradeCharap_Thanks:
+	.string "Thank you! Please take good care of my\n"
+	.string "POKéMON!$"
+
+EternaCity_Flat1_F1_EventScript_SNTradeCharap_NoT:
+	.string "Oh... That’s too bad.$"
+
+EternaCity_Flat1_F1_EventScript_SNTradeCharap_WrongT:
+	.string "That’s not a {STR_VAR_1}...$"
+
+EternaCity_Flat1_F1_EventScript_SNTradeCharap_DoneT:
+	.string "Our POKéMON are getting along great\n"
+	.string "with their new Trainers, don’t you\l"
+	.string "think?$"

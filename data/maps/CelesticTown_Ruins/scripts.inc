@@ -85,6 +85,7 @@ CelesticTown_Ruins_EventScript_SNCyrus_Won:
 	end
 
 CelesticTown_Ruins_EventScript_SNElder::
+	call CelesticTown_Ruins_EventScript_SNCharm
 	lock
 	faceplayer
 	goto_if_set FLAG_SN_RECEIVED_HM_SURF, CelesticTown_Ruins_EventScript_SNElderDone
@@ -134,3 +135,18 @@ CelesticTown_Ruins_Text_SNElder2:
 	.string "you across water and the sea.\p"
 	.string "You’ve been a great help. That’s my\n"
 	.string "thanks for it.$"
+
+CelesticTown_Ruins_EventScript_SNCharm::
+	checkitem ITEM_OLD_CHARM
+	goto_if_eq VAR_RESULT, FALSE, CelesticTown_Ruins_EventScript_SNCharmEnd
+	lock
+	faceplayer
+	msgbox CelesticTown_Ruins_Text_SNCharm, MSGBOX_DEFAULT
+	removeitem ITEM_OLD_CHARM
+	release
+CelesticTown_Ruins_EventScript_SNCharmEnd:
+	return
+CelesticTown_Ruins_Text_SNCharm:
+	.string "Elder: Oh! This is the Old Charm... My\n"
+	.string "granddaughter Cynthia asked you to\l"
+	.string "bring it to me? Thank you, dear.$"

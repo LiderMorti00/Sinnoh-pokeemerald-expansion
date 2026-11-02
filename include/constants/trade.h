@@ -21,6 +21,9 @@ enum InGameTradeID
     INGAME_TRADE_ELECTRODE,
     INGAME_TRADE_TANGELA,
     INGAME_TRADE_SEEL,
+    INGAME_TRADE_GASPAR, // Proyecto Sinnoh
+    INGAME_TRADE_CHARAP, // Proyecto Sinnoh
+    INGAME_TRADE_KAZZA, // Proyecto Sinnoh
 };
 
 // Return values for CanTradeSelectedMon and CanSpinTradeMon

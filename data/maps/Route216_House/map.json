@@ -65,7 +65,7 @@
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route216_House_EventScript_PtSign1"
+      "script": "Route216_House_EventScript_SNBed"
     },
     {
       "type": "sign",
@@ -73,7 +73,7 @@
       "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route216_House_EventScript_PtSign2"
+      "script": "Route216_House_EventScript_SNBed"
     }
   ]
 }

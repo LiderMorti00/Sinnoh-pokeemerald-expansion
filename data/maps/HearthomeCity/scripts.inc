@@ -73,10 +73,6 @@ HearthomeCity_Text_PtNpc5:
 	.string "there sure are many kinds.\p"
 	.string "How many are there now?$"
 
-HearthomeCity_EventScript_PtNpc6::
-	msgbox HearthomeCity_Text_PtNpc6, MSGBOX_NPC
-	end
-
 HearthomeCity_Text_PtNpc6:
 	.string "They call me Mr. Goods.\p"
 	.string "No one knows my real name. No, not\n"
@@ -268,3 +264,51 @@ HearthomeCity_EventScript_PtNpc17::
 	msgbox HearthomeCity_Text_PtNpc17_0, MSGBOX_DEFAULT
 	release
 	end
+
+HearthomeCity_EventScript_SNMrGoods::
+	lock
+	faceplayer
+	goto_if_set FLAG_SN_MRGOODS_GIFT, HearthomeCity_EventScript_SNMrGoods_Done
+	msgbox HearthomeCity_EventScript_SNMrGoods_Hello, MSGBOX_DEFAULT
+	goto_if_unset FLAG_BADGE03_GET, HearthomeCity_EventScript_SNMrGoods_Later
+	givedecoration DECOR_PIKACHU_DOLL
+	goto_if_eq VAR_RESULT, FALSE, HearthomeCity_EventScript_SNMrGoods_Full
+	setflag FLAG_SN_MRGOODS_GIFT
+	msgbox HearthomeCity_EventScript_SNMrGoods_Sent, MSGBOX_DEFAULT
+	release
+	end
+HearthomeCity_EventScript_SNMrGoods_Later:
+	msgbox HearthomeCity_EventScript_SNMrGoods_LaterT, MSGBOX_DEFAULT
+	release
+	end
+HearthomeCity_EventScript_SNMrGoods_Full:
+	msgbox HearthomeCity_EventScript_SNMrGoods_FullT, MSGBOX_DEFAULT
+	release
+	end
+HearthomeCity_EventScript_SNMrGoods_Done:
+	msgbox HearthomeCity_EventScript_SNMrGoods_DoneT, MSGBOX_DEFAULT
+	release
+	end
+
+HearthomeCity_EventScript_SNMrGoods_Hello:
+	.string "They call me Mr. Goods. No one knows my\n"
+	.string "real name. No, not even I do...\p"
+	.string "I dedicate myself to seeking rarities.$"
+
+HearthomeCity_EventScript_SNMrGoods_LaterT:
+	.string "Show me a Badge from the Hearthome\n"
+	.string "Gym, and I may have something rare for\l"
+	.string "you.$"
+
+HearthomeCity_EventScript_SNMrGoods_Sent:
+	.string "A fine Trainer like you deserves a fine\n"
+	.string "decoration! Decorate your Secret Base\l"
+	.string "with it!$"
+
+HearthomeCity_EventScript_SNMrGoods_FullT:
+	.string "Your decoration space is full! Make\n"
+	.string "some room and come back.$"
+
+HearthomeCity_EventScript_SNMrGoods_DoneT:
+	.string "I’m still seeking rarities. One day I’ll\n"
+	.string "find something even better.$"

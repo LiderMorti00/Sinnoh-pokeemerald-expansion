@@ -7467,6 +7467,22 @@ const struct ItemInfo gItemsInfo[] =
         .iconPalette = gItemIconPalette_Key,
     },
 
+    [ITEM_OLD_CHARM] =
+    {
+        .name = ITEM_NAME("Old Charm"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A charm entrusted\n"
+            "by Cynthia for her\n"
+            "grandmother."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_OldSeaMap,
+        .iconPalette = gItemIconPalette_OldSeaMap,
+    },
+
 // Gems
 #if I_PRICE >= GEN_9
     #define GEM_PRICE 15000

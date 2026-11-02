@@ -21,19 +21,28 @@ FullmoonIsland_Forest_EventScript_SNCRESSELIA::
 	playmoncry SPECIES_CRESSELIA, CRY_MODE_ENCOUNTER
 	delay 40
 	waitmoncry
-	setwildbattle SPECIES_CRESSELIA, 50
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
-	special BattleSetup_StartLegendaryBattle
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, FullmoonIsland_Forest_EventScript_SNCRESSELIA_Ran
-	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, FullmoonIsland_Forest_EventScript_SNCRESSELIA_Ran
+	msgbox FullmoonIsland_Forest_EventScript_SNCRESSELIA_TFled, MSGBOX_DEFAULT
+	closemessage
+	playse SE_M_TELEPORT
+	fadescreen FADE_TO_WHITE
+	removeobject VAR_LAST_TALKED
 	setflag FLAG_SN_DONE_CRESSELIA
 	setflag FLAG_SN_HIDE_CRESSELIA
-	goto Common_EventScript_RemoveStaticPokemon
+	fadescreen FADE_FROM_WHITE
+	waitse
+	setvar VAR_0x8004, SPECIES_CRESSELIA
+	setvar VAR_0x8005, 50
+	special SinnohAddRoamer
+	msgbox FullmoonIsland_Forest_Text_SNLunarWing, MSGBOX_DEFAULT
+	giveitem ITEM_LUNAR_WING
+	release
 	end
 
-FullmoonIsland_Forest_EventScript_SNCRESSELIA_Ran:
-	setvar VAR_0x8004, SPECIES_CRESSELIA
-	goto Common_EventScript_LegendaryFlewAway
-	end
+FullmoonIsland_Forest_EventScript_SNCRESSELIA_TFled:
+	.string "CRESSELIA fled!\p"
+	.string "It seems to be wandering all over\n"
+	.string "Sinnoh!$"
+
+FullmoonIsland_Forest_Text_SNLunarWing:
+	.string "Something is glittering where\n"
+	.string "CRESSELIA was standing...$"

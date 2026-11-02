@@ -390,3 +390,214 @@ OreburghCity_MiningMuseum_EventScript_PtSign32::
 OreburghCity_MiningMuseum_Text_PtSign32:
 	.string "The box contains categorized samples\n"
 	.string "of coal.$"
+
+OreburghCity_MiningMuseum_EventScript_SNFossil::
+	lock
+	faceplayer
+	msgbox OreburghCity_MiningMuseum_EventScript_SNFossil_Hello, MSGBOX_DEFAULT
+	checkitem ITEM_SKULL_FOSSIL
+	goto_if_eq VAR_RESULT, TRUE, OreburghCity_MiningMuseum_EventScript_SNFossil_SKULL_FOSSIL
+	checkitem ITEM_ARMOR_FOSSIL
+	goto_if_eq VAR_RESULT, TRUE, OreburghCity_MiningMuseum_EventScript_SNFossil_ARMOR_FOSSIL
+	checkitem ITEM_HELIX_FOSSIL
+	goto_if_eq VAR_RESULT, TRUE, OreburghCity_MiningMuseum_EventScript_SNFossil_HELIX_FOSSIL
+	checkitem ITEM_DOME_FOSSIL
+	goto_if_eq VAR_RESULT, TRUE, OreburghCity_MiningMuseum_EventScript_SNFossil_DOME_FOSSIL
+	checkitem ITEM_OLD_AMBER
+	goto_if_eq VAR_RESULT, TRUE, OreburghCity_MiningMuseum_EventScript_SNFossil_OLD_AMBER
+	checkitem ITEM_ROOT_FOSSIL
+	goto_if_eq VAR_RESULT, TRUE, OreburghCity_MiningMuseum_EventScript_SNFossil_ROOT_FOSSIL
+	checkitem ITEM_CLAW_FOSSIL
+	goto_if_eq VAR_RESULT, TRUE, OreburghCity_MiningMuseum_EventScript_SNFossil_CLAW_FOSSIL
+	msgbox OreburghCity_MiningMuseum_EventScript_SNFossil_None, MSGBOX_DEFAULT
+	release
+	end
+OreburghCity_MiningMuseum_EventScript_SNFossil_SKULL_FOSSIL:
+	bufferitemname STR_VAR_1, ITEM_SKULL_FOSSIL
+	bufferspeciesname STR_VAR_2, SPECIES_CRANIDOS
+	msgbox OreburghCity_MiningMuseum_EventScript_SNFossil_Ask, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, OreburghCity_MiningMuseum_EventScript_SNFossil_No
+	getpartysize
+	goto_if_eq VAR_RESULT, PARTY_SIZE, OreburghCity_MiningMuseum_EventScript_SNFossil_Full
+	removeitem ITEM_SKULL_FOSSIL
+	msgbox OreburghCity_MiningMuseum_EventScript_SNFossil_Work, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	playse SE_M_HEAL_BELL
+	waitse
+	fadescreen FADE_FROM_BLACK
+	givemon SPECIES_CRANIDOS, 20
+	playfanfare MUS_OBTAIN_ITEM
+	message OreburghCity_MiningMuseum_EventScript_SNFossil_Got
+	waitfanfare
+	waitmessage
+	msgbox OreburghCity_MiningMuseum_EventScript_SNFossil_Care, MSGBOX_DEFAULT
+	release
+	end
+OreburghCity_MiningMuseum_EventScript_SNFossil_ARMOR_FOSSIL:
+	bufferitemname STR_VAR_1, ITEM_ARMOR_FOSSIL
+	bufferspeciesname STR_VAR_2, SPECIES_SHIELDON
+	msgbox OreburghCity_MiningMuseum_EventScript_SNFossil_Ask, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, OreburghCity_MiningMuseum_EventScript_SNFossil_No
+	getpartysize
+	goto_if_eq VAR_RESULT, PARTY_SIZE, OreburghCity_MiningMuseum_EventScript_SNFossil_Full
+	removeitem ITEM_ARMOR_FOSSIL
+	msgbox OreburghCity_MiningMuseum_EventScript_SNFossil_Work, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	playse SE_M_HEAL_BELL
+	waitse
+	fadescreen FADE_FROM_BLACK
+	givemon SPECIES_SHIELDON, 20
+	playfanfare MUS_OBTAIN_ITEM
+	message OreburghCity_MiningMuseum_EventScript_SNFossil_Got
+	waitfanfare
+	waitmessage
+	msgbox OreburghCity_MiningMuseum_EventScript_SNFossil_Care, MSGBOX_DEFAULT
+	release
+	end
+OreburghCity_MiningMuseum_EventScript_SNFossil_HELIX_FOSSIL:
+	bufferitemname STR_VAR_1, ITEM_HELIX_FOSSIL
+	bufferspeciesname STR_VAR_2, SPECIES_OMANYTE
+	msgbox OreburghCity_MiningMuseum_EventScript_SNFossil_Ask, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, OreburghCity_MiningMuseum_EventScript_SNFossil_No
+	getpartysize
+	goto_if_eq VAR_RESULT, PARTY_SIZE, OreburghCity_MiningMuseum_EventScript_SNFossil_Full
+	removeitem ITEM_HELIX_FOSSIL
+	msgbox OreburghCity_MiningMuseum_EventScript_SNFossil_Work, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	playse SE_M_HEAL_BELL
+	waitse
+	fadescreen FADE_FROM_BLACK
+	givemon SPECIES_OMANYTE, 20
+	playfanfare MUS_OBTAIN_ITEM
+	message OreburghCity_MiningMuseum_EventScript_SNFossil_Got
+	waitfanfare
+	waitmessage
+	msgbox OreburghCity_MiningMuseum_EventScript_SNFossil_Care, MSGBOX_DEFAULT
+	release
+	end
+OreburghCity_MiningMuseum_EventScript_SNFossil_DOME_FOSSIL:
+	bufferitemname STR_VAR_1, ITEM_DOME_FOSSIL
+	bufferspeciesname STR_VAR_2, SPECIES_KABUTO
+	msgbox OreburghCity_MiningMuseum_EventScript_SNFossil_Ask, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, OreburghCity_MiningMuseum_EventScript_SNFossil_No
+	getpartysize
+	goto_if_eq VAR_RESULT, PARTY_SIZE, OreburghCity_MiningMuseum_EventScript_SNFossil_Full
+	removeitem ITEM_DOME_FOSSIL
+	msgbox OreburghCity_MiningMuseum_EventScript_SNFossil_Work, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	playse SE_M_HEAL_BELL
+	waitse
+	fadescreen FADE_FROM_BLACK
+	givemon SPECIES_KABUTO, 20
+	playfanfare MUS_OBTAIN_ITEM
+	message OreburghCity_MiningMuseum_EventScript_SNFossil_Got
+	waitfanfare
+	waitmessage
+	msgbox OreburghCity_MiningMuseum_EventScript_SNFossil_Care, MSGBOX_DEFAULT
+	release
+	end
+OreburghCity_MiningMuseum_EventScript_SNFossil_OLD_AMBER:
+	bufferitemname STR_VAR_1, ITEM_OLD_AMBER
+	bufferspeciesname STR_VAR_2, SPECIES_AERODACTYL
+	msgbox OreburghCity_MiningMuseum_EventScript_SNFossil_Ask, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, OreburghCity_MiningMuseum_EventScript_SNFossil_No
+	getpartysize
+	goto_if_eq VAR_RESULT, PARTY_SIZE, OreburghCity_MiningMuseum_EventScript_SNFossil_Full
+	removeitem ITEM_OLD_AMBER
+	msgbox OreburghCity_MiningMuseum_EventScript_SNFossil_Work, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	playse SE_M_HEAL_BELL
+	waitse
+	fadescreen FADE_FROM_BLACK
+	givemon SPECIES_AERODACTYL, 20
+	playfanfare MUS_OBTAIN_ITEM
+	message OreburghCity_MiningMuseum_EventScript_SNFossil_Got
+	waitfanfare
+	waitmessage
+	msgbox OreburghCity_MiningMuseum_EventScript_SNFossil_Care, MSGBOX_DEFAULT
+	release
+	end
+OreburghCity_MiningMuseum_EventScript_SNFossil_ROOT_FOSSIL:
+	bufferitemname STR_VAR_1, ITEM_ROOT_FOSSIL
+	bufferspeciesname STR_VAR_2, SPECIES_LILEEP
+	msgbox OreburghCity_MiningMuseum_EventScript_SNFossil_Ask, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, OreburghCity_MiningMuseum_EventScript_SNFossil_No
+	getpartysize
+	goto_if_eq VAR_RESULT, PARTY_SIZE, OreburghCity_MiningMuseum_EventScript_SNFossil_Full
+	removeitem ITEM_ROOT_FOSSIL
+	msgbox OreburghCity_MiningMuseum_EventScript_SNFossil_Work, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	playse SE_M_HEAL_BELL
+	waitse
+	fadescreen FADE_FROM_BLACK
+	givemon SPECIES_LILEEP, 20
+	playfanfare MUS_OBTAIN_ITEM
+	message OreburghCity_MiningMuseum_EventScript_SNFossil_Got
+	waitfanfare
+	waitmessage
+	msgbox OreburghCity_MiningMuseum_EventScript_SNFossil_Care, MSGBOX_DEFAULT
+	release
+	end
+OreburghCity_MiningMuseum_EventScript_SNFossil_CLAW_FOSSIL:
+	bufferitemname STR_VAR_1, ITEM_CLAW_FOSSIL
+	bufferspeciesname STR_VAR_2, SPECIES_ANORITH
+	msgbox OreburghCity_MiningMuseum_EventScript_SNFossil_Ask, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, OreburghCity_MiningMuseum_EventScript_SNFossil_No
+	getpartysize
+	goto_if_eq VAR_RESULT, PARTY_SIZE, OreburghCity_MiningMuseum_EventScript_SNFossil_Full
+	removeitem ITEM_CLAW_FOSSIL
+	msgbox OreburghCity_MiningMuseum_EventScript_SNFossil_Work, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	playse SE_M_HEAL_BELL
+	waitse
+	fadescreen FADE_FROM_BLACK
+	givemon SPECIES_ANORITH, 20
+	playfanfare MUS_OBTAIN_ITEM
+	message OreburghCity_MiningMuseum_EventScript_SNFossil_Got
+	waitfanfare
+	waitmessage
+	msgbox OreburghCity_MiningMuseum_EventScript_SNFossil_Care, MSGBOX_DEFAULT
+	release
+	end
+OreburghCity_MiningMuseum_EventScript_SNFossil_No:
+	msgbox OreburghCity_MiningMuseum_EventScript_SNFossil_None, MSGBOX_DEFAULT
+	release
+	end
+OreburghCity_MiningMuseum_EventScript_SNFossil_Full:
+	msgbox OreburghCity_MiningMuseum_EventScript_SNFossil_FullT, MSGBOX_DEFAULT
+	release
+	end
+
+OreburghCity_MiningMuseum_EventScript_SNFossil_Hello:
+	.string "I am the one who brings Fossils back to\n"
+	.string "life! Show me a Fossil, and I will\l"
+	.string "extract the POKéMON within it, yes!$"
+
+OreburghCity_MiningMuseum_EventScript_SNFossil_Ask:
+	.string "Ah! That is a {STR_VAR_1}! A {STR_VAR_2}\n"
+	.string "sleeps inside it! Shall I restore it?$"
+
+OreburghCity_MiningMuseum_EventScript_SNFossil_Work:
+	.string "Very well! Now, the extraction!$"
+
+OreburghCity_MiningMuseum_EventScript_SNFossil_Got:
+	.string "{PLAYER} received {STR_VAR_2}!$"
+
+OreburghCity_MiningMuseum_EventScript_SNFossil_Care:
+	.string "Take good care of it, yes!$"
+
+OreburghCity_MiningMuseum_EventScript_SNFossil_None:
+	.string "Bring me a Fossil, any Fossil! The\n"
+	.string "Underground Man in Eterna City digs\l"
+	.string "them up, you know.$"
+
+OreburghCity_MiningMuseum_EventScript_SNFossil_FullT:
+	.string "You have no room for another POKéMON!\n"
+	.string "Make some room, please.$"

@@ -110,3 +110,48 @@ ValorLakefront_EventScript_SNGrunt_Post:
 	.string "I’ll have to give this to the\n"
 	.string "Commander...\p"
 	.string "I wish... I got to use it at the lake...$"
+
+ValorLakefront_EventScript_SNSuiteLady::
+	lock
+	faceplayer
+	goto_if_set FLAG_SN_RETURNED_SUITE_KEY, ValorLakefront_EventScript_SNSuiteLady_After
+	checkitem ITEM_SUITE_KEY
+	goto_if_eq VAR_RESULT, TRUE, ValorLakefront_EventScript_SNSuiteLady_Key
+	msgbox ValorLakefront_EventScript_SNSuiteLady_T1, MSGBOX_DEFAULT
+	release
+	end
+ValorLakefront_EventScript_SNSuiteLady_Key:
+	msgbox ValorLakefront_EventScript_SNSuiteLady_T2, MSGBOX_DEFAULT
+	removeitem ITEM_SUITE_KEY
+	giveitem ITEM_WHITE_FLUTE
+	setflag FLAG_SN_RETURNED_SUITE_KEY
+	release
+	end
+ValorLakefront_EventScript_SNSuiteLady_After:
+	msgbox ValorLakefront_EventScript_SNSuiteLady_T3, MSGBOX_DEFAULT
+	release
+	end
+
+ValorLakefront_EventScript_SNSuiteLady_T1:
+	.string "What am I to do...? I’ve gone and\n"
+	.string "dropped my Suite Key somewhere again...\l"
+	.string "It must be somewhere around the\l"
+	.string "lakefront.$"
+
+ValorLakefront_EventScript_SNSuiteLady_T2:
+	.string "Oh! That’s my Suite Key! You found it\n"
+	.string "for me! Thank you so much! Please,\l"
+	.string "accept this as thanks.$"
+
+ValorLakefront_EventScript_SNSuiteLady_T3:
+	.string "Thank you again for finding my key. I’ll\n"
+	.string "be more careful from now on.$"
+
+ValorLakefront_EventScript_SNSuiteKey::
+	goto_if_set FLAG_SN_SUITE_KEY_FOUND, ValorLakefront_EventScript_SNSuiteKey_End
+	lockall
+	finditem ITEM_SUITE_KEY
+	setflag FLAG_SN_SUITE_KEY_FOUND
+	releaseall
+ValorLakefront_EventScript_SNSuiteKey_End:
+	end

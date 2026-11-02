@@ -9,47 +9,29 @@
 #include "wild_encounter.h"
 
 static const struct MassOutbreak sPokeOutbreakSpeciesList[OUTBREAK_COUNT] = {
-    [OUTBREAK_ID_ROUTE102] = {
-        .species = SPECIES_SEEDOT,
-        .moves = {MOVE_BIDE, MOVE_HARDEN, MOVE_LEECH_SEED},
-        .level = 3,
-        .probability = 100,
-        .duration = 1,
-        .location = MAP_ROUTE102
-
-    },
-    [OUTBREAK_ID_ROUTE114] = {
-        .species = SPECIES_NUZLEAF,
-        .moves = {MOVE_HARDEN, MOVE_GROWTH, MOVE_NATURE_POWER, MOVE_LEECH_SEED},
-        .level = 15,
-        .probability = 50,
-        .duration = 1,
-        .location = MAP_ROUTE114,
-    },
-    [OUTBREAK_ID_ROUTE117] = {
-        .species = SPECIES_SEEDOT,
-        .moves = {MOVE_HARDEN, MOVE_GROWTH, MOVE_NATURE_POWER, MOVE_LEECH_SEED},
-        .level = 13,
-        .probability = 50,
-        .duration = 1,
-        .location = MAP_ROUTE117,
-    },
-    [OUTBREAK_ID_ROUTE120] = {
-        .species = SPECIES_SEEDOT,
-        .moves = {MOVE_GIGA_DRAIN, MOVE_FRUSTRATION, MOVE_SOLAR_BEAM, MOVE_LEECH_SEED},
-        .level = 25,
-        .probability = 50,
-        .duration = 1,
-        .location = MAP_ROUTE120,
-    },
-    [OUTBREAK_ID_ROUTE116] = {
-        .species = SPECIES_SKITTY,
-        .moves = {MOVE_GROWL, MOVE_TACKLE, MOVE_TAIL_WHIP, MOVE_ATTRACT},
-        .level = 8,
-        .probability = 50,
-        .duration = 1,
-        .location = MAP_ROUTE116,
-    }
+    // Proyecto Sinnoh: enjambres de Platino (movimientos por defecto según el nivel)
+    [OUTBREAK_ID_ROUTE201] = { .species = SPECIES_DODUO, .level = 4, .probability = 50, .duration = 1, .location = MAP_ROUTE201 },
+    [OUTBREAK_ID_ROUTE202] = { .species = SPECIES_ZIGZAGOON, .level = 5, .probability = 50, .duration = 1, .location = MAP_ROUTE202 },
+    [OUTBREAK_ID_ROUTE203] = { .species = SPECIES_CUBONE, .level = 6, .probability = 50, .duration = 1, .location = MAP_ROUTE203 },
+    [OUTBREAK_ID_ROUTE206] = { .species = SPECIES_LARVITAR, .level = 18, .probability = 50, .duration = 1, .location = MAP_ROUTE206 },
+    [OUTBREAK_ID_ROUTE207] = { .species = SPECIES_PHANPY, .level = 9, .probability = 50, .duration = 1, .location = MAP_ROUTE207 },
+    [OUTBREAK_ID_ROUTE208] = { .species = SPECIES_DUNSPARCE, .level = 20, .probability = 50, .duration = 1, .location = MAP_ROUTE208 },
+    [OUTBREAK_ID_ROUTE209] = { .species = SPECIES_SNUBBULL, .level = 21, .probability = 50, .duration = 1, .location = MAP_ROUTE209 },
+    [OUTBREAK_ID_ROUTE214] = { .species = SPECIES_SPOINK, .level = 25, .probability = 50, .duration = 1, .location = MAP_ROUTE214 },
+    [OUTBREAK_ID_ROUTE215] = { .species = SPECIES_DROWZEE, .level = 21, .probability = 50, .duration = 1, .location = MAP_ROUTE215 },
+    [OUTBREAK_ID_ROUTE217] = { .species = SPECIES_DELIBIRD, .level = 34, .probability = 50, .duration = 1, .location = MAP_ROUTE217 },
+    [OUTBREAK_ID_ROUTE218] = { .species = SPECIES_VOLTORB, .level = 30, .probability = 50, .duration = 1, .location = MAP_ROUTE218 },
+    [OUTBREAK_ID_ROUTE221] = { .species = SPECIES_FARFETCHD, .level = 31, .probability = 50, .duration = 1, .location = MAP_ROUTE221 },
+    [OUTBREAK_ID_ROUTE222] = { .species = SPECIES_SKITTY, .level = 41, .probability = 50, .duration = 1, .location = MAP_ROUTE222 },
+    [OUTBREAK_ID_ROUTE224] = { .species = SPECIES_NATU, .level = 52, .probability = 50, .duration = 1, .location = MAP_ROUTE224 },
+    [OUTBREAK_ID_ROUTE225] = { .species = SPECIES_MAKUHITA, .level = 50, .probability = 50, .duration = 1, .location = MAP_ROUTE225 },
+    [OUTBREAK_ID_ROUTE226] = { .species = SPECIES_KRABBY, .level = 50, .probability = 50, .duration = 1, .location = MAP_ROUTE226 },
+    [OUTBREAK_ID_ROUTE227] = { .species = SPECIES_SPINDA, .level = 55, .probability = 50, .duration = 1, .location = MAP_ROUTE227 },
+    [OUTBREAK_ID_ROUTE228] = { .species = SPECIES_BELDUM, .level = 53, .probability = 50, .duration = 1, .location = MAP_ROUTE228 },
+    [OUTBREAK_ID_ROUTE229] = { .species = SPECIES_PINSIR, .level = 50, .probability = 50, .duration = 1, .location = MAP_ROUTE229 },
+    [OUTBREAK_ID_ROUTE230] = { .species = SPECIES_CORSOLA, .level = 50, .probability = 50, .duration = 1, .location = MAP_ROUTE230 },
+    [OUTBREAK_ID_VALLEY_WINDWORKS] = { .species = SPECIES_ELECTRIKE, .level = 11, .probability = 50, .duration = 1, .location = MAP_VALLEY_WINDWORKS },
+    [OUTBREAK_ID_ETERNA_FOREST] = { .species = SPECIES_SLAKOTH, .level = 13, .probability = 50, .duration = 1, .location = MAP_ETERNA_FOREST },
 };
 
 void ZeroMassOutbreak(void)
@@ -129,6 +111,7 @@ bool8 SetUpMassOutbreakEncounter(u8 flags)
         return FALSE;
 
     CreateWildMon(gSaveBlock1Ptr->outbreakPokemonSpecies, gSaveBlock1Ptr->outbreakPokemonLevel);
+    if (gSaveBlock1Ptr->outbreakPokemonMoves[0] != MOVE_NONE) // Proyecto Sinnoh: sin lista, movimientos por defecto
     for (u32 i = 0; i < MAX_MON_MOVES; i++)
         SetMonMoveSlot(&gParties[B_TRAINER_OPPONENT_A][0], gSaveBlock1Ptr->outbreakPokemonMoves[i], i);
 

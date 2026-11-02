@@ -176,11 +176,13 @@ Route207_EventScript_SNCounterpart::
 	goto_if_eq VAR_RESULT, FEMALE, Route207_EventScript_SNCounterpart_Lucas
 	msgbox Route207_EventScript_SNCounterpart_D1, MSGBOX_DEFAULT
 	giveitem ITEM_VS_SEEKER
+	giveitem ITEM_DOWSING_MACHINE
 	msgbox Route207_EventScript_SNCounterpart_D2, MSGBOX_DEFAULT
 	goto Route207_EventScript_SNCounterpart_End
 Route207_EventScript_SNCounterpart_Lucas:
 	msgbox Route207_EventScript_SNCounterpart_L1, MSGBOX_DEFAULT
 	giveitem ITEM_VS_SEEKER
+	giveitem ITEM_DOWSING_MACHINE
 	msgbox Route207_EventScript_SNCounterpart_L2, MSGBOX_DEFAULT
 Route207_EventScript_SNCounterpart_End:
 	setflag FLAG_SN_RECEIVED_VS_SEEKER

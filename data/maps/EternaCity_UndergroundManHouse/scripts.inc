@@ -43,6 +43,7 @@ EternaCity_UndergroundManHouse_Text_PtNpc4:
 	.string "Fossil and trade it to him.$"
 
 EternaCity_UndergroundManHouse_EventScript_UndergroundMan::
+	goto EternaCity_UndergroundManHouse_EventScript_SNFossilGift
 	msgbox EternaCity_UndergroundManHouse_Text_Man, MSGBOX_NPC
 	end
 
@@ -53,3 +54,39 @@ EternaCity_UndergroundManHouse_Text_Man:
 	.string "visitors for now, but come back\l"
 	.string "someday. There are treasures down\n"
 	.string "there!$"
+
+EternaCity_UndergroundManHouse_EventScript_SNFossilGift::
+	lock
+	faceplayer
+	goto_if_set FLAG_DAILY_SN_FOSSIL, EternaCity_UndergroundManHouse_EventScript_SNFossilGift_Done
+	msgbox EternaCity_UndergroundManHouse_EventScript_SNFossilGift_T1, MSGBOX_DEFAULT
+	setvar VAR_0x8004, 0
+	goto_if_unset FLAG_SYS_GAME_CLEAR, EternaCity_UndergroundManHouse_EventScript_SNFossilGift_Pick
+	setvar VAR_0x8004, 1
+EternaCity_UndergroundManHouse_EventScript_SNFossilGift_Pick:
+	special SinnohRandomFossil
+	copyvar VAR_0x8006, VAR_RESULT
+	giveitem VAR_0x8006
+	goto_if_eq VAR_RESULT, FALSE, EternaCity_UndergroundManHouse_EventScript_SNFossilGift_End
+	setflag FLAG_DAILY_SN_FOSSIL
+	msgbox EternaCity_UndergroundManHouse_EventScript_SNFossilGift_T2, MSGBOX_DEFAULT
+EternaCity_UndergroundManHouse_EventScript_SNFossilGift_End:
+	release
+	end
+EternaCity_UndergroundManHouse_EventScript_SNFossilGift_Done:
+	msgbox EternaCity_UndergroundManHouse_EventScript_SNFossilGift_T3, MSGBOX_DEFAULT
+	release
+	end
+
+EternaCity_UndergroundManHouse_EventScript_SNFossilGift_T1:
+	.string "Hey there! I dig underground every\n"
+	.string "day. Look what I found today! Here, you\l"
+	.string "can have it!$"
+
+EternaCity_UndergroundManHouse_EventScript_SNFossilGift_T2:
+	.string "The scientist at the Oreburgh Mining\n"
+	.string "Museum can bring Fossils back to life!$"
+
+EternaCity_UndergroundManHouse_EventScript_SNFossilGift_T3:
+	.string "I already gave you today’s find. Come\n"
+	.string "back tomorrow!$"

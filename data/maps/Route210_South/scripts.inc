@@ -230,6 +230,7 @@ Route210_South_Text_AvaMatt2NotEnough:
 	.string "You need two POKéMON to battle us!$"
 
 Route210_South_OnTransitionSN:
+	call Route210_South_EventScript_SNVis_R210_CYNTHIA
 	call Route210_South_EventScript_SNVis_PSYDUCK
 	end
 
@@ -260,7 +261,9 @@ Route210_South_EventScript_SNPsyduck::
 	removeobject LOCALID_SN_PSYDUCK_3
 	removeobject LOCALID_SN_PSYDUCK_4
 	fadescreen FADE_FROM_BLACK
-	release
+	clearflag FLAG_SN_HIDE_R210_CYNTHIA
+	addobject LOCALID_SN_R210_CYNTHIA
+	goto Route210_South_EventScript_SNCynthiaCharm
 	end
 
 Route210_South_EventScript_SNPsyduck_Firm:
@@ -282,3 +285,39 @@ Route210_South_EventScript_SNPsyduck_Used:
 	.string "{PLAYER} used the SecretPotion!\p"
 	.string "The PSYDUCK appear to be cured of\n"
 	.string "their chronic headache!$"
+
+Route210_South_EventScript_SNVis_R210_CYNTHIA:
+	setflag FLAG_SN_HIDE_R210_CYNTHIA
+	goto_if_unset FLAG_SN_PSYDUCK_GONE, Route210_South_EventScript_SNVis_R210_CYNTHIA_End
+	goto_if_set FLAG_SN_RECEIVED_OLD_CHARM, Route210_South_EventScript_SNVis_R210_CYNTHIA_End
+	clearflag FLAG_SN_HIDE_R210_CYNTHIA
+Route210_South_EventScript_SNVis_R210_CYNTHIA_End:
+	return
+
+Route210_South_EventScript_SNCynthiaCharm::
+	lock
+	faceplayer
+	msgbox Route210_South_EventScript_SNCynthiaCharm_T1, MSGBOX_DEFAULT
+	giveitem ITEM_OLD_CHARM
+	setflag FLAG_SN_RECEIVED_OLD_CHARM
+	msgbox Route210_South_EventScript_SNCynthiaCharm_T2, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_SN_R210_CYNTHIA
+	setflag FLAG_SN_HIDE_R210_CYNTHIA
+	fadescreen FADE_FROM_BLACK
+	release
+	end
+
+Route210_South_EventScript_SNCynthiaCharm_T1:
+	.string "Cynthia: Thank you. The PSYDUCK seem\n"
+	.string "to be feeling better.\p"
+	.string "I have a favor to ask of you. Could you\n"
+	.string "deliver this to my grandmother? She\l"
+	.string "lives in Celestic Town, just beyond\l"
+	.string "this route.$"
+
+Route210_South_EventScript_SNCynthiaCharm_T2:
+	.string "Cynthia: It’s an Old Charm. My\n"
+	.string "grandmother is the elder of Celestic\l"
+	.string "Town. Thank you!$"

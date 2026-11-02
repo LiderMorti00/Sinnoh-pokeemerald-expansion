@@ -315,6 +315,13 @@ gSpecials::
 	def_special Script_FacePlayer
 	def_special Script_ClearHeldMovement
 	def_special InitRoamer
+	def_special SinnohAddRoamer
+	def_special SinnohRotomAppliance
+	def_special SinnohPartyHasRotom
+	def_special SinnohRandomFossil
+	def_special SinnohLeadMonIsCute
+	def_special SinnohNewsPressPick
+	def_special SinnohPartyHasSpecies
 	def_special TryUpdateRusturfTunnelState
 	def_special IsGrassTypeInParty
 	def_special DoContestHallWarp, waitstate=1

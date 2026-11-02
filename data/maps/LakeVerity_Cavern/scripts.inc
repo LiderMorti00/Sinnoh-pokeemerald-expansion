@@ -21,19 +21,23 @@ LakeVerity_Cavern_EventScript_SNMESPRIT::
 	playmoncry SPECIES_MESPRIT, CRY_MODE_ENCOUNTER
 	delay 40
 	waitmoncry
-	setwildbattle SPECIES_MESPRIT, 50
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
-	special BattleSetup_StartLegendaryBattle
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, LakeVerity_Cavern_EventScript_SNMESPRIT_Ran
-	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, LakeVerity_Cavern_EventScript_SNMESPRIT_Ran
+	msgbox LakeVerity_Cavern_EventScript_SNMESPRIT_TFled, MSGBOX_DEFAULT
+	closemessage
+	playse SE_M_TELEPORT
+	fadescreen FADE_TO_WHITE
+	removeobject VAR_LAST_TALKED
 	setflag FLAG_SN_DONE_MESPRIT
 	setflag FLAG_SN_HIDE_MESPRIT
-	goto Common_EventScript_RemoveStaticPokemon
+	fadescreen FADE_FROM_WHITE
+	waitse
+	setvar VAR_0x8004, SPECIES_MESPRIT
+	setvar VAR_0x8005, 50
+	special SinnohAddRoamer
+	release
 	end
 
-LakeVerity_Cavern_EventScript_SNMESPRIT_Ran:
-	setvar VAR_0x8004, SPECIES_MESPRIT
-	goto Common_EventScript_LegendaryFlewAway
-	end
+LakeVerity_Cavern_EventScript_SNMESPRIT_TFled:
+	.string "MESPRIT fled!\p"
+	.string "It seems to be wandering all over\n"
+	.string "Sinnoh!$"
+

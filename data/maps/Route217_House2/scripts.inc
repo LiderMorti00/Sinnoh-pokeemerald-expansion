@@ -18,28 +18,15 @@ Route217_House2_Text_PtNpc1_1:
 
 Route217_House2_Text_PtNpc1_2:
 	.string "While I was fighting my way through the\n"
-	.string "blizzard, I dropped an HM.\p"
-	.string "If I still had that hidden move Rock\n"
-	.string "Climb, I’d be able to scale\p"
-	.string "sheer cliffs...\p"
-	.string "Hey! What’s this? You found the Hidden\n"
-	.string "Machine?\p"
-	.string "But I’d already given it up for lost,\n"
-	.string "and you found it.\p"
-	.string "It’s yours to keep, my friend. Make\n"
-	.string "good use of it.\p"
-	.string "I like your honesty, though. Let me\n"
-	.string "reward you with this.$"
+	.string "blizzard, I found this under the snow.\p"
+	.string "I have no use for it, though.\n"
+	.string "You can have it, my friend.$"
 
 Route217_House2_EventScript_PtNpc1::
 	lock
 	faceplayer
 	goto_if_set FLAG_RECEIVED_SN_ROUTE_217_WEST_HOUSE_ICICLE_PLATE, Route217_House2_EventScript_PtNpc1_IFoundIciclePlate
-	checkitem ITEM_HM08, 1
-	goto_if_eq VAR_RESULT, TRUE, Route217_House2_EventScript_PtNpc1_TryGiveIciclePlate
-	msgbox Route217_House2_Text_PtNpc1_0, MSGBOX_DEFAULT
-	release
-	end
+	goto Route217_House2_EventScript_PtNpc1_TryGiveIciclePlate
 
 Route217_House2_EventScript_PtNpc1_IFoundIciclePlate:
 	msgbox Route217_House2_Text_PtNpc1_1, MSGBOX_DEFAULT

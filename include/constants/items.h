@@ -1062,6 +1062,7 @@ enum __attribute__((packed)) Item
     ITEM_GALACTIC_KEY = 881,
     ITEM_LUNAR_WING = 882,
     ITEM_SUITE_KEY = 883,
+    ITEM_OLD_CHARM = 884,
 
     ITEMS_COUNT,
     ITEM_FIELD_ARROW = ITEMS_COUNT,

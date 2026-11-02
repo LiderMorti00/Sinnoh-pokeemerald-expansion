@@ -3,6 +3,7 @@
 
 void DeactivateAllRoamers(void);
 void InitRoamer(void);
+void SinnohAddRoamer(void);
 void UpdateLocationHistoryForRoamer(void);
 void RoamerMoveToOtherLocationSet(u32 roamerIndex);
 void RoamerMove(u32 roamerIndex);

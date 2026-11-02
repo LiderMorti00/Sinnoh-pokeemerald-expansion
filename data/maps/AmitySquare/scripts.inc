@@ -116,6 +116,43 @@ AmitySquare_Text_PtNpc11:
 	.string "Hahahah! Perhaps I’ll see you again\n"
 	.string "tomorrow!$"
 
-AmitySquare_EventScript_PtNpc11::
-	msgbox AmitySquare_Text_PtNpc11, MSGBOX_NPC
+AmitySquare_EventScript_SNDailyGift::
+	lock
+	faceplayer
+	goto_if_set FLAG_DAILY_SN_AMITY, AmitySquare_EventScript_SNDailyGift_Done
+	msgbox AmitySquare_EventScript_SNDailyGift_Hello, MSGBOX_DEFAULT
+	random 5
+	switch VAR_RESULT
+	case 0, AmitySquare_EventScript_SNDailyGift_B0
+	case 1, AmitySquare_EventScript_SNDailyGift_B1
+	case 2, AmitySquare_EventScript_SNDailyGift_B2
+	case 3, AmitySquare_EventScript_SNDailyGift_B3
+	giveitem ITEM_LUM_BERRY
+	goto AmitySquare_EventScript_SNDailyGift_Set
+AmitySquare_EventScript_SNDailyGift_B0:
+	giveitem ITEM_ORAN_BERRY, 5
+	goto AmitySquare_EventScript_SNDailyGift_Set
+AmitySquare_EventScript_SNDailyGift_B1:
+	giveitem ITEM_SITRUS_BERRY
+	goto AmitySquare_EventScript_SNDailyGift_Set
+AmitySquare_EventScript_SNDailyGift_B2:
+	giveitem ITEM_PECHA_BERRY, 5
+	goto AmitySquare_EventScript_SNDailyGift_Set
+AmitySquare_EventScript_SNDailyGift_B3:
+	giveitem ITEM_LEPPA_BERRY, 2
+AmitySquare_EventScript_SNDailyGift_Set:
+	setflag FLAG_DAILY_SN_AMITY
+	release
 	end
+AmitySquare_EventScript_SNDailyGift_Done:
+	msgbox AmitySquare_EventScript_SNDailyGift_DoneT, MSGBOX_DEFAULT
+	release
+	end
+
+AmitySquare_EventScript_SNDailyGift_Hello:
+	.string "My POKéMON keeps finding things on our\n"
+	.string "walks! Here, you can have today’s find!$"
+
+AmitySquare_EventScript_SNDailyGift_DoneT:
+	.string "Come back tomorrow! My POKéMON might\n"
+	.string "find something else!$"

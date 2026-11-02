@@ -1,4 +1,5 @@
 EternaCity_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, EternaCity_OnTransitionSN
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, EternaCity_OnFrame
 	.byte 0
 
@@ -245,3 +246,59 @@ EternaCity_Text_GalacticGruntM3:
 	.string "Have you seen our building?\p"
 	.string "TEAM GALACTIC is so stinking rich\n"
 	.string "that we can have one built instantly!$"
+
+EternaCity_OnTransitionSN:
+	call EternaCity_EventScript_SNVis_ETERNA_CYNTHIA_EGG
+	end
+
+EternaCity_EventScript_SNVis_ETERNA_CYNTHIA_EGG:
+	setflag FLAG_SN_HIDE_ETERNA_CYNTHIA_EGG
+	goto_if_lt VAR_SINNOH_STORY, 28, EternaCity_EventScript_SNVis_ETERNA_CYNTHIA_EGG_End
+	goto_if_set FLAG_SN_RECEIVED_TOGEPI_EGG, EternaCity_EventScript_SNVis_ETERNA_CYNTHIA_EGG_End
+	clearflag FLAG_SN_HIDE_ETERNA_CYNTHIA_EGG
+EternaCity_EventScript_SNVis_ETERNA_CYNTHIA_EGG_End:
+	return
+
+EternaCity_EventScript_SNCynthiaEgg::
+	lock
+	faceplayer
+	msgbox EternaCity_EventScript_SNCynthiaEgg_T1, MSGBOX_DEFAULT
+	getpartysize
+	goto_if_eq VAR_RESULT, PARTY_SIZE, EternaCity_EventScript_SNCynthiaEgg_Full
+	giveegg SPECIES_TOGEPI
+	playfanfare MUS_OBTAIN_ITEM
+	message EternaCity_EventScript_SNCynthiaEgg_Got
+	waitfanfare
+	waitmessage
+	setflag FLAG_SN_RECEIVED_TOGEPI_EGG
+	msgbox EternaCity_EventScript_SNCynthiaEgg_T2, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_SN_ETERNA_CYNTHIA
+	setflag FLAG_SN_HIDE_ETERNA_CYNTHIA_EGG
+	fadescreen FADE_FROM_BLACK
+	release
+	end
+EternaCity_EventScript_SNCynthiaEgg_Full:
+	msgbox EternaCity_EventScript_SNCynthiaEgg_FullT, MSGBOX_DEFAULT
+	release
+	end
+
+EternaCity_EventScript_SNCynthiaEgg_T1:
+	.string "Cynthia: Oh, hello again. I have\n"
+	.string "something I’d like you to have.\p"
+	.string "It’s a POKéMON Egg. I’d like you to\n"
+	.string "hatch it and raise the POKéMON with\l"
+	.string "care.$"
+
+EternaCity_EventScript_SNCynthiaEgg_Got:
+	.string "{PLAYER} received an Egg from Cynthia!$"
+
+EternaCity_EventScript_SNCynthiaEgg_T2:
+	.string "Cynthia: POKéMON hatched from Eggs\n"
+	.string "grow fond of the Trainer who raised\l"
+	.string "them. Take good care of it.$"
+
+EternaCity_EventScript_SNCynthiaEgg_FullT:
+	.string "Cynthia: Oh, you don’t have room for it\n"
+	.string "in your party. I’ll wait here for you.$"

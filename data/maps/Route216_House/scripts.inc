@@ -26,16 +26,25 @@ Route216_House_EventScript_PtNpc2::
 	release
 	end
 
-Route216_House_EventScript_PtSign1::
-	msgbox Route216_House_Text_PtSign1, MSGBOX_SIGN
-	end
-
 Route216_House_Text_PtSign1:
 	.string "It’s a bed... Want to take a rest?$"
 
-Route216_House_EventScript_PtSign2::
-	msgbox Route216_House_Text_PtSign2, MSGBOX_SIGN
-	end
-
 Route216_House_Text_PtSign2:
 	.string "It’s a bed... Want to take a rest?$"
+
+Route216_House_EventScript_SNBed::
+	lockall
+	msgbox Route216_House_Text_SNBed, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Route216_House_EventScript_SNBedEnd
+	closemessage
+	call Common_EventScript_OutOfCenterPartyHeal
+	msgbox Route216_House_Text_SNRested, MSGBOX_DEFAULT
+Route216_House_EventScript_SNBedEnd:
+	releaseall
+	end
+
+Route216_House_Text_SNBed:
+	.string "It’s a bed... Want to take a rest?$"
+
+Route216_House_Text_SNRested:
+	.string "You and your POKéMON are fully rested!$"
