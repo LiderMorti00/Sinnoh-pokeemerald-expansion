@@ -19,6 +19,7 @@ enum DoorSize
     DOOR_SIZE_1x2,
     DOOR_SIZE_2x2_LEFT,
     DOOR_SIZE_2x2_RIGHT,
+    DOOR_SIZE_1x2_SN, // Proyecto Sinnoh: 1x2 con paletas distintas arriba (0-3) y abajo (4-7)
     DOOR_SIZE_COUNT,
 };
 
@@ -258,6 +259,11 @@ static const struct DoorSizeInfo sDoorSizeInfo[DOOR_SIZE_COUNT] =
         .openAnimFrames = sDoorAnimFrames_Open2x2,
         .closeAnimFrames = sDoorAnimFrames_Close2x2,
     },
+    [DOOR_SIZE_1x2_SN] =
+    {
+        .openAnimFrames = sDoorAnimFrames_Open1x2,
+        .closeAnimFrames = sDoorAnimFrames_Close1x2,
+    },
 };
 
 static const u8 sDoorAnimPalettes_General[] = {1, 1, 1, 1, 1, 1, 1, 1};
@@ -349,8 +355,120 @@ static const u8 sDoorAnimPalettes_TrainerTowerRoofElevator[] = {11, 11, 2, 2, 2,
 
 #endif // IS_FRLG
 
+// Proyecto Sinnoh: puertas animadas de los tilesets de Sinnoh
+static const u8 sDoorAnimTiles_SnCanalave575[] = INCGFX_U8("graphics/door_anims/sinnoh/canalave_575.png", ".4bpp");
+static const u8 sDoorAnimTiles_SnCelestic531[] = INCGFX_U8("graphics/door_anims/sinnoh/celestic_531.png", ".4bpp");
+static const u8 sDoorAnimTiles_SnJubilife719[] = INCGFX_U8("graphics/door_anims/sinnoh/jubilife_719.png", ".4bpp");
+static const u8 sDoorAnimTiles_SnHearthome668[] = INCGFX_U8("graphics/door_anims/sinnoh/hearthome_668.png", ".4bpp");
+static const u8 sDoorAnimTiles_SnCelestic540[] = INCGFX_U8("graphics/door_anims/sinnoh/celestic_540.png", ".4bpp");
+static const u8 sDoorAnimTiles_SnValor555[] = INCGFX_U8("graphics/door_anims/sinnoh/valor_555.png", ".4bpp");
+static const u8 sDoorAnimTiles_SnPetalburg594[] = INCGFX_U8("graphics/door_anims/sinnoh/petalburg_594.png", ".4bpp");
+static const u8 sDoorAnimTiles_SnCelestic651[] = INCGFX_U8("graphics/door_anims/sinnoh/celestic_651.png", ".4bpp");
+static const u8 sDoorAnimTiles_SnCelestic659[] = INCGFX_U8("graphics/door_anims/sinnoh/celestic_659.png", ".4bpp");
+static const u8 sDoorAnimTiles_SnVeilstone604[] = INCGFX_U8("graphics/door_anims/sinnoh/veilstone_604.png", ".4bpp");
+static const u8 sDoorAnimTiles_SnVeilstone641[] = INCGFX_U8("graphics/door_anims/sinnoh/veilstone_641.png", ".4bpp");
+static const u8 sDoorAnimPalettes_SnCanalave575[] = {0, 0, 0, 0, 7, 7, 7, 7, 7, 7, 7, 7};
+static const u8 sDoorAnimPalettes_SnCelestic531[] = {11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11};
+static const u8 sDoorAnimPalettes_SnJubilife719[] = {0, 0, 0, 0, 12, 12, 12, 12, 12, 12, 12, 12};
+static const u8 sDoorAnimPalettes_SnHearthome668[] = {11, 11, 11, 11, 9, 9, 9, 9, 9, 9, 9, 9};
+static const u8 sDoorAnimPalettes_SnCelestic540[] = {11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11};
+static const u8 sDoorAnimPalettes_SnValor555[] = {11, 11, 11, 11, 5, 5, 5, 5, 5, 5, 5, 5};
+static const u8 sDoorAnimPalettes_SnPetalburg594[] = {9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10};
+static const u8 sDoorAnimPalettes_SnCelestic651[] = {9, 9, 9, 9, 0, 0, 0, 0, 0, 0, 0, 0};
+static const u8 sDoorAnimPalettes_SnCelestic659[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+static const u8 sDoorAnimPalettes_SnVeilstone604[] = {5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5};
+static const u8 sDoorAnimPalettes_SnVeilstone641[] = {7, 7, 7, 7, 9, 9, 9, 9, 9, 9, 9, 9};
+
 static const struct DoorGraphics sDoorAnimGraphicsTable[] =
 {
+    {
+        .metatileNum = 0x23F,
+        .tileset = &gTileset_Canalave,
+        .sound = DOOR_SOUND_NORMAL,
+        .size = DOOR_SIZE_1x2_SN,
+        .tiles = sDoorAnimTiles_SnCanalave575,
+        .palettes = sDoorAnimPalettes_SnCanalave575
+    },
+    {
+        .metatileNum = 0x213,
+        .tileset = &gTileset_Celestic,
+        .sound = DOOR_SOUND_NORMAL,
+        .size = DOOR_SIZE_1x2_SN,
+        .tiles = sDoorAnimTiles_SnCelestic531,
+        .palettes = sDoorAnimPalettes_SnCelestic531
+    },
+    {
+        .metatileNum = 0x2CF,
+        .tileset = &gTileset_Jubilife,
+        .sound = DOOR_SOUND_NORMAL,
+        .size = DOOR_SIZE_1x2_SN,
+        .tiles = sDoorAnimTiles_SnJubilife719,
+        .palettes = sDoorAnimPalettes_SnJubilife719
+    },
+    {
+        .metatileNum = 0x29C,
+        .tileset = &gTileset_Hearthome,
+        .sound = DOOR_SOUND_NORMAL,
+        .size = DOOR_SIZE_1x2_SN,
+        .tiles = sDoorAnimTiles_SnHearthome668,
+        .palettes = sDoorAnimPalettes_SnHearthome668
+    },
+    {
+        .metatileNum = 0x21C,
+        .tileset = &gTileset_Celestic,
+        .sound = DOOR_SOUND_NORMAL,
+        .size = DOOR_SIZE_1x2_SN,
+        .tiles = sDoorAnimTiles_SnCelestic540,
+        .palettes = sDoorAnimPalettes_SnCelestic540
+    },
+    {
+        .metatileNum = 0x22B,
+        .tileset = &gTileset_Valor,
+        .sound = DOOR_SOUND_NORMAL,
+        .size = DOOR_SIZE_1x2_SN,
+        .tiles = sDoorAnimTiles_SnValor555,
+        .palettes = sDoorAnimPalettes_SnValor555
+    },
+    {
+        .metatileNum = 0x252,
+        .tileset = &gTileset_Petalburg,
+        .sound = DOOR_SOUND_NORMAL,
+        .size = DOOR_SIZE_1x2_SN,
+        .tiles = sDoorAnimTiles_SnPetalburg594,
+        .palettes = sDoorAnimPalettes_SnPetalburg594
+    },
+    {
+        .metatileNum = 0x28B,
+        .tileset = &gTileset_Celestic,
+        .sound = DOOR_SOUND_NORMAL,
+        .size = DOOR_SIZE_1x2_SN,
+        .tiles = sDoorAnimTiles_SnCelestic651,
+        .palettes = sDoorAnimPalettes_SnCelestic651
+    },
+    {
+        .metatileNum = 0x293,
+        .tileset = &gTileset_Celestic,
+        .sound = DOOR_SOUND_NORMAL,
+        .size = DOOR_SIZE_1x2_SN,
+        .tiles = sDoorAnimTiles_SnCelestic659,
+        .palettes = sDoorAnimPalettes_SnCelestic659
+    },
+    {
+        .metatileNum = 0x25C,
+        .tileset = &gTileset_Veilstone,
+        .sound = DOOR_SOUND_NORMAL,
+        .size = DOOR_SIZE_1x2_SN,
+        .tiles = sDoorAnimTiles_SnVeilstone604,
+        .palettes = sDoorAnimPalettes_SnVeilstone604
+    },
+    {
+        .metatileNum = 0x281,
+        .tileset = &gTileset_Veilstone,
+        .sound = DOOR_SOUND_NORMAL,
+        .size = DOOR_SIZE_1x2_SN,
+        .tiles = sDoorAnimTiles_SnVeilstone641,
+        .palettes = sDoorAnimPalettes_SnVeilstone641
+    },
 #if !IS_FRLG
     {
         .metatileNum = METATILE_General_Door,
@@ -1111,6 +1229,12 @@ static void DrawCurrentDoorAnimFrame(const struct DoorGraphics *gfx, u32 x, u32 
         BuildDoorTiles(&tiles[0], DOOR_TILE_START_SIZE1 + 4, &paletteNums[0]);
         DrawDoorMetatileAt(x, y, &tiles[0]);
         break;
+    case DOOR_SIZE_1x2_SN:
+        BuildDoorTiles(&tiles[0], DOOR_TILE_START_SIZE1 + 0, &paletteNums[0]);
+        DrawDoorMetatileAt(x, y - 1, &tiles[0]);
+        BuildDoorTiles(&tiles[0], DOOR_TILE_START_SIZE1 + 4, &paletteNums[4]);
+        DrawDoorMetatileAt(x, y, &tiles[0]);
+        break;
     default:
     case DOOR_SIZE_1x1:
         BuildDoorTiles(&tiles[0], DOOR_TILE_START_SIZE1 + 0, &paletteNums[0]);
@@ -1135,6 +1259,7 @@ static void DrawClosedDoorTiles(const struct DoorGraphics *gfx, u32 x, u32 y)
         CurrentMapDrawMetatileAt(x, y - 1);
         CurrentMapDrawMetatileAt(x, y);
         break;
+    case DOOR_SIZE_1x2_SN:
     case DOOR_SIZE_1x2:
         CurrentMapDrawMetatileAt(x, y - 1);
         CurrentMapDrawMetatileAt(x, y);
