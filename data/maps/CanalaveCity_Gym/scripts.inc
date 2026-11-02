@@ -166,6 +166,7 @@ CanalaveCity_Gym_EventScript_PtGymGuide::
 	faceplayer
 	goto_if_set FLAG_BADGE06_GET, CanalaveCity_Gym_EventScript_PtGymGuideAfter
 	msgbox CanalaveCity_Gym_Text_PtGymGuide, MSGBOX_DEFAULT
+	msgbox CanalaveCity_Gym_Text_SNGuideInfo, MSGBOX_DEFAULT
 	release
 	end
 
@@ -283,3 +284,16 @@ CanalaveCity_Gym_EventScript_SNRematch_After:
 
 CanalaveCity_Gym_EventScript_SNRematch_NoT:
 	.string "Come back whenever you’re ready!$"
+
+CanalaveCity_Gym_Text_SNGuideInfo:
+	.string "Let me tell you about this Gym!\p"
+	.string "The Gym Leader is BYRON, the\n"
+	.string "Solid-Rock Father of ROARK from\l"
+	.string "Oreburgh.\p"
+	.string "He uses Steel-type POKéMON like\n"
+	.string "MAGNETON, STEELIX and BASTIODON.\p"
+	.string "Steel types are weak to Fire, Fighting\n"
+	.string "and Ground moves!\p"
+	.string "His Trainers guard the way across the\n"
+	.string "Gym. Beat them to reach BYRON!$"
+

@@ -270,7 +270,7 @@ VeilstoneCity_Gym_Text_ExplainBulkUp:
 
 VeilstoneCity_Gym_Text_RegisteredBrawly:
 	.string "Registered GYM LEADER MAYLENE\n"
-	.string "in the POKéTCH.$"
+	.string "in the POKéNAV.$"
 
 VeilstoneCity_Gym_Text_BrawlyPostBattle:
 	.string "I can see your talent becoming a giant\n"
@@ -421,6 +421,7 @@ VeilstoneCity_Gym_EventScript_PtGymGuide::
 	faceplayer
 	goto_if_set FLAG_BADGE04_GET, VeilstoneCity_Gym_EventScript_PtGymGuideAfter
 	msgbox VeilstoneCity_Gym_Text_PtGymGuide, MSGBOX_DEFAULT
+	msgbox VeilstoneCity_Gym_Text_SNGuideInfo, MSGBOX_DEFAULT
 	release
 	end
 
@@ -542,3 +543,16 @@ VeilstoneCity_Gym_EventScript_SNRematch_After:
 
 VeilstoneCity_Gym_EventScript_SNRematch_NoT:
 	.string "Come back whenever you’re ready!$"
+
+VeilstoneCity_Gym_Text_SNGuideInfo:
+	.string "Let me tell you about this Gym!\p"
+	.string "The Gym Leader is MAYLENE, a young\n"
+	.string "genius of Fighting-type battles who\l"
+	.string "trains barefoot.\p"
+	.string "She uses POKéMON like MEDITITE,\n"
+	.string "MACHOKE and her partner LUCARIO.\p"
+	.string "Fighting types are weak to Flying,\n"
+	.string "Psychic and Fairy moves!\p"
+	.string "Push the punching bags along the rails\n"
+	.string "to clear a path through the Gym.$"
+

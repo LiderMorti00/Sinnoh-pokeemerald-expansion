@@ -175,6 +175,7 @@ SnowpointCity_Gym_1F_EventScript_PtGymGuide::
 	faceplayer
 	goto_if_set FLAG_BADGE07_GET, SnowpointCity_Gym_1F_EventScript_PtGymGuideAfter
 	msgbox SnowpointCity_Gym_1F_Text_PtGymGuide, MSGBOX_DEFAULT
+	msgbox SnowpointCity_Gym_1F_Text_SNGuideInfo, MSGBOX_DEFAULT
 	release
 	end
 
@@ -291,3 +292,17 @@ SnowpointCity_Gym_1F_EventScript_SNRematch_After:
 
 SnowpointCity_Gym_1F_EventScript_SNRematch_NoT:
 	.string "Come back whenever you’re ready!$"
+
+SnowpointCity_Gym_1F_Text_SNGuideInfo:
+	.string "Let me tell you about this Gym!\p"
+	.string "The Gym Leader is CANDICE, the Diamond\n"
+	.string "Dust Girl, who is all about focus!\p"
+	.string "She uses Ice-type POKéMON like\n"
+	.string "SNEASEL, PILOSWINE, ABOMASNOW and\l"
+	.string "FROSLASS.\p"
+	.string "Ice types are weak to Fire, Fighting,\n"
+	.string "Rock and Steel moves!\p"
+	.string "Slide across the ice and smash the\n"
+	.string "snowballs to reach her. Watch your\l"
+	.string "footing!$"
+

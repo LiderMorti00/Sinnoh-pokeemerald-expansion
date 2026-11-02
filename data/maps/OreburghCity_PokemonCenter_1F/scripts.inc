@@ -73,5 +73,5 @@ OreburghCity_PokemonCenter_1F_EventScript_PtNpc6::
 
 OreburghCity_PokemonCenter_1F_Text_PtNpc6:
 	.string "Cool! You have a Vs. Recorder!\p"
-	.string "So, did you go to the Global Terminal in\n"
-	.string "JUBILIFE CITY? Did ya? Did ya?$"
+	.string "So, did you record a great battle\n"
+	.string "with it? Did ya? Did ya?$"

@@ -146,6 +146,7 @@ PastoriaCity_Gym_EventScript_PtGymGuide::
 	faceplayer
 	goto_if_set FLAG_BADGE05_GET, PastoriaCity_Gym_EventScript_PtGymGuideAfter
 	msgbox PastoriaCity_Gym_Text_PtGymGuide, MSGBOX_DEFAULT
+	msgbox PastoriaCity_Gym_Text_SNGuideInfo, MSGBOX_DEFAULT
 	release
 	end
 
@@ -263,3 +264,17 @@ PastoriaCity_Gym_EventScript_SNRematch_After:
 
 PastoriaCity_Gym_EventScript_SNRematch_NoT:
 	.string "Come back whenever you’re ready!$"
+
+PastoriaCity_Gym_Text_SNGuideInfo:
+	.string "Let me tell you about this Gym!\p"
+	.string "The Gym Leader is CRASHER WAKE, the\n"
+	.string "masked wrestler who is a master of\l"
+	.string "Water-type POKéMON.\p"
+	.string "He uses GYARADOS, QUAGSIRE and\n"
+	.string "FLOATZEL.\p"
+	.string "Water types are weak to Electric and\n"
+	.string "Grass moves!\p"
+	.string "His Trainers wait along the waterways.\n"
+	.string "Make your way past them to reach the\l"
+	.string "ring!$"
+

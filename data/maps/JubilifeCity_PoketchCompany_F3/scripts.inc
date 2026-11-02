@@ -6,7 +6,7 @@ JubilifeCity_PoketchCompany_F3_EventScript_PtNpc1::
 	end
 
 JubilifeCity_PoketchCompany_F3_Text_PtNpc1:
-	.string "Do you have a POKéTCH?\p"
+	.string "Do you have a POKéNAV?\p"
 	.string "There's a girl's model and a boy's\n"
 	.string "model, each in different colors.$"
 
@@ -26,8 +26,8 @@ JubilifeCity_PoketchCompany_F3_EventScript_PtNpc3::
 	end
 
 JubilifeCity_PoketchCompany_F3_Text_PtNpc3:
-	.string "People everywhere make POKéTCH apps.\p"
+	.string "People everywhere make POKéNAV apps.\p"
 	.string "You'll be able to get new apps from\n"
 	.string "surprising sources.\p"
 	.string "The PCs here have guides on the\n"
-	.string "various POKéTCH apps.$"
+	.string "various POKéNAV apps.$"

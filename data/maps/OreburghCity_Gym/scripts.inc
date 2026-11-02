@@ -36,6 +36,7 @@ OreburghCity_Gym_EventScript_Guide::
 	faceplayer
 	goto_if_set FLAG_BADGE01_GET, OreburghCity_Gym_EventScript_GuideWon
 	msgbox OreburghCity_Gym_Text_Guide, MSGBOX_DEFAULT
+	msgbox OreburghCity_Gym_Text_SNGuideInfo, MSGBOX_DEFAULT
 	release
 	end
 
@@ -178,3 +179,18 @@ OreburghCity_Gym_EventScript_SNRematch_After:
 
 OreburghCity_Gym_EventScript_SNRematch_NoT:
 	.string "Come back whenever you’re ready!$"
+
+OreburghCity_Gym_Text_SNGuideInfo:
+	.string "Let me tell you about this Gym!\p"
+	.string "The Gym Leader is ROARK, the\n"
+	.string "Rock-Loving Honor Student. He is also\l"
+	.string "the young boss of the Oreburgh Mine.\p"
+	.string "He uses Rock-type POKéMON like\n"
+	.string "GEODUDE, ONIX and his partner\l"
+	.string "CRANIDOS.\p"
+	.string "Rock types are weak to Water, Grass,\n"
+	.string "Fighting, Ground and Steel moves!\p"
+	.string "His Trainers wait along the path. Beat\n"
+	.string "them and you can walk right up to\l"
+	.string "ROARK. Go for it!$"
+

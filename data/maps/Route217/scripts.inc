@@ -184,7 +184,7 @@ Route217_Text_PtSign1:
 
 Route217_Text_PtNpc1_0:
 	.string "I’m using the Dowsing Machine on my\n"
-	.string "POKéTCH.\p"
+	.string "POKéNAV.\p"
 	.string "I’m looking for things buried under the\n"
 	.string "snow.$"
 

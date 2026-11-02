@@ -28,7 +28,11 @@ EternaCity_Gym_EventScript_GiveTM::
 	end
 
 EternaCity_Gym_EventScript_Guide::
-	msgbox EternaCity_Gym_Text_Guide, MSGBOX_NPC
+	lock
+	faceplayer
+	msgbox EternaCity_Gym_Text_Guide, MSGBOX_DEFAULT
+	msgbox EternaCity_Gym_Text_SNGuideInfo, MSGBOX_DEFAULT
+	release
 	end
 
 EternaCity_Gym_Text_GardeniaIntro:
@@ -172,3 +176,17 @@ EternaCity_Gym_EventScript_SNRematch_After:
 
 EternaCity_Gym_EventScript_SNRematch_NoT:
 	.string "Come back whenever you’re ready!$"
+
+EternaCity_Gym_Text_SNGuideInfo:
+	.string "Let me tell you about this Gym!\p"
+	.string "The Gym Leader is GARDENIA, the\n"
+	.string "Grass-Type Lover. Her Gym is a garden\l"
+	.string "around a giant flower clock.\p"
+	.string "She uses Grass-type POKéMON like\n"
+	.string "TURTWIG, CHERRIM and ROSERADE.\p"
+	.string "Grass types are weak to Fire, Flying,\n"
+	.string "Ice, Poison and Bug moves!\p"
+	.string "Her Trainers are waiting among the\n"
+	.string "flowers. Beat them on your way to\l"
+	.string "GARDENIA.$"
+

@@ -2468,6 +2468,9 @@ void UpdateFollowingPokemon(void)
      || (gMapHeader.mapType == MAP_TYPE_INDOOR && SpeciesToGraphicsInfo(species, shiny, female)->oam->size > ST_OAM_SIZE_2)
      || FlagGet(FLAG_TEMP_HIDE_FOLLOWER)
      || PlayerHasFollowerNPC()
+     // Proyecto Sinnoh: como en Platino, los Pokémon solo te siguen en la Plaza Amistad
+     || gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MAP_AMITY_SQUARE)
+     || gSaveBlock1Ptr->location.mapNum != MAP_NUM(MAP_AMITY_SQUARE)
      )
     {
         RemoveFollowingPokemon();

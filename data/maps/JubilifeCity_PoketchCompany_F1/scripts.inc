@@ -6,7 +6,7 @@ JubilifeCity_PoketchCompany_F1_EventScript_PtNpc1::
 	end
 
 JubilifeCity_PoketchCompany_F1_Text_PtNpc1:
-	.string "We build and test new POKéTCH apps\n"
+	.string "We build and test new POKéNAV apps\n"
 	.string "here every day.$"
 
 JubilifeCity_PoketchCompany_F1_EventScript_PtNpc2::
@@ -14,7 +14,7 @@ JubilifeCity_PoketchCompany_F1_EventScript_PtNpc2::
 	end
 
 JubilifeCity_PoketchCompany_F1_Text_PtNpc2:
-	.string "Welcome to the POKéTCH COMPANY!\n"
+	.string "Welcome to the POKéNAV COMPANY!\n"
 	.string "Our president is upstairs.$"
 
 JubilifeCity_PoketchCompany_F1_EventScript_PtNpc3::
@@ -22,7 +22,7 @@ JubilifeCity_PoketchCompany_F1_EventScript_PtNpc3::
 	end
 
 JubilifeCity_PoketchCompany_F1_Text_PtNpc3:
-	.string "Hey, do you watch TV? “POKéTCH\n"
+	.string "Hey, do you watch TV? “POKéNAV\n"
 	.string "Detective” is a great show.\p"
 	.string "Seeing that program compels me to use\n"
-	.string "my POKéTCH more!$"
+	.string "my POKéNAV more!$"

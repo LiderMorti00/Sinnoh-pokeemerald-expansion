@@ -41,7 +41,7 @@ SolaceonTown_EventScript_PtNpc5::
 SolaceonTown_Text_PtNpc5:
 	.string "Your encounters with POKéMON can be\n"
 	.string "considered your shared history.\p"
-	.string "This here's a POKéTCH app called\n"
+	.string "This here's a POKéNAV app called\n"
 	.string "POKéMON History.\p"
 	.string "Use it to see your history of POKéMON\n"
 	.string "catches.$"

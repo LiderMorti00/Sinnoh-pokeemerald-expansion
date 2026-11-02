@@ -11,7 +11,7 @@ PastoriaCity_GreatMarshGate_Text_PtNpc1_0:
 	.string "All you have to do is capture five or\n"
 	.string "more POKéMON in one Safari Game.\p"
 	.string "If you can do that, I’ll give you the\n"
-	.string "POKéTCH app Matchup Checker.$"
+	.string "POKéNAV app Matchup Checker.$"
 
 PastoriaCity_GreatMarshGate_Text_PtNpc1_1:
 	.string "The Matchup Checker app figures out\n"

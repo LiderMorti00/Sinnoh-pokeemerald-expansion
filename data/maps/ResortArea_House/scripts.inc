@@ -6,7 +6,7 @@ ResortArea_House_Text_PtNpc1:
 	.string "all I need.\p"
 	.string "I learn so much just sitting here. I\n"
 	.string "absorb knowledge!\p"
-	.string "I learned about the POKéTCH app\n"
+	.string "I learned about the POKéNAV app\n"
 	.string "Marking Map, for instance.\p"
 	.string "They say the Marking Map can track\n"
 	.string "POKéMON that travel around.\p"

@@ -33,8 +33,8 @@ FightArea_House1_Text_PtNpc3_0:
 	.string "But comparing with other people\n"
 	.string "reveals things about yourself\l"
 	.string "sometimes, too.\p"
-	.string "That’s why you should check out the\n"
-	.string "Global Terminal in Jubilife City.$"
+	.string "That’s why battling lots of different\n"
+	.string "Trainers is so much fun.$"
 
 FightArea_House1_EventScript_PtNpc3::
 	lock

@@ -12321,36 +12321,6 @@
       "blockdata_filepath": "data/layouts/SunyshoreCity_Mart/map.bin"
     },
     {
-      "id": "LAYOUT_JUBILIFE_CITY_GLOBAL_TERMINAL_F1",
-      "name": "JubilifeCity_GlobalTerminal_F1_Layout",
-      "width": 14,
-      "height": 9,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_GenericBuilding",
-      "border_filepath": "data/layouts/JubilifeCity_GlobalTerminal_F1/border.bin",
-      "blockdata_filepath": "data/layouts/JubilifeCity_GlobalTerminal_F1/map.bin"
-    },
-    {
-      "id": "LAYOUT_JUBILIFE_CITY_GLOBAL_TERMINAL_F2",
-      "name": "JubilifeCity_GlobalTerminal_F2_Layout",
-      "width": 14,
-      "height": 9,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_GenericBuilding",
-      "border_filepath": "data/layouts/JubilifeCity_GlobalTerminal_F2/border.bin",
-      "blockdata_filepath": "data/layouts/JubilifeCity_GlobalTerminal_F2/map.bin"
-    },
-    {
-      "id": "LAYOUT_JUBILIFE_CITY_GLOBAL_TERMINAL_F3",
-      "name": "JubilifeCity_GlobalTerminal_F3_Layout",
-      "width": 14,
-      "height": 9,
-      "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_GenericBuilding",
-      "border_filepath": "data/layouts/JubilifeCity_GlobalTerminal_F3/border.bin",
-      "blockdata_filepath": "data/layouts/JubilifeCity_GlobalTerminal_F3/map.bin"
-    },
-    {
       "id": "LAYOUT_OREBURGH_CITY_MINING_MUSEUM",
       "name": "OreburghCity_MiningMuseum_Layout",
       "width": 14,

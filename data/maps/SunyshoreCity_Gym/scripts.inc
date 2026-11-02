@@ -230,7 +230,7 @@ SunyshoreCity_Gym_Text_ExplainShockWave:
 
 SunyshoreCity_Gym_Text_RegisteredWattson:
 	.string "Registered GYM LEADER VOLKNER\n"
-	.string "in the POKéTCH.$"
+	.string "in the POKéNAV.$"
 
 SunyshoreCity_Gym_Text_WattsonPostBattle:
 	.string "I swell with optimism, seeing a promising\n"
@@ -467,6 +467,7 @@ SunyshoreCity_Gym_EventScript_PtGymGuide::
 	faceplayer
 	goto_if_set FLAG_BADGE08_GET, SunyshoreCity_Gym_EventScript_PtGymGuideAfter
 	msgbox SunyshoreCity_Gym_Text_PtGymGuide, MSGBOX_DEFAULT
+	msgbox SunyshoreCity_Gym_Text_SNGuideInfo, MSGBOX_DEFAULT
 	release
 	end
 
@@ -602,3 +603,19 @@ SunyshoreCity_Gym_EventScript_SNVis_GYM_VOLKNER:
 	clearflag FLAG_SN_HIDE_GYM_VOLKNER
 SunyshoreCity_Gym_EventScript_SNVis_GYM_VOLKNER_End:
 	return
+
+SunyshoreCity_Gym_Text_SNGuideInfo:
+	.string "Let me tell you about this Gym!\p"
+	.string "The Gym Leader is VOLKNER, the Shining,\n"
+	.string "Shocking Star and the strongest Gym\l"
+	.string "Leader in Sinnoh.\p"
+	.string "He uses Electric-type POKéMON like\n"
+	.string "JOLTEON, RAICHU, LUXRAY and\l"
+	.string "ELECTIVIRE.\p"
+	.string "Electric types are weak to Ground\n"
+	.string "moves, and Ground types are immune to\l"
+	.string "Electric moves!\p"
+	.string "Step on the switches to rotate the\n"
+	.string "gear walkways and make a path to\l"
+	.string "VOLKNER.$"
+

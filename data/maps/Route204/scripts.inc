@@ -98,7 +98,7 @@ Route204_Text_TaylorDefeat:
 
 Route204_Text_TaylorPost:
 	.string "By the way, have you collected new\n"
-	.string "apps from the POKéTCH Company?$"
+	.string "apps from the POKéNAV Company?$"
 
 Route204_EventScript_Twins::
 	trainerbattle_double TRAINER_ZANDER, Route204_Text_TwinsIntro, Route204_Text_TwinsDefeat, Route204_Text_TwinsNotEnough

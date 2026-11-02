@@ -35,7 +35,7 @@ JubilifeCity_EventScript_Sign2::
 	end
 
 JubilifeCity_Text_Sign2:
-	.string "POKéTCH COMPANY\p"
+	.string "POKéNAV COMPANY\p"
 	.string "Making life easier for Trainers\n"
 	.string "everywhere.$"
 
@@ -134,8 +134,6 @@ JubilifeCity_EventScript_PtNpc9::
 	end
 
 JubilifeCity_Text_PtNpc9:
-	.string "Past here is the Global Terminal. It\n"
-	.string "lets you trade with the whole world!\p"
 	.string "Trading POKéMON means connecting\n"
 	.string "with friends, both old and new.\p"
 	.string "That's awesome!$"
@@ -372,24 +370,24 @@ JubilifeCity_Text_BlockEastSchool:
 	.string "first. He's somewhere in JUBILIFE.$"
 
 JubilifeCity_Text_BlockEastNorth:
-	.string "The POKéTCH campaign man was\n"
+	.string "The POKéNAV campaign man was\n"
 	.string "looking for Trainers. Maybe I\l"
 	.string "should collect those COUPONS\n"
 	.string "first.$"
 
 JubilifeCity_Text_ClownQuiz1:
-	.string "POKéTCH campaign quiz! Answer\n"
+	.string "POKéNAV campaign quiz! Answer\n"
 	.string "correctly to win a COUPON!\p"
 	.string "Does a POKéMON grow by defeating\n"
 	.string "others and gaining EXP. Points?$"
 
 JubilifeCity_Text_ClownQuiz2:
-	.string "POKéTCH campaign quiz time!\p"
+	.string "POKéNAV campaign quiz time!\p"
 	.string "Just like POKéMON have types, do\n"
 	.string "moves have types too?$"
 
 JubilifeCity_Text_ClownQuiz3:
-	.string "Last POKéTCH campaign quiz! Ready?\p"
+	.string "Last POKéNAV campaign quiz! Ready?\p"
 	.string "Can a POKéMON hold an item?$"
 
 JubilifeCity_Text_ClownRight:
@@ -397,7 +395,7 @@ JubilifeCity_Text_ClownRight:
 
 JubilifeCity_Text_ClownRight2:
 	.string "Collect all three COUPONS and\n"
-	.string "bring them to the POKéTCH\l"
+	.string "bring them to the POKéNAV\l"
 	.string "COMPANY's president!$"
 
 JubilifeCity_Text_ClownWrong:
@@ -579,7 +577,7 @@ JubilifeCity_Text_DawnSchool:
 
 JubilifeCity_Text_PresidentCampaign:
 	.string "Hello there! I'm the president of\n"
-	.string "the POKéTCH COMPANY. We're running\l"
+	.string "the POKéNAV COMPANY. We're running\l"
 	.string "a campaign!\p"
 	.string "Find the three clowns in town and\n"
 	.string "answer their quizzes to get three\l"
@@ -596,15 +594,15 @@ JubilifeCity_Text_PresidentCoupons:
 	.string "COUPONS! Here's your prize!$"
 
 JubilifeCity_Text_ReceivedPokenav:
-	.string "{PLAYER} received the POKéTCH!$"
+	.string "{PLAYER} received the POKéNAV!$"
 
 JubilifeCity_Text_PresidentPokenav:
-	.string "The POKéTCH has a map and much\n"
+	.string "The POKéNAV has a map and much\n"
 	.string "more. It will help you on your\l"
 	.string "journey!$"
 
 JubilifeCity_Text_PresidentAfter:
-	.string "How do you like your POKéTCH? Use\n"
+	.string "How do you like your POKéNAV? Use\n"
 	.string "it well!$"
 
 JubilifeCity_OnFrame:

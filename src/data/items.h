@@ -7345,7 +7345,7 @@ const struct ItemInfo gItemsInfo[] =
         .price = 0,
         .description = COMPOUND_STRING(
             "A coupon from the\n"
-            "POKéTCH campaign.\n"
+            "POKéNAV campaign.\n"
             "Collect all three!"),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
@@ -7361,7 +7361,7 @@ const struct ItemInfo gItemsInfo[] =
         .price = 0,
         .description = COMPOUND_STRING(
             "A coupon from the\n"
-            "POKéTCH campaign.\n"
+            "POKéNAV campaign.\n"
             "Collect all three!"),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
@@ -7377,7 +7377,7 @@ const struct ItemInfo gItemsInfo[] =
         .price = 0,
         .description = COMPOUND_STRING(
             "A coupon from the\n"
-            "POKéTCH campaign.\n"
+            "POKéNAV campaign.\n"
             "Collect all three!"),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,

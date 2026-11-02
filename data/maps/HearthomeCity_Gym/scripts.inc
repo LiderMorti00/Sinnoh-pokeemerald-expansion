@@ -144,6 +144,7 @@ HearthomeCity_Gym_EventScript_PtGymGuide::
 	faceplayer
 	goto_if_set FLAG_BADGE03_GET, HearthomeCity_Gym_EventScript_PtGymGuideAfter
 	msgbox HearthomeCity_Gym_Text_PtGymGuide, MSGBOX_DEFAULT
+	msgbox HearthomeCity_Gym_Text_SNGuideInfo, MSGBOX_DEFAULT
 	release
 	end
 
@@ -281,3 +282,19 @@ HearthomeCity_Gym_EventScript_SNRematch_After:
 
 HearthomeCity_Gym_EventScript_SNRematch_NoT:
 	.string "Come back whenever you’re ready!$"
+
+HearthomeCity_Gym_Text_SNGuideInfo:
+	.string "Let me tell you about this Gym!\p"
+	.string "The Gym Leader is FANTINA, the\n"
+	.string "Alluring, Soulful Dancer. She is also a\l"
+	.string "famous Contest star.\p"
+	.string "She uses Ghost-type POKéMON like\n"
+	.string "DUSKULL, HAUNTER and MISMAGIUS.\p"
+	.string "Ghost types are weak to Ghost and\n"
+	.string "Dark moves, and Normal and Fighting\l"
+	.string "moves can’t touch them!\p"
+	.string "The Gym is pitch dark. Each room asks a\n"
+	.string "math question: walk through the door\l"
+	.string "with the right answer to reach\l"
+	.string "FANTINA!$"
+

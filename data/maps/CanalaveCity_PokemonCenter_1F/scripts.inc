@@ -21,7 +21,7 @@ CanalaveCity_PokemonCenter_1F_Text_PtNpc1_0:
 	.string "But I can’t use it for moving boulders\n"
 	.string "until I beat Byron, the Gym Leader.\p"
 	.string "I should make a note of that on the\n"
-	.string "POKéTCH app Memo Pad.$"
+	.string "POKéNAV app Memo Pad.$"
 
 CanalaveCity_PokemonCenter_1F_EventScript_PtNpc1::
 	lock
