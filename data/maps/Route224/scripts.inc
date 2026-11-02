@@ -1,4 +1,5 @@
 Route224_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Route224_OnTransitionSN
 	.byte 0
 
 Route224_EventScript_Ruben::
@@ -174,3 +175,39 @@ Route224_Text_HaydenPost:
 	.string "the Dragon's Den.\p"
 	.string "I've got to say, your POKéMON are in\n"
 	.string "the top class for toughness.$"
+
+Route224_OnTransitionSN:
+	call Route224_EventScript_SNVis_SHAYMIN
+	end
+
+Route224_EventScript_SNVis_SHAYMIN:
+	setflag FLAG_SN_HIDE_SHAYMIN
+	goto_if_unset FLAG_SYS_NATIONAL_DEX, Route224_EventScript_SNVis_SHAYMIN_End
+	goto_if_set FLAG_SN_DONE_SHAYMIN, Route224_EventScript_SNVis_SHAYMIN_End
+	clearflag FLAG_SN_HIDE_SHAYMIN
+Route224_EventScript_SNVis_SHAYMIN_End:
+	return
+
+Route224_EventScript_SNShaymin::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_SHAYMIN, CRY_MODE_ENCOUNTER
+	delay 40
+	waitmoncry
+	setwildbattle SPECIES_SHAYMIN, 30
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Route224_EventScript_SNShaymin_Ran
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, Route224_EventScript_SNShaymin_Ran
+	setflag FLAG_SN_DONE_SHAYMIN
+	setflag FLAG_SN_HIDE_SHAYMIN
+	goto Common_EventScript_RemoveStaticPokemon
+	end
+Route224_EventScript_SNShaymin_Ran:
+	setvar VAR_0x8004, SPECIES_SHAYMIN
+	goto Common_EventScript_LegendaryFlewAway
+	end

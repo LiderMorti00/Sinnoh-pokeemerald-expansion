@@ -43,6 +43,7 @@ TurnbackCave_GiratinaRoom_Text_PtSign4:
 	.string "and go to the Distortion World?$"
 
 TurnbackCave_GiratinaRoom_OnTransitionSN:
+	call TurnbackCave_GiratinaRoom_EventScript_SNVis_GRISEOUS
 	call TurnbackCave_GiratinaRoom_EventScript_SNVis_GIRATINA
 	end
 
@@ -76,4 +77,23 @@ TurnbackCave_GiratinaRoom_EventScript_SNGIRATINA::
 TurnbackCave_GiratinaRoom_EventScript_SNGIRATINA_Ran:
 	setvar VAR_0x8004, SPECIES_GIRATINA
 	goto Common_EventScript_LegendaryFlewAway
+	end
+
+TurnbackCave_GiratinaRoom_EventScript_SNVis_GRISEOUS:
+	setflag FLAG_SN_HIDE_GRISEOUS
+	goto_if_unset FLAG_SN_DONE_GIRATINA, TurnbackCave_GiratinaRoom_EventScript_SNVis_GRISEOUS_End
+	goto_if_set FLAG_SN_GOT_GRISEOUS_ORB, TurnbackCave_GiratinaRoom_EventScript_SNVis_GRISEOUS_End
+	clearflag FLAG_SN_HIDE_GRISEOUS
+TurnbackCave_GiratinaRoom_EventScript_SNVis_GRISEOUS_End:
+	return
+
+TurnbackCave_GiratinaRoom_EventScript_SNOrb::
+	lock
+	finditem ITEM_GRISEOUS_ORB
+	goto_if_eq VAR_RESULT, FALSE, TurnbackCave_GiratinaRoom_EventScript_SNOrb_End
+	setflag FLAG_SN_GOT_GRISEOUS_ORB
+	removeobject LOCALID_SN_GRISEOUS
+	setflag FLAG_SN_HIDE_GRISEOUS
+TurnbackCave_GiratinaRoom_EventScript_SNOrb_End:
+	release
 	end

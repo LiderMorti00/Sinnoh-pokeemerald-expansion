@@ -196,16 +196,16 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_BARRY",
-      "x": 22,
-      "y": 20,
+      "x": 49,
+      "y": 9,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "FightArea_EventScript_SNBarry",
-      "flag": "FLAG_SN_HIDE_FIGHT_BARRY",
+      "script": "FightArea_EventScript_SNMulti",
+      "flag": "FLAG_SN_HIDE_FA_MULTI",
       "local_id": "LOCALID_SN_FIGHTAREA_BARRY"
     },
     {
@@ -220,6 +220,62 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "FightArea_EventScript_SNFisher",
       "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_SN_FA_FLINT",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_FLINT",
+      "x": 50,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "FightArea_EventScript_SNMulti",
+      "flag": "FLAG_SN_HIDE_FA_MULTI"
+    },
+    {
+      "local_id": "LOCALID_SN_FA_VOLKNER",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_VOLKNER",
+      "x": 51,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "FightArea_EventScript_SNMulti",
+      "flag": "FLAG_SN_HIDE_FA_MULTI"
+    },
+    {
+      "local_id": "LOCALID_SN_FA_PALMER",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_PALMER",
+      "x": 48,
+      "y": 10,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "FightArea_EventScript_SNMulti_Palmer",
+      "flag": "FLAG_SN_HIDE_FA_PALMER"
+    },
+    {
+      "local_id": "LOCALID_SN_FA_BUCK",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_BUCK",
+      "x": 47,
+      "y": 11,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "FightArea_EventScript_SNMulti_Buck",
+      "flag": "FLAG_SN_HIDE_FA_BUCK"
     }
   ],
   "warp_events": [
@@ -259,34 +315,6 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [
-    {
-      "type": "trigger",
-      "x": 21,
-      "y": 17,
-      "elevation": 3,
-      "var": "VAR_TEMP_F",
-      "var_value": "0",
-      "script": "FightArea_EventScript_SNFIGHTAREABARRY_T0"
-    },
-    {
-      "type": "trigger",
-      "x": 21,
-      "y": 18,
-      "elevation": 3,
-      "var": "VAR_TEMP_F",
-      "var_value": "0",
-      "script": "FightArea_EventScript_SNFIGHTAREABARRY_T1"
-    },
-    {
-      "type": "trigger",
-      "x": 21,
-      "y": 19,
-      "elevation": 3,
-      "var": "VAR_TEMP_F",
-      "var_value": "0",
-      "script": "FightArea_EventScript_SNFIGHTAREABARRY_T2"
-    }
-  ],
+  "coord_events": [],
   "bg_events": []
 }

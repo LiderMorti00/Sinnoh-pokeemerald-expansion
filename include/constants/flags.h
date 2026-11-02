@@ -1577,9 +1577,9 @@
 #define FLAG_DAILY_SN_FOSSIL                        (DAILY_FLAGS_START + 0x4)  // Proyecto Sinnoh: fósil diario del hombre del Subsuelo
 #define FLAG_DAILY_SN_NEWSPRESS                     (DAILY_FLAGS_START + 0x5) // Proyecto Sinnoh: Gaceta Pokémon de Sosiego
 #define FLAG_DAILY_SN_AMITY                         (DAILY_FLAGS_START + 0x6) // Proyecto Sinnoh: regalo diario de la Plaza Amistad
-#define FLAG_UNUSED_0x927                           (DAILY_FLAGS_START + 0x7)  // Unused Flag
-#define FLAG_UNUSED_0x928                           (DAILY_FLAGS_START + 0x8)  // Unused Flag
-#define FLAG_UNUSED_0x929                           (DAILY_FLAGS_START + 0x9)  // Unused Flag
+#define FLAG_DAILY_SN_BG_ROARK                      (DAILY_FLAGS_START + 0x7) // Proyecto Sinnoh: Batallódromo
+#define FLAG_DAILY_SN_BG_GARDENIA                   (DAILY_FLAGS_START + 0x8) // Proyecto Sinnoh: Batallódromo
+#define FLAG_DAILY_SN_BG_FANTINA                    (DAILY_FLAGS_START + 0x9) // Proyecto Sinnoh: Batallódromo
 #define FLAG_DAILY_PICKED_LOTO_TICKET               (DAILY_FLAGS_START + 0xA)
 #define FLAG_DAILY_ROUTE_114_RECEIVED_BERRY         (DAILY_FLAGS_START + 0xB)
 #define FLAG_DAILY_ROUTE_111_RECEIVED_BERRY         (DAILY_FLAGS_START + 0xC)
@@ -1589,18 +1589,18 @@
 #define FLAG_DAILY_FLOWER_SHOP_RECEIVED_BERRY       (DAILY_FLAGS_START + 0x10)
 #define FLAG_DAILY_BERRY_MASTERS_WIFE               (DAILY_FLAGS_START + 0x11)
 #define FLAG_DAILY_SOOTOPOLIS_RECEIVED_BERRY        (DAILY_FLAGS_START + 0x12)
-#define FLAG_UNUSED_0x933                           (DAILY_FLAGS_START + 0x13) // Unused Flag
+#define FLAG_DAILY_SN_BG_MAYLENE                    (DAILY_FLAGS_START + 0x13) // Proyecto Sinnoh: Batallódromo
 #define FLAG_DAILY_APPRENTICE_LEAVES                (DAILY_FLAGS_START + 0x14)
 
-#define FLAG_UNUSED_0x935                           (DAILY_FLAGS_START + 0x15) // Unused Flag
-#define FLAG_UNUSED_0x936                           (DAILY_FLAGS_START + 0x16) // Unused Flag
-#define FLAG_UNUSED_0x937                           (DAILY_FLAGS_START + 0x17) // Unused Flag
-#define FLAG_UNUSED_0x938                           (DAILY_FLAGS_START + 0x18) // Unused Flag
-#define FLAG_UNUSED_0x939                           (DAILY_FLAGS_START + 0x19) // Unused Flag
-#define FLAG_UNUSED_0x93A                           (DAILY_FLAGS_START + 0x1A) // Unused Flag
-#define FLAG_UNUSED_0x93B                           (DAILY_FLAGS_START + 0x1B) // Unused Flag
-#define FLAG_UNUSED_0x93C                           (DAILY_FLAGS_START + 0x1C) // Unused Flag
-#define FLAG_UNUSED_0x93D                           (DAILY_FLAGS_START + 0x1D) // Unused Flag
+#define FLAG_DAILY_SN_BG_WAKE                       (DAILY_FLAGS_START + 0x15) // Proyecto Sinnoh: Batallódromo
+#define FLAG_DAILY_SN_BG_BYRON                      (DAILY_FLAGS_START + 0x16) // Proyecto Sinnoh: Batallódromo
+#define FLAG_DAILY_SN_BG_CANDICE                    (DAILY_FLAGS_START + 0x17) // Proyecto Sinnoh: Batallódromo
+#define FLAG_DAILY_SN_BG_VOLKNER                    (DAILY_FLAGS_START + 0x18) // Proyecto Sinnoh: Batallódromo
+#define FLAG_DAILY_SN_BG_BUCK                       (DAILY_FLAGS_START + 0x19) // Proyecto Sinnoh: Batallódromo
+#define FLAG_DAILY_SN_BG_CHERYL                     (DAILY_FLAGS_START + 0x1A) // Proyecto Sinnoh: Batallódromo
+#define FLAG_DAILY_SN_BG_RILEY                      (DAILY_FLAGS_START + 0x1B) // Proyecto Sinnoh: Batallódromo
+#define FLAG_DAILY_SN_BG_MARLEY                     (DAILY_FLAGS_START + 0x1C) // Proyecto Sinnoh: Batallódromo
+#define FLAG_DAILY_SN_BG_MIRA                       (DAILY_FLAGS_START + 0x1D) // Proyecto Sinnoh: Batallódromo
 #define FLAG_UNUSED_0x93E                           (DAILY_FLAGS_START + 0x1E) // Unused Flag
 #define FLAG_UNUSED_0x93F                           (DAILY_FLAGS_START + 0x1F) // Unused Flag
 #define FLAG_UNUSED_0x940                           (DAILY_FLAGS_START + 0x20) // Unused Flag
@@ -2997,5 +2997,34 @@
 #define FLAG_SN_HIDE_GYM_VOLKNER                                FLAG_HIDE_AQUA_HIDEOUT_GRUNTS
 #define FLAG_SN_LAB_CP_SAFE                                     FLAG_HIDE_MT_CHIMNEY_TEAM_AQUA
 #define FLAG_SN_HIDE_LAB_CP_SAFE                                FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA
+
+
+// ---- Proyecto Sinnoh: historia de Platino (objetos, regalos y objetos ocultos) ----
+#define FLAG_SN_FIGHT_MULTI_DONE                                FLAG_HIDE_FORTREE_CITY_HOUSE_4_WINGULL
+#define FLAG_SN_HIDE_FA_MULTI                                   FLAG_HIDE_REGIROCK
+#define FLAG_SN_HIDE_FA_PALMER                                  FLAG_HIDE_REGICE
+#define FLAG_SN_FA_MET_BUCK                                     FLAG_HIDE_REGISTEEL
+#define FLAG_SN_HIDE_FA_BUCK                                    FLAG_HIDE_METEOR_FALLS_TEAM_MAGMA
+#define FLAG_SN_R227_BUCK_DONE                                  FLAG_HIDE_SEAFLOOR_CAVERN_ENTRANCE_AQUA_GRUNT
+#define FLAG_SN_HIDE_R227_BUCK                                  FLAG_HIDE_METEOR_FALLS_1F_1R_COZMO
+#define FLAG_SN_R227_WAKE_DONE                                  FLAG_HIDE_AQUA_HIDEOUT_B2F_SUBMARINE_SHADOW
+#define FLAG_SN_HIDE_R227_WAKE                                  FLAG_HIDE_SEAFLOOR_CAVERN_AQUA_GRUNTS
+#define FLAG_SN_HIDE_BG_ROARK                                   FLAG_HIDE_RUSTBORO_CITY_DEVON_CORP_3F_EMPLOYEE
+#define FLAG_SN_HIDE_BG_GARDENIA                                FLAG_HIDE_SS_TIDAL_ROOMS_SNATCH_GIVER
+#define FLAG_SN_HIDE_BG_FANTINA                                 FLAG_RECEIVED_SHOAL_SALT_1
+#define FLAG_SN_HIDE_BG_MAYLENE                                 FLAG_RECEIVED_SHOAL_SALT_2
+#define FLAG_SN_HIDE_BG_WAKE                                    FLAG_RECEIVED_SHOAL_SALT_3
+#define FLAG_SN_HIDE_BG_BYRON                                   FLAG_RECEIVED_SHOAL_SALT_4
+#define FLAG_SN_HIDE_BG_CANDICE                                 FLAG_RECEIVED_SHOAL_SHELL_1
+#define FLAG_SN_HIDE_BG_VOLKNER                                 FLAG_RECEIVED_SHOAL_SHELL_2
+#define FLAG_SN_HIDE_BG_BUCK                                    FLAG_RECEIVED_SHOAL_SHELL_3
+#define FLAG_SN_HIDE_BG_CHERYL                                  FLAG_RECEIVED_SHOAL_SHELL_4
+#define FLAG_SN_HIDE_BG_RILEY                                   FLAG_HIDE_ROUTE_111_SECRET_POWER_MAN
+#define FLAG_SN_HIDE_BG_MARLEY                                  FLAG_HIDE_LILYCOVE_DEPARTMENT_STORE_ROOFTOP_SALE_WOMAN
+#define FLAG_SN_HIDE_BG_MIRA                                    FLAG_HIDE_MIRAGE_TOWER_ROOT_FOSSIL
+#define FLAG_SN_DONE_SHAYMIN                                    FLAG_HIDE_MIRAGE_TOWER_CLAW_FOSSIL
+#define FLAG_SN_HIDE_SHAYMIN                                    FLAG_HIDE_SLATEPORT_CITY_OCEANIC_MUSEUM_FAMILIAR_AQUA_GRUNT
+#define FLAG_SN_GOT_GRISEOUS_ORB                                FLAG_HIDE_ROUTE_118_STEVEN
+#define FLAG_SN_HIDE_GRISEOUS                                   FLAG_HIDE_FORTREE_CITY_KECLEON
 
 #endif // GUARD_CONSTANTS_FLAGS_H
