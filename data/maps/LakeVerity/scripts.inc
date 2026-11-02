@@ -427,13 +427,29 @@ LakeVerity_Text_SNAfterMars2:
 	.string "going to be OK?$"
 
 LakeVerity_Text_SNAfterMars2_ScrD:
-	msgbox LakeVerity_Text_SNAfterMars2, MSGBOX_DEFAULT
+	checkplayergender
+	call_if_eq VAR_RESULT, FEMALE, LakeVerity_Text_SNAfterMars2_SNLucasCall
+	call_if_ne VAR_RESULT, FEMALE, LakeVerity_Text_SNAfterMars2_SNDawnCall
 	return
 LakeVerity_Text_SNAfterMars2_ScrL:
 	msgbox LakeVerity_Text_SNAfterMars2_Lu, MSGBOX_DEFAULT
 	return
 
 LakeVerity_Text_SNAfterMars2_Lu:
+	.string "{STR_VAR_1}: {PLAYER}, what’s Team\n"
+	.string "Galactic up to?\p"
+	.string "They’d better not harm the POKéMON\n"
+	.string "they took from the lakes...$"
+
+LakeVerity_Text_SNAfterMars2_SNDawnCall:
+	msgbox LakeVerity_Text_SNAfterMars2, MSGBOX_DEFAULT
+	return
+
+LakeVerity_Text_SNAfterMars2_SNLucasCall:
+	msgbox LakeVerity_Text_SNAfterMars2_SNLu, MSGBOX_DEFAULT
+	return
+
+LakeVerity_Text_SNAfterMars2_SNLu:
 	.string "{STR_VAR_1}: {PLAYER}, what’s Team\n"
 	.string "Galactic up to?\p"
 	.string "They’d better not harm the POKéMON\n"

@@ -1512,13 +1512,37 @@ SandgemLab_Text_PtCounterpart_ScrD:
 	goto_if_eq VAR_STARTER_MON, 1, SandgemLab_Text_PtCounterpart_ScrD2
 	bufferspeciesname STR_VAR_2, SPECIES_CHIMCHAR
 SandgemLab_Text_PtCounterpart_ScrD2:
-	msgbox SandgemLab_Text_PtCounterpart, MSGBOX_DEFAULT
+	checkplayergender
+	call_if_eq VAR_RESULT, FEMALE, SandgemLab_Text_PtCounterpart_SNLucasCall
+	call_if_ne VAR_RESULT, FEMALE, SandgemLab_Text_PtCounterpart_SNDawnCall
 	return
 SandgemLab_Text_PtCounterpart_ScrL:
 	msgbox SandgemLab_Text_PtCounterpart_Lu, MSGBOX_DEFAULT
 	return
 
 SandgemLab_Text_PtCounterpart_Lu:
+	.string "{STR_VAR_1}: Boy, am I glad you’re kind\n"
+	.string "toward POKéMON.\p"
+	.string "If you weren’t, well... I don’t even want\n"
+	.string "to think about it.\p"
+	.string "{STR_VAR_1}: I’ve got the same kind of\n"
+	.string "POKéDEX as you.\p"
+	.string "{STR_VAR_1}: The professor asked me to\n"
+	.string "help, so I’m filling the POKéDEX pages,\l"
+	.string "too.\p"
+	.string "That makes us comrades working toward\n"
+	.string "the same goal.\p"
+	.string "I’ll teach you stuff later, OK?$"
+
+SandgemLab_Text_PtCounterpart_SNDawnCall:
+	msgbox SandgemLab_Text_PtCounterpart, MSGBOX_DEFAULT
+	return
+
+SandgemLab_Text_PtCounterpart_SNLucasCall:
+	msgbox SandgemLab_Text_PtCounterpart_SNLu, MSGBOX_DEFAULT
+	return
+
+SandgemLab_Text_PtCounterpart_SNLu:
 	.string "{STR_VAR_1}: Boy, am I glad you’re kind\n"
 	.string "toward POKéMON.\p"
 	.string "If you weren’t, well... I don’t even want\n"

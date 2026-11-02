@@ -3068,4 +3068,13 @@
 #define FLAG_SN_SUNYSHORE_BARRY                                 (TRAINER_FLAGS_START + TRAINER_EVERETT)
 #define FLAG_SN_HIDE_SUNY_BARRY                                 (TRAINER_FLAGS_START + TRAINER_ALVARO)
 
+
+// ---- Proyecto Sinnoh: historia de Platino (objetos, regalos y objetos ocultos) ----
+#define FLAG_SN_VERITY_ROWAN                                    (TRAINER_FLAGS_START + TRAINER_EVERETT)
+#define FLAG_SN_HIDE_VERITY_ROWAN_2                             (TRAINER_FLAGS_START + TRAINER_ALVARO)
+#define FLAG_SN_CORONET_LOOKER                                  (TRAINER_FLAGS_START + TRAINER_MARIELA)
+#define FLAG_SN_HIDE_CORONET_LOOKER                             (TRAINER_FLAGS_START + TRAINER_THALIA_5)
+#define FLAG_SN_ROUTE224_TABLET                                 (TRAINER_FLAGS_START + TRAINER_THALIA_4)
+#define FLAG_SN_HIDE_R224_OAK                                   (TRAINER_FLAGS_START + TRAINER_THALIA_3)
+
 #endif // GUARD_CONSTANTS_FLAGS_H

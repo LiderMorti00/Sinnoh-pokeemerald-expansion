@@ -177,12 +177,13 @@ Route224_Text_HaydenPost:
 	.string "the top class for toughness.$"
 
 Route224_OnTransitionSN:
+	call Route224_EventScript_SNVis_R224_OAK
 	call Route224_EventScript_SNVis_SHAYMIN
 	end
 
 Route224_EventScript_SNVis_SHAYMIN:
 	setflag FLAG_SN_HIDE_SHAYMIN
-	goto_if_unset FLAG_SYS_NATIONAL_DEX, Route224_EventScript_SNVis_SHAYMIN_End
+	goto_if_unset FLAG_SN_ROUTE224_TABLET, Route224_EventScript_SNVis_SHAYMIN_End
 	goto_if_set FLAG_SN_DONE_SHAYMIN, Route224_EventScript_SNVis_SHAYMIN_End
 	clearflag FLAG_SN_HIDE_SHAYMIN
 Route224_EventScript_SNVis_SHAYMIN_End:
@@ -211,3 +212,71 @@ Route224_EventScript_SNShaymin_Ran:
 	setvar VAR_0x8004, SPECIES_SHAYMIN
 	goto Common_EventScript_LegendaryFlewAway
 	end
+
+Route224_EventScript_SNVis_R224_OAK:
+	setflag FLAG_SN_HIDE_R224_OAK
+	goto_if_unset FLAG_SYS_NATIONAL_DEX, Route224_EventScript_SNVis_R224_OAK_End
+	goto_if_set FLAG_SN_ROUTE224_TABLET, Route224_EventScript_SNVis_R224_OAK_End
+	clearflag FLAG_SN_HIDE_R224_OAK
+Route224_EventScript_SNVis_R224_OAK_End:
+	return
+
+Route224_EventScript_SNOak::
+	lock
+	faceplayer
+	msgbox Route224_Text_SNOak1, MSGBOX_DEFAULT
+	msgbox Route224_Text_SNOak2, MSGBOX_DEFAULT
+	msgbox Route224_Text_SNOak3, MSGBOX_DEFAULT
+	closemessage
+	setflag FLAG_SN_ROUTE224_TABLET
+	playse SE_M_HEAL_BELL
+	waitse
+	clearflag FLAG_SN_HIDE_SHAYMIN
+	addobject LOCALID_SN_SHAYMIN
+	playmoncry SPECIES_SHAYMIN, CRY_MODE_NORMAL
+	waitmoncry
+	msgbox Route224_Text_SNOak4, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_SN_R224_OAK
+	setflag FLAG_SN_HIDE_R224_OAK
+	fadescreen FADE_FROM_BLACK
+	release
+	end
+
+Route224_Text_SNOak1:
+	.string "Oak: Ah, {PLAYER}! It’s good to see you!\p"
+	.string "Without any further ado, I’d like you\n"
+	.string "to examine this stone tablet.\p"
+	.string "Something just like it was also\n"
+	.string "discovered in the Kanto region.\p"
+	.string "I want to ask for your help in solving\n"
+	.string "the mystery behind this.$"
+
+Route224_Text_SNOak2:
+	.string "Oak: I tried deciphering the\n"
+	.string "engravings on the stone tablet.\p"
+	.string "Apparently, it is for a Trainer to\n"
+	.string "engrave his or her thoughts after\p"
+	.string "growing as a person on an adventure.\p"
+	.string "A Trainer fitting that description\n"
+	.string "would be you.\p"
+	.string "That’s why I’m asking you for your help.\p"
+	.string "You’ve met many people and POKéMON;\n"
+	.string "you’ve experienced many things that\p"
+	.string "shaped you into the person you are.\p"
+	.string "I want you to sincerely tell me who\n"
+	.string "affected you the most.\p"
+	.string "Tell me, to whom do you most want to\n"
+	.string "say your thanks?$"
+
+Route224_Text_SNOak3:
+	.string "{PLAYER} engraved a message of thanks\n"
+	.string "to everyone met on the journey...$"
+
+Route224_Text_SNOak4:
+	.string "Oak: ?! What was that POKéMON?\p"
+	.string "Is it somehow connected to the stone\n"
+	.string "tablet?\p"
+	.string "Hmm... Where did that POKéMON go? Its\n"
+	.string "destination is intriguing...$"
