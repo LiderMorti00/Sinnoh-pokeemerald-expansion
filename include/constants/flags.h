@@ -2931,4 +2931,13 @@
 #define FLAG_SN_HIDE_STARK_R3                                   FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_TRUCK
 #define FLAG_SN_HIDE_STARK_R3_HIDDEN                            FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_TRUCK
 
+
+// ---- Proyecto Sinnoh: historia de Platino (objetos, regalos y objetos ocultos) ----
+#define FLAG_SN_MIRA_ESCORTED                                   FLAG_HIDE_BIRTH_ISLAND_DEOXYS_TRIANGLE
+#define FLAG_SN_MIRA_MET                                        FLAG_HIDE_ROUTE_111_VICTOR_WINSTRATE
+#define FLAG_SN_HIDE_WAYWARD_MIRA                               FLAG_HIDE_PETALBURG_GYM_NORMAN
+#define FLAG_SN_MARLEY_ESCORTED                                 FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA
+#define FLAG_SN_MARLEY_MET                                      FLAG_HIDE_MARINE_CAVE_KYOGRE
+#define FLAG_SN_HIDE_VR_MARLEY                                  FLAG_HIDE_TERRA_CAVE_GROUDON
+
 #endif // GUARD_CONSTANTS_FLAGS_H

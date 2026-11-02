@@ -377,6 +377,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_StrengthBoulder",
       "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_SN_MARLEY",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_MARLEY",
+      "x": 8,
+      "y": 60,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SinnohVictoryRoad_1F_Room2_EventScript_SNMarleyTalk",
+      "flag": "FLAG_SN_HIDE_VR_MARLEY"
     }
   ],
   "warp_events": [
@@ -395,7 +409,125 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 55,
+      "elevation": 3,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SinnohVictoryRoad_1F_Room2_EventScript_SNMarley"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 56,
+      "elevation": 3,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SinnohVictoryRoad_1F_Room2_EventScript_SNMarley"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 57,
+      "elevation": 3,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SinnohVictoryRoad_1F_Room2_EventScript_SNMarley"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 58,
+      "elevation": 3,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SinnohVictoryRoad_1F_Room2_EventScript_SNMarley"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 59,
+      "elevation": 3,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SinnohVictoryRoad_1F_Room2_EventScript_SNMarley"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 60,
+      "elevation": 3,
+      "var": "VAR_TEMP_E",
+      "var_value": "0",
+      "script": "SinnohVictoryRoad_1F_Room2_EventScript_SNMarley"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 55,
+      "elevation": 3,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "SinnohVictoryRoad_1F_Room2_EventScript_SNMarleyBack"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 56,
+      "elevation": 3,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "SinnohVictoryRoad_1F_Room2_EventScript_SNMarleyBack"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 57,
+      "elevation": 3,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "SinnohVictoryRoad_1F_Room2_EventScript_SNMarleyBack"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 58,
+      "elevation": 3,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "SinnohVictoryRoad_1F_Room2_EventScript_SNMarleyBack"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 59,
+      "elevation": 3,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "SinnohVictoryRoad_1F_Room2_EventScript_SNMarleyBack"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 60,
+      "elevation": 3,
+      "var": "VAR_TEMP_D",
+      "var_value": "0",
+      "script": "SinnohVictoryRoad_1F_Room2_EventScript_SNMarleyBack"
+    },
+    {
+      "type": "trigger",
+      "x": 53,
+      "y": 11,
+      "elevation": 3,
+      "var": "VAR_TEMP_C",
+      "var_value": "0",
+      "script": "SinnohVictoryRoad_1F_Room2_EventScript_SNMarleyEnd"
+    }
+  ],
   "bg_events": [
     {
       "type": "hidden_item",

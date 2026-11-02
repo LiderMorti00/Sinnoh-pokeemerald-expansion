@@ -298,8 +298,9 @@ StarkMountain_Room2_EventScript_SNBuck::
 	clearflag FLAG_SN_HIDE_STARK_BUCK
 	addobject LOCALID_SN_STARK_R2_BUCK
 	goto_if_set FLAG_SN_STARK_BUCK_MET, StarkMountain_Room2_EventScript_SNBuck_Again
-	msgbox StarkMountain_Room2_EventScript_SNBuck_Hey, MSGBOX_DEFAULT
-	closemessage
+	playse SE_PIN
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown
 	applymovement LOCALID_SN_STARK_R2_BUCK, StarkMountain_Room2_EventScript_SNBuck_Run
 	waitmovement 0
@@ -362,9 +363,6 @@ StarkMountain_Room2_EventScript_SNBuck_Run:
 	walk_fast_up
 	walk_fast_up
 	step_end
-
-StarkMountain_Room2_EventScript_SNBuck_Hey:
-	.string "BUCK: Hey, {PLAYER}, wait up!$"
 
 StarkMountain_Room2_EventScript_SNBuck_TeamUp:
 	.string "Buck: Hey, {PLAYER}, wait up! So, what’s\n"

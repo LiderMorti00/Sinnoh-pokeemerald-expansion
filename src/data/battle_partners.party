@@ -187,3 +187,39 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 - MOVE_REFLECT
 
 
+
+=== PARTNER_MIRA ===
+Name: MIRA
+Class: Pkmn Trainer 1
+Pic: Sinnoh Mira
+Gender: Female
+Music: Female
+AI: Basic Trainer
+
+SPECIES_KADABRA
+Level: 26
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- MOVE_CONFUSION
+- MOVE_SHOCK_WAVE
+- MOVE_FLASH
+- MOVE_KINESIS
+
+
+
+=== PARTNER_MARLEY ===
+Name: MARLEY
+Class: Pkmn Trainer 1
+Pic: Sinnoh Marley
+Gender: Female
+Music: Female
+AI: Basic Trainer
+
+SPECIES_ARCANINE
+Level: 59
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- MOVE_EXTREME_SPEED
+- MOVE_FIRE_FANG
+- MOVE_HELPING_HAND
+- MOVE_AGILITY
+
+
