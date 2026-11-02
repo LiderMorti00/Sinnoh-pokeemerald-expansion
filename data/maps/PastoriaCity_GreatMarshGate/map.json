@@ -77,5 +77,14 @@
       "script": "PastoriaCity_GreatMarshGate_EventScript_SNCounter"
     }
   ],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 3,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "PastoriaCity_GreatMarshGate_EventScript_SNBinoculars"
+    }
+  ]
 }

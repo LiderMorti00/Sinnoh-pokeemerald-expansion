@@ -1601,7 +1601,7 @@
 #define FLAG_DAILY_SN_BG_RILEY                      (DAILY_FLAGS_START + 0x1B) // Proyecto Sinnoh: Batallódromo
 #define FLAG_DAILY_SN_BG_MARLEY                     (DAILY_FLAGS_START + 0x1C) // Proyecto Sinnoh: Batallódromo
 #define FLAG_DAILY_SN_BG_MIRA                       (DAILY_FLAGS_START + 0x1D) // Proyecto Sinnoh: Batallódromo
-#define FLAG_UNUSED_0x93E                           (DAILY_FLAGS_START + 0x1E) // Unused Flag
+#define FLAG_DAILY_SN_TROPHY                        (DAILY_FLAGS_START + 0x1E) // Proyecto Sinnoh: Jardín Trofeo
 #define FLAG_UNUSED_0x93F                           (DAILY_FLAGS_START + 0x1F) // Unused Flag
 #define FLAG_UNUSED_0x940                           (DAILY_FLAGS_START + 0x20) // Unused Flag
 #define FLAG_UNUSED_0x941                           (DAILY_FLAGS_START + 0x21) // Unused Flag

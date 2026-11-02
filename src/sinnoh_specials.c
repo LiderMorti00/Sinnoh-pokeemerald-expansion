@@ -9,6 +9,10 @@
 #include "constants/items.h"
 #include "constants/moves.h"
 #include "constants/species.h"
+#include "string_util.h"
+#include "script_pokemon_util.h"
+#include "constants/flags.h"
+#include "constants/map_groups.h"
 
 // Proyecto Sinnoh: specials propios para eventos de Platino.
 
@@ -152,4 +156,70 @@ void SinnohPartyHasSpecies(void)
     for (u32 i = 0; i < gPlayerPartyCount; i++)
         if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG) && GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) == gSpecialVar_0x8004)
             gSpecialVar_Result = TRUE;
+}
+
+// Jardín Trofeo: Pokémon del día (VAR_SN_TROPHY_SPECIES) y su nombre en STR_VAR_1.
+static const u16 sTrophyGardenMons[] = {
+    SPECIES_PIKACHU, SPECIES_CLEFAIRY, SPECIES_JIGGLYPUFF, SPECIES_MEOWTH, SPECIES_CHANSEY, SPECIES_DITTO,
+    SPECIES_EEVEE, SPECIES_PORYGON, SPECIES_PICHU, SPECIES_CLEFFA, SPECIES_IGGLYBUFF, SPECIES_AZURILL,
+    SPECIES_PLUSLE, SPECIES_MINUN, SPECIES_CASTFORM, SPECIES_WYNAUT,
+};
+void SinnohTrophyGardenPick(void)
+{
+    if (!FlagGet(FLAG_DAILY_SN_TROPHY) || VarGet(VAR_SN_TROPHY_SPECIES) == SPECIES_NONE)
+    {
+        VarSet(VAR_SN_TROPHY_SPECIES, sTrophyGardenMons[Random() % ARRAY_COUNT(sTrophyGardenMons)]);
+        FlagSet(FLAG_DAILY_SN_TROPHY);
+    }
+    StringCopy(gStringVar1, GetSpeciesName(VarGet(VAR_SN_TROPHY_SPECIES)));
+}
+
+// Especie que aparece en el Jardín Trofeo en lugar de la normal (o SPECIES_NONE).
+u16 SinnohTrophyGardenOverride(void)
+{
+    u16 sp = VarGet(VAR_SN_TROPHY_SPECIES);
+    if (sp == SPECIES_NONE
+     || gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MAP_TROPHY_GARDEN)
+     || gSaveBlock1Ptr->location.mapNum != MAP_NUM(MAP_TROPHY_GARDEN))
+        return SPECIES_NONE;
+    if (Random() % 100 < 25)
+        return sp;
+    return SPECIES_NONE;
+}
+
+// Árbol de miel: VAR_0x8004 = especie que aparece (tabla de Platino), VAR_0x8005 = nivel.
+static const u16 sHoneyMons[] = {
+    SPECIES_WURMPLE, SPECIES_WURMPLE, SPECIES_SILCOON, SPECIES_CASCOON, SPECIES_BURMY, SPECIES_COMBEE,
+    SPECIES_COMBEE, SPECIES_AIPOM, SPECIES_AIPOM, SPECIES_HERACROSS, SPECIES_BURMY, SPECIES_COMBEE,
+};
+void SinnohHoneyTreeMon(void)
+{
+    if (Random() % 100 == 0)
+        gSpecialVar_0x8004 = SPECIES_MUNCHLAX;
+    else
+        gSpecialVar_0x8004 = sHoneyMons[Random() % ARRAY_COUNT(sHoneyMons)];
+    gSpecialVar_0x8005 = 5 + Random() % 11;
+    CreateScriptedWildMon(gSpecialVar_0x8004, gSpecialVar_0x8005, ITEM_NONE);
+    StringCopy(gStringVar1, GetSpeciesName(gSpecialVar_0x8004));
+}
+
+void SinnohHoneyReady(void)
+{
+    gSpecialVar_Result = (VarGet(VAR_DAYS) != VarGet(VAR_SN_HONEY_DAY));
+}
+
+void SinnohHoneySlather(void)
+{
+    VarSet(VAR_SN_HONEY_DAY, VarGet(VAR_DAYS));
+}
+
+// Prismáticos del Gran Pantano: Pokémon que se ve hoy, en STR_VAR_1.
+static const u16 sMarshMons[] = {
+    SPECIES_BIBAREL, SPECIES_QUAGSIRE, SPECIES_WOOPER, SPECIES_SKORUPI, SPECIES_CARNIVINE, SPECIES_CROAGUNK,
+    SPECIES_YANMA, SPECIES_TANGELA, SPECIES_GULPIN, SPECIES_KECLEON, SPECIES_SHROOMISH, SPECIES_ARBOK,
+    SPECIES_EXEGGCUTE, SPECIES_TOXICROAK, SPECIES_DRAPION, SPECIES_STARAVIA, SPECIES_ROSELIA, SPECIES_MARILL,
+};
+void SinnohMarshBinoculars(void)
+{
+    StringCopy(gStringVar1, GetSpeciesName(sMarshMons[(VarGet(VAR_DAYS) * 5 + Random() % 3) % ARRAY_COUNT(sMarshMons)]));
 }

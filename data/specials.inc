@@ -322,6 +322,11 @@ gSpecials::
 	def_special SinnohLeadMonIsCute
 	def_special SinnohNewsPressPick
 	def_special SinnohPartyHasSpecies
+	def_special SinnohTrophyGardenPick
+	def_special SinnohHoneyTreeMon
+	def_special SinnohMarshBinoculars
+	def_special SinnohHoneyReady
+	def_special SinnohHoneySlather
 	def_special TryUpdateRusturfTunnelState
 	def_special IsGrassTypeInParty
 	def_special DoContestHallWarp, waitstate=1

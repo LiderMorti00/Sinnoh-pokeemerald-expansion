@@ -9,4 +9,10 @@ void SinnohLeadMonIsCute(void);
 void SinnohNewsPressPick(void);
 void SinnohPartyHasSpecies(void);
 
+void SinnohTrophyGardenPick(void);
+u16 SinnohTrophyGardenOverride(void);
+void SinnohHoneyTreeMon(void);
+void SinnohMarshBinoculars(void);
+void SinnohHoneyReady(void);
+void SinnohHoneySlather(void);
 #endif // GUARD_SINNOH_SPECIALS_H

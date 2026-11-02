@@ -125,3 +125,22 @@ PastoriaCity_GreatMarshGate_EventScript_SNFullT:
 
 PastoriaCity_GreatMarshGate_EventScript_SNNoMoneyT:
 	.string "I’m sorry, you don’t have enough money.$"
+
+PastoriaCity_GreatMarshGate_EventScript_SNBinoculars::
+	lockall
+	msgbox PastoriaCity_GreatMarshGate_EventScript_SNBinoculars_T1, MSGBOX_DEFAULT
+	special SinnohMarshBinoculars
+	msgbox PastoriaCity_GreatMarshGate_EventScript_SNBinoculars_T2, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PastoriaCity_GreatMarshGate_EventScript_SNBinoculars_T1:
+	.string "Use a pair of binoculars to look out\n"
+	.string "over the Great Marsh.\p"
+	.string "You can see what kinds of POKéMON can\n"
+	.string "be caught, and where they are.$"
+
+PastoriaCity_GreatMarshGate_EventScript_SNBinoculars_T2:
+	.string "{PLAYER} looked through the\n"
+	.string "binoculars... A wild {STR_VAR_1} can be\l"
+	.string "seen in the Great Marsh today!$"

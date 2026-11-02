@@ -37,7 +37,9 @@ SunyshoreCity_VistaLighthouse_EventScript_PtSign1::
 
 SunyshoreCity_VistaLighthouse_Text_PtSign1:
 	.string "{PLAYER} took a look through the\n"
-	.string "binoculars.$"
+	.string "binoculars.\p"
+	.string "Far across the sea, the POKéMON LEAGUE\n"
+	.string "can be seen!$"
 
 SunyshoreCity_VistaLighthouse_OnTransitionSN:
 	call SunyshoreCity_VistaLighthouse_EventScript_SNVis_LH_VOLKNER
