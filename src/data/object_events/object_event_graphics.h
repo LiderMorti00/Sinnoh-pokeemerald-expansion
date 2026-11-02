@@ -32,6 +32,7 @@ const u32 gObjectEventPic_BrendanUnderwater[] = INCGFX_U32("graphics/object_even
 const u32 gObjectEventPic_MayUnderwater[] = INCGFX_U32("graphics/object_events/pics/people/may/underwater.png", ".4bpp", "-mwidth 4 -mheight 4");
 const u16 gObjectEventPal_PlayerUnderwater[] = INCGFX_U16("graphics/object_events/palettes/player_underwater.pal", ".gbapal");
 const u32 gObjectEventPic_MayNormalRunning[] = INCBIN_U32("graphics/object_events/pics/people/may/walking.4bpp", "graphics/object_events/pics/people/may/running.4bpp");
+const u16 gObjectEventPal_SnEmote[] = INCGFX_U16("graphics/object_events/palettes/sn_emote.pal", ".gbapal");
 const u16 gObjectEventPal_May[] = INCGFX_U16("graphics/object_events/palettes/may.pal", ".gbapal");
 const u16 gObjectEventPal_MayReflection[] = INCGFX_U16("graphics/object_events/palettes/may_reflection.pal", ".gbapal");
 const u32 gObjectEventPic_RubySapphireMayNormal[] = INCGFX_U32("graphics/object_events/pics/people/ruby_sapphire_may/walking.png", ".4bpp", "-mwidth 2 -mheight 4");

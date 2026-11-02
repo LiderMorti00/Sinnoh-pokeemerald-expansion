@@ -831,6 +831,7 @@ enum
 // Not a real OW palette tag; used for the white flash applied to followers
 #define OBJ_EVENT_PAL_TAG_WHITE                   (OBJ_EVENT_PAL_TAG_NONE - 1)
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
+#define OBJ_EVENT_PAL_TAG_SN_EMOTE                0x1F00 // Proyecto Sinnoh: paleta original para !, flechas, Surf y Vuelo
 
 // This + localId is used as the tileTag
 // for compressed graphicsInfos

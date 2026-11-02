@@ -1,4 +1,5 @@
 #include "global.h"
+#include "constants/event_objects.h"
 #include "oras_dowse.h"
 #include "bike.h"
 #include "event_data.h"
@@ -321,7 +322,7 @@ u32 FldEff_ORASDowsing(void)
         if (palNum != 0xFF)
             sprite->oam.paletteNum = palNum;
         else
-            sprite->oam.paletteNum = LoadPlayerObjectEventPalette(gSaveBlock2Ptr->playerGender);
+            sprite->oam.paletteNum = LoadObjectEventPalette(OBJ_EVENT_PAL_TAG_SN_EMOTE);
 
         playerObj->fieldEffectSpriteId = spriteId;
         sprite->sDowseState = ORASD_WIGGLE_NONE;

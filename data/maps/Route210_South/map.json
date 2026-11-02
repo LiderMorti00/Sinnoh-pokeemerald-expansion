@@ -278,58 +278,6 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_TWIN",
-      "x": 22,
-      "y": 65,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "3",
-      "script": "Route210_South_EventScript_TeriTia2",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_TWIN",
-      "x": 20,
-      "y": 64,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "3",
-      "script": "Route210_South_EventScript_TeriTia2",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_PICNICKER_FRLG",
-      "x": 26,
-      "y": 71,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "1",
-      "script": "Route210_South_EventScript_AvaMatt2",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_HIKER_FRLG",
-      "x": 26,
-      "y": 70,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "1",
-      "script": "Route210_South_EventScript_AvaMatt2",
-      "flag": "0"
-    },
-    {
       "local_id": "LOCALID_SN_PSYDUCK_1",
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_MON_PSYDUCK",
       "x": 25,
