@@ -82,6 +82,9 @@ GalacticHQ_ControlRoom_EventScript_SNSaturn::
 
 GalacticHQ_ControlRoom_EventScript_SNSaturn_Won:
 	lock
+	msgbox GalacticHQ_ControlRoom_Text_SNRedChain, MSGBOX_DEFAULT
+	msgbox GalacticHQ_ControlRoom_Text_SNCharon1, MSGBOX_DEFAULT
+	msgbox GalacticHQ_ControlRoom_Text_SNCharon2, MSGBOX_DEFAULT
 	msgbox GalacticHQ_ControlRoom_EventScript_SNSaturn_Post, MSGBOX_DEFAULT
 	closemessage
 	fadescreen FADE_TO_BLACK
@@ -91,8 +94,8 @@ GalacticHQ_ControlRoom_EventScript_SNSaturn_Won:
 	release
 	end
 GalacticHQ_ControlRoom_EventScript_SNSaturn_Intro:
-	.string "You... You came all the way here just to\n"
-	.string "save some POKéMON?\p"
+	.string "Saturn: You... You came all the way here\n"
+	.string "just to save some POKéMON?\p"
 	.string "...Though it’s nothing new, I can’t say I\n"
 	.string "understand our boss...\p"
 	.string "Why would he let a kid like you come and\n"
@@ -117,3 +120,43 @@ GalacticHQ_ControlRoom_EventScript_SNSaturn_Post:
 	.string "creating something.\p"
 	.string "But that’s all I know. Who knows what\n"
 	.string "he’s planning to do up there.$"
+
+GalacticHQ_ControlRoom_Text_SNRedChain:
+	.string "Saturn: ...Gah! What makes you so\n"
+	.string "tough?\p"
+	.string "Fine... Do whatever you want with those\n"
+	.string "three POKéMON.\p"
+	.string "Press the button on that machine to\n"
+	.string "set them free.\p"
+	.string "Saturn: Our boss crafted a Red Chain\n"
+	.string "from crystals he took from the three\p"
+	.string "POKéMON.\p"
+	.string "That Red Chain is what he needed to\n"
+	.string "shackle something on Mt. Coronet.\p"
+	.string "It’s also apparently needed for\n"
+	.string "creating something.\p"
+	.string "But that’s all I know. Who knows what\n"
+	.string "he’s planning to do up there.$"
+
+GalacticHQ_ControlRoom_Text_SNCharon1:
+	.string "Charon: Fuhyahya!\p"
+	.string "Those POKéMON of the lakes, where do\n"
+	.string "you suppose they would go?\p"
+	.string "Saturn: What are you trying to say?$"
+
+GalacticHQ_ControlRoom_Text_SNCharon2:
+	.string "Charon: Nothing. Pay it no heed.\p"
+	.string "A new world isn’t overly interesting.\n"
+	.string "What of it?\p"
+	.string "If Cyrus is right, then Team Galactic\n"
+	.string "will rule that new world.\p"
+	.string "That’s when it will be interesting. A\n"
+	.string "chance to enjoy its sweets.\p"
+	.string "I surely hope that our visionary Cyrus\n"
+	.string "realizes his dream.\p"
+	.string "I look forward to whatever our beloved\n"
+	.string "leader has planned atop Mt. Coronet.\p"
+	.string "Saturn: Gramps.\p"
+	.string "Our boss can do without your kind of\n"
+	.string "moral support.$"
+

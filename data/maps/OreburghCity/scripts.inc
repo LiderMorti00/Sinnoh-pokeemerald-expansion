@@ -11,9 +11,19 @@ OreburghCity_EventScript_GymClosed::
 	end
 
 OreburghCity_Text_GymClosed:
-	.string "The door is locked. A sign reads:\n"
-	.string "GYM LEADER ROARK is working at the\l"
-	.string "OREBURGH MINE, south of town.$"
+	.string "{PLAYER}: Hunh?\p"
+	.string "Oh, it’s you, {RIVAL}! You finally got\n"
+	.string "here?\p"
+	.string "You’re slow like always.\p"
+	.string "But anyway, the Gym Leader’s tough!\n"
+	.string "Like, seriously serious!\p"
+	.string "If the Gym Leader’s this tough, I\n"
+	.string "wonder how he compares to my dad...\p"
+	.string "Huh? I just drifted there.\p"
+	.string "Anyway, the Gym Leader’s gone off to\n"
+	.string "the coal mine.\p"
+	.string "If you want to take on the Gym Leader,\n"
+	.string "you’d better go off to the mine!$"
 
 OreburghCity_EventScript_Sign4::
 	msgbox OreburghCity_Text_Sign4, MSGBOX_SIGN

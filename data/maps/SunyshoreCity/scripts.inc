@@ -74,6 +74,7 @@ SunyshoreCity_Text_PtSign3:
 	.string "It's a blank sign painted white.$"
 
 SunyshoreCity_OnTransitionSN:
+	call SunyshoreCity_EventScript_SNVis_SUNY_BARRY
 	call SunyshoreCity_EventScript_SNVis_FLINT
 	call SunyshoreCity_EventScript_SNVis_JASMINE
 	end
@@ -192,3 +193,32 @@ SunyshoreCity_EventScript_SNFlint_T4:
 	.string "reignite his passion for battling!\p"
 	.string "All right, hotshot! I’ll be waiting at\n"
 	.string "the POKéMON League!$"
+
+SunyshoreCity_EventScript_SNVis_SUNY_BARRY:
+	setflag FLAG_SN_HIDE_SUNY_BARRY
+	goto_if_unset FLAG_BADGE08_GET, SunyshoreCity_EventScript_SNVis_SUNY_BARRY_End
+	goto_if_set FLAG_SN_SUNYSHORE_BARRY, SunyshoreCity_EventScript_SNVis_SUNY_BARRY_End
+	clearflag FLAG_SN_HIDE_SUNY_BARRY
+SunyshoreCity_EventScript_SNVis_SUNY_BARRY_End:
+	return
+
+SunyshoreCity_EventScript_SNBarry8::
+	lock
+	faceplayer
+	msgbox SunyshoreCity_Text_SNBarry8, MSGBOX_DEFAULT
+	closemessage
+	setflag FLAG_SN_SUNYSHORE_BARRY
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_SN_SUNY_BARRY
+	setflag FLAG_SN_HIDE_SUNY_BARRY
+	fadescreen FADE_FROM_BLACK
+	release
+	end
+
+SunyshoreCity_Text_SNBarry8:
+	.string "{RIVAL}: Hey! {PLAYER}!\p"
+	.string "What the...\p"
+	.string "You went and got all eight Gym Badges\n"
+	.string "of Sinnoh!\p"
+	.string "Aww, you... That’s wicked! I envy you!\p"
+	.string "But don’t think you’ve won!$"

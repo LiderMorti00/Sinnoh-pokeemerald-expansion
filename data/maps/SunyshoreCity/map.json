@@ -128,6 +128,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SunyshoreCity_EventScript_SNFlint",
       "flag": "FLAG_SN_HIDE_FLINT"
+    },
+    {
+      "local_id": "LOCALID_SN_SUNY_BARRY",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_BARRY",
+      "x": 18,
+      "y": 11,
+      "elevation": 4,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SunyshoreCity_EventScript_SNBarry8",
+      "flag": "FLAG_SN_HIDE_SUNY_BARRY"
     }
   ],
   "warp_events": [

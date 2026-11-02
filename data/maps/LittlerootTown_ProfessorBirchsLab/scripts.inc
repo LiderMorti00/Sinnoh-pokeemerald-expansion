@@ -30,6 +30,12 @@ SandgemLab_EventScript_Scene::
 	call Sinnoh_EventScript_BufferCounterpartName
 	bufferleadmonspeciesname STR_VAR_2
 	msgbox SandgemLab_Text_RowanWelcome, MSGBOX_DEFAULT
+	msgbox SandgemLab_Text_PtNickname, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, SandgemLab_EventScript_PtNoNick
+	setvar VAR_0x8004, 0
+	call Common_EventScript_NameReceivedPartyMon
+SandgemLab_EventScript_PtNoNick:
+	msgbox SandgemLab_Text_PtSomething, MSGBOX_DEFAULT
 	msgbox SandgemLab_Text_PtRecordData, MSGBOX_YESNO
 SandgemLab_EventScript_PtAskDex:
 	goto_if_eq VAR_RESULT, YES, SandgemLab_EventScript_PtDexYes
@@ -45,6 +51,8 @@ SandgemLab_EventScript_PtDexYes:
 	special SetUnlockedPokedexFlags
 	setflag FLAG_RECEIVED_POKEDEX_FROM_BIRCH
 	msgbox SandgemLab_Text_RowanPokedex, MSGBOX_DEFAULT
+	call Sinnoh_EventScript_BufferCounterpartName
+	msgbox SandgemLab_Text_PtCounterpart, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_SANDGEM_LAB_ASSISTANT, Common_Movement_FacePlayer
 	waitmovement 0
@@ -111,11 +119,7 @@ SandgemLab_Text_RowanWelcome:
 	.string "I’m sure {STR_VAR_2} feels the same way\n"
 	.string "about you.\p"
 	.string "That’s why I’ll ask you to cherish that\n"
-	.string "{STR_VAR_2} of yours.\p"
-	.string "Professor: Er-hem! Let’s move on to\n"
-	.string "the main topic.\p"
-	.string "There is something I want you to do for\n"
-	.string "me.$"
+	.string "{STR_VAR_2} of yours.$"
 
 SandgemLab_Text_ReceivedPokedex:
 	.string "{PLAYER} obtained the POKéDEX!$"
@@ -1467,4 +1471,35 @@ SandgemLab_Text_PtAskAgain:
 SandgemLab_Text_PtGoodAnswer:
 	.string "Rowan: Hm!\p"
 	.string "Good answer!$"
+
+SandgemLab_Text_PtNickname:
+	.string "Professor: Well, would you like to give\n"
+	.string "it a nickname?$"
+
+SandgemLab_Text_PtSomething:
+	.string "Professor: Er-hem! Let’s move on to\n"
+	.string "the main topic.\p"
+	.string "There is something I want you to do for\n"
+	.string "me.$"
+
+SandgemLab_Text_PtCounterpart:
+	.string "{STR_VAR_1}: I’m so glad that you’re\n"
+	.string "kind toward POKéMON!\p"
+	.string "If you weren’t, I’d have to... Oh, I just\n"
+	.string "can’t say it...\p"
+	.string "{STR_VAR_1}: I’ve got one, too!\p"
+	.string "{STR_VAR_1}: The POKéMON that I met\n"
+	.string "for the first time was PIPLUP!\p"
+	.string "If you would have chosen PIPLUP on\n"
+	.string "Route 201, we’d have the same\p"
+	.string "POKéMON now!\p"
+	.string "Not that it matters, but...\p"
+	.string "Anyway, I’m Dawn.\p"
+	.string "I also help the professor add pages to\n"
+	.string "the POKéDEX.\p"
+	.string "So, in a sense, I’m just like you.\p"
+	.string "I just got a little head start on you,\n"
+	.string "that’s all.\p"
+	.string "I’ll be happy to teach you things. Glad\n"
+	.string "to meet you, {PLAYER}!$"
 

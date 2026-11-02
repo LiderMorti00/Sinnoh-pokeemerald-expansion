@@ -69,6 +69,31 @@ TwinleafTown_MainHouse_1F_EventScript_Mom::
 	release
 	end
 TwinleafTown_MainHouse_1F_EventScript_SNMomNormal:
+	goto_if_unset FLAG_SYS_POKEMON_GET, TwinleafTown_MainHouse_1F_EventScript_SNMomTalk
+	msgbox TwinleafTown_MainHouse_1F_Text_SNMomRest, MSGBOX_DEFAULT
+	closemessage
+	call Common_EventScript_OutOfCenterPartyHeal
+	random 4
+	switch VAR_RESULT
+	case 0, TwinleafTown_MainHouse_1F_EventScript_SNMom0
+	case 1, TwinleafTown_MainHouse_1F_EventScript_SNMom1
+	case 2, TwinleafTown_MainHouse_1F_EventScript_SNMom2
+	msgbox TwinleafTown_MainHouse_1F_Text_MomTalk, MSGBOX_DEFAULT
+	release
+	end
+TwinleafTown_MainHouse_1F_EventScript_SNMom0:
+	msgbox TwinleafTown_MainHouse_1F_Text_SNMomA, MSGBOX_DEFAULT
+	release
+	end
+TwinleafTown_MainHouse_1F_EventScript_SNMom1:
+	msgbox TwinleafTown_MainHouse_1F_Text_SNMomB, MSGBOX_DEFAULT
+	release
+	end
+TwinleafTown_MainHouse_1F_EventScript_SNMom2:
+	msgbox TwinleafTown_MainHouse_1F_Text_SNMomC, MSGBOX_DEFAULT
+	release
+	end
+TwinleafTown_MainHouse_1F_EventScript_SNMomTalk:
 	msgbox TwinleafTown_MainHouse_1F_Text_MomTalk, MSGBOX_DEFAULT
 	release
 	end
@@ -208,3 +233,27 @@ TwinleafTown_MainHouse_1F_Text_SNMomPost:
 	.string "to get on a ship at Snowpoint City.\p"
 	.string "You know how impatient he is. He was\n"
 	.string "gone before I could ask.$"
+
+TwinleafTown_MainHouse_1F_Text_SNMomRest:
+	.string "Mom: Welcome home, {PLAYER}. Are you and\n"
+	.string "your POKéMON healthy?\p"
+	.string "Take a quick rest, dear.$"
+
+TwinleafTown_MainHouse_1F_Text_SNMomA:
+	.string "Mom: {PLAYER}!\p"
+	.string "You and your POKéMON are looking good!\n"
+	.string "Nothing can stop you now!$"
+
+TwinleafTown_MainHouse_1F_Text_SNMomB:
+	.string "Mom: {PLAYER}.\p"
+	.string "Seeing you reminds me so much of your\n"
+	.string "father.\p"
+	.string "You two are so alike!$"
+
+TwinleafTown_MainHouse_1F_Text_SNMomC:
+	.string "Mom: While you’re gone, I go and visit\n"
+	.string "{RIVAL}’s mom.\p"
+	.string "We talk about this and that.\p"
+	.string "Well, actually, all we do is talk about\n"
+	.string "you two.$"
+

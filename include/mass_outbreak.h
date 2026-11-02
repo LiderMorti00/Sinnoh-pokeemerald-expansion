@@ -22,6 +22,7 @@ bool8 DoMassOutbreakEncounterTest(void);
 void StartStaticMassOutbreak(enum MassOutbreakIndex outbreakIdx);
 enum Species GetStaticOutbreakSpecies(enum MassOutbreakIndex outbreakIdx);
 u8 *GetStaticOutbreakMapName(u8 *dest, enum MassOutbreakIndex outbreakIdx);
+void SinnohDailyOutbreak(void);
 void ZeroMassOutbreak(void);
 struct MassOutbreak GetStaticOutbreak(enum MassOutbreakIndex outbreakIdx);
 

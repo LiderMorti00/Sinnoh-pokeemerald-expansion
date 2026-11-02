@@ -330,6 +330,7 @@ gSpecials::
 	def_special SinnohDayOfWeek
 	def_special SinnohPartyMaxRibbons
 	def_special SinnohSpaTreatment
+	def_special SinnohDailyOutbreak
 	def_special TryUpdateRusturfTunnelState
 	def_special IsGrassTypeInParty
 	def_special DoContestHallWarp, waitstate=1

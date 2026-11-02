@@ -7,6 +7,9 @@
 #include "region_map.h"
 #include "script.h"
 #include "wild_encounter.h"
+#include "string_util.h"
+#include "pokemon.h"
+#include "constants/flags.h"
 
 static const struct MassOutbreak sPokeOutbreakSpeciesList[OUTBREAK_COUNT] = {
     // Proyecto Sinnoh: enjambres de Platino (movimientos por defecto según el nivel)
@@ -312,3 +315,15 @@ void ScrCmd_getmassoutbreakdata(struct ScriptContext *ctx)
     VarSet(varId, value);
 }
 
+
+// Proyecto Sinnoh: la hermana de Dawn/Lucas anuncia el enjambre del día (STR_VAR_1 = especie, STR_VAR_2 = lugar).
+void SinnohDailyOutbreak(void)
+{
+    if (!FlagGet(FLAG_DAILY_SN_SWARM) || !IsMassOutbreakActive())
+    {
+        StartStaticMassOutbreak(RandomUniform(RNG_NONE, 0, ARRAY_COUNT(sPokeOutbreakSpeciesList) - 1));
+        FlagSet(FLAG_DAILY_SN_SWARM);
+    }
+    StringCopy(gStringVar1, GetSpeciesName(gSaveBlock1Ptr->outbreakPokemonSpecies));
+    GetMapName(gStringVar2, Overworld_GetMapHeaderByGroupAndId(gSaveBlock1Ptr->outbreakLocationMapGroup, gSaveBlock1Ptr->outbreakLocationMapNum)->regionMapSectionId, 0);
+}

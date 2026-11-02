@@ -1602,7 +1602,7 @@
 #define FLAG_DAILY_SN_BG_MARLEY                     (DAILY_FLAGS_START + 0x1C) // Proyecto Sinnoh: Batallódromo
 #define FLAG_DAILY_SN_BG_MIRA                       (DAILY_FLAGS_START + 0x1D) // Proyecto Sinnoh: Batallódromo
 #define FLAG_DAILY_SN_TROPHY                        (DAILY_FLAGS_START + 0x1E) // Proyecto Sinnoh: Jardín Trofeo
-#define FLAG_UNUSED_0x93F                           (DAILY_FLAGS_START + 0x1F) // Unused Flag
+#define FLAG_DAILY_SN_SWARM                         (DAILY_FLAGS_START + 0x1F) // Proyecto Sinnoh: enjambre del día
 #define FLAG_UNUSED_0x940                           (DAILY_FLAGS_START + 0x20) // Unused Flag
 #define FLAG_UNUSED_0x941                           (DAILY_FLAGS_START + 0x21) // Unused Flag
 #define FLAG_UNUSED_0x942                           (DAILY_FLAGS_START + 0x22) // Unused Flag
@@ -3062,5 +3062,10 @@
 #define FLAG_SN_CELESTIC_PAINTING                               (TRAINER_FLAGS_START + TRAINER_THALIA_4)
 #define FLAG_SN_HIDE_CEL_PAINT_CYN                              (TRAINER_FLAGS_START + TRAINER_THALIA_3)
 #define FLAG_SN_MOM_POSTGAME                                    (TRAINER_FLAGS_START + TRAINER_THALIA_2)
+
+
+// ---- Proyecto Sinnoh: historia de Platino (objetos, regalos y objetos ocultos) ----
+#define FLAG_SN_SUNYSHORE_BARRY                                 (TRAINER_FLAGS_START + TRAINER_EVERETT)
+#define FLAG_SN_HIDE_SUNY_BARRY                                 (TRAINER_FLAGS_START + TRAINER_ALVARO)
 
 #endif // GUARD_CONSTANTS_FLAGS_H

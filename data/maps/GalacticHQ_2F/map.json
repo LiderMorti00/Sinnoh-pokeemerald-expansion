@@ -212,7 +212,7 @@
     },
     {
       "type": "hidden_item",
-      "x": 45,
+      "x": 44,
       "y": 5,
       "elevation": 3,
       "item": "ITEM_POKE_DOLL",
