@@ -178,7 +178,9 @@ LakeVerity_EventScript_SNVERITY_MARS_Won:
 	fadescreen FADE_FROM_BLACK
 	call Sinnoh_EventScript_BufferCounterpartName
 	msgbox LakeVerity_Text_SNAfterMars1, MSGBOX_DEFAULT
-	msgbox LakeVerity_Text_SNAfterMars2, MSGBOX_DEFAULT
+	checkplayergender
+	call_if_eq VAR_RESULT, MALE, LakeVerity_Text_SNAfterMars2_ScrD
+	call_if_eq VAR_RESULT, FEMALE, LakeVerity_Text_SNAfterMars2_ScrL
 	release
 	end
 LakeVerity_EventScript_SNVERITY_MARS_Intro:
@@ -423,4 +425,17 @@ LakeVerity_Text_SNAfterMars2:
 	.string "Galactic up to?\p"
 	.string "Are the abducted POKéMON of the lakes\n"
 	.string "going to be OK?$"
+
+LakeVerity_Text_SNAfterMars2_ScrD:
+	msgbox LakeVerity_Text_SNAfterMars2, MSGBOX_DEFAULT
+	return
+LakeVerity_Text_SNAfterMars2_ScrL:
+	msgbox LakeVerity_Text_SNAfterMars2_Lu, MSGBOX_DEFAULT
+	return
+
+LakeVerity_Text_SNAfterMars2_Lu:
+	.string "{STR_VAR_1}: {PLAYER}, what’s Team\n"
+	.string "Galactic up to?\p"
+	.string "They’d better not harm the POKéMON\n"
+	.string "they took from the lakes...$"
 

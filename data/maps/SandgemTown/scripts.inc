@@ -29,7 +29,9 @@ SandgemTown_EventScript_Escort::
 	call Sinnoh_EventScript_BufferCounterpartName
 	applymovement LOCALID_SANDGEM_DAWN, Common_Movement_ExclamationMark
 	waitmovement 0
-	msgbox SandgemTown_Text_Dawn, MSGBOX_DEFAULT
+	checkplayergender
+	call_if_eq VAR_RESULT, MALE, SandgemTown_Text_Dawn_ScrD
+	call_if_eq VAR_RESULT, FEMALE, SandgemTown_Text_Dawn_ScrL
 	closemessage
 	applymovement LOCALID_SANDGEM_DAWN, SandgemTown_Movement_DawnToLab
 	waitmovement 0
@@ -54,7 +56,9 @@ SandgemTown_EventScript_Escort::
 	removeobject LOCALID_SANDGEM_BARRY
 	setflag FLAG_HIDE_SANDGEM_BARRY
 	call Sinnoh_EventScript_BufferCounterpartName
-	msgbox SandgemTown_Text_DawnGoIn, MSGBOX_DEFAULT
+	checkplayergender
+	call_if_eq VAR_RESULT, MALE, SandgemTown_Text_DawnGoIn_ScrD
+	call_if_eq VAR_RESULT, FEMALE, SandgemTown_Text_DawnGoIn_ScrL
 	closemessage
 	applymovement LOCALID_SANDGEM_DAWN, SandgemTown_Movement_DawnEnters
 	waitmovement 0
@@ -110,7 +114,9 @@ SandgemTown_EventScript_Rowan::
 	waitmovement 0
 	msgbox SandgemTown_Text_Rowan, MSGBOX_DEFAULT
 	giveitem ITEM_TM_RETURN
-	msgbox SandgemTown_Text_Rowan2, MSGBOX_DEFAULT
+	checkplayergender
+	call_if_eq VAR_RESULT, MALE, SandgemTown_Text_Rowan2_ScrD
+	call_if_eq VAR_RESULT, FEMALE, SandgemTown_Text_Rowan2_ScrL
 	closemessage
 	applymovement LOCALID_SANDGEM_ROWAN, SandgemTown_Movement_RowanLeaves
 	waitmovement 0
@@ -119,7 +125,9 @@ SandgemTown_EventScript_Rowan::
 	waitmovement 0
 	applymovement LOCALID_SANDGEM_DAWN2, Common_Movement_FaceUp
 	waitmovement 0
-	msgbox SandgemTown_Text_Dawn2, MSGBOX_DEFAULT
+	checkplayergender
+	call_if_eq VAR_RESULT, MALE, SandgemTown_Text_Dawn2_ScrD
+	call_if_eq VAR_RESULT, FEMALE, SandgemTown_Text_Dawn2_ScrL
 	closemessage
 	applymovement LOCALID_SANDGEM_DAWN2, SandgemTown_Movement_DawnLeaves
 	waitmovement 0
@@ -474,3 +482,80 @@ SandgemTown_EventScript_Sign5::
 SandgemTown_Text_Sign5:
 	.string "SANDGEM TOWN\p"
 	.string "Shining, shimmering sands.$"
+
+SandgemTown_Text_Dawn_ScrD:
+	msgbox SandgemTown_Text_Dawn, MSGBOX_DEFAULT
+	return
+SandgemTown_Text_Dawn_ScrL:
+	msgbox SandgemTown_Text_Dawn_Lu, MSGBOX_DEFAULT
+	return
+
+SandgemTown_Text_Dawn_Lu:
+	.string "{STR_VAR_1}: Hi! I’ve been waiting for\n"
+	.string "you! Please, come with me.\p"
+	.string "The prof’s waiting to see you.\p"
+	.string "{STR_VAR_1}: See? This is our POKéMON\n"
+	.string "Research Lab.\p"
+	.string "We’ll just go ahead and...$"
+
+SandgemTown_Text_DawnGoIn_ScrD:
+	msgbox SandgemTown_Text_DawnGoIn, MSGBOX_DEFAULT
+	return
+SandgemTown_Text_DawnGoIn_ScrL:
+	msgbox SandgemTown_Text_DawnGoIn_Lu, MSGBOX_DEFAULT
+	return
+
+SandgemTown_Text_DawnGoIn_Lu:
+	.string "{STR_VAR_1}: What was that?!\p"
+	.string "Your friend always seems to be in such\n"
+	.string "a rush.\p"
+	.string "Anyway... Let’s go in.$"
+
+SandgemTown_Text_Rowan2_ScrD:
+	msgbox SandgemTown_Text_Rowan2, MSGBOX_DEFAULT
+	return
+SandgemTown_Text_Rowan2_ScrL:
+	msgbox SandgemTown_Text_Rowan2_Lu, MSGBOX_DEFAULT
+	return
+
+SandgemTown_Text_Rowan2_Lu:
+	.string "{STR_VAR_1}: Well, I’ll be... The\n"
+	.string "professor had TMs...?\p"
+	.string "Next thing, he’ll tell me he battled\n"
+	.string "when he was young.\p"
+	.string "{STR_VAR_1}: Hey, {PLAYER}! I want to\n"
+	.string "show you a few things.\p"
+	.string "So, follow me!$"
+
+SandgemTown_Text_Dawn2_ScrD:
+	msgbox SandgemTown_Text_Dawn2, MSGBOX_DEFAULT
+	return
+SandgemTown_Text_Dawn2_ScrL:
+	msgbox SandgemTown_Text_Dawn2_Lu, MSGBOX_DEFAULT
+	return
+
+SandgemTown_Text_Dawn2_Lu:
+	.string "{STR_VAR_1}: This building with the red\n"
+	.string "roof is the POKéMON Center.\p"
+	.string "You can get your POKéMON healed if it’s\n"
+	.string "been hurt in battle.\p"
+	.string "You’ll find a POKéMON Center in most\n"
+	.string "towns.\p"
+	.string "{STR_VAR_1}: Over here, the building\n"
+	.string "with the blue roof is the POKé MART.\p"
+	.string "It’s a shop where you can buy and sell\n"
+	.string "all sorts of items.\p"
+	.string "{PLAYER}, since you’re a rookie Trainer,\n"
+	.string "you won’t be able to buy\p"
+	.string "very much stuff.\p"
+	.string "Don’t worry about it, OK?\p"
+	.string "Oh, yeah, right! {PLAYER}...\p"
+	.string "You should let your family know you’re\n"
+	.string "helping Prof. Rowan put\p"
+	.string "together his POKéDEX.\p"
+	.string "Sometimes, you have to go far away, so\n"
+	.string "you should let someone know.\p"
+	.string "Oh, but first, go heal up your POKéMON\n"
+	.string "at the POKéMON Center.\p"
+	.string "You’ll be safe then. OK, be seeing you!$"
+

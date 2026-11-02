@@ -23,10 +23,14 @@ Route202_EventScript_DawnScene::
 	call Sinnoh_EventScript_BufferCounterpartName
 	applymovement LOCALID_ROUTE202_DAWN, Common_Movement_ExclamationMark
 	waitmovement 0
-	msgbox Route202_Text_DawnTutorial, MSGBOX_DEFAULT
+	checkplayergender
+	call_if_eq VAR_RESULT, MALE, Route202_Text_DawnTutorial_ScrD
+	call_if_eq VAR_RESULT, FEMALE, Route202_Text_DawnTutorial_ScrL
 	giveitem ITEM_POKE_BALL, 5
 	call Sinnoh_EventScript_BufferCounterpartName
-	msgbox Route202_Text_DawnBye, MSGBOX_DEFAULT
+	checkplayergender
+	call_if_eq VAR_RESULT, MALE, Route202_Text_DawnBye_ScrD
+	call_if_eq VAR_RESULT, FEMALE, Route202_Text_DawnBye_ScrL
 	closemessage
 	applymovement LOCALID_ROUTE202_DAWN, Route202_Movement_DawnLeaves
 	waitmovement 0
@@ -247,3 +251,44 @@ Route202_Text_PtNpc1:
 	.string "Some only come out at night.\p"
 	.string "I'll keep looking till I've seen them\n"
 	.string "all!$"
+
+Route202_Text_DawnTutorial_ScrD:
+	msgbox Route202_Text_DawnTutorial, MSGBOX_DEFAULT
+	return
+Route202_Text_DawnTutorial_ScrL:
+	msgbox Route202_Text_DawnTutorial_Lu, MSGBOX_DEFAULT
+	return
+
+Route202_Text_DawnTutorial_Lu:
+	.string "{STR_VAR_1}: {PLAYER}, do you know how\n"
+	.string "to catch a POKéMON?\p"
+	.string "I’ll demonstrate how to catch one, so\n"
+	.string "just watch, OK?\p"
+	.string "{STR_VAR_1}: And that’s how it’s done.\p"
+	.string "Actually, I should have lowered the\n"
+	.string "target’s HP some more.\p"
+	.string "Yup, the important thing is to lower\n"
+	.string "the POKéMON’s HP as much as possible.\p"
+	.string "See, a healthy POKéMON isn’t easy to\n"
+	.string "catch.\p"
+	.string "Oh, yeah. They also get easier to catch\n"
+	.string "if you make one of your\p"
+	.string "POKéMON put them to sleep or such.\p"
+	.string "Here, {RIVAL}, I’ll give you five POKé\n"
+	.string "BALLS to get you started.$"
+
+Route202_Text_DawnBye_ScrD:
+	msgbox Route202_Text_DawnBye, MSGBOX_DEFAULT
+	return
+Route202_Text_DawnBye_ScrL:
+	msgbox Route202_Text_DawnBye_Lu, MSGBOX_DEFAULT
+	return
+
+Route202_Text_DawnBye_Lu:
+	.string "{STR_VAR_1}: If you have lots of\n"
+	.string "POKéMON with you, you’ll be able to\l"
+	.string "travel farther.\p"
+	.string "That way, you’ll have a better shot at\n"
+	.string "meeting more POKéMON.\p"
+	.string "See you around!$"
+

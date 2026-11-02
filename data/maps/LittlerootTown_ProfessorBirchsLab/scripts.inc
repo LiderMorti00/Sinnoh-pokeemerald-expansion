@@ -52,7 +52,9 @@ SandgemLab_EventScript_PtDexYes:
 	setflag FLAG_RECEIVED_POKEDEX_FROM_BIRCH
 	msgbox SandgemLab_Text_RowanPokedex, MSGBOX_DEFAULT
 	call Sinnoh_EventScript_BufferCounterpartName
-	msgbox SandgemLab_Text_PtCounterpart, MSGBOX_DEFAULT
+	checkplayergender
+	call_if_eq VAR_RESULT, MALE, SandgemLab_Text_PtCounterpart_ScrD
+	call_if_eq VAR_RESULT, FEMALE, SandgemLab_Text_PtCounterpart_ScrL
 	closemessage
 	applymovement LOCALID_SANDGEM_LAB_ASSISTANT, Common_Movement_FacePlayer
 	waitmovement 0
@@ -1489,8 +1491,8 @@ SandgemLab_Text_PtCounterpart:
 	.string "can’t say it...\p"
 	.string "{STR_VAR_1}: I’ve got one, too!\p"
 	.string "{STR_VAR_1}: The POKéMON that I met\n"
-	.string "for the first time was PIPLUP!\p"
-	.string "If you would have chosen PIPLUP on\n"
+	.string "for the first time was {STR_VAR_2}!\p"
+	.string "If you would have chosen {STR_VAR_2} on\n"
 	.string "Route 201, we’d have the same\p"
 	.string "POKéMON now!\p"
 	.string "Not that it matters, but...\p"
@@ -1502,4 +1504,31 @@ SandgemLab_Text_PtCounterpart:
 	.string "that’s all.\p"
 	.string "I’ll be happy to teach you things. Glad\n"
 	.string "to meet you, {PLAYER}!$"
+
+SandgemLab_Text_PtCounterpart_ScrD:
+	bufferspeciesname STR_VAR_2, SPECIES_PIPLUP
+	goto_if_eq VAR_STARTER_MON, 0, SandgemLab_Text_PtCounterpart_ScrD2
+	bufferspeciesname STR_VAR_2, SPECIES_TURTWIG
+	goto_if_eq VAR_STARTER_MON, 1, SandgemLab_Text_PtCounterpart_ScrD2
+	bufferspeciesname STR_VAR_2, SPECIES_CHIMCHAR
+SandgemLab_Text_PtCounterpart_ScrD2:
+	msgbox SandgemLab_Text_PtCounterpart, MSGBOX_DEFAULT
+	return
+SandgemLab_Text_PtCounterpart_ScrL:
+	msgbox SandgemLab_Text_PtCounterpart_Lu, MSGBOX_DEFAULT
+	return
+
+SandgemLab_Text_PtCounterpart_Lu:
+	.string "{STR_VAR_1}: Boy, am I glad you’re kind\n"
+	.string "toward POKéMON.\p"
+	.string "If you weren’t, well... I don’t even want\n"
+	.string "to think about it.\p"
+	.string "{STR_VAR_1}: I’ve got the same kind of\n"
+	.string "POKéDEX as you.\p"
+	.string "{STR_VAR_1}: The professor asked me to\n"
+	.string "help, so I’m filling the POKéDEX pages,\l"
+	.string "too.\p"
+	.string "That makes us comrades working toward\n"
+	.string "the same goal.\p"
+	.string "I’ll teach you stuff later, OK?$"
 

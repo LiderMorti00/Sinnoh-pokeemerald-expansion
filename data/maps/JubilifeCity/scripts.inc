@@ -166,8 +166,12 @@ JubilifeCity_EventScript_DawnScene::
 	call Sinnoh_EventScript_BufferCounterpartName
 	applymovement LOCALID_JUBILIFE_DAWN, Common_Movement_ExclamationMark
 	waitmovement 0
-	msgbox JubilifeCity_Text_DawnWelcome, MSGBOX_DEFAULT
-	msgbox JubilifeCity_Text_DawnSchool, MSGBOX_DEFAULT
+	checkplayergender
+	call_if_eq VAR_RESULT, MALE, JubilifeCity_Text_DawnWelcome_ScrD
+	call_if_eq VAR_RESULT, FEMALE, JubilifeCity_Text_DawnWelcome_ScrL
+	checkplayergender
+	call_if_eq VAR_RESULT, MALE, JubilifeCity_Text_DawnSchool_ScrD
+	call_if_eq VAR_RESULT, FEMALE, JubilifeCity_Text_DawnSchool_ScrL
 	closemessage
 	applymovement LOCALID_JUBILIFE_DAWN, JubilifeCity_Movement_DawnToSchool
 	waitmovement 0
@@ -305,7 +309,9 @@ JubilifeCity_EventScript_GalacticScene::
 	call Sinnoh_EventScript_BufferCounterpartName
 	applymovement LOCALID_JUBILIFE_GRUNT_1, Common_Movement_ExclamationMark
 	waitmovement 0
-	msgbox JubilifeCity_Text_GruntsThreaten, MSGBOX_DEFAULT
+	checkplayergender
+	call_if_eq VAR_RESULT, MALE, JubilifeCity_Text_GruntsThreaten_ScrD
+	call_if_eq VAR_RESULT, FEMALE, JubilifeCity_Text_GruntsThreaten_ScrL
 	closemessage
 	getplayerxy VAR_0x8008, VAR_0x8009
 	subvar VAR_0x8008, 1
@@ -355,7 +361,9 @@ JubilifeCity_EventScript_SNMulti_Battle:
 	removeobject LOCALID_JUBILIFE_GRUNT_1
 	removeobject LOCALID_JUBILIFE_GRUNT_2
 	fadescreenswapbuffers FADE_FROM_BLACK
-	msgbox JubilifeCity_Text_RowanThanks, MSGBOX_DEFAULT
+	checkplayergender
+	call_if_eq VAR_RESULT, MALE, JubilifeCity_Text_RowanThanks_ScrD
+	call_if_eq VAR_RESULT, FEMALE, JubilifeCity_Text_RowanThanks_ScrL
 	closemessage
 	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_JUBILIFE_ROWAN
@@ -660,9 +668,13 @@ JubilifeCity_EventScript_LookerScene::
 	addobject LOCALID_JUBILIFE_LOOKER
 	applymovement LOCALID_JUBILIFE_LOOKER, Common_Movement_ExclamationMark
 	waitmovement 0
-	msgbox JubilifeCity_Text_LookerIntro, MSGBOX_DEFAULT
+	checkplayergender
+	call_if_eq VAR_RESULT, MALE, JubilifeCity_Text_LookerIntro_ScrD
+	call_if_eq VAR_RESULT, FEMALE, JubilifeCity_Text_LookerIntro_ScrL
 	giveitem ITEM_VS_RECORDER
-	msgbox JubilifeCity_Text_LookerBye, MSGBOX_DEFAULT
+	checkplayergender
+	call_if_eq VAR_RESULT, MALE, JubilifeCity_Text_LookerBye_ScrD
+	call_if_eq VAR_RESULT, FEMALE, JubilifeCity_Text_LookerBye_ScrL
 	closemessage
 	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_JUBILIFE_LOOKER
@@ -752,3 +764,205 @@ JubilifeCity_Text_PtNpc5_No:
 	.string "There's the Trainers' School.\p"
 	.string "The school will teach you the basics\n"
 	.string "of POKéMON.$"
+
+JubilifeCity_Text_DawnWelcome_ScrD:
+	msgbox JubilifeCity_Text_DawnWelcome, MSGBOX_DEFAULT
+	return
+JubilifeCity_Text_DawnWelcome_ScrL:
+	msgbox JubilifeCity_Text_DawnWelcome_Lu, MSGBOX_DEFAULT
+	return
+
+JubilifeCity_Text_DawnWelcome_Lu:
+	.string "{STR_VAR_1}: Hey, {PLAYER}! How many\n"
+	.string "POKéMON have you caught?\p"
+	.string "{STR_VAR_1}: Huh? I think you should\n"
+	.string "catch some more.\p"
+	.string "It might be more of a challenge raising\n"
+	.string "a lot of POKéMON...\p"
+	.string "But it’s worth it. The more POKéMON you\n"
+	.string "have, the happier you’ll be.\p"
+	.string "{STR_VAR_1}: Hey, that’s right! Don’t\n"
+	.string "you think it’s better to know more\l"
+	.string "about POKéMON?\p"
+	.string "Sure it is! There’s this great place for\n"
+	.string "that.\p"
+	.string "Come on! It’s all right. Follow me.$"
+
+JubilifeCity_Text_DawnSchool_ScrD:
+	msgbox JubilifeCity_Text_DawnSchool, MSGBOX_DEFAULT
+	return
+JubilifeCity_Text_DawnSchool_ScrL:
+	msgbox JubilifeCity_Text_DawnSchool_Lu, MSGBOX_DEFAULT
+	return
+
+JubilifeCity_Text_DawnSchool_Lu:
+	.string "{STR_VAR_1}: {PLAYER}, here we are. This\n"
+	.string "is the Trainers’ School.\p"
+	.string "The name says it all!\p"
+	.string "{STR_VAR_1}: Your pal {RIVAL} went\n"
+	.string "in earlier. He might still be studying in\l"
+	.string "there.\p"
+	.string "OK, see you around!$"
+
+JubilifeCity_Text_LookerIntro_ScrD:
+	msgbox JubilifeCity_Text_LookerIntro, MSGBOX_DEFAULT
+	return
+JubilifeCity_Text_LookerIntro_ScrL:
+	msgbox JubilifeCity_Text_LookerIntro_Lu, MSGBOX_DEFAULT
+	return
+
+JubilifeCity_Text_LookerIntro_Lu:
+	.string "{STR_VAR_1}: That guy... What’s he\n"
+	.string "doing?\p"
+	.string "???: WHAAAT?!\p"
+	.string "Mysterious man: ...How did you know?\p"
+	.string "How did you unmask me as a member of\n"
+	.string "the International Police?!\p"
+	.string "{STR_VAR_1}: Huh? What? Are you\n"
+	.string "kidding? I was just making small talk...\p"
+	.string "Shady man: ...Heh. You claim you were\n"
+	.string "only making conversation, do you?\p"
+	.string "But, I know better not to believe that.\n"
+	.string "No, no, no.\p"
+	.string "You recognized right away that I was\n"
+	.string "someone extraordinary.\p"
+	.string "That is why you spoke to me, is it not?\n"
+	.string "Your power of observation is fearsome!\p"
+	.string "Quite admirable, you are!\p"
+	.string "Looker: Now that my cover has been\n"
+	.string "blown, let me introduce myself.\p"
+	.string "I am a globe-trotting elite of the\n"
+	.string "International Police.\p"
+	.string "My name... Ah, no, I shall inform you only\n"
+	.string "of my code name.\p"
+	.string "My code name, it is Looker. It is what\n"
+	.string "they all call me.\p"
+	.string "Incidentally, is the saying, “Don’t be a\n"
+	.string "thief!” familiar to you?\p"
+	.string "Looker: Yes, that is correct. Taking\n"
+	.string "what belongs to others is wrong.\p"
+	.string "Looker: Unfortunately, there are\n"
+	.string "apparently those who do not heed\l"
+	.string "those words.\p"
+	.string "In Sinnoh, in fact, there are criminals\n"
+	.string "stealing the POKéMON of others.\p"
+	.string "I have, therefore, been on the lookout\n"
+	.string "for characters arousing my suspicion.\p"
+	.string "Incidentally, you are Trainers, yes?\n"
+	.string "Perhaps you can make use of this?$"
+
+JubilifeCity_Text_LookerBye_ScrD:
+	msgbox JubilifeCity_Text_LookerBye, MSGBOX_DEFAULT
+	return
+JubilifeCity_Text_LookerBye_ScrL:
+	msgbox JubilifeCity_Text_LookerBye_Lu, MSGBOX_DEFAULT
+	return
+
+JubilifeCity_Text_LookerBye_Lu:
+	.string "Looker: Also, I have a request.\p"
+	.string "If you were to see me again, I ask that\n"
+	.string "you not talk to me, for I am on duty.\p"
+	.string "...Actually, yes, yes, you may speak to\n"
+	.string "me. You must.\p"
+	.string "Not because I am lonely, no, no! You\n"
+	.string "must inform me of bad guys!\p"
+	.string "You must inform me of any happenings!\p"
+	.string "{STR_VAR_1}: ...Working for the\n"
+	.string "International Police sounds hard.$"
+
+JubilifeCity_Text_GruntsThreaten_ScrD:
+	msgbox JubilifeCity_Text_GruntsThreaten, MSGBOX_DEFAULT
+	return
+JubilifeCity_Text_GruntsThreaten_ScrL:
+	msgbox JubilifeCity_Text_GruntsThreaten_Lu, MSGBOX_DEFAULT
+	return
+
+JubilifeCity_Text_GruntsThreaten_Lu:
+	.string "Mystery man: Now, now, now, now, now!\n"
+	.string "Professor Rowan, you must comply.\p"
+	.string "Hand over all your research findings.\n"
+	.string "For free, naturally.\p"
+	.string "Failure to comply will result in a\n"
+	.string "painful time for your assistant.\p"
+	.string "Rowan: Quiet, you lot! Why must you be\n"
+	.string "such a nuisance?\p"
+	.string "Let me list some lessons you still need\n"
+	.string "to learn.\p"
+	.string "?1: Don’t loiter about for no good\n"
+	.string "reason.\p"
+	.string "?2: Don’t interrupt others while they\n"
+	.string "are attempting to converse.\p"
+	.string "?3: If you don’t get your way, don’t\n"
+	.string "raise your voice to be intimidating.\p"
+	.string "?4: Don’t think you’ve grown strong\n"
+	.string "just because you’re in a group.\p"
+	.string "?5: What is with those outlandish\n"
+	.string "outfits you have on?\p"
+	.string "Mystery man: Oh, professor of POKéMON,\n"
+	.string "must you be so difficult?\p"
+	.string "We are speaking to you on business.\n"
+	.string "Because this is work for us.\p"
+	.string "What we’re saying is--we demand you\n"
+	.string "comply with our demands.\p"
+	.string "Rowan: My goodness... You call\n"
+	.string "yourselves adults?\p"
+	.string "You kids, don’t grow up to be like these\n"
+	.string "sorry specimens.\p"
+	.string "Mystery man: Eeeeeh! You had to make\n"
+	.string "this personal!\p"
+	.string "You have forced our hand into making a\n"
+	.string "show of force!\p"
+	.string "We will make you regret insulting Team\n"
+	.string "Galactic!\p"
+	.string "Rowan: You kids, give these thugs a\n"
+	.string "lesson in civility, please.\p"
+	.string "{STR_VAR_1}: {PLAYER}! Join me and\n"
+	.string "battle these guys!$"
+
+JubilifeCity_Text_RowanThanks_ScrD:
+	msgbox JubilifeCity_Text_RowanThanks, MSGBOX_DEFAULT
+	return
+JubilifeCity_Text_RowanThanks_ScrL:
+	msgbox JubilifeCity_Text_RowanThanks_Lu, MSGBOX_DEFAULT
+	return
+
+JubilifeCity_Text_RowanThanks_Lu:
+	.string "Rowan: That lot... They called\n"
+	.string "themselves Team Galactic.\p"
+	.string "When POKéMON evolve, they seem to\n"
+	.string "release some type of energy...\p"
+	.string "However, I believe that it’s a mystic\n"
+	.string "power far beyond our control.\p"
+	.string "But Team Galactic seems to be studying\n"
+	.string "that power’s potential.\p"
+	.string "They want to know if it can be used as\n"
+	.string "energy for something...\p"
+	.string "{STR_VAR_1}: {PLAYER}, did you know\n"
+	.string "about this?\p"
+	.string "The professor studies the evolution\n"
+	.string "of POKéMON, too.\p"
+	.string "According to his research, 90% of all\n"
+	.string "POKéMON are somehow tied to evolution!\p"
+	.string "Maybe that’s the reason those goons\n"
+	.string "tried to take the professor’s\p"
+	.string "research data.\p"
+	.string "They’re not allowed to do that!\p"
+	.string "Rowan: It’s all over, so you can relax\n"
+	.string "now.\p"
+	.string "Still, thanks to you two, nothing came\n"
+	.string "of that situation. I appreciate that.\p"
+	.string "Incidentally, {PLAYER}. Kudos to you\n"
+	.string "for your battling skill.\p"
+	.string "It got me thinking. Why don’t you\n"
+	.string "collect all the Gym Badges of Sinnoh?\p"
+	.string "Doing so, you will be sure to encounter\n"
+	.string "lots of POKéMON.\p"
+	.string "That, of course, means your POKéDEX\n"
+	.string "pages will continuously fill up.\p"
+	.string "In other words, it will be of great help\n"
+	.string "to my research.\p"
+	.string "That said, I’ve given you your first\n"
+	.string "POKéMON and POKéDEX as yours to keep.\p"
+	.string "You’re free to do with them as you wish.\n"
+	.string "Take care now.$"
+

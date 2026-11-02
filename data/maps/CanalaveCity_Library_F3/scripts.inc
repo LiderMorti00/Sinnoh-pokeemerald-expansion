@@ -267,7 +267,9 @@ CanalaveCity_Library_F3_EventScript_SNRowan::
 	msgbox CanalaveCity_Library_F3_EventScript_SNRowan_T9, MSGBOX_DEFAULT
 	call Sinnoh_EventScript_BufferCounterpartName
 	msgbox CanalaveCity_Library_F3_Text_SNAfter1, MSGBOX_DEFAULT
-	msgbox CanalaveCity_Library_F3_Text_SNAfter2, MSGBOX_DEFAULT
+	checkplayergender
+	call_if_eq VAR_RESULT, MALE, CanalaveCity_Library_F3_Text_SNAfter2_ScrD
+	call_if_eq VAR_RESULT, FEMALE, CanalaveCity_Library_F3_Text_SNAfter2_ScrL
 	msgbox CanalaveCity_Library_F3_Text_SNAfter3, MSGBOX_DEFAULT
 	closemessage
 	fadescreen FADE_TO_BLACK
@@ -441,4 +443,20 @@ CanalaveCity_Library_F3_Text_SNAfter3:
 	.string "too.\p"
 	.string "...There may be aftershocks, however.\n"
 	.string "Be alert always.$"
+
+CanalaveCity_Library_F3_Text_SNAfter2_ScrD:
+	msgbox CanalaveCity_Library_F3_Text_SNAfter2, MSGBOX_DEFAULT
+	return
+CanalaveCity_Library_F3_Text_SNAfter2_ScrL:
+	msgbox CanalaveCity_Library_F3_Text_SNAfter2_Lu, MSGBOX_DEFAULT
+	return
+
+CanalaveCity_Library_F3_Text_SNAfter2_Lu:
+	.string "{STR_VAR_1}: Lake Valor... I wonder what\n"
+	.string "happened?\p"
+	.string "{STR_VAR_1}: {STR_VAR_1}: We’re going to\n"
+	.string "investigate Lake Verity before we join\l"
+	.string "you.\p"
+	.string "Don’t try to be a hero if anything\n"
+	.string "crazy happens.$"
 
