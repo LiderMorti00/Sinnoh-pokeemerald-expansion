@@ -198,7 +198,7 @@
     {
       "local_id": "LOCALID_SN_PAST_GRUNT",
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_GALAXY_GRUNT_M",
-      "x": 40,
+      "x": 36,
       "y": 9,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -208,6 +208,62 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PastoriaCity_EventScript_SNGrunt",
       "flag": "FLAG_SN_HIDE_PAST_GRUNT"
+    },
+    {
+      "local_id": "LOCALID_SN_PAST_WAKE_A",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_WAKE",
+      "x": 14,
+      "y": 28,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PastoriaCity_EventScript_SNWakeA",
+      "flag": "FLAG_SN_HIDE_PAST_WAKE_A"
+    },
+    {
+      "local_id": "LOCALID_SN_PAST_BARRY_A",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_BARRY",
+      "x": 16,
+      "y": 28,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PastoriaCity_EventScript_SNWakeA",
+      "flag": "FLAG_SN_HIDE_PAST_WAKE_A"
+    },
+    {
+      "local_id": "LOCALID_SN_PAST_WAKE_B",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_WAKE",
+      "x": 35,
+      "y": 10,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PastoriaCity_EventScript_SNBomb",
+      "flag": "FLAG_SN_HIDE_PAST_BOMB"
+    },
+    {
+      "local_id": "LOCALID_SN_PAST_BARRY_B",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_BARRY",
+      "x": 37,
+      "y": 10,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PastoriaCity_EventScript_SNBomb",
+      "flag": "FLAG_SN_HIDE_PAST_BOMB"
     }
   ],
   "warp_events": [

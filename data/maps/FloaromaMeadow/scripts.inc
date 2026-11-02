@@ -44,37 +44,64 @@ FloaromaMeadow_EventScript_HoneyManNormal::
 	end
 
 FloaromaMeadow_Text_Grunt1Intro:
-	.string "GRUNT: Hand over all your HONEY,\n"
-	.string "old man! ...Huh? Who invited you?$"
+	.string "Grunt 1: Enough arguing! Hand over\n"
+	.string "that sweet Honey!\p"
+	.string "Grunt 2: Do as we say! Team Galactic\n"
+	.string "will have that Honey!\p"
+	.string "We must have it to attract POKéMON in\n"
+	.string "great numbers!\p"
+	.string "Grunt 1: Hey! This kid is a witness!\n"
+	.string "What’ll we do?\p"
+	.string "Grunt 2: We don’t need the brat running\n"
+	.string "off to get help...\p"
+	.string "The solution’s simple! We ensure the\n"
+	.string "brat stays quiet!$"
 
 FloaromaMeadow_Text_Grunt1Defeat:
-	.string "You're kidding me!$"
+	.string "Grunt 1: This is so lame... They’re going\n"
+	.string "to dock my pay!$"
 
 FloaromaMeadow_Text_Grunt2Intro:
-	.string "GRUNT: Leave it to me! I'll show\n"
-	.string "this brat!$"
+	.string "Grunt 2: I’m up next! Heheheh...\p"
+	.string "Battling you right after my cohort\n"
+	.string "weakened you gives me the edge!$"
 
 FloaromaMeadow_Text_Grunt2Defeat:
 	.string "No way...$"
 
 FloaromaMeadow_Text_GruntsFlee:
-	.string "GRUNT: Forget the HONEY! Let's get\n"
-	.string "out of here! ...Hey, you dropped\l"
-	.string "the WINDWORKS key!$"
+	.string "Grunt 1: This brat’s tough! Like, really,\n"
+	.string "really tough!\p"
+	.string "Tougher than I can put into words, and\n"
+	.string "I know a lot of words!\p"
+	.string "We’re done for here... Let’s get back to\n"
+	.string "the Valley Windworks.$"
 
 FloaromaMeadow_Text_HoneyThanks:
-	.string "HONEY MAN: Thank you, young one!\n"
-	.string "Those ruffians dropped this. It\l"
-	.string "must be the key to the WINDWORKS.$"
+	.string "Oh, what’s this thing? They seem to\n"
+	.string "have forgotten it...\p"
+	.string "It’s a Works Key... It must be for the\n"
+	.string "Valley Windworks!\p"
+	.string "It’s of no use to me. You may as well\n"
+	.string "have it.\p"
+	.string "Thank you! You surely saved me.\p"
+	.string "Those goons were trying to rob me of\n"
+	.string "my sweet, sweet Honey.\p"
+	.string "They sure were weird, though. You saw\n"
+	.string "how they were dressed.\p"
+	.string "What they were saying didn’t make a\n"
+	.string "whole lot of sense, either.\p"
+	.string "Oh! I need to thank you! This sweet,\n"
+	.string "sweet Honey!\p"
+	.string "Go on, take a whole lot!$"
 
 FloaromaMeadow_Text_HoneyGift:
 	.string "And please, take some of my HONEY\n"
 	.string "as thanks!$"
 
 FloaromaMeadow_Text_HoneyInfo:
-	.string "Slather HONEY on a sweet-smelling\n"
-	.string "tree, and wild POKéMON will come\l"
-	.string "to eat it!$"
+	.string "Slather that Honey on a sweet-smelling\n"
+	.string "tree. It might attract POKéMON.$"
 
 FloaromaMeadow_Text_HoneyHelp:
 	.string "Help! These people want to take\n"

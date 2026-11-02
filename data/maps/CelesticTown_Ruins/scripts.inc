@@ -70,7 +70,19 @@ CelesticTown_Ruins_EventScript_SNVis_CEL_CYRUS_End:
 	return
 
 CelesticTown_Ruins_EventScript_SNCyrus::
-	trainerbattle_single TRAINER_ELLIOT_2, CelesticTown_Ruins_EventScript_SNCyrus_Intro, CelesticTown_Ruins_EventScript_SNCyrus_Defeat, CelesticTown_Ruins_EventScript_SNCyrus_Won
+	lock
+	faceplayer
+	msgbox CelesticTown_Ruins_Text_SNCyrusTalk, MSGBOX_DEFAULT
+CelesticTown_Ruins_EventScript_SNCyrus_Ask:
+	msgbox CelesticTown_Ruins_Text_SNCyrusAsk, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, CelesticTown_Ruins_EventScript_SNCyrus_Coward
+	msgbox CelesticTown_Ruins_EventScript_SNCyrus_Intro, MSGBOX_DEFAULT
+	closemessage
+	trainerbattle_no_intro TRAINER_ELLIOT_2, CelesticTown_Ruins_EventScript_SNCyrus_Defeat
+	goto CelesticTown_Ruins_EventScript_SNCyrus_Won
+CelesticTown_Ruins_EventScript_SNCyrus_Coward:
+	msgbox CelesticTown_Ruins_Text_SNCyrusCoward, MSGBOX_DEFAULT
+	release
 	end
 
 CelesticTown_Ruins_EventScript_SNCyrus_Won:
@@ -121,18 +133,29 @@ CelesticTown_Ruins_EventScript_SNCyrus_Post:
 	.string "stopped...$"
 
 CelesticTown_Ruins_Text_SNElder1:
-	.string "That cave painting isn’t protected\n"
-	.string "simply because it’s old.\p"
+	.string "Elder: That cave painting isn’t\n"
+	.string "protected simply because it’s old.\p"
 	.string "We’ve preserved it because we value\n"
 	.string "the memories that it represents.\p"
 	.string "It is a legacy of people and POKéMON\n"
 	.string "beyond measure.\p"
 	.string "A man who fails to understand that...\n"
-	.string "What world could he dream of?$"
+	.string "What world could he dream of?\p"
+	.string "Such a strange, strange man. Spouting\n"
+	.string "such nonsense.\p"
+	.string "The time and space of Sinnoh are filled\n"
+	.string "with the memories and thoughts\p"
+	.string "of countless people and POKéMON.\p"
+	.string "This is a wonderful world. What need is\n"
+	.string "there to change it?\p"
+	.string "Oh, yes. I found something useful. You\n"
+	.string "should take this.\p"
+	.string "It belonged to my granddaughter, but\n"
+	.string "she doesn’t use it anymore.$"
 
 CelesticTown_Ruins_Text_SNElder2:
-	.string "If a POKéMON learns Surf, it can carry\n"
-	.string "you across water and the sea.\p"
+	.string "Elder: If a POKéMON learns Surf, it can\n"
+	.string "carry you across water and the sea.\p"
 	.string "You’ve been a great help. That’s my\n"
 	.string "thanks for it.$"
 
@@ -174,3 +197,45 @@ CelesticTown_Ruins_Text_SNCharm3:
 	.string "now and again.\p"
 	.string "Since you’re in Celestic Town, why not\n"
 	.string "look around inside the ruins?$"
+
+CelesticTown_Ruins_Text_SNCyrusTalk:
+	.string "???: I would like to know more about\n"
+	.string "that legend, if you will.\p"
+	.string "Elder: Who might you be...?\p"
+	.string "Cyrus: My name is Cyrus.\p"
+	.string "I want to put an end to pointless\n"
+	.string "strife and hostility.\p"
+	.string "I am seeking the power to create the\n"
+	.string "ideal world.\p"
+	.string "Thus, I want you to answer.\p"
+	.string "The world today can’t change because\n"
+	.string "the three POKéMON keep it in balance.\p"
+	.string "Is that what you are saying?\p"
+	.string "Elder: I wouldn’t know. I do know the\n"
+	.string "world is in balance.\p"
+	.string "I’m quite satisfied with the world the\n"
+	.string "way it is.\p"
+	.string "I’m not interested in your question.\p"
+	.string "Cyrus: ...Plead ignorance, will you? What\n"
+	.string "a pointless attitude.\p"
+	.string "You fail to appreciate that the world\n"
+	.string "is incomplete.\p"
+	.string "I will change the world.\p"
+	.string "As the first step, I will destroy this\n"
+	.string "cave painting that you’ve protected\p"
+	.string "all these years.\p"
+	.string "A new legend of a new world should take\n"
+	.string "its place.\p"
+	.string "Am I wrong? If you feel that way,\n"
+	.string "challenge me.$"
+
+CelesticTown_Ruins_Text_SNCyrusAsk:
+	.string "Cyrus: Well? Am I wrong? If you feel\n"
+	.string "that way, challenge me.$"
+
+CelesticTown_Ruins_Text_SNCyrusCoward:
+	.string "Cyrus: ...You chose to be a coward. How\n"
+	.string "sensible of you.\p"
+	.string "Stand aside and watch as I change the\n"
+	.string "world.$"
+

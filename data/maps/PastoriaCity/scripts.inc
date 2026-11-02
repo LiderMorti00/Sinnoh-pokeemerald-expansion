@@ -103,6 +103,8 @@ PastoriaCity_Text_PtSign4:
 	.string "Great Marsh!$"
 
 PastoriaCity_OnTransitionSN:
+	call PastoriaCity_EventScript_SNVis_PAST_WAKE_A
+	call PastoriaCity_EventScript_SNVis_PAST_BOMB
 	call PastoriaCity_EventScript_SNVis_PAST_GRUNT
 	call PastoriaCity_EventScript_SNVis_PAST_BARRY
 	end
@@ -230,7 +232,7 @@ PastoriaCity_EventScript_SNPASTORIACITYBARRY_T2_P:
 PastoriaCity_EventScript_SNVis_PAST_GRUNT:
 	setflag FLAG_SN_HIDE_PAST_GRUNT
 	goto_if_unset FLAG_BADGE05_GET, PastoriaCity_EventScript_SNVis_PAST_GRUNT_End
-	goto_if_defeated TRAINER_ROBERT_2, PastoriaCity_EventScript_SNVis_PAST_GRUNT_End
+	goto PastoriaCity_EventScript_SNVis_PAST_GRUNT_End
 	clearflag FLAG_SN_HIDE_PAST_GRUNT
 PastoriaCity_EventScript_SNVis_PAST_GRUNT_End:
 	return
@@ -274,3 +276,135 @@ PastoriaCity_Text_SNGrunt2:
 PastoriaCity_Text_SNGrunt3:
 	.string "The Galactic grunt ran off toward\n"
 	.string "ROUTE 213 and VALOR LAKEFRONT!$"
+
+PastoriaCity_EventScript_SNVis_PAST_WAKE_A:
+	setflag FLAG_SN_HIDE_PAST_WAKE_A
+	goto_if_unset FLAG_BADGE05_GET, PastoriaCity_EventScript_SNVis_PAST_WAKE_A_End
+	goto_if_set FLAG_SN_PAST_WAKE_A, PastoriaCity_EventScript_SNVis_PAST_WAKE_A_End
+	clearflag FLAG_SN_HIDE_PAST_WAKE_A
+PastoriaCity_EventScript_SNVis_PAST_WAKE_A_End:
+	return
+
+PastoriaCity_EventScript_SNVis_PAST_BOMB:
+	setflag FLAG_SN_HIDE_PAST_BOMB
+	goto_if_unset FLAG_SN_PAST_WAKE_A, PastoriaCity_EventScript_SNVis_PAST_BOMB_End
+	goto_if_set FLAG_SN_PAST_BOMB_DONE, PastoriaCity_EventScript_SNVis_PAST_BOMB_End
+	clearflag FLAG_SN_HIDE_PAST_BOMB
+PastoriaCity_EventScript_SNVis_PAST_BOMB_End:
+	return
+
+PastoriaCity_EventScript_SNWakeA::
+	lock
+	faceplayer
+	msgbox PastoriaCity_Text_SNWA1, MSGBOX_DEFAULT
+	msgbox PastoriaCity_Text_SNWA2, MSGBOX_DEFAULT
+	msgbox PastoriaCity_Text_SNWA3, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_SN_PAST_WAKE_A, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox PastoriaCity_Text_SNWA4, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_SN_PAST_WAKE_A
+	removeobject LOCALID_SN_PAST_BARRY_A
+	setflag FLAG_SN_HIDE_PAST_WAKE_A
+	setflag FLAG_SN_PAST_WAKE_A
+	clearflag FLAG_SN_HIDE_PAST_BOMB
+	addobject LOCALID_SN_PAST_WAKE_B
+	addobject LOCALID_SN_PAST_BARRY_B
+	fadescreen FADE_FROM_BLACK
+	msgbox PastoriaCity_Text_SNWA5, MSGBOX_DEFAULT
+	release
+	end
+
+PastoriaCity_EventScript_SNBomb::
+	lock
+	msgbox PastoriaCity_Text_SNWB1, MSGBOX_DEFAULT
+	closemessage
+	playse SE_M_EXPLOSION
+	setvar VAR_0x8004, 2
+	setvar VAR_0x8005, 3
+	setvar VAR_0x8006, 12
+	setvar VAR_0x8007, 3
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special ShakeCamera
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	msgbox PastoriaCity_Text_SNWB2, MSGBOX_DEFAULT
+	clearflag FLAG_SN_HIDE_PAST_GRUNT
+	addobject LOCALID_SN_PAST_GRUNT
+	applymovement LOCALID_SN_PAST_WAKE_B, Common_Movement_ExclamationMark
+	applymovement LOCALID_SN_PAST_BARRY_B, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox PastoriaCity_Text_SNWB3, MSGBOX_DEFAULT
+	msgbox PastoriaCity_Text_SNGrunt2, MSGBOX_DEFAULT
+	msgbox PastoriaCity_Text_SNGrunt1, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_SN_PAST_GRUNT
+	setflag FLAG_SN_HIDE_PAST_GRUNT
+	removeobject LOCALID_SN_PAST_WAKE_B
+	fadescreen FADE_FROM_BLACK
+	msgbox PastoriaCity_Text_SNWB4, MSGBOX_DEFAULT
+	msgbox PastoriaCity_Text_SNGrunt3, MSGBOX_DEFAULT
+	closemessage
+	setflag FLAG_SN_PAST_BOMB_DONE
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_SN_PAST_BARRY_B
+	setflag FLAG_SN_HIDE_PAST_BOMB
+	fadescreen FADE_FROM_BLACK
+	release
+	end
+
+PastoriaCity_Text_SNWA1:
+	.string "Wake: What’s this racket, then? Oh, it’s\n"
+	.string "you two.\p"
+	.string "{RIVAL}: Oh, Master!$"
+
+PastoriaCity_Text_SNWA2:
+	.string "Wake: ...Listen, kid. I know your father.\n"
+	.string "I won’t deny that.\p"
+	.string "But I don’t recall ever taking you on\n"
+	.string "as an apprentice. Not in the least.\p"
+	.string "Wake: Besides, you two don’t need me.\p"
+	.string "You can become strong on your own\n"
+	.string "without being my apprentice.$"
+
+PastoriaCity_Text_SNWA3:
+	.string "{RIVAL}: It doesn’t matter. I made\n"
+	.string "you my master! I decided!\p"
+	.string "But forget that! There’s trouble\n"
+	.string "brewing!\p"
+	.string "There’s a Team Galactic goon in front\n"
+	.string "of the Observatory Gate.\p"
+	.string "He said something about using a bomb!$"
+
+PastoriaCity_Text_SNWA4:
+	.string "Wake: WHAAAAT?!\p"
+	.string "No one messes with Pastoria! Not on my\n"
+	.string "watch!\p"
+	.string "{RIVAL}: Hey! Master! Wait!$"
+
+PastoriaCity_Text_SNWA5:
+	.string "They rushed off toward the Great\n"
+	.string "Marsh!$"
+
+PastoriaCity_Text_SNWB1:
+	.string "{RIVAL}: Hey!\p"
+	.string "What am I, chopped liver? Don’t forget\n"
+	.string "I’m here, too!\p"
+	.string "Wake: So, where’s this Galac...$"
+
+PastoriaCity_Text_SNWB2:
+	.string "DDDOOOMMM!!$"
+
+PastoriaCity_Text_SNWB3:
+	.string "Grunt: Fweh! That was rough.\p"
+	.string "Wake: YOU! What’ve you done?!$"
+
+PastoriaCity_Text_SNWB4:
+	.string "{RIVAL}: Hey! {PLAYER}! You go after\n"
+	.string "that Galactic goon!\p"
+	.string "I’m staying here like Master said!\n"
+	.string "Gotta keep others from going in!\p"
+	.string "Don’t let that Galactic guy get away!$"

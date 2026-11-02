@@ -3027,4 +3027,11 @@
 #define FLAG_SN_GOT_GRISEOUS_ORB                                FLAG_HIDE_ROUTE_118_STEVEN
 #define FLAG_SN_HIDE_GRISEOUS                                   FLAG_HIDE_FORTREE_CITY_KECLEON
 
+
+// ---- Proyecto Sinnoh: historia de Platino (objetos, regalos y objetos ocultos) ----
+#define FLAG_SN_PAST_WAKE_A                                     FLAG_HIDE_ROUTE_120_KECLEON_BRIDGE
+#define FLAG_SN_PAST_BOMB_DONE                                  FLAG_HIDE_ROUTE_120_STEVEN
+#define FLAG_SN_HIDE_PAST_WAKE_A                                FLAG_HIDE_NEW_MAUVILLE_VOLTORB_1
+#define FLAG_SN_HIDE_PAST_BOMB                                  FLAG_HIDE_NEW_MAUVILLE_VOLTORB_2
+
 #endif // GUARD_CONSTANTS_FLAGS_H

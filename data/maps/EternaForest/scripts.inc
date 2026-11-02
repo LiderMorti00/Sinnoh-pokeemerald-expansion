@@ -36,23 +36,29 @@ EternaForest_EventScript_CherylBye::
 	end
 
 EternaForest_Text_CherylAsk:
-	.string "CHERYL: Excuse me... I'm CHERYL. I\n"
-	.string "heard some suspicious people in\l"
-	.string "strange outfits are in this\n"
-	.string "forest.\p"
-	.string "I'm a little scared to go through\n"
-	.string "alone. Would you come with me? My\l"
-	.string "CHANSEY can heal your POKéMON\n"
-	.string "along the way!$"
+	.string "Hello, my name’s Cheryl. And you are...?\p"
+	.string "OK, so your name is {PLAYER}. I’m\n"
+	.string "sincerely glad to meet you.\p"
+	.string "{PLAYER}, may I ask a big favor of you?\p"
+	.string "I want to get through this forest, but\n"
+	.string "I’m afraid of doing it alone.\p"
+	.string "I’ve heard that there is a sinister\n"
+	.string "group of people called Team Galactic\p"
+	.string "about.\p"
+	.string "I think there’d be safety in numbers.\n"
+	.string "Please, may I go through with you?\p"
+	.string "{PLAYER} decided to go with Cheryl!$"
 
 EternaForest_Text_CherylHeal:
-	.string "CHERYL: Let me heal your POKéMON.\n"
-	.string "Stay strong!$"
+	.string "Cheryl: I’ll keep your POKéMON in\n"
+	.string "perfect health.$"
 
 EternaForest_Text_CherylBye:
-	.string "CHERYL: We made it out of the\n"
-	.string "forest! Thank you so much. Please,\l"
-	.string "take this as thanks.$"
+	.string "Cheryl: Oh! There’s the exit! I’m so\n"
+	.string "relieved... We finally got here.\p"
+	.string "I would’ve never been able to get\n"
+	.string "through this by myself.\p"
+	.string "Thank you so much, {PLAYER}!$"
 
 EternaForest_Text_CherylBye2:
 	.string "CHERYL: A POKéMON holding a SOOTHE\n"

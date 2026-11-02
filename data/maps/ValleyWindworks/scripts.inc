@@ -52,18 +52,23 @@ ValleyWindworks_Text_DoorDefeat:
 	.string "Tch! Lucky kid!$"
 
 ValleyWindworks_Text_DoorFlee:
-	.string "GRUNT: You won't get inside\n"
-	.string "anyway! I'm locking the door! The\l"
-	.string "key is with my buddies in FLOAROMA\n"
-	.string "MEADOW... Oops!$"
+	.string "Isn’t that just great. Getting owned\n"
+	.string "by some kid.\p"
+	.string "But you can’t do a thing if I lock\n"
+	.string "myself in with my Works Key!\p"
+	.string "That’s right, the other Works Key’s not\n"
+	.string "here!\p"
+	.string "My cohorts in the flower patch have\n"
+	.string "the only other one!\p"
+	.string "Hahaha! In that sense, I’m no longer\n"
+	.string "the loser!$"
 
 ValleyWindworks_Text_Locked:
-	.string "The door is locked tight. There\n"
-	.string "must be a key somewhere...$"
+	.string "It’s locked from inside!$"
 
 ValleyWindworks_Text_Unlock:
-	.string "{PLAYER} used the WORKS KEY. The\n"
-	.string "door is unlocked!$"
+	.string "Ker-chunk!\p"
+	.string "The door to Valley Windworks opened!$"
 
 ValleyWindworks_EventScript_DoorEnd::
 	releaseall
@@ -82,12 +87,24 @@ ValleyWindworks_EventScript_Looker::
 	end
 
 ValleyWindworks_Text_Looker:
-	.string "LOOKER: So it was you who drove\n"
-	.string "TEAM GALACTIC out of the\l"
-	.string "WINDWORKS? Impressive!\p"
-	.string "My investigation tells me they\n"
-	.string "have a building in ETERNA CITY. I\l"
-	.string "will keep watching them, yes?$"
+	.string "Looker: Ah, yes. It is you, yes.\p"
+	.string "I have heard that the Team Galactic\n"
+	.string "appeared at this power plant.\p"
+	.string "I have, therefore, come running. So,\n"
+	.string "the Team Galactic. Where are they?\p"
+	.string "...\p"
+	.string "You have run them off, you say? You\n"
+	.string "are a Trainer, but...?\p"
+	.string "Very well! I shall go investigate\n"
+	.string "inside!\p"
+	.string "Looker: Magnificent! Yes, it is! What\n"
+	.string "you have said, it is all true!\p"
+	.string "Superb! Though you are young, you are\n"
+	.string "a Trainer through and through!\p"
+	.string "Very well! I shall pursue the culprits!\p"
+	.string "I have received tips that the Team\n"
+	.string "Galactic hideout is in Eterna City.\p"
+	.string "To there, I must be off!$"
 
 ValleyWindworks_EventScript_Sign1::
 	msgbox ValleyWindworks_Text_Sign1, MSGBOX_SIGN
