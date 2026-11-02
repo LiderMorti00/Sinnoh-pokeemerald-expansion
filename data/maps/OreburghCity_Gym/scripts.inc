@@ -79,10 +79,10 @@ OreburghCity_Gym_Text_RoarkPost:
 	.string "time, I won't lose!$"
 
 OreburghCity_Gym_Text_Guide:
-	.string "Hey, future champ! ROARK uses\n"
-	.string "ROCK-type POKéMON.\p"
-	.string "WATER and GRASS-type moves hit\n"
-	.string "them hard. Good luck!$"
+	.string "Hey, there! How’s it going,\n"
+	.string "Champ-to-be?\p"
+	.string "I’m the Gym guide! I help out Trainers\n"
+	.string "who come to challenge the Gym Leader.$"
 
 OreburghCity_Gym_Text_GuideWon:
 	.string "You beat ROARK! That was a\n"

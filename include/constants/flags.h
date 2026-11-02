@@ -3077,4 +3077,16 @@
 #define FLAG_SN_ROUTE224_TABLET                                 (TRAINER_FLAGS_START + TRAINER_THALIA_4)
 #define FLAG_SN_HIDE_R224_OAK                                   (TRAINER_FLAGS_START + TRAINER_THALIA_3)
 
+
+// ---- Proyecto Sinnoh: historia de Platino (objetos, regalos y objetos ocultos) ----
+#define FLAG_SN_ORE_BARRY_MET                                   (TRAINER_FLAGS_START + TRAINER_EVERETT)
+#define FLAG_SN_ORE_BARRY_POST                                  (TRAINER_FLAGS_START + TRAINER_ALVARO)
+#define FLAG_SN_HIDE_ORE_BARRY                                  (TRAINER_FLAGS_START + TRAINER_MARIELA)
+#define FLAG_SN_HIDE_ORE_BARRY_POST                             (TRAINER_FLAGS_START + TRAINER_THALIA_5)
+#define FLAG_SN_HIDE_CHATEAU_GARDENIA                           (TRAINER_FLAGS_START + TRAINER_THALIA_4)
+#define FLAG_SN_HIDE_GC_LOOKER                                  (TRAINER_FLAGS_START + TRAINER_THALIA_3)
+#define FLAG_SN_HIDE_FOG_GRUNTS                                 (TRAINER_FLAGS_START + TRAINER_THALIA_2)
+#define FLAG_SN_SURVIVAL_BUCK                                   (TRAINER_FLAGS_START + TRAINER_GABRIELLE_5)
+#define FLAG_SN_HIDE_SURV_BUCK                                  (TRAINER_FLAGS_START + TRAINER_GABRIELLE_4)
+
 #endif // GUARD_CONSTANTS_FLAGS_H

@@ -106,8 +106,8 @@ PastoriaCity_Gym_Text_WalterDefeat:
 	.string "bowled over!$"
 
 PastoriaCity_Gym_Text_WalterPost:
-	.string "The water rising and falling is tricky,\n"
-	.string "but don’t let it annoy you.\p"
+	.string "The walkway twists and turns over the\n"
+	.string "water, but don’t let it annoy you.\p"
 	.string "If you lose sight of yourself, that’s\n"
 	.string "when you’re set to lose.$"
 
@@ -205,14 +205,10 @@ PastoriaCity_Gym_Text_ExplainTM:
 	.string "Use it to end battles decisively!$"
 
 PastoriaCity_Gym_Text_PtGymGuide:
-	.string "The Gym Leader Wake... Uh, I mean\n"
-	.string "Crasher Wake, is a master of\p"
-	.string "Water-type POKéMON.\p"
-	.string "I’d say you’ve got guts if you try to\n"
-	.string "face down Water types with Fire-\p"
-	.string "or Ground-type POKéMON!\p"
-	.string "But that part I’ll leave up to you! Go\n"
-	.string "and have some good battles!$"
+	.string "Hey, there! How’s it going,\n"
+	.string "Champ-to-be?\p"
+	.string "I’m the Gym guide! I help out Trainers\n"
+	.string "who come to challenge the Gym Leader.$"
 
 PastoriaCity_Gym_Text_PtGymGuideAfter:
 	.string "Oh! {PLAYER}! You’ve beaten the Gym\n"
@@ -274,7 +270,7 @@ PastoriaCity_Gym_Text_SNGuideInfo:
 	.string "FLOATZEL.\p"
 	.string "Water types are weak to Electric and\n"
 	.string "Grass moves!\p"
-	.string "His Trainers wait along the waterways.\n"
-	.string "Make your way past them to reach the\l"
-	.string "ring!$"
+	.string "The whole Gym is a big pool. Follow the\n"
+	.string "walkway over the water and beat his\l"
+	.string "Trainers to reach the ring at the top!$"
 

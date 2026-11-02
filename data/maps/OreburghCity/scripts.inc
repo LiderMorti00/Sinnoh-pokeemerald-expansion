@@ -1,18 +1,59 @@
 OreburghCity_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, OreburghCity_OnTransitionSN
 	.byte 0
 
 OreburghCity_EventScript_GymClosed::
 	lockall
+	goto_if_set FLAG_SN_ORE_BARRY_MET, OreburghCity_EventScript_SNGymClosedAgain
+	opendoor 30, 22
+	waitdooranim
+	setobjectxyperm LOCALID_SN_ORE_BARRY, 30, 22
+	clearflag FLAG_SN_HIDE_ORE_BARRY
+	addobject LOCALID_SN_ORE_BARRY
+	playse SE_M_STRENGTH
+	applymovement LOCALID_PLAYER, OreburghCity_Movement_SNKnockBack
+	applymovement LOCALID_SN_ORE_BARRY, OreburghCity_Movement_SNBarryOut
+	waitmovement 0
+	closedoor 30, 22
+	waitdooranim
+	setobjectxyperm LOCALID_SN_ORE_BARRY, 30, 23
+	msgbox OreburghCity_Text_SNThud, MSGBOX_DEFAULT
 	msgbox OreburghCity_Text_GymClosed, MSGBOX_DEFAULT
+	setflag FLAG_SN_ORE_BARRY_MET
+	releaseall
+	end
+
+OreburghCity_EventScript_SNGymClosedAgain:
+	msgbox OreburghCity_Text_SNBarryAgain, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
 	waitmovement 0
 	releaseall
 	end
 
+OreburghCity_EventScript_SNBarryTalk::
+	lock
+	faceplayer
+	msgbox OreburghCity_Text_SNBarryAgain, MSGBOX_DEFAULT
+	release
+	end
+
+OreburghCity_Movement_SNKnockBack:
+	lock_facing_direction
+	walk_fast_down
+	unlock_facing_direction
+	step_end
+
+OreburghCity_Movement_SNBarryOut:
+	walk_fast_down
+	step_end
+
+OreburghCity_Text_SNThud:
+	.string "Thud!!$"
+
 OreburghCity_Text_GymClosed:
-	.string "{PLAYER}: Hunh?\p"
-	.string "Oh, it’s you, {RIVAL}! You finally got\n"
+	.string "{RIVAL}: Hunh?\p"
+	.string "Oh, it’s you, {PLAYER}! You finally got\n"
 	.string "here?\p"
 	.string "You’re slow like always.\p"
 	.string "But anyway, the Gym Leader’s tough!\n"
@@ -24,6 +65,12 @@ OreburghCity_Text_GymClosed:
 	.string "the coal mine.\p"
 	.string "If you want to take on the Gym Leader,\n"
 	.string "you’d better go off to the mine!$"
+
+OreburghCity_Text_SNBarryAgain:
+	.string "{RIVAL}: I told you, the Gym Leader\n"
+	.string "went down to the Oreburgh Mine.\p"
+	.string "If you want to take the Gym challenge,\n"
+	.string "you have to go down to the mine.$"
 
 OreburghCity_EventScript_Sign4::
 	msgbox OreburghCity_Text_Sign4, MSGBOX_SIGN
@@ -253,3 +300,268 @@ OreburghCity_Text_PtNpc6_Received:
 OreburghCity_Text_PtNpc6_After:
 	.string "Feeling hale and hearty puts a smile\n"
 	.string "on my face. And that makes me happy.$"
+
+OreburghCity_OnTransitionSN:
+	call OreburghCity_EventScript_SNVis_ORE_BARRY
+	call OreburghCity_EventScript_SNVis_ORE_BARRY_POST
+	end
+
+OreburghCity_EventScript_SNVis_ORE_BARRY:
+	setflag FLAG_SN_HIDE_ORE_BARRY
+	goto_if_ne VAR_SINNOH_STORY, 17, OreburghCity_EventScript_SNVis_ORE_BARRY_End
+	goto_if_unset FLAG_SN_ORE_BARRY_MET, OreburghCity_EventScript_SNVis_ORE_BARRY_End
+	clearflag FLAG_SN_HIDE_ORE_BARRY
+OreburghCity_EventScript_SNVis_ORE_BARRY_End:
+	return
+
+OreburghCity_EventScript_SNVis_ORE_BARRY_POST:
+	setflag FLAG_SN_HIDE_ORE_BARRY_POST
+	goto_if_unset FLAG_BADGE01_GET, OreburghCity_EventScript_SNVis_ORE_BARRY_POST_End
+	goto_if_set FLAG_SN_ORE_BARRY_POST, OreburghCity_EventScript_SNVis_ORE_BARRY_POST_End
+	clearflag FLAG_SN_HIDE_ORE_BARRY_POST
+OreburghCity_EventScript_SNVis_ORE_BARRY_POST_End:
+	return
+
+OreburghCity_EventScript_SNOrePost_T0::
+	goto_if_set FLAG_SN_HIDE_ORE_BARRY_POST, OreburghCity_EventScript_SNOrePost_T0_End
+	lockall
+	applymovement LOCALID_SN_ORE_BARRY_POST, OreburghCity_EventScript_SNOrePost_T0_M
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, OreburghCity_EventScript_SNOrePost_T0_P
+	waitmovement 0
+	goto OreburghCity_EventScript_SNBarryPost
+OreburghCity_EventScript_SNOrePost_T0_End:
+	end
+
+OreburghCity_EventScript_SNOrePost_T0_M:
+	emote_exclamation_mark
+	walk_fast_up
+	walk_fast_left
+	walk_fast_left
+	face_up
+	step_end
+
+OreburghCity_EventScript_SNOrePost_T0_P:
+	face_down
+	step_end
+
+OreburghCity_EventScript_SNOrePost_T1::
+	goto_if_set FLAG_SN_HIDE_ORE_BARRY_POST, OreburghCity_EventScript_SNOrePost_T1_End
+	lockall
+	applymovement LOCALID_SN_ORE_BARRY_POST, OreburghCity_EventScript_SNOrePost_T1_M
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, OreburghCity_EventScript_SNOrePost_T1_P
+	waitmovement 0
+	goto OreburghCity_EventScript_SNBarryPost
+OreburghCity_EventScript_SNOrePost_T1_End:
+	end
+
+OreburghCity_EventScript_SNOrePost_T1_M:
+	emote_exclamation_mark
+	walk_fast_up
+	walk_fast_left
+	face_up
+	step_end
+
+OreburghCity_EventScript_SNOrePost_T1_P:
+	face_down
+	step_end
+
+OreburghCity_EventScript_SNOrePost_T2::
+	goto_if_set FLAG_SN_HIDE_ORE_BARRY_POST, OreburghCity_EventScript_SNOrePost_T2_End
+	lockall
+	applymovement LOCALID_SN_ORE_BARRY_POST, OreburghCity_EventScript_SNOrePost_T2_M
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, OreburghCity_EventScript_SNOrePost_T2_P
+	waitmovement 0
+	goto OreburghCity_EventScript_SNBarryPost
+OreburghCity_EventScript_SNOrePost_T2_End:
+	end
+
+OreburghCity_EventScript_SNOrePost_T2_M:
+	emote_exclamation_mark
+	walk_fast_up
+	face_up
+	step_end
+
+OreburghCity_EventScript_SNOrePost_T2_P:
+	face_down
+	step_end
+
+OreburghCity_EventScript_SNOrePost_T3::
+	goto_if_set FLAG_SN_HIDE_ORE_BARRY_POST, OreburghCity_EventScript_SNOrePost_T3_End
+	lockall
+	applymovement LOCALID_SN_ORE_BARRY_POST, OreburghCity_EventScript_SNOrePost_T3_M
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, OreburghCity_EventScript_SNOrePost_T3_P
+	waitmovement 0
+	goto OreburghCity_EventScript_SNBarryPost
+OreburghCity_EventScript_SNOrePost_T3_End:
+	end
+
+OreburghCity_EventScript_SNOrePost_T3_M:
+	emote_exclamation_mark
+	walk_fast_up
+	walk_fast_right
+	face_up
+	step_end
+
+OreburghCity_EventScript_SNOrePost_T3_P:
+	face_down
+	step_end
+
+OreburghCity_EventScript_SNOrePost_T4::
+	goto_if_set FLAG_SN_HIDE_ORE_BARRY_POST, OreburghCity_EventScript_SNOrePost_T4_End
+	lockall
+	applymovement LOCALID_SN_ORE_BARRY_POST, OreburghCity_EventScript_SNOrePost_T4_M
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, OreburghCity_EventScript_SNOrePost_T4_P
+	waitmovement 0
+	goto OreburghCity_EventScript_SNBarryPost
+OreburghCity_EventScript_SNOrePost_T4_End:
+	end
+
+OreburghCity_EventScript_SNOrePost_T4_M:
+	emote_exclamation_mark
+	walk_fast_up
+	walk_fast_right
+	walk_fast_right
+	face_up
+	step_end
+
+OreburghCity_EventScript_SNOrePost_T4_P:
+	face_down
+	step_end
+
+OreburghCity_EventScript_SNOrePost_T5::
+	goto_if_set FLAG_SN_HIDE_ORE_BARRY_POST, OreburghCity_EventScript_SNOrePost_T5_End
+	lockall
+	applymovement LOCALID_SN_ORE_BARRY_POST, OreburghCity_EventScript_SNOrePost_T5_M
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, OreburghCity_EventScript_SNOrePost_T5_P
+	waitmovement 0
+	goto OreburghCity_EventScript_SNBarryPost
+OreburghCity_EventScript_SNOrePost_T5_End:
+	end
+
+OreburghCity_EventScript_SNOrePost_T5_M:
+	emote_exclamation_mark
+	walk_fast_up
+	walk_fast_up
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	walk_fast_up
+	face_right
+	step_end
+
+OreburghCity_EventScript_SNOrePost_T5_P:
+	face_left
+	step_end
+
+OreburghCity_EventScript_SNOrePost_T6::
+	goto_if_set FLAG_SN_HIDE_ORE_BARRY_POST, OreburghCity_EventScript_SNOrePost_T6_End
+	lockall
+	applymovement LOCALID_SN_ORE_BARRY_POST, OreburghCity_EventScript_SNOrePost_T6_M
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, OreburghCity_EventScript_SNOrePost_T6_P
+	waitmovement 0
+	goto OreburghCity_EventScript_SNBarryPost
+OreburghCity_EventScript_SNOrePost_T6_End:
+	end
+
+OreburghCity_EventScript_SNOrePost_T6_M:
+	emote_exclamation_mark
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	face_left
+	step_end
+
+OreburghCity_EventScript_SNOrePost_T6_P:
+	face_right
+	step_end
+
+OreburghCity_EventScript_SNOrePost_T7::
+	goto_if_set FLAG_SN_HIDE_ORE_BARRY_POST, OreburghCity_EventScript_SNOrePost_T7_End
+	lockall
+	applymovement LOCALID_SN_ORE_BARRY_POST, OreburghCity_EventScript_SNOrePost_T7_M
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, OreburghCity_EventScript_SNOrePost_T7_P
+	waitmovement 0
+	goto OreburghCity_EventScript_SNBarryPost
+OreburghCity_EventScript_SNOrePost_T7_End:
+	end
+
+OreburghCity_EventScript_SNOrePost_T7_M:
+	emote_exclamation_mark
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	face_right
+	step_end
+
+OreburghCity_EventScript_SNOrePost_T7_P:
+	face_left
+	step_end
+
+OreburghCity_EventScript_SNOrePost_T8::
+	goto_if_set FLAG_SN_HIDE_ORE_BARRY_POST, OreburghCity_EventScript_SNOrePost_T8_End
+	lockall
+	applymovement LOCALID_SN_ORE_BARRY_POST, OreburghCity_EventScript_SNOrePost_T8_M
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, OreburghCity_EventScript_SNOrePost_T8_P
+	waitmovement 0
+	goto OreburghCity_EventScript_SNBarryPost
+OreburghCity_EventScript_SNOrePost_T8_End:
+	end
+
+OreburghCity_EventScript_SNOrePost_T8_M:
+	emote_exclamation_mark
+	walk_fast_up
+	walk_fast_up
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_up
+	face_left
+	step_end
+
+OreburghCity_EventScript_SNOrePost_T8_P:
+	face_right
+	step_end
+
+OreburghCity_EventScript_SNBarryPost::
+	lockall
+	msgbox OreburghCity_Text_SNPost1, MSGBOX_DEFAULT
+	msgbox OreburghCity_Text_SNPost2, MSGBOX_DEFAULT
+	msgbox OreburghCity_Text_SNPost3, MSGBOX_DEFAULT
+	closemessage
+	setflag FLAG_SN_ORE_BARRY_POST
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_SN_ORE_BARRY_POST
+	setflag FLAG_SN_HIDE_ORE_BARRY_POST
+	fadescreen FADE_FROM_BLACK
+	releaseall
+	end
+
+OreburghCity_Text_SNPost1:
+	.string "{RIVAL}: Whoops! {PLAYER}! You got\n"
+	.string "the Gym Badge, huh?\p"
+	.string "Eterna City is the next place with a\n"
+	.string "Gym that gives away Badges, right?$"
+
+OreburghCity_Text_SNPost2:
+	.string "{RIVAL}: So, yeah, I went to Route\n"
+	.string "207, but you can’t go there without a\l"
+	.string "Bicycle.\p"
+	.string "I made my team battle and toughened\n"
+	.string "them up, so it wasn’t a waste.$"
+
+OreburghCity_Text_SNPost3:
+	.string "{RIVAL}: So, I’m going back to\n"
+	.string "Jubilife City. Next stop, the Eterna\l"
+	.string "Gym Badge!\p"
+	.string "Ten seconds before I dash!\p"
+	.string "Nine...\p"
+	.string "Bah! Who’s got time to count?!$"

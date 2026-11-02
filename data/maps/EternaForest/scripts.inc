@@ -1,4 +1,5 @@
 EternaForest_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, EternaForest_OnTransitionSN
 	.byte 0
 
 EternaForest_EventScript_Cheryl::
@@ -250,3 +251,41 @@ EternaForest_EventScript_SNHoneyTree_Fresh:
 EternaForest_EventScript_SNHoneyTree_End:
 	release
 	end
+
+EternaForest_OnTransitionSN:
+	call EternaForest_EventScript_SNVis_CHATEAU_GARDENIA
+	end
+
+EternaForest_EventScript_SNVis_CHATEAU_GARDENIA:
+	setflag FLAG_SN_HIDE_CHATEAU_GARDENIA
+	goto_if_unset FLAG_BADGE02_GET, EternaForest_EventScript_SNVis_CHATEAU_GARDENIA_End
+	clearflag FLAG_SN_HIDE_CHATEAU_GARDENIA
+EternaForest_EventScript_SNVis_CHATEAU_GARDENIA_End:
+	return
+
+EternaForest_EventScript_SNGardenia::
+	lock
+	faceplayer
+	msgbox EternaForest_Text_SNGardenia1, MSGBOX_DEFAULT
+	msgbox EternaForest_Text_SNGardenia2, MSGBOX_DEFAULT
+	release
+	end
+
+EternaForest_Text_SNGardenia1:
+	.string "Gardenia: Hiya! Were you intrigued by\n"
+	.string "the rumors going around, too?\p"
+	.string "Gardenia: You know, people’ve been\n"
+	.string "talking about the ghost POKéMON of\l"
+	.string "the Old Chateau.\p"
+	.string "I’ve been hearing rumors about\n"
+	.string "sinister shadows, too.$"
+
+EternaForest_Text_SNGardenia2:
+	.string "Gardenia: I should check it out myself,\n"
+	.string "but going in there is...\p"
+	.string "...Well, you know, being that I’m a Gym\n"
+	.string "Leader, I’m always busy.\p"
+	.string "So, since I’m so busy, I can’t go in. It’s\n"
+	.string "not because I’m s-scared!\p"
+	.string "S-so, good luck with your\n"
+	.string "investigation!$"

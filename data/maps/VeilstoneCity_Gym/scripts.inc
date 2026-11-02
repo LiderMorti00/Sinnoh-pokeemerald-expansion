@@ -486,18 +486,8 @@ VeilstoneCity_Gym_Text_ExplainTM:
 VeilstoneCity_Gym_Text_PtGymGuide:
 	.string "Hey, there! How’s it going,\n"
 	.string "Champ-to-be?\p"
-	.string "The Gym Leader is a user of\n"
-	.string "Fighting-type POKéMON.\p"
-	.string "She’d be a terror against Normal-type\n"
-	.string "POKéMON.\p"
-	.string "But! And it’s a big but! Just between\n"
-	.string "you and me...\p"
-	.string "Maylene, the Gym Leader, said Flying-\n"
-	.string "and Psychic-type POKéMON could be\p"
-	.string "real trouble for her!\p"
-	.string "If you want to battle her, smack the\n"
-	.string "punching bags along the rails.\p"
-	.string "You have to hit those bags hard!$"
+	.string "I’m the Gym guide! I help out Trainers\n"
+	.string "who come to challenge the Gym Leader.$"
 
 VeilstoneCity_Gym_Text_PtGymGuideAfter:
 	.string "Oh! {PLAYER}! You’ve beaten the Gym\n"
@@ -553,6 +543,9 @@ VeilstoneCity_Gym_Text_SNGuideInfo:
 	.string "MACHOKE and her partner LUCARIO.\p"
 	.string "Fighting types are weak to Flying,\n"
 	.string "Psychic and Fairy moves!\p"
-	.string "Push the punching bags along the rails\n"
-	.string "to clear a path through the Gym.$"
+	.string "This Gym is a pitch-dark maze. Every\n"
+	.string "Trainer you defeat makes the room a\l"
+	.string "little brighter.\p"
+	.string "Battle them all to light up the way to\n"
+	.string "MAYLENE!$"
 

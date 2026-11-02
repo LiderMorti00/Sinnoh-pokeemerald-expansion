@@ -52,7 +52,14 @@ PastoriaCity_GreatMarshGate_EventScript_SNReturnEnd:
 PastoriaCity_GreatMarshGate_EventScript_SNAttendant::
 	lock
 	faceplayer
-	msgbox PastoriaCity_GreatMarshGate_EventScript_SNInfoT, MSGBOX_DEFAULT
+	msgbox PastoriaCity_GreatMarshGate_Text_SNFirst, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, PastoriaCity_GreatMarshGate_EventScript_SNNotFirst
+	msgbox PastoriaCity_GreatMarshGate_Text_SNExplain, MSGBOX_DEFAULT
+	release
+	end
+
+PastoriaCity_GreatMarshGate_EventScript_SNNotFirst:
+	msgbox PastoriaCity_GreatMarshGate_Text_SNEnjoy, MSGBOX_DEFAULT
 	release
 	end
 
@@ -144,3 +151,21 @@ PastoriaCity_GreatMarshGate_EventScript_SNBinoculars_T2:
 	.string "{PLAYER} looked through the\n"
 	.string "binoculars... A wild {STR_VAR_1} can be\l"
 	.string "seen in the Great Marsh today!$"
+
+PastoriaCity_GreatMarshGate_Text_SNFirst:
+	.string "Welcome to the Great Marsh! Is this\n"
+	.string "your first Safari Game?$"
+
+PastoriaCity_GreatMarshGate_Text_SNExplain:
+	.string "When you enter the Great Marsh, you\n"
+	.string "start with 30 Safari Balls.\p"
+	.string "That’s the only kind of Ball you’re\n"
+	.string "allowed to use in the Safari Game.\p"
+	.string "The game is over when you run out of\n"
+	.string "Safari Balls, or when you’ve walked\p"
+	.string "500 steps.\p"
+	.string "Please do enjoy the untamed nature of\n"
+	.string "the Great Marsh!$"
+
+PastoriaCity_GreatMarshGate_Text_SNEnjoy:
+	.string "I see. Enjoy your Safari Game!$"

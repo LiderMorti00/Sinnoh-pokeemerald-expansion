@@ -9,14 +9,14 @@ HearthomeCity_Gym_EventScript_Donny::
 	end
 
 HearthomeCity_Gym_Text_DonnyIntro:
-	.string "Hey, now! You’re not even close to the\n"
-	.string "door yet.\p"
+	.string "Hey, now! You’re not even close to\n"
+	.string "FANTINA’s room yet.\p"
 	.string "You have to beat me before you can go,\n"
 	.string "you know?$"
 
 HearthomeCity_Gym_Text_DonnyDefeat:
-	.string "Argh! I should’ve dazzled you by\n"
-	.string "shining my light in your eyes!$"
+	.string "Argh! I should’ve sent you back to the\n"
+	.string "entrance with a warp panel!$"
 
 HearthomeCity_Gym_Text_DonnyPost:
 	.string "Just walk around and look for the blue\n"
@@ -89,8 +89,8 @@ HearthomeCity_Gym_Text_ChanceDefeat:
 HearthomeCity_Gym_Text_ChancePost:
 	.string "Whatever happens in life, it’s better\n"
 	.string "to try to enjoy it the best one can.\p"
-	.string "Being in the dark here, I came to\n"
-	.string "realize that.$"
+	.string "Getting lost between these rooms\n"
+	.string "again and again, I came to realize that.$"
 
 HearthomeCity_Gym_EventScript_Catherine::
 	trainerbattle_single TRAINER_CAMERON_4, HearthomeCity_Gym_Text_CatherineIntro, HearthomeCity_Gym_Text_CatherineDefeat
@@ -98,8 +98,9 @@ HearthomeCity_Gym_EventScript_Catherine::
 	end
 
 HearthomeCity_Gym_Text_CatherineIntro:
-	.string "What does it feel like, taking one step\n"
-	.string "after another into darkness?$"
+	.string "What does it feel like, stepping on one\n"
+	.string "warp panel after another without\l"
+	.string "knowing where it leads?$"
 
 HearthomeCity_Gym_Text_CatherineDefeat:
 	.string "You’re the kind of person who can keep\n"
@@ -207,32 +208,10 @@ HearthomeCity_Gym_Text_ExplainTM:
 	.string "turn critical often!$"
 
 HearthomeCity_Gym_Text_PtGymGuide:
-	.string "Hey, there! Hello, Champ-to-be! Let me\n"
-	.string "tell you how this Gym is wicked!\p"
-	.string "I’ll tell you! First, it’s pitch-black!\p"
-	.string "Also, there are the usual Gym Trainers.\n"
-	.string "They have flashlights, too.\p"
-	.string "If you cast a light on one, or they\n"
-	.string "catch you in the light, the battle’s on!\p"
-	.string "OK, now this is really important! It’s\n"
-	.string "about the tiles on the floor.\p"
-	.string "First, find the one blue tile in the\n"
-	.string "room, and memorize the mark on it.\p"
-	.string "Next, head for the red door with the\n"
-	.string "same mark on it.\p"
-	.string "Advance through the correct red doors\n"
-	.string "to reach the Gym Leader.\p"
-	.string "If you choose a wrong red door, you get\n"
-	.string "sent back here, though.\p"
-	.string "Oops! How silly of me! I forgot to tell\n"
-	.string "you something vital!\p"
-	.string "The Gym Leader here is a user of\n"
-	.string "Ghost-type POKéMON.\p"
-	.string "Beware, Normal-type moves have no\n"
-	.string "effect at all on ghosts!\p"
-	.string "It’s as if they weren’t there! But\n"
-	.string "you’ll have to see for yourself.\p"
-	.string "Go get ’em, challenger! I believe in you!$"
+	.string "Hey, there! How’s it going,\n"
+	.string "Champ-to-be?\p"
+	.string "I’m the Gym guide! I help out Trainers\n"
+	.string "who come to challenge the Gym Leader.$"
 
 HearthomeCity_Gym_Text_PtGymGuideAfter:
 	.string "Oh! {PLAYER}! You’ve beaten the Gym\n"
@@ -293,8 +272,10 @@ HearthomeCity_Gym_Text_SNGuideInfo:
 	.string "Ghost types are weak to Ghost and\n"
 	.string "Dark moves, and Normal and Fighting\l"
 	.string "moves can’t touch them!\p"
-	.string "The Gym is pitch dark. Each room asks a\n"
-	.string "math question: walk through the door\l"
-	.string "with the right answer to reach\l"
-	.string "FANTINA!$"
+	.string "The Gym is split into nine rooms linked\n"
+	.string "by warp panels. Step on a panel to be\l"
+	.string "sent to another room.\p"
+	.string "Some panels take you back where you\n"
+	.string "started, so remember the ones you\l"
+	.string "used! FANTINA waits in the middle room.$"
 

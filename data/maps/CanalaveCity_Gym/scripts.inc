@@ -25,15 +25,15 @@ CanalaveCity_Gym_EventScript_Jackson::
 	end
 
 CanalaveCity_Gym_Text_JacksonIntro:
-	.string "Up and down you go on the lifts. Me? I\n"
-	.string "like to battle!$"
+	.string "Round and round you go on the arrow\n"
+	.string "panels. Me? I like to battle!$"
 
 CanalaveCity_Gym_Text_JacksonDefeat:
 	.string "You’ve got me feeling down!$"
 
 CanalaveCity_Gym_Text_JacksonPost:
 	.string "I can’t keep this up! I’ll go back to\n"
-	.string "working on the lifts.$"
+	.string "spinning on the panels.$"
 
 CanalaveCity_Gym_EventScript_Gary::
 	trainerbattle_single TRAINER_JERRY_5, CanalaveCity_Gym_Text_GaryIntro, CanalaveCity_Gym_Text_GaryDefeat
@@ -227,11 +227,10 @@ CanalaveCity_Gym_Text_ExplainTM:
 	.string "target’s Special Defense.$"
 
 CanalaveCity_Gym_Text_PtGymGuide:
-	.string "Hey, there! Champ-to-be!\p"
-	.string "The Gym Leader here uses Steel-type\n"
-	.string "POKéMON.\p"
-	.string "Steel-type POKéMON have high Defense,\n"
-	.string "so you’d have to hit them hard!$"
+	.string "Hey, there! How’s it going,\n"
+	.string "Champ-to-be?\p"
+	.string "I’m the Gym guide! I help out Trainers\n"
+	.string "who come to challenge the Gym Leader.$"
 
 CanalaveCity_Gym_Text_PtGymGuideAfter:
 	.string "Oh! {PLAYER}! You’ve beaten the Gym\n"
@@ -294,6 +293,9 @@ CanalaveCity_Gym_Text_SNGuideInfo:
 	.string "MAGNETON, STEELIX and BASTIODON.\p"
 	.string "Steel types are weak to Fire, Fighting\n"
 	.string "and Ground moves!\p"
-	.string "His Trainers guard the way across the\n"
-	.string "Gym. Beat them to reach BYRON!$"
+	.string "The floor is full of arrow panels that\n"
+	.string "spin you around and send you sliding.\l"
+	.string "The yellow panels stop you.\p"
+	.string "Check where each arrow points to find\n"
+	.string "the way through the maze to BYRON!$"
 

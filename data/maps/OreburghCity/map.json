@@ -240,6 +240,34 @@
       "trainer_sight_or_berry_tree_id": "ITEM_YELLOW_SHARD",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_OLD_MAGMA_HIDEOUT_B1F_MAX_ELIXIR"
+    },
+    {
+      "local_id": "LOCALID_SN_ORE_BARRY",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_BARRY",
+      "x": 30,
+      "y": 23,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OreburghCity_EventScript_SNBarryTalk",
+      "flag": "FLAG_SN_HIDE_ORE_BARRY"
+    },
+    {
+      "local_id": "LOCALID_SN_ORE_BARRY_POST",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_BARRY",
+      "x": 30,
+      "y": 26,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "OreburghCity_EventScript_SNBarryPost",
+      "flag": "FLAG_SN_HIDE_ORE_BARRY_POST"
     }
   ],
   "warp_events": [
@@ -358,6 +386,87 @@
       "var": "VAR_SINNOH_STORY",
       "var_value": "17",
       "script": "OreburghCity_EventScript_GymClosed"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 24,
+      "elevation": 3,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "OreburghCity_EventScript_SNOrePost_T0"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 24,
+      "elevation": 3,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "OreburghCity_EventScript_SNOrePost_T1"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 24,
+      "elevation": 3,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "OreburghCity_EventScript_SNOrePost_T2"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 24,
+      "elevation": 3,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "OreburghCity_EventScript_SNOrePost_T3"
+    },
+    {
+      "type": "trigger",
+      "x": 32,
+      "y": 24,
+      "elevation": 3,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "OreburghCity_EventScript_SNOrePost_T4"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 23,
+      "elevation": 3,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "OreburghCity_EventScript_SNOrePost_T5"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 23,
+      "elevation": 3,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "OreburghCity_EventScript_SNOrePost_T6"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 23,
+      "elevation": 3,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "OreburghCity_EventScript_SNOrePost_T7"
+    },
+    {
+      "type": "trigger",
+      "x": 32,
+      "y": 23,
+      "elevation": 3,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "OreburghCity_EventScript_SNOrePost_T8"
     }
   ],
   "bg_events": [

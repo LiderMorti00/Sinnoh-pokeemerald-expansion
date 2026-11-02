@@ -288,12 +288,13 @@ SunyshoreCity_Gym_Text_TieraIntro:
 	.string "sure now?$"
 
 SunyshoreCity_Gym_Text_TieraDefeat:
-	.string "The gears spin round and round... I spin\n"
-	.string "down and out...$"
+	.string "The barriers crackle on and off... And\n"
+	.string "I’m switched off...$"
 
 SunyshoreCity_Gym_Text_TieraPost:
-	.string "Our Gym’s trick walkways are sure to\n"
-	.string "make your head spin!$"
+	.string "Our Gym’s electric barriers are sure to\n"
+	.string "give you a shock! Think before you\l"
+	.string "step on a switch.$"
 
 SunyshoreCity_Gym_EventScript_Forrest::
 	trainerbattle_single TRAINER_MIGUEL_4, SunyshoreCity_Gym_Text_ForrestIntro, SunyshoreCity_Gym_Text_ForrestDefeat
@@ -539,7 +540,10 @@ SunyshoreCity_Gym_Text_ExplainTM:
 	.string "It’s electrifying!$"
 
 SunyshoreCity_Gym_Text_PtGymGuide:
-	.string "Hey, Champ-to-be! Go for it!$"
+	.string "Hey, there! How’s it going,\n"
+	.string "Champ-to-be?\p"
+	.string "I’m the Gym guide! I help out Trainers\n"
+	.string "who come to challenge the Gym Leader.$"
 
 SunyshoreCity_Gym_Text_PtGymGuideAfter:
 	.string "Oh! {PLAYER}! Did you beat the Gym\n"
@@ -615,7 +619,7 @@ SunyshoreCity_Gym_Text_SNGuideInfo:
 	.string "Electric types are weak to Ground\n"
 	.string "moves, and Ground types are immune to\l"
 	.string "Electric moves!\p"
-	.string "Step on the switches to rotate the\n"
-	.string "gear walkways and make a path to\l"
-	.string "VOLKNER.$"
+	.string "Electric barriers block the Gym. Step\n"
+	.string "on the floor switches to turn them on\l"
+	.string "and off and open a path to VOLKNER.$"
 

@@ -194,6 +194,7 @@ SnowpointCity_Gym_B1F_Text_SergioDefeat:
 	.string "This result... ...It’s cold. Bitter cold.$"
 
 SnowpointCity_Gym_B1F_Text_SergioPost:
-	.string "The higher up you slide from, the more\n"
-	.string "speed you’ll have to smash\p"
-	.string "those big snowballs.$"
+	.string "Up there, the ice cracks with every\n"
+	.string "step.\p"
+	.string "Cross each tile only once, or you’ll end\n"
+	.string "up down here with us again!$"

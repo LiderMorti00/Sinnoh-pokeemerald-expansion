@@ -65,9 +65,10 @@ EternaCity_Gym_Text_GardeniaPost:
 	.string "love them too!$"
 
 EternaCity_Gym_Text_Guide:
-	.string "Hey, champ in the making! GARDENIA\n"
-	.string "uses GRASS-type POKéMON. FIRE and\l"
-	.string "FLYING moves are your best bet!$"
+	.string "Hey, there! How’s it going,\n"
+	.string "Champ-to-be?\p"
+	.string "I’m the Gym guide! I help out Trainers\n"
+	.string "who come to challenge the Gym Leader.$"
 
 EternaCity_Gym_EventScript_Caroline::
 	trainerbattle_single TRAINER_VITO, EternaCity_Gym_Text_CarolineIntro, EternaCity_Gym_Text_CarolineDefeat
@@ -180,13 +181,13 @@ EternaCity_Gym_EventScript_SNRematch_NoT:
 EternaCity_Gym_Text_SNGuideInfo:
 	.string "Let me tell you about this Gym!\p"
 	.string "The Gym Leader is GARDENIA, the\n"
-	.string "Grass-Type Lover. Her Gym is a garden\l"
-	.string "around a giant flower clock.\p"
+	.string "Grass-Type Lover. Her Gym is an indoor\l"
+	.string "garden full of trees and flower beds.\p"
 	.string "She uses Grass-type POKéMON like\n"
 	.string "TURTWIG, CHERRIM and ROSERADE.\p"
 	.string "Grass types are weak to Fire, Flying,\n"
 	.string "Ice, Poison and Bug moves!\p"
 	.string "Her Trainers are waiting among the\n"
-	.string "flowers. Beat them on your way to\l"
-	.string "GARDENIA.$"
+	.string "trees. Beat them on your way to\l"
+	.string "GARDENIA!$"
 

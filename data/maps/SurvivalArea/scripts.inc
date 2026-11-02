@@ -1,4 +1,5 @@
 SurvivalArea_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, SurvivalArea_OnTransitionSN
 	.byte 0
 
 SurvivalArea_EventScript_PtNpc1::
@@ -70,7 +71,24 @@ SurvivalArea_EventScript_SNBarry_After:
 	end
 
 SurvivalArea_EventScript_SNBarry_Done:
+	special SinnohDayOfWeek
+	switch VAR_RESULT
+	case 1, SurvivalArea_EventScript_SNBarry_Done1
+	case 3, SurvivalArea_EventScript_SNBarry_Done1
+	case 5, SurvivalArea_EventScript_SNBarry_Done1
+	case 2, SurvivalArea_EventScript_SNBarry_Done2
+	case 4, SurvivalArea_EventScript_SNBarry_Done2
 	msgbox SurvivalArea_EventScript_SNBarry_DoneT, MSGBOX_DEFAULT
+	release
+	end
+
+SurvivalArea_EventScript_SNBarry_Done1:
+	msgbox SurvivalArea_Text_SNBarryTalk1, MSGBOX_DEFAULT
+	release
+	end
+
+SurvivalArea_EventScript_SNBarry_Done2:
+	msgbox SurvivalArea_Text_SNBarryTalk2, MSGBOX_DEFAULT
 	release
 	end
 SurvivalArea_EventScript_SNBarry_Intro:
@@ -97,3 +115,54 @@ SurvivalArea_EventScript_SNBarry_DoneT:
 	.string "wins at the Battle Tower!\p"
 	.string "Huh? My longest winning streak? What,\n"
 	.string "you’re going to grill me now?$"
+
+SurvivalArea_OnTransitionSN:
+	call SurvivalArea_EventScript_SNVis_SURV_BUCK
+	end
+
+SurvivalArea_EventScript_SNVis_SURV_BUCK:
+	setflag FLAG_SN_HIDE_SURV_BUCK
+	goto_if_set FLAG_SN_SURVIVAL_BUCK, SurvivalArea_EventScript_SNVis_SURV_BUCK_End
+	clearflag FLAG_SN_HIDE_SURV_BUCK
+SurvivalArea_EventScript_SNVis_SURV_BUCK_End:
+	return
+
+SurvivalArea_EventScript_SNBuck::
+	lock
+	faceplayer
+	msgbox SurvivalArea_Text_SNBuck, MSGBOX_DEFAULT
+	closemessage
+	setflag FLAG_SN_SURVIVAL_BUCK
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_SN_SURV_BUCK
+	setflag FLAG_SN_HIDE_SURV_BUCK
+	fadescreen FADE_FROM_BLACK
+	release
+	end
+
+SurvivalArea_Text_SNBuck:
+	.string "Buck: Yo, if it isn’t {PLAYER}!\p"
+	.string "This! It’s my place! Drop in, hey?$"
+
+SurvivalArea_Text_SNBarryTalk1:
+	.string "{RIVAL}: Oh, it’s you, {PLAYER}.\p"
+	.string "Did you battle with everyone?\p"
+	.string "Don’t you think it’s kind of cool,\n"
+	.string "though?\p"
+	.string "When people talk about POKéMON, they\n"
+	.string "all start smiling!$"
+
+SurvivalArea_Text_SNBarryTalk2:
+	.string "{RIVAL}: ...! Oh, it’s you, {PLAYER}.\p"
+	.string "You know, the best Trainers must really\n"
+	.string "love POKéMON from their heart.\p"
+	.string "I’m talking about people like the Gym\n"
+	.string "Leaders, of course.\p"
+	.string "People like the Tower Tycoon and the\n"
+	.string "other Frontier Brains, too.\p"
+	.string "You can tell they love POKéMON when\n"
+	.string "you’re battling them.\p"
+	.string "But I’m not conceding anything to\n"
+	.string "them, or to you!\p"
+	.string "Because I’m still going to be the\n"
+	.string "greatest Trainer ever!$"

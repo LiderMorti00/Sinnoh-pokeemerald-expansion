@@ -71,7 +71,7 @@ SnowpointCity_Gym_1F_EventScript_FallThroughIce::
 	waitmovement 0
 	playse SE_FALL
 	delay 60
-	warphole MAP_SOOTOPOLIS_CITY_GYM_B1F
+	warphole MAP_SNOWPOINT_CITY_GYM_B1F
 	waitstate
 	end
 
@@ -236,16 +236,8 @@ SnowpointCity_Gym_1F_Text_ExplainTM:
 SnowpointCity_Gym_1F_Text_PtGymGuide:
 	.string "Hey, there! How’s it going,\n"
 	.string "Champ-to-be?\p"
-	.string "Do you see the big snowballs placed\n"
-	.string "here and there?\p"
-	.string "You need to slide on the ice with\n"
-	.string "enough momentum to crush them.\p"
-	.string "The Gym Leader is a user of Ice-type\n"
-	.string "POKéMON.\p"
-	.string "Melt her defenses with scorching- hot\n"
-	.string "Fire-type moves!\p"
-	.string "It’s all about focus with this Gym. Bear\n"
-	.string "down and focus!$"
+	.string "I’m the Gym guide! I help out Trainers\n"
+	.string "who come to challenge the Gym Leader.$"
 
 SnowpointCity_Gym_1F_Text_PtGymGuideAfter:
 	.string "Oh! {PLAYER}! You’ve beaten the Gym\n"
@@ -302,7 +294,10 @@ SnowpointCity_Gym_1F_Text_SNGuideInfo:
 	.string "FROSLASS.\p"
 	.string "Ice types are weak to Fire, Fighting,\n"
 	.string "Rock and Steel moves!\p"
-	.string "Slide across the ice and smash the\n"
-	.string "snowballs to reach her. Watch your\l"
-	.string "footing!$"
+	.string "The floor is thin ice. It cracks when\n"
+	.string "you walk on it, and if you step on a\l"
+	.string "cracked tile you fall through!\p"
+	.string "Step on every ice tile of a room once\n"
+	.string "to open the stairs up. If you fall, you\l"
+	.string "land in the basement with her Trainers.$"
 

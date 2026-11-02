@@ -221,6 +221,34 @@
       "trainer_sight_or_berry_tree_id": "ITEM_TM_ROCK_POLISH",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_MTCORONET_1F_NORTH_ROOM1_TM_ROCK_POLISH"
+    },
+    {
+      "local_id": "LOCALID_SN_FOG_GRUNT_1",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_GALAXY_GRUNT_M",
+      "x": 17,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MtCoronet_1F_North_Room1_EventScript_SNFog1",
+      "flag": "FLAG_SN_HIDE_FOG_GRUNTS"
+    },
+    {
+      "local_id": "LOCALID_SN_FOG_GRUNT_2",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_GALAXY_GRUNT_M",
+      "x": 18,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MtCoronet_1F_North_Room1_EventScript_SNFog2",
+      "flag": "FLAG_SN_HIDE_FOG_GRUNTS"
     }
   ],
   "warp_events": [

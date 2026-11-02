@@ -6,6 +6,10 @@ OreburghMine_B2F_EventScript_Roark::
 	faceplayer
 	msgbox OreburghMine_B2F_Text_Roark, MSGBOX_DEFAULT
 	closemessage
+	playse SE_M_ROCK_THROW
+	waitse
+	msgbox OreburghMine_B2F_Text_SNRoark2, MSGBOX_DEFAULT
+	closemessage
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_MINE_ROARK
 	setflag FLAG_HIDE_MINE_ROARK
@@ -16,14 +20,17 @@ OreburghMine_B2F_EventScript_Roark::
 	end
 
 OreburghMine_B2F_Text_Roark:
-	.string "ROARK: Hm? A challenger, all the\n"
-	.string "way down here? I'm ROARK, the\l"
-	.string "OREBURGH GYM LEADER.\p"
-	.string "Mining is my other job, you see.\n"
-	.string "There's always more coal to dig!\p"
-	.string "If you want to battle, head back\n"
-	.string "to the GYM. I'll be waiting for\l"
-	.string "you there!$"
+	.string "ROARK: OK, stand back and watch this.\p"
+	.string "Using the hidden move Rock Smash, a\n"
+	.string "boulder blocking your way...$"
+OreburghMine_B2F_Text_SNRoark2:
+	.string "ROARK: Fallen boulders need to be\n"
+	.string "smashed so they’re out of the way.\p"
+	.string "If you could get the Badge from the\n"
+	.string "Gym in town, you’d be able\p"
+	.string "to do this too.\p"
+	.string "Of course, you’d have to beat the Gym\n"
+	.string "Leader first. That’d be me!$"
 
 OreburghMine_B2F_EventScript_Mason::
 	trainerbattle_single TRAINER_MARY, OreburghMine_B2F_Text_MasonIntro, OreburghMine_B2F_Text_MasonDefeat
