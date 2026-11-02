@@ -1,4 +1,5 @@
 SunyshoreCity_Gym_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, SunyshoreCity_Gym_OnTransitionSN
 	map_script MAP_SCRIPT_ON_LOAD, SunyshoreCity_Gym_OnLoad
 	.byte 0
 
@@ -590,3 +591,14 @@ SunyshoreCity_Gym_EventScript_SNRematch_After:
 
 SunyshoreCity_Gym_EventScript_SNRematch_NoT:
 	.string "Come back whenever you’re ready!$"
+
+SunyshoreCity_Gym_OnTransitionSN:
+	call SunyshoreCity_Gym_EventScript_SNVis_GYM_VOLKNER
+	end
+
+SunyshoreCity_Gym_EventScript_SNVis_GYM_VOLKNER:
+	setflag FLAG_SN_HIDE_GYM_VOLKNER
+	goto_if_unset FLAG_SN_MET_VOLKNER, SunyshoreCity_Gym_EventScript_SNVis_GYM_VOLKNER_End
+	clearflag FLAG_SN_HIDE_GYM_VOLKNER
+SunyshoreCity_Gym_EventScript_SNVis_GYM_VOLKNER_End:
+	return

@@ -585,6 +585,8 @@ const union AnimCmd *const sBackAnims_OldManPokedude[] = {
 
 const u8 gTrainerBackPic_SinnohLucas[] = INCGFX_U8("graphics/trainers/back_pics/sinnoh/lucas.png", ".4bpp");
 const u16 gTrainerBackPicPalette_SinnohLucas[] = INCGFX_U16("graphics/trainers/back_pics/sinnoh/lucas.png", ".gbapal");
+const u8 gTrainerBackPic_SinnohDawn[] = INCGFX_U8("graphics/trainers/back_pics/sinnoh/dawn.png", ".4bpp");
+const u16 gTrainerBackPicPalette_SinnohDawn[] = INCGFX_U16("graphics/trainers/back_pics/sinnoh/dawn.png", ".gbapal");
 const u8 gTrainerBackPic_SinnohCheryl[] = INCGFX_U8("graphics/trainers/back_pics/sinnoh/cheryl.png", ".4bpp");
 const u16 gTrainerBackPicPalette_SinnohCheryl[] = INCGFX_U16("graphics/trainers/back_pics/sinnoh/cheryl.png", ".gbapal");
 const u8 gTrainerBackPic_SinnohRiley[] = INCGFX_U8("graphics/trainers/back_pics/sinnoh/riley.png", ".4bpp");
@@ -728,7 +730,7 @@ const struct TrainerPicInfo gTrainerPicInfo[TRAINER_PIC_COUNT] =
         .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_None, gTrainerPalette_None),
         .backPic = TRAINER_BACK_PIC(1, gTrainerBackPic_None, gTrainerPalette_None, sBackAnims_None),
     },
-    // Proyecto Sinnoh: el protagonista es Lucas y la protagonista, de momento, Leaf
+    // Proyecto Sinnoh: el protagonista es Lucas y la protagonista, Dawn
     [TRAINER_PIC_BRENDAN] =
     {
         .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_SinnohLucas, gTrainerPalette_SinnohLucas),
@@ -736,8 +738,8 @@ const struct TrainerPicInfo gTrainerPicInfo[TRAINER_PIC_COUNT] =
     },
     [TRAINER_PIC_MAY] =
     {
-        .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_Leaf, gTrainerPalette_Leaf),
-        .backPic = TRAINER_BACK_PIC(5, gTrainerBackPic_Leaf, gTrainerBackPicPalette_Leaf, sBackAnims_Kanto),
+        .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_SinnohDawn, gTrainerPalette_SinnohDawn),
+        .backPic = TRAINER_BACK_PIC(4, gTrainerBackPic_SinnohDawn, gTrainerBackPicPalette_SinnohDawn, sBackAnims_Hoenn),
     },
     [TRAINER_PIC_RED] =
     {
@@ -1368,10 +1370,12 @@ const struct TrainerPicInfo gTrainerPicInfo[TRAINER_PIC_COUNT] =
     [TRAINER_PIC_SINNOH_LUCAS] =
     {
         .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_SinnohLucas, gTrainerPalette_SinnohLucas),
+        .backPic = TRAINER_BACK_PIC(4, gTrainerBackPic_SinnohLucas, gTrainerBackPicPalette_SinnohLucas, sBackAnims_Hoenn),
     },
     [TRAINER_PIC_SINNOH_DAWN] =
     {
         .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_SinnohDawn, gTrainerPalette_SinnohDawn),
+        .backPic = TRAINER_BACK_PIC(4, gTrainerBackPic_SinnohDawn, gTrainerBackPicPalette_SinnohDawn, sBackAnims_Hoenn),
     },
     [TRAINER_PIC_SINNOH_BARRY] =
     {

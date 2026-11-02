@@ -74,6 +74,7 @@ SunyshoreCity_Text_PtSign3:
 	.string "It's a blank sign painted white.$"
 
 SunyshoreCity_OnTransitionSN:
+	call SunyshoreCity_EventScript_SNVis_FLINT
 	call SunyshoreCity_EventScript_SNVis_JASMINE
 	end
 
@@ -116,3 +117,78 @@ SunyshoreCity_EventScript_SNJasmine_T2:
 	.string "POKéMON League.\p"
 	.string "...Um... I... I don’t know how I should say\n"
 	.string "this, but good luck.$"
+
+SunyshoreCity_EventScript_SNVis_FLINT:
+	setflag FLAG_SN_HIDE_FLINT
+	goto_if_set FLAG_BADGE08_GET, SunyshoreCity_EventScript_SNVis_FLINT_End
+	clearflag FLAG_SN_HIDE_FLINT
+SunyshoreCity_EventScript_SNVis_FLINT_End:
+	return
+
+SunyshoreCity_EventScript_SNFlint::
+	lock
+	faceplayer
+	goto_if_set FLAG_SN_MET_VOLKNER, SunyshoreCity_EventScript_SNFlint_Back
+	goto_if_set FLAG_SN_MET_FLINT, SunyshoreCity_EventScript_SNFlint_Wait
+	msgbox SunyshoreCity_EventScript_SNFlint_T1, MSGBOX_DEFAULT
+	msgbox SunyshoreCity_EventScript_SNFlint_T2, MSGBOX_DEFAULT
+	setflag FLAG_SN_MET_FLINT
+	release
+	end
+SunyshoreCity_EventScript_SNFlint_Wait:
+	msgbox SunyshoreCity_EventScript_SNFlint_T3, MSGBOX_DEFAULT
+	release
+	end
+SunyshoreCity_EventScript_SNFlint_Back:
+	msgbox SunyshoreCity_EventScript_SNFlint_T4, MSGBOX_DEFAULT
+	release
+	end
+
+SunyshoreCity_EventScript_SNFlint_T1:
+	.string "Yo! Fellow Trainer!\p"
+	.string "Your POKéMON are secure inside their\n"
+	.string "POKé BALLS, but there’s no masking\p"
+	.string "that aura of serious toughness!\p"
+	.string "Oops, sorry, I should introduce myself.\p"
+	.string "The name’s Flint! I’m one of the\n"
+	.string "POKéMON League’s Elite Four!$"
+
+SunyshoreCity_EventScript_SNFlint_T2:
+	.string "I just had this idea. Maybe you can pull\n"
+	.string "it off.\p"
+	.string "It’s about this town’s Gym Leader.\p"
+	.string "He’s really lost his enthusiasm lately\n"
+	.string "because there’ve been so few good\p"
+	.string "challengers worth his time.\p"
+	.string "He’s been so bored, he spends all his\n"
+	.string "time renovating the Gym.\p"
+	.string "And then the blackout happened... That\n"
+	.string "sure didn’t help lift his mood.\p"
+	.string "You know where I’m going with this,\n"
+	.string "don’t you?\p"
+	.string "I need you to give him a battle that’s\n"
+	.string "so hot, it will reignite his\p"
+	.string "passion for battling.\p"
+	.string "I’m counting on you, hotshot!$"
+
+SunyshoreCity_EventScript_SNFlint_T3:
+	.string "Flint: Yo! Hiya! He hasn’t come back\n"
+	.string "yet.\p"
+	.string "When he does, you know what you’ve\n"
+	.string "gotta do.\p"
+	.string "Give him a battle that’s so hot, it will\n"
+	.string "reignite his passion for battling!\p"
+	.string "I’m counting on you, hotshot!$"
+
+SunyshoreCity_EventScript_SNFlint_T4:
+	.string "Flint: Yo! Hiya! He’s finally come back!\p"
+	.string "He seemed to be feeling upbeat, too.\p"
+	.string "I have a hunch that he recognized your\n"
+	.string "toughness right away.\p"
+	.string "I bet he’s getting excited over the\n"
+	.string "thought of battling you.\p"
+	.string "Remember what you have to do, hotshot.\p"
+	.string "Give him a battle that’s so hot, it will\n"
+	.string "reignite his passion for battling!\p"
+	.string "All right, hotshot! I’ll be waiting at\n"
+	.string "the POKéMON League!$"

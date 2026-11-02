@@ -1,4 +1,5 @@
 Route217_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Route217_OnTransitionSN
 	.byte 0
 
 Route217_EventScript_Shawn::
@@ -193,3 +194,46 @@ Route217_EventScript_PtNpc1::
 	msgbox Route217_Text_PtNpc1_0, MSGBOX_DEFAULT
 	release
 	end
+
+Route217_OnTransitionSN:
+	call Route217_EventScript_SNVis_MAYLENE
+	end
+
+Route217_EventScript_SNVis_MAYLENE:
+	setflag FLAG_SN_HIDE_MAYLENE
+	goto_if_set FLAG_SN_MET_MAYLENE_217, Route217_EventScript_SNVis_MAYLENE_End
+	goto_if_set FLAG_BADGE07_GET, Route217_EventScript_SNVis_MAYLENE_End
+	clearflag FLAG_SN_HIDE_MAYLENE
+Route217_EventScript_SNVis_MAYLENE_End:
+	return
+
+Route217_EventScript_SNMaylene::
+	lock
+	faceplayer
+	msgbox Route217_EventScript_SNMaylene_T1, MSGBOX_DEFAULT
+	msgbox Route217_EventScript_SNMaylene_T2, MSGBOX_DEFAULT
+	closemessage
+	setflag FLAG_SN_MET_MAYLENE_217
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_SN_MAYLENE
+	setflag FLAG_SN_HIDE_MAYLENE
+	fadescreen FADE_FROM_BLACK
+	release
+	end
+
+Route217_EventScript_SNMaylene_T1:
+	.string "Maylene: Oh, {PLAYER}!$"
+
+Route217_EventScript_SNMaylene_T2:
+	.string "Um, are you maybe on your way to\n"
+	.string "Snowpoint City?\p"
+	.string "That’s where I’m going, too.\p"
+	.string "If I use Fly, I can get there instantly,\n"
+	.string "but I’m walking for my training.\p"
+	.string "I have no problem with this.\p"
+	.string "I’m used to the cold because I go\n"
+	.string "barefoot and lightly dressed.\p"
+	.string "...Achoo!\p"
+	.string "Oh, that was nothing. Really, I’m not\n"
+	.string "cold at all.\p"
+	.string "I’ll be going now. Please take care!$"

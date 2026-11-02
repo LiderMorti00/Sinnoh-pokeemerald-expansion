@@ -2965,4 +2965,37 @@
 #define FLAG_SN_RETURNED_SUITE_KEY                              FLAG_HIDE_ROUTE_112_TEAM_MAGMA
 #define FLAG_SN_SUITE_KEY_FOUND                                 FLAG_HIDE_CAVE_OF_ORIGIN_B1F_WALLACE
 
+
+// ---- Proyecto Sinnoh: historia de Platino (objetos, regalos y objetos ocultos) ----
+#define FLAG_SN_HIDE_CEL_CYNTHIA                                FLAG_HIDE_AQUA_HIDEOUT_1F_GRUNT_1_BLOCKING_ENTRANCE
+#define FLAG_SN_MET_KEIRA                                       FLAG_HIDE_AQUA_HIDEOUT_1F_GRUNT_2_BLOCKING_ENTRANCE
+#define FLAG_SN_HIDE_KEIRA                                      FLAG_HIDE_LEGEND_MON_CAVE_OF_ORIGIN
+#define FLAG_SN_MET_FANTINA                                     FLAG_HIDE_GRANITE_CAVE_STEVEN
+#define FLAG_SN_HIDE_GYM_BLOCK                                  FLAG_HIDE_BATTLE_FRONTIER_RECEPTION_GATE_SCOTT
+#define FLAG_SN_HIDE_FANTINA                                    FLAG_HIDE_BATTLE_FRONTIER_SUDOWOODO
+#define FLAG_SN_MET_CYRUS_CORONET                               FLAG_HIDE_ROUTE_111_ROCK_SMASH_TIP_GUY
+#define FLAG_SN_HIDE_CORONET_CYRUS                              FLAG_HIDE_JAGGED_PASS_MAGMA_GUARD
+#define FLAG_SN_VEIL_WAREHOUSE_DONE                             FLAG_HIDE_MAGMA_HIDEOUT_4F_GROUDON_ASLEEP
+#define FLAG_SN_VEIL_STORAGE_OPEN                               FLAG_HIDE_LILYCOVE_CITY_AQUA_GRUNTS
+#define FLAG_SN_HIDE_GYM_CP                                     FLAG_HIDE_MAGMA_HIDEOUT_GRUNTS
+#define FLAG_SN_HIDE_GYM_WAKE                                   FLAG_HIDE_FALLARBOR_POKEMON_CENTER_LANETTE
+#define FLAG_SN_HIDE_WH_GRUNTS                                  FLAG_HIDE_SLATEPORT_CITY_TEAM_AQUA
+#define FLAG_SN_HIDE_WH_CP                                      FLAG_HIDE_SLATEPORT_CITY_OCEANIC_MUSEUM_AQUA_GRUNTS
+#define FLAG_SN_HIDE_WH_LOOKER                                  FLAG_HIDE_SLATEPORT_CITY_OCEANIC_MUSEUM_2F_CAPTAIN_STERN
+#define FLAG_SN_HIDE_KEY_GRUNT                                  FLAG_HIDE_ROUTE_119_TEAM_AQUA
+#define FLAG_SN_RECEIVED_HM_FLY                                 FLAG_HIDE_WEATHER_INSTITUTE_2F_WORKERS
+#define FLAG_SN_HIDE_WH_IN_LOOKER                               FLAG_HIDE_ROUTE_116_WANDAS_BOYFRIEND
+#define FLAG_SN_HEARD_CYRUS_SPEECH                              FLAG_HIDE_TRICK_HOUSE_END_MAN
+#define FLAG_SN_HIDE_HALL_SPEECH                                FLAG_HIDE_ROUTE_110_TEAM_AQUA
+#define FLAG_SN_HIDE_BOMB                                       FLAG_HIDE_SLATEPORT_CITY_HARBOR_PATRONS
+#define FLAG_SN_MET_MAYLENE_217                                 FLAG_HIDE_FALLARBOR_AZURILL
+#define FLAG_SN_HIDE_MAYLENE                                    FLAG_HIDE_LILYCOVE_HARBOR_FERRY_ATTENDANT
+#define FLAG_SN_MET_VOLKNER                                     FLAG_HIDE_ROUTE_121_TEAM_AQUA_GRUNTS
+#define FLAG_SN_MET_FLINT                                       FLAG_HIDE_MT_PYRE_SUMMIT_ARCHIE
+#define FLAG_SN_HIDE_FLINT                                      FLAG_HIDE_MT_PYRE_SUMMIT_TEAM_AQUA
+#define FLAG_SN_HIDE_LH_VOLKNER                                 FLAG_HIDE_ROUTE_110_RIVAL
+#define FLAG_SN_HIDE_GYM_VOLKNER                                FLAG_HIDE_AQUA_HIDEOUT_GRUNTS
+#define FLAG_SN_LAB_CP_SAFE                                     FLAG_HIDE_MT_CHIMNEY_TEAM_AQUA
+#define FLAG_SN_HIDE_LAB_CP_SAFE                                FLAG_HIDE_MT_CHIMNEY_TEAM_MAGMA
+
 #endif // GUARD_CONSTANTS_FLAGS_H

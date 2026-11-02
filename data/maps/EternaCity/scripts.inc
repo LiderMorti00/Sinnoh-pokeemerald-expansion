@@ -262,7 +262,8 @@ EternaCity_EventScript_SNVis_ETERNA_CYNTHIA_EGG_End:
 EternaCity_EventScript_SNCynthiaEgg::
 	lock
 	faceplayer
-	msgbox EternaCity_EventScript_SNCynthiaEgg_T1, MSGBOX_DEFAULT
+	msgbox EternaCity_EventScript_SNCynthiaEgg_T1, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EternaCity_EventScript_SNCynthiaEgg_No
 	getpartysize
 	goto_if_eq VAR_RESULT, PARTY_SIZE, EternaCity_EventScript_SNCynthiaEgg_Full
 	giveegg SPECIES_TOGEPI
@@ -271,6 +272,7 @@ EternaCity_EventScript_SNCynthiaEgg::
 	waitfanfare
 	waitmessage
 	setflag FLAG_SN_RECEIVED_TOGEPI_EGG
+	msgbox EternaCity_EventScript_SNCynthiaEgg_T15, MSGBOX_DEFAULT
 	msgbox EternaCity_EventScript_SNCynthiaEgg_T2, MSGBOX_DEFAULT
 	closemessage
 	fadescreen FADE_TO_BLACK
@@ -283,22 +285,49 @@ EternaCity_EventScript_SNCynthiaEgg_Full:
 	msgbox EternaCity_EventScript_SNCynthiaEgg_FullT, MSGBOX_DEFAULT
 	release
 	end
+EternaCity_EventScript_SNCynthiaEgg_No:
+	msgbox EternaCity_EventScript_SNCynthiaEgg_NoT, MSGBOX_DEFAULT
+	release
+	end
 
 EternaCity_EventScript_SNCynthiaEgg_T1:
-	.string "Cynthia: Oh, hello again. I have\n"
-	.string "something I’d like you to have.\p"
-	.string "It’s a POKéMON Egg. I’d like you to\n"
-	.string "hatch it and raise the POKéMON with\l"
-	.string "care.$"
+	.string "Cynthia: Oh, there you are!\p"
+	.string "I was looking for you. I’ve got\n"
+	.string "something nice.\p"
+	.string "I wanted you to have this POKéMON Egg.\n"
+	.string "Will you accept it?$"
 
 EternaCity_EventScript_SNCynthiaEgg_Got:
 	.string "{PLAYER} received an Egg from Cynthia!$"
 
 EternaCity_EventScript_SNCynthiaEgg_T2:
-	.string "Cynthia: POKéMON hatched from Eggs\n"
-	.string "grow fond of the Trainer who raised\l"
-	.string "them. Take good care of it.$"
+	.string "Cynthia: Keep that Egg with you in your\n"
+	.string "party of POKéMON.\p"
+	.string "A POKéMON will hatch from it while you\n"
+	.string "are traveling.\p"
+	.string "I would be happy to know that it will\n"
+	.string "help fill another page of your POKéDEX.\p"
+	.string "See you again!$"
 
 EternaCity_EventScript_SNCynthiaEgg_FullT:
-	.string "Cynthia: Oh, you don’t have room for it\n"
-	.string "in your party. I’ll wait here for you.$"
+	.string "Cynthia: Oh? You have six POKéMON with\n"
+	.string "you already.\p"
+	.string "You don’t have room for this Egg.\p"
+	.string "You’ll have to store a POKéMON in a PC\n"
+	.string "Box at the POKéMON Center first.\p"
+	.string "I’ll give you this Egg when you’ve made\n"
+	.string "room for it.\p"
+	.string "I’ll be waiting right here.$"
+
+EternaCity_EventScript_SNCynthiaEgg_T15:
+	.string "Cynthia: That’s wonderful!\p"
+	.string "The POKéMON inside the Egg is happy,\n"
+	.string "too. I’m sure of it!$"
+
+EternaCity_EventScript_SNCynthiaEgg_NoT:
+	.string "Cynthia: Oh...? You don’t need to feel\n"
+	.string "obligated.\p"
+	.string "It’s hard filling the pages of the\n"
+	.string "POKéDEX, isn’t it?\p"
+	.string "I only want to lend you a little hand,\n"
+	.string "that’s all.$"

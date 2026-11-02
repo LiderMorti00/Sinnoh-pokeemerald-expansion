@@ -14662,38 +14662,40 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 
 === TRAINER_LAWRENCE ===
-Name: LAWRENCE
-Class: Camper
-Pic: Camper
+Name: GRUNT
+Class: TRAINER_CLASS_TEAM_GALACTIC
+Pic: TRAINER_PIC_SINNOH_GALACTIC_GRUNT_M
 Gender: Male
-Music: Male
+Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Baltoy
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_ZUBAT
+Level: 24
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Sandshrew
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_STUNKY
+Level: 26
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+
 
 === TRAINER_WYATT ===
-Name: WYATT
-Class: Pokemaniac
-Pic: Pokemaniac
+Name: GRUNT
+Class: TRAINER_CLASS_TEAM_GALACTIC
+Pic: TRAINER_PIC_SINNOH_GALACTIC_GRUNT_M
 Gender: Male
-Music: Suspicious
+Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Aron
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_ZUBAT
+Level: 24
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Aron
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_CROAGUNK
+Level: 26
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+
 
 === TRAINER_ANGELINA ===
 Name: ANGELINA

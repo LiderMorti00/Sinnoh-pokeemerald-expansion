@@ -8,7 +8,13 @@ Route206_North_EventScript_SNDawnFather::
 	setvar VAR_0x8004, 0
 	special ScriptGetPokedexInfo
 	buffernumberstring STR_VAR_1, VAR_0x8005
+	checkplayergender
+	goto_if_eq VAR_RESULT, FEMALE, Route206_North_EventScript_SNDawnFather_G_L
 	msgbox Route206_North_EventScript_SNDawnFather_T1, MSGBOX_DEFAULT
+	goto Route206_North_EventScript_SNDawnFather_G_N
+Route206_North_EventScript_SNDawnFather_G_L:
+	msgbox Route206_North_EventScript_SNDawnFather_T1L, MSGBOX_DEFAULT
+Route206_North_EventScript_SNDawnFather_G_N:
 	goto_if_lt VAR_0x8005, 35, Route206_North_EventScript_SNDawnFather_NotYet
 	msgbox Route206_North_EventScript_SNDawnFather_T2, MSGBOX_DEFAULT
 	giveitem ITEM_EXP_SHARE
@@ -28,22 +34,50 @@ Route206_North_EventScript_SNDawnFather_After:
 	end
 
 Route206_North_EventScript_SNDawnFather_T1:
-	.string "Oh, hello! I’m a POKéMON researcher, and\n"
-	.string "an aide to Professor Rowan. My child\l"
-	.string "helps the professor, too.\p"
-	.string "May I see your POKéDEX? Hmm... You’ve\n"
-	.string "seen {STR_VAR_1} kinds of POKéMON.$"
+	.string "{PLAYER}, long time, no see!\p"
+	.string "Oh? You look puzzled. You’re wondering\n"
+	.string "who I am.\p"
+	.string "I’m Professor Rowan’s assistant and\n"
+	.string "DAWN’s father.\p"
+	.string "I’ve come a long way to help you on\n"
+	.string "your adventure at the professor’s\p"
+	.string "behest.\p"
+	.string "{PLAYER}, let me ask you, how many\n"
+	.string "POKéMON have you met?$"
 
 Route206_North_EventScript_SNDawnFather_NotYetT:
-	.string "When you’ve seen 35 kinds of POKéMON,\n"
-	.string "come see me. I’ll have a reward for you.$"
+	.string "You’ve met only {STR_VAR_1} POKéMON?\p"
+	.string "Hmm... You’ve got to find at least 35.\p"
+	.string "If you can’t, it will be tough to\n"
+	.string "complete the Sinnoh POKéDEX.$"
 
 Route206_North_EventScript_SNDawnFather_T2:
-	.string "Excellent! You’ve already seen more\n"
-	.string "than 35 kinds! Please, take this as a\l"
-	.string "token of my appreciation.$"
+	.string "Oh, my! You’ve met {STR_VAR_1} POKéMON!\p"
+	.string "Wonderful! Yes, bravo! Professor Rowan\n"
+	.string "should be delighted!\p"
+	.string "Here is something for you!$"
 
 Route206_North_EventScript_SNDawnFather_T3:
-	.string "The EXP. SHARE lets the POKéMON\n"
-	.string "holding it share the EXP. points from\l"
-	.string "battles, even if it doesn’t fight.$"
+	.string "A POKéMON holding an Exp. Share will\n"
+	.string "get some of the Exp. Points from\l"
+	.string "battle.\p"
+	.string "It will get Exp. Points even if it didn’t\n"
+	.string "actually battle.\p"
+	.string "Therefore, it should be held by a\n"
+	.string "POKéMON you want to raise quickly.\p"
+	.string "Also, a POKéMON you get in a trade may\n"
+	.string "disobey you if it is too high in level.\p"
+	.string "Don’t worry, though. It will obey if you\n"
+	.string "have enough Gym Badges.$"
+
+Route206_North_EventScript_SNDawnFather_T1L:
+	.string "{PLAYER}, long time, no see!\p"
+	.string "Oh? You look puzzled. You’re wondering\n"
+	.string "who I am.\p"
+	.string "I’m Professor Rowan’s assistant and\n"
+	.string "LUCAS’s father.\p"
+	.string "I’ve come a long way to help you on\n"
+	.string "your adventure at the professor’s\p"
+	.string "behest.\p"
+	.string "{PLAYER}, let me ask you, how many\n"
+	.string "POKéMON have you met?$"

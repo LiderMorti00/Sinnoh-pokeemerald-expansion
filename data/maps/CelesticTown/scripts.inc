@@ -35,6 +35,7 @@ CelesticTown_Text_PtSign1:
 	.string "CELESTIC TOWN The Past Lives$"
 
 CelesticTown_OnTransitionSN:
+	call CelesticTown_EventScript_SNVis_CEL_CYNTHIA
 	call CelesticTown_EventScript_SNVis_CEL_GRUNT
 	end
 
@@ -74,3 +75,55 @@ CelesticTown_EventScript_SNCEL_GRUNT_Post:
 	.string "anything here...\p"
 	.string "This place is nothing! I’ll be happily\n"
 	.string "rid of this place!$"
+
+CelesticTown_EventScript_SNVis_CEL_CYNTHIA:
+	setflag FLAG_SN_HIDE_CEL_CYNTHIA
+	goto_if_not_defeated TRAINER_ELLIOT_2, CelesticTown_EventScript_SNVis_CEL_CYNTHIA_End
+	goto_if_set FLAG_BADGE06_GET, CelesticTown_EventScript_SNVis_CEL_CYNTHIA_End
+	clearflag FLAG_SN_HIDE_CEL_CYNTHIA
+CelesticTown_EventScript_SNVis_CEL_CYNTHIA_End:
+	return
+
+CelesticTown_EventScript_SNCynthia::
+	lock
+	faceplayer
+	msgbox CelesticTown_EventScript_SNCynthia_T1, MSGBOX_DEFAULT
+	msgbox CelesticTown_EventScript_SNCynthia_T2, MSGBOX_DEFAULT
+	msgbox CelesticTown_EventScript_SNCynthia_T3, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_SN_CEL_CYNTHIA
+	setflag FLAG_SN_HIDE_CEL_CYNTHIA
+	fadescreen FADE_FROM_BLACK
+	release
+	end
+
+CelesticTown_EventScript_SNCynthia_T1:
+	.string "Cynthia: Was everything all right here?\p"
+	.string "You saw those strange people with a\n"
+	.string "Galactic Bomb, didn’t you?$"
+
+CelesticTown_EventScript_SNCynthia_T2:
+	.string "But those Team Galactic people...! I\n"
+	.string "thought they were harmless.\p"
+	.string "The bizarre ways they dress, and all\n"
+	.string "their wild claims about making a new\p"
+	.string "universe...\p"
+	.string "I thought it was just silly talk.\n"
+	.string "Nothing to take seriously.\p"
+	.string "But they’re surprisingly more trouble\n"
+	.string "than expected.\p"
+	.string "Trying to monopolize POKéMON just\n"
+	.string "isn’t acceptable!$"
+
+CelesticTown_EventScript_SNCynthia_T3:
+	.string "By the way, were the ruins fun to\n"
+	.string "explore?\p"
+	.string "If you’re interested, there is a library\n"
+	.string "in Canalave City.\p"
+	.string "It’s stocked with ancient books. You\n"
+	.string "can look up Sinnoh history there.\p"
+	.string "It might help you complete your\n"
+	.string "POKéDEX, too.\p"
+	.string "The quickest way to Canalave City is\n"
+	.string "to go west from Jubilife City.$"

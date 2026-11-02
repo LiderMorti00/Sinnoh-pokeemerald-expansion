@@ -143,10 +143,34 @@ CelesticTown_Ruins_EventScript_SNCharm::
 	faceplayer
 	msgbox CelesticTown_Ruins_Text_SNCharm, MSGBOX_DEFAULT
 	removeitem ITEM_OLD_CHARM
+	playse SE_SUCCESS
+	msgbox CelesticTown_Ruins_Text_SNCharm2, MSGBOX_DEFAULT
+	msgbox CelesticTown_Ruins_Text_SNCharm3, MSGBOX_DEFAULT
 	release
 CelesticTown_Ruins_EventScript_SNCharmEnd:
 	return
 CelesticTown_Ruins_Text_SNCharm:
-	.string "Elder: Oh! This is the Old Charm... My\n"
-	.string "granddaughter Cynthia asked you to\l"
-	.string "bring it to me? Thank you, dear.$"
+	.string "Oh, you were magnificent! Aren’t you\n"
+	.string "quite the Trainer?\p"
+	.string "As the elder of Celestic Town, I give\n"
+	.string "you my thanks.\p"
+	.string "Oh? That Old Charm... May I see that,\n"
+	.string "dear?\p"
+	.string "... What’s that?\p"
+	.string "You say Cynthia entrusted you with it\n"
+	.string "to deliver to me?\p"
+	.string "That Cynthia... She’s my granddaughter.$"
+
+CelesticTown_Ruins_Text_SNCharm2:
+	.string "{PLAYER} handed over the Old Charm to\n"
+	.string "the elder.$"
+
+CelesticTown_Ruins_Text_SNCharm3:
+	.string "This Old Charm is something made in\n"
+	.string "Celestic Town long, long ago.\p"
+	.string "It was made in honor of a mythical\n"
+	.string "deity said to have created Sinnoh.\p"
+	.string "These Old Charms are still discovered\n"
+	.string "now and again.\p"
+	.string "Since you’re in Celestic Town, why not\n"
+	.string "look around inside the ruins?$"

@@ -1,4 +1,5 @@
 Route213_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Route213_OnTransitionSN
 	.byte 0
 
 Route213_EventScript_Sheltin::
@@ -228,3 +229,84 @@ Route213_EventScript_PtSign3::
 Route213_Text_PtSign3:
 	.string "Hotel Grand Lake Another World on\n"
 	.string "LAKE VALOR$"
+
+Route213_OnTransitionSN:
+	call Route213_EventScript_SNVis_BOMB
+	end
+
+Route213_EventScript_SNVis_BOMB:
+	setflag FLAG_SN_HIDE_BOMB
+	goto_if_unset FLAG_BADGE05_GET, Route213_EventScript_SNVis_BOMB_End
+	goto_if_defeated TRAINER_ELLIOT_1, Route213_EventScript_SNVis_BOMB_End
+	clearflag FLAG_SN_HIDE_BOMB
+Route213_EventScript_SNVis_BOMB_End:
+	return
+
+Route213_EventScript_SNBomb::
+	lock
+	msgbox Route213_EventScript_SNBomb_T1, MSGBOX_DEFAULT
+	faceplayer
+	msgbox Route213_EventScript_SNBomb_T2, MSGBOX_DEFAULT
+	msgbox Route213_EventScript_SNBomb_T3, MSGBOX_DEFAULT
+	release
+	end
+
+Route213_EventScript_SNBomb_Looker::
+	lock
+	faceplayer
+	msgbox Route213_EventScript_SNBomb_L1, MSGBOX_DEFAULT
+	msgbox Route213_EventScript_SNBomb_L2, MSGBOX_DEFAULT
+	msgbox Route213_EventScript_SNBomb_L3, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_SN_BOMB_GRUNT
+	removeobject LOCALID_SN_BOMB_LOOKER
+	setflag FLAG_SN_HIDE_BOMB
+	fadescreen FADE_FROM_BLACK
+	release
+	end
+
+Route213_EventScript_SNBomb_T1:
+	.string "We needed the energy from the Valley\n"
+	.string "Windworks to make this...\p"
+	.string "It would take a scientific genius to\n"
+	.string "make something like this...\p"
+	.string "Therefore, our boss, who made this, is a\n"
+	.string "scientific mechanical genius!$"
+
+Route213_EventScript_SNBomb_T2:
+	.string "Graw! You were eavesdropping! I was\n"
+	.string "just thinking out loud!\p"
+	.string "But I’m not going to waste my energy\n"
+	.string "knocking you around...$"
+
+Route213_EventScript_SNBomb_T3:
+	.string "But, boy, this Galactic Bomb packs a\n"
+	.string "pretty big wallop.\p"
+	.string "With this baby here there’s not much we\n"
+	.string "can’t blow up.\p"
+	.string "I wonder what they have planned for\n"
+	.string "this?$"
+
+Route213_EventScript_SNBomb_L1:
+	.string "Looker: Hello, my friend!\p"
+	.string "The cargo that the Team Galactic\n"
+	.string "brought is worrisome, so I have come.\p"
+	.string "...You say the cargo, it was a bomb? And\n"
+	.string "there was an explosion?\p"
+	.string "The explosion was at the Great Marsh?\p"
+	.string "Furthermore, you are pursuing a man... A\n"
+	.string "man with funny bowl-cut hair.\p"
+	.string "In an outfit that is very strange?\p"
+	.string "In other words, that is the Team\n"
+	.string "Galactic!$"
+
+Route213_EventScript_SNBomb_L2:
+	.string "Oh, no, no, no! How did I miss it?\p"
+	.string "Ah, Looker, this time you have made a\n"
+	.string "mistake of the ages!\p"
+	.string "The man, who I have seen running away,\n"
+	.string "he was the bearer of the bomb!$"
+
+Route213_EventScript_SNBomb_L3:
+	.string "Ach! This will not do! Wait! Wait, I say!$"

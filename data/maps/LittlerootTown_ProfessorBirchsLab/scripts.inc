@@ -3,6 +3,7 @@ LittlerootTown_ProfessorBirchsLab_MapScripts::
 	.byte 0
 
 SandgemLab_OnTransition:
+	call LittlerootTown_ProfessorBirchsLab_EventScript_SNVis_LAB_CP_SAFE
 	call LittlerootTown_ProfessorBirchsLab_EventScript_SNVis_LAB_OAK
 	checkplayergender
 	goto_if_eq VAR_RESULT, MALE, SandgemLab_EventScript_SetDawn
@@ -1343,3 +1344,55 @@ SandgemLab_EventScript_SNRowanDex_Many:
 	.string "many more POKéMON.\p"
 	.string "That means there are many more thrills\n"
 	.string "for you to seek and enjoy!$"
+
+LittlerootTown_ProfessorBirchsLab_EventScript_SNVis_LAB_CP_SAFE:
+	setflag FLAG_SN_HIDE_LAB_CP_SAFE
+	call SandgemLab_EventScript_SNCPSafe
+	goto_if_lt VAR_SINNOH_STORY, 33, LittlerootTown_ProfessorBirchsLab_EventScript_SNVis_LAB_CP_SAFE_End
+	goto_if_set FLAG_SN_LAB_CP_SAFE, LittlerootTown_ProfessorBirchsLab_EventScript_SNVis_LAB_CP_SAFE_End
+	clearflag FLAG_SN_HIDE_LAB_CP_SAFE
+LittlerootTown_ProfessorBirchsLab_EventScript_SNVis_LAB_CP_SAFE_End:
+	return
+
+SandgemLab_EventScript_SNCPSafe::
+	checkplayergender
+	goto_if_eq VAR_RESULT, FEMALE, SandgemLab_EventScript_SNCPSafe_L
+	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_SINNOH_DAWN
+	return
+SandgemLab_EventScript_SNCPSafe_L:
+	setvar VAR_OBJ_GFX_ID_1, OBJ_EVENT_GFX_SINNOH_LUCAS
+	return
+
+SandgemLab_EventScript_SNCPSafe_Talk::
+	lock
+	faceplayer
+	checkplayergender
+	goto_if_eq VAR_RESULT, FEMALE, SandgemLab_EventScript_SNCPSafe_M_L
+	msgbox SandgemLab_EventScript_SNCPSafe_M_D, MSGBOX_DEFAULT
+	goto SandgemLab_EventScript_SNCPSafe_M_N
+SandgemLab_EventScript_SNCPSafe_M_L:
+	msgbox SandgemLab_EventScript_SNCPSafe_M_Lu, MSGBOX_DEFAULT
+SandgemLab_EventScript_SNCPSafe_M_N:
+	closemessage
+	setflag FLAG_SN_LAB_CP_SAFE
+	release
+	end
+
+SandgemLab_EventScript_SNCPSafe_M_D:
+	.string "Dawn: The professor did a lot of\n"
+	.string "checking up after you left.\p"
+	.string "He was really worried about you,\n"
+	.string "BARRY...\p"
+	.string "He contacted acquaintances looking\n"
+	.string "for help, and...\p"
+	.string "BARRY, I’m glad to see you safe!\n"
+	.string "Welcome back!$"
+
+SandgemLab_EventScript_SNCPSafe_M_Lu:
+	.string "Lucas: After you left, the professor\n"
+	.string "did a lot of checking around.\p"
+	.string "He got really worried about you, BARRY.\p"
+	.string "He got in touch with people he knows to\n"
+	.string "rustle up help...\p"
+	.string "You didn’t need it, BARRY. I’m glad to\n"
+	.string "see you back safe, too.$"

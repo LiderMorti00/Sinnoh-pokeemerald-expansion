@@ -1,4 +1,5 @@
 HearthomeCity_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, HearthomeCity_OnTransitionSN
 	.byte 0
 
 HearthomeCity_EventScript_PtNpc1::
@@ -312,3 +313,74 @@ HearthomeCity_EventScript_SNMrGoods_FullT:
 HearthomeCity_EventScript_SNMrGoods_DoneT:
 	.string "I’m still seeking rarities. One day I’ll\n"
 	.string "find something even better.$"
+
+HearthomeCity_OnTransitionSN:
+	call HearthomeCity_EventScript_SNVis_KEIRA
+	call HearthomeCity_EventScript_SNVis_GYM_BLOCK
+	end
+
+HearthomeCity_EventScript_SNVis_KEIRA:
+	setflag FLAG_SN_HIDE_KEIRA
+	goto_if_set FLAG_SN_MET_KEIRA, HearthomeCity_EventScript_SNVis_KEIRA_End
+	clearflag FLAG_SN_HIDE_KEIRA
+HearthomeCity_EventScript_SNVis_KEIRA_End:
+	return
+
+HearthomeCity_EventScript_SNVis_GYM_BLOCK:
+	setflag FLAG_SN_HIDE_GYM_BLOCK
+	goto_if_set FLAG_SN_MET_FANTINA, HearthomeCity_EventScript_SNVis_GYM_BLOCK_End
+	goto_if_set FLAG_BADGE03_GET, HearthomeCity_EventScript_SNVis_GYM_BLOCK_End
+	clearflag FLAG_SN_HIDE_GYM_BLOCK
+HearthomeCity_EventScript_SNVis_GYM_BLOCK_End:
+	return
+
+HearthomeCity_EventScript_SNKeira::
+	lock
+	faceplayer
+	msgbox HearthomeCity_EventScript_SNKeira_T1, MSGBOX_DEFAULT
+	closemessage
+	playmoncry SPECIES_BUNEARY, CRY_MODE_NORMAL
+	waitmoncry
+	msgbox HearthomeCity_EventScript_SNKeira_T2, MSGBOX_DEFAULT
+	removeobject LOCALID_SN_BUNEARY
+	msgbox HearthomeCity_EventScript_SNKeira_T3, MSGBOX_DEFAULT
+	closemessage
+	setflag FLAG_SN_MET_KEIRA
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_SN_KEIRA
+	setflag FLAG_SN_HIDE_KEIRA
+	fadescreen FADE_FROM_BLACK
+	release
+	end
+
+HearthomeCity_EventScript_SNKeira_T1:
+	.string "Oh, thank goodness that you happened\n"
+	.string "to be there!\p"
+	.string "If it weren’t for you, who knows how\n"
+	.string "far away my BUNEARY could have run...$"
+
+HearthomeCity_EventScript_SNKeira_T2:
+	.string "Baby BUNEARY, back into the Poké Ball\n"
+	.string "you go!$"
+
+HearthomeCity_EventScript_SNKeira_T3:
+	.string "I’m Keira! I’m a POKéMON Contest Judge.\p"
+	.string "Be sure to drop by the Contest Hall so\n"
+	.string "I can thank you properly!$"
+
+HearthomeCity_EventScript_SNGymBlock::
+	msgbox HearthomeCity_EventScript_SNGymBlock_T, MSGBOX_NPC
+	end
+
+HearthomeCity_EventScript_SNGymBlock_T:
+	.string "Hey, there! How’s it going, Trainer?\p"
+	.string "You being here tells me you’re going to\n"
+	.string "challenge the Gym Leader.\p"
+	.string "Well... I hate to break it to you, but\n"
+	.string "that’s impossible.\p"
+	.string "You’re questioning why, and the answer\n"
+	.string "is: she’s not here.\p"
+	.string "Not to worry, though. We know she’s at\n"
+	.string "the Contest Hall.\p"
+	.string "Come back another time, OK? I’ll be\n"
+	.string "waiting right here.$"

@@ -348,6 +348,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "LilycoveCity_ContestLobby_EventScript_LittleGirl",
       "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_SN_FANTINA",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_FANTINA",
+      "x": 12,
+      "y": 7,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "LilycoveCity_ContestLobby_EventScript_SNFantina",
+      "flag": "FLAG_SN_HIDE_FANTINA"
     }
   ],
   "warp_events": [

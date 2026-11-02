@@ -222,4 +222,200 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 - MOVE_HELPING_HAND
 - MOVE_AGILITY
 
+=== PARTNER_DAWN_TURTWIG ===
+Name: DAWN
+Class: Pkmn Trainer 1
+Pic: Sinnoh Dawn
+Gender: Female
+Music: Female
+AI: Basic Trainer
+
+SPECIES_CLEFAIRY
+Level: 25
+IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+- MOVE_METRONOME
+- MOVE_GRAVITY
+- MOVE_WAKE_UP_SLAP
+- MOVE_SING
+
+SPECIES_KADABRA
+Level: 25
+IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+- MOVE_PSYBEAM
+- MOVE_PSYCHO_CUT
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+
+SPECIES_PRINPLUP
+Level: 27
+IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+- MOVE_BUBBLE_BEAM
+- MOVE_METAL_CLAW
+- MOVE_PECK
+- MOVE_GROWL
+
+
+=== PARTNER_DAWN_CHIMCHAR ===
+Name: DAWN
+Class: Pkmn Trainer 1
+Pic: Sinnoh Dawn
+Gender: Female
+Music: Female
+AI: Basic Trainer
+
+SPECIES_CLEFAIRY
+Level: 25
+IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+- MOVE_METRONOME
+- MOVE_GRAVITY
+- MOVE_WAKE_UP_SLAP
+- MOVE_SING
+
+SPECIES_KADABRA
+Level: 25
+IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+- MOVE_PSYBEAM
+- MOVE_PSYCHO_CUT
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+
+SPECIES_GROTLE
+Level: 27
+IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+- MOVE_RAZOR_LEAF
+- MOVE_MEGA_DRAIN
+- MOVE_BITE
+- MOVE_CURSE
+
+
+=== PARTNER_DAWN_PIPLUP ===
+Name: DAWN
+Class: Pkmn Trainer 1
+Pic: Sinnoh Dawn
+Gender: Female
+Music: Female
+AI: Basic Trainer
+
+SPECIES_CLEFAIRY
+Level: 25
+IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+- MOVE_METRONOME
+- MOVE_GRAVITY
+- MOVE_WAKE_UP_SLAP
+- MOVE_SING
+
+SPECIES_KADABRA
+Level: 25
+IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+- MOVE_PSYBEAM
+- MOVE_PSYCHO_CUT
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+
+SPECIES_MONFERNO
+Level: 27
+IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+- MOVE_FLAME_WHEEL
+- MOVE_MACH_PUNCH
+- MOVE_FURY_SWIPES
+- MOVE_TORMENT
+
+
+=== PARTNER_LUCAS_TURTWIG ===
+Name: LUCAS
+Class: Pkmn Trainer 1
+Pic: Sinnoh Lucas
+Gender: Male
+Music: Male
+AI: Basic Trainer
+
+SPECIES_CLEFAIRY
+Level: 25
+IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+- MOVE_METRONOME
+- MOVE_GRAVITY
+- MOVE_WAKE_UP_SLAP
+- MOVE_SING
+
+SPECIES_KADABRA
+Level: 25
+IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+- MOVE_PSYBEAM
+- MOVE_PSYCHO_CUT
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+
+SPECIES_PRINPLUP
+Level: 27
+IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+- MOVE_BUBBLE_BEAM
+- MOVE_METAL_CLAW
+- MOVE_PECK
+- MOVE_GROWL
+
+
+=== PARTNER_LUCAS_CHIMCHAR ===
+Name: LUCAS
+Class: Pkmn Trainer 1
+Pic: Sinnoh Lucas
+Gender: Male
+Music: Male
+AI: Basic Trainer
+
+SPECIES_CLEFAIRY
+Level: 25
+IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+- MOVE_METRONOME
+- MOVE_GRAVITY
+- MOVE_WAKE_UP_SLAP
+- MOVE_SING
+
+SPECIES_KADABRA
+Level: 25
+IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+- MOVE_PSYBEAM
+- MOVE_PSYCHO_CUT
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+
+SPECIES_GROTLE
+Level: 27
+IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+- MOVE_RAZOR_LEAF
+- MOVE_MEGA_DRAIN
+- MOVE_BITE
+- MOVE_CURSE
+
+
+=== PARTNER_LUCAS_PIPLUP ===
+Name: LUCAS
+Class: Pkmn Trainer 1
+Pic: Sinnoh Lucas
+Gender: Male
+Music: Male
+AI: Basic Trainer
+
+SPECIES_CLEFAIRY
+Level: 25
+IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+- MOVE_METRONOME
+- MOVE_GRAVITY
+- MOVE_WAKE_UP_SLAP
+- MOVE_SING
+
+SPECIES_KADABRA
+Level: 25
+IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+- MOVE_PSYBEAM
+- MOVE_PSYCHO_CUT
+- MOVE_REFLECT
+- MOVE_LIGHT_SCREEN
+
+SPECIES_MONFERNO
+Level: 27
+IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+- MOVE_FLAME_WHEEL
+- MOVE_MACH_PUNCH
+- MOVE_FURY_SWIPES
+- MOVE_TORMENT
 

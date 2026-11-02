@@ -177,9 +177,12 @@ Route205_South_EventScript_Girl::
 	end
 
 Route205_South_Text_BridgeGrunts:
-	.string "GRUNT: Nobody crosses this bridge\n"
-	.string "while TEAM GALACTIC is working at\l"
-	.string "the WINDWORKS!$"
+	.string "Our research involves catching\n"
+	.string "POKéMON in the flowery meadows of\l"
+	.string "Floaroma.\p"
+	.string "We are also covertly stealing the\n"
+	.string "energy of the Valley Windworks.\p"
+	.string "But that is of no concern to you!$"
 
 Route205_South_Text_BridgeBlock:
 	.string "TEAM GALACTIC GRUNTS are blocking\n"
@@ -187,12 +190,15 @@ Route205_South_Text_BridgeBlock:
 	.string "them.$"
 
 Route205_South_Text_Girl:
-	.string "Please help! Scary people in\n"
-	.string "strange clothes took over the\l"
-	.string "VALLEY WINDWORKS!\p"
-	.string "My papa is still inside! The\n"
-	.string "WINDWORKS is to the east. Please\l"
-	.string "save him!$"
+	.string "Help, help, Trainer! Please, I want to\n"
+	.string "see my papa.\p"
+	.string "My papa and I lived at the Valley\n"
+	.string "Windworks.\p"
+	.string "But then a whole bunch of people\n"
+	.string "dressed like spacemen came...\p"
+	.string "They kicked me out, and they’re making\n"
+	.string "my papa do something.\p"
+	.string "Please, Trainer! I miss my papa!$"
 
 Route205_South_EventScript_PtNpc1::
 	msgbox Route205_South_Text_PtNpc1, MSGBOX_NPC

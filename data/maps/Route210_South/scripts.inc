@@ -310,14 +310,20 @@ Route210_South_EventScript_SNCynthiaCharm::
 	end
 
 Route210_South_EventScript_SNCynthiaCharm_T1:
-	.string "Cynthia: Thank you. The PSYDUCK seem\n"
-	.string "to be feeling better.\p"
-	.string "I have a favor to ask of you. Could you\n"
-	.string "deliver this to my grandmother? She\l"
-	.string "lives in Celestic Town, just beyond\l"
-	.string "this route.$"
+	.string "Cynthia: Oh, good. You used the\n"
+	.string "SecretPotion I gave you.\p"
+	.string "PSYDUCK are known to suffer from\n"
+	.string "chronic headaches.\p"
+	.string "But no one’s been able to figure out\n"
+	.string "what triggers the headaches.\p"
+	.string "Oh, yes! Can I ask you a big favor?\p"
+	.string "I want you to deliver this Old Charm to\n"
+	.string "my grandma in Celestic Town.\p"
+	.string "I know there are some rare POKéMON\n"
+	.string "between here and Celestic Town, so\p"
+	.string "it will be worth your while to go.$"
 
 Route210_South_EventScript_SNCynthiaCharm_T2:
-	.string "Cynthia: It’s an Old Charm. My\n"
-	.string "grandmother is the elder of Celestic\l"
-	.string "Town. Thank you!$"
+	.string "I know I’m asking a big favor of you.\p"
+	.string "But I really want you to do it. Will you\n"
+	.string "go to Celestic Town for me?$"
