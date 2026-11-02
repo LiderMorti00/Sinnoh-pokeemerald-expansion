@@ -3,7 +3,7 @@
 Lista única de tareas pendientes. Cuando se termine una tarea, se borra de aquí.
 Fuentes de referencia: Bulbapedia (guía de Platino), WikiDex, pret/pokeplatinum (textos y eventos originales).
 
-Última revisión: 2 de noviembre de 2026 (segunda tanda).
+Última revisión: 3 de noviembre de 2026.
 
 ---
 
@@ -16,17 +16,17 @@ No queda ninguna escena de la historia sin hacer. Lo que falta es probarlas toda
 | # | Qué | Notas |
 |---|-----|-------|
 | 2.1 | Sprite de Dawn en el mapa (sigue usando el de Leaf). | Hace falta una hoja de sprites de Dawn al estilo GBA (16×32, mismos fotogramas que Leaf). |
-| 2.3 | Buzones delante de las casas de Hojaverde. | Son decorativos; en Platino se pueden leer. |
-| 2.4 | Roca musgo (Bosque Vetusta) y roca helada (Ruta 217). | Eevee ya evoluciona en esas zonas, pero las rocas no se ven en el mapa. |
+| 2.2 | Buzones delante de las casas de Hojaverde. | Son decorativos; en Platino se pueden leer. |
+| 2.3 | Roca musgo (Bosque Vetusta) y roca helada (Ruta 217). | Eevee ya evoluciona en esas zonas, pero las rocas no se ven en el mapa. |
 
 ## 3. Funciones y servicios
 
 | # | Dónde | Qué falta | Notas |
 |---|-------|-----------|-------|
-| 3.2 | TV de Jubileo, 2F | Galería (fondos) y los NPC de esa planta. | Algunos textos hablan del Terminal Global, que se eliminó. |
-| 3.3 | Túnel Maníaco (Ruta 214) | Se alarga según los Unown que hayas visto. | Necesita varios mapas o cambiar baldosas por script. |
-| 3.5 | Gran Pantano | La vaquera da el reto de capturar 5 Pokémon en una partida del Safari. | En Platino el premio es una app del Pokétch; buscar otro premio. |
-| 3.6 | Revanchas | Revisar qué entrenadores de Sinnoh tienen revancha con el Buscapelea. | El año pasado faltaban 13. |
+| 3.1 | TV de Jubileo, 2F | Galería (fondos) y los NPC de esa planta. | Algunos textos hablan del Terminal Global, que se eliminó. |
+| 3.2 | Túnel Maníaco (Ruta 214) | Se alarga según los Unown que hayas visto. | Necesita varios mapas o cambiar baldosas por script. |
+| 3.3 | Gran Pantano | La vaquera da el reto de capturar 5 Pokémon en una partida del Safari. | En Platino el premio es una app del Pokétch; buscar otro premio. |
+| 3.4 | Revanchas | Revisar qué entrenadores de Sinnoh tienen revancha con el Buscapelea. | En una revisión anterior faltaban 13. |
 
 ## 4. Mapas
 
