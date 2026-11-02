@@ -58,6 +58,7 @@ CelesticTown_Ruins_Text_PtSign2:
 	.string "What is this all about?$"
 
 CelesticTown_Ruins_OnTransitionSN:
+	call CelesticTown_Ruins_EventScript_SNVis_CEL_PAINT_CYN
 	call CelesticTown_Ruins_EventScript_SNVis_CEL_CYRUS
 	end
 
@@ -239,3 +240,108 @@ CelesticTown_Ruins_Text_SNCyrusCoward:
 	.string "Stand aside and watch as I change the\n"
 	.string "world.$"
 
+CelesticTown_Ruins_EventScript_SNVis_CEL_PAINT_CYN:
+	setflag FLAG_SN_HIDE_CEL_PAINT_CYN
+	goto_if_lt VAR_SINNOH_STORY, 33, CelesticTown_Ruins_EventScript_SNVis_CEL_PAINT_CYN_End
+	goto_if_set FLAG_SN_CELESTIC_PAINTING, CelesticTown_Ruins_EventScript_SNVis_CEL_PAINT_CYN_End
+	clearflag FLAG_SN_HIDE_CEL_PAINT_CYN
+CelesticTown_Ruins_EventScript_SNVis_CEL_PAINT_CYN_End:
+	return
+
+CelesticTown_Ruins_EventScript_SNCynthiaPaint::
+	lock
+	faceplayer
+	msgbox CelesticTown_Ruins_Text_SNPaint1, MSGBOX_DEFAULT
+	msgbox CelesticTown_Ruins_Text_SNPaintAsk, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, CelesticTown_Ruins_EventScript_SNCynthiaPaint_End
+	msgbox CelesticTown_Ruins_Text_SNPaint2, MSGBOX_DEFAULT
+	msgbox CelesticTown_Ruins_Text_SNPaintAsk2, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, CelesticTown_Ruins_EventScript_SNCynthiaPaint_End
+	msgbox CelesticTown_Ruins_Text_SNPaint3, MSGBOX_DEFAULT
+	setflag FLAG_SN_CELESTIC_PAINTING
+CelesticTown_Ruins_EventScript_SNCynthiaPaint_End:
+	msgbox CelesticTown_Ruins_Text_SNPaintBye, MSGBOX_DEFAULT
+	release
+	end
+
+CelesticTown_Ruins_Text_SNPaint1:
+	.string "Cynthia: This cave painting... It’s\n"
+	.string "always been described this way.\p"
+	.string "The light in the center represents\n"
+	.string "either DIALGA or PALKIA appearing\p"
+	.string "at the Spear Pillar.\p"
+	.string "The three lights around it were\n"
+	.string "thought to be UXIE, MESPRIT, and\l"
+	.string "AZELF.$"
+
+CelesticTown_Ruins_Text_SNPaintAsk:
+	.string "May I continue?$"
+
+CelesticTown_Ruins_Text_SNPaint2:
+	.string "Cynthia: But, then, I realized that\n"
+	.string "there may be another way of\p"
+	.string "interpreting this.\p"
+	.string "Could this triangle of lights actually\n"
+	.string "represent a different trio?\p"
+	.string "Could they be DIALGA, PALKIA, and\n"
+	.string "GIRATINA instead?\p"
+	.string "And the large light at their center.\n"
+	.string "Does it represent something else?\p"
+	.string "Could it be what created this world of\n"
+	.string "ours?\p"
+	.string "May I continue for a little bit longer?\p"
+	.string "Cynthia: Thank you for listening to my\n"
+	.string "theory.\p"
+	.string "Do you know of the ancient Plates they\n"
+	.string "find all over Sinnoh?\p"
+	.string "One of them had this engraved on it.\p"
+	.string "“Two beings of time and space set free\n"
+	.string "from the Original One.”\p"
+	.string "I think this quote, too, points to the\n"
+	.string "presence of another POKéMON.\p"
+	.string "A POKéMON even more powerful than\n"
+	.string "DIALGA or PALKIA.\p"
+	.string "Does that sound plausible to you?\p"
+	.string "Cynthia: I’m not quite sure how\n"
+	.string "GIRATINA fits into this scheme of\l"
+	.string "things, but...\p"
+	.string "It’s said that in the Distortion World,\n"
+	.string "neither time nor space were stable.\p"
+	.string "I think that tells us something about\n"
+	.string "GIRATINA, the only POKéMON there.\p"
+	.string "It must have been as powerful as\n"
+	.string "DIALGA and PALKIA, the rulers of time\p"
+	.string "and space.\p"
+	.string "In some way, though, GIRATINA has to\n"
+	.string "have a power opposite of theirs.$"
+
+CelesticTown_Ruins_Text_SNPaintAsk2:
+	.string "Cynthia: I’m sorry this is so long. May I\n"
+	.string "say one last bit?$"
+
+CelesticTown_Ruins_Text_SNPaint3:
+	.string "Cynthia: A long time ago, I wonder what\n"
+	.string "sort of person painted this?\p"
+	.string "DIALGA’s Roar of Time... PALKIA’s\n"
+	.string "Spacial Rend...\p"
+	.string "To the people back then, those\n"
+	.string "POKéMON really must have appeared to\l"
+	.string "rule\p"
+	.string "over time and space.\p"
+	.string "Seeing them must have shaken the\n"
+	.string "people to their very core.\p"
+	.string "This painting represents those\n"
+	.string "feelings of awe, wonder, and\l"
+	.string "everything else.\p"
+	.string "It passed that memory to countless\n"
+	.string "people, eventually becoming a myth...\p"
+	.string "That’s what I believe as a researcher\n"
+	.string "of myths.\p"
+	.string "I think I let myself get carried away\n"
+	.string "and talked for far too long.\p"
+	.string "I’m sorry, and thank you. Let’s meet\n"
+	.string "again.$"
+
+CelesticTown_Ruins_Text_SNPaintBye:
+	.string "Cynthia: I’m so sorry. I let myself get\n"
+	.string "carried away...$"

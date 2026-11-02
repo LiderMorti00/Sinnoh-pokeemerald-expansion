@@ -25,7 +25,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ResortArea_Villa_EventScript_PtNpc1",
-      "flag": "0"
+      "flag": "FLAG_SN_HIDE_VILLA_PTNPC1"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_ROWAN",
@@ -38,7 +38,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ResortArea_Villa_EventScript_PtNpc2",
-      "flag": "0"
+      "flag": "FLAG_SN_HIDE_VILLA_PTNPC2"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MOM",
@@ -51,7 +51,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ResortArea_Villa_EventScript_PtNpc3",
-      "flag": "0"
+      "flag": "FLAG_SN_HIDE_VILLA_PTNPC3"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_ROARK",
@@ -64,7 +64,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ResortArea_Villa_EventScript_PtNpc4",
-      "flag": "0"
+      "flag": "FLAG_SN_HIDE_VILLA_PTNPC4"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_GARDENIA",
@@ -77,7 +77,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ResortArea_Villa_EventScript_PtNpc5",
-      "flag": "0"
+      "flag": "FLAG_SN_HIDE_VILLA_PTNPC5"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_FANTINA",
@@ -90,7 +90,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ResortArea_Villa_EventScript_PtNpc6",
-      "flag": "0"
+      "flag": "FLAG_SN_HIDE_VILLA_PTNPC6"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_MAYLENE",
@@ -103,7 +103,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ResortArea_Villa_EventScript_PtNpc7",
-      "flag": "0"
+      "flag": "FLAG_SN_HIDE_VILLA_PTNPC7"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_BYRON",
@@ -116,7 +116,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ResortArea_Villa_EventScript_PtNpc8",
-      "flag": "0"
+      "flag": "FLAG_SN_HIDE_VILLA_PTNPC8"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_WAKE",
@@ -129,7 +129,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ResortArea_Villa_EventScript_PtNpc9",
-      "flag": "0"
+      "flag": "FLAG_SN_HIDE_VILLA_PTNPC9"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_CANDICE",
@@ -142,7 +142,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ResortArea_Villa_EventScript_PtNpc10",
-      "flag": "0"
+      "flag": "FLAG_SN_HIDE_VILLA_PTNPC10"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_VOLKNER",
@@ -155,7 +155,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ResortArea_Villa_EventScript_PtNpc11",
-      "flag": "0"
+      "flag": "FLAG_SN_HIDE_VILLA_PTNPC11"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_CYNTHIA",
@@ -168,7 +168,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ResortArea_Villa_EventScript_PtNpc12",
-      "flag": "0"
+      "flag": "FLAG_SN_HIDE_VILLA_PTNPC12"
     }
   ],
   "warp_events": [

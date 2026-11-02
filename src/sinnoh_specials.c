@@ -223,3 +223,34 @@ void SinnohMarshBinoculars(void)
 {
     StringCopy(gStringVar1, GetSpeciesName(sMarshMons[(VarGet(VAR_DAYS) * 5 + Random() % 3) % ARRAY_COUNT(sMarshMons)]));
 }
+
+// VAR_RESULT = día de la semana (0-6) según el contador de días.
+void SinnohDayOfWeek(void)
+{
+    gSpecialVar_Result = VarGet(VAR_DAYS) % 7;
+}
+
+// VAR_RESULT = mayor número de cintas de un Pokémon del equipo.
+void SinnohPartyMaxRibbons(void)
+{
+    u32 best = 0;
+    for (u32 i = 0; i < gPartiesCount[B_TRAINER_PLAYER]; i++)
+    {
+        u32 n = GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_RIBBON_COUNT);
+        if (!GetMonData(&gParties[B_TRAINER_PLAYER][i], MON_DATA_IS_EGG) && n > best)
+            best = n;
+    }
+    gSpecialVar_Result = best;
+}
+
+// Tratamiento del spa del Sindicato Cinta: amistad del primer Pokémon (+30), nombre en STR_VAR_1.
+void SinnohSpaTreatment(void)
+{
+    struct Pokemon *mon = &gParties[B_TRAINER_PLAYER][0];
+    u32 f = GetMonData(mon, MON_DATA_FRIENDSHIP) + 30;
+    if (f > 255)
+        f = 255;
+    SetMonData(mon, MON_DATA_FRIENDSHIP, &f);
+    GetMonData(mon, MON_DATA_NICKNAME, gStringVar1);
+    StringGet_Nickname(gStringVar1);
+}

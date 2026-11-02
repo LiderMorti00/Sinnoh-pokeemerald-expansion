@@ -62,6 +62,13 @@ TwinleafTown_MainHouse_1F_EventScript_MomJournal::
 TwinleafTown_MainHouse_1F_EventScript_Mom::
 	lock
 	faceplayer
+	goto_if_unset FLAG_SYS_GAME_CLEAR, TwinleafTown_MainHouse_1F_EventScript_SNMomNormal
+	goto_if_set FLAG_SN_MOM_POSTGAME, TwinleafTown_MainHouse_1F_EventScript_SNMomNormal
+	setflag FLAG_SN_MOM_POSTGAME
+	msgbox TwinleafTown_MainHouse_1F_Text_SNMomPost, MSGBOX_DEFAULT
+	release
+	end
+TwinleafTown_MainHouse_1F_EventScript_SNMomNormal:
 	msgbox TwinleafTown_MainHouse_1F_Text_MomTalk, MSGBOX_DEFAULT
 	release
 	end
@@ -191,3 +198,13 @@ TwinleafTown_MainHouse_1F_Movement_MomBack:
 	walk_up
 	face_up
 	step_end
+
+TwinleafTown_MainHouse_1F_Text_SNMomPost:
+	.string "Mom: {PLAYER}!\p"
+	.string "{RIVAL} came looking for you a\n"
+	.string "little while ago.\p"
+	.string "I don’t know what it was about, but he\n"
+	.string "was shouting about you needing\p"
+	.string "to get on a ship at Snowpoint City.\p"
+	.string "You know how impatient he is. He was\n"
+	.string "gone before I could ask.$"

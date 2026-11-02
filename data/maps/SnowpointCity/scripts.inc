@@ -1,4 +1,5 @@
 SnowpointCity_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, SnowpointCity_OnTransitionSN
 	.byte 0
 
 SnowpointCity_EventScript_PtNpc1::
@@ -106,3 +107,85 @@ SnowpointCity_Text_GreatTrainer:
 	.string "POKéMON League...\p"
 	.string "I look forward to carrying someone like\n"
 	.string "that on this ship!$"
+
+SnowpointCity_OnTransitionSN:
+	call SnowpointCity_EventScript_SNVis_SNOW_CYNTHIA
+	end
+
+SnowpointCity_EventScript_SNVis_SNOW_CYNTHIA:
+	setflag FLAG_SN_HIDE_SNOW_CYNTHIA
+	goto_if_unset FLAG_SYS_GAME_CLEAR, SnowpointCity_EventScript_SNVis_SNOW_CYNTHIA_End
+	goto_if_set FLAG_SN_SNOWPOINT_CYNTHIA, SnowpointCity_EventScript_SNVis_SNOW_CYNTHIA_End
+	clearflag FLAG_SN_HIDE_SNOW_CYNTHIA
+SnowpointCity_EventScript_SNVis_SNOW_CYNTHIA_End:
+	return
+
+SnowpointCity_EventScript_SNTemple::
+	goto_if_set FLAG_SN_TEMPLE_OPEN, SnowpointCity_EventScript_SNTemple_End
+	lockall
+	msgbox SnowpointCity_Text_PtNpc4, MSGBOX_DEFAULT
+	goto_if_set FLAG_SYS_GAME_CLEAR, SnowpointCity_EventScript_SNTemple_Candice
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown
+	waitmovement 0
+	releaseall
+	end
+SnowpointCity_EventScript_SNTemple_Candice:
+	msgbox SnowpointCity_Text_SNCandice, MSGBOX_DEFAULT
+	setflag FLAG_SN_TEMPLE_OPEN
+	releaseall
+SnowpointCity_EventScript_SNTemple_End:
+	end
+
+SnowpointCity_Text_SNCandice:
+	.string "Candice: It’s OK! You can let that\n"
+	.string "person in.\p"
+	.string "Candice: I heard from Cynthia.\p"
+	.string "You’re working on a POKéDEX, aren’t\n"
+	.string "you?\p"
+	.string "There should be many rare POKéMON in\n"
+	.string "the temple.\p"
+	.string "Enjoy your exploring!$"
+
+SnowpointCity_EventScript_SNCynthia::
+	lock
+	faceplayer
+	msgbox SnowpointCity_Text_SNCyn1, MSGBOX_DEFAULT
+	msgbox SnowpointCity_Text_SNCyn2, MSGBOX_DEFAULT
+	closemessage
+	setflag FLAG_SN_SNOWPOINT_CYNTHIA
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_SN_SNOW_CYNTHIA
+	setflag FLAG_SN_HIDE_SNOW_CYNTHIA
+	fadescreen FADE_FROM_BLACK
+	release
+	end
+
+SnowpointCity_Text_SNCyn1:
+	.string "Cynthia: I thought you would come. I’m\n"
+	.string "glad I waited for you!\p"
+	.string "Cynthia: I think it’s good that our\n"
+	.string "world is constantly changing.\p"
+	.string "Of course, I don’t want it to become\n"
+	.string "what only one person wants.\p"
+	.string "A world like Cyrus envisions... No one\n"
+	.string "would want that.\p"
+	.string "The kind of world I want to see is\n"
+	.string "where everyone can share their joy.\p"
+	.string "Where POKéMON and the people around\n"
+	.string "them can be happy for each other.\p"
+	.string "I want the world to become a place\n"
+	.string "where everyone is smiling.\p"
+	.string "The world could be so much better if we\n"
+	.string "all tried to make it that way.$"
+
+SnowpointCity_Text_SNCyn2:
+	.string "Cynthia: I want you to keep traveling\n"
+	.string "to many far-off places.\p"
+	.string "I want you to keep meeting all kinds of\n"
+	.string "people and POKéMON.\p"
+	.string "I came all the way here just so I could\n"
+	.string "say that to you.\p"
+	.string "Your horizons will expand again if you\n"
+	.string "visit the Fight Area as well.\p"
+	.string "I hope our paths cross again!$"

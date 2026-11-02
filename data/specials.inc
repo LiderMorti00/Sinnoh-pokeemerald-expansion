@@ -327,6 +327,9 @@ gSpecials::
 	def_special SinnohMarshBinoculars
 	def_special SinnohHoneyReady
 	def_special SinnohHoneySlather
+	def_special SinnohDayOfWeek
+	def_special SinnohPartyMaxRibbons
+	def_special SinnohSpaTreatment
 	def_special TryUpdateRusturfTunnelState
 	def_special IsGrassTypeInParty
 	def_special DoContestHallWarp, waitstate=1

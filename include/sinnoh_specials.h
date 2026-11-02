@@ -15,4 +15,7 @@ void SinnohHoneyTreeMon(void);
 void SinnohMarshBinoculars(void);
 void SinnohHoneyReady(void);
 void SinnohHoneySlather(void);
+void SinnohDayOfWeek(void);
+void SinnohPartyMaxRibbons(void);
+void SinnohSpaTreatment(void);
 #endif // GUARD_SINNOH_SPECIALS_H

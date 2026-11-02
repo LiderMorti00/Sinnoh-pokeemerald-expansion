@@ -1570,7 +1570,7 @@
 // These flags are cleared once per day
 // The start and end are byte-aligned because the flags are cleared in byte increments
 #define DAILY_FLAGS_START                           (FLAG_UNUSED_0x91F + (8 - FLAG_UNUSED_0x91F % 8))
-#define FLAG_UNUSED_0x920                           (DAILY_FLAGS_START + 0x0)  // Unused Flag
+#define FLAG_DAILY_SN_SPA                           (DAILY_FLAGS_START + 0x0) // Proyecto Sinnoh: spa del Sindicato Cinta
 #define FLAG_DAILY_CONTEST_LOBBY_RECEIVED_BERRY     (DAILY_FLAGS_START + 0x1)
 #define FLAG_DAILY_SECRET_BASE                      (DAILY_FLAGS_START + 0x2)
 #define FLAG_DAILY_SN_BARRY                         (DAILY_FLAGS_START + 0x3)  // Proyecto Sinnoh: Barry en la Zona Supervivencia
@@ -3037,5 +3037,30 @@
 
 // ---- Proyecto Sinnoh: historia de Platino (objetos, regalos y objetos ocultos) ----
 #define FLAG_SN_HIDE_VALOR_BARRY                                FLAG_HIDE_NEW_MAUVILLE_VOLTORB_3
+
+
+// ---- Proyecto Sinnoh: historia de Platino (objetos, regalos y objetos ocultos) ----
+#define FLAG_SN_OWN_VILLA                                       FLAG_HIDE_AQUA_HIDEOUT_B1F_ELECTRODE_1
+#define FLAG_SN_HIDE_VILLA_OWNER                                FLAG_HIDE_AQUA_HIDEOUT_B1F_ELECTRODE_2
+#define FLAG_SN_HIDE_VILLA_PTNPC1                               FLAG_HIDE_UNDERWATER_SEA_FLOOR_CAVERN_STOLEN_SUBMARINE
+#define FLAG_SN_HIDE_VILLA_PTNPC2                               FLAG_HIDE_ROUTE_120_KECLEON_BRIDGE_SHADOW
+#define FLAG_SN_HIDE_VILLA_PTNPC3                               FLAG_HIDE_ROUTE_120_KECLEON_1
+#define FLAG_SN_HIDE_VILLA_PTNPC4                               FLAG_HIDE_ROUTE_120_KECLEON_2
+#define FLAG_SN_HIDE_VILLA_PTNPC5                               FLAG_HIDE_ROUTE_120_KECLEON_3
+#define FLAG_SN_HIDE_VILLA_PTNPC6                               FLAG_HIDE_ROUTE_120_KECLEON_4
+#define FLAG_SN_HIDE_VILLA_PTNPC7                               FLAG_HIDE_ROUTE_120_KECLEON_5
+#define FLAG_SN_HIDE_VILLA_PTNPC8                               FLAG_HIDE_ROUTE_119_KECLEON_1
+#define FLAG_SN_HIDE_VILLA_PTNPC9                               FLAG_HIDE_ROUTE_119_KECLEON_2
+#define FLAG_SN_HIDE_VILLA_PTNPC10                              FLAG_HIDE_LILYCOVE_POKEMON_CENTER_CONTEST_LADY_MON
+#define FLAG_SN_HIDE_VILLA_PTNPC11                              FLAG_HIDE_RUSTBORO_CITY_POKEMON_SCHOOL_SCOTT
+#define FLAG_SN_HIDE_VILLA_PTNPC12                              FLAG_DEFEATED_FORTREE_GYM
+#define FLAG_SN_RIBBON_MEMBER                                   FLAG_DEFEATED_METEOR_FALLS_STEVEN
+#define FLAG_SN_HIDE_SYND_GUARD                                 (TRAINER_FLAGS_START + TRAINER_EVERETT)
+#define FLAG_SN_TEMPLE_OPEN                                     (TRAINER_FLAGS_START + TRAINER_ALVARO)
+#define FLAG_SN_SNOWPOINT_CYNTHIA                               (TRAINER_FLAGS_START + TRAINER_MARIELA)
+#define FLAG_SN_HIDE_SNOW_CYNTHIA                               (TRAINER_FLAGS_START + TRAINER_THALIA_5)
+#define FLAG_SN_CELESTIC_PAINTING                               (TRAINER_FLAGS_START + TRAINER_THALIA_4)
+#define FLAG_SN_HIDE_CEL_PAINT_CYN                              (TRAINER_FLAGS_START + TRAINER_THALIA_3)
+#define FLAG_SN_MOM_POSTGAME                                    (TRAINER_FLAGS_START + TRAINER_THALIA_2)
 
 #endif // GUARD_CONSTANTS_FLAGS_H

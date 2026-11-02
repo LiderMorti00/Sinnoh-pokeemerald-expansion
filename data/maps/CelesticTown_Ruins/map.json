@@ -39,6 +39,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "CelesticTown_Ruins_EventScript_SNCyrus",
       "flag": "FLAG_SN_HIDE_CEL_CYRUS"
+    },
+    {
+      "local_id": "LOCALID_SN_CEL_PAINT_CYN",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_CYNTHIA",
+      "x": 11,
+      "y": 4,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CelesticTown_Ruins_EventScript_SNCynthiaPaint",
+      "flag": "FLAG_SN_HIDE_CEL_PAINT_CYN"
     }
   ],
   "warp_events": [

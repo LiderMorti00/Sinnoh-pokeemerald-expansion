@@ -1,8 +1,9 @@
 ResortArea_Villa_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, ResortArea_Villa_OnTransitionSN
 	.byte 0
 
 ResortArea_Villa_Text_PtNpc1:
-	.string "{PLAYER}: Too slooooow!\p"
+	.string "{RIVAL}: Too slooooow!\p"
 	.string "You keep me waiting all the time! I’m\n"
 	.string "fining you...$1 billion!$"
 
@@ -152,3 +153,124 @@ ResortArea_Villa_EventScript_PtSign3::
 
 ResortArea_Villa_Text_PtSign3:
 	.string "{PLAYER} opened the order form.$"
+
+ResortArea_Villa_OnTransitionSN:
+	call ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC1
+	call ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC2
+	call ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC3
+	call ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC4
+	call ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC5
+	call ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC6
+	call ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC7
+	call ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC8
+	call ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC9
+	call ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC10
+	call ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC11
+	call ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC12
+	end
+
+ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC1:
+	setflag FLAG_SN_HIDE_VILLA_PTNPC1
+	special SinnohDayOfWeek
+	goto_if_ne VAR_RESULT, 1, ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC1_End
+	clearflag FLAG_SN_HIDE_VILLA_PTNPC1
+ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC1_End:
+	return
+
+ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC2:
+	setflag FLAG_SN_HIDE_VILLA_PTNPC2
+	special SinnohDayOfWeek
+	goto_if_ne VAR_RESULT, 2, ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC2_End
+	clearflag FLAG_SN_HIDE_VILLA_PTNPC2
+ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC2_End:
+	return
+
+ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC3:
+	setflag FLAG_SN_HIDE_VILLA_PTNPC3
+	special SinnohDayOfWeek
+	goto_if_ne VAR_RESULT, 0, ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC3_End
+	clearflag FLAG_SN_HIDE_VILLA_PTNPC3
+ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC3_End:
+	return
+
+ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC4:
+	setflag FLAG_SN_HIDE_VILLA_PTNPC4
+	special SinnohDayOfWeek
+	goto_if_ne VAR_RESULT, 3, ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC4_End
+	clearflag FLAG_SN_HIDE_VILLA_PTNPC4
+ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC4_End:
+	return
+
+ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC5:
+	setflag FLAG_SN_HIDE_VILLA_PTNPC5
+	special SinnohDayOfWeek
+	goto_if_ne VAR_RESULT, 4, ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC5_End
+	clearflag FLAG_SN_HIDE_VILLA_PTNPC5
+ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC5_End:
+	return
+
+ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC6:
+	setflag FLAG_SN_HIDE_VILLA_PTNPC6
+	special SinnohDayOfWeek
+	goto_if_ne VAR_RESULT, 5, ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC6_End
+	clearflag FLAG_SN_HIDE_VILLA_PTNPC6
+ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC6_End:
+	return
+
+ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC7:
+	setflag FLAG_SN_HIDE_VILLA_PTNPC7
+	special SinnohDayOfWeek
+	goto_if_ne VAR_RESULT, 6, ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC7_End
+	clearflag FLAG_SN_HIDE_VILLA_PTNPC7
+ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC7_End:
+	return
+
+ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC8:
+	setflag FLAG_SN_HIDE_VILLA_PTNPC8
+	special SinnohDayOfWeek
+	goto_if_ne VAR_RESULT, 1, ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC8_End
+	clearflag FLAG_SN_HIDE_VILLA_PTNPC8
+ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC8_End:
+	return
+
+ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC9:
+	setflag FLAG_SN_HIDE_VILLA_PTNPC9
+	special SinnohDayOfWeek
+	goto_if_ne VAR_RESULT, 2, ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC9_End
+	clearflag FLAG_SN_HIDE_VILLA_PTNPC9
+ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC9_End:
+	return
+
+ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC10:
+	setflag FLAG_SN_HIDE_VILLA_PTNPC10
+	special SinnohDayOfWeek
+	goto_if_ne VAR_RESULT, 3, ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC10_End
+	clearflag FLAG_SN_HIDE_VILLA_PTNPC10
+ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC10_End:
+	return
+
+ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC11:
+	setflag FLAG_SN_HIDE_VILLA_PTNPC11
+	special SinnohDayOfWeek
+	goto_if_ne VAR_RESULT, 4, ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC11_End
+	clearflag FLAG_SN_HIDE_VILLA_PTNPC11
+ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC11_End:
+	return
+
+ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC12:
+	setflag FLAG_SN_HIDE_VILLA_PTNPC12
+	goto_if_unset FLAG_SYS_GAME_CLEAR, ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC12_End
+	special SinnohDayOfWeek
+	goto_if_ne VAR_RESULT, 0, ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC12_End
+	clearflag FLAG_SN_HIDE_VILLA_PTNPC12
+ResortArea_Villa_EventScript_SNVis_VILLA_PTNPC12_End:
+	return
+
+ResortArea_Villa_EventScript_SNFurniture::
+	msgbox ResortArea_Villa_Text_SNFurniture, MSGBOX_SIGN
+	end
+ResortArea_Villa_Text_SNFurniture:
+	.string "It’s an order form from the furniture\n"
+	.string "shop.\p"
+	.string "Different friends drop by the Villa on\n"
+	.string "different days of the week.$"
