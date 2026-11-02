@@ -28,7 +28,6 @@ StarkMountain_Room3_EventScript_SNHEATRAN::
 	setwildbattle SPECIES_HEATRAN, 50
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
-	waitstate
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, StarkMountain_Room3_EventScript_SNHEATRAN_Ran

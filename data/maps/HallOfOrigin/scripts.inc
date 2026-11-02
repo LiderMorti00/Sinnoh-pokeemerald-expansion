@@ -24,7 +24,6 @@ HallOfOrigin_EventScript_SNARCEUS::
 	setwildbattle SPECIES_ARCEUS, 80
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
-	waitstate
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, HallOfOrigin_EventScript_SNARCEUS_Ran
