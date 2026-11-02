@@ -176,6 +176,9 @@ LakeVerity_EventScript_SNVERITY_MARS_Won:
 	removeobject VAR_LAST_TALKED
 	setflag FLAG_SN_HIDE_VERITY_MARS
 	fadescreen FADE_FROM_BLACK
+	call Sinnoh_EventScript_BufferCounterpartName
+	msgbox LakeVerity_Text_SNAfterMars1, MSGBOX_DEFAULT
+	msgbox LakeVerity_Text_SNAfterMars2, MSGBOX_DEFAULT
 	release
 	end
 LakeVerity_EventScript_SNVERITY_MARS_Intro:
@@ -199,17 +202,23 @@ LakeVerity_EventScript_SNVERITY_MARS_Defeat:
 	.string "Mars: I lost again...$"
 
 LakeVerity_EventScript_SNVERITY_MARS_Post:
-	.string "I lost again...\p"
-	.string "So, first the windworks, and now Lake\n"
-	.string "Verity that I owe you for!\p"
-	.string "This shouldn’t be happening to Team\n"
-	.string "Galactic’s Commander...\p"
-	.string "...Calm down, Mars... I’ve done my part in\n"
-	.string "all of this...\p"
-	.string "My mission was to transport the lake’s\n"
-	.string "POKéMON to our HQ...\p"
-	.string "...That’s right! I accomplished my\n"
-	.string "mission without a problem!$"
+	.string "Mars: The POKéMON of the three lakes\n"
+	.string "are connected somehow.\p"
+	.string "Thanks to Saturn’s grandstanding at\n"
+	.string "Lake Valor, a cavern appeared here.\p"
+	.string "It was the cavern where the POKéMON\n"
+	.string "MESPRIT slept.\p"
+	.string "MESPRIT appeared, too, probably to go\n"
+	.string "help its friends.\p"
+	.string "That worked out well for us. It was\n"
+	.string "super easy to catch.\p"
+	.string "So, now we’ve got them all: MESPRIT,\n"
+	.string "“The Being of Emotion.”\p"
+	.string "AZELF, “The Being of Willpower.”\p"
+	.string "UXIE, “The Being of Intelligence.”\p"
+	.string "Now that we have them all...\p"
+	.string "You can look forward to what plans\n"
+	.string "Team Galactic has for them!$"
 
 LakeVerity_EventScript_SNVERITY_GRUNT1::
 	trainerbattle_single TRAINER_BENJAMIN_5, LakeVerity_EventScript_SNVERITY_GRUNT1_Intro, LakeVerity_EventScript_SNVERITY_GRUNT1_Defeat, LakeVerity_EventScript_SNVERITY_GRUNT1_Won
@@ -392,3 +401,26 @@ LakeVerity_Text_SNLucas:
 	.string "the POKéMON of the lake...\p"
 	.string "This woman... I lost to her, but just\n"
 	.string "barely!$"
+
+LakeVerity_Text_SNAfterMars1:
+	.string "Rowan: I see... This also occurred at\n"
+	.string "Lake Valor...\p"
+	.string "Another legendary POKéMON was taken\n"
+	.string "away by Team Galactic...\p"
+	.string "Both of you went up against\n"
+	.string "full-fledged criminals...\p"
+	.string "The fact that you’re unharmed is\n"
+	.string "reason enough to celebrate.\p"
+	.string "...But what about {RIVAL}?\p"
+	.string "What is happening at Lake Acuity? Is\n"
+	.string "{RIVAL} safe?\p"
+	.string "Rowan: {PLAYER}, I need you to go to\n"
+	.string "Lake Acuity right away.\p"
+	.string "I’m worried about {RIVAL}.$"
+
+LakeVerity_Text_SNAfterMars2:
+	.string "{STR_VAR_1}: {PLAYER}, what is Team\n"
+	.string "Galactic up to?\p"
+	.string "Are the abducted POKéMON of the lakes\n"
+	.string "going to be OK?$"
+

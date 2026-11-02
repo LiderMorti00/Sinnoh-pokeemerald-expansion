@@ -11,6 +11,7 @@ ValorLakefront_Text_PtSign1:
 	.string "Than You Can Wish For$"
 
 ValorLakefront_OnTransitionSN:
+	call ValorLakefront_EventScript_SNVis_VALOR_BARRY
 	call ValorLakefront_EventScript_SNLakeWarp
 	call ValorLakefront_EventScript_SNVis_VL_GRUNT
 	call ValorLakefront_EventScript_SNVis_VALOR_CYNTHIA
@@ -28,7 +29,22 @@ ValorLakefront_EventScript_SNVis_VALOR_CYNTHIA_End:
 ValorLakefront_EventScript_SNCynthia::
 	lock
 	faceplayer
+	goto_if_set FLAG_SN_HIDE_VALOR_BARRY, ValorLakefront_EventScript_SNCynthia_NoBarry
+	msgbox ValorLakefront_Text_SNBarry1, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_SN_VALOR_BARRY
+	setflag FLAG_SN_HIDE_VALOR_BARRY
+	fadescreen FADE_FROM_BLACK
+	msgbox ValorLakefront_Text_SNHesYourFriend, MSGBOX_DEFAULT
+ValorLakefront_EventScript_SNCynthia_NoBarry:
+	msgbox ValorLakefront_Text_SNIHadToTalk, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, ValorLakefront_EventScript_SNCynthia_Seen
+	msgbox ValorLakefront_Text_SNHaventSeen, MSGBOX_DEFAULT
+	goto ValorLakefront_EventScript_SNCynthia_Potion
+ValorLakefront_EventScript_SNCynthia_Seen:
 	msgbox ValorLakefront_EventScript_SNCynthia_T1, MSGBOX_DEFAULT
+ValorLakefront_EventScript_SNCynthia_Potion:
 	msgbox ValorLakefront_EventScript_SNCynthia_T2, MSGBOX_DEFAULT
 	giveitem ITEM_SECRET_POTION
 	setflag FLAG_SN_RECEIVED_SECRET_POTION
@@ -186,3 +202,57 @@ ValorLakefront_EventScript_SNHoneyTree_Fresh:
 ValorLakefront_EventScript_SNHoneyTree_End:
 	release
 	end
+
+ValorLakefront_Text_SNBarry1:
+	.string "{PLAYER}: Hey, {RIVAL}! Where’d that\n"
+	.string "Galactic goon run off to?\p"
+	.string "{RIVAL}: That explosion in the Great\n"
+	.string "Marsh? It wasn’t anything serious.\p"
+	.string "Mr. Wake told me to tell you that.\p"
+	.string "But that Team Galactic... Wow! Are they\n"
+	.string "out of control or what?\p"
+	.string "Next time I see them, I’ll teach them a\n"
+	.string "lesson they won’t forget!\p"
+	.string "See you around!$"
+
+ValorLakefront_Text_SNHesYourFriend:
+	.string "Cynthia: He’s your friend?\p"
+	.string "He’s more impatient than he is\n"
+	.string "energetic, isn’t he?$"
+
+ValorLakefront_Text_SNIHadToTalk:
+	.string "Cynthia: Oh, hello, long time no see! How\n"
+	.string "is your POKéDEX filling up?\p"
+	.string "I came to research the folklore about\n"
+	.string "the lake, but...\p"
+	.string "Well, it doesn’t appear as if the lake is\n"
+	.string "open to the public now.\p"
+	.string "Have you heard the folklore about it?\p"
+	.string "They say there is an island inside the\n"
+	.string "lake.\p"
+	.string "And inside that island is a mirage of a\n"
+	.string "POKéMON.\p"
+	.string "No one must enter the chamber of that\n"
+	.string "POKéMON...\p"
+	.string "Oh, that’s right! I had to talk to you\n"
+	.string "about something else...\p"
+	.string "Cynthia: So, getting back to what I\n"
+	.string "started saying earlier...\p"
+	.string "Have you seen the group of PSYDUCK on\n"
+	.string "Route 210?$"
+
+ValorLakefront_Text_SNHaventSeen:
+	.string "Cynthia: You haven’t seen them? By the\n"
+	.string "café on Route 210.\p"
+	.string "There’s a group of PSYDUCK huddled\n"
+	.string "with their heads in their, uh,\p"
+	.string "hands...?$"
+
+ValorLakefront_EventScript_SNVis_VALOR_BARRY:
+	setflag FLAG_SN_HIDE_VALOR_BARRY
+	goto_if_unset FLAG_BADGE05_GET, ValorLakefront_EventScript_SNVis_VALOR_BARRY_End
+	goto_if_not_defeated TRAINER_ROBERT_2, ValorLakefront_EventScript_SNVis_VALOR_BARRY_End
+	goto_if_set FLAG_SN_RECEIVED_SECRET_POTION, ValorLakefront_EventScript_SNVis_VALOR_BARRY_End
+	clearflag FLAG_SN_HIDE_VALOR_BARRY
+ValorLakefront_EventScript_SNVis_VALOR_BARRY_End:
+	return

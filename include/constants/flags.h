@@ -3034,4 +3034,8 @@
 #define FLAG_SN_HIDE_PAST_WAKE_A                                FLAG_HIDE_NEW_MAUVILLE_VOLTORB_1
 #define FLAG_SN_HIDE_PAST_BOMB                                  FLAG_HIDE_NEW_MAUVILLE_VOLTORB_2
 
+
+// ---- Proyecto Sinnoh: historia de Platino (objetos, regalos y objetos ocultos) ----
+#define FLAG_SN_HIDE_VALOR_BARRY                                FLAG_HIDE_NEW_MAUVILLE_VOLTORB_3
+
 #endif // GUARD_CONSTANTS_FLAGS_H

@@ -265,6 +265,10 @@ CanalaveCity_Library_F3_EventScript_SNRowan::
 	msgbox CanalaveCity_Library_F3_EventScript_SNRowan_T7, MSGBOX_DEFAULT
 	msgbox CanalaveCity_Library_F3_EventScript_SNRowan_T8, MSGBOX_DEFAULT
 	msgbox CanalaveCity_Library_F3_EventScript_SNRowan_T9, MSGBOX_DEFAULT
+	call Sinnoh_EventScript_BufferCounterpartName
+	msgbox CanalaveCity_Library_F3_Text_SNAfter1, MSGBOX_DEFAULT
+	msgbox CanalaveCity_Library_F3_Text_SNAfter2, MSGBOX_DEFAULT
+	msgbox CanalaveCity_Library_F3_Text_SNAfter3, MSGBOX_DEFAULT
 	closemessage
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_SN_LIB_ROWAN
@@ -396,3 +400,41 @@ CanalaveCity_Library_F3_EventScript_SNEnter1_M:
 CanalaveCity_Library_F3_Text_SNOverHere:
 	.string "BARRY: Hey, {PLAYER}! Over here! This\n"
 	.string "way!$"
+
+CanalaveCity_Library_F3_Text_SNAfter1:
+	.string "Rowan: ...That tremor... That wasn’t a\n"
+	.string "natural occurrence.\p"
+	.string "Rowan: ...That {RIVAL}... Can’t sit\n"
+	.string "still...\p"
+	.string "{PLAYER}, I don’t like to demand, but I\n"
+	.string "need you at Lake Valor.\p"
+	.string "It’s impossible for things to be OK. Not\n"
+	.string "after an explosion like that.\p"
+	.string "But I have no idea what is taking\n"
+	.string "place...\p"
+	.string "But before you go, let me stress: don’t\n"
+	.string "get in over your head.\p"
+	.string "We will try to join you as soon as we\n"
+	.string "inspect Lake Verity.$"
+
+CanalaveCity_Library_F3_Text_SNAfter2:
+	.string "{STR_VAR_1}: ...{PLAYER}, you’ll be OK, no\n"
+	.string "matter what, right?\p"
+	.string "{STR_VAR_1}: {STR_VAR_1}: We’re going\n"
+	.string "off to Lake Verity first...\p"
+	.string "Don’t do anything rash if something\n"
+	.string "does happen.$"
+
+CanalaveCity_Library_F3_Text_SNAfter3:
+	.string "Rowan: Hmm...\p"
+	.string "What is taking place at Lake Valor...\n"
+	.string "You must find out!\p"
+	.string "But before you go, let me stress: don’t\n"
+	.string "get in over your head.\p"
+	.string "We will try to join you as soon as we\n"
+	.string "inspect Lake Verity.\p"
+	.string "Rowan: {PLAYER}. You should leave now,\n"
+	.string "too.\p"
+	.string "...There may be aftershocks, however.\n"
+	.string "Be alert always.$"
+
