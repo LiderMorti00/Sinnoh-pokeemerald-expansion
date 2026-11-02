@@ -3089,4 +3089,10 @@
 #define FLAG_SN_SURVIVAL_BUCK                                   (TRAINER_FLAGS_START + TRAINER_GABRIELLE_5)
 #define FLAG_SN_HIDE_SURV_BUCK                                  (TRAINER_FLAGS_START + TRAINER_GABRIELLE_4)
 
+
+// ---- Proyecto Sinnoh: historia de Platino (objetos, regalos y objetos ocultos) ----
+#define FLAG_SN_SOLACEON_BARRY                                  (TRAINER_FLAGS_START + TRAINER_EVERETT)
+#define FLAG_SN_HIDE_SOL_BARRY                                  (TRAINER_FLAGS_START + TRAINER_ALVARO)
+#define FLAG_SN_HIDE_WW_GIRL                                    (TRAINER_FLAGS_START + TRAINER_MARIELA)
+
 #endif // GUARD_CONSTANTS_FLAGS_H

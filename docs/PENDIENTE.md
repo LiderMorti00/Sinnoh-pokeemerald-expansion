@@ -3,25 +3,19 @@
 Lista única de tareas pendientes. Cuando se termine una tarea, se borra de aquí.
 Fuentes de referencia: Bulbapedia (guía de Platino), WikiDex, pret/pokeplatinum (textos y eventos originales).
 
-Última revisión: 2 de noviembre de 2026.
+Última revisión: 2 de noviembre de 2026 (segunda tanda).
 
 ---
 
 ## 1. Historia
 
-| # | Dónde | Qué falta | Notas |
-|---|-------|-----------|-------|
-| 1.1 | Sosiego | Dawn/Lucas te recibe («¡Tengo algo guay!») y te habla de los Unown y las Ruinas. | En Platino te da el Estuche de Sellos. Esmeralda no tiene Sellos: hay que darle otro regalo o dejar solo la conversación. |
-| 1.2 | Valle Eólico | La niña de la Ruta 205 se reúne con su padre cuando echas al Equipo Galaxia. | La escena de la Ruta 205 está hecha. Falta el reencuentro dentro de la central. |
-| 1.3 | Isla Hierro | Frases de Riley mientras te acompaña: «Sería bueno que volvieras», «Acéptalo como muestra de amistad», «Las minas de acero se agotaron», «¿Conoces a Byron?», «Imagina un combate Acero contra Acero». | Están en los bancos `iron_island_b2f_left_room` y `follower_partners` de pokeplatinum. |
-| 1.4 | Área Supervivencia | El abuelo de Buck cuenta la leyenda de Heatran. | Comprobar si Heatran depende de esa charla, como en Platino. |
+No queda ninguna escena de la historia sin hacer. Lo que falta es probarlas todas en el emulador (apartado 5).
 
 ## 2. Gráficos
 
 | # | Qué | Notas |
 |---|-----|-------|
 | 2.1 | Sprite de Dawn en el mapa (sigue usando el de Leaf). | Hace falta una hoja de sprites de Dawn al estilo GBA (16×32, mismos fotogramas que Leaf). |
-| 2.2 | Casino de Rocavelo: los NPC son los del Casino de Malvalona (Esmeralda). | Cambiarlos por los de Platino (Belleza, Pokéfan, Coleccionista, Guitarrista, Trabajador) con sus textos. La recepcionista y los premios deben seguir funcionando. |
 | 2.3 | Buzones delante de las casas de Hojaverde. | Son decorativos; en Platino se pueden leer. |
 | 2.4 | Roca musgo (Bosque Vetusta) y roca helada (Ruta 217). | Eevee ya evoluciona en esas zonas, pero las rocas no se ven en el mapa. |
 
@@ -29,10 +23,8 @@ Fuentes de referencia: Bulbapedia (guía de Platino), WikiDex, pret/pokeplatinum
 
 | # | Dónde | Qué falta | Notas |
 |---|-------|-----------|-------|
-| 3.1 | TV de Jubileo, 1F | Rincón de la Lotería. | El script de Calagua depende de su mapa (ID del dependiente y baldosas del ordenador). Hay que adaptarlo. |
 | 3.2 | TV de Jubileo, 2F | Galería (fondos) y los NPC de esa planta. | Algunos textos hablan del Terminal Global, que se eliminó. |
 | 3.3 | Túnel Maníaco (Ruta 214) | Se alarga según los Unown que hayas visto. | Necesita varios mapas o cambiar baldosas por script. |
-| 3.4 | Ruta Ciclista (Ruta 206) | Las garitas no obligan a ir en bici. | En Platino la cuesta solo se sube en bici. |
 | 3.5 | Gran Pantano | La vaquera da el reto de capturar 5 Pokémon en una partida del Safari. | En Platino el premio es una app del Pokétch; buscar otro premio. |
 | 3.6 | Revanchas | Revisar qué entrenadores de Sinnoh tienen revancha con el Buscapelea. | El año pasado faltaban 13. |
 
@@ -54,6 +46,10 @@ Fuentes de referencia: Bulbapedia (guía de Platino), WikiDex, pret/pokeplatinum
 - Buck y Barry en el Área Supervivencia, recepcionista del Gran Pantano.
 - NPC nuevos de Pradera, Liga (Centro Pokémon norte), Zona Guay, Rutas 210 y 211, Puntaneva, restaurante de Ribera Valor, TV de Jubileo y Compañía PokéNav, Pokémon de Sosiego.
 - Laboratorio de Arena después de la Columna Lanza (Rowan y Dawn).
+- Reencuentro de la niña con su padre en el Valle Eólico (tras vencer a Mars).
+- Charla de Riley en la Isla Hierro (frase al azar al hablarle mientras te acompaña).
+- Garitas de la Ruta Ciclista: hay que ir en bici para entrar en la cuesta.
+- Casino de Rocavelo: gente de Platino y muñecos de Pikachu, Clefairy y Jigglypuff.
 
 ## 6. Prueba final
 

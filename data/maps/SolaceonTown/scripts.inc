@@ -1,4 +1,5 @@
 SolaceonTown_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, SolaceonTown_OnTransitionSN
 	.byte 0
 
 SolaceonTown_EventScript_PtNpc1::
@@ -142,3 +143,234 @@ SolaceonTown_EventScript_SNMonPachirisu::
 
 SolaceonTown_EventScript_SNMonPachirisu_Text:
 	.string "PACHIRISU: Pachi! Pachiri!$"
+
+SolaceonTown_OnTransitionSN:
+	call SolaceonTown_EventScript_SNVis_SOL_BARRY
+	end
+
+SolaceonTown_EventScript_SNVis_SOL_BARRY:
+	setflag FLAG_SN_HIDE_SOL_BARRY
+	goto_if_set FLAG_SN_SOLACEON_BARRY, SolaceonTown_EventScript_SNVis_SOL_BARRY_End
+	clearflag FLAG_SN_HIDE_SOL_BARRY
+SolaceonTown_EventScript_SNVis_SOL_BARRY_End:
+	return
+
+SolaceonTown_EventScript_SNSolB_T0::
+	goto_if_set FLAG_SN_HIDE_SOL_BARRY, SolaceonTown_EventScript_SNSolB_T0_End
+	lockall
+	applymovement LOCALID_SN_SOL_BARRY, SolaceonTown_EventScript_SNSolB_T0_M
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, SolaceonTown_EventScript_SNSolB_T0_P
+	waitmovement 0
+	goto SolaceonTown_EventScript_SNBarry
+SolaceonTown_EventScript_SNSolB_T0_End:
+	end
+
+SolaceonTown_EventScript_SNSolB_T0_M:
+	emote_exclamation_mark
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_left
+	walk_fast_left
+	walk_fast_left
+	face_down
+	step_end
+
+SolaceonTown_EventScript_SNSolB_T0_P:
+	face_up
+	step_end
+
+SolaceonTown_EventScript_SNSolB_T1::
+	goto_if_set FLAG_SN_HIDE_SOL_BARRY, SolaceonTown_EventScript_SNSolB_T1_End
+	lockall
+	applymovement LOCALID_SN_SOL_BARRY, SolaceonTown_EventScript_SNSolB_T1_M
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, SolaceonTown_EventScript_SNSolB_T1_P
+	waitmovement 0
+	goto SolaceonTown_EventScript_SNBarry
+SolaceonTown_EventScript_SNSolB_T1_End:
+	end
+
+SolaceonTown_EventScript_SNSolB_T1_M:
+	emote_exclamation_mark
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_left
+	walk_fast_left
+	face_down
+	step_end
+
+SolaceonTown_EventScript_SNSolB_T1_P:
+	face_up
+	step_end
+
+SolaceonTown_EventScript_SNSolB_T2::
+	goto_if_set FLAG_SN_HIDE_SOL_BARRY, SolaceonTown_EventScript_SNSolB_T2_End
+	lockall
+	applymovement LOCALID_SN_SOL_BARRY, SolaceonTown_EventScript_SNSolB_T2_M
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, SolaceonTown_EventScript_SNSolB_T2_P
+	waitmovement 0
+	goto SolaceonTown_EventScript_SNBarry
+SolaceonTown_EventScript_SNSolB_T2_End:
+	end
+
+SolaceonTown_EventScript_SNSolB_T2_M:
+	emote_exclamation_mark
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_left
+	face_down
+	step_end
+
+SolaceonTown_EventScript_SNSolB_T2_P:
+	face_up
+	step_end
+
+SolaceonTown_EventScript_SNSolB_T3::
+	goto_if_set FLAG_SN_HIDE_SOL_BARRY, SolaceonTown_EventScript_SNSolB_T3_End
+	lockall
+	applymovement LOCALID_SN_SOL_BARRY, SolaceonTown_EventScript_SNSolB_T3_M
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, SolaceonTown_EventScript_SNSolB_T3_P
+	waitmovement 0
+	goto SolaceonTown_EventScript_SNBarry
+SolaceonTown_EventScript_SNSolB_T3_End:
+	end
+
+SolaceonTown_EventScript_SNSolB_T3_M:
+	emote_exclamation_mark
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	face_down
+	step_end
+
+SolaceonTown_EventScript_SNSolB_T3_P:
+	face_up
+	step_end
+
+SolaceonTown_EventScript_SNSolB_T4::
+	goto_if_set FLAG_SN_HIDE_SOL_BARRY, SolaceonTown_EventScript_SNSolB_T4_End
+	lockall
+	applymovement LOCALID_SN_SOL_BARRY, SolaceonTown_EventScript_SNSolB_T4_M
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, SolaceonTown_EventScript_SNSolB_T4_P
+	waitmovement 0
+	goto SolaceonTown_EventScript_SNBarry
+SolaceonTown_EventScript_SNSolB_T4_End:
+	end
+
+SolaceonTown_EventScript_SNSolB_T4_M:
+	emote_exclamation_mark
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_right
+	face_down
+	step_end
+
+SolaceonTown_EventScript_SNSolB_T4_P:
+	face_up
+	step_end
+
+SolaceonTown_EventScript_SNSolB_T5::
+	goto_if_set FLAG_SN_HIDE_SOL_BARRY, SolaceonTown_EventScript_SNSolB_T5_End
+	lockall
+	applymovement LOCALID_SN_SOL_BARRY, SolaceonTown_EventScript_SNSolB_T5_M
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, SolaceonTown_EventScript_SNSolB_T5_P
+	waitmovement 0
+	goto SolaceonTown_EventScript_SNBarry
+SolaceonTown_EventScript_SNSolB_T5_End:
+	end
+
+SolaceonTown_EventScript_SNSolB_T5_M:
+	emote_exclamation_mark
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_right
+	walk_fast_right
+	face_down
+	step_end
+
+SolaceonTown_EventScript_SNSolB_T5_P:
+	face_up
+	step_end
+
+SolaceonTown_EventScript_SNSolB_T6::
+	goto_if_set FLAG_SN_HIDE_SOL_BARRY, SolaceonTown_EventScript_SNSolB_T6_End
+	lockall
+	applymovement LOCALID_SN_SOL_BARRY, SolaceonTown_EventScript_SNSolB_T6_M
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, SolaceonTown_EventScript_SNSolB_T6_P
+	waitmovement 0
+	goto SolaceonTown_EventScript_SNBarry
+SolaceonTown_EventScript_SNSolB_T6_End:
+	end
+
+SolaceonTown_EventScript_SNSolB_T6_M:
+	emote_exclamation_mark
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	face_down
+	step_end
+
+SolaceonTown_EventScript_SNSolB_T6_P:
+	face_up
+	step_end
+
+SolaceonTown_EventScript_SNBarry::
+	lockall
+	msgbox SolaceonTown_Text_SNBarry1, MSGBOX_DEFAULT
+	msgbox SolaceonTown_Text_SNBarry2, MSGBOX_DEFAULT
+	closemessage
+	setflag FLAG_SN_SOLACEON_BARRY
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_SN_SOL_BARRY
+	setflag FLAG_SN_HIDE_SOL_BARRY
+	fadescreen FADE_FROM_BLACK
+	releaseall
+	end
+
+SolaceonTown_Text_SNBarry1:
+	.string "{RIVAL}: Yahoo!\p"
+	.string "{RIVAL}: Hey, {PLAYER}!\p"
+	.string "I got something cool. I’ll show you as a\n"
+	.string "special favor!$"
+
+SolaceonTown_Text_SNBarry2:
+	.string "{RIVAL}: Huh? What the...\p"
+	.string "What’s this all about?\p"
+	.string "...I got some Seals, but I forgot to put\n"
+	.string "them on.\p"
+	.string "Oh, right. It’s because I was at the\n"
+	.string "ruins.\p"
+	.string "The ruins here are cool. You have to\n"
+	.string "check it out.\p"
+	.string "I even found a Hidden Machine. It was\n"
+	.string "Defog!\p"
+	.string "Anyway, I’ll battle you another time.\n"
+	.string "See ya!$"

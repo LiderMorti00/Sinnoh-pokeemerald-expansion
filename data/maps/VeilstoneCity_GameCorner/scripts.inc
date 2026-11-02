@@ -125,17 +125,17 @@ VeilstoneCity_GameCorner_EventScript_ChooseDollPrize::
 
 VeilstoneCity_GameCorner_EventScript_TreeckoDoll::
 	setvar VAR_TEMP_1, 1
-	bufferdecorationname STR_VAR_1, DECOR_TREECKO_DOLL
+	bufferdecorationname STR_VAR_1, DECOR_PIKACHU_DOLL
 	goto VeilstoneCity_GameCorner_EventScript_ConfirmDollPrize
 
 VeilstoneCity_GameCorner_EventScript_TorchicDoll::
 	setvar VAR_TEMP_1, 2
-	bufferdecorationname STR_VAR_1, DECOR_TORCHIC_DOLL
+	bufferdecorationname STR_VAR_1, DECOR_CLEFAIRY_DOLL
 	goto VeilstoneCity_GameCorner_EventScript_ConfirmDollPrize
 
 VeilstoneCity_GameCorner_EventScript_MudkipDoll::
 	setvar VAR_TEMP_1, 3
-	bufferdecorationname STR_VAR_1, DECOR_MUDKIP_DOLL
+	bufferdecorationname STR_VAR_1, DECOR_JIGGLYPUFF_DOLL
 	goto VeilstoneCity_GameCorner_EventScript_ConfirmDollPrize
 
 VeilstoneCity_GameCorner_EventScript_ConfirmDollPrize::
@@ -150,11 +150,11 @@ VeilstoneCity_GameCorner_EventScript_ConfirmDollPrize::
 VeilstoneCity_GameCorner_EventScript_BuyTreeckoDoll::
 	checkcoins VAR_TEMP_2
 	goto_if_lt VAR_TEMP_2, DOLL_COINS, VeilstoneCity_GameCorner_EventScript_NotEnoughCoinsForDoll
-	bufferdecorationname STR_VAR_2, DECOR_TREECKO_DOLL
-	checkdecorspace DECOR_TREECKO_DOLL
+	bufferdecorationname STR_VAR_2, DECOR_PIKACHU_DOLL
+	checkdecorspace DECOR_PIKACHU_DOLL
 	goto_if_eq VAR_RESULT, FALSE, VeilstoneCity_GameCorner_EventScript_NoRoomForDoll
 	removecoins DOLL_COINS
-	adddecoration DECOR_TREECKO_DOLL
+	adddecoration DECOR_PIKACHU_DOLL
 	updatecoinsbox
 	playse SE_SHOP
 	msgbox VeilstoneCity_GameCorner_Text_SendToYourHomePC, MSGBOX_DEFAULT
@@ -164,11 +164,11 @@ VeilstoneCity_GameCorner_EventScript_BuyTreeckoDoll::
 VeilstoneCity_GameCorner_EventScript_BuyTorchicDoll::
 	checkcoins VAR_TEMP_2
 	goto_if_lt VAR_TEMP_2, DOLL_COINS, VeilstoneCity_GameCorner_EventScript_NotEnoughCoinsForDoll
-	bufferdecorationname STR_VAR_2, DECOR_TORCHIC_DOLL
-	checkdecorspace DECOR_TORCHIC_DOLL
+	bufferdecorationname STR_VAR_2, DECOR_CLEFAIRY_DOLL
+	checkdecorspace DECOR_CLEFAIRY_DOLL
 	goto_if_eq VAR_RESULT, FALSE, VeilstoneCity_GameCorner_EventScript_NoRoomForDoll
 	removecoins DOLL_COINS
-	adddecoration DECOR_TORCHIC_DOLL
+	adddecoration DECOR_CLEFAIRY_DOLL
 	updatecoinsbox
 	playse SE_SHOP
 	msgbox VeilstoneCity_GameCorner_Text_SendToYourHomePC, MSGBOX_DEFAULT
@@ -178,11 +178,11 @@ VeilstoneCity_GameCorner_EventScript_BuyTorchicDoll::
 VeilstoneCity_GameCorner_EventScript_BuyMudkipDoll::
 	checkcoins VAR_TEMP_2
 	goto_if_lt VAR_TEMP_2, DOLL_COINS, VeilstoneCity_GameCorner_EventScript_NotEnoughCoinsForDoll
-	bufferdecorationname STR_VAR_2, DECOR_MUDKIP_DOLL
-	checkdecorspace DECOR_MUDKIP_DOLL
+	bufferdecorationname STR_VAR_2, DECOR_JIGGLYPUFF_DOLL
+	checkdecorspace DECOR_JIGGLYPUFF_DOLL
 	goto_if_eq VAR_RESULT, FALSE, VeilstoneCity_GameCorner_EventScript_NoRoomForDoll
 	removecoins DOLL_COINS
-	adddecoration DECOR_MUDKIP_DOLL
+	adddecoration DECOR_JIGGLYPUFF_DOLL
 	updatecoinsbox
 	playse SE_SHOP
 	msgbox VeilstoneCity_GameCorner_Text_SendToYourHomePC, MSGBOX_DEFAULT
@@ -370,43 +370,35 @@ VeilstoneCity_GameCorner_EventScript_Gentleman::
 	end
 
 VeilstoneCity_GameCorner_EventScript_Girl::
-	lock
-	faceplayer
-	goto_if_set FLAG_RECEIVED_STARTER_DOLL, VeilstoneCity_GameCorner_EventScript_ReceivedStarterDoll
-	msgbox VeilstoneCity_GameCorner_Text_GotTwoOfSameDollWantOne, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, VeilstoneCity_GameCorner_EventScript_DeclineStarterDoll
-	switch VAR_STARTER_MON
-	case 0, VeilstoneCity_GameCorner_EventScript_GiveTreeckoDoll
-	case 1, VeilstoneCity_GameCorner_EventScript_GiveTorchicDoll
-	case 2, VeilstoneCity_GameCorner_EventScript_GiveMudkipDoll
+	msgbox VeilstoneCity_GameCorner_Text_SNNothingGoingMyWay, MSGBOX_NPC
 	end
 
 VeilstoneCity_GameCorner_EventScript_GiveTreeckoDoll::
-	bufferdecorationname STR_VAR_2, DECOR_TREECKO_DOLL
-	checkdecorspace DECOR_TREECKO_DOLL
+	bufferdecorationname STR_VAR_2, DECOR_PIKACHU_DOLL
+	checkdecorspace DECOR_PIKACHU_DOLL
 	goto_if_eq VAR_RESULT, FALSE, VeilstoneCity_GameCorner_EventScript_NoRoomForStarterDoll
 	msgbox VeilstoneCity_GameCorner_Text_HereYouGo2, MSGBOX_DEFAULT
-	givedecoration DECOR_TREECKO_DOLL
+	givedecoration DECOR_PIKACHU_DOLL
 	setflag FLAG_RECEIVED_STARTER_DOLL
 	goto VeilstoneCity_GameCorner_EventScript_ReceivedStarterDoll
 	end
 
 VeilstoneCity_GameCorner_EventScript_GiveTorchicDoll::
-	bufferdecorationname STR_VAR_2, DECOR_TORCHIC_DOLL
-	checkdecorspace DECOR_TORCHIC_DOLL
+	bufferdecorationname STR_VAR_2, DECOR_CLEFAIRY_DOLL
+	checkdecorspace DECOR_CLEFAIRY_DOLL
 	goto_if_eq VAR_RESULT, FALSE, VeilstoneCity_GameCorner_EventScript_NoRoomForStarterDoll
 	msgbox VeilstoneCity_GameCorner_Text_HereYouGo2, MSGBOX_DEFAULT
-	givedecoration DECOR_TORCHIC_DOLL
+	givedecoration DECOR_CLEFAIRY_DOLL
 	setflag FLAG_RECEIVED_STARTER_DOLL
 	goto VeilstoneCity_GameCorner_EventScript_ReceivedStarterDoll
 	end
 
 VeilstoneCity_GameCorner_EventScript_GiveMudkipDoll::
-	bufferdecorationname STR_VAR_2, DECOR_MUDKIP_DOLL
-	checkdecorspace DECOR_MUDKIP_DOLL
+	bufferdecorationname STR_VAR_2, DECOR_JIGGLYPUFF_DOLL
+	checkdecorspace DECOR_JIGGLYPUFF_DOLL
 	goto_if_eq VAR_RESULT, FALSE, VeilstoneCity_GameCorner_EventScript_NoRoomForStarterDoll
 	msgbox VeilstoneCity_GameCorner_Text_HereYouGo2, MSGBOX_DEFAULT
-	givedecoration DECOR_MUDKIP_DOLL
+	givedecoration DECOR_JIGGLYPUFF_DOLL
 	setflag FLAG_RECEIVED_STARTER_DOLL
 	goto VeilstoneCity_GameCorner_EventScript_ReceivedStarterDoll
 	end
@@ -718,45 +710,50 @@ VeilstoneCity_GameCorner_Text_MauvilleSomethingForEveryone:
 	.string "For me, it's the GAME CORNER.$"
 
 VeilstoneCity_GameCorner_Text_RouletteTablesDifferentRates:
-	.string "The ROULETTE tables have different\n"
-	.string "rates.\p"
-	.string "Check your COINS if you're going to\n"
-	.string "pick a table.$"
+	.string "A friend in my group scored a ton of\n"
+	.string "Coins here.\p"
+	.string "Why mess with a good thing? I’ll try the\n"
+	.string "same spot, too!$"
 
 VeilstoneCity_GameCorner_Text_EasyToLoseTrackOfTime:
-	.string "It's easy to lose track of time in here. \n"
-	.string "I should get back to work.$"
+	.string "When a POKé BALL appears, it’s a chance\n"
+	.string "to line up slot marks.\p"
+	.string "Replays and PIKACHU line up even if\n"
+	.string "you don’t make an effort.\p"
+	.string "But you need to aim for better marks,\n"
+	.string "like POKé BALLS and Moon Stones.$"
 
 VeilstoneCity_GameCorner_Text_CoinsAreNeededToPlay:
-	.string "COINS are needed to play here\n"
-	.string "in the GAME CORNER.$"
+	.string "Hey, kid, if you want to play here, you\n"
+	.string "need a Coin Case.\p"
+	.string "I think the young man next door had\n"
+	.string "one.$"
 
 VeilstoneCity_GameCorner_Text_RouletteOnlyLuck:
-	.string "This ROULETTE thing…\n"
-	.string "It's rather demanding.\p"
-	.string "Win or lose, it's only by luck.$"
+	.string "I want Coins, of course, but setting\n"
+	.string "records is hot, too!$"
 
 VeilstoneCity_GameCorner_Text_UpTo3CoinsCanBeUsed:
 	.string "Up to three COINS can be used to play\n"
 	.string "the SLOTS.$"
 
 VeilstoneCity_GameCorner_Text_DifficultToStopOn7:
-	.string "It's very difficult to make it stop\n"
-	.string "right on “7.”\p"
-	.string "If it stops on “7” during the REEL TIME\n"
-	.string "bonus game, you'll receive extra COINS.$"
+	.string "Listen, when CLEFAIRY appears, that’s\n"
+	.string "your chance to line up sevens.\p"
+	.string "Line those babies up and you’re into\n"
+	.string "the bonus round!$"
 
 VeilstoneCity_GameCorner_Text_HeresSomeSlotsInfo:
-	.string "Here's some information for you\n"
-	.string "about the SLOTS.\p"
-	.string "The more lightning bolts you stock,\n"
-	.string "the more REEL TIME chances you get.\p"
-	.string "In a game with the maximum five\n"
-	.string "REEL TIME chances…\p"
-	.string "It is possible to receive four regular\n"
-	.string "bonuses, then a big bonus.\p"
-	.string "That would total 660 COINS, but it's\n"
-	.string "very difficult to get.$"
+	.string "Shoot for 10! Line up those bonus\n"
+	.string "rounds!\p"
+	.string "If you accomplish the feat of\n"
+	.string "completing 10 uninterrupted bonus\l"
+	.string "rounds,\p"
+	.string "please go to the counter.\p"
+	.string "You will be presented with a fabulous\n"
+	.string "prize!\p"
+	.string "The current record sits at that\n"
+	.string "straight bonus rounds!$"
 
 VeilstoneCity_GameCorner_Text_CantPlayWithNoCoinCase:
 	.string "You can't play if you don't have\n"
@@ -807,3 +804,10 @@ VeilstoneCity_GameCorner_Text_SNLookerPost:
 	.string "Also, if I have nothing to do, it means\n"
 	.string "the world, it is at peace.\p"
 	.string "...Ack. My streak is broken.$"
+
+VeilstoneCity_GameCorner_Text_SNNothingGoingMyWay:
+	.string "Sigh... Nothing’s going my way today...\p"
+	.string "Are you a Trainer? Did you battle the\n"
+	.string "Gym Leader?\p"
+	.string "She happens to be my daughter. She’s\n"
+	.string "some kind of tough!$"

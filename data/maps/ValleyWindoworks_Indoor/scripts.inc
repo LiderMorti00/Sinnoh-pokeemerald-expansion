@@ -1,4 +1,5 @@
 ValleyWindoworks_Indoor_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, ValleyWindoworks_Indoor_OnTransitionSN
 	.byte 0
 
 ValleyWindoworks_Indoor_EventScript_Grunt1::
@@ -29,7 +30,23 @@ ValleyWindoworks_Indoor_EventScript_Mars::
 	fadescreenswapbuffers FADE_FROM_BLACK
 	applymovement LOCALID_WINDWORKS_WORKER, Common_Movement_FacePlayer
 	waitmovement 0
-	msgbox ValleyWindoworks_Indoor_Text_WorkerThanks, MSGBOX_DEFAULT
+	msgbox ValleyWindoworks_Indoor_Text_SNPapa1, MSGBOX_DEFAULT
+	closemessage
+	clearflag FLAG_SN_HIDE_WW_GIRL
+	addobject LOCALID_SN_WW_GIRL
+	playse SE_PIN
+	applymovement LOCALID_SN_WW_GIRL, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_WINDWORKS_WORKER, Common_Movement_FaceRight
+	waitmovement 0
+	msgbox ValleyWindoworks_Indoor_Text_SNGirl1, MSGBOX_DEFAULT
+	msgbox ValleyWindoworks_Indoor_Text_SNPapa2, MSGBOX_DEFAULT
+	applymovement LOCALID_SN_WW_GIRL, Common_Movement_FacePlayer
+	waitmovement 0
+	msgbox ValleyWindoworks_Indoor_Text_SNGirl2, MSGBOX_DEFAULT
+	applymovement LOCALID_WINDWORKS_WORKER, Common_Movement_FacePlayer
+	waitmovement 0
+	msgbox ValleyWindoworks_Indoor_Text_SNPapa3, MSGBOX_DEFAULT
 	setvar VAR_SINNOH_STORY, 22
 ValleyWindoworks_Indoor_EventScript_MarsEnd::
 	releaseall
@@ -136,6 +153,61 @@ ValleyWindoworks_Indoor_Text_WorkerHelp:
 	.string "Please... stop them!$"
 
 ValleyWindoworks_Indoor_Text_WorkerAfter:
+	.string "Papa: Oh, yes, a balloon POKéMON\n"
+	.string "appears in front of the windworks.\p"
+	.string "It’s always a certain day of the week,\n"
+	.string "but I’m not sure which day.\p"
+	.string "Could its appearance have something\n"
+	.string "to do with this windworks using\p"
+	.string "wind-generated energy?$"
+
+ValleyWindoworks_Indoor_OnTransitionSN:
+	call ValleyWindoworks_Indoor_EventScript_SNVis_WW_GIRL
+	end
+
+ValleyWindoworks_Indoor_EventScript_SNVis_WW_GIRL:
+	setflag FLAG_SN_HIDE_WW_GIRL
+	goto_if_lt VAR_SINNOH_STORY, 22, ValleyWindoworks_Indoor_EventScript_SNVis_WW_GIRL_End
+	clearflag FLAG_SN_HIDE_WW_GIRL
+ValleyWindoworks_Indoor_EventScript_SNVis_WW_GIRL_End:
+	return
+
+ValleyWindoworks_Indoor_EventScript_SNGirl::
+	lock
+	faceplayer
+	msgbox ValleyWindoworks_Indoor_Text_SNGirl2, MSGBOX_DEFAULT
+	release
+	end
+
+ValleyWindoworks_Indoor_Text_SNPapa1:
+	.string "Team Galactic...\p"
+	.string "They were saying they had to gather\n"
+	.string "POKéMON and energy no matter what.\p"
+	.string "It was for creating a new universe, or\n"
+	.string "so they claimed.\p"
+	.string "Nothing they said made any sort of\n"
+	.string "sense to me.\p"
+	.string "I can’t tell you how grateful I am for\n"
+	.string "you saving me.\p"
+	.string "I can finally see my little daughter\n"
+	.string "again!$"
+
+ValleyWindoworks_Indoor_Text_SNGirl1:
+	.string "Little girl: Papa!\p"
+	.string "Yuck! Papa, you’re stinky! Go shower\n"
+	.string "now, stinky!$"
+
+ValleyWindoworks_Indoor_Text_SNPapa2:
+	.string "Papa: Oh, sorry! Ahaha! They had me\n"
+	.string "working nonstop!$"
+
+ValleyWindoworks_Indoor_Text_SNGirl2:
+	.string "Little girl: Thank you, Trainer! You\n"
+	.string "made those bad people go away!\p"
+	.string "I think the balloon POKéMON will come\n"
+	.string "visiting again!$"
+
+ValleyWindoworks_Indoor_Text_SNPapa3:
 	.string "Papa: Oh, yes, a balloon POKéMON\n"
 	.string "appears in front of the windworks.\p"
 	.string "It’s always a certain day of the week,\n"

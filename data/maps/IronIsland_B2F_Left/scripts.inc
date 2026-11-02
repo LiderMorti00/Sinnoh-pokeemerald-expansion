@@ -264,7 +264,14 @@ IronIsland_B2F_Left_EventScript_SNRiley_EggTalk:
 @ Riley como acompañante
 IronIsland_B2F_Left_EventScript_SNRiley_Heal::
 	lock
+	random 5
+	switch VAR_RESULT
+	case 0, IronIsland_B2F_Left_EventScript_SNRileyChat0
+	case 1, IronIsland_B2F_Left_EventScript_SNRileyChat1
+	case 2, IronIsland_B2F_Left_EventScript_SNRileyChat2
+	case 3, IronIsland_B2F_Left_EventScript_SNRileyChat3
 	msgbox IronIsland_B2F_Left_EventScript_SNRiley_Restless, MSGBOX_DEFAULT
+IronIsland_B2F_Left_EventScript_SNRileyHealNow:
 	special HealPlayerParty
 	playfanfare MUS_HEAL
 	waitfanfare
@@ -425,3 +432,46 @@ IronIsland_B2F_Left_EventScript_SNRileyMeet_MH:
 	walk_up
 	walk_right
 	step_end
+
+IronIsland_B2F_Left_EventScript_SNRileyChat0:
+	msgbox IronIsland_B2F_Left_Text_SNRileyChat0, MSGBOX_DEFAULT
+	goto IronIsland_B2F_Left_EventScript_SNRileyHealNow
+
+IronIsland_B2F_Left_EventScript_SNRileyChat1:
+	msgbox IronIsland_B2F_Left_Text_SNRileyChat1, MSGBOX_DEFAULT
+	goto IronIsland_B2F_Left_EventScript_SNRileyHealNow
+
+IronIsland_B2F_Left_EventScript_SNRileyChat2:
+	msgbox IronIsland_B2F_Left_Text_SNRileyChat2, MSGBOX_DEFAULT
+	goto IronIsland_B2F_Left_EventScript_SNRileyHealNow
+
+IronIsland_B2F_Left_EventScript_SNRileyChat3:
+	msgbox IronIsland_B2F_Left_Text_SNRileyChat3, MSGBOX_DEFAULT
+	goto IronIsland_B2F_Left_EventScript_SNRileyHealNow
+
+IronIsland_B2F_Left_Text_SNRileyChat0:
+	.string "Riley: Haha, I’d have to agree.\p"
+	.string "People training here would be those\n"
+	.string "with too much time on their hands.$"
+
+IronIsland_B2F_Left_Text_SNRileyChat1:
+	.string "Riley: This used to be a fairly thriving\n"
+	.string "ore mine once upon a time.\p"
+	.string "I guess the steel ore’s played out.\n"
+	.string "There’s only POKéMON here now.$"
+
+IronIsland_B2F_Left_Text_SNRileyChat2:
+	.string "Riley: Have you met Byron? The Leader\n"
+	.string "of Canalave Gym?\p"
+	.string "He’s asked me to become a Gym Leader,\n"
+	.string "but there’s his son Roark\p"
+	.string "to consider as well.$"
+
+IronIsland_B2F_Left_Text_SNRileyChat3:
+	.string "Riley: Imagine what it would be like for\n"
+	.string "a Steel-type POKéMON user to\p"
+	.string "battle a Steel type.\p"
+	.string "Would that be like battling yourself, I\n"
+	.string "wonder?\p"
+	.string "I mean, it’s a lot harder to defeat\n"
+	.string "one’s self than anyone else.$"

@@ -81,3 +81,21 @@ Route206_North_EventScript_SNDawnFather_T1L:
 	.string "behest.\p"
 	.string "{PLAYER}, let me ask you, how many\n"
 	.string "POKéMON have you met?$"
+
+Route206_North_EventScript_SNBikeOnly::
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+	goto_if_ne VAR_RESULT, DIR_SOUTH, Route206_North_EventScript_SNBikeOnly_End
+	specialvar VAR_RESULT, GetPlayerAvatarBike
+	goto_if_ne VAR_RESULT, 0, Route206_North_EventScript_SNBikeOnly_End
+	lockall
+	msgbox Route206_North_EventScript_SNBikeOnly_Text, MSGBOX_DEFAULT
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
+	waitmovement 0
+	releaseall
+Route206_North_EventScript_SNBikeOnly_End:
+	end
+
+Route206_North_EventScript_SNBikeOnly_Text:
+	.string "Cycling Road is only for Bicycles!\p"
+	.string "Please get on your Bicycle!$"
