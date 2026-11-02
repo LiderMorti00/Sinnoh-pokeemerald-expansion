@@ -325,7 +325,7 @@
       "type": "trigger",
       "x": 2,
       "y": 66,
-      "elevation": 3,
+      "elevation": 1,
       "var": "VAR_SINNOH_STORY",
       "var_value": "20",
       "script": "Route205_South_EventScript_BridgeBlock"
@@ -334,7 +334,7 @@
       "type": "trigger",
       "x": 3,
       "y": 66,
-      "elevation": 3,
+      "elevation": 1,
       "var": "VAR_SINNOH_STORY",
       "var_value": "20",
       "script": "Route205_South_EventScript_BridgeBlock"
@@ -343,7 +343,7 @@
       "type": "trigger",
       "x": 4,
       "y": 66,
-      "elevation": 3,
+      "elevation": 1,
       "var": "VAR_SINNOH_STORY",
       "var_value": "20",
       "script": "Route205_South_EventScript_BridgeBlock"
@@ -352,7 +352,7 @@
       "type": "trigger",
       "x": 5,
       "y": 66,
-      "elevation": 3,
+      "elevation": 1,
       "var": "VAR_SINNOH_STORY",
       "var_value": "20",
       "script": "Route205_South_EventScript_BridgeBlock"
@@ -364,51 +364,6 @@
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",
       "var_value": "20",
-      "script": "Route205_South_EventScript_BridgeBlock"
-    },
-    {
-      "type": "trigger",
-      "x": 2,
-      "y": 66,
-      "elevation": 3,
-      "var": "VAR_SINNOH_STORY",
-      "var_value": "21",
-      "script": "Route205_South_EventScript_BridgeBlock"
-    },
-    {
-      "type": "trigger",
-      "x": 3,
-      "y": 66,
-      "elevation": 3,
-      "var": "VAR_SINNOH_STORY",
-      "var_value": "21",
-      "script": "Route205_South_EventScript_BridgeBlock"
-    },
-    {
-      "type": "trigger",
-      "x": 4,
-      "y": 66,
-      "elevation": 3,
-      "var": "VAR_SINNOH_STORY",
-      "var_value": "21",
-      "script": "Route205_South_EventScript_BridgeBlock"
-    },
-    {
-      "type": "trigger",
-      "x": 5,
-      "y": 66,
-      "elevation": 3,
-      "var": "VAR_SINNOH_STORY",
-      "var_value": "21",
-      "script": "Route205_South_EventScript_BridgeBlock"
-    },
-    {
-      "type": "trigger",
-      "x": 14,
-      "y": 66,
-      "elevation": 3,
-      "var": "VAR_SINNOH_STORY",
-      "var_value": "21",
       "script": "Route205_South_EventScript_BridgeBlock"
     },
     {

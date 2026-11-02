@@ -19,6 +19,13 @@ Route204_Text_SarahPost:
 
 Route204_EventScript_Samantha::
 	trainerbattle_single TRAINER_ALBERTO, Route204_Text_SamanthaIntro, Route204_Text_SamanthaDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route204_EventScript_Samantha_Rematch
+	msgbox Route204_Text_SamanthaPost, MSGBOX_AUTOCLOSE
+	end
+
+Route204_EventScript_Samantha_Rematch:
+	trainerbattle_rematch TRAINER_ALBERTO, Route204_Text_SamanthaIntro, Route204_Text_SamanthaDefeat
 	msgbox Route204_Text_SamanthaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -52,6 +59,13 @@ Route204_Text_TylerPost:
 
 Route204_EventScript_Brandon::
 	trainerbattle_single TRAINER_DECLAN, Route204_Text_BrandonIntro, Route204_Text_BrandonDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route204_EventScript_Brandon_Rematch
+	msgbox Route204_Text_BrandonPost, MSGBOX_AUTOCLOSE
+	end
+
+Route204_EventScript_Brandon_Rematch:
+	trainerbattle_rematch TRAINER_DECLAN, Route204_Text_BrandonIntro, Route204_Text_BrandonDefeat
 	msgbox Route204_Text_BrandonPost, MSGBOX_AUTOCLOSE
 	end
 

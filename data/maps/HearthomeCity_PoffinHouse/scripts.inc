@@ -4,7 +4,7 @@ HearthomeCity_PoffinHouse_MapScripts::
 HearthomeCity_PoffinHouse_Text_PtNpc1_0:
 	.string "Hi! Let’s get cooking!\p"
 	.string "Here’s my advice on cooking tasty\n"
-	.string "Poffins for your POKéMON crew!\p"
+	.string "POKéBLOCKS for your POKéMON crew!\p"
 	.string "In the beginning, while it’s still a\n"
 	.string "batter, swirl it gently and avoid\p"
 	.string "spillage.\p"
@@ -16,6 +16,7 @@ HearthomeCity_PoffinHouse_Text_PtNpc1_0:
 HearthomeCity_PoffinHouse_EventScript_PtNpc1::
 	lock
 	faceplayer
+	goto_if_unset FLAG_RECEIVED_POKEBLOCK_CASE, HearthomeCity_PoffinHouse_EventScript_SNCase
 	msgbox HearthomeCity_PoffinHouse_Text_PtNpc1_0, MSGBOX_DEFAULT
 	release
 	end
@@ -34,10 +35,10 @@ HearthomeCity_PoffinHouse_EventScript_PtNpc2::
 
 HearthomeCity_PoffinHouse_Text_PtNpc3_0:
 	.string "Have you got some Berries?\p"
-	.string "To make delicious Poffins, the key\n"
+	.string "To make delicious POKéBLOCKS, the key\n"
 	.string "ingredient is a rare Berry.\p"
 	.string "And, the more cooks you have, the more\n"
-	.string "delicious the Poffin!$"
+	.string "delicious the POKéBLOCK!$"
 
 HearthomeCity_PoffinHouse_EventScript_PtNpc3::
 	lock
@@ -48,7 +49,7 @@ HearthomeCity_PoffinHouse_EventScript_PtNpc3::
 
 HearthomeCity_PoffinHouse_Text_PtNpc4_0:
 	.string "At the Wi-Fi Club, I can cook up\n"
-	.string "Poffins with my friends!$"
+	.string "POKéBLOCKS with my friends!$"
 
 HearthomeCity_PoffinHouse_EventScript_PtNpc4::
 	lock
@@ -145,3 +146,22 @@ Sinnoh_Pokemart_Tier5:
 	.2byte ITEM_SUPER_REPEL
 	.2byte ITEM_MAX_REPEL
 	pokemartlistend
+
+HearthomeCity_PoffinHouse_EventScript_SNCase:
+	msgbox HearthomeCity_PoffinHouse_Text_SNCase, MSGBOX_DEFAULT
+	giveitem ITEM_POKEBLOCK_CASE
+	setflag FLAG_RECEIVED_POKEBLOCK_CASE
+	msgbox HearthomeCity_PoffinHouse_Text_SNCase2, MSGBOX_DEFAULT
+	release
+	end
+HearthomeCity_PoffinHouse_Text_SNCase:
+	.string "Welcome to the POKéBLOCK HOUSE!\p"
+	.string "If you want to make POKéBLOCKS, you’ll\n"
+	.string "need something to keep them in.\p"
+	.string "Here, take this!$"
+
+HearthomeCity_PoffinHouse_Text_SNCase2:
+	.string "Put BERRIES in a BERRY BLENDER to\n"
+	.string "make POKéBLOCKS for your POKéMON.\p"
+	.string "You’ll find BERRY BLENDERS at the\n"
+	.string "CONTEST HALL here in HEARTHOME!$"

@@ -20,6 +20,13 @@ Route205_North_Text_AndrewPost:
 
 Route205_North_EventScript_Joseph::
 	trainerbattle_single TRAINER_PATRICIA, Route205_North_Text_JosephIntro, Route205_North_Text_JosephDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route205_North_EventScript_Joseph_Rematch
+	msgbox Route205_North_Text_JosephPost, MSGBOX_AUTOCLOSE
+	end
+
+Route205_North_EventScript_Joseph_Rematch:
+	trainerbattle_rematch TRAINER_PATRICIA, Route205_North_Text_JosephIntro, Route205_North_Text_JosephDefeat
 	msgbox Route205_North_Text_JosephPost, MSGBOX_AUTOCLOSE
 	end
 

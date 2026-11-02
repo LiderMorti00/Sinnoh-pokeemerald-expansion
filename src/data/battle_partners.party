@@ -57,3 +57,169 @@ Level: 20
 - Refresh
 - Soft-Boiled
 - Pound
+
+=== PARTNER_BARRY_CHIMCHAR ===
+Name: BARRY
+Class: Rival
+Pic: Sinnoh Barry
+Gender: Male
+Music: Male
+AI: Basic Trainer
+
+Staraptor
+Level: 42
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Close Combat
+- Aerial Ace
+- Take Down
+- Quick Attack
+
+Heracross
+Level: 42
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Close Combat
+- Brick Break
+- Night Slash
+- Aerial Ace
+
+Empoleon
+Level: 44
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Aqua Jet
+- Aerial Ace
+- Metal Claw
+- Swagger
+
+=== PARTNER_BARRY_PIPLUP ===
+Name: BARRY
+Class: Rival
+Pic: Sinnoh Barry
+Gender: Male
+Music: Male
+AI: Basic Trainer
+
+Staraptor
+Level: 42
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Close Combat
+- Aerial Ace
+- Take Down
+- Quick Attack
+
+Heracross
+Level: 42
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Close Combat
+- Brick Break
+- Night Slash
+- Aerial Ace
+
+Torterra
+Level: 44
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Giga Drain
+- Bite
+- Leech Seed
+- Synthesis
+
+=== PARTNER_BARRY_TURTWIG ===
+Name: BARRY
+Class: Rival
+Pic: Sinnoh Barry
+Gender: Male
+Music: Male
+AI: Basic Trainer
+
+Staraptor
+Level: 42
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Close Combat
+- Aerial Ace
+- Take Down
+- Quick Attack
+
+Heracross
+Level: 42
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Close Combat
+- Brick Break
+- Night Slash
+- Aerial Ace
+
+Infernape
+Level: 44
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Close Combat
+- Punishment
+- Flame Wheel
+- Will O Wisp
+
+=== PARTNER_RILEY ===
+Name: RILEY
+Class: Pkmn Trainer 1
+Pic: Sinnoh Riley
+Gender: Male
+Music: Male
+AI: Basic Trainer
+
+Lucario
+Level: 41
+IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+- Metal Claw
+- Force Palm
+- Quick Attack
+- Bone Rush
+
+=== PARTNER_BUCK ===
+Name: BUCK
+Class: Pkmn Trainer 1
+Pic: Sinnoh Buck
+Gender: Male
+Music: Male
+AI: Basic Trainer
+
+SPECIES_CLAYDOL
+Level: 63
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- MOVE_PSYCHIC
+- MOVE_ANCIENT_POWER
+- MOVE_LIGHT_SCREEN
+- MOVE_REFLECT
+
+
+
+=== PARTNER_MIRA ===
+Name: MIRA
+Class: Pkmn Trainer 1
+Pic: Sinnoh Mira
+Gender: Female
+Music: Female
+AI: Basic Trainer
+
+SPECIES_KADABRA
+Level: 26
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- MOVE_CONFUSION
+- MOVE_SHOCK_WAVE
+- MOVE_FLASH
+- MOVE_KINESIS
+
+
+
+=== PARTNER_MARLEY ===
+Name: MARLEY
+Class: Pkmn Trainer 1
+Pic: Sinnoh Marley
+Gender: Female
+Music: Female
+AI: Basic Trainer
+
+SPECIES_ARCANINE
+Level: 59
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- MOVE_EXTREME_SPEED
+- MOVE_FIRE_FANG
+- MOVE_HELPING_HAND
+- MOVE_AGILITY
+
+

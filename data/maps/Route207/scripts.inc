@@ -89,6 +89,13 @@ Route207_Text_KevinPost:
 
 Route207_EventScript_Helen::
 	trainerbattle_single TRAINER_LEROY, Route207_Text_HelenIntro, Route207_Text_HelenDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route207_EventScript_Helen_Rematch
+	msgbox Route207_Text_HelenPost, MSGBOX_AUTOCLOSE
+	end
+
+Route207_EventScript_Helen_Rematch:
+	trainerbattle_rematch TRAINER_LEROY, Route207_Text_HelenIntro, Route207_Text_HelenDefeat
 	msgbox Route207_Text_HelenPost, MSGBOX_AUTOCLOSE
 	end
 

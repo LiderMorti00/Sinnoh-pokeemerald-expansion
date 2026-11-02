@@ -3,6 +3,13 @@ Route227_MapScripts::
 
 Route227_EventScript_Saul::
 	trainerbattle_single TRAINER_MAY_ROUTE_110_MUDKIP, Route227_Text_SaulIntro, Route227_Text_SaulDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route227_EventScript_Saul_Rematch
+	msgbox Route227_Text_SaulPost, MSGBOX_AUTOCLOSE
+	end
+
+Route227_EventScript_Saul_Rematch:
+	trainerbattle_rematch TRAINER_MAY_ROUTE_110_MUDKIP, Route227_Text_SaulIntro, Route227_Text_SaulDefeat
 	msgbox Route227_Text_SaulPost, MSGBOX_AUTOCLOSE
 	end
 

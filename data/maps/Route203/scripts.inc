@@ -169,6 +169,13 @@ Route203_Text_KaitlinPost:
 
 Route203_EventScript_Dallas::
 	trainerbattle_single TRAINER_JAYLEN, Route203_Text_DallasIntro, Route203_Text_DallasDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route203_EventScript_Dallas_Rematch
+	msgbox Route203_Text_DallasPost, MSGBOX_AUTOCLOSE
+	end
+
+Route203_EventScript_Dallas_Rematch:
+	trainerbattle_rematch TRAINER_JAYLEN, Route203_Text_DallasIntro, Route203_Text_DallasDefeat
 	msgbox Route203_Text_DallasPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -185,6 +192,13 @@ Route203_Text_DallasPost:
 
 Route203_EventScript_Madeline::
 	trainerbattle_single TRAINER_TRAVIS, Route203_Text_MadelineIntro, Route203_Text_MadelineDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route203_EventScript_Madeline_Rematch
+	msgbox Route203_Text_MadelinePost, MSGBOX_AUTOCLOSE
+	end
+
+Route203_EventScript_Madeline_Rematch:
+	trainerbattle_rematch TRAINER_TRAVIS, Route203_Text_MadelineIntro, Route203_Text_MadelineDefeat
 	msgbox Route203_Text_MadelinePost, MSGBOX_AUTOCLOSE
 	end
 

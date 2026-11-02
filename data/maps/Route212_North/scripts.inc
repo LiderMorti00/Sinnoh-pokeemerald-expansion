@@ -23,6 +23,13 @@ Route212_North_Text_JasonPost:
 
 Route212_North_EventScript_Melissa::
 	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_7, Route212_North_Text_MelissaIntro, Route212_North_Text_MelissaDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route212_North_EventScript_Melissa_Rematch
+	msgbox Route212_North_Text_MelissaPost, MSGBOX_AUTOCLOSE
+	end
+
+Route212_North_EventScript_Melissa_Rematch:
+	trainerbattle_rematch TRAINER_GRUNT_AQUA_HIDEOUT_7, Route212_North_Text_MelissaIntro, Route212_North_Text_MelissaDefeat
 	msgbox Route212_North_Text_MelissaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -39,6 +46,13 @@ Route212_North_Text_MelissaPost:
 
 Route212_North_EventScript_Jeremy::
 	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_8, Route212_North_Text_JeremyIntro, Route212_North_Text_JeremyDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route212_North_EventScript_Jeremy_Rematch
+	msgbox Route212_North_Text_JeremyPost, MSGBOX_AUTOCLOSE
+	end
+
+Route212_North_EventScript_Jeremy_Rematch:
+	trainerbattle_rematch TRAINER_GRUNT_AQUA_HIDEOUT_8, Route212_North_Text_JeremyIntro, Route212_North_Text_JeremyDefeat
 	msgbox Route212_North_Text_JeremyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -58,6 +72,13 @@ Route212_North_Text_JeremyPost:
 
 Route212_North_EventScript_Reina::
 	trainerbattle_single TRAINER_DREW, Route212_North_Text_ReinaIntro, Route212_North_Text_ReinaDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route212_North_EventScript_Reina_Rematch
+	msgbox Route212_North_Text_ReinaPost, MSGBOX_AUTOCLOSE
+	end
+
+Route212_North_EventScript_Reina_Rematch:
+	trainerbattle_rematch TRAINER_DREW, Route212_North_Text_ReinaIntro, Route212_North_Text_ReinaDefeat
 	msgbox Route212_North_Text_ReinaPost, MSGBOX_AUTOCLOSE
 	end
 

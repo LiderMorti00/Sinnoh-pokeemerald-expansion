@@ -36,6 +36,13 @@ Route217_Text_LexiePost:
 
 Route217_EventScript_Bjorn::
 	trainerbattle_single TRAINER_CHESTER, Route217_Text_BjornIntro, Route217_Text_BjornDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route217_EventScript_Bjorn_Rematch
+	msgbox Route217_Text_BjornPost, MSGBOX_AUTOCLOSE
+	end
+
+Route217_EventScript_Bjorn_Rematch:
+	trainerbattle_rematch TRAINER_CHESTER, Route217_Text_BjornIntro, Route217_Text_BjornDefeat
 	msgbox Route217_Text_BjornPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -52,6 +59,13 @@ Route217_Text_BjornPost:
 
 Route217_EventScript_Madison::
 	trainerbattle_single TRAINER_ALEX, Route217_Text_MadisonIntro, Route217_Text_MadisonDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route217_EventScript_Madison_Rematch
+	msgbox Route217_Text_MadisonPost, MSGBOX_AUTOCLOSE
+	end
+
+Route217_EventScript_Madison_Rematch:
+	trainerbattle_rematch TRAINER_ALEX, Route217_Text_MadisonIntro, Route217_Text_MadisonDefeat
 	msgbox Route217_Text_MadisonPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -116,6 +130,13 @@ Route217_Text_LukePost:
 
 Route217_EventScript_Dalton::
 	trainerbattle_single TRAINER_DIANNE, Route217_Text_DaltonIntro, Route217_Text_DaltonDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route217_EventScript_Dalton_Rematch
+	msgbox Route217_Text_DaltonPost, MSGBOX_AUTOCLOSE
+	end
+
+Route217_EventScript_Dalton_Rematch:
+	trainerbattle_rematch TRAINER_DIANNE, Route217_Text_DaltonIntro, Route217_Text_DaltonDefeat
 	msgbox Route217_Text_DaltonPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -132,6 +153,13 @@ Route217_Text_DaltonPost:
 
 Route217_EventScript_Olivia::
 	trainerbattle_single TRAINER_JANI, Route217_Text_OliviaIntro, Route217_Text_OliviaDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route217_EventScript_Olivia_Rematch
+	msgbox Route217_Text_OliviaPost, MSGBOX_AUTOCLOSE
+	end
+
+Route217_EventScript_Olivia_Rematch:
+	trainerbattle_rematch TRAINER_JANI, Route217_Text_OliviaIntro, Route217_Text_OliviaDefeat
 	msgbox Route217_Text_OliviaPost, MSGBOX_AUTOCLOSE
 	end
 

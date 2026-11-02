@@ -3,6 +3,13 @@ Route230_MapScripts::
 
 Route230_EventScript_Glenn::
 	trainerbattle_single TRAINER_JULIO, Route230_Text_GlennIntro, Route230_Text_GlennDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route230_EventScript_Glenn_Rematch
+	msgbox Route230_Text_GlennPost, MSGBOX_AUTOCLOSE
+	end
+
+Route230_EventScript_Glenn_Rematch:
+	trainerbattle_rematch TRAINER_JULIO, Route230_Text_GlennIntro, Route230_Text_GlennDefeat
 	msgbox Route230_Text_GlennPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -20,6 +27,13 @@ Route230_Text_GlennPost:
 
 Route230_EventScript_Joanna::
 	trainerbattle_single TRAINER_GRUNT_UNUSED, Route230_Text_JoannaIntro, Route230_Text_JoannaDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route230_EventScript_Joanna_Rematch
+	msgbox Route230_Text_JoannaPost, MSGBOX_AUTOCLOSE
+	end
+
+Route230_EventScript_Joanna_Rematch:
+	trainerbattle_rematch TRAINER_GRUNT_UNUSED, Route230_Text_JoannaIntro, Route230_Text_JoannaDefeat
 	msgbox Route230_Text_JoannaPost, MSGBOX_AUTOCLOSE
 	end
 

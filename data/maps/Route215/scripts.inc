@@ -88,6 +88,13 @@ Route215_Text_CalvinPost:
 
 Route215_EventScript_Dennis::
 	trainerbattle_single TRAINER_CAMDEN, Route215_Text_DennisIntro, Route215_Text_DennisDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route215_EventScript_Dennis_Rematch
+	msgbox Route215_Text_DennisPost, MSGBOX_AUTOCLOSE
+	end
+
+Route215_EventScript_Dennis_Rematch:
+	trainerbattle_rematch TRAINER_CAMDEN, Route215_Text_DennisIntro, Route215_Text_DennisDefeat
 	msgbox Route215_Text_DennisPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -107,6 +114,13 @@ Route215_Text_DennisPost:
 
 Route215_EventScript_Maya::
 	trainerbattle_single TRAINER_DEMETRIUS, Route215_Text_MayaIntro, Route215_Text_MayaDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route215_EventScript_Maya_Rematch
+	msgbox Route215_Text_MayaPost, MSGBOX_AUTOCLOSE
+	end
+
+Route215_EventScript_Maya_Rematch:
+	trainerbattle_rematch TRAINER_DEMETRIUS, Route215_Text_MayaIntro, Route215_Text_MayaDefeat
 	msgbox Route215_Text_MayaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -123,6 +137,13 @@ Route215_Text_MayaPost:
 
 Route215_EventScript_Craig::
 	trainerbattle_single TRAINER_CHASE, Route215_Text_CraigIntro, Route215_Text_CraigDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route215_EventScript_Craig_Rematch
+	msgbox Route215_Text_CraigPost, MSGBOX_AUTOCLOSE
+	end
+
+Route215_EventScript_Craig_Rematch:
+	trainerbattle_rematch TRAINER_CHASE, Route215_Text_CraigIntro, Route215_Text_CraigDefeat
 	msgbox Route215_Text_CraigPost, MSGBOX_AUTOCLOSE
 	end
 

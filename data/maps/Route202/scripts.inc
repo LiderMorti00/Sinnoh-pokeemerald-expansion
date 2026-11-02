@@ -136,6 +136,13 @@ Route202_Text_DawnBye:
 
 Route202_EventScript_Tristan::
 	trainerbattle_single TRAINER_BILLY, Route202_Text_TristanIntro, Route202_Text_TristanDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route202_EventScript_Tristan_Rematch
+	msgbox Route202_Text_TristanPost, MSGBOX_AUTOCLOSE
+	end
+
+Route202_EventScript_Tristan_Rematch:
+	trainerbattle_rematch TRAINER_BILLY, Route202_Text_TristanIntro, Route202_Text_TristanDefeat
 	msgbox Route202_Text_TristanPost, MSGBOX_AUTOCLOSE
 	end
 

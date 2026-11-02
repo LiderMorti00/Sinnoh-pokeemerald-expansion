@@ -25,7 +25,8 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_StrengthBoulder",
-      "flag": "0"
+      "flag": "FLAG_SN_STARK_R3_DONE",
+      "local_id": "LOCALID_SN_STARK_MAGMA_STONE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
@@ -38,12 +39,13 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_RockSmash",
-      "flag": "0"
+      "flag": "FLAG_SN_STARK_R3_DONE",
+      "local_id": "LOCALID_SN_STARK_ROCK_LOOKER"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_MON_HEATRAN",
-      "x": 7,
-      "y": 8,
+      "x": 6,
+      "y": 4,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -52,6 +54,104 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "StarkMountain_Room3_EventScript_SNHEATRAN",
       "flag": "FLAG_SN_HIDE_HEATRAN"
+    },
+    {
+      "local_id": "LOCALID_SN_STARK_R3_CHARON",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_CHARON",
+      "x": 6,
+      "y": 9,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "StarkMountain_Room3_EventScript_SNCharon",
+      "flag": "FLAG_SN_HIDE_STARK_R3"
+    },
+    {
+      "local_id": "LOCALID_SN_STARK_R3_GRUNT1",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_GALAXY_GRUNT_M",
+      "x": 5,
+      "y": 10,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "StarkMountain_Room3_EventScript_SNCharon",
+      "flag": "FLAG_SN_HIDE_STARK_R3"
+    },
+    {
+      "local_id": "LOCALID_SN_STARK_R3_GRUNT2",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_GALAXY_GRUNT_M",
+      "x": 7,
+      "y": 10,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "StarkMountain_Room3_EventScript_SNCharon",
+      "flag": "FLAG_SN_HIDE_STARK_R3"
+    },
+    {
+      "local_id": "LOCALID_SN_STARK_CROAGUNK",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CROAGUNK)",
+      "x": 8,
+      "y": 11,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "StarkMountain_Room3_EventScript_SNCharon",
+      "flag": "FLAG_SN_HIDE_STARK_R3_HIDDEN"
+    },
+    {
+      "local_id": "LOCALID_SN_STARK_R3_LOOKER",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_LOOKER",
+      "x": 9,
+      "y": 11,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "StarkMountain_Room3_EventScript_SNCharon",
+      "flag": "FLAG_SN_HIDE_STARK_R3_HIDDEN"
+    },
+    {
+      "local_id": "LOCALID_SN_STARK_POLICE1",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_POLICEMAN",
+      "x": 5,
+      "y": 14,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "StarkMountain_Room3_EventScript_SNCharon",
+      "flag": "FLAG_SN_HIDE_STARK_R3_HIDDEN"
+    },
+    {
+      "local_id": "LOCALID_SN_STARK_POLICE2",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_POLICEMAN",
+      "x": 7,
+      "y": 14,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "StarkMountain_Room3_EventScript_SNCharon",
+      "flag": "FLAG_SN_HIDE_STARK_R3_HIDDEN"
     }
   ],
   "warp_events": [

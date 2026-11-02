@@ -235,8 +235,8 @@ HearthomeCity_EventScript_PtSign9::
 	end
 
 HearthomeCity_Text_PtSign9:
-	.string "The Poffin House Delicious\n"
-	.string "Poffins--Smiles for All$"
+	.string "The POKéBLOCK House Delicious\n"
+	.string "POKéBLOCKS--Smiles for All$"
 
 HearthomeCity_Text_PtNpc15_0:
 	.string "Apapapu!$"

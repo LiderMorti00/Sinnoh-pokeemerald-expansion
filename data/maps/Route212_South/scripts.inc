@@ -54,6 +54,13 @@ Route212_South_Text_TravisPost:
 
 Route212_South_EventScript_Taylor::
 	trainerbattle_single TRAINER_DEREK, Route212_South_Text_TaylorIntro, Route212_South_Text_TaylorDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route212_South_EventScript_Taylor_Rematch
+	msgbox Route212_South_Text_TaylorPost, MSGBOX_AUTOCLOSE
+	end
+
+Route212_South_EventScript_Taylor_Rematch:
+	trainerbattle_rematch TRAINER_DEREK, Route212_South_Text_TaylorIntro, Route212_South_Text_TaylorDefeat
 	msgbox Route212_South_Text_TaylorPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -69,6 +76,13 @@ Route212_South_Text_TaylorPost:
 
 Route212_South_EventScript_Allison::
 	trainerbattle_single TRAINER_EDWARD, Route212_South_Text_AllisonIntro, Route212_South_Text_AllisonDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route212_South_EventScript_Allison_Rematch
+	msgbox Route212_South_Text_AllisonPost, MSGBOX_AUTOCLOSE
+	end
+
+Route212_South_EventScript_Allison_Rematch:
+	trainerbattle_rematch TRAINER_EDWARD, Route212_South_Text_AllisonIntro, Route212_South_Text_AllisonDefeat
 	msgbox Route212_South_Text_AllisonPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -102,6 +116,13 @@ Route212_South_Text_JeffreyPost:
 
 Route212_South_EventScript_Danny::
 	trainerbattle_single TRAINER_JOSHUA, Route212_South_Text_DannyIntro, Route212_South_Text_DannyDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route212_South_EventScript_Danny_Rematch
+	msgbox Route212_South_Text_DannyPost, MSGBOX_AUTOCLOSE
+	end
+
+Route212_South_EventScript_Danny_Rematch:
+	trainerbattle_rematch TRAINER_JOSHUA, Route212_South_Text_DannyIntro, Route212_South_Text_DannyDefeat
 	msgbox Route212_South_Text_DannyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -156,6 +177,13 @@ Route212_South_Text_DeanPost:
 
 Route212_South_EventScript_Shaun::
 	trainerbattle_single TRAINER_ALEXIS, Route212_South_Text_ShaunIntro, Route212_South_Text_ShaunDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route212_South_EventScript_Shaun_Rematch
+	msgbox Route212_South_Text_ShaunPost, MSGBOX_AUTOCLOSE
+	end
+
+Route212_South_EventScript_Shaun_Rematch:
+	trainerbattle_rematch TRAINER_ALEXIS, Route212_South_Text_ShaunIntro, Route212_South_Text_ShaunDefeat
 	msgbox Route212_South_Text_ShaunPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -175,6 +203,13 @@ Route212_South_Text_ShaunPost:
 
 Route212_South_EventScript_Alexa::
 	trainerbattle_single TRAINER_MICAH, Route212_South_Text_AlexaIntro, Route212_South_Text_AlexaDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route212_South_EventScript_Alexa_Rematch
+	msgbox Route212_South_Text_AlexaPost, MSGBOX_AUTOCLOSE
+	end
+
+Route212_South_EventScript_Alexa_Rematch:
+	trainerbattle_rematch TRAINER_MICAH, Route212_South_Text_AlexaIntro, Route212_South_Text_AlexaDefeat
 	msgbox Route212_South_Text_AlexaPost, MSGBOX_AUTOCLOSE
 	end
 

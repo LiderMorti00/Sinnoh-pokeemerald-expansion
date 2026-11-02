@@ -22,6 +22,13 @@ Route205_South_Text_DanielPost:
 
 Route205_South_EventScript_Elizabeth::
 	trainerbattle_single TRAINER_FELIX, Route205_South_Text_ElizabethIntro, Route205_South_Text_ElizabethDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route205_South_EventScript_Elizabeth_Rematch
+	msgbox Route205_South_Text_ElizabethPost, MSGBOX_AUTOCLOSE
+	end
+
+Route205_South_EventScript_Elizabeth_Rematch:
+	trainerbattle_rematch TRAINER_FELIX, Route205_South_Text_ElizabethIntro, Route205_South_Text_ElizabethDefeat
 	msgbox Route205_South_Text_ElizabethPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -107,6 +114,13 @@ Route205_South_Text_KelseyPost:
 
 Route205_South_EventScript_Karina::
 	trainerbattle_single TRAINER_GWEN, Route205_South_Text_KarinaIntro, Route205_South_Text_KarinaDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route205_South_EventScript_Karina_Rematch
+	msgbox Route205_South_Text_KarinaPost, MSGBOX_AUTOCLOSE
+	end
+
+Route205_South_EventScript_Karina_Rematch:
+	trainerbattle_rematch TRAINER_GWEN, Route205_South_Text_KarinaIntro, Route205_South_Text_KarinaDefeat
 	msgbox Route205_South_Text_KarinaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -123,6 +137,13 @@ Route205_South_Text_KarinaPost:
 
 Route205_South_EventScript_Zackary::
 	trainerbattle_single TRAINER_SIMON, Route205_South_Text_ZackaryIntro, Route205_South_Text_ZackaryDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route205_South_EventScript_Zackary_Rematch
+	msgbox Route205_South_Text_ZackaryPost, MSGBOX_AUTOCLOSE
+	end
+
+Route205_South_EventScript_Zackary_Rematch:
+	trainerbattle_rematch TRAINER_SIMON, Route205_South_Text_ZackaryIntro, Route205_South_Text_ZackaryDefeat
 	msgbox Route205_South_Text_ZackaryPost, MSGBOX_AUTOCLOSE
 	end
 

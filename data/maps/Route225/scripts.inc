@@ -3,6 +3,13 @@ Route225_MapScripts::
 
 Route225_EventScript_Rodolfo::
 	trainerbattle_single TRAINER_HECTOR, Route225_Text_RodolfoIntro, Route225_Text_RodolfoDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route225_EventScript_Rodolfo_Rematch
+	msgbox Route225_Text_RodolfoPost, MSGBOX_AUTOCLOSE
+	end
+
+Route225_EventScript_Rodolfo_Rematch:
+	trainerbattle_rematch TRAINER_HECTOR, Route225_Text_RodolfoIntro, Route225_Text_RodolfoDefeat
 	msgbox Route225_Text_RodolfoPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -21,6 +28,13 @@ Route225_Text_RodolfoPost:
 
 Route225_EventScript_Ashlee::
 	trainerbattle_single TRAINER_TABITHA_MOSSDEEP, Route225_Text_AshleeIntro, Route225_Text_AshleeDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route225_EventScript_Ashlee_Rematch
+	msgbox Route225_Text_AshleePost, MSGBOX_AUTOCLOSE
+	end
+
+Route225_EventScript_Ashlee_Rematch:
+	trainerbattle_rematch TRAINER_TABITHA_MOSSDEEP, Route225_Text_AshleeIntro, Route225_Text_AshleeDefeat
 	msgbox Route225_Text_AshleePost, MSGBOX_AUTOCLOSE
 	end
 
@@ -39,6 +53,13 @@ Route225_Text_AshleePost:
 
 Route225_EventScript_Audrey::
 	trainerbattle_single TRAINER_WALLY_VR_1, Route225_Text_AudreyIntro, Route225_Text_AudreyDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route225_EventScript_Audrey_Rematch
+	msgbox Route225_Text_AudreyPost, MSGBOX_AUTOCLOSE
+	end
+
+Route225_EventScript_Audrey_Rematch:
+	trainerbattle_rematch TRAINER_WALLY_VR_1, Route225_Text_AudreyIntro, Route225_Text_AudreyDefeat
 	msgbox Route225_Text_AudreyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -56,6 +77,13 @@ Route225_Text_AudreyPost:
 
 Route225_EventScript_Daisy::
 	trainerbattle_single TRAINER_TIANA, Route225_Text_DaisyIntro, Route225_Text_DaisyDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route225_EventScript_Daisy_Rematch
+	msgbox Route225_Text_DaisyPost, MSGBOX_AUTOCLOSE
+	end
+
+Route225_EventScript_Daisy_Rematch:
+	trainerbattle_rematch TRAINER_TIANA, Route225_Text_DaisyIntro, Route225_Text_DaisyDefeat
 	msgbox Route225_Text_DaisyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -74,6 +102,13 @@ Route225_Text_DaisyPost:
 
 Route225_EventScript_Geoffrey::
 	trainerbattle_single TRAINER_JANICE, Route225_Text_GeoffreyIntro, Route225_Text_GeoffreyDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route225_EventScript_Geoffrey_Rematch
+	msgbox Route225_Text_GeoffreyPost, MSGBOX_AUTOCLOSE
+	end
+
+Route225_EventScript_Geoffrey_Rematch:
+	trainerbattle_rematch TRAINER_JANICE, Route225_Text_GeoffreyIntro, Route225_Text_GeoffreyDefeat
 	msgbox Route225_Text_GeoffreyPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -91,6 +126,13 @@ Route225_Text_GeoffreyPost:
 
 Route225_EventScript_Deanna::
 	trainerbattle_single TRAINER_BRENDAN_ROUTE_119_MUDKIP, Route225_Text_DeannaIntro, Route225_Text_DeannaDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route225_EventScript_Deanna_Rematch
+	msgbox Route225_Text_DeannaPost, MSGBOX_AUTOCLOSE
+	end
+
+Route225_EventScript_Deanna_Rematch:
+	trainerbattle_rematch TRAINER_BRENDAN_ROUTE_119_MUDKIP, Route225_Text_DeannaIntro, Route225_Text_DeannaDefeat
 	msgbox Route225_Text_DeannaPost, MSGBOX_AUTOCLOSE
 	end
 

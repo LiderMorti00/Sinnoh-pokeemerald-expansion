@@ -1,4 +1,5 @@
 StarkMountain_Room2_West_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, StarkMountain_Room2_West_OnTransitionSN
 	.byte 0
 
 StarkMountain_Room2_EventScript_Keenan::
@@ -276,3 +277,113 @@ StarkMountain_Room2_Text_KennyPost:
 	.string "The mythical POKéMON that sleeps deep\n"
 	.string "in a volcano...\p"
 	.string "Could it be a dragon POKéMON?$"
+
+StarkMountain_Room2_West_OnTransitionSN:
+	call StarkMountain_Room2_West_EventScript_SNVis_STARK_BUCK
+	end
+
+StarkMountain_Room2_West_EventScript_SNVis_STARK_BUCK:
+	setflag FLAG_SN_HIDE_STARK_BUCK
+	goto StarkMountain_Room2_West_EventScript_SNVis_STARK_BUCK_End
+	clearflag FLAG_SN_HIDE_STARK_BUCK
+StarkMountain_Room2_West_EventScript_SNVis_STARK_BUCK_End:
+	return
+
+StarkMountain_Room2_EventScript_SNBuck::
+	goto_if_unset FLAG_SN_STARK_R1_DONE, StarkMountain_Room2_EventScript_SNBuck_End
+	goto_if_set FLAG_SN_STARK_R3_DONE, StarkMountain_Room2_EventScript_SNBuck_End
+	checkfollowernpc
+	goto_if_eq VAR_RESULT, TRUE, StarkMountain_Room2_EventScript_SNBuck_End
+	lockall
+	clearflag FLAG_SN_HIDE_STARK_BUCK
+	addobject LOCALID_SN_STARK_R2_BUCK
+	goto_if_set FLAG_SN_STARK_BUCK_MET, StarkMountain_Room2_EventScript_SNBuck_Again
+	playse SE_PIN
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_SN_STARK_R2_BUCK, StarkMountain_Room2_EventScript_SNBuck_Run
+	waitmovement 0
+	msgbox StarkMountain_Room2_EventScript_SNBuck_TeamUp, MSGBOX_DEFAULT
+	goto StarkMountain_Room2_EventScript_SNBuck_Join
+StarkMountain_Room2_EventScript_SNBuck_Again:
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterDown
+	applymovement LOCALID_SN_STARK_R2_BUCK, StarkMountain_Room2_EventScript_SNBuck_Run
+	waitmovement 0
+	msgbox StarkMountain_Room2_EventScript_SNBuck_Together, MSGBOX_DEFAULT
+StarkMountain_Room2_EventScript_SNBuck_Join:
+	closemessage
+	setflag FLAG_SN_STARK_BUCK_MET
+	setfollowernpc LOCALID_SN_STARK_R2_BUCK, FNPC_ALL_LAND, StarkMountain_Room2_EventScript_SNBuckHeal, PARTNER_BUCK
+	playfanfare MUS_OBTAIN_ITEM
+	message StarkMountain_Room2_EventScript_SNBuck_Decided
+	waitfanfare
+	waitmessage
+	msgbox StarkMountain_Room2_EventScript_SNBuck_Healthy, MSGBOX_DEFAULT
+	special HealPlayerParty
+	releaseall
+StarkMountain_Room2_EventScript_SNBuck_End:
+	end
+
+StarkMountain_Room2_EventScript_SNBuckStay::
+	checkfollowernpc
+	goto_if_eq VAR_RESULT, FALSE, StarkMountain_Room2_EventScript_SNBuckStay_End
+	lockall
+	facefollowernpc
+	msgbox StarkMountain_Room2_EventScript_SNBuck_Stick, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	destroyfollowernpc
+	setflag FLAG_SN_HIDE_STARK_BUCK
+	fadescreen FADE_FROM_BLACK
+	releaseall
+StarkMountain_Room2_EventScript_SNBuckStay_End:
+	end
+
+StarkMountain_Room2_EventScript_SNBuckHeal::
+	lock
+	msgbox StarkMountain_Room2_EventScript_SNBuck_Healthy, MSGBOX_DEFAULT
+	special HealPlayerParty
+	playfanfare MUS_HEAL
+	waitfanfare
+	release
+	end
+
+StarkMountain_Room2_EventScript_SNBuckTalk::
+	lock
+	faceplayer
+	msgbox StarkMountain_Room2_EventScript_SNBuck_Together, MSGBOX_DEFAULT
+	release
+	end
+
+StarkMountain_Room2_EventScript_SNBuck_Run:
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	step_end
+
+StarkMountain_Room2_EventScript_SNBuck_TeamUp:
+	.string "Buck: Hey, {PLAYER}, wait up! So, what’s\n"
+	.string "going on?\p"
+	.string "...What?! Team Galactic’s here?\p"
+	.string "Gotcha! Let’s team up and go together.$"
+
+StarkMountain_Room2_EventScript_SNBuck_Together:
+	.string "Buck: Team Galactic’s here, right?\n"
+	.string "Let’s go together!$"
+
+StarkMountain_Room2_EventScript_SNBuck_Decided:
+	.string "{PLAYER} decided to go with Buck!$"
+
+StarkMountain_Room2_EventScript_SNBuck_Healthy:
+	.string "Buck: You won’t regret teaming up! I’ll\n"
+	.string "keep your POKéMON healthy!$"
+
+StarkMountain_Room2_EventScript_SNBuck_Stick:
+	.string "Buck: Whoa! Hold up!\p"
+	.string "If you go back, you’ll leave me all by my\n"
+	.string "lonesome here!\p"
+	.string "Well, if you gotta go, you gotta go. I’ll\n"
+	.string "stick around here for you.$"

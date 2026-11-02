@@ -1,4 +1,5 @@
 SinnohVictoryRoad_1F_Room2_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, SinnohVictoryRoad_1F_Room2_OnTransitionSN
 	.byte 0
 
 SinnohVictoryRoad_1F_Room2_EventScript_Micah::
@@ -243,3 +244,126 @@ SinnohVictoryRoad_1F_Room2_Text_BrendenDefeat:
 SinnohVictoryRoad_1F_Room2_Text_BrendenPost:
 	.string "I don’t see what my age has to do with\n"
 	.string "playing with POKéMON, frankly.$"
+
+SinnohVictoryRoad_1F_Room2_OnTransitionSN:
+	call SinnohVictoryRoad_1F_Room2_EventScript_SNVis_VR_MARLEY
+	end
+
+SinnohVictoryRoad_1F_Room2_EventScript_SNVis_VR_MARLEY:
+	setflag FLAG_SN_HIDE_VR_MARLEY
+	goto_if_unset FLAG_SYS_GAME_CLEAR, SinnohVictoryRoad_1F_Room2_EventScript_SNVis_VR_MARLEY_End
+	goto_if_set FLAG_SN_MARLEY_ESCORTED, SinnohVictoryRoad_1F_Room2_EventScript_SNVis_VR_MARLEY_End
+	checkfollowernpc
+	goto_if_eq VAR_RESULT, TRUE, SinnohVictoryRoad_1F_Room2_EventScript_SNVis_VR_MARLEY_End
+	clearflag FLAG_SN_HIDE_VR_MARLEY
+SinnohVictoryRoad_1F_Room2_EventScript_SNVis_VR_MARLEY_End:
+	return
+
+SinnohVictoryRoad_1F_Room2_EventScript_SNMarley::
+	goto_if_set FLAG_SN_HIDE_VR_MARLEY, SinnohVictoryRoad_1F_Room2_EventScript_SNMarley_End
+	checkfollowernpc
+	goto_if_eq VAR_RESULT, TRUE, SinnohVictoryRoad_1F_Room2_EventScript_SNMarley_End
+	lockall
+	setvar VAR_TEMP_E, 1
+	applymovement LOCALID_SN_MARLEY, Common_Movement_ExclamationMark
+	waitmovement 0
+	applymovement LOCALID_SN_MARLEY, Common_Movement_FacePlayer
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
+	goto_if_set FLAG_SN_MARLEY_MET, SinnohVictoryRoad_1F_Room2_EventScript_SNMarley_Again
+	msgbox SinnohVictoryRoad_1F_Room2_EventScript_SNMarley_T1, MSGBOX_DEFAULT
+	goto SinnohVictoryRoad_1F_Room2_EventScript_SNMarley_Join
+SinnohVictoryRoad_1F_Room2_EventScript_SNMarley_Again:
+	msgbox SinnohVictoryRoad_1F_Room2_EventScript_SNMarley_T2, MSGBOX_DEFAULT
+SinnohVictoryRoad_1F_Room2_EventScript_SNMarley_Join:
+	closemessage
+	setflag FLAG_SN_MARLEY_MET
+	setfollowernpc LOCALID_SN_MARLEY, FNPC_ALL_LAND, SinnohVictoryRoad_1F_Room2_EventScript_SNMarleyHeal, PARTNER_MARLEY
+	playfanfare MUS_OBTAIN_ITEM
+	message SinnohVictoryRoad_1F_Room2_EventScript_SNMarley_T3
+	waitfanfare
+	waitmessage
+	msgbox SinnohVictoryRoad_1F_Room2_EventScript_SNMarley_T4, MSGBOX_DEFAULT
+	special HealPlayerParty
+	releaseall
+SinnohVictoryRoad_1F_Room2_EventScript_SNMarley_End:
+	end
+
+SinnohVictoryRoad_1F_Room2_EventScript_SNMarleyTalk::
+	lock
+	faceplayer
+	msgbox SinnohVictoryRoad_1F_Room2_EventScript_SNMarley_T2, MSGBOX_DEFAULT
+	release
+	end
+
+SinnohVictoryRoad_1F_Room2_EventScript_SNMarleyHeal::
+	lock
+	msgbox SinnohVictoryRoad_1F_Room2_EventScript_SNMarley_T4, MSGBOX_DEFAULT
+	special HealPlayerParty
+	release
+	end
+
+@ volver atrás: Marley se queda esperando
+SinnohVictoryRoad_1F_Room2_EventScript_SNMarleyBack::
+	checkfollowernpc
+	goto_if_eq VAR_RESULT, FALSE, SinnohVictoryRoad_1F_Room2_EventScript_SNMarleyBack_End
+	lockall
+	setvar VAR_TEMP_D, 1
+	facefollowernpc
+	msgbox SinnohVictoryRoad_1F_Room2_EventScript_SNMarley_T5, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	destroyfollowernpc
+	setflag FLAG_SN_HIDE_VR_MARLEY
+	fadescreen FADE_FROM_BLACK
+	releaseall
+SinnohVictoryRoad_1F_Room2_EventScript_SNMarleyBack_End:
+	end
+
+@ final del túnel: Marley se despide
+SinnohVictoryRoad_1F_Room2_EventScript_SNMarleyEnd::
+	checkfollowernpc
+	goto_if_eq VAR_RESULT, FALSE, SinnohVictoryRoad_1F_Room2_EventScript_SNMarleyEnd_End
+	lockall
+	setvar VAR_TEMP_C, 1
+	facefollowernpc
+	msgbox SinnohVictoryRoad_1F_Room2_EventScript_SNMarley_T6, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	destroyfollowernpc
+	setflag FLAG_SN_MARLEY_ESCORTED
+	setflag FLAG_SN_HIDE_VR_MARLEY
+	fadescreen FADE_FROM_BLACK
+	releaseall
+SinnohVictoryRoad_1F_Room2_EventScript_SNMarleyEnd_End:
+	end
+
+SinnohVictoryRoad_1F_Room2_EventScript_SNMarley_T1:
+	.string "...I’m Marley. ...You are?\p"
+	.string "Oh... {PLAYER}, will you help me, please?\p"
+	.string "I want to get through this tunnel. Will\n"
+	.string "you let me go with you?$"
+
+SinnohVictoryRoad_1F_Room2_EventScript_SNMarley_T2:
+	.string "Marley: ...You took so long... Please,\n"
+	.string "don’t make me wait...\p"
+	.string "I felt a little forlorn waiting...$"
+
+SinnohVictoryRoad_1F_Room2_EventScript_SNMarley_T3:
+	.string "{PLAYER} decided to go with Marley!$"
+
+SinnohVictoryRoad_1F_Room2_EventScript_SNMarley_T4:
+	.string "Marley: ...POKéMON shouldn’t be hurt...\n"
+	.string "I’ll heal them...$"
+
+SinnohVictoryRoad_1F_Room2_EventScript_SNMarley_T5:
+	.string "Marley: ...You’re going back... Too bad...\n"
+	.string "Bye-bye...$"
+
+SinnohVictoryRoad_1F_Room2_EventScript_SNMarley_T6:
+	.string "Marley: ...Oh! This is it. There’s a stone\n"
+	.string "tablet ahead...\p"
+	.string "I wanted to see the POKéMON that\n"
+	.string "visits it, that’s all...\p"
+	.string "...I appreciate your escorting me...\p"
+	.string "...Just a little...$"

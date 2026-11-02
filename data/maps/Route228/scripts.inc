@@ -21,6 +21,13 @@ Route228_Text_JosePost:
 
 Route228_EventScript_Moira::
 	trainerbattle_single TRAINER_MAY_ROUTE_103_TORCHIC, Route228_Text_MoiraIntro, Route228_Text_MoiraDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route228_EventScript_Moira_Rematch
+	msgbox Route228_Text_MoiraPost, MSGBOX_AUTOCLOSE
+	end
+
+Route228_EventScript_Moira_Rematch:
+	trainerbattle_rematch TRAINER_MAY_ROUTE_103_TORCHIC, Route228_Text_MoiraIntro, Route228_Text_MoiraDefeat
 	msgbox Route228_Text_MoiraPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -38,6 +45,13 @@ Route228_Text_MoiraPost:
 
 Route228_EventScript_Kyler::
 	trainerbattle_single TRAINER_MAY_ROUTE_110_TORCHIC, Route228_Text_KylerIntro, Route228_Text_KylerDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route228_EventScript_Kyler_Rematch
+	msgbox Route228_Text_KylerPost, MSGBOX_AUTOCLOSE
+	end
+
+Route228_EventScript_Kyler_Rematch:
+	trainerbattle_rematch TRAINER_MAY_ROUTE_110_TORCHIC, Route228_Text_KylerIntro, Route228_Text_KylerDefeat
 	msgbox Route228_Text_KylerPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -91,6 +105,13 @@ Route228_Text_KeeganPost:
 
 Route228_EventScript_Corbin::
 	trainerbattle_single TRAINER_MITCHELL, Route228_Text_CorbinIntro, Route228_Text_CorbinDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route228_EventScript_Corbin_Rematch
+	msgbox Route228_Text_CorbinPost, MSGBOX_AUTOCLOSE
+	end
+
+Route228_EventScript_Corbin_Rematch:
+	trainerbattle_rematch TRAINER_MITCHELL, Route228_Text_CorbinIntro, Route228_Text_CorbinDefeat
 	msgbox Route228_Text_CorbinPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -124,6 +145,13 @@ Route228_Text_MeaganPost:
 
 Route228_EventScript_Davon::
 	trainerbattle_single TRAINER_GARRISON, Route228_Text_DavonIntro, Route228_Text_DavonDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route228_EventScript_Davon_Rematch
+	msgbox Route228_Text_DavonPost, MSGBOX_AUTOCLOSE
+	end
+
+Route228_EventScript_Davon_Rematch:
+	trainerbattle_rematch TRAINER_GARRISON, Route228_Text_DavonIntro, Route228_Text_DavonDefeat
 	msgbox Route228_Text_DavonPost, MSGBOX_AUTOCLOSE
 	end
 

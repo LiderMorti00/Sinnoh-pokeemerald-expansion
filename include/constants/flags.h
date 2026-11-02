@@ -2797,7 +2797,7 @@
 
 
 // ---- Proyecto Sinnoh: revisión de eventos (objetos, regalos y objetos ocultos) ----
-#define FLAG_SN_LAKE_VALOR_EXPLODED_4                           FLAG_UNUSED_RS_LEGENDARY_BATTLE_DONE
+#define FLAG_SN_LAKE_VALOR_EXPLODED_4                           FLAG_UNUSED_0x881
 #define FLAG_ITEM_ETERNACITY_GALACTICBUILDING_4F_UPGRADE        FLAG_KECLEON_FLED_FORTREE
 #define FLAG_HIDDEN_ITEM_ROUTE207_NUGGET                        FLAG_UNUSED_0x4CD
 #define FLAG_HIDDEN_ITEM_ROUTE213_MAX_REVIVE                    FLAG_UNUSED_0x4CE
@@ -2809,7 +2809,7 @@
 
 
 // ---- Proyecto Sinnoh: historia de Platino (objetos, regalos y objetos ocultos) ----
-#define FLAG_SN_HIDE_PAST_BARRY                                 FLAG_UNUSED_RS_LEGENDARY_BATTLE_DONE
+#define FLAG_SN_HIDE_PAST_BARRY                                 FLAG_UNUSED_0x882
 #define FLAG_SN_RECEIVED_SECRET_POTION                          FLAG_RIVAL_LEFT_FOR_ROUTE103
 #define FLAG_SN_PSYDUCK_GONE                                    FLAG_OMIT_DIVE_FROM_STEVEN_LETTER
 #define FLAG_SN_HIDE_VALOR_CYNTHIA                              FLAG_STEVEN_GUIDES_TO_CAVE_OF_ORIGIN
@@ -2871,7 +2871,7 @@
 
 
 // ---- Proyecto Sinnoh: historia de Platino (objetos, regalos y objetos ocultos) ----
-#define FLAG_SN_DONE_REGICE                                     FLAG_UNUSED_RS_LEGENDARY_BATTLE_DONE
+#define FLAG_SN_DONE_REGICE                                     FLAG_UNUSED_0x883
 #define FLAG_SN_HIDE_REGICE                                     FLAG_UNUSED_0x4E8
 #define FLAG_SN_DONE_REGIROCK                                   FLAG_UNUSED_0x4E9
 #define FLAG_SN_HIDE_REGIROCK                                   FLAG_UNUSED_0x4EA
@@ -2889,7 +2889,7 @@
 
 
 // ---- Proyecto Sinnoh: historia de Platino (objetos, regalos y objetos ocultos) ----
-#define FLAG_ITEM_ROUTE218_RARE_CANDY                           FLAG_UNUSED_RS_LEGENDARY_BATTLE_DONE
+#define FLAG_ITEM_ROUTE218_RARE_CANDY                           FLAG_UNUSED_0x884
 #define FLAG_ITEM_ROUTE218_X_ACCURACY                           FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_4
 #define FLAG_ITEM_ROUTE218_HYPER_POTION                         FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_5
 #define FLAG_ITEM_RESORTAREA_NUGGET                             FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_6
@@ -2898,8 +2898,46 @@
 
 
 // ---- Proyecto Sinnoh: historia de Platino (objetos, regalos y objetos ocultos) ----
-#define FLAG_SN_HIDE_ACUITY_JUPITER                             FLAG_UNUSED_RS_LEGENDARY_BATTLE_DONE
+#define FLAG_SN_HIDE_ACUITY_JUPITER                             FLAG_UNUSED_0x885
 #define FLAG_SN_HIDE_VERITY_ROWAN                               FLAG_HIDE_PETALBURG_WOODS_AQUA_GRUNT
 #define FLAG_SN_DONE_VERITY_HELP                                FLAG_HIDE_PETALBURG_CITY_WALLYS_MOM
+
+
+// ---- Proyecto Sinnoh: historia de Platino (objetos, regalos y objetos ocultos) ----
+#define FLAG_SN_HIDE_PAST_GRUNT                                 FLAG_UNUSED_0x886
+#define FLAG_SN_HIDE_VL_GRUNT                                   FLAG_HIDE_SEAFLOOR_CAVERN_ROOM_9_KYOGRE_ASLEEP
+
+
+// ---- Proyecto Sinnoh: historia de Platino (objetos, regalos y objetos ocultos) ----
+#define FLAG_SN_HIDE_SP_BARRY                                   FLAG_UNUSED_0x887
+
+#define FLAG_SN_VS_SEEKER_CHARGED                               FLAG_UNUSED_0x863
+
+
+// ---- Proyecto Sinnoh: historia de Platino (objetos, regalos y objetos ocultos) ----
+#define FLAG_SN_HIDE_R209_BARRY                                 FLAG_UNUSED_0x88E
+
+
+// ---- Proyecto Sinnoh: historia de Platino (objetos, regalos y objetos ocultos) ----
+#define FLAG_SN_STARK_R1_DONE                                   FLAG_UNUSED_0x88F
+#define FLAG_SN_STARK_R3_DONE                                   FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_SIBLING
+#define FLAG_SN_STARK_OUT_DONE                                  FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_SIBLING
+#define FLAG_SN_STARK_FAREWELL                                  FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_MAGMA_NOTE
+#define FLAG_SN_STARK_BUCK_MET                                  FLAG_HIDE_ROUTE_104_MR_BRINEY_BOAT
+#define FLAG_SN_HIDE_STARK_OUT_GRUNTS                           FLAG_HIDE_ROUTE_101_ZIGZAGOON
+#define FLAG_SN_HIDE_STARK_FAREWELL                             FLAG_HIDE_MOSSDEEP_CITY_SPACE_CENTER_1F_STEVEN
+#define FLAG_SN_HIDE_STARK_R1                                   FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_MOM
+#define FLAG_SN_HIDE_STARK_BUCK                                 FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_MOM
+#define FLAG_SN_HIDE_STARK_R3                                   FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_TRUCK
+#define FLAG_SN_HIDE_STARK_R3_HIDDEN                            FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_TRUCK
+
+
+// ---- Proyecto Sinnoh: historia de Platino (objetos, regalos y objetos ocultos) ----
+#define FLAG_SN_MIRA_ESCORTED                                   FLAG_HIDE_BIRTH_ISLAND_DEOXYS_TRIANGLE
+#define FLAG_SN_MIRA_MET                                        FLAG_HIDE_ROUTE_111_VICTOR_WINSTRATE
+#define FLAG_SN_HIDE_WAYWARD_MIRA                               FLAG_HIDE_PETALBURG_GYM_NORMAN
+#define FLAG_SN_MARLEY_ESCORTED                                 FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA
+#define FLAG_SN_MARLEY_MET                                      FLAG_HIDE_MARINE_CAVE_KYOGRE
+#define FLAG_SN_HIDE_VR_MARLEY                                  FLAG_HIDE_TERRA_CAVE_GROUDON
 
 #endif // GUARD_CONSTANTS_FLAGS_H

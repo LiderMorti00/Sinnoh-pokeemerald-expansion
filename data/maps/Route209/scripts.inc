@@ -3,6 +3,13 @@ Route209_MapScripts::
 
 Route209_EventScript_Albert::
 	trainerbattle_single TRAINER_SHEILA, Route209_Text_AlbertIntro, Route209_Text_AlbertDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route209_EventScript_Albert_Rematch
+	msgbox Route209_Text_AlbertPost, MSGBOX_AUTOCLOSE
+	end
+
+Route209_EventScript_Albert_Rematch:
+	trainerbattle_rematch TRAINER_SHEILA, Route209_Text_AlbertIntro, Route209_Text_AlbertDefeat
 	msgbox Route209_Text_AlbertPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -20,6 +27,13 @@ Route209_Text_AlbertPost:
 
 Route209_EventScript_Jennifer::
 	trainerbattle_single TRAINER_SHIRLEY, Route209_Text_JenniferIntro, Route209_Text_JenniferDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route209_EventScript_Jennifer_Rematch
+	msgbox Route209_Text_JenniferPost, MSGBOX_AUTOCLOSE
+	end
+
+Route209_EventScript_Jennifer_Rematch:
+	trainerbattle_rematch TRAINER_SHIRLEY, Route209_Text_JenniferIntro, Route209_Text_JenniferDefeat
 	msgbox Route209_Text_JenniferPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -88,6 +102,13 @@ Route209_Text_RaulPost:
 
 Route209_EventScript_Danielle::
 	trainerbattle_single TRAINER_GRUNT_MT_CHIMNEY_1, Route209_Text_DanielleIntro, Route209_Text_DanielleDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route209_EventScript_Danielle_Rematch
+	msgbox Route209_Text_DaniellePost, MSGBOX_AUTOCLOSE
+	end
+
+Route209_EventScript_Danielle_Rematch:
+	trainerbattle_rematch TRAINER_GRUNT_MT_CHIMNEY_1, Route209_Text_DanielleIntro, Route209_Text_DanielleDefeat
 	msgbox Route209_Text_DaniellePost, MSGBOX_AUTOCLOSE
 	end
 

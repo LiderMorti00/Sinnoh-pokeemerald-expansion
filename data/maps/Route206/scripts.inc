@@ -73,6 +73,13 @@ Route206_Text_NicolePost:
 
 Route206_EventScript_John::
 	trainerbattle_single TRAINER_GRUNT_WEATHER_INST_1, Route206_Text_JohnIntro, Route206_Text_JohnDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route206_EventScript_John_Rematch
+	msgbox Route206_Text_JohnPost, MSGBOX_AUTOCLOSE
+	end
+
+Route206_EventScript_John_Rematch:
+	trainerbattle_rematch TRAINER_GRUNT_WEATHER_INST_1, Route206_Text_JohnIntro, Route206_Text_JohnDefeat
 	msgbox Route206_Text_JohnPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -92,6 +99,13 @@ Route206_Text_JohnPost:
 
 Route206_EventScript_Kayla::
 	trainerbattle_single TRAINER_GRUNT_MUSEUM_1, Route206_Text_KaylaIntro, Route206_Text_KaylaDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route206_EventScript_Kayla_Rematch
+	msgbox Route206_Text_KaylaPost, MSGBOX_AUTOCLOSE
+	end
+
+Route206_EventScript_Kayla_Rematch:
+	trainerbattle_rematch TRAINER_GRUNT_MUSEUM_1, Route206_Text_KaylaIntro, Route206_Text_KaylaDefeat
 	msgbox Route206_Text_KaylaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -144,6 +158,13 @@ Route206_Text_RachelPost:
 
 Route206_EventScript_Theodore::
 	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_6, Route206_Text_TheodoreIntro, Route206_Text_TheodoreDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route206_EventScript_Theodore_Rematch
+	msgbox Route206_Text_TheodorePost, MSGBOX_AUTOCLOSE
+	end
+
+Route206_EventScript_Theodore_Rematch:
+	trainerbattle_rematch TRAINER_GRUNT_AQUA_HIDEOUT_6, Route206_Text_TheodoreIntro, Route206_Text_TheodoreDefeat
 	msgbox Route206_Text_TheodorePost, MSGBOX_AUTOCLOSE
 	end
 

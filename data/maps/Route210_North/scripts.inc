@@ -89,6 +89,13 @@ Route210_North_Text_DavidoPost:
 
 Route210_North_EventScript_Patrick::
 	trainerbattle_single TRAINER_SPENCER, Route210_North_Text_PatrickIntro, Route210_North_Text_PatrickDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route210_North_EventScript_Patrick_Rematch
+	msgbox Route210_North_Text_PatrickPost, MSGBOX_AUTOCLOSE
+	end
+
+Route210_North_EventScript_Patrick_Rematch:
+	trainerbattle_rematch TRAINER_SPENCER, Route210_North_Text_PatrickIntro, Route210_North_Text_PatrickDefeat
 	msgbox Route210_North_Text_PatrickPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -105,6 +112,13 @@ Route210_North_Text_PatrickPost:
 
 Route210_North_EventScript_Brianna::
 	trainerbattle_single TRAINER_ROLAND, Route210_North_Text_BriannaIntro, Route210_North_Text_BriannaDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route210_North_EventScript_Brianna_Rematch
+	msgbox Route210_North_Text_BriannaPost, MSGBOX_AUTOCLOSE
+	end
+
+Route210_North_EventScript_Brianna_Rematch:
+	trainerbattle_rematch TRAINER_ROLAND, Route210_North_Text_BriannaIntro, Route210_North_Text_BriannaDefeat
 	msgbox Route210_North_Text_BriannaPost, MSGBOX_AUTOCLOSE
 	end
 
@@ -146,6 +160,13 @@ Route210_North_Text_ZacJenNotEnough:
 
 Route210_North_EventScript_Brian::
 	trainerbattle_single TRAINER_STAN, Route210_North_Text_BrianIntro, Route210_North_Text_BrianDefeat
+	specialvar VAR_RESULT, ShouldTryRematchBattle
+	goto_if_eq VAR_RESULT, TRUE, Route210_North_EventScript_Brian_Rematch
+	msgbox Route210_North_Text_BrianPost, MSGBOX_AUTOCLOSE
+	end
+
+Route210_North_EventScript_Brian_Rematch:
+	trainerbattle_rematch TRAINER_STAN, Route210_North_Text_BrianIntro, Route210_North_Text_BrianDefeat
 	msgbox Route210_North_Text_BrianPost, MSGBOX_AUTOCLOSE
 	end
 

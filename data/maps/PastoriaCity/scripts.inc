@@ -103,6 +103,7 @@ PastoriaCity_Text_PtSign4:
 	.string "Great Marsh!$"
 
 PastoriaCity_OnTransitionSN:
+	call PastoriaCity_EventScript_SNVis_PAST_GRUNT
 	call PastoriaCity_EventScript_SNVis_PAST_BARRY
 	end
 
@@ -225,3 +226,51 @@ PastoriaCity_EventScript_SNPASTORIACITYBARRY_T2_M:
 PastoriaCity_EventScript_SNPASTORIACITYBARRY_T2_P:
 	face_up
 	step_end
+
+PastoriaCity_EventScript_SNVis_PAST_GRUNT:
+	setflag FLAG_SN_HIDE_PAST_GRUNT
+	goto_if_unset FLAG_BADGE05_GET, PastoriaCity_EventScript_SNVis_PAST_GRUNT_End
+	goto_if_defeated TRAINER_ROBERT_2, PastoriaCity_EventScript_SNVis_PAST_GRUNT_End
+	clearflag FLAG_SN_HIDE_PAST_GRUNT
+PastoriaCity_EventScript_SNVis_PAST_GRUNT_End:
+	return
+
+PastoriaCity_EventScript_SNGrunt::
+	lock
+	faceplayer
+	msgbox PastoriaCity_Text_SNGrunt1, MSGBOX_DEFAULT
+	msgbox PastoriaCity_Text_SNGrunt2, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_SN_PAST_GRUNT
+	setflag FLAG_SN_HIDE_PAST_GRUNT
+	fadescreen FADE_FROM_BLACK
+	msgbox PastoriaCity_Text_SNGrunt3, MSGBOX_DEFAULT
+	release
+	end
+PastoriaCity_Text_SNGrunt1:
+	.string "What’s with you? Stop chasing after\n"
+	.string "me, you.\p"
+	.string "I’ve half a mind to pulverize you with\n"
+	.string "my POKéMON!\p"
+	.string "But I have to be on my way to the lake\n"
+	.string "ASAP! So, you’re lucky! I’m out!\p"
+	.string "All right, do I make myself clear? Don’t\n"
+	.string "you dare follow me!$"
+
+PastoriaCity_Text_SNGrunt2:
+	.string "Grunt: What’ve I done, you’re asking?\n"
+	.string "Well, technically speaking, it wasn’t\l"
+	.string "me.\p"
+	.string "The package that arrived, see, that\n"
+	.string "was a bomb, named the Galactic Bomb.\p"
+	.string "Me, I was told to push the button. So I\n"
+	.string "did. Like, “Poink!”\p"
+	.string "Oh, that’s right! Mustn’t forget! The\n"
+	.string "test results need reporting!\p"
+	.string "Cheerio, then! You daft codger, your\n"
+	.string "mask’s absurd!$"
+
+PastoriaCity_Text_SNGrunt3:
+	.string "The Galactic grunt ran off toward\n"
+	.string "ROUTE 213 and VALOR LAKEFRONT!$"
