@@ -3138,4 +3138,9 @@
 #define FLAG_ITEM_SN_VALLEYWINDWORKS_TM24                       (TRAINER_FLAGS_START + TRAINER_PABLO_5)
 #define FLAG_ITEM_SN_VALORLAKEFRONT_TM85                        (TRAINER_FLAGS_START + TRAINER_PABLO_4)
 
+
+// ---- Proyecto Sinnoh: historia de Platino (objetos, regalos y objetos ocultos) ----
+#define FLAG_SN_RECEIVED_COIN_CASE                              (TRAINER_FLAGS_START + TRAINER_EVERETT)
+#define FLAG_SN_RECEIVED_GRACIDEA                               (TRAINER_FLAGS_START + TRAINER_ALVARO)
+
 #endif // GUARD_CONSTANTS_FLAGS_H

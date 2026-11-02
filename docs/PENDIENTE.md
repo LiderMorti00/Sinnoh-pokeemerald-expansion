@@ -15,7 +15,7 @@ Fuentes de referencia: Bulbapedia (guía de Platino), WikiDex, pret/pokeplatinum
 
 ## 2. Escenas hechas pero sin probar en el emulador
 
-Ya probadas: Barry en Pirita (antes y después de la medalla), Barry en Sosiego, lotería de la TV de Jubileo, garitas de la Ruta Ciclista, Casino de Rocavelo, roca musgo, baldosas del Gimnasio Corazón y puertas.
+Ya probadas: Barry en Pirita (antes y después de la medalla), Barry en Sosiego, lotería de la TV de Jubileo, garitas de la Ruta Ciclista, Casino de Rocavelo, roca musgo, baldosas del Gimnasio Corazón, puertas y payaso de la Caja Monedas.
 
 Faltan:
 - Jubileo: combate doble con Dawn/Lucas.
@@ -27,8 +27,13 @@ Faltan:
 - Charla de Riley en la Isla Hierro.
 - Túnel Maníaco con menos y con más de 26 formas de Unown.
 - Laboratorio de Arena después de la Columna Lanza (Rowan y Dawn).
+- Gracídea en Pradera (llevando a Shaymin en el equipo).
 
-## 3. Prueba final
+## 3. Por decidir
+
+- Radar Pokémon: en Platino Rowan te lo da con la Pokédex Nacional. pokeemerald-expansion tiene el objeto pero no su función (cadenas de Pokémon en la hierba). Hay que decidir si se programa o se deja fuera.
+
+## 4. Prueba final
 
 - Jugar una partida completa, de principio a fin, con chico y con chica.
 
@@ -41,4 +46,5 @@ Faltan:
 - TV de Jubileo 2F: la Galería de fotos y el probador de Platino necesitan Accesorios, que no existen en Esmeralda. Sus NPC sí están.
 - Túnel Maníaco: Esmeralda no guarda las formas de Unown «vistas», así que se cuentan las que tienes (equipo y PC). Con 26 o más, el túnel llega a las Ruinas Sosiego.
 - Rocas de Golpe Roca y peñascos de Fuerza de Platino que no están: en esos mapas el camino es distinto al de Platino y no caben sin cortar el paso. No se añaden.
+- Lago Valor seco: tiene los Pokémon salvajes de la hierba de Platino.
 - Vaquera del Gran Pantano: capturar 5 Pokémon en una partida del Safari da 3 Caramelos Raros, una sola vez.
