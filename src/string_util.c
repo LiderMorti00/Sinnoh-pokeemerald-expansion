@@ -465,8 +465,26 @@ static const u8 *ExpandPlaceholder_KunChan(void)
         return gText_ExpandedPlaceholder_Chan;
 }
 
+// Proyecto Sinnoh: las partidas empezadas antes de existir el nombre del rival
+// pueden tener basura en ese hueco (sin fin de cadena o con caracteres no válidos).
+static bool32 IsRivalNameValid(void)
+{
+    u32 i;
+    for (i = 0; i < PLAYER_NAME_LENGTH + 1; i++)
+    {
+        u8 c = gSaveBlock1Ptr->rivalName[i];
+        if (c == EOS)
+            return i > 0;
+        if (c >= CHAR_DYNAMIC || c == CHAR_PROMPT_SCROLL || c == CHAR_PROMPT_CLEAR || c == CHAR_NEWLINE)
+            return FALSE;
+    }
+    return FALSE;
+}
+
 static const u8 *ExpandPlaceholder_RivalName(void)
 {
+    if (!IS_FRLG && !IsRivalNameValid())
+        StringCopy(gSaveBlock1Ptr->rivalName, gText_ExpandedPlaceholder_Barry);
     if (gSaveBlock1Ptr->rivalName[0] != EOS)
         return gSaveBlock1Ptr->rivalName;
 
