@@ -33,6 +33,7 @@ StarkMountain_Room3_EventScript_SNHEATRAN::
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, StarkMountain_Room3_EventScript_SNHEATRAN_Ran
 	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, StarkMountain_Room3_EventScript_SNHEATRAN_Ran
 	setflag FLAG_SN_DONE_HEATRAN
+	setflag FLAG_SN_BATTLED_STARK_MOUNTAIN_ROOM_3_HEATRAN
 	setflag FLAG_SN_HIDE_HEATRAN
 	goto Common_EventScript_RemoveStaticPokemon
 	end

@@ -1,5 +1,12 @@
 LostTower_5F_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, LostTower_5F_OnTransitionSN
 	.byte 0
+
+LostTower_5F_OnTransitionSN:
+	goto_if_unset FLAG_BADGE03_GET, LostTower_5F_OnTransitionSN_End
+	setflag FLAG_SN_USED_DEFOG_IN_ROUTE_209_LOST_TOWER_5F
+LostTower_5F_OnTransitionSN_End:
+	end
 
 LostTower_5F_Text_PtNpc1_0:
 	.string "Oh! The fog is gone and, with it, all\n"

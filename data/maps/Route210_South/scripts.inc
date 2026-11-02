@@ -254,6 +254,7 @@ Route210_South_EventScript_SNPsyduck::
 	closemessage
 	removeitem ITEM_SECRET_POTION
 	setflag FLAG_SN_PSYDUCK_GONE
+	setflag FLAG_SN_USED_SECRETPOTION
 	setflag FLAG_SN_HIDE_PSYDUCK
 	fadescreen FADE_TO_BLACK
 	removeobject LOCALID_SN_PSYDUCK_1

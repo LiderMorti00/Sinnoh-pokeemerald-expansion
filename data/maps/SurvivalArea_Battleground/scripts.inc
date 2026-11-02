@@ -34,6 +34,7 @@ SurvivalArea_Battleground_EventScript_PtNpc1_MakeYourselfAtHome:
 	end
 
 SurvivalArea_Battleground_OnTransitionSN:
+	setflag FLAG_SN_VISITED_BATTLEGROUND
 	call SurvivalArea_Battleground_EventScript_SNVis_BG_ROARK
 	call SurvivalArea_Battleground_EventScript_SNVis_BG_GARDENIA
 	call SurvivalArea_Battleground_EventScript_SNVis_BG_FANTINA

@@ -67,6 +67,7 @@ GalacticHQ_4F_EventScript_SNCyrus_Won:
 	removeobject VAR_LAST_TALKED
 	setflag FLAG_SN_HIDE_HQ_CYRUS
 	setvar VAR_SINNOH_STORY, 32
+	setflag FLAG_SN_GALACTIC_LEFT_LAKE_VALOR
 	fadescreen FADE_FROM_BLACK
 	release
 	end

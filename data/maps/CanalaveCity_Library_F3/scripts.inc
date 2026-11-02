@@ -276,6 +276,10 @@ CanalaveCity_Library_F3_EventScript_SNRowan::
 	removeobject LOCALID_SN_LIB_BARRY
 	setflag FLAG_SN_HIDE_LIB_ROWAN
 	setvar VAR_SINNOH_STORY, 31
+	setflag FLAG_SN_LAKE_VALOR_EXPLODED
+	setflag FLAG_SN_LAKE_VALOR_EXPLODED_2
+	setflag FLAG_SN_LAKE_VALOR_EXPLODED_3
+	setflag FLAG_SN_LAKE_VALOR_EXPLODED_4
 	fadescreen FADE_FROM_BLACK
 	releaseall
 	end
