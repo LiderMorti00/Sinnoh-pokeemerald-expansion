@@ -247,7 +247,7 @@
       "flag": "FLAG_SN_HIDE_R207_COUNTERPART"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
+      "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG",
       "x": 32,
       "y": 15,
       "elevation": 4,
@@ -344,8 +344,8 @@
     },
     {
       "type": "secret_base",
-      "x": 23,
-      "y": 3,
+      "x": 26,
+      "y": 18,
       "elevation": 0,
       "secret_base_id": "SECRET_BASE_RED_CAVE2_1"
     },

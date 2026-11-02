@@ -11013,10 +11013,10 @@
     {
       "id": "LAYOUT_HEARTHOME_CITY_FOREIGN_BUILDING",
       "name": "HearthomeCity_ForeignBuilding_Layout",
-      "width": 14,
-      "height": 9,
+      "width": 23,
+      "height": 20,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_GenericBuilding",
+      "secondary_tileset": "gTileset_Church",
       "border_filepath": "data/layouts/HearthomeCity_ForeignBuilding/border.bin",
       "blockdata_filepath": "data/layouts/HearthomeCity_ForeignBuilding/map.bin"
     },

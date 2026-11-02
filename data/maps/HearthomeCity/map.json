@@ -27,6 +27,11 @@
       "map": "MAP_ROUTE212_NORTH",
       "offset": -4,
       "direction": "down"
+    },
+    {
+      "map": "MAP_AMITY_SQUARE",
+      "offset": 4,
+      "direction": "up"
     }
   ],
   "object_events": [

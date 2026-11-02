@@ -12,7 +12,13 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": null,
+  "connections": [
+    {
+      "map": "MAP_HEARTHOME_CITY",
+      "offset": -4,
+      "direction": "down"
+    }
+  ],
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -68,8 +74,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_RECEPTIONIST",
-      "x": 5,
-      "y": 41,
+      "x": 3,
+      "y": 43,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -81,8 +87,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_RECEPTIONIST",
-      "x": 46,
-      "y": 41,
+      "x": 48,
+      "y": 43,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,

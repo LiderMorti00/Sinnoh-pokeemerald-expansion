@@ -1706,3 +1706,14 @@ const struct Tileset gTileset_VeilstoneDepartmentStore =
     .metatileAttributes = gMetatileAttributes_VeilstoneDepartmentStore,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_Church =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Church,
+    .palettes = gTilesetPalettes_Church,
+    .metatiles = gMetatiles_Church,
+    .metatileAttributes = gMetatileAttributes_Church,
+    .callback = NULL,
+};

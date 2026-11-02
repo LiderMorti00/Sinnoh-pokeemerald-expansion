@@ -453,3 +453,6 @@ const u16 gMetatileAttributes_CanalaveCityGym[] = INCBIN_U16("data/tilesets/seco
 
 const u16 gMetatiles_VeilstoneDepartmentStore[] = INCBIN_U16("data/tilesets/secondary/veilstone_department_store/metatiles.bin");
 const u16 gMetatileAttributes_VeilstoneDepartmentStore[] = INCBIN_U16("data/tilesets/secondary/veilstone_department_store/metatile_attributes.bin");
+
+const u16 gMetatiles_Church[] = INCBIN_U16("data/tilesets/secondary/church/metatiles.bin");
+const u16 gMetatileAttributes_Church[] = INCBIN_U16("data/tilesets/secondary/church/metatile_attributes.bin");
