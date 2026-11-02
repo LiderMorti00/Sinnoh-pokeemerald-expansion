@@ -420,7 +420,7 @@
     },
     {
       "x": 10,
-      "y": 30,
+      "y": 31,
       "elevation": 0,
       "dest_map": "MAP_HEARTHOME_CITY_FOREIGN_BUILDING",
       "dest_warp_id": "0"
