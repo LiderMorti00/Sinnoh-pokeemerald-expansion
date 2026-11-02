@@ -27,29 +27,44 @@ LakeVerity_EventScript_Scene::
 	end
 
 LakeVerity_Text_Cyrus:
-	.string "???: ...This lake is said to be\n"
-	.string "home to a POKéMON of emotion.\p"
-	.string "Emotion... A useless burden that\n"
-	.string "only brings conflict. One day I\l"
-	.string "will create a world free of it.\p"
-	.string "And time and space will be mine to\n"
-	.string "command.$"
+	.string "???: ...The flowing time... ...The\n"
+	.string "expanding space...\p"
+	.string "I will make it all mine one day... Cyrus\n"
+	.string "is my name. Remember it...\p"
+	.string "Until then, sleep while you can,\n"
+	.string "legendary POKéMON of the lake bed...$"
 
 LakeVerity_Text_Cyrus2:
-	.string "???: ...Children. Step aside.$"
+	.string "???: Allow me to pass. Step aside.$"
 
 LakeVerity_Text_Cry:
-	.string "Something cried out from the\n"
-	.string "middle of the lake...$"
+	.string "Kyauuun!$"
 
 LakeVerity_Text_Barry:
-	.string "{RIVAL}: Did you hear that?! That\n"
-	.string "has to be the legendary POKéMON!\p"
-	.string "Ah! But we don't have any POKé\n"
-	.string "BALLS! Argh!\p"
-	.string "The Professor said to come to him\n"
-	.string "if we needed anything. Let's go to\l"
-	.string "SANDGEM!$"
+	.string "{RIVAL}: What was that about? Weird\n"
+	.string "guy...\p"
+	.string "{RIVAL}: OK, {PLAYER}! Let’s catch\n"
+	.string "that legendary POKéMON!\p"
+	.string "{RIVAL}: ! Did you hear that,\n"
+	.string "{PLAYER}?!\p"
+	.string "That was the legendary POKéMON\n"
+	.string "crying! That had to be it!\p"
+	.string "OK! This is our chance! Let’s catch it!\p"
+	.string "...Wait! What...?!\p"
+	.string "We don’t have anything on us!\p"
+	.string "You know, POKé BALLS! P-O-K-accent-E\n"
+	.string "Balls!\p"
+	.string "If we don’t have those, we can’t catch\n"
+	.string "POKéMON or take them around with us!\p"
+	.string "...Do you think Prof. Rowan’d give us\n"
+	.string "some if we asked him?\p"
+	.string "You know, you remember what he said,\n"
+	.string "don’t you?\p"
+	.string "He said to visit him at his lab if we\n"
+	.string "needed anything.\p"
+	.string "OK, {PLAYER}! I’ll race you!\p"
+	.string "First one to the professor’s lab in\n"
+	.string "Sandgem Town rules!$"
 
 Sinnoh_EventScript_BufferCounterpartName::
 	checkplayergender

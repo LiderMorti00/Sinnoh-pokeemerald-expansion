@@ -28,13 +28,25 @@ TwinleafTown_MainHouse_2F_Movement_BarryLeaves:
 	step_end
 
 TwinleafTown_MainHouse_2F_Text_Barry1:
-	.string "{RIVAL}: {PLAYER}! Did you see that\n"
-	.string "TV show just now? The one about\l"
-	.string "the red GYARADOS at some lake?!$"
+	.string "That concludes our special program,\n"
+	.string "“Let’s Ask Prof. Rowan!”\p"
+	.string "Brought to you by Jubilife TV on\n"
+	.string "Nationwide Net!\p"
+	.string "{RIVAL}: There you are!\p"
+	.string "Hey, {PLAYER}! Did you just see the TV?\n"
+	.string "Sure you did!\p"
+	.string "Prof. Rowan’s that really important guy\n"
+	.string "who studies POKéMON, right?\p"
+	.string "That means he must have lots and lots\n"
+	.string "of POKéMON.\p"
+	.string "So, if we ask him, I bet he’d give us\n"
+	.string "some POKéMON!$"
 
 TwinleafTown_MainHouse_2F_Text_Barry2:
-	.string "That gives me an idea! We should\n"
-	.string "look for a POKéMON like that at\l"
-	.string "the lake nearby!\p"
-	.string "Meet me outside, okay? If you're\n"
-	.string "late, I'm fining you ten million!$"
+	.string "Oh, hey! Is this a new PC?!\p"
+	.string "{RIVAL}: Uh... Where was I?\p"
+	.string "Oh, right, right! We’re going to go see\n"
+	.string "Prof. Rowan and get some POKéMON.\p"
+	.string "I’ll be waiting outside.\p"
+	.string "OK, {PLAYER}? If you’re late, I’m fining\n"
+	.string "you $10 million!$"

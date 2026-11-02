@@ -28,7 +28,15 @@ SandgemLab_EventScript_SceneRight::
 
 SandgemLab_EventScript_Scene::
 	call Sinnoh_EventScript_BufferCounterpartName
+	bufferleadmonspeciesname STR_VAR_2
 	msgbox SandgemLab_Text_RowanWelcome, MSGBOX_DEFAULT
+	msgbox SandgemLab_Text_PtRecordData, MSGBOX_YESNO
+SandgemLab_EventScript_PtAskDex:
+	goto_if_eq VAR_RESULT, YES, SandgemLab_EventScript_PtDexYes
+	msgbox SandgemLab_Text_PtAskAgain, MSGBOX_YESNO
+	goto SandgemLab_EventScript_PtAskDex
+SandgemLab_EventScript_PtDexYes:
+	msgbox SandgemLab_Text_PtGoodAnswer, MSGBOX_DEFAULT
 	playfanfare MUS_OBTAIN_ITEM
 	message SandgemLab_Text_ReceivedPokedex
 	waitfanfare
@@ -84,24 +92,54 @@ SandgemLab_Movement_WalkToRowanRight:
 	step_end
 
 SandgemLab_Text_RowanWelcome:
-	.string "ROWAN: So, you have come. Let me\n"
-	.string "see that POKéMON of yours.\p"
-	.string "...Hm. It already seems quite\n"
-	.string "attached to you. Very well, you\l"
-	.string "may keep it.\p"
-	.string "In return, I have a request. Take\n"
-	.string "this POKéDEX and record every\l"
-	.string "POKéMON you meet in Sinnoh.$"
+	.string "Professor: Well, well, look who’s here.\p"
+	.string "{PLAYER}, was it? Let’s have a look at\n"
+	.string "your POKéMON.\p"
+	.string "Professor: ...\p"
+	.string "Hmm... I see...\p"
+	.string "This POKéMON seems to be rather happy.\p"
+	.string "Professor: When I first saw you two\n"
+	.string "about to step into the tall grass\p"
+	.string "without POKéMON, I was shocked.\p"
+	.string "I was astounded by these foolhardy\n"
+	.string "children.\p"
+	.string "But now, you’ve astounded me in an\n"
+	.string "entirely different way.\p"
+	.string "Already, there is a bond growing\n"
+	.string "between you and that POKéMON.\p"
+	.string "I feel privileged to have met you.\p"
+	.string "I’m sure {STR_VAR_2} feels the same way\n"
+	.string "about you.\p"
+	.string "That’s why I’ll ask you to cherish that\n"
+	.string "{STR_VAR_2} of yours.\p"
+	.string "Professor: Er-hem! Let’s move on to\n"
+	.string "the main topic.\p"
+	.string "There is something I want you to do for\n"
+	.string "me.$"
 
 SandgemLab_Text_ReceivedPokedex:
-	.string "{PLAYER} received the POKéDEX\n"
-	.string "from PROFESSOR ROWAN!$"
+	.string "{PLAYER} obtained the POKéDEX!$"
 
 SandgemLab_Text_RowanPokedex:
-	.string "ROWAN: I want to know every POKéMON\n"
-	.string "that lives in Sinnoh.\p"
-	.string "Go out and see this region with your\n"
-	.string "own eyes. That is my request.$"
+	.string "Rowan: That POKéDEX is a very\n"
+	.string "high-tech device.\p"
+	.string "It will automatically record data on\n"
+	.string "every kind of POKéMON you encounter.\p"
+	.string "{PLAYER}, I ask that you go everywhere\n"
+	.string "and meet every kind of\p"
+	.string "POKéMON in this region!\p"
+	.string "Rowan: When you walked up Route 201\n"
+	.string "with your POKéMON, what did you feel?\p"
+	.string "I’ve lived for 60 long years. Even now,\n"
+	.string "I get a thrill when\p"
+	.string "I’m with a POKéMON.\p"
+	.string "Now, you should know that there are\n"
+	.string "countless POKéMON in this world.\p"
+	.string "That means there are just as many\n"
+	.string "thrills waiting for you out there!\p"
+	.string "Now go!\p"
+	.string "{PLAYER}, your grand adventure begins\n"
+	.string "right now!$"
 
 SandgemLab_Text_AssistantBalls:
 	.string "{STR_VAR_1}: Hi! I'm {STR_VAR_1}.\n"
@@ -1396,3 +1434,37 @@ SandgemLab_EventScript_SNCPSafe_M_Lu:
 	.string "rustle up help...\p"
 	.string "You didn’t need it, BARRY. I’m glad to\n"
 	.string "see you back safe, too.$"
+
+SandgemLab_Text_PtRecordData:
+	.string "Rowan: Allow me to properly introduce\n"
+	.string "myself first.\p"
+	.string "My name, as you know, is Rowan. I study\n"
+	.string "POKéMON.\p"
+	.string "First of all, I want to know exactly\n"
+	.string "what kinds of POKéMON live in the\p"
+	.string "Sinnoh region.\p"
+	.string "To do so, it is necessary to collect\n"
+	.string "data using the POKéDEX.\p"
+	.string "This is what I wish to ask of you.\p"
+	.string "I want to entrust you with this\n"
+	.string "POKéDEX.\p"
+	.string "Will you use it to record data on all\n"
+	.string "the POKéMON in Sinnoh for me?$"
+
+SandgemLab_Text_PtAskAgain:
+	.string "Rowan: ...\p"
+	.string "...\p"
+	.string "...\p"
+	.string "...\p"
+	.string "I can stand here without speaking for\n"
+	.string "hours. I’m a very patient man.\p"
+	.string "Let me ask you again, {PLAYER}.\p"
+	.string "I want to entrust you with this\n"
+	.string "POKéDEX.\p"
+	.string "Will you use it to record data on all\n"
+	.string "the POKéMON in Sinnoh for me?$"
+
+SandgemLab_Text_PtGoodAnswer:
+	.string "Rowan: Hm!\p"
+	.string "Good answer!$"
+

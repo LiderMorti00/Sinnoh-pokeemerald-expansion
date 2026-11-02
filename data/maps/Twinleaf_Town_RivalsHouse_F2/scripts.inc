@@ -17,8 +17,6 @@ Twinleaf_Town_RivalsHouse_F2_EventScript_Barry::
 	end
 
 Twinleaf_Town_RivalsHouse_F2_Text_Barry:
-	.string "{RIVAL}: There you are, {PLAYER}! I\n"
-	.string "was just about to head out.\p"
-	.string "I'm going to the lake to find that\n"
-	.string "legendary POKéMON! Meet me on\l"
-	.string "ROUTE 201, okay? Don't be late!$"
+	.string "{RIVAL}: Oh, hey, {PLAYER}!\p"
+	.string "I’ll be waiting on the road! It’s a $10\n"
+	.string "million fine if you’re late!$"

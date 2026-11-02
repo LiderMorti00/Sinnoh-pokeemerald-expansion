@@ -389,11 +389,11 @@ Route201_Text_PtTooSlow:
 	.string "Too slow!$"
 
 Route201_Text_PtLetsGetMoving:
-	.string ": All right! Let’s get moving to Prof.\n"
-	.string "Rowan’s lab.$"
+	.string "{RIVAL}: All right! Let’s get moving\n"
+	.string "to Prof. Rowan’s lab.$"
 
 Route201_Text_PtIveGotAnIdea:
-	.string ": ... ...\p"
+	.string "{RIVAL}: ... ...\p"
 	.string "What? Don’t go into the grass, right?\p"
 	.string "No worries! No problem!\p"
 	.string "It doesn’t matter that we don’t have\n"
@@ -419,22 +419,24 @@ Route201_Text_PtHoldIt:
 	.string "Hold it!$"
 
 Route201_Text_PtRivalEllipsis:
-	.string ": ... ...$"
+	.string "{RIVAL}: ... ...$"
 
 Route201_Text_PtThisIsProfRowan:
-	.string ": Hey, {PLAYER}. This old guy...\p"
+	.string "{RIVAL}: Hey, {PLAYER}. This old guy...\p"
 	.string "It’s Prof. Rowan, isn’t it? What’s he\n"
 	.string "doing here...?$"
 
 Route201_Text_PtYoureNotMakingSense:
-	.string ": Whoa, hold up! You’re not making any\n"
-	.string "sense here!$"
+	.string "{RIVAL}: Whoa, hold up! You’re not\n"
+	.string "making any sense here!$"
 
 Route201_Text_PtILovePokemonToo:
-	.string ": Me, too! I love POKéMON, too!$"
+	.string "{RIVAL}: Me, too! I love POKéMON,\n"
+	.string "too!$"
 
 Route201_Text_PtTheAnswerWillNeverChange:
-	.string ": What?! You can ask a hundred times!\p"
+	.string "{RIVAL}: What?! You can ask a\n"
+	.string "hundred times!\p"
 	.string "The answer will never change!\p"
 	.string "We’ll both answer a hundred times, we\n"
 	.string "love POKéMON!$"
@@ -443,10 +445,10 @@ Route201_Text_PtRightPlayer:
 	.string "Right, {PLAYER}?$"
 
 Route201_Text_PtThatJokesGettingOld:
-	.string ": ... That joke’s getting old!$"
+	.string "{RIVAL}: ... That joke’s getting old!$"
 
 Route201_Text_PtGiveAPokemonToMyFriend:
-	.string ": ...Uh... Well, I, uh...\p"
+	.string "{RIVAL}: ...Uh... Well, I, uh...\p"
 	.string "... ...\p"
 	.string "Well, then forget about me, but give a\n"
 	.string "POKéMON to my friend here!\p"
@@ -454,7 +456,7 @@ Route201_Text_PtGiveAPokemonToMyFriend:
 	.string "the tall grass and all...$"
 
 Route201_Text_PtICantBelieveIt:
-	.string ": Really?! Prof. Rowan!\p"
+	.string "{RIVAL}: Really?! Prof. Rowan!\p"
 	.string "I can’t believe it! I’m so happy now\n"
 	.string "that I can’t keep a straight face!$"
 
@@ -464,8 +466,8 @@ Route201_Text_PtYouCanChooseFirst:
 	.string "to show some class here.$"
 
 Route201_Text_PtProfRowansReallyNice:
-	.string ": How do you like that? Prof. Rowan’s\n"
-	.string "really nice.\p"
+	.string "{RIVAL}: How do you like that? Prof.\n"
+	.string "Rowan’s really nice.\p"
 	.string "On TV, he seems so stern and scary.$"
 
 Route201_Text_PtOnlyOneThingToDo:
@@ -475,22 +477,23 @@ Route201_Text_PtOnlyOneThingToDo:
 	.string "you up for this?$"
 
 Route201_Text_PtDontBeThatWay:
-	.string ": What’s with that attitude? Don’t be\n"
-	.string "that way!$"
+	.string "{RIVAL}: What’s with that attitude?\n"
+	.string "Don’t be that way!$"
 
 Route201_Text_PtIChallengeYouToABattle:
-	.string ": I’ve always wanted to say this...\p"
+	.string "{RIVAL}: I’ve always wanted to say\n"
+	.string "this...\p"
 	.string "The time has finally come!\p"
 	.string "{PLAYER}! I challenge you to a battle!$"
 
 Route201_Text_PtWhewLetsGoHome:
-	.string ": Whew! Let’s go home.\p"
+	.string "{RIVAL}: Whew! Let’s go home.\p"
 	.string "I’m beat after that battle. My POKéMON\n"
 	.string "needs rest, too.\p"
 	.string "See ya, {PLAYER}!$"
 
 Route201_Text_PtIWonLetsGoHome:
-	.string ": Aha... Ahaha... I won? I won!\p"
+	.string "{RIVAL}: Aha... Ahaha... I won? I won!\p"
 	.string "But that battle, it could’ve gone\n"
 	.string "either way. It was that close!\p"
 	.string "I can tell you one thing: battling is\n"
@@ -501,7 +504,8 @@ Route201_Text_PtIWonLetsGoHome:
 	.string "See ya, {PLAYER}!$"
 
 Route201_Text_PtLetsCatchThatLegendary:
-	.string ": Too slow! {PLAYER}, I’m sick of waiting!\p"
+	.string "{RIVAL}: Too slow! {PLAYER}, I’m sick\n"
+	.string "of waiting!\p"
 	.string "I’m going to go see Prof. Rowan, so I\n"
 	.string "can thank him properly.\p"
 	.string "So, I had this great idea. Listen up,\n"
@@ -516,8 +520,8 @@ Route201_Text_PtLetsCatchThatLegendary:
 	.string "of that!$"
 
 Route201_Text_PtImPickingThisStarter:
-	.string ": Then, I choose you! I’m picking this\n"
-	.string "{STR_VAR_1}!$"
+	.string "{RIVAL}: Then, I choose you! I’m\n"
+	.string "picking this {STR_VAR_1}!$"
 
 Route201_Text_PtHmmWhatToDo:
 	.string "Professor: ... ...\p"

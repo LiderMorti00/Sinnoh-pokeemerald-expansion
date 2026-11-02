@@ -120,19 +120,33 @@ Route202_Movement_DawnLeaves:
 	step_end
 
 Route202_Text_DawnTutorial:
-	.string "{STR_VAR_1}: There you are! The\n"
-	.string "Professor asked me to teach you\l"
-	.string "how to catch POKéMON.\p"
-	.string "Watch closely! First, you battle a\n"
-	.string "wild POKéMON, like this BIDOOF, to\l"
-	.string "weaken it.\p"
-	.string "Then you throw a POKé BALL!\n"
-	.string "...Gotcha! See? Easy! Here, take\l"
-	.string "these so you can try it yourself.$"
+	.string "{STR_VAR_1}: Oh, that’s right!\p"
+	.string "{PLAYER}, I haven’t shown you how to\n"
+	.string "catch a POKéMON.\p"
+	.string "I’ll demonstrate how to catch one, so\n"
+	.string "just watch me, OK?\p"
+	.string "{STR_VAR_1}: Giggle... See? Isn’t it\n"
+	.string "neat?\p"
+	.string "Actually, it’s better to lower your\n"
+	.string "target’s HP more than I did.\p"
+	.string "It’s important to get the POKéMON’s HP\n"
+	.string "down as low as possible.\p"
+	.string "This is because a healthy POKéMON is\n"
+	.string "very difficult to catch.\p"
+	.string "Oh, POKéMON also get easier to catch if\n"
+	.string "you make them sleep or something\p"
+	.string "by using a POKéMON’s move.\p"
+	.string "OK, {RIVAL}, to get you started, I’ll\n"
+	.string "give you five\p"
+	.string "POKé BALLS!$"
 
 Route202_Text_DawnBye:
-	.string "{STR_VAR_1}: JUBILIFE CITY is just\n"
-	.string "up ahead. I'll see you around!$"
+	.string "{STR_VAR_1}: If you have lots of\n"
+	.string "POKéMON with you, it will be safer on\l"
+	.string "long trips.\p"
+	.string "Plus, it will be a lot more fun having\n"
+	.string "your POKéMON friends along.\p"
+	.string "OK, I need to get going. Bye, now!$"
 
 Route202_EventScript_Tristan::
 	trainerbattle_single TRAINER_BILLY, Route202_Text_TristanIntro, Route202_Text_TristanDefeat
