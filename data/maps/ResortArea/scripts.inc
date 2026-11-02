@@ -162,3 +162,13 @@ ResortArea_Text_SNSyndYes:
 	.string "are? Really?\p"
 	.string "How did you manage to collect so many\n"
 	.string "POKéMON Ribbons?$"
+
+ResortArea_EventScript_SNPtACETRAINERF::
+	msgbox ResortArea_EventScript_SNPtACETRAINERF_Text, MSGBOX_NPC
+	end
+
+ResortArea_EventScript_SNPtACETRAINERF_Text:
+	.string "Oh, how I long to become a member of\n"
+	.string "the Ribbon Syndicate.\p"
+	.string "My dearest POKéMON will be treated to\n"
+	.string "dreamy experiences!$"

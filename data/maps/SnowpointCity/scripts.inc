@@ -189,3 +189,17 @@ SnowpointCity_Text_SNCyn2:
 	.string "Your horizons will expand again if you\n"
 	.string "visit the Fight Area as well.\p"
 	.string "I hope our paths cross again!$"
+
+SnowpointCity_EventScript_SNPtSNOWPOINTNPCM::
+	msgbox SnowpointCity_EventScript_SNPtSNOWPOINTNPCM_Text, MSGBOX_NPC
+	end
+
+SnowpointCity_EventScript_SNPtSNOWPOINTNPCM_Text:
+	.string "POKéMON are said to have dragged\n"
+	.string "Snowpoint City here.\p"
+	.string "The Snowpoint Temple is their resting\n"
+	.string "place, they say.\p"
+	.string "I want to take a look around in the\n"
+	.string "Snowpoint Temple.\p"
+	.string "But only really tough Trainers are\n"
+	.string "allowed inside.$"

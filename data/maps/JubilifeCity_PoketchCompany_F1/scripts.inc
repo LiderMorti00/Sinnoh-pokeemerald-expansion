@@ -26,3 +26,12 @@ JubilifeCity_PoketchCompany_F1_Text_PtNpc3:
 	.string "Detective” is a great show.\p"
 	.string "Seeing that program compels me to use\n"
 	.string "my POKéNAV more!$"
+
+JubilifeCity_PoketchCompany_F1_EventScript_SNPtRECEPTIONIST::
+	msgbox JubilifeCity_PoketchCompany_F1_EventScript_SNPtRECEPTIONIST_Text, MSGBOX_NPC
+	end
+
+JubilifeCity_PoketchCompany_F1_EventScript_SNPtRECEPTIONIST_Text:
+	.string "Welcome to the PokéNav Company.\p"
+	.string "We’re actually a family-run business,\n"
+	.string "so we’re not very impressive.$"

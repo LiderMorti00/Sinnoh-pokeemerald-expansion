@@ -102,3 +102,13 @@ JubilifeCity_JubilifeTV_F3_EventScript_PtNpc9::
 	msgbox JubilifeCity_JubilifeTV_F3_Text_PtNpc9_0, MSGBOX_DEFAULT
 	release
 	end
+
+JubilifeCity_JubilifeTV_F3_EventScript_SNPtCOLLECTOR::
+	msgbox JubilifeCity_JubilifeTV_F3_EventScript_SNPtCOLLECTOR_Text, MSGBOX_NPC
+	end
+
+JubilifeCity_JubilifeTV_F3_EventScript_SNPtCOLLECTOR_Text:
+	.string "I bet it’d feel great if I could be\n"
+	.string "number one here!\p"
+	.string "Maybe I’ll enter some Contests with my\n"
+	.string "partner.$"

@@ -102,3 +102,13 @@ ValorLakefront_Restaurant_Text_PtNpc12:
 ValorLakefront_Restaurant_EventScript_PtNpc12::
 	msgbox ValorLakefront_Restaurant_Text_PtNpc12, MSGBOX_NPC
 	end
+
+ValorLakefront_Restaurant_EventScript_SNPtWAITER::
+	msgbox ValorLakefront_Restaurant_EventScript_SNPtWAITER_Text, MSGBOX_NPC
+	end
+
+ValorLakefront_Restaurant_EventScript_SNPtWAITER_Text:
+	.string "At our restaurant, you can enjoy more\n"
+	.string "than just exquisite dining.\p"
+	.string "You may also partake in battles. Bon\n"
+	.string "appetit!$"

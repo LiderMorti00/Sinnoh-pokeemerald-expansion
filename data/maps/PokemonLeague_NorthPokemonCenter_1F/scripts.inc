@@ -295,3 +295,24 @@ PokemonLeague_NorthPokemonCenter_1F_EventScript_SNPOKEMONLEAGUE_NORTHPOKEMONCENT
 PokemonLeague_NorthPokemonCenter_1F_EventScript_SNPOKEMONLEAGUE_NORTHPOKEMONCENTER_1FBARRY_T3_P:
 	face_up
 	step_end
+
+PokemonLeague_NorthPokemonCenter_1F_EventScript_SNPtLEAGUENORTHACETRAINERF::
+	msgbox PokemonLeague_NorthPokemonCenter_1F_EventScript_SNPtLEAGUENORTHACETRAINERF_Text, MSGBOX_NPC
+	end
+
+PokemonLeague_NorthPokemonCenter_1F_EventScript_SNPtLEAGUENORTHACETRAINERF_Text:
+	.string "It doesn’t matter if the going is slow.\p"
+	.string "Nor does it matter how many challenges\n"
+	.string "it takes.\p"
+	.string "I’m never giving up! Not until I beat\n"
+	.string "the Elite Four!$"
+
+PokemonLeague_NorthPokemonCenter_1F_EventScript_SNPtLEAGUENORTHGUITARIST::
+	msgbox PokemonLeague_NorthPokemonCenter_1F_EventScript_SNPtLEAGUENORTHGUITARIST_Text, MSGBOX_NPC
+	end
+
+PokemonLeague_NorthPokemonCenter_1F_EventScript_SNPtLEAGUENORTHGUITARIST_Text:
+	.string "What is the POKéMON League? Don’t\n"
+	.string "take my word for it.\p"
+	.string "Take the challenge and experience it\n"
+	.string "for yourself!$"

@@ -176,7 +176,15 @@ CanalaveCity_Gym_EventScript_PtGymGuideAfter::
 	end
 
 CanalaveCity_Gym_EventScript_PtGymStatue::
-	msgbox CanalaveCity_Gym_Text_PtGymStatue, MSGBOX_SIGN
+	lockall
+	goto_if_set FLAG_BADGE06_GET, CanalaveCity_Gym_EventScript_PtGymStatueWon
+	msgbox CanalaveCity_Gym_Text_PtGymStatue, MSGBOX_DEFAULT
+	releaseall
+	end
+
+CanalaveCity_Gym_EventScript_PtGymStatueWon::
+	msgbox CanalaveCity_Gym_Text_PtGymStatueWon, MSGBOX_DEFAULT
+	releaseall
 	end
 
 
@@ -245,9 +253,14 @@ CanalaveCity_Gym_Text_PtGymGuideAfter:
 	.string "corner, kiddo!$"
 
 CanalaveCity_Gym_Text_PtGymStatue:
-	.string "Canalave City POKéMON Gym Leader:\n"
-	.string "Byron\p"
-	.string "Certified Trainers: {PLAYER}$"
+	.string "CANALAVE POKéMON GYM\n"
+	.string "LEADER: BYRON$"
+
+CanalaveCity_Gym_Text_PtGymStatueWon:
+	.string "CANALAVE POKéMON GYM\n"
+	.string "LEADER: BYRON\p"
+	.string "WINNING TRAINERS:\n"
+	.string "{PLAYER}$"
 
 CanalaveCity_Gym_EventScript_SNRematch::
 	lock

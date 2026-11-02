@@ -478,7 +478,15 @@ SunyshoreCity_Gym_EventScript_PtGymGuideAfter::
 	end
 
 SunyshoreCity_Gym_EventScript_PtGymStatue::
-	msgbox SunyshoreCity_Gym_Text_PtGymStatue, MSGBOX_SIGN
+	lockall
+	goto_if_set FLAG_BADGE08_GET, SunyshoreCity_Gym_EventScript_PtGymStatueWon
+	msgbox SunyshoreCity_Gym_Text_PtGymStatue, MSGBOX_DEFAULT
+	releaseall
+	end
+
+SunyshoreCity_Gym_EventScript_PtGymStatueWon::
+	msgbox SunyshoreCity_Gym_Text_PtGymStatueWon, MSGBOX_DEFAULT
+	releaseall
 	end
 
 
@@ -559,8 +567,14 @@ SunyshoreCity_Gym_Text_PtGymGuideAfter:
 	.string "Way to go, kiddo!$"
 
 SunyshoreCity_Gym_Text_PtGymStatue:
-	.string "Sunyshore City POKéMON Gym\p"
-	.string "Leader: Volkner$"
+	.string "SUNYSHORE POKéMON GYM\n"
+	.string "LEADER: VOLKNER$"
+
+SunyshoreCity_Gym_Text_PtGymStatueWon:
+	.string "SUNYSHORE POKéMON GYM\n"
+	.string "LEADER: VOLKNER\p"
+	.string "WINNING TRAINERS:\n"
+	.string "{PLAYER}$"
 
 SunyshoreCity_Gym_EventScript_SNRematch::
 	lock

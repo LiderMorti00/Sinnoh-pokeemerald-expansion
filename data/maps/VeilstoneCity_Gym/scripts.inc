@@ -431,7 +431,15 @@ VeilstoneCity_Gym_EventScript_PtGymGuideAfter::
 	end
 
 VeilstoneCity_Gym_EventScript_PtGymStatue::
-	msgbox VeilstoneCity_Gym_Text_PtGymStatue, MSGBOX_SIGN
+	lockall
+	goto_if_set FLAG_BADGE04_GET, VeilstoneCity_Gym_EventScript_PtGymStatueWon
+	msgbox VeilstoneCity_Gym_Text_PtGymStatue, MSGBOX_DEFAULT
+	releaseall
+	end
+
+VeilstoneCity_Gym_EventScript_PtGymStatueWon::
+	msgbox VeilstoneCity_Gym_Text_PtGymStatueWon, MSGBOX_DEFAULT
+	releaseall
 	end
 
 
@@ -495,9 +503,14 @@ VeilstoneCity_Gym_Text_PtGymGuideAfter:
 	.string "Of course, I thought you’d win.$"
 
 VeilstoneCity_Gym_Text_PtGymStatue:
-	.string "Veilstone City POKéMON Gym Leader:\n"
-	.string "Maylene\p"
-	.string "Certified Trainers: {PLAYER}$"
+	.string "VEILSTONE POKéMON GYM\n"
+	.string "LEADER: MAYLENE$"
+
+VeilstoneCity_Gym_Text_PtGymStatueWon:
+	.string "VEILSTONE POKéMON GYM\n"
+	.string "LEADER: MAYLENE\p"
+	.string "WINNING TRAINERS:\n"
+	.string "{PLAYER}$"
 
 VeilstoneCity_Gym_EventScript_SNRematch::
 	lock

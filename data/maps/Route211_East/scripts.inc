@@ -131,3 +131,17 @@ Route211_East_EventScript_SNHoneyTree_Fresh:
 Route211_East_EventScript_SNHoneyTree_End:
 	release
 	end
+
+Route211_East_EventScript_SNPtACETRAINERM::
+	msgbox Route211_East_EventScript_SNPtACETRAINERM_Text, MSGBOX_NPC
+	end
+
+Route211_East_EventScript_SNPtACETRAINERM_Text:
+	.string "Let me explain how that move works\n"
+	.string "without getting too technical.\p"
+	.string "Let’s say your opponent raises its\n"
+	.string "Defense using Harden.\p"
+	.string "Your POKéMON can use Psych Up to get\n"
+	.string "the same Defense boost as its foe.\p"
+	.string "Basically, your POKéMON gets the same\n"
+	.string "status boosts as its target.$"

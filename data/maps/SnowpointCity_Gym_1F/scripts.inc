@@ -185,7 +185,15 @@ SnowpointCity_Gym_1F_EventScript_PtGymGuideAfter::
 	end
 
 SnowpointCity_Gym_1F_EventScript_PtGymStatue::
-	msgbox SnowpointCity_Gym_1F_Text_PtGymStatue, MSGBOX_SIGN
+	lockall
+	goto_if_set FLAG_BADGE07_GET, SnowpointCity_Gym_1F_EventScript_PtGymStatueWon
+	msgbox SnowpointCity_Gym_1F_Text_PtGymStatue, MSGBOX_DEFAULT
+	releaseall
+	end
+
+SnowpointCity_Gym_1F_EventScript_PtGymStatueWon::
+	msgbox SnowpointCity_Gym_1F_Text_PtGymStatueWon, MSGBOX_DEFAULT
+	releaseall
 	end
 
 
@@ -246,9 +254,14 @@ SnowpointCity_Gym_1F_Text_PtGymGuideAfter:
 	.string "your POKéMON picked up on it!$"
 
 SnowpointCity_Gym_1F_Text_PtGymStatue:
-	.string "Snowpoint City POKéMON Gym Leader:\n"
-	.string "Candice\p"
-	.string "Certified Trainers: {PLAYER}$"
+	.string "SNOWPOINT POKéMON GYM\n"
+	.string "LEADER: CANDICE$"
+
+SnowpointCity_Gym_1F_Text_PtGymStatueWon:
+	.string "SNOWPOINT POKéMON GYM\n"
+	.string "LEADER: CANDICE\p"
+	.string "WINNING TRAINERS:\n"
+	.string "{PLAYER}$"
 
 SnowpointCity_Gym_1F_EventScript_SNRematch::
 	lock

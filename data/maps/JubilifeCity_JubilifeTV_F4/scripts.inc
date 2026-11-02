@@ -28,3 +28,11 @@ JubilifeCity_JubilifeTV_F4_Text_PtNpc3:
 	.string "we added variety programs to our\l"
 	.string "scheduling.\p"
 	.string "Please do tune in!$"
+
+JubilifeCity_JubilifeTV_F4_EventScript_SNPtRECEPTIONIST::
+	msgbox JubilifeCity_JubilifeTV_F4_EventScript_SNPtRECEPTIONIST_Text, MSGBOX_NPC
+	end
+
+JubilifeCity_JubilifeTV_F4_EventScript_SNPtRECEPTIONIST_Text:
+	.string "“Participation for all” is our TV\n"
+	.string "network’s motto.$"

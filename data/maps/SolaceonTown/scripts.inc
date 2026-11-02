@@ -103,3 +103,42 @@ SolaceonTown_EventScript_SNSecretPower_T2:
 	.string "to make your own SECRET BASE!\p"
 	.string "You can buy decorations for it at the\n"
 	.string "VEILSTONE DEPARTMENT STORE.$"
+
+SolaceonTown_EventScript_SNMon1Buneary::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_BUNEARY, CRY_MODE_NORMAL
+	msgbox SolaceonTown_EventScript_SNMon1Buneary_Text, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
+SolaceonTown_EventScript_SNMon1Buneary_Text:
+	.string "BUNEARY: Bun! Buneary!$"
+
+SolaceonTown_EventScript_SNMon2Buneary::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_BUNEARY, CRY_MODE_NORMAL
+	msgbox SolaceonTown_EventScript_SNMon2Buneary_Text, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
+SolaceonTown_EventScript_SNMon2Buneary_Text:
+	.string "BUNEARY: Bun! Buneary!$"
+
+SolaceonTown_EventScript_SNMonPachirisu::
+	lock
+	faceplayer
+	waitse
+	playmoncry SPECIES_PACHIRISU, CRY_MODE_NORMAL
+	msgbox SolaceonTown_EventScript_SNMonPachirisu_Text, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
+SolaceonTown_EventScript_SNMonPachirisu_Text:
+	.string "PACHIRISU: Pachi! Pachiri!$"

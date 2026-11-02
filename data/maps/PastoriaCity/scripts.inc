@@ -408,3 +408,23 @@ PastoriaCity_Text_SNWB4:
 	.string "I’m staying here like Master said!\n"
 	.string "Gotta keep others from going in!\p"
 	.string "Don’t let that Galactic guy get away!$"
+
+PastoriaCity_EventScript_SNPtSCIENTISTM::
+	msgbox PastoriaCity_EventScript_SNPtSCIENTISTM_Text, MSGBOX_NPC
+	end
+
+PastoriaCity_EventScript_SNPtSCIENTISTM_Text:
+	.string "I study rare POKéMON that appear only\n"
+	.string "in the Great Marsh.$"
+
+PastoriaCity_EventScript_SNPtPARASOLLADY::
+	msgbox PastoriaCity_EventScript_SNPtPARASOLLADY_Text, MSGBOX_NPC
+	end
+
+PastoriaCity_EventScript_SNPtPARASOLLADY_Text:
+	.string "Someone gave me a Berry, so I planted\n"
+	.string "it and grew some more.\p"
+	.string "Then, I took the Berries and cooked\n"
+	.string "them into Poffins.\p"
+	.string "All the work is worth it when I see how\n"
+	.string "happy they make my POKéMON!$"

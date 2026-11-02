@@ -156,7 +156,15 @@ PastoriaCity_Gym_EventScript_PtGymGuideAfter::
 	end
 
 PastoriaCity_Gym_EventScript_PtGymStatue::
-	msgbox PastoriaCity_Gym_Text_PtGymStatue, MSGBOX_SIGN
+	lockall
+	goto_if_set FLAG_BADGE05_GET, PastoriaCity_Gym_EventScript_PtGymStatueWon
+	msgbox PastoriaCity_Gym_Text_PtGymStatue, MSGBOX_DEFAULT
+	releaseall
+	end
+
+PastoriaCity_Gym_EventScript_PtGymStatueWon::
+	msgbox PastoriaCity_Gym_Text_PtGymStatueWon, MSGBOX_DEFAULT
+	releaseall
 	end
 
 
@@ -222,9 +230,14 @@ PastoriaCity_Gym_Text_PtGymGuideAfter:
 	.string "showed you what I mean by fun.$"
 
 PastoriaCity_Gym_Text_PtGymStatue:
-	.string "Pastoria City POKéMON Gym Leader:\n"
-	.string "Crasher Wake\p"
-	.string "Certified Trainers: {PLAYER}$"
+	.string "PASTORIA POKéMON GYM\n"
+	.string "LEADER: CRASHER WAKE$"
+
+PastoriaCity_Gym_Text_PtGymStatueWon:
+	.string "PASTORIA POKéMON GYM\n"
+	.string "LEADER: CRASHER WAKE\p"
+	.string "WINNING TRAINERS:\n"
+	.string "{PLAYER}$"
 
 PastoriaCity_Gym_EventScript_SNRematch::
 	lock

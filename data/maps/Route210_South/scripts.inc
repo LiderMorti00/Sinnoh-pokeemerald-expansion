@@ -359,3 +359,11 @@ Route210_South_EventScript_SNHoneyTree_Fresh:
 Route210_South_EventScript_SNHoneyTree_End:
 	release
 	end
+
+Route210_South_EventScript_SNPtACETRAINERF::
+	msgbox Route210_South_EventScript_SNPtACETRAINERF_Text, MSGBOX_NPC
+	end
+
+Route210_South_EventScript_SNPtACETRAINERF_Text:
+	.string "If they had to keep flying forever,\n"
+	.string "bird POKéMON would eventually crash.$"

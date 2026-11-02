@@ -155,7 +155,15 @@ HearthomeCity_Gym_EventScript_PtGymGuideAfter::
 	end
 
 HearthomeCity_Gym_EventScript_PtGymStatue::
-	msgbox HearthomeCity_Gym_Text_PtGymStatue, MSGBOX_SIGN
+	lockall
+	goto_if_set FLAG_BADGE03_GET, HearthomeCity_Gym_EventScript_PtGymStatueWon
+	msgbox HearthomeCity_Gym_Text_PtGymStatue, MSGBOX_DEFAULT
+	releaseall
+	end
+
+HearthomeCity_Gym_EventScript_PtGymStatueWon::
+	msgbox HearthomeCity_Gym_Text_PtGymStatueWon, MSGBOX_DEFAULT
+	releaseall
 	end
 
 
@@ -223,9 +231,14 @@ HearthomeCity_Gym_Text_PtGymGuideAfter:
 	.string "everyone, right?$"
 
 HearthomeCity_Gym_Text_PtGymStatue:
-	.string "Hearthome City POKéMON Gym Leader:\n"
-	.string "Fantina\p"
-	.string "Certified Trainers: {PLAYER}$"
+	.string "HEARTHOME POKéMON GYM\n"
+	.string "LEADER: FANTINA$"
+
+HearthomeCity_Gym_Text_PtGymStatueWon:
+	.string "HEARTHOME POKéMON GYM\n"
+	.string "LEADER: FANTINA\p"
+	.string "WINNING TRAINERS:\n"
+	.string "{PLAYER}$"
 
 HearthomeCity_Gym_EventScript_SNRematch::
 	lock
