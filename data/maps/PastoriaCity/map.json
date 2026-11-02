@@ -182,6 +182,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_SN_PASTORIACITY_BARRY",
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_BARRY",
       "x": 15,
       "y": 27,
@@ -192,8 +193,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PastoriaCity_EventScript_SNBarry",
-      "flag": "FLAG_SN_HIDE_PAST_BARRY",
-      "local_id": "LOCALID_SN_PASTORIACITY_BARRY"
+      "flag": "FLAG_SN_HIDE_PAST_BARRY"
     },
     {
       "local_id": "LOCALID_SN_PAST_GRUNT",

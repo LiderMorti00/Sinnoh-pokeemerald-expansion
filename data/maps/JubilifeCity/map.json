@@ -306,8 +306,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 18,
-      "y": 22,
+      "x": 25,
+      "y": 7,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -1177,7 +1177,7 @@
     },
     {
       "type": "sign",
-      "x": 39,
+      "x": 41,
       "y": 37,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -1201,8 +1201,8 @@
     },
     {
       "type": "sign",
-      "x": 52,
-      "y": 6,
+      "x": 51,
+      "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "JubilifeCity_EventScript_Sign1"
@@ -1218,7 +1218,7 @@
     {
       "type": "sign",
       "x": 8,
-      "y": 18,
+      "y": 17,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "JubilifeCity_EventScript_Sign6"
@@ -1233,8 +1233,8 @@
     },
     {
       "type": "sign",
-      "x": 54,
-      "y": 17,
+      "x": 52,
+      "y": 16,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "JubilifeCity_EventScript_Sign4"

@@ -16,7 +16,7 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_BEAUTY",
-      "x": 11,
+      "x": 8,
       "y": 4,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -30,7 +30,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_BALDING_MAN",
       "x": 15,
-      "y": 2,
+      "y": 3,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 1,
@@ -42,8 +42,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_ACE_TRAINER_M",
-      "x": 5,
-      "y": 1,
+      "x": 3,
+      "y": 3,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -56,7 +56,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_WOMAN_2_FRLG",
       "x": 1,
-      "y": 7,
+      "y": 8,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 1,
@@ -69,7 +69,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_GUITARIST",
       "x": 13,
-      "y": 7,
+      "y": 9,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -81,8 +81,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GYM_GUY",
-      "x": 6,
-      "y": 2,
+      "x": 4,
+      "y": 5,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 1,
@@ -96,14 +96,14 @@
   "warp_events": [
     {
       "x": 7,
-      "y": 9,
+      "y": 11,
       "elevation": 0,
       "dest_map": "MAP_JUBILIFE_CITY",
       "dest_warp_id": "5"
     },
     {
       "x": 8,
-      "y": 9,
+      "y": 11,
       "elevation": 0,
       "dest_map": "MAP_JUBILIFE_CITY",
       "dest_warp_id": "5"
