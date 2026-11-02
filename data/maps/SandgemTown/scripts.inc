@@ -15,7 +15,12 @@ SandgemTown_OnTransition:
 	end
 
 SandgemTown_EventScript_SetDawnGfx::
+	checkplayergender
+	goto_if_eq VAR_RESULT, FEMALE, SandgemTown_EventScript_SetLucasGfx
 	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_SINNOH_DAWN
+	end
+SandgemTown_EventScript_SetLucasGfx:
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_SINNOH_LUCAS
 	end
 
 SandgemTown_EventScript_Escort::

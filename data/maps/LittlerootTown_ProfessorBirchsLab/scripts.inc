@@ -7,11 +7,11 @@ SandgemLab_OnTransition:
 	call LittlerootTown_ProfessorBirchsLab_EventScript_SNVis_LAB_OAK
 	checkplayergender
 	goto_if_eq VAR_RESULT, MALE, SandgemLab_EventScript_SetDawn
-	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_SINNOH_LUCAS
 	end
 
 SandgemLab_EventScript_SetDawn::
-	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RIVAL_MAY_NORMAL
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_SINNOH_DAWN
 	end
 
 SandgemLab_EventScript_SceneLeft::

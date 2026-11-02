@@ -10,7 +10,12 @@ JubilifeCity_OnTransition:
 	end
 
 JubilifeCity_EventScript_SetDawnGfx::
+	checkplayergender
+	goto_if_eq VAR_RESULT, FEMALE, JubilifeCity_EventScript_SetLucasGfx
 	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_SINNOH_DAWN
+	end
+JubilifeCity_EventScript_SetLucasGfx:
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_SINNOH_LUCAS
 	end
 
 JubilifeCity_EventScript_Sign10::
@@ -301,12 +306,49 @@ JubilifeCity_EventScript_GalacticScene::
 	applymovement LOCALID_JUBILIFE_GRUNT_1, Common_Movement_ExclamationMark
 	waitmovement 0
 	msgbox JubilifeCity_Text_GruntsThreaten, MSGBOX_DEFAULT
-	msgbox JubilifeCity_Text_GruntsYouToo, MSGBOX_DEFAULT
 	closemessage
-	trainerbattle_no_intro TRAINER_GALACTIC_JUBILIFE_1, JubilifeCity_Text_Grunt1Defeat
-	msgbox JubilifeCity_Text_GruntNext, MSGBOX_DEFAULT
-	closemessage
-	trainerbattle_no_intro TRAINER_GALACTIC_JUBILIFE_2, JubilifeCity_Text_Grunt2Defeat
+	getplayerxy VAR_0x8008, VAR_0x8009
+	subvar VAR_0x8008, 1
+	setobjectxyperm LOCALID_JUBILIFE_DAWN, VAR_0x8008, VAR_0x8009
+	clearflag FLAG_HIDE_JUBILIFE_DAWN
+	addobject LOCALID_JUBILIFE_DAWN
+	applymovement LOCALID_JUBILIFE_DAWN, Common_Movement_FaceUp
+	waitmovement 0
+	checkplayergender
+	goto_if_eq VAR_RESULT, FEMALE, JubilifeCity_EventScript_SNMulti_PL
+	switch VAR_STARTER_MON
+	case 0, JubilifeCity_EventScript_SNMulti_PD0
+	case 1, JubilifeCity_EventScript_SNMulti_PD1
+	case 2, JubilifeCity_EventScript_SNMulti_PD2
+JubilifeCity_EventScript_SNMulti_PD0:
+	setfollowernpc LOCALID_JUBILIFE_DAWN, FNPC_ALL_LAND, 0, PARTNER_DAWN_J_TURTWIG
+	goto JubilifeCity_EventScript_SNMulti_Battle
+JubilifeCity_EventScript_SNMulti_PD1:
+	setfollowernpc LOCALID_JUBILIFE_DAWN, FNPC_ALL_LAND, 0, PARTNER_DAWN_J_CHIMCHAR
+	goto JubilifeCity_EventScript_SNMulti_Battle
+JubilifeCity_EventScript_SNMulti_PD2:
+	setfollowernpc LOCALID_JUBILIFE_DAWN, FNPC_ALL_LAND, 0, PARTNER_DAWN_J_PIPLUP
+	goto JubilifeCity_EventScript_SNMulti_Battle
+JubilifeCity_EventScript_SNMulti_PL:
+	switch VAR_STARTER_MON
+	case 0, JubilifeCity_EventScript_SNMulti_PL0
+	case 1, JubilifeCity_EventScript_SNMulti_PL1
+	case 2, JubilifeCity_EventScript_SNMulti_PL2
+JubilifeCity_EventScript_SNMulti_PL0:
+	setfollowernpc LOCALID_JUBILIFE_DAWN, FNPC_ALL_LAND, 0, PARTNER_LUCAS_J_TURTWIG
+	goto JubilifeCity_EventScript_SNMulti_Battle
+JubilifeCity_EventScript_SNMulti_PL1:
+	setfollowernpc LOCALID_JUBILIFE_DAWN, FNPC_ALL_LAND, 0, PARTNER_LUCAS_J_CHIMCHAR
+	goto JubilifeCity_EventScript_SNMulti_Battle
+JubilifeCity_EventScript_SNMulti_PL2:
+	setfollowernpc LOCALID_JUBILIFE_DAWN, FNPC_ALL_LAND, 0, PARTNER_LUCAS_J_PIPLUP
+	goto JubilifeCity_EventScript_SNMulti_Battle
+JubilifeCity_EventScript_SNMulti_Battle:
+	trainerbattle_two_trainers_sn TRAINER_GALACTIC_JUBILIFE_1, JubilifeCity_Text_Grunt1Defeat, TRAINER_GALACTIC_JUBILIFE_2, JubilifeCity_Text_Grunt2Defeat
+	destroyfollowernpc
+	setobjectxyperm LOCALID_JUBILIFE_DAWN, VAR_0x8008, VAR_0x8009
+	clearflag FLAG_HIDE_JUBILIFE_DAWN
+	addobject LOCALID_JUBILIFE_DAWN
 	msgbox JubilifeCity_Text_GruntsFlee, MSGBOX_DEFAULT
 	closemessage
 	fadescreenswapbuffers FADE_TO_BLACK
@@ -317,6 +359,8 @@ JubilifeCity_EventScript_GalacticScene::
 	closemessage
 	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_JUBILIFE_ROWAN
+	removeobject LOCALID_JUBILIFE_DAWN
+	setflag FLAG_HIDE_JUBILIFE_DAWN
 	setflag FLAG_HIDE_JUBILIFE_GRUNTS
 	fadescreenswapbuffers FADE_FROM_BLACK
 	setvar VAR_SINNOH_STORY, 20

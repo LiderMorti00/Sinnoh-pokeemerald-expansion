@@ -9,7 +9,12 @@ Route202_OnTransition:
 	end
 
 Route202_EventScript_SetDawnGfx::
+	checkplayergender
+	goto_if_eq VAR_RESULT, FEMALE, Route202_EventScript_SetLucasGfx
 	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_SINNOH_DAWN
+	end
+Route202_EventScript_SetLucasGfx:
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_SINNOH_LUCAS
 	end
 
 Route202_EventScript_Dawn::

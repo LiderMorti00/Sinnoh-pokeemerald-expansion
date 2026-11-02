@@ -419,3 +419,92 @@ IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
 - MOVE_FURY_SWIPES
 - MOVE_TORMENT
 
+=== PARTNER_DAWN_J_TURTWIG ===
+Name: DAWN
+Class: Pkmn Trainer 1
+Pic: Sinnoh Dawn
+Gender: Female
+Music: Female
+AI: Basic Trainer
+
+SPECIES_PIPLUP
+Level: 13
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- MOVE_BUBBLE
+- MOVE_POUND
+
+
+=== PARTNER_DAWN_J_CHIMCHAR ===
+Name: DAWN
+Class: Pkmn Trainer 1
+Pic: Sinnoh Dawn
+Gender: Female
+Music: Female
+AI: Basic Trainer
+
+SPECIES_TURTWIG
+Level: 13
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- MOVE_ABSORB
+- MOVE_TACKLE
+
+
+=== PARTNER_DAWN_J_PIPLUP ===
+Name: DAWN
+Class: Pkmn Trainer 1
+Pic: Sinnoh Dawn
+Gender: Female
+Music: Female
+AI: Basic Trainer
+
+SPECIES_CHIMCHAR
+Level: 13
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- MOVE_EMBER
+- MOVE_SCRATCH
+
+
+=== PARTNER_LUCAS_J_TURTWIG ===
+Name: LUCAS
+Class: Pkmn Trainer 1
+Pic: Sinnoh Lucas
+Gender: Male
+Music: Male
+AI: Basic Trainer
+
+SPECIES_PIPLUP
+Level: 13
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- MOVE_BUBBLE
+- MOVE_POUND
+
+
+=== PARTNER_LUCAS_J_CHIMCHAR ===
+Name: LUCAS
+Class: Pkmn Trainer 1
+Pic: Sinnoh Lucas
+Gender: Male
+Music: Male
+AI: Basic Trainer
+
+SPECIES_TURTWIG
+Level: 13
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- MOVE_ABSORB
+- MOVE_TACKLE
+
+
+=== PARTNER_LUCAS_J_PIPLUP ===
+Name: LUCAS
+Class: Pkmn Trainer 1
+Pic: Sinnoh Lucas
+Gender: Male
+Music: Male
+AI: Basic Trainer
+
+SPECIES_CHIMCHAR
+Level: 13
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- MOVE_EMBER
+- MOVE_SCRATCH
+
