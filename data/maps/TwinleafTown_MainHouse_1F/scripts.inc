@@ -10,11 +10,15 @@ TwinleafTown_MainHouse_1F_OnFrame:
 
 TwinleafTown_MainHouse_1F_EventScript_MomGrass::
 	lockall
-	applymovement LOCALID_TWINLEAF_MOM, Common_Movement_FacePlayer
+	sn_playerface LOCALID_TWINLEAF_MOM
+	sn_walktoplayer LOCALID_TWINLEAF_MOM, SN_SPEED_NORMAL, SN_MOVE_EMOTE
 	waitmovement 0
+	sn_playerface LOCALID_TWINLEAF_MOM
+	waitmovement LOCALID_PLAYER
 	msgbox TwinleafTown_MainHouse_1F_Text_MomGrass, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_TWINLEAF_MOM, Common_Movement_FaceUp
+	delay 15
+	sn_walkto LOCALID_TWINLEAF_MOM, 2, 3, SN_SPEED_NORMAL, DIR_NORTH
 	waitmovement 0
 	setvar VAR_SINNOH_STORY, 2
 	releaseall
@@ -41,23 +45,71 @@ TwinleafTown_MainHouse_1F_EventScript_MomShoes::
 
 TwinleafTown_MainHouse_1F_EventScript_MomJournal::
 	lockall
-	applymovement LOCALID_TWINLEAF_MOM, Common_Movement_FacePlayer
+	sn_playerface LOCALID_TWINLEAF_MOM
+	sn_walktoplayer LOCALID_TWINLEAF_MOM, SN_SPEED_NORMAL, SN_MOVE_EMOTE
 	waitmovement 0
+	sn_playerface LOCALID_TWINLEAF_MOM
+	waitmovement LOCALID_PLAYER
 	msgbox TwinleafTown_MainHouse_1F_Text_MomJournal, MSGBOX_DEFAULT
 	giveitem ITEM_JOURNAL
-	applymovement LOCALID_HOME_BARRYS_MOM, Common_Movement_FacePlayer
+	applymovement LOCALID_TWINLEAF_MOM, TwinleafTown_MainHouse_1F_Movement_SNTurnAway
 	waitmovement 0
 	msgbox TwinleafTown_MainHouse_1F_Text_BarrysMom, MSGBOX_DEFAULT
+	closemessage
+	playse SE_DOOR
+	getplayerxy VAR_0x8008, VAR_0x8009
+	setvar VAR_TEMP_2, 2
+	call_if_eq VAR_0x8008, 2, TwinleafTown_MainHouse_1F_EventScript_SNMomDoorLeft
+	call_if_eq VAR_TEMP_2, 2, TwinleafTown_MainHouse_1F_EventScript_SNMomDoorRight
+	clearflag FLAG_HIDE_HOME_BARRYS_MOM
+	addobject LOCALID_HOME_BARRYS_MOM
+	applymovement LOCALID_HOME_BARRYS_MOM, Common_Movement_WalkUp
+	waitmovement 0
+	applymovement LOCALID_TWINLEAF_MOM, Common_Movement_ExclamationMark
+	sn_playerface LOCALID_HOME_BARRYS_MOM
+	waitmovement 0
+	sn_walktoplayer LOCALID_HOME_BARRYS_MOM, SN_SPEED_NORMAL
+	waitmovement 0
+	sn_playerface LOCALID_HOME_BARRYS_MOM
+	waitmovement LOCALID_PLAYER
+	msgbox TwinleafTown_MainHouse_1F_Text_SNBarrysMomAsk, MSGBOX_DEFAULT
 	giveitem ITEM_PARCEL
 	msgbox TwinleafTown_MainHouse_1F_Text_BarrysMom2, MSGBOX_DEFAULT
 	closemessage
-	fadescreen FADE_TO_BLACK
+	copyvar VAR_0x8008, VAR_TEMP_2
+	setvar VAR_0x8009, 7
+	sn_walkto_vars LOCALID_HOME_BARRYS_MOM, SN_SPEED_NORMAL
+	waitmovement 0
+	applymovement LOCALID_HOME_BARRYS_MOM, TwinleafTown_MainHouse_1F_Movement_SNLeave
+	waitmovement 0
+	playse SE_EXIT
 	removeobject LOCALID_HOME_BARRYS_MOM
 	setflag FLAG_HIDE_HOME_BARRYS_MOM
-	fadescreen FADE_FROM_BLACK
+	sn_walkto LOCALID_TWINLEAF_MOM, 2, 3, SN_SPEED_NORMAL, DIR_NORTH
+	waitmovement 0
 	setvar VAR_SINNOH_STORY, 11
 	releaseall
 	end
+
+TwinleafTown_MainHouse_1F_EventScript_SNMomDoorLeft:
+	setvar VAR_TEMP_2, 1
+	setobjectxyperm LOCALID_HOME_BARRYS_MOM, 1, 7
+	return
+
+TwinleafTown_MainHouse_1F_EventScript_SNMomDoorRight:
+	setobjectxyperm LOCALID_HOME_BARRYS_MOM, 2, 7
+	return
+
+TwinleafTown_MainHouse_1F_Movement_SNTurnAway:
+	face_up
+	delay_16
+	face_player
+	step_end
+
+TwinleafTown_MainHouse_1F_Movement_SNLeave:
+	walk_down
+	set_invisible
+	step_end
 
 TwinleafTown_MainHouse_1F_EventScript_Mom::
 	lock
@@ -180,11 +232,13 @@ TwinleafTown_MainHouse_1F_Text_BarrysMom:
 	.string "It makes your mother happy, too.\p"
 	.string "...But come back sometimes.\p"
 	.string "I would like to see the kinds of\n"
-	.string "POKéMON you’ve caught, dear.\p"
-	.string "{PLAYER}’s mom: Excuse me. Is my little\n"
-	.string "{PLAYER} here?\p"
+	.string "POKéMON you’ve caught, dear.$"
+
+TwinleafTown_MainHouse_1F_Text_SNBarrysMomAsk:
+	.string "{RIVAL}’s mom: Excuse me. Is my little\n"
+	.string "{RIVAL} here?\p"
 	.string "Mom: Oh? No, he’s not...\p"
-	.string "{PLAYER}’s mom: Oh... Then, he must have\n"
+	.string "{RIVAL}’s mom: Oh... Then, he must have\n"
 	.string "left already...\p"
 	.string "What to do...\p"
 	.string "That boy shouted about going on an\n"

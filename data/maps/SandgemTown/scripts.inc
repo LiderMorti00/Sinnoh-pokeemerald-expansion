@@ -133,7 +133,6 @@ SandgemTown_EventScript_Rowan::
 	waitmovement 0
 	removeobject LOCALID_SANDGEM_DAWN2
 	setflag FLAG_HIDE_SANDGEM_ROWAN
-	clearflag FLAG_HIDE_HOME_BARRYS_MOM
 	setvar VAR_SINNOH_STORY, 10
 SandgemTown_EventScript_RowanEnd::
 	releaseall
