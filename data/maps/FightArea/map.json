@@ -195,6 +195,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_SN_FIGHTAREA_BARRY",
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_BARRY",
       "x": 49,
       "y": 9,
@@ -205,8 +206,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "FightArea_EventScript_SNMulti",
-      "flag": "FLAG_SN_HIDE_FA_MULTI",
-      "local_id": "LOCALID_SN_FIGHTAREA_BARRY"
+      "flag": "FLAG_SN_HIDE_FA_MULTI"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FISHER",
@@ -312,6 +312,27 @@
       "y": 23,
       "elevation": 0,
       "dest_map": "MAP_FIGHT_AREA_MART",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 37,
+      "y": 24,
+      "elevation": 0,
+      "dest_map": "MAP_FIGHT_AREA_HOUSE2",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 22,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE225_ACCESS",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 23,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE225_ACCESS",
       "dest_warp_id": "0"
     }
   ],

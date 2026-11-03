@@ -67,7 +67,22 @@
       "flag": "0"
     }
   ],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 3,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_FIGHT_AREA",
+      "dest_warp_id": "5"
+    },
+    {
+      "x": 4,
+      "y": 8,
+      "elevation": 0,
+      "dest_map": "MAP_FIGHT_AREA",
+      "dest_warp_id": "5"
+    }
+  ],
   "coord_events": [],
   "bg_events": []
 }

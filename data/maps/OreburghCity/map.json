@@ -505,7 +505,7 @@
     {
       "type": "sign",
       "x": 26,
-      "y": 22,
+      "y": 21,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "OreburghCity_EventScript_Sign5"

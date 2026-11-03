@@ -481,8 +481,8 @@
     {
       "id": "HEAL_LOCATION_RESORT_AREA",
       "map": "MAP_RESORT_AREA",
-      "x": 4,
-      "y": 18,
+      "x": 9,
+      "y": 11,
       "respawn_map": "MAP_RESORT_AREA_POKEMON_CENTER_1F",
       "respawn_npc": "LOCALID_RESORT_AREA_NURSE"
     },

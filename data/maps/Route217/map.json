@@ -294,8 +294,8 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 6,
-      "y": 13,
+      "x": 4,
+      "y": 14,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Route217_EventScript_PtSign1"

@@ -1498,6 +1498,15 @@
       "y": 14,
       "width": 1,
       "height": 1
+    },
+    {
+      "id": "MAPSEC_PEWTER_CITY"
+    },
+    {
+      "id": "MAPSEC_ROUTE_2"
+    },
+    {
+      "id": "MAPSEC_ROUTE_3"
     }
   ]
 }

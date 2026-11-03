@@ -21,6 +21,7 @@
   ],
   "object_events": [
     {
+      "local_id": "LOCALID_SN_SYND_GUARD",
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_BEAUTY",
       "x": 28,
       "y": 6,
@@ -31,8 +32,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ResortArea_EventScript_SNSyndicate",
-      "flag": "FLAG_SN_HIDE_SYND_GUARD",
-      "local_id": "LOCALID_SN_SYND_GUARD"
+      "flag": "FLAG_SN_HIDE_SYND_GUARD"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_BEAUTY",
@@ -75,8 +75,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
-      "x": 2,
-      "y": 2,
+      "x": 5,
+      "y": 21,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
       "movement_range_x": 0,
@@ -88,8 +88,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
-      "x": 4,
-      "y": 1,
+      "x": 14,
+      "y": 21,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
       "movement_range_x": 0,
@@ -101,8 +101,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
-      "x": 3,
-      "y": 2,
+      "x": 13,
+      "y": 21,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
       "movement_range_x": 0,
@@ -114,8 +114,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
-      "x": 2,
-      "y": 3,
+      "x": 4,
+      "y": 21,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
       "movement_range_x": 0,
