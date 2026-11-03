@@ -84,8 +84,8 @@ SnowpointCity_Gym_1F_Text_JuanPostBattle:
 	.string "the GYM BADGES of SINNOH should make\l"
 	.string "way to the ultimate destination.\p"
 	.string "The POKéMON LEAGUE.\p"
-	.string "Travel to the easternmost reaches\n"
-	.string "of SINNOH, to the island the POKéMON LEAGUE.\p"
+	.string "Travel to the northernmost reaches\n"
+	.string "of SINNOH, past VICTORY ROAD.\p"
 	.string "There, you shall find the POKéMON\n"
 	.string "LEAGUE.$"
 

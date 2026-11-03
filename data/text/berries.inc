@@ -100,8 +100,8 @@ Route123_BerryMastersHouse_Text_WhyBeStingyTakeAnother:
 	.string "Take another!$"
 
 Route123_BerryMastersHouse_Text_VisitPrettyPetalFlowerShop:
-	.string "Be sure to visit the PRETTY PETAL\n"
-	.string "flower shop near RUSTBORO.\p"
+	.string "Be sure to visit the flower shop\n"
+	.string "in FLOAROMA TOWN.\p"
 	.string "Let flowers fill the world!$"
 
 Route123_BerryMastersHouse_Text_DoneForToday:

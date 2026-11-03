@@ -81,5 +81,5 @@ BerryBlender_Text_QualitiesOfBlendMaster:
 BerryBlender_Text_MasterWorksOnSkillsInMountains:
 	.string "The BLEND MASTER's supposed to work\n"
 	.string "on his skills deep in the mountains.\p"
-	.string "Sometimes, he comes to LILYCOVE\n"
+	.string "Sometimes, he comes to HEARTHOME\n"
 	.string "to blend BERRIES all day long.$"

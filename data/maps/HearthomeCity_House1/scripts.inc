@@ -13,6 +13,7 @@ HearthomeCity_House1_Text_PtNpc1:
 HearthomeCity_House1_EventScript_SNBebe::
 	lock
 	faceplayer
+	setflag FLAG_SYS_PC_LANETTE
 	goto_if_set FLAG_SN_RECEIVED_EEVEE, HearthomeCity_House1_EventScript_SNBebe_After
 	msgbox HearthomeCity_House1_EventScript_SNBebe_T1, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, HearthomeCity_House1_EventScript_SNBebe_No
