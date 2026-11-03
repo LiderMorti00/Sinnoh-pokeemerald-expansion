@@ -21,10 +21,10 @@ MtCoronet_1F_South_EventScript_SNCyrus::
 	msgbox MtCoronet_1F_South_EventScript_SNCyrus_T2, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_SN_MET_CYRUS_CORONET
-	fadescreen FADE_TO_BLACK
+		sn_walkto LOCALID_SN_CORONET_CYRUS, 8, 16, SN_SPEED_NORMAL, 0, 0, 0
+	waitmovement LOCALID_SN_CORONET_CYRUS
 	removeobject LOCALID_SN_CORONET_CYRUS
 	setflag FLAG_SN_HIDE_CORONET_CYRUS
-	fadescreen FADE_FROM_BLACK
 	release
 	end
 

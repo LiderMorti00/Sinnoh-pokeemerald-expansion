@@ -453,11 +453,13 @@ VeilstoneCity_EventScript_SNWHCP_Battle:
 	msgbox VeilstoneCity_EventScript_SNWHCP_G4, MSGBOX_DEFAULT
 	msgbox VeilstoneCity_EventScript_SNWHCP_G5, MSGBOX_DEFAULT
 	closemessage
-	fadescreen FADE_TO_BLACK
+		sn_walkto LOCALID_SN_WH_GRUNT0, 25, 17, SN_SPEED_NORMAL, 0, 0, 0
+	sn_walkto LOCALID_SN_WH_GRUNT1, 25, 17, SN_SPEED_NORMAL, 0, 0, 1
+	waitmovement LOCALID_SN_WH_GRUNT0
+	waitmovement LOCALID_SN_WH_GRUNT1
 	removeobject LOCALID_SN_WH_GRUNT0
 	removeobject LOCALID_SN_WH_GRUNT1
 	setflag FLAG_SN_HIDE_WH_GRUNTS
-	fadescreen FADE_FROM_BLACK
 	applymovement LOCALID_SN_WH_CP, Common_Movement_FacePlayer
 	waitmovement 0
 	checkplayergender
@@ -489,17 +491,17 @@ VeilstoneCity_EventScript_SNWHCP_Bye_L:
 	msgbox VeilstoneCity_EventScript_SNWHCP_Bye_Lu, MSGBOX_DEFAULT
 VeilstoneCity_EventScript_SNWHCP_Bye_N:
 	closemessage
-	fadescreen FADE_TO_BLACK
+		sn_walkto LOCALID_SN_WH_CP, 25, 17, SN_SPEED_NORMAL, 0, 0, 0
+	waitmovement LOCALID_SN_WH_CP
 	removeobject LOCALID_SN_WH_CP
 	setflag FLAG_SN_HIDE_WH_CP
-	fadescreen FADE_FROM_BLACK
 	msgbox VeilstoneCity_EventScript_SNWHCP_L3, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_SN_VEIL_WAREHOUSE_DONE
-	fadescreen FADE_TO_BLACK
+		sn_walkto LOCALID_SN_WH_LOOKER, 25, 17, SN_SPEED_NORMAL, 0, 0, 0
+	waitmovement LOCALID_SN_WH_LOOKER
 	removeobject LOCALID_SN_WH_LOOKER
 	setflag FLAG_SN_HIDE_WH_LOOKER
-	fadescreen FADE_FROM_BLACK
 	release
 	end
 
@@ -673,11 +675,13 @@ VeilstoneCity_EventScript_SNKeyGrunt_Looker::
 	msgbox VeilstoneCity_EventScript_SNKeyGrunt_L2, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_SN_VEIL_STORAGE_OPEN
-	fadescreen FADE_TO_BLACK
+		sn_walkto LOCALID_SN_KEY_GRUNT, 44, 14, SN_SPEED_NORMAL, 0, 0, 0
+	sn_walkto LOCALID_SN_KEY_LOOKER, 44, 14, SN_SPEED_NORMAL, 0, 0, 1
+	waitmovement LOCALID_SN_KEY_GRUNT
+	waitmovement LOCALID_SN_KEY_LOOKER
 	removeobject LOCALID_SN_KEY_GRUNT
 	removeobject LOCALID_SN_KEY_LOOKER
 	setflag FLAG_SN_HIDE_KEY_GRUNT
-	fadescreen FADE_FROM_BLACK
 	release
 	end
 VeilstoneCity_EventScript_SNKeyGrunt_No:

@@ -236,10 +236,10 @@ Route224_EventScript_SNOak::
 	waitmoncry
 	msgbox Route224_Text_SNOak4, MSGBOX_DEFAULT
 	closemessage
-	fadescreen FADE_TO_BLACK
+		sn_walkto LOCALID_SN_R224_OAK, 57, 36, SN_SPEED_NORMAL, 0, 0, 0
+	waitmovement LOCALID_SN_R224_OAK
 	removeobject LOCALID_SN_R224_OAK
 	setflag FLAG_SN_HIDE_R224_OAK
-	fadescreen FADE_FROM_BLACK
 	release
 	end
 

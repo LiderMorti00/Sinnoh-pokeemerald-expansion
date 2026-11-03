@@ -3020,7 +3020,11 @@
 	@ Proyecto Sinnoh: movimientos de escena calculados al vuelo (ver src/sinnoh_scene.c).
 	@ El NPC anda hasta quedar junto al jugador y lo mira.
 	.macro sn_walktoplayer localid:req, speed=SN_SPEED_NORMAL, flags=0, buf=0
+	.if \localid >= 0x4000
+	copyvar VAR_0x8004, \localid
+	.else
 	setvar VAR_0x8004, \localid
+	.endif
 	setvar VAR_0x8005, \buf
 	setvar VAR_0x8006, \speed
 	setvar VAR_0x8007, \flags
@@ -3030,7 +3034,11 @@
 
 	@ El NPC (o OBJ_EVENT_ID_PLAYER) anda hasta (x, y) y al final mira hacia face (DIR_* o SN_FACE_PLAYER).
 	.macro sn_walkto localid:req, x:req, y:req, speed=SN_SPEED_NORMAL, face=0, flags=0, buf=0
+	.if \localid >= 0x4000
+	copyvar VAR_0x8004, \localid
+	.else
 	setvar VAR_0x8004, \localid
+	.endif
 	setvar VAR_0x8005, \buf
 	setvar VAR_0x8006, \speed
 	setvar VAR_0x8007, \flags
@@ -3043,7 +3051,11 @@
 
 	@ El jugador se gira hacia el NPC.
 	.macro sn_playerface localid:req, buf=3
+	.if \localid >= 0x4000
+	copyvar VAR_0x8004, \localid
+	.else
 	setvar VAR_0x8004, \localid
+	.endif
 	setvar VAR_0x8005, \buf
 	special SinnohPlayerFaceObject
 	applymovement OBJ_EVENT_ID_PLAYER, gSinnohMoveBuf\buf
@@ -3051,7 +3063,11 @@
 
 	@ Igual que sn_walkto, pero el destino ya está en VAR_0x8008 / VAR_0x8009 (p. ej. con getplayerxy).
 	.macro sn_walkto_vars localid:req, speed=SN_SPEED_NORMAL, face=0, flags=0, buf=0
+	.if \localid >= 0x4000
+	copyvar VAR_0x8004, \localid
+	.else
 	setvar VAR_0x8004, \localid
+	.endif
 	setvar VAR_0x8005, \buf
 	setvar VAR_0x8006, \speed
 	setvar VAR_0x8007, \flags

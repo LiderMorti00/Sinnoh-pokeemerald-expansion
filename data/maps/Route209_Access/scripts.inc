@@ -29,10 +29,10 @@ Route209_Access_EventScript_SNVis_R209_BARRY_End:
 Route209_Access_EventScript_SNR209BARRY_T0::
 	goto_if_set FLAG_SN_HIDE_R209_BARRY, Route209_Access_EventScript_SNR209BARRY_T0_End
 	lockall
-	applymovement LOCALID_SN_R209_BARRY, Route209_Access_EventScript_SNR209BARRY_T0_M
+	sn_walktoplayer LOCALID_SN_R209_BARRY, SN_SPEED_FAST, SN_MOVE_EMOTE
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Route209_Access_EventScript_SNR209BARRY_T0_P
-	waitmovement 0
+	sn_playerface LOCALID_SN_R209_BARRY
+	waitmovement OBJ_EVENT_ID_PLAYER
 	goto Route209_Access_EventScript_SNBarry
 Route209_Access_EventScript_SNR209BARRY_T0_End:
 	end
@@ -53,10 +53,10 @@ Route209_Access_EventScript_SNR209BARRY_T0_P:
 Route209_Access_EventScript_SNR209BARRY_T1::
 	goto_if_set FLAG_SN_HIDE_R209_BARRY, Route209_Access_EventScript_SNR209BARRY_T1_End
 	lockall
-	applymovement LOCALID_SN_R209_BARRY, Route209_Access_EventScript_SNR209BARRY_T1_M
+	sn_walktoplayer LOCALID_SN_R209_BARRY, SN_SPEED_FAST, SN_MOVE_EMOTE
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Route209_Access_EventScript_SNR209BARRY_T1_P
-	waitmovement 0
+	sn_playerface LOCALID_SN_R209_BARRY
+	waitmovement OBJ_EVENT_ID_PLAYER
 	goto Route209_Access_EventScript_SNBarry
 Route209_Access_EventScript_SNR209BARRY_T1_End:
 	end
@@ -76,10 +76,10 @@ Route209_Access_EventScript_SNR209BARRY_T1_P:
 Route209_Access_EventScript_SNR209BARRY_T2::
 	goto_if_set FLAG_SN_HIDE_R209_BARRY, Route209_Access_EventScript_SNR209BARRY_T2_End
 	lockall
-	applymovement LOCALID_SN_R209_BARRY, Route209_Access_EventScript_SNR209BARRY_T2_M
+	sn_walktoplayer LOCALID_SN_R209_BARRY, SN_SPEED_FAST, SN_MOVE_EMOTE
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, Route209_Access_EventScript_SNR209BARRY_T2_P
-	waitmovement 0
+	sn_playerface LOCALID_SN_R209_BARRY
+	waitmovement OBJ_EVENT_ID_PLAYER
 	goto Route209_Access_EventScript_SNBarry
 Route209_Access_EventScript_SNR209BARRY_T2_End:
 	end

@@ -187,10 +187,10 @@ Route207_EventScript_SNCounterpart_Lucas:
 Route207_EventScript_SNCounterpart_End:
 	setflag FLAG_SN_RECEIVED_VS_SEEKER
 	closemessage
-	fadescreen FADE_TO_BLACK
+		sn_walkto VAR_LAST_TALKED, 21, 0, SN_SPEED_NORMAL, 0, 0, 0
+	waitmovement VAR_LAST_TALKED
 	removeobject VAR_LAST_TALKED
 	setflag FLAG_SN_HIDE_R207_COUNTERPART
-	fadescreen FADE_FROM_BLACK
 	release
 	end
 Route207_EventScript_SNCounterpart_D1:

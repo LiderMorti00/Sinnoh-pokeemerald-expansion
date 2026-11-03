@@ -140,10 +140,10 @@ PastoriaCity_EventScript_SNBarry_B2:
 PastoriaCity_EventScript_SNBarry_After:
 	msgbox PastoriaCity_EventScript_SNBarry_Post, MSGBOX_DEFAULT
 	closemessage
-	fadescreen FADE_TO_BLACK
+		sn_walkto VAR_LAST_TALKED, 20, 18, SN_SPEED_FAST, 0, 0, 0
+	waitmovement VAR_LAST_TALKED
 	removeobject VAR_LAST_TALKED
 	setflag FLAG_SN_HIDE_PAST_BARRY
-	fadescreen FADE_FROM_BLACK
 	release
 	end
 PastoriaCity_EventScript_SNBarry_Intro:
@@ -170,10 +170,10 @@ PastoriaCity_EventScript_SNBarry_Post:
 PastoriaCity_EventScript_SNPASTORIACITYBARRY_T0::
 	goto_if_set FLAG_SN_HIDE_PAST_BARRY, PastoriaCity_EventScript_SNPASTORIACITYBARRY_T0_End
 	lockall
-	applymovement LOCALID_SN_PASTORIACITY_BARRY, PastoriaCity_EventScript_SNPASTORIACITYBARRY_T0_M
+	sn_walktoplayer LOCALID_SN_PASTORIACITY_BARRY, SN_SPEED_FAST, SN_MOVE_EMOTE
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, PastoriaCity_EventScript_SNPASTORIACITYBARRY_T0_P
-	waitmovement 0
+	sn_playerface LOCALID_SN_PASTORIACITY_BARRY
+	waitmovement OBJ_EVENT_ID_PLAYER
 	goto PastoriaCity_EventScript_SNBarry
 PastoriaCity_EventScript_SNPASTORIACITYBARRY_T0_End:
 	end
@@ -191,10 +191,10 @@ PastoriaCity_EventScript_SNPASTORIACITYBARRY_T0_P:
 PastoriaCity_EventScript_SNPASTORIACITYBARRY_T1::
 	goto_if_set FLAG_SN_HIDE_PAST_BARRY, PastoriaCity_EventScript_SNPASTORIACITYBARRY_T1_End
 	lockall
-	applymovement LOCALID_SN_PASTORIACITY_BARRY, PastoriaCity_EventScript_SNPASTORIACITYBARRY_T1_M
+	sn_walktoplayer LOCALID_SN_PASTORIACITY_BARRY, SN_SPEED_FAST, SN_MOVE_EMOTE
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, PastoriaCity_EventScript_SNPASTORIACITYBARRY_T1_P
-	waitmovement 0
+	sn_playerface LOCALID_SN_PASTORIACITY_BARRY
+	waitmovement OBJ_EVENT_ID_PLAYER
 	goto PastoriaCity_EventScript_SNBarry
 PastoriaCity_EventScript_SNPASTORIACITYBARRY_T1_End:
 	end
@@ -211,10 +211,10 @@ PastoriaCity_EventScript_SNPASTORIACITYBARRY_T1_P:
 PastoriaCity_EventScript_SNPASTORIACITYBARRY_T2::
 	goto_if_set FLAG_SN_HIDE_PAST_BARRY, PastoriaCity_EventScript_SNPASTORIACITYBARRY_T2_End
 	lockall
-	applymovement LOCALID_SN_PASTORIACITY_BARRY, PastoriaCity_EventScript_SNPASTORIACITYBARRY_T2_M
+	sn_walktoplayer LOCALID_SN_PASTORIACITY_BARRY, SN_SPEED_FAST, SN_MOVE_EMOTE
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, PastoriaCity_EventScript_SNPASTORIACITYBARRY_T2_P
-	waitmovement 0
+	sn_playerface LOCALID_SN_PASTORIACITY_BARRY
+	waitmovement OBJ_EVENT_ID_PLAYER
 	goto PastoriaCity_EventScript_SNBarry
 PastoriaCity_EventScript_SNPASTORIACITYBARRY_T2_End:
 	end
@@ -243,10 +243,10 @@ PastoriaCity_EventScript_SNGrunt::
 	msgbox PastoriaCity_Text_SNGrunt1, MSGBOX_DEFAULT
 	msgbox PastoriaCity_Text_SNGrunt2, MSGBOX_DEFAULT
 	closemessage
-	fadescreen FADE_TO_BLACK
+		sn_walkto LOCALID_SN_PAST_GRUNT, 46, 9, SN_SPEED_NORMAL, 0, 0, 0
+	waitmovement LOCALID_SN_PAST_GRUNT
 	removeobject LOCALID_SN_PAST_GRUNT
 	setflag FLAG_SN_HIDE_PAST_GRUNT
-	fadescreen FADE_FROM_BLACK
 	msgbox PastoriaCity_Text_SNGrunt3, MSGBOX_DEFAULT
 	release
 	end
@@ -304,7 +304,10 @@ PastoriaCity_EventScript_SNWakeA::
 	waitmovement 0
 	msgbox PastoriaCity_Text_SNWA4, MSGBOX_DEFAULT
 	closemessage
-	fadescreen FADE_TO_BLACK
+		sn_walkto LOCALID_SN_PAST_WAKE_A, 15, 26, SN_SPEED_NORMAL, 0, 0, 0
+	sn_walkto LOCALID_SN_PAST_BARRY_A, 21, 19, SN_SPEED_FAST, 0, 0, 1
+	waitmovement LOCALID_SN_PAST_WAKE_A
+	waitmovement LOCALID_SN_PAST_BARRY_A
 	removeobject LOCALID_SN_PAST_WAKE_A
 	removeobject LOCALID_SN_PAST_BARRY_A
 	setflag FLAG_SN_HIDE_PAST_WAKE_A
@@ -312,7 +315,6 @@ PastoriaCity_EventScript_SNWakeA::
 	clearflag FLAG_SN_HIDE_PAST_BOMB
 	addobject LOCALID_SN_PAST_WAKE_B
 	addobject LOCALID_SN_PAST_BARRY_B
-	fadescreen FADE_FROM_BLACK
 	msgbox PastoriaCity_Text_SNWA5, MSGBOX_DEFAULT
 	release
 	end
@@ -340,19 +342,21 @@ PastoriaCity_EventScript_SNBomb::
 	msgbox PastoriaCity_Text_SNGrunt2, MSGBOX_DEFAULT
 	msgbox PastoriaCity_Text_SNGrunt1, MSGBOX_DEFAULT
 	closemessage
-	fadescreen FADE_TO_BLACK
+		sn_walkto LOCALID_SN_PAST_GRUNT, 46, 9, SN_SPEED_NORMAL, 0, 0, 0
+	sn_walkto LOCALID_SN_PAST_WAKE_B, 36, 8, SN_SPEED_NORMAL, 0, 0, 1
+	waitmovement LOCALID_SN_PAST_GRUNT
+	waitmovement LOCALID_SN_PAST_WAKE_B
 	removeobject LOCALID_SN_PAST_GRUNT
 	setflag FLAG_SN_HIDE_PAST_GRUNT
 	removeobject LOCALID_SN_PAST_WAKE_B
-	fadescreen FADE_FROM_BLACK
 	msgbox PastoriaCity_Text_SNWB4, MSGBOX_DEFAULT
 	msgbox PastoriaCity_Text_SNGrunt3, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_SN_PAST_BOMB_DONE
-	fadescreen FADE_TO_BLACK
+		sn_walkto LOCALID_SN_PAST_BARRY_B, 36, 8, SN_SPEED_FAST, 0, 0, 0
+	waitmovement LOCALID_SN_PAST_BARRY_B
 	removeobject LOCALID_SN_PAST_BARRY_B
 	setflag FLAG_SN_HIDE_PAST_BOMB
-	fadescreen FADE_FROM_BLACK
 	release
 	end
 

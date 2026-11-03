@@ -73,10 +73,10 @@ MtCoronet_2F_EventScript_SNLooker::
 	msgbox MtCoronet_2F_Text_SNLooker3, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_SN_CORONET_LOOKER
-	fadescreen FADE_TO_BLACK
+		sn_walkto LOCALID_SN_CORONET_LOOKER, 12, 5, SN_SPEED_NORMAL, 0, 0, 0
+	waitmovement LOCALID_SN_CORONET_LOOKER
 	removeobject LOCALID_SN_CORONET_LOOKER
 	setflag FLAG_SN_HIDE_CORONET_LOOKER
-	fadescreen FADE_FROM_BLACK
 	release
 	end
 

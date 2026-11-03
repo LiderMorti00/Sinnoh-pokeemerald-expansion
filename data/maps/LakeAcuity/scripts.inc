@@ -24,10 +24,10 @@ LakeAcuity_EventScript_SNBarry::
 	giveitem ITEM_GALACTIC_KEY
 	setflag FLAG_SN_RECEIVED_GALACTIC_KEY
 	closemessage
-	fadescreen FADE_TO_BLACK
+		sn_walkto VAR_LAST_TALKED, 6, 48, SN_SPEED_FAST, 0, 0, 0
+	waitmovement VAR_LAST_TALKED
 	removeobject VAR_LAST_TALKED
 	setflag FLAG_SN_HIDE_ACUITY_BARRY
-	fadescreen FADE_FROM_BLACK
 	release
 	end
 LakeAcuity_EventScript_SNBarry_T1:

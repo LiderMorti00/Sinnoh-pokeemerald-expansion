@@ -325,10 +325,10 @@ OreburghCity_EventScript_SNVis_ORE_BARRY_POST_End:
 OreburghCity_EventScript_SNOrePost_T0::
 	goto_if_set FLAG_SN_HIDE_ORE_BARRY_POST, OreburghCity_EventScript_SNOrePost_T0_End
 	lockall
-	applymovement LOCALID_SN_ORE_BARRY_POST, OreburghCity_EventScript_SNOrePost_T0_M
+	sn_walktoplayer LOCALID_SN_ORE_BARRY_POST, SN_SPEED_FAST, SN_MOVE_EMOTE
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, OreburghCity_EventScript_SNOrePost_T0_P
-	waitmovement 0
+	sn_playerface LOCALID_SN_ORE_BARRY_POST
+	waitmovement OBJ_EVENT_ID_PLAYER
 	goto OreburghCity_EventScript_SNBarryPost
 OreburghCity_EventScript_SNOrePost_T0_End:
 	end
@@ -348,10 +348,10 @@ OreburghCity_EventScript_SNOrePost_T0_P:
 OreburghCity_EventScript_SNOrePost_T1::
 	goto_if_set FLAG_SN_HIDE_ORE_BARRY_POST, OreburghCity_EventScript_SNOrePost_T1_End
 	lockall
-	applymovement LOCALID_SN_ORE_BARRY_POST, OreburghCity_EventScript_SNOrePost_T1_M
+	sn_walktoplayer LOCALID_SN_ORE_BARRY_POST, SN_SPEED_FAST, SN_MOVE_EMOTE
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, OreburghCity_EventScript_SNOrePost_T1_P
-	waitmovement 0
+	sn_playerface LOCALID_SN_ORE_BARRY_POST
+	waitmovement OBJ_EVENT_ID_PLAYER
 	goto OreburghCity_EventScript_SNBarryPost
 OreburghCity_EventScript_SNOrePost_T1_End:
 	end
@@ -370,10 +370,10 @@ OreburghCity_EventScript_SNOrePost_T1_P:
 OreburghCity_EventScript_SNOrePost_T2::
 	goto_if_set FLAG_SN_HIDE_ORE_BARRY_POST, OreburghCity_EventScript_SNOrePost_T2_End
 	lockall
-	applymovement LOCALID_SN_ORE_BARRY_POST, OreburghCity_EventScript_SNOrePost_T2_M
+	sn_walktoplayer LOCALID_SN_ORE_BARRY_POST, SN_SPEED_FAST, SN_MOVE_EMOTE
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, OreburghCity_EventScript_SNOrePost_T2_P
-	waitmovement 0
+	sn_playerface LOCALID_SN_ORE_BARRY_POST
+	waitmovement OBJ_EVENT_ID_PLAYER
 	goto OreburghCity_EventScript_SNBarryPost
 OreburghCity_EventScript_SNOrePost_T2_End:
 	end
@@ -391,10 +391,10 @@ OreburghCity_EventScript_SNOrePost_T2_P:
 OreburghCity_EventScript_SNOrePost_T3::
 	goto_if_set FLAG_SN_HIDE_ORE_BARRY_POST, OreburghCity_EventScript_SNOrePost_T3_End
 	lockall
-	applymovement LOCALID_SN_ORE_BARRY_POST, OreburghCity_EventScript_SNOrePost_T3_M
+	sn_walktoplayer LOCALID_SN_ORE_BARRY_POST, SN_SPEED_FAST, SN_MOVE_EMOTE
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, OreburghCity_EventScript_SNOrePost_T3_P
-	waitmovement 0
+	sn_playerface LOCALID_SN_ORE_BARRY_POST
+	waitmovement OBJ_EVENT_ID_PLAYER
 	goto OreburghCity_EventScript_SNBarryPost
 OreburghCity_EventScript_SNOrePost_T3_End:
 	end
@@ -413,10 +413,10 @@ OreburghCity_EventScript_SNOrePost_T3_P:
 OreburghCity_EventScript_SNOrePost_T4::
 	goto_if_set FLAG_SN_HIDE_ORE_BARRY_POST, OreburghCity_EventScript_SNOrePost_T4_End
 	lockall
-	applymovement LOCALID_SN_ORE_BARRY_POST, OreburghCity_EventScript_SNOrePost_T4_M
+	sn_walktoplayer LOCALID_SN_ORE_BARRY_POST, SN_SPEED_FAST, SN_MOVE_EMOTE
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, OreburghCity_EventScript_SNOrePost_T4_P
-	waitmovement 0
+	sn_playerface LOCALID_SN_ORE_BARRY_POST
+	waitmovement OBJ_EVENT_ID_PLAYER
 	goto OreburghCity_EventScript_SNBarryPost
 OreburghCity_EventScript_SNOrePost_T4_End:
 	end
@@ -436,10 +436,10 @@ OreburghCity_EventScript_SNOrePost_T4_P:
 OreburghCity_EventScript_SNOrePost_T5::
 	goto_if_set FLAG_SN_HIDE_ORE_BARRY_POST, OreburghCity_EventScript_SNOrePost_T5_End
 	lockall
-	applymovement LOCALID_SN_ORE_BARRY_POST, OreburghCity_EventScript_SNOrePost_T5_M
+	sn_walktoplayer LOCALID_SN_ORE_BARRY_POST, SN_SPEED_FAST, SN_MOVE_EMOTE
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, OreburghCity_EventScript_SNOrePost_T5_P
-	waitmovement 0
+	sn_playerface LOCALID_SN_ORE_BARRY_POST
+	waitmovement OBJ_EVENT_ID_PLAYER
 	goto OreburghCity_EventScript_SNBarryPost
 OreburghCity_EventScript_SNOrePost_T5_End:
 	end
@@ -462,10 +462,10 @@ OreburghCity_EventScript_SNOrePost_T5_P:
 OreburghCity_EventScript_SNOrePost_T6::
 	goto_if_set FLAG_SN_HIDE_ORE_BARRY_POST, OreburghCity_EventScript_SNOrePost_T6_End
 	lockall
-	applymovement LOCALID_SN_ORE_BARRY_POST, OreburghCity_EventScript_SNOrePost_T6_M
+	sn_walktoplayer LOCALID_SN_ORE_BARRY_POST, SN_SPEED_FAST, SN_MOVE_EMOTE
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, OreburghCity_EventScript_SNOrePost_T6_P
-	waitmovement 0
+	sn_playerface LOCALID_SN_ORE_BARRY_POST
+	waitmovement OBJ_EVENT_ID_PLAYER
 	goto OreburghCity_EventScript_SNBarryPost
 OreburghCity_EventScript_SNOrePost_T6_End:
 	end
@@ -485,10 +485,10 @@ OreburghCity_EventScript_SNOrePost_T6_P:
 OreburghCity_EventScript_SNOrePost_T7::
 	goto_if_set FLAG_SN_HIDE_ORE_BARRY_POST, OreburghCity_EventScript_SNOrePost_T7_End
 	lockall
-	applymovement LOCALID_SN_ORE_BARRY_POST, OreburghCity_EventScript_SNOrePost_T7_M
+	sn_walktoplayer LOCALID_SN_ORE_BARRY_POST, SN_SPEED_FAST, SN_MOVE_EMOTE
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, OreburghCity_EventScript_SNOrePost_T7_P
-	waitmovement 0
+	sn_playerface LOCALID_SN_ORE_BARRY_POST
+	waitmovement OBJ_EVENT_ID_PLAYER
 	goto OreburghCity_EventScript_SNBarryPost
 OreburghCity_EventScript_SNOrePost_T7_End:
 	end
@@ -508,10 +508,10 @@ OreburghCity_EventScript_SNOrePost_T7_P:
 OreburghCity_EventScript_SNOrePost_T8::
 	goto_if_set FLAG_SN_HIDE_ORE_BARRY_POST, OreburghCity_EventScript_SNOrePost_T8_End
 	lockall
-	applymovement LOCALID_SN_ORE_BARRY_POST, OreburghCity_EventScript_SNOrePost_T8_M
+	sn_walktoplayer LOCALID_SN_ORE_BARRY_POST, SN_SPEED_FAST, SN_MOVE_EMOTE
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, OreburghCity_EventScript_SNOrePost_T8_P
-	waitmovement 0
+	sn_playerface LOCALID_SN_ORE_BARRY_POST
+	waitmovement OBJ_EVENT_ID_PLAYER
 	goto OreburghCity_EventScript_SNBarryPost
 OreburghCity_EventScript_SNOrePost_T8_End:
 	end
@@ -538,10 +538,10 @@ OreburghCity_EventScript_SNBarryPost::
 	msgbox OreburghCity_Text_SNPost3, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_SN_ORE_BARRY_POST
-	fadescreen FADE_TO_BLACK
+		sn_walkto LOCALID_SN_ORE_BARRY_POST, 22, 22, SN_SPEED_FAST, 0, 0, 0
+	waitmovement LOCALID_SN_ORE_BARRY_POST
 	removeobject LOCALID_SN_ORE_BARRY_POST
 	setflag FLAG_SN_HIDE_ORE_BARRY_POST
-	fadescreen FADE_FROM_BLACK
 	releaseall
 	end
 

@@ -216,10 +216,10 @@ CanalaveCity_EventScript_SNBarry_B2:
 CanalaveCity_EventScript_SNBarry_After:
 	msgbox CanalaveCity_EventScript_SNBarry_Post, MSGBOX_DEFAULT
 	closemessage
-	fadescreen FADE_TO_BLACK
+		sn_walkto VAR_LAST_TALKED, 3, 25, SN_SPEED_FAST, 0, 0, 0
+	waitmovement VAR_LAST_TALKED
 	removeobject VAR_LAST_TALKED
 	setflag FLAG_SN_HIDE_CANAL_BARRY
-	fadescreen FADE_FROM_BLACK
 	release
 	end
 
@@ -265,10 +265,10 @@ CanalaveCity_EventScript_SNBarry_NoHMT:
 CanalaveCity_EventScript_SNCANALAVECITYBARRY_T0::
 	goto_if_set FLAG_SN_HIDE_CANAL_BARRY, CanalaveCity_EventScript_SNCANALAVECITYBARRY_T0_End
 	lockall
-	applymovement LOCALID_SN_CANALAVECITY_BARRY, CanalaveCity_EventScript_SNCANALAVECITYBARRY_T0_M
+	sn_walktoplayer LOCALID_SN_CANALAVECITY_BARRY, SN_SPEED_FAST, SN_MOVE_EMOTE
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, CanalaveCity_EventScript_SNCANALAVECITYBARRY_T0_P
-	waitmovement 0
+	sn_playerface LOCALID_SN_CANALAVECITY_BARRY
+	waitmovement OBJ_EVENT_ID_PLAYER
 	goto CanalaveCity_EventScript_SNBarry
 CanalaveCity_EventScript_SNCANALAVECITYBARRY_T0_End:
 	end
@@ -287,10 +287,10 @@ CanalaveCity_EventScript_SNCANALAVECITYBARRY_T0_P:
 CanalaveCity_EventScript_SNCANALAVECITYBARRY_T1::
 	goto_if_set FLAG_SN_HIDE_CANAL_BARRY, CanalaveCity_EventScript_SNCANALAVECITYBARRY_T1_End
 	lockall
-	applymovement LOCALID_SN_CANALAVECITY_BARRY, CanalaveCity_EventScript_SNCANALAVECITYBARRY_T1_M
+	sn_walktoplayer LOCALID_SN_CANALAVECITY_BARRY, SN_SPEED_FAST, SN_MOVE_EMOTE
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, CanalaveCity_EventScript_SNCANALAVECITYBARRY_T1_P
-	waitmovement 0
+	sn_playerface LOCALID_SN_CANALAVECITY_BARRY
+	waitmovement OBJ_EVENT_ID_PLAYER
 	goto CanalaveCity_EventScript_SNBarry
 CanalaveCity_EventScript_SNCANALAVECITYBARRY_T1_End:
 	end
@@ -308,10 +308,10 @@ CanalaveCity_EventScript_SNCANALAVECITYBARRY_T1_P:
 CanalaveCity_EventScript_SNCANALAVECITYBARRY_T2::
 	goto_if_set FLAG_SN_HIDE_CANAL_BARRY, CanalaveCity_EventScript_SNCANALAVECITYBARRY_T2_End
 	lockall
-	applymovement LOCALID_SN_CANALAVECITY_BARRY, CanalaveCity_EventScript_SNCANALAVECITYBARRY_T2_M
+	sn_walktoplayer LOCALID_SN_CANALAVECITY_BARRY, SN_SPEED_FAST, SN_MOVE_EMOTE
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, CanalaveCity_EventScript_SNCANALAVECITYBARRY_T2_P
-	waitmovement 0
+	sn_playerface LOCALID_SN_CANALAVECITY_BARRY
+	waitmovement OBJ_EVENT_ID_PLAYER
 	goto CanalaveCity_EventScript_SNBarry
 CanalaveCity_EventScript_SNCANALAVECITYBARRY_T2_End:
 	end

@@ -158,10 +158,10 @@ SolaceonTown_EventScript_SNVis_SOL_BARRY_End:
 SolaceonTown_EventScript_SNSolB_T0::
 	goto_if_set FLAG_SN_HIDE_SOL_BARRY, SolaceonTown_EventScript_SNSolB_T0_End
 	lockall
-	applymovement LOCALID_SN_SOL_BARRY, SolaceonTown_EventScript_SNSolB_T0_M
+	sn_walktoplayer LOCALID_SN_SOL_BARRY, SN_SPEED_FAST, SN_MOVE_EMOTE
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, SolaceonTown_EventScript_SNSolB_T0_P
-	waitmovement 0
+	sn_playerface LOCALID_SN_SOL_BARRY
+	waitmovement OBJ_EVENT_ID_PLAYER
 	goto SolaceonTown_EventScript_SNBarry
 SolaceonTown_EventScript_SNSolB_T0_End:
 	end
@@ -186,10 +186,10 @@ SolaceonTown_EventScript_SNSolB_T0_P:
 SolaceonTown_EventScript_SNSolB_T1::
 	goto_if_set FLAG_SN_HIDE_SOL_BARRY, SolaceonTown_EventScript_SNSolB_T1_End
 	lockall
-	applymovement LOCALID_SN_SOL_BARRY, SolaceonTown_EventScript_SNSolB_T1_M
+	sn_walktoplayer LOCALID_SN_SOL_BARRY, SN_SPEED_FAST, SN_MOVE_EMOTE
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, SolaceonTown_EventScript_SNSolB_T1_P
-	waitmovement 0
+	sn_playerface LOCALID_SN_SOL_BARRY
+	waitmovement OBJ_EVENT_ID_PLAYER
 	goto SolaceonTown_EventScript_SNBarry
 SolaceonTown_EventScript_SNSolB_T1_End:
 	end
@@ -213,10 +213,10 @@ SolaceonTown_EventScript_SNSolB_T1_P:
 SolaceonTown_EventScript_SNSolB_T2::
 	goto_if_set FLAG_SN_HIDE_SOL_BARRY, SolaceonTown_EventScript_SNSolB_T2_End
 	lockall
-	applymovement LOCALID_SN_SOL_BARRY, SolaceonTown_EventScript_SNSolB_T2_M
+	sn_walktoplayer LOCALID_SN_SOL_BARRY, SN_SPEED_FAST, SN_MOVE_EMOTE
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, SolaceonTown_EventScript_SNSolB_T2_P
-	waitmovement 0
+	sn_playerface LOCALID_SN_SOL_BARRY
+	waitmovement OBJ_EVENT_ID_PLAYER
 	goto SolaceonTown_EventScript_SNBarry
 SolaceonTown_EventScript_SNSolB_T2_End:
 	end
@@ -239,10 +239,10 @@ SolaceonTown_EventScript_SNSolB_T2_P:
 SolaceonTown_EventScript_SNSolB_T3::
 	goto_if_set FLAG_SN_HIDE_SOL_BARRY, SolaceonTown_EventScript_SNSolB_T3_End
 	lockall
-	applymovement LOCALID_SN_SOL_BARRY, SolaceonTown_EventScript_SNSolB_T3_M
+	sn_walktoplayer LOCALID_SN_SOL_BARRY, SN_SPEED_FAST, SN_MOVE_EMOTE
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, SolaceonTown_EventScript_SNSolB_T3_P
-	waitmovement 0
+	sn_playerface LOCALID_SN_SOL_BARRY
+	waitmovement OBJ_EVENT_ID_PLAYER
 	goto SolaceonTown_EventScript_SNBarry
 SolaceonTown_EventScript_SNSolB_T3_End:
 	end
@@ -264,10 +264,10 @@ SolaceonTown_EventScript_SNSolB_T3_P:
 SolaceonTown_EventScript_SNSolB_T4::
 	goto_if_set FLAG_SN_HIDE_SOL_BARRY, SolaceonTown_EventScript_SNSolB_T4_End
 	lockall
-	applymovement LOCALID_SN_SOL_BARRY, SolaceonTown_EventScript_SNSolB_T4_M
+	sn_walktoplayer LOCALID_SN_SOL_BARRY, SN_SPEED_FAST, SN_MOVE_EMOTE
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, SolaceonTown_EventScript_SNSolB_T4_P
-	waitmovement 0
+	sn_playerface LOCALID_SN_SOL_BARRY
+	waitmovement OBJ_EVENT_ID_PLAYER
 	goto SolaceonTown_EventScript_SNBarry
 SolaceonTown_EventScript_SNSolB_T4_End:
 	end
@@ -290,10 +290,10 @@ SolaceonTown_EventScript_SNSolB_T4_P:
 SolaceonTown_EventScript_SNSolB_T5::
 	goto_if_set FLAG_SN_HIDE_SOL_BARRY, SolaceonTown_EventScript_SNSolB_T5_End
 	lockall
-	applymovement LOCALID_SN_SOL_BARRY, SolaceonTown_EventScript_SNSolB_T5_M
+	sn_walktoplayer LOCALID_SN_SOL_BARRY, SN_SPEED_FAST, SN_MOVE_EMOTE
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, SolaceonTown_EventScript_SNSolB_T5_P
-	waitmovement 0
+	sn_playerface LOCALID_SN_SOL_BARRY
+	waitmovement OBJ_EVENT_ID_PLAYER
 	goto SolaceonTown_EventScript_SNBarry
 SolaceonTown_EventScript_SNSolB_T5_End:
 	end
@@ -317,10 +317,10 @@ SolaceonTown_EventScript_SNSolB_T5_P:
 SolaceonTown_EventScript_SNSolB_T6::
 	goto_if_set FLAG_SN_HIDE_SOL_BARRY, SolaceonTown_EventScript_SNSolB_T6_End
 	lockall
-	applymovement LOCALID_SN_SOL_BARRY, SolaceonTown_EventScript_SNSolB_T6_M
+	sn_walktoplayer LOCALID_SN_SOL_BARRY, SN_SPEED_FAST, SN_MOVE_EMOTE
 	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, SolaceonTown_EventScript_SNSolB_T6_P
-	waitmovement 0
+	sn_playerface LOCALID_SN_SOL_BARRY
+	waitmovement OBJ_EVENT_ID_PLAYER
 	goto SolaceonTown_EventScript_SNBarry
 SolaceonTown_EventScript_SNSolB_T6_End:
 	end
@@ -348,10 +348,10 @@ SolaceonTown_EventScript_SNBarry::
 	msgbox SolaceonTown_Text_SNBarry2, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_SN_SOLACEON_BARRY
-	fadescreen FADE_TO_BLACK
+		sn_walkto LOCALID_SN_SOL_BARRY, 18, 26, SN_SPEED_FAST, 0, 0, 0
+	waitmovement LOCALID_SN_SOL_BARRY
 	removeobject LOCALID_SN_SOL_BARRY
 	setflag FLAG_SN_HIDE_SOL_BARRY
-	fadescreen FADE_FROM_BLACK
 	releaseall
 	end
 

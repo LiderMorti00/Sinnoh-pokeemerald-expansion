@@ -272,7 +272,12 @@ CanalaveCity_Library_F3_EventScript_SNRowan::
 	call_if_eq VAR_RESULT, FEMALE, CanalaveCity_Library_F3_Text_SNAfter2_ScrL
 	msgbox CanalaveCity_Library_F3_Text_SNAfter3, MSGBOX_DEFAULT
 	closemessage
-	fadescreen FADE_TO_BLACK
+		sn_walkto LOCALID_SN_LIB_ROWAN, 1, 1, SN_SPEED_NORMAL, 0, 0, 0
+	sn_walkto LOCALID_SN_LIB_COUNTERPART, 1, 1, SN_SPEED_NORMAL, 0, 0, 1
+	sn_walkto LOCALID_SN_LIB_BARRY, 4, 3, SN_SPEED_FAST, 0, 0, 2
+	waitmovement LOCALID_SN_LIB_ROWAN
+	waitmovement LOCALID_SN_LIB_COUNTERPART
+	waitmovement LOCALID_SN_LIB_BARRY
 	removeobject LOCALID_SN_LIB_ROWAN
 	removeobject LOCALID_SN_LIB_COUNTERPART
 	removeobject LOCALID_SN_LIB_BARRY
@@ -282,7 +287,6 @@ CanalaveCity_Library_F3_EventScript_SNRowan::
 	setflag FLAG_SN_LAKE_VALOR_EXPLODED_2
 	setflag FLAG_SN_LAKE_VALOR_EXPLODED_3
 	setflag FLAG_SN_LAKE_VALOR_EXPLODED_4
-	fadescreen FADE_FROM_BLACK
 	releaseall
 	end
 CanalaveCity_Library_F3_EventScript_SNRowan_T1:

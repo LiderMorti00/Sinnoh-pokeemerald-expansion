@@ -32,10 +32,10 @@ ValorLakefront_EventScript_SNCynthia::
 	goto_if_set FLAG_SN_HIDE_VALOR_BARRY, ValorLakefront_EventScript_SNCynthia_NoBarry
 	msgbox ValorLakefront_Text_SNBarry1, MSGBOX_DEFAULT
 	closemessage
-	fadescreen FADE_TO_BLACK
+		sn_walkto LOCALID_SN_VALOR_BARRY, 46, 20, SN_SPEED_FAST, 0, 0, 0
+	waitmovement LOCALID_SN_VALOR_BARRY
 	removeobject LOCALID_SN_VALOR_BARRY
 	setflag FLAG_SN_HIDE_VALOR_BARRY
-	fadescreen FADE_FROM_BLACK
 	msgbox ValorLakefront_Text_SNHesYourFriend, MSGBOX_DEFAULT
 ValorLakefront_EventScript_SNCynthia_NoBarry:
 	msgbox ValorLakefront_Text_SNIHadToTalk, MSGBOX_YESNO
@@ -50,10 +50,10 @@ ValorLakefront_EventScript_SNCynthia_Potion:
 	setflag FLAG_SN_RECEIVED_SECRET_POTION
 	msgbox ValorLakefront_EventScript_SNCynthia_T3, MSGBOX_DEFAULT
 	closemessage
-	fadescreen FADE_TO_BLACK
+		sn_walkto VAR_LAST_TALKED, 47, 18, SN_SPEED_NORMAL, 0, 0, 0
+	waitmovement VAR_LAST_TALKED
 	removeobject VAR_LAST_TALKED
 	setflag FLAG_SN_HIDE_VALOR_CYNTHIA
-	fadescreen FADE_FROM_BLACK
 	release
 	end
 ValorLakefront_EventScript_SNCynthia_T1:

@@ -346,10 +346,10 @@ HearthomeCity_EventScript_SNKeira::
 	msgbox HearthomeCity_EventScript_SNKeira_T3, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_SN_MET_KEIRA
-	fadescreen FADE_TO_BLACK
+		sn_walkto LOCALID_SN_KEIRA, 8, 46, SN_SPEED_NORMAL, 0, 0, 0
+	waitmovement LOCALID_SN_KEIRA
 	removeobject LOCALID_SN_KEIRA
 	setflag FLAG_SN_HIDE_KEIRA
-	fadescreen FADE_FROM_BLACK
 	release
 	end
 
