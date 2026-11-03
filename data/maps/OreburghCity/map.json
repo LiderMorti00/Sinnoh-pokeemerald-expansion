@@ -375,6 +375,13 @@
       "elevation": 0,
       "dest_map": "MAP_OREBURGH_MINE_B1F",
       "dest_warp_id": "1"
+    },
+    {
+      "x": 62,
+      "y": 12,
+      "elevation": 0,
+      "dest_map": "MAP_OREBURGH_CITY_MINING_MUSEUM",
+      "dest_warp_id": "3"
     }
   ],
   "coord_events": [
