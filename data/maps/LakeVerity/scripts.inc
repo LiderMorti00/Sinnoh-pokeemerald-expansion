@@ -4,27 +4,49 @@ LakeVerity_MapScripts::
 
 LakeVerity_EventScript_Scene::
 	lockall
+	applymovement LOCALID_LAKE_BARRY, Common_Movement_FacePlayer
+	waitmovement 0
 	msgbox LakeVerity_Text_Cyrus, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_LAKE_CYRUS, Common_Movement_FaceDown
+	applymovement LOCALID_LAKE_BARRY, Common_Movement_FaceUp
+	applymovement LOCALID_LAKE_CYRUS, LakeVerity_Movement_SNCyrusTurn
 	waitmovement 0
+	sn_walktoplayer LOCALID_LAKE_CYRUS, SN_SPEED_NORMAL
+	waitmovement 0
+	sn_playerface LOCALID_LAKE_CYRUS
+	waitmovement LOCALID_PLAYER
 	msgbox LakeVerity_Text_Cyrus2, MSGBOX_DEFAULT
 	closemessage
-	fadescreenswapbuffers FADE_TO_BLACK
+	sn_walkto LOCALID_LAKE_CYRUS, 38, 43, SN_SPEED_NORMAL
+	waitmovement 0
 	removeobject LOCALID_LAKE_CYRUS
-	fadescreenswapbuffers FADE_FROM_BLACK
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
 	playmoncry SPECIES_MESPRIT, CRY_MODE_NORMAL
 	waitmoncry
 	msgbox LakeVerity_Text_Cry, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_LAKE_BARRY, Common_Movement_ExclamationMark
+	waitmovement 0
+	sn_walktoplayer LOCALID_LAKE_BARRY, SN_SPEED_FAST
+	waitmovement 0
+	sn_playerface LOCALID_LAKE_BARRY
+	waitmovement LOCALID_PLAYER
 	msgbox LakeVerity_Text_Barry, MSGBOX_DEFAULT
 	closemessage
-	fadescreenswapbuffers FADE_TO_BLACK
+	sn_walkto LOCALID_LAKE_BARRY, 39, 43, SN_SPEED_FAST
+	waitmovement 0
 	removeobject LOCALID_LAKE_BARRY
 	setflag FLAG_HIDE_LAKE_VERITY_ROWAN
-	fadescreenswapbuffers FADE_FROM_BLACK
 	setvar VAR_SINNOH_STORY, 7
 	releaseall
 	end
+
+LakeVerity_Movement_SNCyrusTurn:
+	delay_16
+	face_down
+	delay_8
+	step_end
 
 LakeVerity_Text_Cyrus:
 	.string "???: ...The flowing time... ...The\n"
