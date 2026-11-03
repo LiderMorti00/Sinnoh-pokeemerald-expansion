@@ -3143,4 +3143,9 @@
 #define FLAG_SN_RECEIVED_COIN_CASE                              (TRAINER_FLAGS_START + TRAINER_EVERETT)
 #define FLAG_SN_RECEIVED_GRACIDEA                               (TRAINER_FLAGS_START + TRAINER_ALVARO)
 
+
+// ---- Proyecto Sinnoh: historia de Platino (objetos, regalos y objetos ocultos) ----
+#define FLAG_SN_HIDE_TWINLEAF_BARRY                             (TRAINER_FLAGS_START + TRAINER_EVERETT)
+#define FLAG_SN_TWINLEAF_THUD                                   (TRAINER_FLAGS_START + TRAINER_ALVARO)
+
 #endif // GUARD_CONSTANTS_FLAGS_H

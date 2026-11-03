@@ -332,6 +332,10 @@ gSpecials::
 	def_special SinnohSpaTreatment
 	def_special SinnohUnownFormsCount
 	def_special SinnohCountAllMons
+	def_special SinnohPathToPlayer
+	def_special SinnohPathTo
+	def_special SinnohPlayerFaceObject
+	def_special SinnohGetObjectPos
 	def_special SinnohDailyOutbreak
 	def_special TryUpdateRusturfTunnelState
 	def_special IsGrassTypeInParty
