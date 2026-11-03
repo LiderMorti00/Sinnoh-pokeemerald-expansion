@@ -456,3 +456,6 @@ const u16 gMetatileAttributes_VeilstoneDepartmentStore[] = INCBIN_U16("data/tile
 
 const u16 gMetatiles_Church[] = INCBIN_U16("data/tilesets/secondary/church/metatiles.bin");
 const u16 gMetatileAttributes_Church[] = INCBIN_U16("data/tilesets/secondary/church/metatile_attributes.bin");
+
+const u16 gMetatiles_OreburghMuseum[] = INCBIN_U16("data/tilesets/secondary/oreburgh_museum/metatiles.bin");
+const u16 gMetatileAttributes_OreburghMuseum[] = INCBIN_U16("data/tilesets/secondary/oreburgh_museum/metatile_attributes.bin");

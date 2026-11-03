@@ -2082,6 +2082,7 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/SunyshoreCity_Market/scripts.inc"
 	.include "data/maps/SunyshoreCity_Mart/scripts.inc"
 	.include "data/maps/OreburghCity_MiningMuseum/scripts.inc"
+	.include "data/maps/OreburghCity_MiningMuseum_2F/scripts.inc"
 	.include "data/maps/FuegoIronworks/scripts.inc"
 	.include "data/maps/FuegoIronworks_Inside/scripts.inc"
 	.include "data/maps/WaywardCave_1F/scripts.inc"

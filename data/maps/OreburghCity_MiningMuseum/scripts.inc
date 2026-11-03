@@ -601,3 +601,21 @@ OreburghCity_MiningMuseum_EventScript_SNFossil_None:
 OreburghCity_MiningMuseum_EventScript_SNFossil_FullT:
 	.string "You have no room for another POKéMON!\n"
 	.string "Make some room, please.$"
+
+OreburghCity_MiningMuseum_EventScript_SNCoalLump::
+	msgbox OreburghCity_MiningMuseum_Text_SNCoalLump, MSGBOX_SIGN
+	end
+
+OreburghCity_MiningMuseum_EventScript_SNRocket::
+	msgbox OreburghCity_MiningMuseum_Text_SNRocket, MSGBOX_SIGN
+	end
+
+OreburghCity_MiningMuseum_Text_SNCoalLump:
+	.string "An enormous lump of coal dug out of\n"
+	.string "the Oreburgh Mine is on display.\p"
+	.string "It's as black as can be!$"
+
+OreburghCity_MiningMuseum_Text_SNRocket:
+	.string "A model of a rocket is on display.\p"
+	.string "“Someday, fuel made from Oreburgh\n"
+	.string "coal may launch rockets like this.”$"

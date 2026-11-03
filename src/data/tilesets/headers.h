@@ -1717,3 +1717,15 @@ const struct Tileset gTileset_Church =
     .metatileAttributes = gMetatileAttributes_Church,
     .callback = NULL,
 };
+
+// Proyecto Sinnoh: Museo Minero de Pirita
+const struct Tileset gTileset_OreburghMuseum =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_OreburghMuseum,
+    .palettes = gTilesetPalettes_OreburghMuseum,
+    .metatiles = gMetatiles_OreburghMuseum,
+    .metatileAttributes = gMetatileAttributes_OreburghMuseum,
+    .callback = NULL,
+};

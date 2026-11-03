@@ -12323,12 +12323,25 @@
     {
       "id": "LAYOUT_OREBURGH_CITY_MINING_MUSEUM",
       "name": "OreburghCity_MiningMuseum_Layout",
-      "width": 14,
-      "height": 9,
+      "width": 28,
+      "height": 11,
       "primary_tileset": "gTileset_Building",
-      "secondary_tileset": "gTileset_GenericBuilding",
+      "secondary_tileset": "gTileset_OreburghMuseum",
       "border_filepath": "data/layouts/OreburghCity_MiningMuseum/border.bin",
       "blockdata_filepath": "data/layouts/OreburghCity_MiningMuseum/map.bin"
+    },
+    {
+      "id": "LAYOUT_OREBURGH_CITY_MINING_MUSEUM_2F",
+      "name": "OreburghCity_MiningMuseum_2F_Layout",
+      "width": 19,
+      "height": 10,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_OreburghMuseum",
+      "border_width": 2,
+      "border_height": 2,
+      "border_filepath": "data/layouts/OreburghCity_MiningMuseum_2F/border.bin",
+      "blockdata_filepath": "data/layouts/OreburghCity_MiningMuseum_2F/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_FUEGO_IRONWORKS_INSIDE",
