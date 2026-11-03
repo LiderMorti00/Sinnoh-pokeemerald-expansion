@@ -29,11 +29,7 @@ Faltan:
 - Laboratorio de Arena después de la Columna Lanza (Rowan y Dawn).
 - Gracídea en Pradera (llevando a Shaymin en el equipo).
 
-## 3. Por hacer
-
-- Barco a Hoenn/Kanto tras la Liga: pendiente de decidir alcance (muchos flags y entrenadores de Hoenn se reutilizan en Sinnoh).
-
-## 4. Prueba final
+## 3. Prueba final
 
 - Jugar una partida completa, de principio a fin, con chico y con chica.
 
@@ -50,3 +46,4 @@ Faltan:
 - Vaquera del Gran Pantano: capturar 5 Pokémon en una partida del Safari da 3 Caramelos Raros, una sola vez.
 - Radar Pokémon: programado. Rowan lo da en el laboratorio con la Pokédex Nacional. Cadenas de la misma especie; a partir de 40, shiny 1/200. Se recarga en 50 pasos.
 - Pokémon de otras regiones: tras ganar la Liga, el 20 % de los encuentros en hierba y surf de Sinnoh son de Kanto, Johto o Hoenn (sin iniciales, fósiles ni legendarios).
+- Barco a Hoenn/Kanto: no se hace (decisión del usuario). El Frente Batalla ya se usa en la Zona Combate y se llega sin barco.
