@@ -360,7 +360,6 @@ static const u8 sDoorAnimTiles_SnCanalave575[] = INCGFX_U8("graphics/door_anims/
 static const u8 sDoorAnimTiles_SnCelestic531[] = INCGFX_U8("graphics/door_anims/sinnoh/celestic_531.png", ".4bpp");
 static const u8 sDoorAnimTiles_SnJubilife719[] = INCGFX_U8("graphics/door_anims/sinnoh/jubilife_719.png", ".4bpp");
 static const u8 sDoorAnimTiles_SnHearthome668[] = INCGFX_U8("graphics/door_anims/sinnoh/hearthome_668.png", ".4bpp");
-static const u8 sDoorAnimTiles_SnCelestic540[] = INCGFX_U8("graphics/door_anims/sinnoh/celestic_540.png", ".4bpp");
 static const u8 sDoorAnimTiles_SnValor555[] = INCGFX_U8("graphics/door_anims/sinnoh/valor_555.png", ".4bpp");
 static const u8 sDoorAnimTiles_SnPetalburg594[] = INCGFX_U8("graphics/door_anims/sinnoh/petalburg_594.png", ".4bpp");
 static const u8 sDoorAnimTiles_SnCelestic651[] = INCGFX_U8("graphics/door_anims/sinnoh/celestic_651.png", ".4bpp");
@@ -371,7 +370,6 @@ static const u8 sDoorAnimPalettes_SnCanalave575[] = {0, 0, 0, 0, 7, 7, 7, 7, 7, 
 static const u8 sDoorAnimPalettes_SnCelestic531[] = {11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11};
 static const u8 sDoorAnimPalettes_SnJubilife719[] = {0, 0, 0, 0, 12, 12, 12, 12, 12, 12, 12, 12};
 static const u8 sDoorAnimPalettes_SnHearthome668[] = {11, 11, 11, 11, 9, 9, 9, 9, 9, 9, 9, 9};
-static const u8 sDoorAnimPalettes_SnCelestic540[] = {11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11};
 static const u8 sDoorAnimPalettes_SnValor555[] = {11, 11, 11, 11, 5, 5, 5, 5, 5, 5, 5, 5};
 static const u8 sDoorAnimPalettes_SnPetalburg594[] = {9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10};
 static const u8 sDoorAnimPalettes_SnCelestic651[] = {9, 9, 9, 9, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -412,14 +410,6 @@ static const struct DoorGraphics sDoorAnimGraphicsTable[] =
         .size = DOOR_SIZE_1x2_SN,
         .tiles = sDoorAnimTiles_SnHearthome668,
         .palettes = sDoorAnimPalettes_SnHearthome668
-    },
-    {
-        .metatileNum = 0x21C,
-        .tileset = &gTileset_Celestic,
-        .sound = DOOR_SOUND_NORMAL,
-        .size = DOOR_SIZE_1x2_SN,
-        .tiles = sDoorAnimTiles_SnCelestic540,
-        .palettes = sDoorAnimPalettes_SnCelestic540
     },
     {
         .metatileNum = 0x22B,
