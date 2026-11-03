@@ -1,4 +1,5 @@
 #include "global.h"
+#include "sinnoh_radar.h"
 #include "battle_setup.h"
 #include "bike.h"
 #include "coord_event_weather.h"
@@ -166,6 +167,7 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
 
     gSpecialVar_LastTalked = LOCALID_NONE;
     gSelectedObjectEvent = 0;
+    SinnohRadar_FieldUpdate();
 
     gMsgIsSignPost = FALSE;
     playerDirection = GetPlayerFacingDirection();
@@ -754,6 +756,7 @@ static bool8 TryStartStepCountScript(u16 metatileBehavior)
     IncrementRematchStepCounter();
     IncrementDaycareSteps();
     UpdateFriendshipStepCounter();
+    SinnohRadar_OnStep();
     UpdateFarawayIslandStepCounter();
     UpdateFollowerStepCounter();
 
@@ -914,6 +917,14 @@ static bool8 CheckStandardWildEncounter(u16 metatileBehavior)
 {
     if (ShouldDisableRandomEncounters())
         return FALSE;
+
+    // Proyecto Sinnoh: las matas del Radar ignoran los pasos de inmunidad
+    if (SinnohRadar_IsOnPatch() && StandardWildEncounter(metatileBehavior, sPrevMetatileBehavior) == TRUE)
+    {
+        sWildEncounterImmunitySteps = 0;
+        sPrevMetatileBehavior = metatileBehavior;
+        return TRUE;
+    }
 
     if (sWildEncounterImmunitySteps < 4)
     {

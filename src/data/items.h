@@ -14551,8 +14551,8 @@ const struct ItemInfo gItemsInfo[] =
             "hiding in grass."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse, // Todo
+        .type = ITEM_USE_FIELD,
+        .fieldUseFunc = ItemUseOutOfBattle_PokeRadar,
         .iconPic = gItemIcon_PokeRadar,
         .iconPalette = gItemIconPalette_PokeRadar,
     },

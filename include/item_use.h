@@ -5,6 +5,7 @@ void ItemUseOutOfBattle_Mail(u8 taskId);
 void ItemUseOutOfBattle_Bike(u8 taskId);
 void ItemUseOutOfBattle_Rod(u8 taskId);
 void ItemUseOutOfBattle_Itemfinder(u8 taskId);
+void ItemUseOutOfBattle_PokeRadar(u8 taskId);
 void ItemUseOutOfBattle_PokeblockCase(u8 taskId);
 void ItemUseOutOfBattle_CoinCase(u8 taskId);
 void ItemUseOutOfBattle_PokemonBoxLink(u8 taskId);

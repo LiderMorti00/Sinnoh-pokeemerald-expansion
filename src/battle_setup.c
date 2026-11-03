@@ -1,4 +1,5 @@
 #include "global.h"
+#include "sinnoh_radar.h"
 #include "data.h"
 #include "main.h"
 #include "battle.h"
@@ -704,6 +705,7 @@ static void CB2_EndWildBattle(void)
 {
     CpuFill16(0, (void *)(BG_PLTT), BG_PLTT_SIZE);
     ResetOamRange(0, 128);
+    SinnohRadar_OnWildBattleEnd(gBattleOutcome);
 
     if (IsNPCFollowerWildBattle())
     {

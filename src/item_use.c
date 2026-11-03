@@ -1,4 +1,5 @@
 #include "global.h"
+#include "sinnoh_radar.h"
 #include "item_use.h"
 #include "battle.h"
 #include "battle_anim.h"
@@ -357,6 +358,38 @@ static void ItemUseOnFieldCB_Rod(u8 taskId)
 {
     StartFishing(GetItemSecondaryId(gSpecialVar_ItemId));
     DestroyTask(taskId);
+}
+
+// Proyecto Sinnoh: Radar Pokémon
+static const u8 sText_RadarCharging[] = _("The POKé RADAR's battery is still\ncharging. Walk a little more!");
+static const u8 sText_RadarNoGrass[] = _("There's no tall grass around here to\nuse the POKé RADAR on.");
+
+static void ItemUseOnFieldCB_PokeRadar(u8 taskId)
+{
+    if (!SinnohRadar_Activate())
+    {
+        DisplayItemMessageOnField(taskId, sText_RadarNoGrass, Task_CloseCantUseKeyItemMessage);
+        return;
+    }
+    ScriptUnfreezeObjectEvents();
+    UnlockPlayerFieldControls();
+    DestroyTask(taskId);
+}
+
+void ItemUseOutOfBattle_PokeRadar(u8 taskId)
+{
+    if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING | PLAYER_AVATAR_FLAG_UNDERWATER | PLAYER_AVATAR_FLAG_MACH_BIKE | PLAYER_AVATAR_FLAG_ACRO_BIKE))
+    {
+        DisplayCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem, sText_RadarNoGrass);
+        return;
+    }
+    if (!SinnohRadar_IsCharged())
+    {
+        DisplayCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem, sText_RadarCharging);
+        return;
+    }
+    sItemUseOnFieldCB = ItemUseOnFieldCB_PokeRadar;
+    SetUpItemUseOnFieldCallback(taskId);
 }
 
 void ItemUseOutOfBattle_Itemfinder(u8 var)

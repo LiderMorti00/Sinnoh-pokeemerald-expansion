@@ -1219,6 +1219,7 @@ SandgemLab_EventScript_SNRowanDex::
 	release
 	end
 SandgemLab_EventScript_SNRowanDex_HasNational:
+	call SandgemLab_EventScript_SNGiveRadar
 	msgbox SandgemLab_EventScript_SNRowanDex_Many, MSGBOX_DEFAULT
 	release
 	end
@@ -1257,6 +1258,7 @@ SandgemLab_EventScript_SNRowanDex_Oak:
 	removeobject LOCALID_SN_LAB_OAK
 	setflag FLAG_SN_HIDE_LAB_OAK
 	waitse
+	call SandgemLab_EventScript_SNGiveRadar
 	msgbox SandgemLab_EventScript_SNRowanDex_Off, MSGBOX_DEFAULT
 	msgbox SandgemLab_EventScript_SNRowanDex_Many, MSGBOX_DEFAULT
 	release
@@ -1556,3 +1558,26 @@ SandgemLab_Text_PtCounterpart_SNLu:
 	.string "the same goal.\p"
 	.string "I’ll teach you stuff later, OK?$"
 
+SandgemLab_EventScript_SNGiveRadar:
+	checkitem ITEM_POKE_RADAR
+	goto_if_eq VAR_RESULT, TRUE, SandgemLab_EventScript_SNGiveRadarEnd
+	msgbox SandgemLab_Text_SNRadar1, MSGBOX_DEFAULT
+	giveitem ITEM_POKE_RADAR
+	msgbox SandgemLab_Text_SNRadar2, MSGBOX_DEFAULT
+SandgemLab_EventScript_SNGiveRadarEnd:
+	return
+
+SandgemLab_Text_SNRadar1:
+	.string "Rowan: Oh, yes. Take this with you as\n"
+	.string "well.$"
+
+SandgemLab_Text_SNRadar2:
+	.string "Rowan: That’s the POKéMON Radar, or\n"
+	.string "just Poké Radar for short.\p"
+	.string "Use it, and it will indicate grass\n"
+	.string "patches where POKéMON are lurking.\p"
+	.string "I’d prepared that to help my field\n"
+	.string "assistants put together the Sinnoh\l"
+	.string "POKéDEX, but you took care of that!\p"
+	.string "I’m sure it will be useful for your goal\n"
+	.string "of filling the National POKéDEX.$"

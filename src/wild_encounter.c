@@ -1,4 +1,5 @@
 #include "global.h"
+#include "sinnoh_radar.h"
 #include "sinnoh_specials.h"
 #include "battle_setup.h"
 #include "battle_pike.h"
@@ -64,6 +65,7 @@ EWRAM_DATA bool8 gIsSurfingEncounter = 0;
 EWRAM_DATA u8 gChainFishingDexNavStreak = 0;
 
 #include "data/wild_encounters.h"
+#include "data/sinnoh_postgame_encounters.h"
 
 const struct WildPokemon gWildFeebas = {20, 25, SPECIES_FEEBAS};
 
@@ -532,10 +534,36 @@ void CreateWildMon(enum Species species, u8 level)
 #define TRY_GET_ABILITY_INFLUENCED_WILD_MON_INDEX(wildPokemon, type, ability, ptr, count) TryGetAbilityInfluencedWildMonIndex(wildPokemon, type, ability, ptr)
 #endif
 
+// Tras ganar la Liga, en las rutas de Sinnoh también salen Pokémon de otras regiones (como con la Pokédex Nacional en Platino).
+static u16 SinnohPostgameSpecies(enum WildPokemonArea area)
+{
+    u16 map = (gSaveBlock1Ptr->location.mapGroup << 8) | gSaveBlock1Ptr->location.mapNum;
+    u32 i, n = 0, pick;
+    if (!FlagGet(FLAG_SYS_GAME_CLEAR) || Random() % 100 >= 20)
+        return SPECIES_NONE;
+    for (i = 0; i < ARRAY_COUNT(sSinnohPostgameEncounters); i++)
+        if (sSinnohPostgameEncounters[i].map == map && sSinnohPostgameEncounters[i].area == area)
+            n++;
+    if (n == 0)
+        return SPECIES_NONE;
+    pick = Random() % (n * 4);
+    for (i = 0; i < ARRAY_COUNT(sSinnohPostgameEncounters); i++)
+    {
+        if (sSinnohPostgameEncounters[i].map == map && sSinnohPostgameEncounters[i].area == area)
+        {
+            if (pick < 4)
+                return sSinnohPostgameEncounters[i].species[pick];
+            pick -= 4;
+        }
+    }
+    return SPECIES_NONE;
+}
+
 bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, enum WildPokemonArea area, u8 flags)
 {
     u8 wildMonIndex = 0;
     u8 level;
+    u16 postgameSpecies;
 
     switch (area)
     {
@@ -588,6 +616,8 @@ bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, enum WildPok
 
     if (area == WILD_AREA_LAND && SinnohTrophyGardenOverride() != SPECIES_NONE)
         CreateWildMon(VarGet(VAR_SN_TROPHY_SPECIES), level);
+    else if ((area == WILD_AREA_LAND || area == WILD_AREA_WATER) && (postgameSpecies = SinnohPostgameSpecies(area)) != SPECIES_NONE)
+        CreateWildMon(postgameSpecies, level);
     else
         CreateWildMon(wildMonInfo->wildPokemon[wildMonIndex].species, level);
     return TRUE;
@@ -727,6 +757,11 @@ bool8 StandardWildEncounter(u16 curMetatileBehavior, u16 prevMetatileBehavior)
 
             if (gWildMonHeaders[headerId].encounterTypes[timeOfDay].landMonsInfo == NULL)
                 return FALSE;
+            else if (SinnohRadar_TryEncounter(headerId, gWildMonHeaders[headerId].encounterTypes[timeOfDay].landMonsInfo))
+            {
+                BattleSetup_StartWildBattle();
+                return TRUE;
+            }
             else if (prevMetatileBehavior != curMetatileBehavior && !AllowWildCheckOnNewMetatile())
                 return FALSE;
             else if (WildEncounterCheck(gWildMonHeaders[headerId].encounterTypes[timeOfDay].landMonsInfo->encounterRate, FALSE) != TRUE)

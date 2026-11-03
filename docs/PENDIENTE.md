@@ -15,7 +15,7 @@ Fuentes de referencia: Bulbapedia (guía de Platino), WikiDex, pret/pokeplatinum
 
 ## 2. Escenas hechas pero sin probar en el emulador
 
-Ya probadas: Barry en Pirita (antes y después de la medalla), Barry en Sosiego, lotería de la TV de Jubileo, garitas de la Ruta Ciclista, Casino de Rocavelo, roca musgo, baldosas del Gimnasio Corazón, puertas y payaso de la Caja Monedas.
+Ya probadas: Barry en Pirita (antes y después de la medalla), Barry en Sosiego, lotería de la TV de Jubileo, garitas de la Ruta Ciclista, Radar Pokémon, Pokémon de otras regiones tras la Liga, Casino de Rocavelo, roca musgo, baldosas del Gimnasio Corazón, puertas y payaso de la Caja Monedas.
 
 Faltan:
 - Jubileo: combate doble con Dawn/Lucas.
@@ -29,9 +29,9 @@ Faltan:
 - Laboratorio de Arena después de la Columna Lanza (Rowan y Dawn).
 - Gracídea en Pradera (llevando a Shaymin en el equipo).
 
-## 3. Por decidir
+## 3. Por hacer
 
-- Radar Pokémon: en Platino Rowan te lo da con la Pokédex Nacional. pokeemerald-expansion tiene el objeto pero no su función (cadenas de Pokémon en la hierba). Hay que decidir si se programa o se deja fuera.
+- Barco a Hoenn/Kanto tras la Liga: pendiente de decidir alcance (muchos flags y entrenadores de Hoenn se reutilizan en Sinnoh).
 
 ## 4. Prueba final
 
@@ -48,3 +48,5 @@ Faltan:
 - Rocas de Golpe Roca y peñascos de Fuerza de Platino que no están: en esos mapas el camino es distinto al de Platino y no caben sin cortar el paso. No se añaden.
 - Lago Valor seco: tiene los Pokémon salvajes de la hierba de Platino.
 - Vaquera del Gran Pantano: capturar 5 Pokémon en una partida del Safari da 3 Caramelos Raros, una sola vez.
+- Radar Pokémon: programado. Rowan lo da en el laboratorio con la Pokédex Nacional. Cadenas de la misma especie; a partir de 40, shiny 1/200. Se recarga en 50 pasos.
+- Pokémon de otras regiones: tras ganar la Liga, el 20 % de los encuentros en hierba y surf de Sinnoh son de Kanto, Johto o Hoenn (sin iniciales, fósiles ni legendarios).
