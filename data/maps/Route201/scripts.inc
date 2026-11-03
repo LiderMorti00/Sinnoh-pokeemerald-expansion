@@ -25,28 +25,48 @@ Route201_EventScript_Barry::
 	call Sinnoh_EventScript_BufferCounterpartName
 	applymovement LOCALID_ROUTE201_BARRY, Common_Movement_ExclamationMark
 	waitmovement 0
+	playbgm MUS_RG_ENCOUNTER_RIVAL, 0
 	msgbox Route201_Text_PtTooSlow, MSGBOX_DEFAULT
+	closemessage
+	sn_playerface LOCALID_ROUTE201_BARRY
+	sn_walktoplayer LOCALID_ROUTE201_BARRY, SN_SPEED_FAST
+	waitmovement 0
+	sn_playerface LOCALID_ROUTE201_BARRY
+	waitmovement LOCALID_PLAYER
 	msgbox Route201_Text_PtLetsGetMoving, MSGBOX_DEFAULT
+	closemessage
+	sn_walkto LOCALID_PLAYER, 17, 13, SN_SPEED_NORMAL, DIR_EAST, 0, 1
+	sn_walkto LOCALID_ROUTE201_BARRY, 18, 12, SN_SPEED_NORMAL, DIR_EAST, 0, 0
+	waitmovement LOCALID_ROUTE201_BARRY
+	waitmovement LOCALID_PLAYER
 	msgbox Route201_Text_PtIveGotAnIdea, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_ROUTE201_BARRY, Route201_Movement_SNBarryToPlayer
+	waitmovement 0
 	msgbox Route201_Text_PtJustKeepDashing, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_ROUTE201_BARRY, Route201_Movement_SNBarryBackToRun
+	waitmovement 0
 	msgbox Route201_Text_PtHereGoes, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_ROUTE201_BARRY, Common_Movement_WalkUp
+	applymovement LOCALID_ROUTE201_BARRY, Route201_Movement_SNBarryRunToGrass
 	waitmovement 0
 	playse SE_PIN
 	msgbox Route201_Text_PtHoldIt, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_ROUTE201_BARRY, Common_Movement_ExclamationMark
-	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+	applymovement LOCALID_ROUTE201_BARRY, Route201_Movement_SNNoticeRowan
+	applymovement LOCALID_PLAYER, Route201_Movement_SNNoticeRowan
 	waitmovement 0
+	fadedefaultbgm
+	setobjectxyperm LOCALID_ROUTE201_ROWAN, 9, 13
 	clearflag FLAG_HIDE_ROUTE201_ROWAN
 	addobject LOCALID_ROUTE201_ROWAN
-	applymovement LOCALID_ROUTE201_ROWAN, Route201_Movement_RowanArrives
-	applymovement LOCALID_ROUTE201_BARRY, Common_Movement_WalkDown
+	sn_walkto LOCALID_ROUTE201_ROWAN, 15, 13, SN_SPEED_NORMAL, DIR_EAST
 	waitmovement 0
-	applymovement LOCALID_ROUTE201_BARRY, Common_Movement_FaceLeft
-	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
+	sn_walkto LOCALID_ROUTE201_BARRY, 17, 12, SN_SPEED_NORMAL, DIR_WEST, 0, 0
 	waitmovement 0
+	sn_playerface LOCALID_ROUTE201_ROWAN
+	waitmovement LOCALID_PLAYER
 	msgbox Route201_Text_PtYouHaveNoPokemon, MSGBOX_DEFAULT
 	msgbox Route201_Text_PtRivalEllipsis, MSGBOX_DEFAULT
 	msgbox Route201_Text_PtProfessorEllipsis, MSGBOX_DEFAULT
@@ -54,6 +74,9 @@ Route201_EventScript_Barry::
 	waitmovement 0
 	msgbox Route201_Text_PtThisIsProfRowan, MSGBOX_DEFAULT
 	applymovement LOCALID_ROUTE201_BARRY, Common_Movement_FaceLeft
+	waitmovement 0
+	closemessage
+	applymovement LOCALID_ROUTE201_ROWAN, Route201_Movement_SNRowanWalkAwayAndBack
 	waitmovement 0
 	msgbox Route201_Text_PtHmmWhatToDo, MSGBOX_DEFAULT
 	msgbox Route201_Text_PtYouLovePokemonDoYou, MSGBOX_YESNO
@@ -80,8 +103,13 @@ Route201_EventScript_PtRight:
 	msgbox Route201_Text_PtGiveAPokemonToMyFriend, MSGBOX_DEFAULT
 	msgbox Route201_Text_PtEntrustYouWithPokemon, MSGBOX_DEFAULT
 	closemessage
+	applymovement LOCALID_ROUTE201_ROWAN, Route201_Movement_SNRowanLookAround
+	waitmovement 0
+	setobjectxyperm LOCALID_ROUTE201_DAWN, 9, 13
 	addobject LOCALID_ROUTE201_DAWN
-	applymovement LOCALID_ROUTE201_DAWN, Route201_Movement_DawnArrives
+	sn_walkto LOCALID_ROUTE201_DAWN, 14, 13, SN_SPEED_FAST, DIR_EAST
+	waitmovement 0
+	applymovement LOCALID_ROUTE201_ROWAN, Common_Movement_FaceLeft
 	waitmovement 0
 	checkplayergender
 	goto_if_eq VAR_RESULT, FEMALE, Route201_EventScript_PtBrief_L
@@ -115,7 +143,7 @@ Route201_EventScript_PtPicked:
 	msgbox Route201_Text_PtIHopeYoullDoWell, MSGBOX_DEFAULT
 	msgbox Route201_Text_PtComeSeeMeInSandgemTown, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_ROUTE201_ROWAN, Route201_Movement_RowanLeaves
+	sn_walkto LOCALID_ROUTE201_ROWAN, 2, 13, SN_SPEED_NORMAL
 	waitmovement 0
 	removeobject LOCALID_ROUTE201_ROWAN
 	checkplayergender
@@ -126,7 +154,7 @@ Route201_EventScript_PtWait_L:
 	msgbox Route201_Text_PtLucasWaitForMe, MSGBOX_DEFAULT
 Route201_EventScript_PtWait_N:
 	closemessage
-	applymovement LOCALID_ROUTE201_DAWN, Route201_Movement_DawnLeaves
+	sn_walkto LOCALID_ROUTE201_DAWN, 2, 13, SN_SPEED_FAST
 	waitmovement 0
 	removeobject LOCALID_ROUTE201_DAWN
 	setflag FLAG_HIDE_ROUTE201_ROWAN
@@ -662,3 +690,39 @@ Route201_Text_PtFindMarts:
 	.string "You can find a POKéMON Mart in cities\n"
 	.string "and most major towns.$"
 
+Route201_Movement_SNBarryToPlayer:
+	face_player
+	walk_in_place_left
+	step_end
+
+Route201_Movement_SNBarryBackToRun:
+	walk_left
+	walk_in_place_right
+	step_end
+
+Route201_Movement_SNBarryRunToGrass:
+	walk_fast_right
+	walk_fast_right
+	step_end
+
+Route201_Movement_SNNoticeRowan:
+	emote_exclamation_mark
+	face_left
+	step_end
+
+Route201_Movement_SNRowanWalkAwayAndBack:
+	walk_left
+	walk_left
+	delay_16
+	walk_right
+	walk_right
+	face_right
+	step_end
+
+Route201_Movement_SNRowanLookAround:
+	face_up
+	delay_16
+	face_down
+	delay_16
+	face_left
+	step_end
