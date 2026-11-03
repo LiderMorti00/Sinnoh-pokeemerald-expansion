@@ -88,6 +88,10 @@ Route206_North_EventScript_SNBikeOnly::
 	specialvar VAR_RESULT, GetPlayerAvatarBike
 	goto_if_ne VAR_RESULT, 0, Route206_North_EventScript_SNBikeOnly_End
 	lockall
+	playse SE_PIN
+	applymovement LOCALID_SN_GATE_W_NORTH, Common_Movement_ExclamationMark
+	applymovement LOCALID_SN_GATE_E_NORTH, Common_Movement_ExclamationMark
+	waitmovement 0
 	msgbox Route206_North_EventScript_SNBikeOnly_Text, MSGBOX_DEFAULT
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
@@ -99,3 +103,14 @@ Route206_North_EventScript_SNBikeOnly_End:
 Route206_North_EventScript_SNBikeOnly_Text:
 	.string "Cycling Road is only for Bicycles!\p"
 	.string "Please get on your Bicycle!$"
+
+Route206_North_EventScript_SNGateGuard::
+	msgbox Route206_North_Text_SNGateGuard, MSGBOX_NPC
+	end
+
+Route206_North_Text_SNGateGuard:
+	.string "Cycling Road is one long slope.\p"
+	.string "Riding down it on your BIKE is a real\n"
+	.string "thrill, but going up takes some effort!\p"
+	.string "Hold tight to your handlebars and\n"
+	.string "enjoy the ride!$"
