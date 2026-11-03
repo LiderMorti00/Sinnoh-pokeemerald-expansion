@@ -21,7 +21,19 @@ Faltan:
 - Túnel Maníaco con menos y con más de 26 formas de Unown.
 - Laboratorio de Arena después de la Columna Lanza (Rowan y Dawn).
 
-## 2. Prueba final
+## 2. Escenas con la coreografía de Platino (en curso)
+
+Herramienta: `src/sinnoh_scene.c` y las macros `sn_walktoplayer`, `sn_walkto`, `sn_walkto_vars` y `sn_playerface` (asm/macros/event.inc) calculan los caminos al vuelo.
+
+Hechas: Hojaverde (Barry sale de casa, su habitación, el guitarrista), casa del jugador (TV, Barry, mamá, la madre de Barry), Ruta 201 (escena de los iniciales), Lago Veraz (Cyrus y Barry), las 35 salidas con fundido que en Platino son andando, y todas las aproximaciones de NPC (ya no se calculan por casilla fija).
+
+Faltan, por orden de la historia (comparar con `ptdump.py` de cada mapa):
+- Jubileo (Dawn/Lucas y el profesor de la escuela, payasos, presidente), Ruta 202.
+- Vetusta (estatua, Gardenia, Cynthia), Corazón (Keira, Mr. Goods), Rocavelo (almacén, Looker, Wake en el gimnasio), Pradera.
+- Ruinas Sosiego, Celestic (Cynthia, anciano, Cyrus), Ruta 210 Sur (Psyduck, Cynthia), Ruta 213 y 224, Lago Valor (orilla y restaurante), Puntaneva, Sede Galaxia (sala de control), Lago Veraz seco.
+- Área de Combate (Flint y Volkner), Villa, Mansión Pokémon, Ruta 227 (Buck y Wake), Marina (Jasmine, Flint).
+
+## 3. Prueba final
 
 - Jugar una partida completa, de principio a fin, con chico y con chica.
 
