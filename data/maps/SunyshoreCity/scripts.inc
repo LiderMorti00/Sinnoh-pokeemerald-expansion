@@ -1,6 +1,11 @@
 SunyshoreCity_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, SunyshoreCity_OnTransitionSN
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, SunyshoreCity_OnFrameSN
 	.byte 0
+
+SunyshoreCity_OnFrameSN:
+	map_script_2 VAR_TEMP_3, 1, SunyshoreCity_EventScript_SNBadge8Scene
+	.2byte 0
 
 SunyshoreCity_EventScript_PtNpc1::
 	msgbox SunyshoreCity_Text_PtNpc1, MSGBOX_NPC
@@ -77,6 +82,11 @@ SunyshoreCity_OnTransitionSN:
 	call SunyshoreCity_EventScript_SNVis_SUNY_BARRY
 	call SunyshoreCity_EventScript_SNVis_FLINT
 	call SunyshoreCity_EventScript_SNVis_JASMINE
+	setvar VAR_TEMP_3, 0
+	goto_if_unset FLAG_BADGE08_GET, SunyshoreCity_OnTransitionSN_End
+	goto_if_set FLAG_SN_SUNYSHORE_BARRY, SunyshoreCity_OnTransitionSN_End
+	setvar VAR_TEMP_3, 1
+SunyshoreCity_OnTransitionSN_End:
 	end
 
 SunyshoreCity_EventScript_SNVis_JASMINE:
@@ -202,6 +212,53 @@ SunyshoreCity_EventScript_SNVis_SUNY_BARRY:
 SunyshoreCity_EventScript_SNVis_SUNY_BARRY_End:
 	return
 
+SunyshoreCity_EventScript_SNBadge8Scene::
+	lockall
+	setvar VAR_TEMP_3, 0
+	applymovement LOCALID_SN_SUNY_BARRY, Common_Movement_ExclamationMark
+	waitmovement 0
+	sn_walktoplayer LOCALID_SN_SUNY_BARRY, SN_SPEED_FAST, 0, 0
+	waitmovement LOCALID_SN_SUNY_BARRY
+	sn_playerface LOCALID_SN_SUNY_BARRY, 1
+	waitmovement OBJ_EVENT_ID_PLAYER
+	msgbox SunyshoreCity_Text_SNBarry8, MSGBOX_DEFAULT
+	msgbox SunyshoreCity_Text_SNWatchMe, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_SN_SUNY_BARRY, SunyshoreCity_Movement_SNLookAround
+	waitmovement 0
+	msgbox SunyshoreCity_Text_SNHurryLeague, MSGBOX_DEFAULT
+	closemessage
+	setflag FLAG_SN_SUNYSHORE_BARRY
+	sn_walkto LOCALID_SN_SUNY_BARRY, 26, 28, SN_SPEED_FAST, 0, 0, 0
+	waitmovement LOCALID_SN_SUNY_BARRY
+	removeobject LOCALID_SN_SUNY_BARRY
+	setflag FLAG_SN_HIDE_SUNY_BARRY
+	goto_if_set FLAG_SN_RECEIVED_HM_WATERFALL, SunyshoreCity_EventScript_SNBadge8Scene_End
+	sn_walktoplayer LOCALID_SN_SUNY_JASMINE, SN_SPEED_NORMAL, 0, 0
+	waitmovement LOCALID_SN_SUNY_JASMINE
+	sn_playerface LOCALID_SN_SUNY_JASMINE, 1
+	waitmovement OBJ_EVENT_ID_PLAYER
+	msgbox SunyshoreCity_Text_SNJasmineThanks, MSGBOX_DEFAULT
+	giveitem ITEM_HM_WATERFALL
+	setflag FLAG_SN_RECEIVED_HM_WATERFALL
+	msgbox SunyshoreCity_EventScript_SNJasmine_T2, MSGBOX_DEFAULT
+	closemessage
+	sn_walkto LOCALID_SN_SUNY_JASMINE, 30, 13, SN_SPEED_NORMAL, DIR_SOUTH, 0, 0
+	waitmovement LOCALID_SN_SUNY_JASMINE
+SunyshoreCity_EventScript_SNBadge8Scene_End:
+	releaseall
+	end
+
+SunyshoreCity_Movement_SNLookAround:
+	face_left
+	delay_16
+	face_up
+	delay_16
+	face_right
+	delay_16
+	face_player
+	step_end
+
 SunyshoreCity_EventScript_SNBarry8::
 	lock
 	faceplayer
@@ -222,3 +279,45 @@ SunyshoreCity_Text_SNBarry8:
 	.string "of Sinnoh!\p"
 	.string "Aww, you... That’s wicked! I envy you!\p"
 	.string "But don’t think you’ve won!$"
+
+SunyshoreCity_Text_SNWatchMe:
+	.string "Because I’m going to be the toughest\n"
+	.string "Trainer ever! You watch me!\p"
+	.string "Before I was dreaming. I just wanted\n"
+	.string "to be like my dad.\p"
+	.string "Now, things are different.\p"
+	.string "I thought about what being a Trainer\n"
+	.string "involves.\p"
+	.string "I thought about what POKéMON are.\p"
+	.string "We’re going to get tougher one step at\n"
+	.string "a time!$"
+
+SunyshoreCity_Text_SNHurryLeague:
+	.string "I’m not going to challenge you to a\n"
+	.string "battle now.\p"
+	.string "I hate to say it, but I know you’re\n"
+	.string "tougher than me.\p"
+	.string "But not a whole lot tougher. Just a\n"
+	.string "little.\p"
+	.string "Our difference is about a yard?\p"
+	.string "Nah, not even an inch.\p"
+	.string "...What I’m trying to say is that I will\n"
+	.string "catch up to you in no time.\p"
+	.string "If you don’t hurry to the POKéMON\n"
+	.string "League, I’ll leave you in my wake!$"
+
+SunyshoreCity_Text_SNJasmineThanks:
+	.string "Jasmine: ...Was that your friend?\p"
+	.string "Seeing how you two got along made me\n"
+	.string "happy somehow.\p"
+	.string "It must be wonderful having a friend\n"
+	.string "like that.\p"
+	.string "A person that you can share anything\n"
+	.string "and everything with.\p"
+	.string "A person you can compete with without\n"
+	.string "fighting.\p"
+	.string "...Um, it made me feel sort of warm\n"
+	.string "seeing you two.\p"
+	.string "It may seem odd, but I’d like you to\n"
+	.string "have this as my thanks.\p"
+	.string "This isn’t much, but...$"
