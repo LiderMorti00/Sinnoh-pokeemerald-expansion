@@ -3158,5 +3158,7 @@
 #define FLAG_SN_HIDE_KEY_LOOKER                                 (TRAINER_FLAGS_START + TRAINER_ANDRES_2)
 #define FLAG_SN_KEY_GRUNT_FLED                                  (TRAINER_FLAGS_START + TRAINER_ANDRES_3)
 #define FLAG_SN_HIDE_HOF_ROWAN                                  (TRAINER_FLAGS_START + TRAINER_ANDRES_4)
+#define FLAG_SN_HIDE_ACUITYFRONT_BARRY                          (TRAINER_FLAGS_START + TRAINER_ANDRES_5)
+#define FLAG_SN_ACUITYFRONT_BARRY_DONE                          (TRAINER_FLAGS_START + TRAINER_CORY_2)
 
 #endif // GUARD_CONSTANTS_FLAGS_H
