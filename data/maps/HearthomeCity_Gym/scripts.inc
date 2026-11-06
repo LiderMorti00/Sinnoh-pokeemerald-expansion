@@ -1,5 +1,37 @@
 HearthomeCity_Gym_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, HearthomeCity_Gym_OnTransitionSN
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, HearthomeCity_Gym_OnFrameSN
 	.byte 0
+
+HearthomeCity_Gym_OnTransitionSN:
+	setvar VAR_TEMP_3, 0
+	goto_if_set FLAG_SN_HEARTHOME_GUIDE_MET, HearthomeCity_Gym_OnTransitionSN_End
+	goto_if_set FLAG_BADGE03_GET, HearthomeCity_Gym_OnTransitionSN_End
+	setvar VAR_TEMP_3, 1
+HearthomeCity_Gym_OnTransitionSN_End:
+	end
+
+HearthomeCity_Gym_OnFrameSN:
+	map_script_2 VAR_TEMP_3, 1, HearthomeCity_Gym_EventScript_SNGuideFirst
+	.2byte 0
+
+HearthomeCity_Gym_EventScript_SNGuideFirst::
+	lockall
+	setvar VAR_TEMP_3, 0
+	setflag FLAG_SN_HEARTHOME_GUIDE_MET
+	applymovement LOCALID_HEARTHOME_GYM_GUIDE, Common_Movement_ExclamationMark
+	waitmovement 0
+	sn_walktoplayer LOCALID_HEARTHOME_GYM_GUIDE, SN_SPEED_NORMAL, 0, 0
+	waitmovement LOCALID_HEARTHOME_GYM_GUIDE
+	sn_playerface LOCALID_HEARTHOME_GYM_GUIDE, 1
+	waitmovement OBJ_EVENT_ID_PLAYER
+	msgbox HearthomeCity_Gym_Text_PtGymGuide, MSGBOX_DEFAULT
+	msgbox HearthomeCity_Gym_Text_SNGuideInfo, MSGBOX_DEFAULT
+	closemessage
+	sn_walkto LOCALID_HEARTHOME_GYM_GUIDE, 15, 20, SN_SPEED_NORMAL, DIR_SOUTH, 0, 0
+	waitmovement LOCALID_HEARTHOME_GYM_GUIDE
+	releaseall
+	end
 
 
 

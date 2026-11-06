@@ -3168,5 +3168,8 @@
 #define FLAG_SN_ROTOM_ROWAN_DONE                                (TRAINER_FLAGS_START + TRAINER_MARIA_4)
 #define FLAG_SN_HIDE_ROTOM_ROWAN                                (TRAINER_FLAGS_START + TRAINER_MARIA_5)
 #define FLAG_SN_HIDE_PAST_BARRY_GUARD                           (TRAINER_FLAGS_START + TRAINER_DUSTY_2)
+#define FLAG_SN_HIDE_WW_DOOR_GRUNT                              (TRAINER_FLAGS_START + TRAINER_DUSTY_3)
+#define FLAG_SN_WW_DOOR_GRUNT_DONE                              (TRAINER_FLAGS_START + TRAINER_DUSTY_4)
+#define FLAG_SN_HEARTHOME_GUIDE_MET                             (TRAINER_FLAGS_START + TRAINER_DUSTY_5)
 
 #endif // GUARD_CONSTANTS_FLAGS_H

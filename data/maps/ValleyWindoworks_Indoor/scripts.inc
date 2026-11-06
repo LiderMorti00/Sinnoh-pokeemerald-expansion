@@ -1,6 +1,27 @@
 ValleyWindoworks_Indoor_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, ValleyWindoworks_Indoor_OnTransitionSN
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, ValleyWindoworks_Indoor_OnFrameSN
 	.byte 0
+
+ValleyWindoworks_Indoor_OnFrameSN:
+	map_script_2 VAR_TEMP_3, 1, ValleyWindoworks_Indoor_EventScript_SNDoorGrunt
+	.2byte 0
+
+ValleyWindoworks_Indoor_EventScript_SNDoorGrunt::
+	lockall
+	setvar VAR_TEMP_3, 0
+	setflag FLAG_SN_WW_DOOR_GRUNT_DONE
+	applymovement LOCALID_SN_WW_DOOR_GRUNT, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox ValleyWindoworks_Indoor_Text_SNDoorGrunt, MSGBOX_DEFAULT
+	closemessage
+	sn_walkto LOCALID_SN_WW_DOOR_GRUNT, 1, 12, SN_SPEED_FAST, 0, 0, 0
+	sn_playerface LOCALID_SN_WW_DOOR_GRUNT, 1
+	waitmovement LOCALID_SN_WW_DOOR_GRUNT
+	removeobject LOCALID_SN_WW_DOOR_GRUNT
+	setflag FLAG_SN_HIDE_WW_DOOR_GRUNT
+	releaseall
+	end
 
 ValleyWindoworks_Indoor_EventScript_Grunt1::
 	trainerbattle_single TRAINER_GEORGE, ValleyWindoworks_Indoor_Text_G1Intro, ValleyWindoworks_Indoor_Text_G1Defeat
@@ -163,6 +184,13 @@ ValleyWindoworks_Indoor_Text_WorkerAfter:
 
 ValleyWindoworks_Indoor_OnTransitionSN:
 	call ValleyWindoworks_Indoor_EventScript_SNVis_WW_GIRL
+	setflag FLAG_SN_HIDE_WW_DOOR_GRUNT
+	setvar VAR_TEMP_3, 0
+	goto_if_set FLAG_HIDE_WINDWORKS_TEAM, ValleyWindoworks_Indoor_OnTransitionSN_End
+	goto_if_set FLAG_SN_WW_DOOR_GRUNT_DONE, ValleyWindoworks_Indoor_OnTransitionSN_End
+	clearflag FLAG_SN_HIDE_WW_DOOR_GRUNT
+	setvar VAR_TEMP_3, 1
+ValleyWindoworks_Indoor_OnTransitionSN_End:
 	end
 
 ValleyWindoworks_Indoor_EventScript_SNVis_WW_GIRL:
@@ -215,3 +243,10 @@ ValleyWindoworks_Indoor_Text_SNPapa3:
 	.string "Could its appearance have something\n"
 	.string "to do with this windworks using\p"
 	.string "wind-generated energy?$"
+
+ValleyWindoworks_Indoor_Text_SNDoorGrunt:
+	.string "What?! No way! You have the key?\p"
+	.string "Locking the door was meaningless! I am\n"
+	.string "the loser in this after all!\p"
+	.string "This is no time for self-pity! I’ve got\n"
+	.string "to alert the Commander!$"
