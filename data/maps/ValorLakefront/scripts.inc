@@ -15,6 +15,10 @@ ValorLakefront_OnTransitionSN:
 	call ValorLakefront_EventScript_SNLakeWarp
 	call ValorLakefront_EventScript_SNVis_VL_GRUNT
 	call ValorLakefront_EventScript_SNVis_VALOR_CYNTHIA
+	setflag FLAG_SN_HIDE_VALOR_COLLECTOR
+	goto_if_ge VAR_SINNOH_STORY, 33, ValorLakefront_OnTransitionSN_End
+	clearflag FLAG_SN_HIDE_VALOR_COLLECTOR
+ValorLakefront_OnTransitionSN_End:
 	end
 
 ValorLakefront_EventScript_SNVis_VALOR_CYNTHIA:
@@ -283,3 +287,39 @@ ValorLakefront_EventScript_SNVis_VALOR_BARRY:
 	clearflag FLAG_SN_HIDE_VALOR_BARRY
 ValorLakefront_EventScript_SNVis_VALOR_BARRY_End:
 	return
+
+ValorLakefront_EventScript_SNCollectorBlock::
+	goto_if_set FLAG_SN_HIDE_VALOR_COLLECTOR, ValorLakefront_EventScript_SNCollectorBlock_End
+	lockall
+	applymovement LOCALID_SN_VALOR_COLLECTOR, Common_Movement_ExclamationMark
+	waitmovement 0
+	sn_walktoplayer LOCALID_SN_VALOR_COLLECTOR, SN_SPEED_FAST, 0, 0
+	waitmovement LOCALID_SN_VALOR_COLLECTOR
+	sn_playerface LOCALID_SN_VALOR_COLLECTOR, 1
+	waitmovement OBJ_EVENT_ID_PLAYER
+	msgbox ValorLakefront_Text_SNBlackout, MSGBOX_DEFAULT
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, ValorLakefront_Movement_SNStepBackWest
+	waitmovement 0
+	sn_walkto LOCALID_SN_VALOR_COLLECTOR, 53, 58, SN_SPEED_NORMAL, DIR_WEST, 0, 0
+	waitmovement LOCALID_SN_VALOR_COLLECTOR
+	releaseall
+ValorLakefront_EventScript_SNCollectorBlock_End:
+	end
+
+ValorLakefront_EventScript_SNCollector::
+	msgbox ValorLakefront_Text_SNBlackout, MSGBOX_NPC
+	end
+
+ValorLakefront_Movement_SNStepBackWest:
+	lock_facing_direction
+	walk_left
+	unlock_facing_direction
+	step_end
+
+ValorLakefront_Text_SNBlackout:
+	.string "Stop, stop! Yes, you!\p"
+	.string "Sunyshore City, which is down this\n"
+	.string "road, had a major blackout!\p"
+	.string "Crews are working on restoring power,\n"
+	.string "but the road’s closed now.$"
