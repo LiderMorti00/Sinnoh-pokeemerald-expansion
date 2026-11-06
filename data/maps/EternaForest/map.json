@@ -402,6 +402,24 @@
       "var": "VAR_SINNOH_STORY",
       "var_value": "23",
       "script": "EternaForest_EventScript_CherylBye"
+    },
+    {
+      "type": "trigger",
+      "x": 16,
+      "y": 79,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "23",
+      "script": "EternaForest_EventScript_SNCherylWait"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 79,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "23",
+      "script": "EternaForest_EventScript_SNCherylWait"
     }
   ],
   "bg_events": [
