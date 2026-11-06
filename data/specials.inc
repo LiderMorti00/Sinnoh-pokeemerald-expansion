@@ -331,6 +331,9 @@ gSpecials::
 	def_special SinnohBattlegroundSelect
 	def_special SinnohMaidTarget
 	def_special SinnohAddBattleTurns
+	def_special SinnohRestaurantSetup
+	def_special SinnohRestaurantCouple
+	def_special SinnohRestaurantVariant
 	def_special SinnohPartyMaxRibbons
 	def_special SinnohSpaTreatment
 	def_special SinnohUnownFormsCount

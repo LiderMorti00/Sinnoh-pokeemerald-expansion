@@ -12,6 +12,7 @@
 #include "constants/species.h"
 #include "string_util.h"
 #include "battle.h"
+#include "constants/event_objects.h"
 #include "script_pokemon_util.h"
 #include "constants/flags.h"
 #include "constants/map_groups.h"
@@ -410,4 +411,58 @@ void SinnohAddBattleTurns(void)
 {
     gSpecialVar_0x8005 += gBattleResults.battleTurnCounter;
     ConvertIntToDecimalStringN(gStringVar2, gSpecialVar_0x8005, STR_CONV_MODE_LEFT_ALIGN, 3);
+}
+
+// Restaurante del Lago Valor: cada día se sientan cinco de las nueve parejas.
+static const u16 sRestaurantGfx[][2] = {
+    {OBJ_EVENT_GFX_SINNOH_ARTIST, OBJ_EVENT_GFX_SINNOH_BEAUTY},
+    {OBJ_EVENT_GFX_SINNOH_RICH_BOY, OBJ_EVENT_GFX_SINNOH_LADY},
+    {OBJ_EVENT_GFX_SINNOH_GENTLEMAN, OBJ_EVENT_GFX_SINNOH_SOCIALITE},
+    {OBJ_EVENT_GFX_SINNOH_COLLECTOR, OBJ_EVENT_GFX_SINNOH_AROMA_LADY},
+    {OBJ_EVENT_GFX_SCHOOL_KID_M, OBJ_EVENT_GFX_SINNOH_POKEFAN_F},
+    {OBJ_EVENT_GFX_EXPERT_M, OBJ_EVENT_GFX_SINNOH_LASS},
+    {OBJ_EVENT_GFX_CAMERAMAN, OBJ_EVENT_GFX_REPORTER_F},
+    {OBJ_EVENT_GFX_SINNOH_RICH_BOY, OBJ_EVENT_GFX_SINNOH_BEAUTY},
+    {OBJ_EVENT_GFX_SINNOH_SCIENTIST_M, OBJ_EVENT_GFX_SINNOH_BREEDER_F},
+};
+
+static void RestaurantPick(u8 *out)
+{
+    u32 seed = (VarGet(VAR_DAYS) + 7) * 2654435761u, picked = 0, i;
+    for (i = 0; i < 5; i++)
+    {
+        u32 k;
+        seed = seed * 1103515245u + 12345u;
+        k = (seed >> 16) % ARRAY_COUNT(sRestaurantGfx);
+        while (picked & (1u << k))
+            k = (k + 1) % ARRAY_COUNT(sRestaurantGfx);
+        picked |= 1u << k;
+        out[i] = k;
+    }
+}
+
+void SinnohRestaurantSetup(void)
+{
+    u8 tables[5];
+    u32 i;
+    RestaurantPick(tables);
+    for (i = 0; i < 5; i++)
+    {
+        VarSet(VAR_OBJ_GFX_ID_0 + 2 * i, sRestaurantGfx[tables[i]][0]);
+        VarSet(VAR_OBJ_GFX_ID_0 + 2 * i + 1, sRestaurantGfx[tables[i]][1]);
+    }
+}
+
+// VAR_RESULT = pareja sentada en la mesa VAR_0x8004
+void SinnohRestaurantCouple(void)
+{
+    u8 tables[5];
+    RestaurantPick(tables);
+    gSpecialVar_Result = tables[gSpecialVar_0x8004 % 5];
+}
+
+// VAR_RESULT = variante de las frases de hoy (0-2)
+void SinnohRestaurantVariant(void)
+{
+    gSpecialVar_Result = VarGet(VAR_DAYS) % 3;
 }

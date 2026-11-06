@@ -1632,7 +1632,7 @@
 #define FLAG_UNUSED_0x95A                           (DAILY_FLAGS_START + 0x3A) // Unused Flag
 #define FLAG_UNUSED_0x95B                           (DAILY_FLAGS_START + 0x3B) // Unused Flag
 #define FLAG_UNUSED_0x95C                           (DAILY_FLAGS_START + 0x3C) // Unused Flag
-#define FLAG_UNUSED_0x95D                           (DAILY_FLAGS_START + 0x3D) // Unused Flag
+#define FLAG_DAILY_SN_RESTAURANT                    (DAILY_FLAGS_START + 0x3D) // Proyecto Sinnoh: parejas del restaurante
 #define FLAG_DAILY_SN_MAID_DONE                     (DAILY_FLAGS_START + 0x3E) // Proyecto Sinnoh: reto de las 5 doncellas
 #define FLAG_UNUSED_0x95F                           (DAILY_FLAGS_START + 0x3F) // Unused Flag
 #define DAILY_FLAGS_END                             (FLAG_UNUSED_0x95F + (7 - FLAG_UNUSED_0x95F % 8))
