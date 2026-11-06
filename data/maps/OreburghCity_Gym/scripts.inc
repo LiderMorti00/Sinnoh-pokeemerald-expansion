@@ -24,7 +24,7 @@ OreburghCity_Gym_EventScript_RoarkDefeated::
 	end
 
 OreburghCity_Gym_EventScript_GiveTM::
-	giveitem ITEM_TM_ROCK_TOMB
+	giveitem ITEM_TM76
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_RECEIVED_TM_ROCK_TOMB
 	msgbox OreburghCity_Gym_Text_ExplainTM, MSGBOX_DEFAULT
@@ -46,47 +46,81 @@ OreburghCity_Gym_EventScript_GuideWon::
 	end
 
 OreburghCity_Gym_Text_RoarkIntro:
-	.string "ROARK: So you made it! This GYM is\n"
-	.string "where I test Trainers with\l"
-	.string "ROCK-type POKéMON.\p"
-	.string "My POKéMON are as tough as the\n"
-	.string "stone they're named after. Show me\l"
-	.string "what you've got!$"
+	.string "Welcome! This is the Oreburgh POKéMON\n"
+	.string "Gym!\p"
+	.string "I’m Roark, the Gym Leader!\p"
+	.string "I’m but one Trainer who decided to walk\n"
+	.string "proudly with Rock-type POKéMON!\p"
+	.string "As the Gym Leader, I need to see your\n"
+	.string "potential as a Trainer.\p"
+	.string "And, I’ll need to see the toughness of\n"
+	.string "the POKéMON that battle with you!$"
 
 OreburghCity_Gym_Text_RoarkDefeat:
-	.string "This is... unexpected. You beat me\n"
-	.string "fair and square. Take the COAL\l"
-	.string "BADGE!$"
+	.string "This is embarrassing...\p"
+	.string "I went and lost to a Trainer who didn’t\n"
+	.string "have a single Gym Badge...\p"
+	.string "But that’s tough. You were strong, and\n"
+	.string "I was weak. That’s all there is.\p"
+	.string "According to POKéMON League rules, I\n"
+	.string "have to give you our Gym Badge\p"
+	.string "since you’ve beaten me, the Leader.\p"
+	.string "Here’s your official POKéMON League\n"
+	.string "Coal Badge.$"
 
 OreburghCity_Gym_Text_ReceivedCoalBadge:
-	.string "{PLAYER} received the COAL BADGE\n"
-	.string "from ROARK.$"
+	.string "{PLAYER} received the Coal Badge from\n"
+	.string "Roark!$"
 
 OreburghCity_Gym_Text_BadgeInfo:
-	.string "ROARK: That BADGE proves you've\n"
-	.string "got real skill. Take this TM as\l"
-	.string "well.$"
+	.string "Having that Coal Badge means your\n"
+	.string "POKéMON can now use the hidden move\p"
+	.string "Rock Smash outside of battle.\p"
+	.string "You should also take this, too.$"
 
 OreburghCity_Gym_Text_ExplainTM:
-	.string "ROARK: That TM teaches ROCK TOMB.\n"
-	.string "It hurls boulders and slows the\l"
-	.string "target down.\p"
-	.string "The next GYM is in ETERNA CITY.\n"
-	.string "Good luck out there!$"
+	.string "That TM76 contains the move STEALTH\n"
+	.string "ROCK.\p"
+	.string "It’s a move that inflicts damage on\n"
+	.string "foes that switch into battle.\p"
+	.string "Incidentally, a TM will teach its move\n"
+	.string "to a POKéMON instantly.\p"
+	.string "But a TM will break when you use it, so\n"
+	.string "make certain you want a POKéMON\p"
+	.string "to learn that move.$"
 
 OreburghCity_Gym_Text_RoarkPost:
-	.string "ROARK: I'll be training hard. Next\n"
-	.string "time, I won't lose!$"
+	.string "In this region of Sinnoh, there are\n"
+	.string "seven other Gym Leaders.\p"
+	.string "I should warn you--they’re a lot\n"
+	.string "tougher than I am!$"
 
 OreburghCity_Gym_Text_Guide:
-	.string "Hey, there! How’s it going,\n"
-	.string "Champ-to-be?\p"
-	.string "I’m the Gym guide! I help out Trainers\n"
-	.string "who come to challenge the Gym Leader.$"
+	.string "Howdy! How’s it going, Champ-to-be?\p"
+	.string "That’s what I said to a really\n"
+	.string "impatient boy earlier, too.\p"
+	.string "The Gym Leader is a user of Rock-type\n"
+	.string "POKéMON.\p"
+	.string "Well, listen. Rock-type POKéMON really\n"
+	.string "hate water, all right?\p"
+	.string "They’re also weak to Grass-type moves.\p"
+	.string "Gee, they sure have weaknesses!\p"
+	.string "But don’t think it will be easy.\p"
+	.string "You don’t get to be a Gym Leader\n"
+	.string "without covering for weaknesses.\p"
+	.string "Going after a Rock-type POKéMON with\n"
+	.string "a Fire-type POKéMON won’t be\p"
+	.string "easy, either.\p"
+	.string "That’s all the advice I can give.\n"
+	.string "Thanks for listening!$"
 
 OreburghCity_Gym_Text_GuideWon:
-	.string "You beat ROARK! That was a\n"
-	.string "rock-solid battle!$"
+	.string "Oh! {PLAYER}! You’ve taken care of the\n"
+	.string "Gym Leader!\p"
+	.string "So, did my advice come in handy or\n"
+	.string "what?\p"
+	.string "If my advice was useful, it’d be great\n"
+	.string "if you’d become my fan!$"
 
 OreburghCity_Gym_EventScript_Jonathon::
 	trainerbattle_single TRAINER_JOSH, OreburghCity_Gym_Text_JonathonIntro, OreburghCity_Gym_Text_JonathonDefeat
@@ -134,16 +168,17 @@ OreburghCity_Gym_EventScript_GymStatuePostVictory::
 	end
 
 OreburghCity_Gym_Text_GymStatue:
-	.string "OREBURGH POKéMON GYM\n"
-	.string "LEADER: ROARK\p"
-	.string "WINNING TRAINERS:\n"
+	.string "Oreburgh City POKéMON Gym\n"
+	.string "Leader: Roark\p"
+	.string "Certified Trainers:\n"
 	.string "{RIVAL}$"
 
 OreburghCity_Gym_Text_GymStatuePlayerWon:
-	.string "OREBURGH POKéMON GYM\n"
-	.string "LEADER: ROARK\p"
-	.string "WINNING TRAINERS:\n"
-	.string "{RIVAL}, {PLAYER}$"
+	.string "Oreburgh City POKéMON Gym\n"
+	.string "Leader: Roark\p"
+	.string "Certified Trainers:\n"
+	.string "{RIVAL}\n"
+	.string "{PLAYER}$"
 
 OreburghCity_Gym_EventScript_SNRematch::
 	lock
@@ -193,4 +228,3 @@ OreburghCity_Gym_Text_SNGuideInfo:
 	.string "His Trainers wait along the path. Beat\n"
 	.string "them and you can walk right up to\l"
 	.string "ROARK. Go for it!$"
-

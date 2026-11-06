@@ -52,8 +52,6 @@ ResortArea_OnTransitionSN:
 
 ResortArea_EventScript_SNVis_VILLA_OWNER:
 	setflag FLAG_SN_HIDE_VILLA_OWNER
-	goto_if_set FLAG_SN_OWN_VILLA, ResortArea_EventScript_SNVis_VILLA_OWNER_End
-	clearflag FLAG_SN_HIDE_VILLA_OWNER
 ResortArea_EventScript_SNVis_VILLA_OWNER_End:
 	return
 
@@ -85,7 +83,6 @@ ResortArea_EventScript_SNVillaOwner_Yes:
 	end
 
 ResortArea_EventScript_SNVillaDoor::
-	goto_if_set FLAG_SN_OWN_VILLA, ResortArea_EventScript_SNVillaDoor_End
 	lockall
 	msgbox ResortArea_Text_SNVillaLocked, MSGBOX_DEFAULT
 	closemessage
@@ -128,8 +125,8 @@ ResortArea_Text_SNVilla2:
 	.string "Step inside for a look-see.$"
 
 ResortArea_Text_SNVillaLocked:
-	.string "The door is locked. It seems someone is\n"
-	.string "selling this Villa...$"
+	.string "It’s a private villa.\n"
+	.string "The door is locked.$"
 
 ResortArea_EventScript_SNSyndicate::
 	lock

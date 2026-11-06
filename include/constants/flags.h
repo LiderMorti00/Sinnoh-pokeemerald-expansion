@@ -1632,8 +1632,8 @@
 #define FLAG_UNUSED_0x95A                           (DAILY_FLAGS_START + 0x3A) // Unused Flag
 #define FLAG_UNUSED_0x95B                           (DAILY_FLAGS_START + 0x3B) // Unused Flag
 #define FLAG_UNUSED_0x95C                           (DAILY_FLAGS_START + 0x3C) // Unused Flag
-#define FLAG_UNUSED_0x95D                           (DAILY_FLAGS_START + 0x3D) // Unused Flag
-#define FLAG_UNUSED_0x95E                           (DAILY_FLAGS_START + 0x3E) // Unused Flag
+#define FLAG_DAILY_SN_RESTAURANT                    (DAILY_FLAGS_START + 0x3D) // Proyecto Sinnoh: parejas del restaurante
+#define FLAG_DAILY_SN_MAID_DONE                     (DAILY_FLAGS_START + 0x3E) // Proyecto Sinnoh: reto de las 5 doncellas
 #define FLAG_UNUSED_0x95F                           (DAILY_FLAGS_START + 0x3F) // Unused Flag
 #define DAILY_FLAGS_END                             (FLAG_UNUSED_0x95F + (7 - FLAG_UNUSED_0x95F % 8))
 #define NUM_DAILY_FLAGS                             (DAILY_FLAGS_END - DAILY_FLAGS_START + 1)
@@ -3171,5 +3171,22 @@
 #define FLAG_SN_HIDE_WW_DOOR_GRUNT                              (TRAINER_FLAGS_START + TRAINER_GRUNT_RUSTURF_TUNNEL)
 #define FLAG_SN_WW_DOOR_GRUNT_DONE                              (TRAINER_FLAGS_START + TRAINER_BRENDAN_ROUTE_103_MUDKIP)
 #define FLAG_SN_HEARTHOME_GUIDE_MET                             (TRAINER_FLAGS_START + TRAINER_BRENDAN_ROUTE_110_MUDKIP)
+#define FLAG_SN_BG_WELCOMED                                     (TRAINER_FLAGS_START + TRAINER_BRENDAN_ROUTE_103_TREECKO)
+#define FLAG_SN_BG_BUCK_LEFT                                    (TRAINER_FLAGS_START + TRAINER_BRENDAN_ROUTE_110_TREECKO)
+#define FLAG_SN_HIDE_BG_BUCK_INTRO                              (TRAINER_FLAGS_START + TRAINER_BRENDAN_ROUTE_103_TORCHIC)
+#define FLAG_SN_HIDE_R202_RADAR                                 (TRAINER_FLAGS_START + TRAINER_BRENDAN_ROUTE_110_TORCHIC)
+#define FLAG_SN_R202_RADAR_DONE                                 (TRAINER_FLAGS_START + TRAINER_TABITHA_MT_CHIMNEY)
+#define FLAG_SN_CHERYL_MET                                      (TRAINER_FLAGS_START + TRAINER_BRENDAN_RUSTBORO_TORCHIC)
+#define FLAG_SN_HIDE_VALOR_COLLECTOR                            (TRAINER_FLAGS_START + TRAINER_MAY_RUSTBORO_MUDKIP)
+#define FLAG_SN_ELDRITCH_ASKED                                  (TRAINER_FLAGS_START + TRAINER_MAXIE_MAGMA_HIDEOUT)
+#define FLAG_SN_ELDRITCH_SON_WOKE                               (TRAINER_FLAGS_START + TRAINER_MAXIE_MT_CHIMNEY)
+#define FLAG_SN_ELDRITCH_THANKED                                (TRAINER_FLAGS_START + TRAINER_WALLY_MAUVILLE)
+#define FLAG_SN_HIDE_MAID_KNOCKOUT                              (TRAINER_FLAGS_START + TRAINER_BRENDAN_LILYCOVE_MUDKIP)
+#define FLAG_SN_HIDE_MAID_BOSS                                  (TRAINER_FLAGS_START + TRAINER_BRENDAN_LILYCOVE_TREECKO)
+#define FLAG_SN_MAID_EXPLAINED                                  (TRAINER_FLAGS_START + TRAINER_BRENDAN_LILYCOVE_TORCHIC)
+#define FLAG_SN_HIDE_CEL_ELDER_OUT                              (TRAINER_FLAGS_START + TRAINER_MAY_LILYCOVE_MUDKIP)
+#define FLAG_SN_HIDE_LIB_LUCIAN                                 (TRAINER_FLAGS_START + TRAINER_MAY_LILYCOVE_TREECKO)
+#define FLAG_SN_R218_SCIENTIST_DONE                             (TRAINER_FLAGS_START + TRAINER_MAY_LILYCOVE_TORCHIC)
+#define FLAG_SN_HIDE_R224_MARLEY                                (TRAINER_FLAGS_START + TRAINER_GRUNT_MAGMA_HIDEOUT_12)
 
 #endif // GUARD_CONSTANTS_FLAGS_H

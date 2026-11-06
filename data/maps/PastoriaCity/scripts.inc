@@ -13,7 +13,15 @@ PastoriaCity_Text_PtNpc1:
 	.string "and learns certain moves.$"
 
 PastoriaCity_EventScript_PtNpc2::
-	msgbox PastoriaCity_Text_PtNpc2, MSGBOX_NPC
+	lock
+	faceplayer
+	goto_if_set FLAG_BADGE05_GET, PastoriaCity_EventScript_PtNpc2_SNVar0
+	msgbox PastoriaCity_Text_PtNpc2, MSGBOX_DEFAULT
+	release
+	end
+PastoriaCity_EventScript_PtNpc2_SNVar0:
+	msgbox PastoriaCity_Text_PtNpc2_SNVar0, MSGBOX_DEFAULT
+	release
 	end
 
 PastoriaCity_Text_PtNpc2:
@@ -473,3 +481,13 @@ PastoriaCity_Text_SNWhyArentYouGone:
 	.string "{RIVAL}: What’s the matter?! Why\n"
 	.string "aren’t you gone already?!\p"
 	.string "Go after that Galactic goon!$"
+
+PastoriaCity_Text_PtNpc2_SNVar0:
+	.string "Wasn’t the Pastoria Gym Leader kind of\n"
+	.string "awesome in all sorts of ways?\p"
+	.string "But don’t judge him by the way he looks\n"
+	.string "and acts.\p"
+	.string "I hear he enters professional\n"
+	.string "wrestling matches for prize money.\p"
+	.string "That money goes to help people and\n"
+	.string "POKéMON in trouble.$"

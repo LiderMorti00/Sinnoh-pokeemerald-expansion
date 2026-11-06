@@ -235,10 +235,11 @@ CanalaveCity_Gym_Text_ExplainTM:
 	.string "target’s Special Defense.$"
 
 CanalaveCity_Gym_Text_PtGymGuide:
-	.string "Hey, there! How’s it going,\n"
-	.string "Champ-to-be?\p"
-	.string "I’m the Gym guide! I help out Trainers\n"
-	.string "who come to challenge the Gym Leader.$"
+	.string "Hey, there! Champ-to-be!\p"
+	.string "The Gym Leader here uses Steel-type\n"
+	.string "POKéMON.\p"
+	.string "Steel-type POKéMON have high Defense,\n"
+	.string "so you’d have to hit them hard!$"
 
 CanalaveCity_Gym_Text_PtGymGuideAfter:
 	.string "Oh! {PLAYER}! You’ve beaten the Gym\n"
@@ -253,13 +254,16 @@ CanalaveCity_Gym_Text_PtGymGuideAfter:
 	.string "corner, kiddo!$"
 
 CanalaveCity_Gym_Text_PtGymStatue:
-	.string "CANALAVE POKéMON GYM\n"
-	.string "LEADER: BYRON$"
+	.string "Canalave City POKéMON Gym\n"
+	.string "Leader: Byron\p"
+	.string "Certified Trainers:\n"
+	.string "{RIVAL}$"
 
 CanalaveCity_Gym_Text_PtGymStatueWon:
-	.string "CANALAVE POKéMON GYM\n"
-	.string "LEADER: BYRON\p"
-	.string "WINNING TRAINERS:\n"
+	.string "Canalave City POKéMON Gym\n"
+	.string "Leader: Byron\p"
+	.string "Certified Trainers:\n"
+	.string "{RIVAL}\n"
 	.string "{PLAYER}$"
 
 CanalaveCity_Gym_EventScript_SNRematch::

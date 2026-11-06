@@ -286,9 +286,26 @@ EternaCity_EventScript_SNVis_ETERNA_CYNTHIA_EGG:
 EternaCity_EventScript_SNVis_ETERNA_CYNTHIA_EGG_End:
 	return
 
+EternaCity_EventScript_SNCynthiaEggScene::
+	goto_if_set FLAG_SN_HIDE_ETERNA_CYNTHIA_EGG, EternaCity_EventScript_SNCynthiaEggScene_End
+	lock
+	setvar VAR_TEMP_F, 1
+	applymovement LOCALID_SN_ETERNA_CYNTHIA, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox EternaCity_Text_SNDontLeaveWithoutEgg, MSGBOX_DEFAULT
+	closemessage
+	sn_walktoplayer LOCALID_SN_ETERNA_CYNTHIA, SN_SPEED_NORMAL, 0, 0
+	waitmovement LOCALID_SN_ETERNA_CYNTHIA
+	sn_playerface LOCALID_SN_ETERNA_CYNTHIA, 1
+	waitmovement OBJ_EVENT_ID_PLAYER
+	goto EternaCity_EventScript_SNCynthiaEgg_Main
+EternaCity_EventScript_SNCynthiaEggScene_End:
+	end
+
 EternaCity_EventScript_SNCynthiaEgg::
 	lock
 	faceplayer
+EternaCity_EventScript_SNCynthiaEgg_Main:
 	msgbox EternaCity_EventScript_SNCynthiaEgg_T1, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, EternaCity_EventScript_SNCynthiaEgg_No
 	getpartysize
@@ -358,3 +375,8 @@ EternaCity_EventScript_SNCynthiaEgg_NoT:
 	.string "POKéDEX, isn’t it?\p"
 	.string "I only want to lend you a little hand,\n"
 	.string "that’s all.$"
+
+EternaCity_Text_SNDontLeaveWithoutEgg:
+	.string "Cynthia: Oh, wait!\p"
+	.string "Don’t leave without this POKéMON Egg.\n"
+	.string "Please? I want you to have it.$"

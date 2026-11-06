@@ -418,8 +418,19 @@ IronIsland_B2F_Left_EventScript_SNRileyMeet_Check:
 	goto_if_set FLAG_SN_HIDE_IRON_RILEY_B2F, IronIsland_B2F_Left_EventScript_SNRileyMeet_Stop
 	goto_if_set FLAG_SN_HIDE_IRON_GRUNT1, IronIsland_B2F_Left_EventScript_SNRileyMeet_Stop
 	checkfollowernpc
-	goto_if_eq VAR_RESULT, TRUE, IronIsland_B2F_Left_EventScript_SNRileyMeet_Stop
+	goto_if_eq VAR_RESULT, TRUE, IronIsland_B2F_Left_EventScript_SNRileyGoingBack
 	return
+IronIsland_B2F_Left_EventScript_SNRileyGoingBack:
+	lockall
+	setvar VAR_TEMP_F, 1
+	msgbox IronIsland_B2F_Left_Text_SNRileyGoingBack, MSGBOX_DEFAULT
+	closemessage
+	destroyfollowernpc
+	setobjectxyperm LOCALID_SN_IRON_RILEY_B2F, 36, 4
+	clearflag FLAG_SN_HIDE_IRON_RILEY_B2F
+	addobject LOCALID_SN_IRON_RILEY_B2F
+	releaseall
+	end
 IronIsland_B2F_Left_EventScript_SNRileyMeet_Stop:
 	setvar VAR_TEMP_F, 1
 	end
@@ -475,3 +486,8 @@ IronIsland_B2F_Left_Text_SNRileyChat3:
 	.string "wonder?\p"
 	.string "I mean, it’s a lot harder to defeat\n"
 	.string "one’s self than anyone else.$"
+
+IronIsland_B2F_Left_Text_SNRileyGoingBack:
+	.string "Riley: ...Are you going back?\p"
+	.string "I’ll be hanging around here. It would be\n"
+	.string "good if you came back.$"

@@ -345,9 +345,12 @@ SpearPillar_EventScript_SNPALKIA_Ran:
 SpearPillar_EventScript_SNSPGrunts::
 	goto_if_set FLAG_SN_HIDE_SP_GRUNT1, SpearPillar_EventScript_SNSPGrunts_End
 	lockall
-	applymovement LOCALID_SN_SP_GRUNT_F, Common_Movement_ExclamationMark
-	applymovement LOCALID_SN_SP_GRUNT_M, Common_Movement_ExclamationMark
+	applymovement LOCALID_SN_SP_GRUNT_F, Common_Movement_WalkInPlaceRight
+	applymovement LOCALID_SN_SP_GRUNT_M, Common_Movement_WalkInPlaceLeft
 	waitmovement 0
+	setvar VAR_0x8004, PARTY_SIZE
+	specialvar VAR_RESULT, CountPartyAliveNonEggMons_IgnoreVar0x8004Slot
+	goto_if_lt VAR_RESULT, 2, SpearPillar_EventScript_SNSPGruntsOnlyOne
 	msgbox SpearPillar_Text_SNGruntsIntro, MSGBOX_DEFAULT
 	closemessage
 	trainerbattle_two_trainers_sn TRAINER_DYLAN_1, SpearPillar_EventScript_SNSPGrunts_DA, TRAINER_DYLAN_2, SpearPillar_EventScript_SNSPGrunts_DB
@@ -362,10 +365,35 @@ SpearPillar_EventScript_SNSPGrunts::
 	releaseall
 SpearPillar_EventScript_SNSPGrunts_End:
 	end
+
+SpearPillar_EventScript_SNSPGruntsOnlyOne:
+	msgbox SpearPillar_Text_SNGruntsOnlyOne, MSGBOX_DEFAULT
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown
+	waitmovement 0
+	applymovement LOCALID_SN_SP_GRUNT_F, Common_Movement_FaceDown
+	applymovement LOCALID_SN_SP_GRUNT_M, Common_Movement_FaceDown
+	waitmovement 0
+	releaseall
+	end
+
 SpearPillar_Text_SNGruntsIntro:
-	.string "Grunts: Halt! Our boss is about to\n"
-	.string "create a new world! No one gets past\l"
-	.string "us!$"
+	.string "Our boss is about to do something\n"
+	.string "spectacular!\p"
+	.string "Don’t get in the way! Of course you\n"
+	.string "will, won’t you?\p"
+	.string "That’s why the two of us will team up to\n"
+	.string "take you down in an epic duel!$"
+
+SpearPillar_Text_SNGruntsOnlyOne:
+	.string "Our boss is about to do something\n"
+	.string "spectacular!\p"
+	.string "Don’t get in the way! Of course you\n"
+	.string "will, won’t you?\p"
+	.string "That’s why the two of us will team up to\n"
+	.string "take you down in an epic duel!\p"
+	.string "What? You only have one POKéMON? Bah,\n"
+	.string "come back when you’re ready!$"
 
 SpearPillar_EventScript_SNSPGrunts_DA:
 	.string "Grunt: No way...!$"
@@ -374,8 +402,9 @@ SpearPillar_EventScript_SNSPGrunts_DB:
 	.string "Grunt: We lost...?!$"
 
 SpearPillar_EventScript_SNSPGrunts_After:
-	.string "Grunt: Go ahead... Mars and Jupiter will\n"
-	.string "stop you anyway!$"
+	.string "We are not capable of slowing you.\p"
+	.string "We will let you pass so you can get\n"
+	.string "pulverized by our bosses!$"
 
 SpearPillar_EventScript_SNSPCommanders::
 	goto_if_set FLAG_SN_HIDE_SP_MARS, SpearPillar_EventScript_SNSPCommanders_End

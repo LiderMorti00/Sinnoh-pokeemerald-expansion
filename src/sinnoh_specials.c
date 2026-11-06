@@ -11,6 +11,8 @@
 #include "constants/moves.h"
 #include "constants/species.h"
 #include "string_util.h"
+#include "battle.h"
+#include "constants/event_objects.h"
 #include "script_pokemon_util.h"
 #include "constants/flags.h"
 #include "constants/map_groups.h"
@@ -332,4 +334,141 @@ void SinnohLoadCounterpartMon(void)
     SetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_MOVE2, &move);
     SetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_MOVE3, &move);
     SetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_MOVE4, &move);
+}
+
+// Campo de Batalla: cada día salen hasta tres líderes y un entrenador más (como en Platino).
+// Se llama después de las comprobaciones de visibilidad; oculta a los que no tocan hoy.
+static const u16 sBattlegroundLeaderFlags[] = {
+    FLAG_SN_HIDE_BG_ROARK, FLAG_SN_HIDE_BG_GARDENIA, FLAG_SN_HIDE_BG_WAKE, FLAG_SN_HIDE_BG_MAYLENE,
+    FLAG_SN_HIDE_BG_FANTINA, FLAG_SN_HIDE_BG_CANDICE, FLAG_SN_HIDE_BG_BYRON, FLAG_SN_HIDE_BG_VOLKNER,
+};
+static const u16 sBattlegroundOtherFlags[] = {
+    FLAG_SN_HIDE_BG_CHERYL, FLAG_SN_HIDE_BG_RILEY, FLAG_SN_HIDE_BG_MARLEY, FLAG_SN_HIDE_BG_BUCK, FLAG_SN_HIDE_BG_MIRA,
+};
+
+void SinnohBattlegroundSelect(void)
+{
+    u32 seed = (VarGet(VAR_DAYS) + 1) * 2654435761u;
+    u32 i, n, picked = 0, eligible[ARRAY_COUNT(sBattlegroundOtherFlags)];
+
+    // Requisitos de los entrenadores que no son líderes
+    if (!FlagGet(FLAG_HIDE_FOREST_CHERYL))
+        FlagSet(FLAG_SN_HIDE_BG_CHERYL);
+    if (!FlagGet(FLAG_SN_RECEIVED_RIOLU_EGG))
+        FlagSet(FLAG_SN_HIDE_BG_RILEY);
+    if (!FlagGet(FLAG_SN_MARLEY_ESCORTED))
+        FlagSet(FLAG_SN_HIDE_BG_MARLEY);
+    if (!FlagGet(FLAG_SN_BG_BUCK_LEFT))
+        FlagSet(FLAG_SN_HIDE_BG_BUCK);
+    if (!FlagGet(FLAG_SN_MIRA_ESCORTED))
+        FlagSet(FLAG_SN_HIDE_BG_MIRA);
+
+    // Tres líderes distintos
+    for (i = 0; i < 3; i++)
+    {
+        u32 k;
+        seed = seed * 1103515245u + 12345u;
+        k = (seed >> 16) % ARRAY_COUNT(sBattlegroundLeaderFlags);
+        while (picked & (1u << k))
+            k = (k + 1) % ARRAY_COUNT(sBattlegroundLeaderFlags);
+        picked |= 1u << k;
+    }
+    for (i = 0; i < ARRAY_COUNT(sBattlegroundLeaderFlags); i++)
+    {
+        if (!(picked & (1u << i)))
+            FlagSet(sBattlegroundLeaderFlags[i]);
+    }
+
+    // Un entrenador más entre los que se pueden ver
+    for (i = 0, n = 0; i < ARRAY_COUNT(sBattlegroundOtherFlags); i++)
+    {
+        if (!FlagGet(sBattlegroundOtherFlags[i]))
+            eligible[n++] = i;
+    }
+    if (n != 0)
+    {
+        seed = seed * 1103515245u + 12345u;
+        picked = eligible[(seed >> 16) % n];
+        for (i = 0; i < ARRAY_COUNT(sBattlegroundOtherFlags); i++)
+        {
+            if (i != picked)
+                FlagSet(sBattlegroundOtherFlags[i]);
+        }
+    }
+}
+
+// Campo de Batalla: juego de frases del día (0 o 1) en VAR_TEMP_4, como el mensaje aleatorio diario de Platino.
+void SinnohBattlegroundMsgSet(void)
+{
+    VarSet(VAR_TEMP_4, ((VarGet(VAR_DAYS) + 7) * 2654435761u >> 20) & 1);
+}
+
+// Reto de las 5 doncellas (Mansión Pokémon)
+// VAR_RESULT = turnos objetivo del día (5-9) y STR_VAR_1 con el número.
+void SinnohMaidTarget(void)
+{
+    u32 t = 5 + ((VarGet(VAR_DAYS) + 3) * 2654435761u >> 28) % 5;
+    gSpecialVar_Result = t;
+    ConvertIntToDecimalStringN(gStringVar1, t, STR_CONV_MODE_LEFT_ALIGN, 2);
+}
+
+// Suma a VAR_0x8005 los turnos del último combate y pone el total en STR_VAR_2.
+void SinnohAddBattleTurns(void)
+{
+    gSpecialVar_0x8005 += gBattleResults.battleTurnCounter;
+    ConvertIntToDecimalStringN(gStringVar2, gSpecialVar_0x8005, STR_CONV_MODE_LEFT_ALIGN, 3);
+}
+
+// Restaurante del Lago Valor: cada día se sientan cinco de las nueve parejas.
+static const u16 sRestaurantGfx[][2] = {
+    {OBJ_EVENT_GFX_SINNOH_ARTIST, OBJ_EVENT_GFX_SINNOH_BEAUTY},
+    {OBJ_EVENT_GFX_SINNOH_RICH_BOY, OBJ_EVENT_GFX_SINNOH_LADY},
+    {OBJ_EVENT_GFX_SINNOH_GENTLEMAN, OBJ_EVENT_GFX_SINNOH_SOCIALITE},
+    {OBJ_EVENT_GFX_SINNOH_COLLECTOR, OBJ_EVENT_GFX_SINNOH_AROMA_LADY},
+    {OBJ_EVENT_GFX_SCHOOL_KID_M, OBJ_EVENT_GFX_SINNOH_POKEFAN_F},
+    {OBJ_EVENT_GFX_EXPERT_M, OBJ_EVENT_GFX_SINNOH_LASS},
+    {OBJ_EVENT_GFX_CAMERAMAN, OBJ_EVENT_GFX_REPORTER_F},
+    {OBJ_EVENT_GFX_SINNOH_RICH_BOY, OBJ_EVENT_GFX_SINNOH_BEAUTY},
+    {OBJ_EVENT_GFX_SINNOH_SCIENTIST_M, OBJ_EVENT_GFX_SINNOH_BREEDER_F},
+};
+
+static void RestaurantPick(u8 *out)
+{
+    u32 seed = (VarGet(VAR_DAYS) + 7) * 2654435761u, picked = 0, i;
+    for (i = 0; i < 5; i++)
+    {
+        u32 k;
+        seed = seed * 1103515245u + 12345u;
+        k = (seed >> 16) % ARRAY_COUNT(sRestaurantGfx);
+        while (picked & (1u << k))
+            k = (k + 1) % ARRAY_COUNT(sRestaurantGfx);
+        picked |= 1u << k;
+        out[i] = k;
+    }
+}
+
+void SinnohRestaurantSetup(void)
+{
+    u8 tables[5];
+    u32 i;
+    RestaurantPick(tables);
+    for (i = 0; i < 5; i++)
+    {
+        VarSet(VAR_OBJ_GFX_ID_0 + 2 * i, sRestaurantGfx[tables[i]][0]);
+        VarSet(VAR_OBJ_GFX_ID_0 + 2 * i + 1, sRestaurantGfx[tables[i]][1]);
+    }
+}
+
+// VAR_RESULT = pareja sentada en la mesa VAR_0x8004
+void SinnohRestaurantCouple(void)
+{
+    u8 tables[5];
+    RestaurantPick(tables);
+    gSpecialVar_Result = tables[gSpecialVar_0x8004 % 5];
+}
+
+// VAR_RESULT = variante de las frases de hoy (0-2)
+void SinnohRestaurantVariant(void)
+{
+    gSpecialVar_Result = VarGet(VAR_DAYS) % 3;
 }

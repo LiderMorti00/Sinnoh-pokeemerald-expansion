@@ -254,13 +254,16 @@ SnowpointCity_Gym_1F_Text_PtGymGuideAfter:
 	.string "your POKéMON picked up on it!$"
 
 SnowpointCity_Gym_1F_Text_PtGymStatue:
-	.string "SNOWPOINT POKéMON GYM\n"
-	.string "LEADER: CANDICE$"
+	.string "Snowpoint City POKéMON Gym\n"
+	.string "Leader: Candice\p"
+	.string "Certified Trainers:\n"
+	.string "{RIVAL}$"
 
 SnowpointCity_Gym_1F_Text_PtGymStatueWon:
-	.string "SNOWPOINT POKéMON GYM\n"
-	.string "LEADER: CANDICE\p"
-	.string "WINNING TRAINERS:\n"
+	.string "Snowpoint City POKéMON Gym\n"
+	.string "Leader: Candice\p"
+	.string "Certified Trainers:\n"
+	.string "{RIVAL}\n"
 	.string "{PLAYER}$"
 
 SnowpointCity_Gym_1F_EventScript_SNRematch::

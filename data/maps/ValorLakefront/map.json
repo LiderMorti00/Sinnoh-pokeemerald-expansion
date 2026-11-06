@@ -148,6 +148,20 @@
       "trainer_sight_or_berry_tree_id": "ITEM_TM85",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_SN_VALORLAKEFRONT_TM85"
+    },
+    {
+      "local_id": "LOCALID_SN_VALOR_COLLECTOR",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_COLLECTOR",
+      "x": 53,
+      "y": 58,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ValorLakefront_EventScript_SNCollector",
+      "flag": "FLAG_SN_HIDE_VALOR_COLLECTOR"
     }
   ],
   "warp_events": [
@@ -187,7 +201,53 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 52,
+      "y": 57,
+      "elevation": 3,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "ValorLakefront_EventScript_SNCollectorBlock"
+    },
+    {
+      "type": "trigger",
+      "x": 52,
+      "y": 58,
+      "elevation": 3,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "ValorLakefront_EventScript_SNCollectorBlock"
+    },
+    {
+      "type": "trigger",
+      "x": 52,
+      "y": 59,
+      "elevation": 3,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "ValorLakefront_EventScript_SNCollectorBlock"
+    },
+    {
+      "type": "trigger",
+      "x": 52,
+      "y": 60,
+      "elevation": 3,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "ValorLakefront_EventScript_SNCollectorBlock"
+    },
+    {
+      "type": "trigger",
+      "x": 52,
+      "y": 61,
+      "elevation": 3,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "ValorLakefront_EventScript_SNCollectorBlock"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",

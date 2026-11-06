@@ -3,6 +3,12 @@ Route202_MapScripts::
 	.byte 0
 
 Route202_OnTransition:
+	setflag FLAG_SN_HIDE_R202_RADAR
+	goto_if_set FLAG_SN_R202_RADAR_DONE, Route202_OnTransition_Gfx
+	checkitem ITEM_POKE_RADAR
+	goto_if_eq VAR_RESULT, FALSE, Route202_OnTransition_Gfx
+	clearflag FLAG_SN_HIDE_R202_RADAR
+Route202_OnTransition_Gfx:
 	checkplayergender
 	goto_if_eq VAR_RESULT, MALE, Route202_EventScript_SetDawnGfx
 	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_SINNOH_LUCAS
@@ -425,3 +431,103 @@ Route202_Text_SNByeLucas:
 	.string "That way, you’ll have a better shot at\n"
 	.string "meeting more POKéMON.\p"
 	.string "See you around!$"
+
+Route202_EventScript_SNRadarCP::
+	lock
+	faceplayer
+	checkplayergender
+	goto_if_eq VAR_RESULT, FEMALE, Route202_EventScript_SNRadar_AL
+	msgbox Route202_Text_SNRadarAD, MSGBOX_DEFAULT
+	goto Route202_EventScript_SNRadar_AN
+Route202_EventScript_SNRadar_AL:
+	msgbox Route202_Text_SNRadarAL, MSGBOX_DEFAULT
+Route202_EventScript_SNRadar_AN:
+	closemessage
+	applymovement LOCALID_SN_R202_RADAR_CP, Common_Movement_FaceRight
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceRight
+	waitmovement 0
+	checkplayergender
+	goto_if_eq VAR_RESULT, FEMALE, Route202_EventScript_SNRadar_BL
+	msgbox Route202_Text_SNRadarBD, MSGBOX_DEFAULT
+	goto Route202_EventScript_SNRadar_BN
+Route202_EventScript_SNRadar_BL:
+	msgbox Route202_Text_SNRadarBL, MSGBOX_DEFAULT
+Route202_EventScript_SNRadar_BN:
+	closemessage
+	applymovement LOCALID_SN_R202_RADAR_CP, Route202_Movement_SNLookAround
+	waitmovement 0
+	checkplayergender
+	goto_if_eq VAR_RESULT, FEMALE, Route202_EventScript_SNRadar_CL
+	msgbox Route202_Text_SNRadarCD, MSGBOX_DEFAULT
+	goto Route202_EventScript_SNRadar_CN
+Route202_EventScript_SNRadar_CL:
+	msgbox Route202_Text_SNRadarCL, MSGBOX_DEFAULT
+Route202_EventScript_SNRadar_CN:
+	closemessage
+	setflag FLAG_SN_R202_RADAR_DONE
+	sn_walkto LOCALID_SN_R202_RADAR_CP, 0, 26, SN_SPEED_NORMAL, 0, 0, 0
+	waitmovement LOCALID_SN_R202_RADAR_CP
+	removeobject LOCALID_SN_R202_RADAR_CP
+	setflag FLAG_SN_HIDE_R202_RADAR
+	release
+	end
+
+Route202_Movement_SNLookAround:
+	face_down
+	delay_16
+	face_up
+	delay_16
+	face_left
+	delay_16
+	face_player
+	step_end
+
+Route202_Text_SNRadarAD:
+	.string "Dawn: Hi, {PLAYER}! I was waiting for\n"
+	.string "you.\p"
+	.string "Let me show you how the Poké Radar\n"
+	.string "works.\p"
+	.string "Let’s not waste any time. So, when you\n"
+	.string "use the Poké Radar...$"
+
+Route202_Text_SNRadarAL:
+	.string "Lucas: {PLAYER}.\p"
+	.string "Let me explain how the Poké Radar\n"
+	.string "works.\p"
+	.string "Let’s give it a go. When you use the\n"
+	.string "Poké Radar...$"
+
+Route202_Text_SNRadarBD:
+	.string "Dawn: See? Did you notice the tall\n"
+	.string "grass rustling?\p"
+	.string "There’s a POKéMON in that patch of tall\n"
+	.string "grass.\p"
+	.string "If you go there, the POKéMON will come\n"
+	.string "bursting out.$"
+
+Route202_Text_SNRadarBL:
+	.string "Lucas: There! Did you see the tall\n"
+	.string "grass rustling?\p"
+	.string "There’s a POKéMON in that patch of tall\n"
+	.string "grass.\p"
+	.string "Go in there, and the POKéMON will come\n"
+	.string "leaping out.$"
+
+Route202_Text_SNRadarCD:
+	.string "Now, this is where it gets interesting.\p"
+	.string "If you see another patch of rustling\n"
+	.string "grass some distance away, go into it.\p"
+	.string "You’ll see the same kind of POKéMON as\n"
+	.string "before.\p"
+	.string "If you want to keep meeting the same\n"
+	.string "kind of POKéMON, you should maybe\p"
+	.string "use some Repels.$"
+
+Route202_Text_SNRadarCL:
+	.string "Now, here’s the strange part.\p"
+	.string "If you see another patch of rustling\n"
+	.string "grass far away, it means the same kind\p"
+	.string "of POKéMON is hiding there.\p"
+	.string "So, if your aim is to keep seeing the\n"
+	.string "same kind of POKéMON, you should\p"
+	.string "consider using Repels.$"

@@ -51,7 +51,8 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "CanalaveCity_Library_F1_EventScript_PtNpc3",
-      "flag": "0"
+      "flag": "FLAG_SN_HIDE_LIB_LUCIAN",
+      "local_id": "LOCALID_LIB_LUCIAN"
     }
   ],
   "warp_events": [

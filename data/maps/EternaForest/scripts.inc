@@ -7,12 +7,30 @@ EternaForest_EventScript_Cheryl::
 	goto_if_ne VAR_SINNOH_STORY, 22, EternaForest_EventScript_CherylEnd
 	applymovement LOCALID_FOREST_CHERYL, Common_Movement_FacePlayer
 	waitmovement 0
+	goto_if_set FLAG_SN_CHERYL_MET, EternaForest_EventScript_SNCherylAgain
+	setflag FLAG_SN_CHERYL_MET
 	msgbox EternaForest_Text_CherylAsk, MSGBOX_DEFAULT
+	goto EternaForest_EventScript_SNCherylGo
+EternaForest_EventScript_SNCherylAgain:
+	msgbox EternaForest_Text_SNCherylAgain, MSGBOX_DEFAULT
+EternaForest_EventScript_SNCherylGo:
 	closemessage
 	special HealPlayerParty
 	setfollowernpc LOCALID_FOREST_CHERYL, FNPC_ALL_LAND, EternaForest_EventScript_CherylHeal, PARTNER_CHERYL
 	setvar VAR_SINNOH_STORY, 23
 EternaForest_EventScript_CherylEnd::
+	releaseall
+	end
+
+EternaForest_EventScript_SNCherylWait::
+	lockall
+	msgbox EternaForest_Text_SNCherylWait, MSGBOX_DEFAULT
+	closemessage
+	destroyfollowernpc
+	setobjectxyperm LOCALID_FOREST_CHERYL, 16, 78
+	clearflag FLAG_HIDE_FOREST_CHERYL
+	addobject LOCALID_FOREST_CHERYL
+	setvar VAR_SINNOH_STORY, 22
 	releaseall
 	end
 
@@ -297,3 +315,13 @@ EternaForest_EventScript_SNMossRock::
 EternaForest_EventScript_SNMossRock_Text:
 	.string "The rock is covered in moss. It feels\n"
 	.string "pleasantly cool.$"
+
+EternaForest_Text_SNCherylWait:
+	.string "Cheryl: Oh? Are you going back? I’ll\n"
+	.string "wait here for you, then.$"
+
+EternaForest_Text_SNCherylAgain:
+	.string "Cheryl: Oh, hi, {PLAYER}! I’ve been\n"
+	.string "waiting like I said.\p"
+	.string "Let’s get through this forest\n"
+	.string "together.$"

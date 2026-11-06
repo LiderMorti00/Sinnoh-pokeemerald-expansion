@@ -177,6 +177,7 @@ Route224_Text_HaydenPost:
 	.string "the top class for toughness.$"
 
 Route224_OnTransitionSN:
+	setflag FLAG_SN_HIDE_R224_MARLEY
 	call Route224_EventScript_SNVis_R224_OAK
 	call Route224_EventScript_SNVis_SHAYMIN
 	end
@@ -225,6 +226,18 @@ Route224_EventScript_SNOak::
 	faceplayer
 	msgbox Route224_Text_SNOak1, MSGBOX_DEFAULT
 	msgbox Route224_Text_SNOak2, MSGBOX_DEFAULT
+	closemessage
+	clearflag FLAG_SN_HIDE_R224_MARLEY
+	addobject LOCALID_SN_R224_MARLEY
+	sn_walktoplayer LOCALID_SN_R224_MARLEY, SN_SPEED_NORMAL, 0, 0
+	waitmovement LOCALID_SN_R224_MARLEY
+	sn_playerface LOCALID_SN_R224_MARLEY, 1
+	waitmovement OBJ_EVENT_ID_PLAYER
+	msgbox Route224_Text_SNMarley1, MSGBOX_DEFAULT
+	msgbox Route224_Text_SNMarley2, MSGBOX_DEFAULT
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
+	waitmovement 0
 	msgbox Route224_Text_SNOak3, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_SN_ROUTE224_TABLET
@@ -236,6 +249,10 @@ Route224_EventScript_SNOak::
 	waitmoncry
 	msgbox Route224_Text_SNOak4, MSGBOX_DEFAULT
 	closemessage
+	sn_walkto LOCALID_SN_R224_MARLEY, 39, 18, SN_SPEED_NORMAL, 0, 0, 0
+	waitmovement LOCALID_SN_R224_MARLEY
+	removeobject LOCALID_SN_R224_MARLEY
+	setflag FLAG_SN_HIDE_R224_MARLEY
 	sn_walkto LOCALID_SN_R224_OAK, 57, 36, SN_SPEED_NORMAL, 0, 0, 0
 	waitmovement LOCALID_SN_R224_OAK
 	removeobject LOCALID_SN_R224_OAK
@@ -279,3 +296,17 @@ Route224_Text_SNOak4:
 	.string "tablet?\p"
 	.string "Hmm... Where did that POKéMON go? Its\n"
 	.string "destination is intriguing...$"
+
+Route224_Text_SNMarley1:
+	.string "Marley: I... I don’t like to talk...\p"
+	.string "I choose my words carefully, but they\n"
+	.string "may still hurt someone accidentally...\p"
+	.string "When I think of that, I clam up...\p"
+	.string "That’s why I think this certain\n"
+	.string "POKéMON is so wonderful.\p"
+	.string "It’s a POKéMON that conveys the\n"
+	.string "feelings of gratitude in a nice way...$"
+
+Route224_Text_SNMarley2:
+	.string "Marley: That stone tablet... It has a\n"
+	.string "strange feel to it...$"
