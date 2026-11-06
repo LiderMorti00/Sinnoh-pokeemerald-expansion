@@ -38,7 +38,8 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PokemonMansion_Office_EventScript_SNBacklot",
-      "flag": "0"
+      "flag": "0",
+      "local_id": "LOCALID_MANSION_BACKLOT"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN",
@@ -51,7 +52,8 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PokemonMansion_Office_EventScript_PtNpc2",
-      "flag": "0"
+      "flag": "0",
+      "local_id": "LOCALID_MANSION_BUTLER"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_POLICEMAN",
@@ -64,7 +66,8 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PokemonMansion_Office_EventScript_PtNpc3",
-      "flag": "0"
+      "flag": "0",
+      "local_id": "LOCALID_MANSION_POLICEMAN"
     }
   ],
   "warp_events": [
@@ -83,7 +86,17 @@
       "dest_warp_id": "4"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 4,
+      "elevation": 3,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "PokemonMansion_Office_EventScript_SNStatue"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",
