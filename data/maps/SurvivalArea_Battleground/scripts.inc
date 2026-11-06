@@ -1,6 +1,42 @@
 SurvivalArea_Battleground_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, SurvivalArea_Battleground_OnTransitionSN
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, SurvivalArea_Battleground_OnFrameSN
 	.byte 0
+
+SurvivalArea_Battleground_OnFrameSN:
+	map_script_2 VAR_TEMP_3, 1, SurvivalArea_Battleground_EventScript_SNWelcome
+	.2byte 0
+
+SurvivalArea_Battleground_EventScript_SNWelcome::
+	lockall
+	setvar VAR_TEMP_3, 0
+	setflag FLAG_SN_BG_WELCOMED
+	applymovement LOCALID_BG_EXPERT, Common_Movement_ExclamationMark
+	waitmovement 0
+	sn_walktoplayer LOCALID_BG_EXPERT, SN_SPEED_NORMAL, 0, 0
+	waitmovement LOCALID_BG_EXPERT
+	sn_playerface LOCALID_BG_EXPERT, 1
+	waitmovement OBJ_EVENT_ID_PLAYER
+	msgbox SurvivalArea_Battleground_Text_SNWelcome, MSGBOX_DEFAULT
+	closemessage
+	sn_walkto LOCALID_BG_EXPERT, 9, 3, SN_SPEED_NORMAL, DIR_SOUTH, 0, 0
+	waitmovement LOCALID_BG_EXPERT
+	releaseall
+	end
+
+SurvivalArea_Battleground_EventScript_SNBuckIntro::
+	lock
+	faceplayer
+	msgbox SurvivalArea_Battleground_Text_SNBuckIntro, MSGBOX_DEFAULT
+	closemessage
+	setflag FLAG_SN_BG_BUCK_LEFT
+	sn_walkto VAR_LAST_TALKED, 7, 8, SN_SPEED_NORMAL, 0, 0, 0
+	waitmovement 0
+	playse SE_EXIT
+	removeobject VAR_LAST_TALKED
+	setflag FLAG_SN_HIDE_BG_BUCK_INTRO
+	release
+	end
 
 SurvivalArea_Battleground_Text_PtNpc1_0:
 	.string "What should we talk about today? ...Ah,\n"
@@ -48,6 +84,16 @@ SurvivalArea_Battleground_OnTransitionSN:
 	call SurvivalArea_Battleground_EventScript_SNVis_BG_RILEY
 	call SurvivalArea_Battleground_EventScript_SNVis_BG_MARLEY
 	call SurvivalArea_Battleground_EventScript_SNVis_BG_MIRA
+	special SinnohBattlegroundSelect
+	setflag FLAG_SN_HIDE_BG_BUCK_INTRO
+	goto_if_unset FLAG_SN_BATTLED_STARK_MOUNTAIN_ROOM_3_HEATRAN, SurvivalArea_Battleground_OnTransitionSN_Welcome
+	goto_if_set FLAG_SN_BG_BUCK_LEFT, SurvivalArea_Battleground_OnTransitionSN_Welcome
+	clearflag FLAG_SN_HIDE_BG_BUCK_INTRO
+SurvivalArea_Battleground_OnTransitionSN_Welcome:
+	setvar VAR_TEMP_3, 0
+	goto_if_set FLAG_SN_BG_WELCOMED, SurvivalArea_Battleground_OnTransitionSN_End
+	setvar VAR_TEMP_3, 1
+SurvivalArea_Battleground_OnTransitionSN_End:
 	end
 
 SurvivalArea_Battleground_EventScript_SNVis_BG_ROARK:
@@ -773,3 +819,26 @@ SurvivalArea_Battleground_EventScript_SNMira_Done_T:
 SurvivalArea_Battleground_EventScript_SNMira_Lose:
 	.string "Mira: Well done! That was a great\n"
 	.string "battle!$"
+
+SurvivalArea_Battleground_Text_SNWelcome:
+	.string "Oh? So, you are?! You’re Buck’s friend,\n"
+	.string "yes!\p"
+	.string "I’ve heard about you from both Buck\n"
+	.string "and Wake.\p"
+	.string "Well, my young friend, you’re always\n"
+	.string "welcome here from now on!\p"
+	.string "This is a private club for only Sinnoh’s\n"
+	.string "Gym Leaders, or those vouched for by\p"
+	.string "those selfsame Gym Leaders.\p"
+	.string "It’s a place where the best seek to\n"
+	.string "better themselves.\p"
+	.string "Welcome to the Battleground!$"
+
+SurvivalArea_Battleground_Text_SNBuckIntro:
+	.string "Buck: My place is open only to the\n"
+	.string "toughest Trainers--I’m serious.\p"
+	.string "You’re supposed to be introduced by a\n"
+	.string "Gym Leader, but you’re special.\p"
+	.string "Well, I’m off to the Battle Frontier.\p"
+	.string "I feel like seeing how far I can go up\n"
+	.string "the Tower.$"

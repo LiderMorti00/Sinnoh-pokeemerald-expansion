@@ -333,3 +333,64 @@ void SinnohLoadCounterpartMon(void)
     SetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_MOVE3, &move);
     SetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_MOVE4, &move);
 }
+
+// Campo de Batalla: cada día salen hasta tres líderes y un entrenador más (como en Platino).
+// Se llama después de las comprobaciones de visibilidad; oculta a los que no tocan hoy.
+static const u16 sBattlegroundLeaderFlags[] = {
+    FLAG_SN_HIDE_BG_ROARK, FLAG_SN_HIDE_BG_GARDENIA, FLAG_SN_HIDE_BG_WAKE, FLAG_SN_HIDE_BG_MAYLENE,
+    FLAG_SN_HIDE_BG_FANTINA, FLAG_SN_HIDE_BG_CANDICE, FLAG_SN_HIDE_BG_BYRON, FLAG_SN_HIDE_BG_VOLKNER,
+};
+static const u16 sBattlegroundOtherFlags[] = {
+    FLAG_SN_HIDE_BG_CHERYL, FLAG_SN_HIDE_BG_RILEY, FLAG_SN_HIDE_BG_MARLEY, FLAG_SN_HIDE_BG_BUCK, FLAG_SN_HIDE_BG_MIRA,
+};
+
+void SinnohBattlegroundSelect(void)
+{
+    u32 seed = (VarGet(VAR_DAYS) + 1) * 2654435761u;
+    u32 i, n, picked = 0, eligible[ARRAY_COUNT(sBattlegroundOtherFlags)];
+
+    // Requisitos de los entrenadores que no son líderes
+    if (!FlagGet(FLAG_HIDE_FOREST_CHERYL))
+        FlagSet(FLAG_SN_HIDE_BG_CHERYL);
+    if (!FlagGet(FLAG_SN_RECEIVED_RIOLU_EGG))
+        FlagSet(FLAG_SN_HIDE_BG_RILEY);
+    if (!FlagGet(FLAG_SN_MARLEY_ESCORTED))
+        FlagSet(FLAG_SN_HIDE_BG_MARLEY);
+    if (!FlagGet(FLAG_SN_BG_BUCK_LEFT))
+        FlagSet(FLAG_SN_HIDE_BG_BUCK);
+    if (!FlagGet(FLAG_SN_MIRA_ESCORTED))
+        FlagSet(FLAG_SN_HIDE_BG_MIRA);
+
+    // Tres líderes distintos
+    for (i = 0; i < 3; i++)
+    {
+        u32 k;
+        seed = seed * 1103515245u + 12345u;
+        k = (seed >> 16) % ARRAY_COUNT(sBattlegroundLeaderFlags);
+        while (picked & (1u << k))
+            k = (k + 1) % ARRAY_COUNT(sBattlegroundLeaderFlags);
+        picked |= 1u << k;
+    }
+    for (i = 0; i < ARRAY_COUNT(sBattlegroundLeaderFlags); i++)
+    {
+        if (!(picked & (1u << i)))
+            FlagSet(sBattlegroundLeaderFlags[i]);
+    }
+
+    // Un entrenador más entre los que se pueden ver
+    for (i = 0, n = 0; i < ARRAY_COUNT(sBattlegroundOtherFlags); i++)
+    {
+        if (!FlagGet(sBattlegroundOtherFlags[i]))
+            eligible[n++] = i;
+    }
+    if (n != 0)
+    {
+        seed = seed * 1103515245u + 12345u;
+        picked = eligible[(seed >> 16) % n];
+        for (i = 0; i < ARRAY_COUNT(sBattlegroundOtherFlags); i++)
+        {
+            if (i != picked)
+                FlagSet(sBattlegroundOtherFlags[i]);
+        }
+    }
+}

@@ -25,7 +25,8 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SurvivalArea_Battleground_EventScript_PtNpc1",
-      "flag": "0"
+      "flag": "0",
+      "local_id": "LOCALID_BG_EXPERT"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_ROARK",
@@ -195,6 +196,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SurvivalArea_Battleground_EventScript_SNMira",
       "flag": "FLAG_SN_HIDE_BG_MIRA"
+    },
+    {
+      "local_id": "LOCALID_SN_BG_BUCK_INTRO",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_BUCK",
+      "x": 7,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SurvivalArea_Battleground_EventScript_SNBuckIntro",
+      "flag": "FLAG_SN_HIDE_BG_BUCK_INTRO"
     }
   ],
   "warp_events": [

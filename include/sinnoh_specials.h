@@ -16,6 +16,7 @@ void SinnohMarshBinoculars(void);
 void SinnohHoneyReady(void);
 void SinnohHoneySlather(void);
 void SinnohDayOfWeek(void);
+void SinnohBattlegroundSelect(void);
 void SinnohPartyMaxRibbons(void);
 void SinnohSpaTreatment(void);
 void SinnohUnownFormsCount(void);
