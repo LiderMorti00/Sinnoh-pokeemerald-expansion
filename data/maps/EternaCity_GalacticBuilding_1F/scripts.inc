@@ -1,5 +1,75 @@
 EternaCity_GalacticBuilding_1F_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, EternaCity_GalacticBuilding_1F_OnTransition
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, EternaCity_GalacticBuilding_1F_OnFrame
 	.byte 0
+
+EternaCity_GalacticBuilding_1F_OnTransition:
+	setflag FLAG_SN_HIDE_ETERNA_GRUNT_LOOKER
+	setflag FLAG_SN_HIDE_ETERNA_LOOKER
+	setvar VAR_TEMP_3, 1
+	goto_if_set FLAG_HIDE_ETERNA_GALACTIC, EternaCity_GalacticBuilding_1F_OnTransition_End
+	goto_if_set FLAG_SN_ETERNA_LOOKER_MET, EternaCity_GalacticBuilding_1F_OnTransition_Met
+	clearflag FLAG_SN_HIDE_ETERNA_GRUNT_LOOKER
+	setvar VAR_TEMP_3, 0
+	end
+EternaCity_GalacticBuilding_1F_OnTransition_Met:
+	clearflag FLAG_SN_HIDE_ETERNA_LOOKER
+EternaCity_GalacticBuilding_1F_OnTransition_End:
+	end
+
+EternaCity_GalacticBuilding_1F_OnFrame:
+	map_script_2 VAR_TEMP_3, 0, EternaCity_GalacticBuilding_1F_EventScript_SNLookerScene
+	.2byte 0
+
+EternaCity_GalacticBuilding_1F_EventScript_SNLookerScene::
+	lockall
+	setvar VAR_TEMP_3, 1
+	applymovement LOCALID_SN_ETERNA_GRUNT_LOOKER, EternaCity_GalacticBuilding_1F_Movement_SNNotice
+	waitmovement 0
+	sn_walktoplayer LOCALID_SN_ETERNA_GRUNT_LOOKER, SN_SPEED_NORMAL, 0, 0
+	waitmovement LOCALID_SN_ETERNA_GRUNT_LOOKER
+	sn_playerface LOCALID_SN_ETERNA_GRUNT_LOOKER, 1
+	waitmovement OBJ_EVENT_ID_PLAYER
+	msgbox EternaCity_GalacticBuilding_1F_Text_SNHelloItIsMe, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_SN_ETERNA_GRUNT_LOOKER, EternaCity_GalacticBuilding_1F_Movement_SNSpin
+	waitmovement 0
+	setvar VAR_0x8004, LOCALID_SN_ETERNA_GRUNT_LOOKER
+	special SinnohGetObjectPos
+	setobjectxyperm LOCALID_SN_ETERNA_LOOKER, VAR_0x8008, VAR_0x8009
+	removeobject LOCALID_SN_ETERNA_GRUNT_LOOKER
+	clearflag FLAG_SN_HIDE_ETERNA_LOOKER
+	addobject LOCALID_SN_ETERNA_LOOKER
+	applymovement LOCALID_SN_ETERNA_LOOKER, Common_Movement_FacePlayer
+	waitmovement 0
+	setflag FLAG_SN_ETERNA_LOOKER_MET
+	msgbox EternaCity_GalacticBuilding_1F_Text_SNFirstRate, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_SN_ETERNA_LOOKER, EternaCity_GalacticBuilding_1F_Movement_SNSpin
+	waitmovement 0
+	releaseall
+	end
+
+EternaCity_GalacticBuilding_1F_EventScript_SNLooker::
+	msgbox EternaCity_GalacticBuilding_1F_Text_SNFirstRate, MSGBOX_NPC
+	end
+
+EternaCity_GalacticBuilding_1F_Movement_SNNotice:
+	face_left
+	emote_exclamation_mark
+	step_end
+
+EternaCity_GalacticBuilding_1F_Movement_SNSpin:
+	face_down
+	delay_4
+	face_right
+	delay_4
+	face_up
+	delay_4
+	face_left
+	delay_4
+	face_down
+	step_end
 
 EternaCity_GalacticBuilding_1F_EventScript_GruntWelcome::
 	msgbox EternaCity_GalacticBuilding_1F_Text_GruntWelcome, MSGBOX_NPC
@@ -59,3 +129,24 @@ EternaCity_GalacticBuilding_1F_Text_Grunt2Defeat:
 EternaCity_GalacticBuilding_1F_Text_Grunt2Post:
 	.string "You wanted to go up? Well, why didn't\n"
 	.string "you?$"
+
+EternaCity_GalacticBuilding_1F_Text_SNHelloItIsMe:
+	.string "Looker: Hello! It is me! Me! Hahaha! I\n"
+	.string "have startled you, yes?\p"
+	.string "I am, after all, an officer of the\n"
+	.string "International Police.\p"
+	.string "It is only natural that I be a master\n"
+	.string "of disguise.$"
+
+EternaCity_GalacticBuilding_1F_Text_SNFirstRate:
+	.string "...Incidentally, you are a first-rate\n"
+	.string "Trainer. Of that, I am very aware.\p"
+	.string "I therefore think you will be OK, but I\n"
+	.string "must warn you to be careful anyway.\p"
+	.string "Also, a word of advice.\p"
+	.string "This building, it has two stairs. One of\n"
+	.string "them, a trap it must be.\p"
+	.string "But the crooks of Team Galactic, they\n"
+	.string "do not appear, how shall I say, smart.\p"
+	.string "There should be an easy way to tell the\n"
+	.string "stairs apart!$"
