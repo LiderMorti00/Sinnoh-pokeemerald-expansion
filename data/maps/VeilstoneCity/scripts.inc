@@ -268,10 +268,15 @@ VeilstoneCity_EventScript_SNVis_WH_LOOKER_End:
 
 VeilstoneCity_EventScript_SNVis_KEY_GRUNT:
 	setflag FLAG_SN_HIDE_KEY_GRUNT
+	setflag FLAG_SN_HIDE_KEY_LOOKER
 	goto_if_unset FLAG_SN_RECEIVED_GALACTIC_KEY, VeilstoneCity_EventScript_SNVis_KEY_GRUNT_End
 	goto_if_set FLAG_SN_VEIL_STORAGE_OPEN, VeilstoneCity_EventScript_SNVis_KEY_GRUNT_End
 	goto_if_ge VAR_SINNOH_STORY, 32, VeilstoneCity_EventScript_SNVis_KEY_GRUNT_End
+	goto_if_set FLAG_SN_KEY_GRUNT_FLED, VeilstoneCity_EventScript_SNVis_KEY_LOOKER
 	clearflag FLAG_SN_HIDE_KEY_GRUNT
+	return
+VeilstoneCity_EventScript_SNVis_KEY_LOOKER:
+	clearflag FLAG_SN_HIDE_KEY_LOOKER
 VeilstoneCity_EventScript_SNVis_KEY_GRUNT_End:
 	return
 
@@ -689,24 +694,38 @@ VeilstoneCity_EventScript_SNWHCP_L3:
 	.string "Come with me, and we’ll take a look!$"
 
 VeilstoneCity_EventScript_SNKeyGrunt::
-	msgbox VeilstoneCity_EventScript_SNKeyGrunt_T, MSGBOX_NPC
-	end
+	lock
+	faceplayer
+	applymovement LOCALID_SN_KEY_GRUNT, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox VeilstoneCity_EventScript_SNKeyGrunt_T, MSGBOX_DEFAULT
+	closemessage
+	setflag FLAG_SN_KEY_GRUNT_FLED
+	sn_walkto LOCALID_SN_KEY_GRUNT, 44, 14, SN_SPEED_FAST, 0, 0, 0
+	waitmovement LOCALID_SN_KEY_GRUNT
+	removeobject LOCALID_SN_KEY_GRUNT
+	setobjectxyperm LOCALID_SN_KEY_LOOKER, 47, 26
+	clearflag FLAG_SN_HIDE_KEY_LOOKER
+	addobject LOCALID_SN_KEY_LOOKER
+	sn_walktoplayer LOCALID_SN_KEY_LOOKER, SN_SPEED_FAST, 0, 0
+	waitmovement LOCALID_SN_KEY_LOOKER
+	sn_playerface LOCALID_SN_KEY_LOOKER, 1
+	waitmovement OBJ_EVENT_ID_PLAYER
+	goto VeilstoneCity_EventScript_SNKeyLooker_Ask
 
 VeilstoneCity_EventScript_SNKeyGrunt_Looker::
 	lock
 	faceplayer
+VeilstoneCity_EventScript_SNKeyLooker_Ask:
 	msgbox VeilstoneCity_EventScript_SNKeyGrunt_L1, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, VeilstoneCity_EventScript_SNKeyGrunt_No
 	msgbox VeilstoneCity_EventScript_SNKeyGrunt_L2, MSGBOX_DEFAULT
+	giveitem ITEM_GALACTIC_KEY
 	closemessage
 	setflag FLAG_SN_VEIL_STORAGE_OPEN
-	sn_walkto LOCALID_SN_KEY_GRUNT, 44, 14, SN_SPEED_NORMAL, 0, 0, 0
-	sn_walkto LOCALID_SN_KEY_LOOKER, 44, 14, SN_SPEED_NORMAL, 0, 0, 1
-	waitmovement LOCALID_SN_KEY_GRUNT
+	sn_walkto LOCALID_SN_KEY_LOOKER, 25, 17, SN_SPEED_NORMAL, 0, 0, 0
 	waitmovement LOCALID_SN_KEY_LOOKER
-	removeobject LOCALID_SN_KEY_GRUNT
 	removeobject LOCALID_SN_KEY_LOOKER
-	setflag FLAG_SN_HIDE_KEY_GRUNT
 	release
 	end
 VeilstoneCity_EventScript_SNKeyGrunt_No:

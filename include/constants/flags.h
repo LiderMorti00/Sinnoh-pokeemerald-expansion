@@ -3155,5 +3155,7 @@
 #define FLAG_SN_HIDE_CANAL_GYM_BARRY                            (TRAINER_FLAGS_START + TRAINER_MARIELA)
 #define FLAG_SN_HIDE_CANAL_EXPLOSION                            (TRAINER_FLAGS_START + TRAINER_THALIA_5)
 #define FLAG_SN_HIDE_CANAL_SAILOR                               (TRAINER_FLAGS_START + TRAINER_THALIA_4)
+#define FLAG_SN_HIDE_KEY_LOOKER                                 (TRAINER_FLAGS_START + TRAINER_ANDRES_2)
+#define FLAG_SN_KEY_GRUNT_FLED                                  (TRAINER_FLAGS_START + TRAINER_ANDRES_3)
 
 #endif // GUARD_CONSTANTS_FLAGS_H
