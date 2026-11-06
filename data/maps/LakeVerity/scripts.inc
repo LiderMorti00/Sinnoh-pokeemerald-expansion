@@ -192,12 +192,14 @@ LakeVerity_EventScript_SNVERITY_MARS::
 
 LakeVerity_EventScript_SNVERITY_MARS_Won:
 	lock
+	msgbox LakeVerity_Text_SNMarsDefeat2, MSGBOX_DEFAULT
 	msgbox LakeVerity_EventScript_SNVERITY_MARS_Post, MSGBOX_DEFAULT
+	msgbox LakeVerity_Text_SNPullingOut, MSGBOX_DEFAULT
 	closemessage
-	fadescreen FADE_TO_BLACK
+	sn_walkto VAR_LAST_TALKED, 39, 43, SN_SPEED_FAST, 0, 0, 0
+	waitmovement 0
 	removeobject VAR_LAST_TALKED
 	setflag FLAG_SN_HIDE_VERITY_MARS
-	fadescreen FADE_FROM_BLACK
 	call Sinnoh_EventScript_BufferCounterpartName
 	msgbox LakeVerity_Text_SNAfterMars1, MSGBOX_DEFAULT
 	checkplayergender
@@ -223,7 +225,7 @@ LakeVerity_EventScript_SNVERITY_MARS_Intro:
 	.string "You’re all going down!$"
 
 LakeVerity_EventScript_SNVERITY_MARS_Defeat:
-	.string "Mars: I lost again...$"
+	.string "I lost again...$"
 
 LakeVerity_EventScript_SNVERITY_MARS_Post:
 	.string "Mars: The POKéMON of the three lakes\n"
@@ -477,3 +479,18 @@ LakeVerity_Text_SNAfterMars2_SNLu:
 	.string "They’d better not harm the POKéMON\n"
 	.string "they took from the lakes...$"
 
+LakeVerity_Text_SNPullingOut:
+	.string "Team! We’re pulling out! The boss is\n"
+	.string "waiting at the HQ!$"
+
+LakeVerity_Text_SNMarsDefeat2:
+	.string "Mars: So, first the windworks, and now\n"
+	.string "Lake Verity that I owe you for!\p"
+	.string "This shouldn’t be happening to Team\n"
+	.string "Galactic’s Commander...\p"
+	.string "...Calm down, Mars... I’ve done my part in\n"
+	.string "all of this...\p"
+	.string "My mission was to transport the lake’s\n"
+	.string "POKéMON to our HQ...\p"
+	.string "...That’s right! I accomplished my\n"
+	.string "mission without a problem!$"
