@@ -232,14 +232,13 @@ VeilstoneCity_EventScript_SNVis_GYM_CP:
 	setflag FLAG_SN_HIDE_GYM_CP
 	call VeilstoneCity_EventScript_SNCPGfx
 	goto_if_set FLAG_BADGE04_GET, VeilstoneCity_EventScript_SNVis_GYM_CP_End
+	goto_if_set FLAG_SN_VEIL_GYM_SCENE_DONE, VeilstoneCity_EventScript_SNVis_GYM_CP_End
 	clearflag FLAG_SN_HIDE_GYM_CP
 VeilstoneCity_EventScript_SNVis_GYM_CP_End:
 	return
 
 VeilstoneCity_EventScript_SNVis_GYM_WAKE:
 	setflag FLAG_SN_HIDE_GYM_WAKE
-	goto_if_set FLAG_BADGE04_GET, VeilstoneCity_EventScript_SNVis_GYM_WAKE_End
-	clearflag FLAG_SN_HIDE_GYM_WAKE
 VeilstoneCity_EventScript_SNVis_GYM_WAKE_End:
 	return
 
@@ -268,10 +267,15 @@ VeilstoneCity_EventScript_SNVis_WH_LOOKER_End:
 
 VeilstoneCity_EventScript_SNVis_KEY_GRUNT:
 	setflag FLAG_SN_HIDE_KEY_GRUNT
+	setflag FLAG_SN_HIDE_KEY_LOOKER
 	goto_if_unset FLAG_SN_RECEIVED_GALACTIC_KEY, VeilstoneCity_EventScript_SNVis_KEY_GRUNT_End
 	goto_if_set FLAG_SN_VEIL_STORAGE_OPEN, VeilstoneCity_EventScript_SNVis_KEY_GRUNT_End
 	goto_if_ge VAR_SINNOH_STORY, 32, VeilstoneCity_EventScript_SNVis_KEY_GRUNT_End
+	goto_if_set FLAG_SN_KEY_GRUNT_FLED, VeilstoneCity_EventScript_SNVis_KEY_LOOKER
 	clearflag FLAG_SN_HIDE_KEY_GRUNT
+	return
+VeilstoneCity_EventScript_SNVis_KEY_LOOKER:
+	clearflag FLAG_SN_HIDE_KEY_LOOKER
 VeilstoneCity_EventScript_SNVis_KEY_GRUNT_End:
 	return
 
@@ -333,6 +337,80 @@ VeilstoneCity_EventScript_SNGymCP_B_Lu:
 	.string "So, uh, yeah, {PLAYER}. Good luck with\n"
 	.string "the POKéMON Gym.$"
 
+VeilstoneCity_EventScript_SNGymScene::
+	goto_if_set FLAG_SN_HIDE_GYM_CP, VeilstoneCity_EventScript_SNGymScene_End
+	lockall
+	applymovement LOCALID_SN_GYM_CP, Common_Movement_ExclamationMark
+	waitmovement 0
+	sn_walktoplayer LOCALID_SN_GYM_CP, SN_SPEED_NORMAL, 0, 0
+	waitmovement LOCALID_SN_GYM_CP
+	sn_playerface LOCALID_SN_GYM_CP, 1
+	waitmovement OBJ_EVENT_ID_PLAYER
+	checkplayergender
+	goto_if_eq VAR_RESULT, FEMALE, VeilstoneCity_EventScript_SNGymScene_AL
+	msgbox VeilstoneCity_EventScript_SNGymCP_A_D, MSGBOX_DEFAULT
+	goto VeilstoneCity_EventScript_SNGymScene_Wake
+VeilstoneCity_EventScript_SNGymScene_AL:
+	msgbox VeilstoneCity_EventScript_SNGymCP_A_Lu, MSGBOX_DEFAULT
+VeilstoneCity_EventScript_SNGymScene_Wake:
+	closemessage
+	opendoor 8, 36
+	waitdooranim
+	clearflag FLAG_SN_HIDE_GYM_WAKE
+	addobject LOCALID_SN_GYM_WAKE
+	applymovement LOCALID_SN_GYM_WAKE, Common_Movement_WalkDown
+	waitmovement 0
+	closedoor 8, 36
+	waitdooranim
+	msgbox VeilstoneCity_EventScript_SNGymWake_T1, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_SN_GYM_WAKE, Common_Movement_ExclamationMark
+	waitmovement 0
+	sn_walktoplayer LOCALID_SN_GYM_WAKE, SN_SPEED_NORMAL, 0, 0
+	waitmovement LOCALID_SN_GYM_WAKE
+	sn_playerface LOCALID_SN_GYM_WAKE, 1
+	waitmovement OBJ_EVENT_ID_PLAYER
+	msgbox VeilstoneCity_EventScript_SNGymWake_T2, MSGBOX_DEFAULT
+	msgbox VeilstoneCity_EventScript_SNGymWake_T3, MSGBOX_DEFAULT
+	closemessage
+	sn_walkto LOCALID_SN_GYM_WAKE, 8, 45, SN_SPEED_FAST, 0, 0, 0
+	waitmovement LOCALID_SN_GYM_WAKE
+	removeobject LOCALID_SN_GYM_WAKE
+	setflag FLAG_SN_HIDE_GYM_WAKE
+	delay 20
+	checkplayergender
+	goto_if_eq VAR_RESULT, FEMALE, VeilstoneCity_EventScript_SNGymScene_BL
+	msgbox VeilstoneCity_Text_SNDawnDots, MSGBOX_DEFAULT
+	closemessage
+	delay 15
+	sn_playerface LOCALID_SN_GYM_CP, 1
+	waitmovement OBJ_EVENT_ID_PLAYER
+	msgbox VeilstoneCity_EventScript_SNGymCP_B_D, MSGBOX_DEFAULT
+	goto VeilstoneCity_EventScript_SNGymScene_Leave
+VeilstoneCity_EventScript_SNGymScene_BL:
+	msgbox VeilstoneCity_Text_SNLucasDots, MSGBOX_DEFAULT
+	closemessage
+	delay 15
+	sn_playerface LOCALID_SN_GYM_CP, 1
+	waitmovement OBJ_EVENT_ID_PLAYER
+	msgbox VeilstoneCity_EventScript_SNGymCP_B_Lu, MSGBOX_DEFAULT
+VeilstoneCity_EventScript_SNGymScene_Leave:
+	closemessage
+	setflag FLAG_SN_VEIL_GYM_SCENE_DONE
+	sn_walkto LOCALID_SN_GYM_CP, 15, 37, SN_SPEED_NORMAL, 0, 0, 0
+	waitmovement LOCALID_SN_GYM_CP
+	removeobject LOCALID_SN_GYM_CP
+	setflag FLAG_SN_HIDE_GYM_CP
+	releaseall
+VeilstoneCity_EventScript_SNGymScene_End:
+	end
+
+VeilstoneCity_Text_SNDawnDots:
+	.string "Dawn: ...$"
+
+VeilstoneCity_Text_SNLucasDots:
+	.string "Lucas: ...$"
+
 VeilstoneCity_EventScript_SNGymWake::
 	lock
 	faceplayer
@@ -343,15 +421,15 @@ VeilstoneCity_EventScript_SNGymWake::
 	end
 
 VeilstoneCity_EventScript_SNGymWake_T1:
-	.string "The ring is my roiling sea. ? The\n"
-	.string "towering waves shaped me.\p"
+	.string "The ring is my roiling sea.\n"
+	.string "The towering waves shaped me.\p"
 	.string "Crash! Crash! Crasher Wake! Crash!\n"
 	.string "Crash! Crasher Wake!\p"
 	.string "I’m the tidal wave of power to wash you\n"
 	.string "away!\p"
 	.string "Put out the fire, Crasher Wake! Run\n"
 	.string "from electricity, Crasher Wake!\p"
-	.string "Ah, ah, aaaah! The ring is my sea. ?$"
+	.string "Ah, ah, aaaah! The ring is my sea.$"
 
 VeilstoneCity_EventScript_SNGymWake_T2:
 	.string "Hello, dude and young lady! You’re\n"
@@ -395,11 +473,17 @@ VeilstoneCity_EventScript_SNWHCP::
 	faceplayer
 	checkplayergender
 	goto_if_eq VAR_RESULT, FEMALE, VeilstoneCity_EventScript_SNWHCP_Ask_L
-	msgbox VeilstoneCity_EventScript_SNWHCP_Ask_D, MSGBOX_DEFAULT
+	msgbox VeilstoneCity_EventScript_SNWHCP_Ask_D, MSGBOX_YESNO
 	goto VeilstoneCity_EventScript_SNWHCP_Ask_N
 VeilstoneCity_EventScript_SNWHCP_Ask_L:
-	msgbox VeilstoneCity_EventScript_SNWHCP_Ask_Lu, MSGBOX_DEFAULT
+	msgbox VeilstoneCity_EventScript_SNWHCP_Ask_Lu, MSGBOX_YESNO
 VeilstoneCity_EventScript_SNWHCP_Ask_N:
+	goto_if_eq VAR_RESULT, NO, VeilstoneCity_EventScript_SNWHCP_Decline
+	closemessage
+	sn_walkto LOCALID_SN_WH_CP, 25, 19, SN_SPEED_NORMAL, DIR_NORTH, 0, 0
+	sn_walkto OBJ_EVENT_ID_PLAYER, 26, 19, SN_SPEED_NORMAL, DIR_NORTH, 0, 1
+	waitmovement LOCALID_SN_WH_CP
+	waitmovement OBJ_EVENT_ID_PLAYER
 	checkplayergender
 	goto_if_eq VAR_RESULT, FEMALE, VeilstoneCity_EventScript_SNWHCP_Team_L
 	msgbox VeilstoneCity_EventScript_SNWHCP_Team_D, MSGBOX_DEFAULT
@@ -453,7 +537,7 @@ VeilstoneCity_EventScript_SNWHCP_Battle:
 	msgbox VeilstoneCity_EventScript_SNWHCP_G4, MSGBOX_DEFAULT
 	msgbox VeilstoneCity_EventScript_SNWHCP_G5, MSGBOX_DEFAULT
 	closemessage
-		sn_walkto LOCALID_SN_WH_GRUNT0, 25, 17, SN_SPEED_NORMAL, 0, 0, 0
+	sn_walkto LOCALID_SN_WH_GRUNT0, 25, 17, SN_SPEED_NORMAL, 0, 0, 0
 	sn_walkto LOCALID_SN_WH_GRUNT1, 25, 17, SN_SPEED_NORMAL, 0, 0, 1
 	waitmovement LOCALID_SN_WH_GRUNT0
 	waitmovement LOCALID_SN_WH_GRUNT1
@@ -491,19 +575,38 @@ VeilstoneCity_EventScript_SNWHCP_Bye_L:
 	msgbox VeilstoneCity_EventScript_SNWHCP_Bye_Lu, MSGBOX_DEFAULT
 VeilstoneCity_EventScript_SNWHCP_Bye_N:
 	closemessage
-		sn_walkto LOCALID_SN_WH_CP, 25, 17, SN_SPEED_NORMAL, 0, 0, 0
+	sn_walkto LOCALID_SN_WH_CP, 25, 17, SN_SPEED_NORMAL, 0, 0, 0
 	waitmovement LOCALID_SN_WH_CP
 	removeobject LOCALID_SN_WH_CP
 	setflag FLAG_SN_HIDE_WH_CP
 	msgbox VeilstoneCity_EventScript_SNWHCP_L3, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_SN_VEIL_WAREHOUSE_DONE
-		sn_walkto LOCALID_SN_WH_LOOKER, 25, 17, SN_SPEED_NORMAL, 0, 0, 0
+	sn_walkto LOCALID_SN_WH_LOOKER, 25, 17, SN_SPEED_NORMAL, 0, 0, 0
 	waitmovement LOCALID_SN_WH_LOOKER
 	removeobject LOCALID_SN_WH_LOOKER
 	setflag FLAG_SN_HIDE_WH_LOOKER
 	release
 	end
+
+VeilstoneCity_EventScript_SNWHCP_Decline:
+	checkplayergender
+	goto_if_eq VAR_RESULT, FEMALE, VeilstoneCity_EventScript_SNWHCP_Decline_L
+	msgbox VeilstoneCity_EventScript_SNWHCP_Wait_D, MSGBOX_DEFAULT
+	release
+	end
+VeilstoneCity_EventScript_SNWHCP_Decline_L:
+	msgbox VeilstoneCity_EventScript_SNWHCP_Wait_Lu, MSGBOX_DEFAULT
+	release
+	end
+
+VeilstoneCity_EventScript_SNWHCP_Wait_D:
+	.string "Dawn: I’ll be waiting. Please get ready\n"
+	.string "and come quickly.$"
+
+VeilstoneCity_EventScript_SNWHCP_Wait_Lu:
+	.string "Lucas: I’ll be waiting! Get ready and\n"
+	.string "come quick!$"
 
 VeilstoneCity_EventScript_SNWHLookerTalk::
 	msgbox VeilstoneCity_EventScript_SNWHCP_L3, MSGBOX_NPC
@@ -664,24 +767,38 @@ VeilstoneCity_EventScript_SNWHCP_L3:
 	.string "Come with me, and we’ll take a look!$"
 
 VeilstoneCity_EventScript_SNKeyGrunt::
-	msgbox VeilstoneCity_EventScript_SNKeyGrunt_T, MSGBOX_NPC
-	end
+	lock
+	faceplayer
+	applymovement LOCALID_SN_KEY_GRUNT, Common_Movement_ExclamationMark
+	waitmovement 0
+	msgbox VeilstoneCity_EventScript_SNKeyGrunt_T, MSGBOX_DEFAULT
+	closemessage
+	setflag FLAG_SN_KEY_GRUNT_FLED
+	sn_walkto LOCALID_SN_KEY_GRUNT, 44, 14, SN_SPEED_FAST, 0, 0, 0
+	waitmovement LOCALID_SN_KEY_GRUNT
+	removeobject LOCALID_SN_KEY_GRUNT
+	setobjectxyperm LOCALID_SN_KEY_LOOKER, 47, 26
+	clearflag FLAG_SN_HIDE_KEY_LOOKER
+	addobject LOCALID_SN_KEY_LOOKER
+	sn_walktoplayer LOCALID_SN_KEY_LOOKER, SN_SPEED_FAST, 0, 0
+	waitmovement LOCALID_SN_KEY_LOOKER
+	sn_playerface LOCALID_SN_KEY_LOOKER, 1
+	waitmovement OBJ_EVENT_ID_PLAYER
+	goto VeilstoneCity_EventScript_SNKeyLooker_Ask
 
 VeilstoneCity_EventScript_SNKeyGrunt_Looker::
 	lock
 	faceplayer
+VeilstoneCity_EventScript_SNKeyLooker_Ask:
 	msgbox VeilstoneCity_EventScript_SNKeyGrunt_L1, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, VeilstoneCity_EventScript_SNKeyGrunt_No
 	msgbox VeilstoneCity_EventScript_SNKeyGrunt_L2, MSGBOX_DEFAULT
+	giveitem ITEM_GALACTIC_KEY
 	closemessage
 	setflag FLAG_SN_VEIL_STORAGE_OPEN
-		sn_walkto LOCALID_SN_KEY_GRUNT, 44, 14, SN_SPEED_NORMAL, 0, 0, 0
-	sn_walkto LOCALID_SN_KEY_LOOKER, 44, 14, SN_SPEED_NORMAL, 0, 0, 1
-	waitmovement LOCALID_SN_KEY_GRUNT
+	sn_walkto LOCALID_SN_KEY_LOOKER, 25, 17, SN_SPEED_NORMAL, 0, 0, 0
 	waitmovement LOCALID_SN_KEY_LOOKER
-	removeobject LOCALID_SN_KEY_GRUNT
 	removeobject LOCALID_SN_KEY_LOOKER
-	setflag FLAG_SN_HIDE_KEY_GRUNT
 	release
 	end
 VeilstoneCity_EventScript_SNKeyGrunt_No:

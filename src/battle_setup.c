@@ -532,6 +532,16 @@ void StartWallyTutorialBattle(void)
     CreateBattleStartTask(B_TRANSITION_SLICE, 0);
 }
 
+// Proyecto Sinnoh: demostración de captura de la Ruta 202 (Dawn o Lucas atrapan un Bidoof).
+void SinnohStartCatchTutorial(void)
+{
+    CreateMaleMon(&gParties[B_TRAINER_OPPONENT_A][0], SPECIES_BIDOOF, 2);
+    LockPlayerFieldControls();
+    gMain.savedCallback = CB2_ReturnToFieldContinueScriptPlayMapMusic;
+    gBattleTypeFlags = BATTLE_TYPE_CATCH_TUTORIAL;
+    CreateBattleStartTask(B_TRANSITION_SLICE, 0);
+}
+
 void StartOldManTutorialBattle(void)
 {
     CreateMaleMon(&gParties[B_TRAINER_OPPONENT_A][0], SPECIES_WEEDLE, 5);

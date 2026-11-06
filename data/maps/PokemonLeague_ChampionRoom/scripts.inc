@@ -38,8 +38,8 @@ PokemonLeague_ChampionRoom_Movement_PlayerApproachWallace:
 
 PokemonLeague_ChampionRoom_EventScript_Wallace::
 	playbgm MUS_ENCOUNTER_CHAMPION, FALSE
+	goto_if_set FLAG_SYS_GAME_CLEAR, PokemonLeague_ChampionRoom_EventScript_SNRematchIntro
 	msgbox PokemonLeague_ChampionRoom_Text_IntroSpeech, MSGBOX_DEFAULT
-	goto_if_set FLAG_SYS_GAME_CLEAR, PokemonLeague_ChampionRoom_EventScript_SNRematchBattle
 	trainerbattle_no_intro TRAINER_WALLACE, PokemonLeague_ChampionRoom_Text_Defeat
 PokemonLeague_ChampionRoom_EventScript_SNAfterBattle:
 	goto PokemonLeague_ChampionRoom_EventScript_Defeated
@@ -150,6 +150,24 @@ PokemonLeague_ChampionRoom_Text_BrendanCongratulations:
 	.string "{PLAYER}, way to go!\n"
 	.string "Congratulations!$"
 
+PokemonLeague_ChampionRoom_EventScript_SNRematchIntro:
+	msgbox PokemonLeague_ChampionRoom_Text_SNRematchIntro, MSGBOX_DEFAULT
 PokemonLeague_ChampionRoom_EventScript_SNRematchBattle:
 	trainerbattle_no_intro TRAINER_ROBERT_1, PokemonLeague_ChampionRoom_Text_Defeat
 	goto PokemonLeague_ChampionRoom_EventScript_SNAfterBattle
+
+PokemonLeague_ChampionRoom_Text_SNRematchIntro:
+	.string "Cynthia: One look at you tells\n"
+	.string "me many things about you.\p"
+	.string "Together, you and your POKéMON\n"
+	.string "overcame all the challenges you\l"
+	.string "faced, however difficult.\p"
+	.string "It means that you’ve triumphed over\n"
+	.string "any personal weaknesses, too.\p"
+	.string "The power you learned...\n"
+	.string "I can feel it from you.\p"
+	.string "That’s enough talking.\n"
+	.string "Let’s get on with why you’re here.\p"
+	.string "I, Cynthia, accept your challenge as\n"
+	.string "the POKéMON League Champion!\p"
+	.string "There won’t be any letup from me!$"

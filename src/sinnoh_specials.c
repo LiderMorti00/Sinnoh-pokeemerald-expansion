@@ -6,6 +6,7 @@
 #include "constants/vars.h"
 #include "random.h"
 #include "sinnoh_specials.h"
+#include "constants/trainers.h"
 #include "constants/items.h"
 #include "constants/moves.h"
 #include "constants/species.h"
@@ -306,4 +307,29 @@ void SinnohCountAllMons(void)
             if (GetBoxMonDataAt(box, pos, MON_DATA_SPECIES) != SPECIES_NONE)
                 n++;
     gSpecialVar_Result = n;
+}
+
+// Proyecto Sinnoh: demostración de captura de la Ruta 202 (Dawn o Lucas atrapan un Bidoof).
+// Se usa la batalla de Wally de Esmeralda con el sprite de espaldas del acompañante.
+enum TrainerPicID SinnohTutorialBackPic(void)
+{
+    return gSaveBlock2Ptr->playerGender == MALE ? TRAINER_PIC_SINNOH_DAWN : TRAINER_PIC_SINNOH_LUCAS;
+}
+
+void SinnohLoadCounterpartMon(void)
+{
+    // Barry se queda el inicial con ventaja; el acompañante, el que sobra.
+    static const u16 sCounterpartStarter[] = {SPECIES_TURTWIG, SPECIES_CHIMCHAR, SPECIES_PIPLUP};
+    u16 species = sCounterpartStarter[VarGet(VAR_STARTER_MON) % 3];
+    u16 move = MOVE_TACKLE;
+    if (species == SPECIES_CHIMCHAR)
+        move = MOVE_SCRATCH;
+    else if (species == SPECIES_PIPLUP)
+        move = MOVE_POUND;
+    CreateRandomMon(&gParties[B_TRAINER_PLAYER][0], species, 6);
+    SetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_MOVE1, &move);
+    move = MOVE_NONE;
+    SetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_MOVE2, &move);
+    SetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_MOVE3, &move);
+    SetMonData(&gParties[B_TRAINER_PLAYER][0], MON_DATA_MOVE4, &move);
 }

@@ -3148,4 +3148,18 @@
 #define FLAG_SN_HIDE_TWINLEAF_BARRY                             (TRAINER_FLAGS_START + TRAINER_EVERETT)
 #define FLAG_SN_TWINLEAF_THUD                                   (TRAINER_FLAGS_START + TRAINER_ALVARO)
 
+
+// ---- Proyecto Sinnoh: historia de Platino (objetos, regalos y objetos ocultos) ----
+#define FLAG_SN_CANAL_BARRY_GYM_DONE                            (TRAINER_FLAGS_START + TRAINER_EVERETT)
+#define FLAG_SN_CANAL_EXPLOSION_DONE                            (TRAINER_FLAGS_START + TRAINER_ALVARO)
+#define FLAG_SN_HIDE_CANAL_GYM_BARRY                            (TRAINER_FLAGS_START + TRAINER_MARIELA)
+#define FLAG_SN_HIDE_CANAL_EXPLOSION                            (TRAINER_FLAGS_START + TRAINER_THALIA_5)
+#define FLAG_SN_HIDE_CANAL_SAILOR                               (TRAINER_FLAGS_START + TRAINER_THALIA_4)
+#define FLAG_SN_HIDE_KEY_LOOKER                                 (TRAINER_FLAGS_START + TRAINER_ANDRES_2)
+#define FLAG_SN_KEY_GRUNT_FLED                                  (TRAINER_FLAGS_START + TRAINER_ANDRES_3)
+#define FLAG_SN_HIDE_HOF_ROWAN                                  (TRAINER_FLAGS_START + TRAINER_ANDRES_4)
+#define FLAG_SN_HIDE_ACUITYFRONT_BARRY                          (TRAINER_FLAGS_START + TRAINER_ANDRES_5)
+#define FLAG_SN_ACUITYFRONT_BARRY_DONE                          (TRAINER_FLAGS_START + TRAINER_CORY_2)
+#define FLAG_SN_VEIL_GYM_SCENE_DONE                             (TRAINER_FLAGS_START + TRAINER_CORY_3)
+
 #endif // GUARD_CONSTANTS_FLAGS_H

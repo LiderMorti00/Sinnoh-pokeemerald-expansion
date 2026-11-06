@@ -185,20 +185,28 @@ PokemonLeague_NorthPokemonCenter_1F_EventScript_SNBarry_After:
 	release
 	end
 PokemonLeague_NorthPokemonCenter_1F_EventScript_SNBarry_Intro:
-	.string "BARRY: Hey, {PLAYER}! Took you long\n"
-	.string "enough!\p"
-	.string "I’m challenging the Elite Four too...\p"
-	.string "But first, I’m going to beat you!\p"
-	.string "I’m fining you $10 million if you lose!$"
+	.string "{RIVAL}: Hold it! Don’t go off without\n"
+	.string "me!\p"
+	.string "You’re challenging the POKéMON League,\n"
+	.string "aren’t you?\p"
+	.string "That’s why I’m here, too.\p"
+	.string "Let’s see who’s more worthy of making\n"
+	.string "the challenge with a battle!$"
 
 PokemonLeague_NorthPokemonCenter_1F_EventScript_SNBarry_Defeat:
 	.string "BARRY: Aww... You’re just too tough!$"
 
 PokemonLeague_NorthPokemonCenter_1F_EventScript_SNBarry_Post:
-	.string "BARRY: OK! I’m going to train some more!\p"
-	.string "You go on ahead, {PLAYER}!\p"
-	.string "Show the Elite Four what Twinleaf Town\n"
-	.string "Trainers are made of!$"
+	.string "{RIVAL}: I guess I’m not ready for the\n"
+	.string "POKéMON League if I’m losing\p"
+	.string "to you!\p"
+	.string "Darn it! You watch, though!\p"
+	.string "I’ll get tougher and win my way through\n"
+	.string "the POKéMON League!\p"
+	.string "Because I’m going to become the\n"
+	.string "Champion, the toughest Trainer!\p"
+	.string "{PLAYER}! You’d better not lose to\n"
+	.string "anyone before me!$"
 
 PokemonLeague_NorthPokemonCenter_1F_EventScript_SNPOKEMONLEAGUE_NORTHPOKEMONCENTER_1FBARRY_T0::
 	goto_if_set FLAG_SN_HIDE_LEAGUE_BARRY, PokemonLeague_NorthPokemonCenter_1F_EventScript_SNPOKEMONLEAGUE_NORTHPOKEMONCENTER_1FBARRY_T0_End

@@ -20,4 +20,8 @@ void SinnohPartyMaxRibbons(void);
 void SinnohSpaTreatment(void);
 void SinnohUnownFormsCount(void);
 void SinnohCountAllMons(void);
+enum TrainerPicID SinnohTutorialBackPic(void);
+void SinnohLoadCounterpartMon(void);
+void SinnohStartCatchTutorial(void);
+
 #endif // GUARD_SINNOH_SPECIALS_H

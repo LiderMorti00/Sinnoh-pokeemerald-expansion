@@ -16,22 +16,10 @@ LakeAcuity_EventScript_SNVis_ACUITY_BARRY_End:
 	return
 
 LakeAcuity_EventScript_SNBarry::
-	lock
-	faceplayer
-	msgbox LakeAcuity_EventScript_SNBarry_T1, MSGBOX_DEFAULT
-	msgbox LakeAcuity_EventScript_SNBarry_T2, MSGBOX_DEFAULT
-	msgbox LakeAcuity_EventScript_SNBarry_T3, MSGBOX_DEFAULT
-	giveitem ITEM_GALACTIC_KEY
-	setflag FLAG_SN_RECEIVED_GALACTIC_KEY
-	closemessage
-		sn_walkto VAR_LAST_TALKED, 6, 48, SN_SPEED_FAST, 0, 0, 0
-	waitmovement VAR_LAST_TALKED
-	removeobject VAR_LAST_TALKED
-	setflag FLAG_SN_HIDE_ACUITY_BARRY
-	release
+	msgbox LakeAcuity_EventScript_SNBarry_T2, MSGBOX_NPC
 	end
 LakeAcuity_EventScript_SNBarry_T1:
-	.string "BARRY: ... ...\p"
+	.string "{RIVAL}: ... ...\p"
 	.string "Yeah, that’s right!\p"
 	.string "I couldn’t do anything against Team\n"
 	.string "Galactic!$"
@@ -39,14 +27,6 @@ LakeAcuity_EventScript_SNBarry_T1:
 LakeAcuity_EventScript_SNBarry_T2:
 	.string "That POKéMON called UXIE... It was\n"
 	.string "suffering...$"
-
-LakeAcuity_EventScript_SNBarry_T3:
-	.string "BARRY: That Jupiter dropped this key\n"
-	.string "on her way out!\p"
-	.string "It opens the Team Galactic HQ in\n"
-	.string "Veilstone City!\p"
-	.string "Go! I’ll catch up after I train some\n"
-	.string "more!$"
 
 LakeAcuity_EventScript_SNVis_ACUITY_JUPITER:
 	setflag FLAG_SN_HIDE_ACUITY_JUPITER
@@ -59,30 +39,79 @@ LakeAcuity_EventScript_SNVis_ACUITY_JUPITER_End:
 LakeAcuity_EventScript_SNScene::
 	goto_if_set FLAG_SN_HIDE_ACUITY_JUPITER, LakeAcuity_EventScript_SNSceneEnd
 	lockall
-	applymovement LOCALID_SN_ACUITY_JUPITER, Common_Movement_ExclamationMark
+	delay 15
+	applymovement LOCALID_SN_ACUITY_BARRY, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
+	msgbox LakeAcuity_Text_SNNotGettingAway, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_SN_ACUITY_JUPITER, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	msgbox LakeAcuity_Text_SNJupiter, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_SN_ACUITY_JUPITER, LakeAcuity_Movement_SNJupiterLeaves
-	waitmovement 0
+	sn_walktoplayer LOCALID_SN_ACUITY_JUPITER, SN_SPEED_NORMAL, 0, 0
+	waitmovement LOCALID_SN_ACUITY_JUPITER
+	sn_playerface LOCALID_SN_ACUITY_JUPITER, 1
+	waitmovement OBJ_EVENT_ID_PLAYER
+	msgbox LakeAcuity_Text_SNDontWaste, MSGBOX_DEFAULT
+	closemessage
+	sn_walkto LOCALID_SN_ACUITY_JUPITER, 7, 49, SN_SPEED_NORMAL, 0, 0, 0
+	waitmovement LOCALID_SN_ACUITY_JUPITER
+	playse SE_EXIT
 	removeobject LOCALID_SN_ACUITY_JUPITER
 	setflag FLAG_SN_HIDE_ACUITY_JUPITER
-	applymovement LOCALID_SN_ACUITY_BARRY, Common_Movement_FaceDown
+	sn_walkto OBJ_EVENT_ID_PLAYER, 7, 44, SN_SPEED_NORMAL, 0, SN_MOVE_ADJACENT, 1
+	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement LOCALID_SN_ACUITY_BARRY, Common_Movement_FacePlayer
 	waitmovement 0
+	msgbox LakeAcuity_EventScript_SNBarry_T1, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_SN_ACUITY_BARRY, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
+	msgbox LakeAcuity_EventScript_SNBarry_T2, MSGBOX_DEFAULT
+	closemessage
+	delay 30
+	applymovement LOCALID_SN_ACUITY_BARRY, Common_Movement_FacePlayer
+	waitmovement 0
+	msgbox LakeAcuity_Text_SNStronger, MSGBOX_DEFAULT
+	closemessage
+	sn_walkto LOCALID_SN_ACUITY_BARRY, 7, 49, SN_SPEED_FAST, 0, 0, 0
+	waitmovement LOCALID_SN_ACUITY_BARRY
+	playse SE_EXIT
+	removeobject LOCALID_SN_ACUITY_BARRY
+	setflag FLAG_SN_HIDE_ACUITY_BARRY
+	setflag FLAG_SN_RECEIVED_GALACTIC_KEY
 	releaseall
-	goto LakeAcuity_EventScript_SNBarry
+	end
 LakeAcuity_EventScript_SNSceneEnd:
 	end
 
-LakeAcuity_Movement_SNJupiterLeaves:
-	walk_fast_right
-	walk_fast_right
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	step_end
+LakeAcuity_Text_SNNotGettingAway:
+	.string "{RIVAL}: !\p"
+	.string "You’re not getting away with this, Team\n"
+	.string "Galactic!$"
+
+LakeAcuity_Text_SNDontWaste:
+	.string "Oh? Don’t I know you? We met in Eterna\n"
+	.string "City.\p"
+	.string "Listen. Team Galactic is going to do\n"
+	.string "something huge for everyone’s sake.\p"
+	.string "That’s why you should keep out of Team\n"
+	.string "Galactic’s way.\p"
+	.string "Don’t come whining about poor POKéMON\n"
+	.string "and other trivial junk like that.\p"
+	.string "Don’t waste your time coming to our HQ\n"
+	.string "in Veilstone.\p"
+	.string "Now, if you’ll excuse me.$"
+
+LakeAcuity_Text_SNStronger:
+	.string "I’m going to get tougher...\p"
+	.string "It’s not about winning or losing...\n"
+	.string "That’s not good enough...\p"
+	.string "I have to be stronger...\p"
+	.string "It’s not enough to just want to be the\n"
+	.string "most powerful Trainer ever...\p"
+	.string "It takes honest effort... And a\n"
+	.string "determined heart.$"
 
 LakeAcuity_Text_SNJupiter:
 	.string "Jupiter: Oh? Are you finished already?\p"
