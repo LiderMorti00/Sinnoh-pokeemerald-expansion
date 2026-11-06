@@ -30,15 +30,32 @@ ValorLakefront_EventScript_SNCynthia::
 	lock
 	faceplayer
 	goto_if_set FLAG_SN_HIDE_VALOR_BARRY, ValorLakefront_EventScript_SNCynthia_NoBarry
+	msgbox ValorLakefront_Text_SNIHadToTalk, MSGBOX_DEFAULT
+	closemessage
+	sn_walktoplayer LOCALID_SN_VALOR_BARRY, SN_SPEED_FAST, 0, 0
+	waitmovement LOCALID_SN_VALOR_BARRY
+	sn_playerface LOCALID_SN_VALOR_BARRY, 1
+	waitmovement OBJ_EVENT_ID_PLAYER
+	msgbox ValorLakefront_Text_SNBarry0, MSGBOX_DEFAULT
+	msgbox ValorLakefront_Text_SNSister, MSGBOX_DEFAULT
 	msgbox ValorLakefront_Text_SNBarry1, MSGBOX_DEFAULT
 	closemessage
-		sn_walkto LOCALID_SN_VALOR_BARRY, 46, 20, SN_SPEED_FAST, 0, 0, 0
+	sn_walkto LOCALID_SN_VALOR_BARRY, 46, 20, SN_SPEED_FAST, 0, 0, 0
 	waitmovement LOCALID_SN_VALOR_BARRY
 	removeobject LOCALID_SN_VALOR_BARRY
 	setflag FLAG_SN_HIDE_VALOR_BARRY
 	msgbox ValorLakefront_Text_SNHesYourFriend, MSGBOX_DEFAULT
+	closemessage
+	sn_playerface LOCALID_SN_VALOR_CYNTHIA, 1
+	waitmovement OBJ_EVENT_ID_PLAYER
+	applymovement LOCALID_SN_VALOR_CYNTHIA, Common_Movement_FacePlayer
+	waitmovement 0
+	msgbox ValorLakefront_Text_SNPsyduck, MSGBOX_YESNO
+	goto ValorLakefront_EventScript_SNCynthia_Answer
 ValorLakefront_EventScript_SNCynthia_NoBarry:
-	msgbox ValorLakefront_Text_SNIHadToTalk, MSGBOX_YESNO
+	msgbox ValorLakefront_Text_SNIHadToTalk, MSGBOX_DEFAULT
+	msgbox ValorLakefront_Text_SNPsyduck, MSGBOX_YESNO
+ValorLakefront_EventScript_SNCynthia_Answer:
 	goto_if_eq VAR_RESULT, YES, ValorLakefront_EventScript_SNCynthia_Seen
 	msgbox ValorLakefront_Text_SNHaventSeen, MSGBOX_DEFAULT
 	goto ValorLakefront_EventScript_SNCynthia_Potion
@@ -203,10 +220,18 @@ ValorLakefront_EventScript_SNHoneyTree_End:
 	release
 	end
 
+ValorLakefront_Text_SNBarry0:
+	.string "{RIVAL}: Hey, {PLAYER}!\n"
+	.string "Where’d that Galactic goon run off to?$"
+
+ValorLakefront_Text_SNSister:
+	.string "Huh?\n"
+	.string "Is this your older sister?\p"
+	.string "No? She isn’t?\n"
+	.string "Oh, OK.$"
+
 ValorLakefront_Text_SNBarry1:
-	.string "{PLAYER}: Hey, {RIVAL}! Where’d that\n"
-	.string "Galactic goon run off to?\p"
-	.string "{RIVAL}: That explosion in the Great\n"
+	.string "That explosion in the Great\n"
 	.string "Marsh? It wasn’t anything serious.\p"
 	.string "Mr. Wake told me to tell you that.\p"
 	.string "But that Team Galactic... Wow! Are they\n"
@@ -235,7 +260,9 @@ ValorLakefront_Text_SNIHadToTalk:
 	.string "No one must enter the chamber of that\n"
 	.string "POKéMON...\p"
 	.string "Oh, that’s right! I had to talk to you\n"
-	.string "about something else...\p"
+	.string "about something else...$"
+
+ValorLakefront_Text_SNPsyduck:
 	.string "Cynthia: So, getting back to what I\n"
 	.string "started saying earlier...\p"
 	.string "Have you seen the group of PSYDUCK on\n"
