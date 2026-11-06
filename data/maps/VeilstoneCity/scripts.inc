@@ -395,11 +395,17 @@ VeilstoneCity_EventScript_SNWHCP::
 	faceplayer
 	checkplayergender
 	goto_if_eq VAR_RESULT, FEMALE, VeilstoneCity_EventScript_SNWHCP_Ask_L
-	msgbox VeilstoneCity_EventScript_SNWHCP_Ask_D, MSGBOX_DEFAULT
+	msgbox VeilstoneCity_EventScript_SNWHCP_Ask_D, MSGBOX_YESNO
 	goto VeilstoneCity_EventScript_SNWHCP_Ask_N
 VeilstoneCity_EventScript_SNWHCP_Ask_L:
-	msgbox VeilstoneCity_EventScript_SNWHCP_Ask_Lu, MSGBOX_DEFAULT
+	msgbox VeilstoneCity_EventScript_SNWHCP_Ask_Lu, MSGBOX_YESNO
 VeilstoneCity_EventScript_SNWHCP_Ask_N:
+	goto_if_eq VAR_RESULT, NO, VeilstoneCity_EventScript_SNWHCP_Decline
+	closemessage
+	sn_walkto LOCALID_SN_WH_CP, 25, 19, SN_SPEED_NORMAL, DIR_NORTH, 0, 0
+	sn_walkto OBJ_EVENT_ID_PLAYER, 26, 19, SN_SPEED_NORMAL, DIR_NORTH, 0, 1
+	waitmovement LOCALID_SN_WH_CP
+	waitmovement OBJ_EVENT_ID_PLAYER
 	checkplayergender
 	goto_if_eq VAR_RESULT, FEMALE, VeilstoneCity_EventScript_SNWHCP_Team_L
 	msgbox VeilstoneCity_EventScript_SNWHCP_Team_D, MSGBOX_DEFAULT
@@ -453,7 +459,7 @@ VeilstoneCity_EventScript_SNWHCP_Battle:
 	msgbox VeilstoneCity_EventScript_SNWHCP_G4, MSGBOX_DEFAULT
 	msgbox VeilstoneCity_EventScript_SNWHCP_G5, MSGBOX_DEFAULT
 	closemessage
-		sn_walkto LOCALID_SN_WH_GRUNT0, 25, 17, SN_SPEED_NORMAL, 0, 0, 0
+	sn_walkto LOCALID_SN_WH_GRUNT0, 25, 17, SN_SPEED_NORMAL, 0, 0, 0
 	sn_walkto LOCALID_SN_WH_GRUNT1, 25, 17, SN_SPEED_NORMAL, 0, 0, 1
 	waitmovement LOCALID_SN_WH_GRUNT0
 	waitmovement LOCALID_SN_WH_GRUNT1
@@ -491,19 +497,38 @@ VeilstoneCity_EventScript_SNWHCP_Bye_L:
 	msgbox VeilstoneCity_EventScript_SNWHCP_Bye_Lu, MSGBOX_DEFAULT
 VeilstoneCity_EventScript_SNWHCP_Bye_N:
 	closemessage
-		sn_walkto LOCALID_SN_WH_CP, 25, 17, SN_SPEED_NORMAL, 0, 0, 0
+	sn_walkto LOCALID_SN_WH_CP, 25, 17, SN_SPEED_NORMAL, 0, 0, 0
 	waitmovement LOCALID_SN_WH_CP
 	removeobject LOCALID_SN_WH_CP
 	setflag FLAG_SN_HIDE_WH_CP
 	msgbox VeilstoneCity_EventScript_SNWHCP_L3, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_SN_VEIL_WAREHOUSE_DONE
-		sn_walkto LOCALID_SN_WH_LOOKER, 25, 17, SN_SPEED_NORMAL, 0, 0, 0
+	sn_walkto LOCALID_SN_WH_LOOKER, 25, 17, SN_SPEED_NORMAL, 0, 0, 0
 	waitmovement LOCALID_SN_WH_LOOKER
 	removeobject LOCALID_SN_WH_LOOKER
 	setflag FLAG_SN_HIDE_WH_LOOKER
 	release
 	end
+
+VeilstoneCity_EventScript_SNWHCP_Decline:
+	checkplayergender
+	goto_if_eq VAR_RESULT, FEMALE, VeilstoneCity_EventScript_SNWHCP_Decline_L
+	msgbox VeilstoneCity_EventScript_SNWHCP_Wait_D, MSGBOX_DEFAULT
+	release
+	end
+VeilstoneCity_EventScript_SNWHCP_Decline_L:
+	msgbox VeilstoneCity_EventScript_SNWHCP_Wait_Lu, MSGBOX_DEFAULT
+	release
+	end
+
+VeilstoneCity_EventScript_SNWHCP_Wait_D:
+	.string "Dawn: I’ll be waiting. Please get ready\n"
+	.string "and come quickly.$"
+
+VeilstoneCity_EventScript_SNWHCP_Wait_Lu:
+	.string "Lucas: I’ll be waiting! Get ready and\n"
+	.string "come quick!$"
 
 VeilstoneCity_EventScript_SNWHLookerTalk::
 	msgbox VeilstoneCity_EventScript_SNWHCP_L3, MSGBOX_NPC
@@ -675,7 +700,7 @@ VeilstoneCity_EventScript_SNKeyGrunt_Looker::
 	msgbox VeilstoneCity_EventScript_SNKeyGrunt_L2, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_SN_VEIL_STORAGE_OPEN
-		sn_walkto LOCALID_SN_KEY_GRUNT, 44, 14, SN_SPEED_NORMAL, 0, 0, 0
+	sn_walkto LOCALID_SN_KEY_GRUNT, 44, 14, SN_SPEED_NORMAL, 0, 0, 0
 	sn_walkto LOCALID_SN_KEY_LOOKER, 44, 14, SN_SPEED_NORMAL, 0, 0, 1
 	waitmovement LOCALID_SN_KEY_GRUNT
 	waitmovement LOCALID_SN_KEY_LOOKER
