@@ -80,7 +80,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SINNOH_BREEDER_F",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_MIDDLE_AGED_WOMAN",
       "x": 26,
       "y": 4,
       "elevation": 3,
@@ -93,7 +93,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SINNOH_COLLECTOR",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_FAT_MAN",
       "x": 26,
       "y": 7,
       "elevation": 3,
