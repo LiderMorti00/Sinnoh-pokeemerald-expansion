@@ -41,7 +41,7 @@
       "flag": "FLAG_SN_HIDE_VILLA_PTNPC2"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MOM",
+      "graphics_id": "OBJ_EVENT_GFX_MOM_FRLG",
       "x": 7,
       "y": 3,
       "elevation": 3,
