@@ -8,6 +8,16 @@ HearthomeCity_EventScript_PtNpc1::
 	msgbox HearthomeCity_Text_PtNpc1, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, HearthomeCity_EventScript_PtNpc1_No
 	msgbox HearthomeCity_Text_PtNpc1_Yes, MSGBOX_DEFAULT
+	closemessage
+	sn_walkto LOCALID_HEARTHOME_FISHERMAN, 30, 13, SN_SPEED_NORMAL, DIR_WEST, 0, 0
+	sn_walkto OBJ_EVENT_ID_PLAYER, 29, 13, SN_SPEED_NORMAL, DIR_NORTH, 0, 1
+	waitmovement LOCALID_HEARTHOME_FISHERMAN
+	waitmovement OBJ_EVENT_ID_PLAYER
+	msgbox HearthomeCity_Text_SNContestHall, MSGBOX_DEFAULT
+	msgbox HearthomeCity_Text_SNHappy, MSGBOX_DEFAULT
+	closemessage
+	sn_walkto LOCALID_HEARTHOME_FISHERMAN, 37, 34, SN_SPEED_NORMAL, DIR_SOUTH, 0, 0
+	waitmovement LOCALID_HEARTHOME_FISHERMAN
 	release
 	end
 
@@ -384,3 +394,11 @@ HearthomeCity_EventScript_SNGymBlock_T:
 	.string "the Contest Hall.\p"
 	.string "Come back another time, OK? I’ll be\n"
 	.string "waiting right here.$"
+
+HearthomeCity_Text_SNContestHall:
+	.string "This is the Contest Hall. Please, do go\n"
+	.string "inside.$"
+
+HearthomeCity_Text_SNHappy:
+	.string "It makes me happy knowing I’ve helped\n"
+	.string "another person.$"

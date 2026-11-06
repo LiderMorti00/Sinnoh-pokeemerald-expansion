@@ -40,10 +40,12 @@ CelesticTown_OnTransitionSN:
 	end
 
 CelesticTown_EventScript_SNVis_CEL_GRUNT:
+	setflag FLAG_SN_HIDE_CEL_ELDER_OUT
 	setflag FLAG_SN_HIDE_CEL_GRUNT
 	goto_if_unset FLAG_BADGE05_GET, CelesticTown_EventScript_SNVis_CEL_GRUNT_End
 	goto_if_defeated TRAINER_ELLIOT_1, CelesticTown_EventScript_SNVis_CEL_GRUNT_End
 	clearflag FLAG_SN_HIDE_CEL_GRUNT
+	clearflag FLAG_SN_HIDE_CEL_ELDER_OUT
 CelesticTown_EventScript_SNVis_CEL_GRUNT_End:
 	return
 
@@ -61,6 +63,11 @@ CelesticTown_EventScript_SNCEL_GRUNT::
 	waitmovement 0
 	removeobject VAR_LAST_TALKED
 	setflag FLAG_SN_HIDE_CEL_GRUNT
+	sn_walkto LOCALID_SN_CEL_ELDER_OUT, 18, 13, SN_SPEED_NORMAL, 0, 0, 0
+	waitmovement LOCALID_SN_CEL_ELDER_OUT
+	playse SE_EXIT
+	removeobject LOCALID_SN_CEL_ELDER_OUT
+	setflag FLAG_SN_HIDE_CEL_ELDER_OUT
 	release
 	end
 CelesticTown_EventScript_SNCEL_GRUNT_No:
@@ -151,3 +158,33 @@ CelesticTown_Text_SNVerySmart:
 	.string "boonies like this for everyone’s sake.\p"
 	.string "Your cooperation is appreciated. Now,\n"
 	.string "where is my partner...?$"
+
+CelesticTown_EventScript_SNElderOutScene::
+	goto_if_set FLAG_SN_HIDE_CEL_ELDER_OUT, CelesticTown_EventScript_SNElderOutScene_End
+	lockall
+	setvar VAR_TEMP_F, 1
+	applymovement LOCALID_SN_CEL_ELDER_OUT, Common_Movement_FaceRight
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceLeft
+	waitmovement 0
+	msgbox CelesticTown_Text_SNOddSpaceman, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_SN_CEL_ELDER_OUT, Common_Movement_FaceUp
+	waitmovement 0
+	releaseall
+CelesticTown_EventScript_SNElderOutScene_End:
+	end
+
+CelesticTown_EventScript_SNElderOut::
+	msgbox CelesticTown_Text_SNOddSpaceman, MSGBOX_NPC
+	end
+
+CelesticTown_Text_SNOddSpaceman:
+	.string "There’s an odd spaceman in front of\n"
+	.string "the ruins.\p"
+	.string "There isn’t anything there, but that\n"
+	.string "only seemed to make him get angry.\p"
+	.string "He’s saying he will blow the town up\n"
+	.string "with a bomb...\p"
+	.string "The nerve of it all...\p"
+	.string "If only I were younger, I’d punish that\n"
+	.string "spaceman with my POKéMON...$"

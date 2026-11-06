@@ -103,6 +103,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "CelesticTown_EventScript_SNCynthia",
       "flag": "FLAG_SN_HIDE_CEL_CYNTHIA"
+    },
+    {
+      "local_id": "LOCALID_SN_CEL_ELDER_OUT",
+      "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
+      "x": 17,
+      "y": 27,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CelesticTown_EventScript_SNElderOut",
+      "flag": "FLAG_SN_HIDE_CEL_ELDER_OUT"
     }
   ],
   "warp_events": [
@@ -149,7 +163,35 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 18,
+      "y": 27,
+      "elevation": 3,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "CelesticTown_EventScript_SNElderOutScene"
+    },
+    {
+      "type": "trigger",
+      "x": 19,
+      "y": 27,
+      "elevation": 3,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "CelesticTown_EventScript_SNElderOutScene"
+    },
+    {
+      "type": "trigger",
+      "x": 20,
+      "y": 27,
+      "elevation": 3,
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "CelesticTown_EventScript_SNElderOutScene"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",
