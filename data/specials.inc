@@ -333,6 +333,8 @@ gSpecials::
 	def_special SinnohUnownFormsCount
 	def_special SinnohCountAllMons
 	def_special SinnohPathToPlayer
+	def_special SinnohLoadCounterpartMon
+	def_special SinnohStartCatchTutorial
 	def_special SinnohPathTo
 	def_special SinnohPlayerFaceObject
 	def_special SinnohGetObjectPos

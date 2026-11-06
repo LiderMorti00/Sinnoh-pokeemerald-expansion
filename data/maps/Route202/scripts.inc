@@ -20,19 +20,36 @@ Route202_EventScript_SetLucasGfx:
 Route202_EventScript_Dawn::
 Route202_EventScript_DawnScene::
 	lockall
-	call Sinnoh_EventScript_BufferCounterpartName
 	applymovement LOCALID_ROUTE202_DAWN, Common_Movement_ExclamationMark
 	waitmovement 0
+	sn_walktoplayer LOCALID_ROUTE202_DAWN, SN_SPEED_NORMAL
+	waitmovement 0
+	sn_playerface LOCALID_ROUTE202_DAWN
+	waitmovement LOCALID_PLAYER
 	checkplayergender
-	call_if_eq VAR_RESULT, MALE, Route202_Text_DawnTutorial_ScrD
-	call_if_eq VAR_RESULT, FEMALE, Route202_Text_DawnTutorial_ScrL
-	giveitem ITEM_POKE_BALL, 5
-	call Sinnoh_EventScript_BufferCounterpartName
-	checkplayergender
-	call_if_eq VAR_RESULT, MALE, Route202_Text_DawnBye_ScrD
-	call_if_eq VAR_RESULT, FEMALE, Route202_Text_DawnBye_ScrL
+	call_if_eq VAR_RESULT, MALE, Route202_EventScript_SNDemoDawn
+	call_if_eq VAR_RESULT, FEMALE, Route202_EventScript_SNDemoLucas
 	closemessage
-	applymovement LOCALID_ROUTE202_DAWN, Route202_Movement_DawnLeaves
+	sn_walkto LOCALID_ROUTE202_DAWN, 16, 27, SN_SPEED_NORMAL, DIR_WEST, 0, 0
+	sn_walkto LOCALID_PLAYER, 17, 27, SN_SPEED_NORMAL, DIR_WEST, 0, 1
+	waitmovement LOCALID_ROUTE202_DAWN
+	waitmovement LOCALID_PLAYER
+	special SavePlayerParty
+	special SinnohLoadCounterpartMon
+	special SinnohStartCatchTutorial
+	waitstate
+	special LoadPlayerParty
+	applymovement LOCALID_ROUTE202_DAWN, Common_Movement_FaceRight
+	waitmovement 0
+	checkplayergender
+	call_if_eq VAR_RESULT, MALE, Route202_EventScript_SNBallsDawn
+	call_if_eq VAR_RESULT, FEMALE, Route202_EventScript_SNBallsLucas
+	giveitem ITEM_POKE_BALL, 5
+	checkplayergender
+	call_if_eq VAR_RESULT, MALE, Route202_EventScript_SNByeDawn
+	call_if_eq VAR_RESULT, FEMALE, Route202_EventScript_SNByeLucas
+	closemessage
+	sn_walkto LOCALID_ROUTE202_DAWN, 20, 18, SN_SPEED_NORMAL
 	waitmovement 0
 	removeobject LOCALID_ROUTE202_DAWN
 	setflag FLAG_HIDE_ROUTE202_DAWN
@@ -40,6 +57,25 @@ Route202_EventScript_DawnScene::
 	clearflag FLAG_HIDE_JUBILIFE_DAWN
 	releaseall
 	end
+
+Route202_EventScript_SNDemoDawn:
+	msgbox Route202_Text_SNDemoDawn, MSGBOX_DEFAULT
+	return
+Route202_EventScript_SNDemoLucas:
+	msgbox Route202_Text_SNDemoLucas, MSGBOX_DEFAULT
+	return
+Route202_EventScript_SNBallsDawn:
+	msgbox Route202_Text_SNBallsDawn, MSGBOX_DEFAULT
+	return
+Route202_EventScript_SNBallsLucas:
+	msgbox Route202_Text_SNBallsLucas, MSGBOX_DEFAULT
+	return
+Route202_EventScript_SNByeDawn:
+	msgbox Route202_Text_SNByeDawn, MSGBOX_DEFAULT
+	return
+Route202_EventScript_SNByeLucas:
+	msgbox Route202_Text_SNByeLucas, MSGBOX_DEFAULT
+	return
 
 Route202_Movement_DawnLeaves:
 	walk_up
@@ -338,3 +374,54 @@ Route202_Text_DawnBye_SNLu:
 	.string "meeting more POKéMON.\p"
 	.string "See you around!$"
 
+
+Route202_Text_SNDemoDawn:
+	.string "Dawn: Oh, that’s right!\p"
+	.string "{PLAYER}, I haven’t shown you how to\n"
+	.string "catch a POKéMON.\p"
+	.string "I’ll demonstrate how to catch one, so\n"
+	.string "just watch me, OK?$"
+Route202_Text_SNDemoLucas:
+	.string "Lucas: {PLAYER}, do you know how to\n"
+	.string "catch a POKéMON?\p"
+	.string "I’ll demonstrate how to catch one, so\n"
+	.string "just watch, OK?$"
+Route202_Text_SNBallsDawn:
+	.string "Dawn: Giggle... See? Isn’t it neat?\p"
+	.string "Actually, it’s better to lower your\n"
+	.string "target’s HP more than I did.\p"
+	.string "It’s important to get the POKéMON’s HP\n"
+	.string "down as low as possible.\p"
+	.string "This is because a healthy POKéMON is\n"
+	.string "very difficult to catch.\p"
+	.string "Oh, POKéMON also get easier to catch if\n"
+	.string "you make them sleep or something\p"
+	.string "by using a POKéMON’s move.\p"
+	.string "OK, {PLAYER}, to get you started, I’ll\n"
+	.string "give you five\p"
+	.string "POKé BALLS!$"
+Route202_Text_SNBallsLucas:
+	.string "Lucas: And that’s how it’s done.\p"
+	.string "Actually, I should have lowered the\n"
+	.string "target’s HP some more.\p"
+	.string "Yup, the important thing is to lower\n"
+	.string "the POKéMON’s HP as much as possible.\p"
+	.string "See, a healthy POKéMON isn’t easy to\n"
+	.string "catch.\p"
+	.string "Oh, yeah. They also get easier to catch\n"
+	.string "if you make one of your\p"
+	.string "POKéMON put them to sleep or such.\p"
+	.string "Here, {PLAYER}, I’ll give you five POKé\n"
+	.string "BALLS to get you started.$"
+Route202_Text_SNByeDawn:
+	.string "If you have lots of POKéMON with you,\n"
+	.string "it will be safer on long trips.\p"
+	.string "Plus, it will be a lot more fun having\n"
+	.string "your POKéMON friends along.\p"
+	.string "OK, I need to get going. Bye, now!$"
+Route202_Text_SNByeLucas:
+	.string "If you have lots of POKéMON with you,\n"
+	.string "you’ll be able to travel farther.\p"
+	.string "That way, you’ll have a better shot at\n"
+	.string "meeting more POKéMON.\p"
+	.string "See you around!$"
