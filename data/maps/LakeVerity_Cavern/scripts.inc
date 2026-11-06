@@ -58,7 +58,7 @@ LakeVerity_Cavern_EventScript_SNRowan::
 	msgbox LakeVerity_Cavern_Text_SNRowan2, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_SN_VERITY_ROWAN
-		sn_walkto LOCALID_SN_VCAVE_ROWAN, 15, 30, SN_SPEED_NORMAL, 0, 0, 0
+	sn_walkto LOCALID_SN_VCAVE_ROWAN, 15, 30, SN_SPEED_NORMAL, 0, 0, 0
 	waitmovement LOCALID_SN_VCAVE_ROWAN
 	removeobject LOCALID_SN_VCAVE_ROWAN
 	setflag FLAG_SN_HIDE_VERITY_ROWAN_2

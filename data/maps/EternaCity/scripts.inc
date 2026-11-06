@@ -302,7 +302,7 @@ EternaCity_EventScript_SNCynthiaEgg::
 	msgbox EternaCity_EventScript_SNCynthiaEgg_T15, MSGBOX_DEFAULT
 	msgbox EternaCity_EventScript_SNCynthiaEgg_T2, MSGBOX_DEFAULT
 	closemessage
-		sn_walkto LOCALID_SN_ETERNA_CYNTHIA, 12, 36, SN_SPEED_NORMAL, 0, 0, 0
+	sn_walkto LOCALID_SN_ETERNA_CYNTHIA, 12, 36, SN_SPEED_NORMAL, 0, 0, 0
 	waitmovement LOCALID_SN_ETERNA_CYNTHIA
 	removeobject LOCALID_SN_ETERNA_CYNTHIA
 	setflag FLAG_SN_HIDE_ETERNA_CYNTHIA_EGG

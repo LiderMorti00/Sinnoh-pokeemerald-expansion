@@ -348,7 +348,7 @@ SolaceonTown_EventScript_SNBarry::
 	msgbox SolaceonTown_Text_SNBarry2, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_SN_SOLACEON_BARRY
-		sn_walkto LOCALID_SN_SOL_BARRY, 18, 26, SN_SPEED_FAST, 0, 0, 0
+	sn_walkto LOCALID_SN_SOL_BARRY, 18, 26, SN_SPEED_FAST, 0, 0, 0
 	waitmovement LOCALID_SN_SOL_BARRY
 	removeobject LOCALID_SN_SOL_BARRY
 	setflag FLAG_SN_HIDE_SOL_BARRY

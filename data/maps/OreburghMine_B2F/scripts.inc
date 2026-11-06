@@ -10,7 +10,7 @@ OreburghMine_B2F_EventScript_Roark::
 	waitse
 	msgbox OreburghMine_B2F_Text_SNRoark2, MSGBOX_DEFAULT
 	closemessage
-		sn_walkto LOCALID_MINE_ROARK, 27, 24, SN_SPEED_NORMAL, 0, 0, 0
+	sn_walkto LOCALID_MINE_ROARK, 27, 24, SN_SPEED_NORMAL, 0, 0, 0
 	waitmovement LOCALID_MINE_ROARK
 	removeobject LOCALID_MINE_ROARK
 	setflag FLAG_HIDE_MINE_ROARK

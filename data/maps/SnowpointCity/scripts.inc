@@ -154,7 +154,7 @@ SnowpointCity_EventScript_SNCynthia::
 	msgbox SnowpointCity_Text_SNCyn2, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_SN_SNOWPOINT_CYNTHIA
-		sn_walkto LOCALID_SN_SNOW_CYNTHIA, 16, 53, SN_SPEED_NORMAL, 0, 0, 0
+	sn_walkto LOCALID_SN_SNOW_CYNTHIA, 16, 53, SN_SPEED_NORMAL, 0, 0, 0
 	waitmovement LOCALID_SN_SNOW_CYNTHIA
 	removeobject LOCALID_SN_SNOW_CYNTHIA
 	setflag FLAG_SN_HIDE_SNOW_CYNTHIA

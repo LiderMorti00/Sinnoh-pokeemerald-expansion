@@ -258,7 +258,7 @@ Route213_EventScript_SNBomb_Looker::
 	msgbox Route213_EventScript_SNBomb_L2, MSGBOX_DEFAULT
 	msgbox Route213_EventScript_SNBomb_L3, MSGBOX_DEFAULT
 	closemessage
-		sn_walkto LOCALID_SN_BOMB_GRUNT, 52, 0, SN_SPEED_NORMAL, 0, 0, 0
+	sn_walkto LOCALID_SN_BOMB_GRUNT, 52, 0, SN_SPEED_NORMAL, 0, 0, 0
 	sn_walkto LOCALID_SN_BOMB_LOOKER, 52, 0, SN_SPEED_NORMAL, 0, 0, 1
 	waitmovement LOCALID_SN_BOMB_GRUNT
 	waitmovement LOCALID_SN_BOMB_LOOKER

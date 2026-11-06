@@ -70,7 +70,8 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "OreburghCity_EventScript_PtNpc4",
-      "flag": "0"
+      "flag": "0",
+      "local_id": "LOCALID_ORE_YOUNGSTER"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_WORKER",
@@ -474,6 +475,42 @@
       "var": "VAR_TEMP_F",
       "var_value": "0",
       "script": "OreburghCity_EventScript_SNOrePost_T8"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 14,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "17",
+      "script": "OreburghCity_EventScript_SNYoungster"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 15,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "17",
+      "script": "OreburghCity_EventScript_SNYoungster"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 16,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "17",
+      "script": "OreburghCity_EventScript_SNYoungster"
+    },
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 17,
+      "elevation": 3,
+      "var": "VAR_SINNOH_STORY",
+      "var_value": "17",
+      "script": "OreburghCity_EventScript_SNYoungster"
     }
   ],
   "bg_events": [

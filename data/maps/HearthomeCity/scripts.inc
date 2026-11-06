@@ -346,7 +346,7 @@ HearthomeCity_EventScript_SNKeira::
 	msgbox HearthomeCity_EventScript_SNKeira_T3, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_SN_MET_KEIRA
-		sn_walkto LOCALID_SN_KEIRA, 8, 46, SN_SPEED_NORMAL, 0, 0, 0
+	sn_walkto LOCALID_SN_KEIRA, 8, 46, SN_SPEED_NORMAL, 0, 0, 0
 	waitmovement LOCALID_SN_KEIRA
 	removeobject LOCALID_SN_KEIRA
 	setflag FLAG_SN_HIDE_KEIRA

@@ -125,6 +125,33 @@ OreburghCity_Text_PtNpc3:
 	.string "as we speak...\p"
 	.string "It's amazing how they do it!$"
 
+OreburghCity_EventScript_SNYoungster::
+	goto_if_set FLAG_SN_ORE_YOUNGSTER_DONE, OreburghCity_EventScript_SNYoungster_End
+	goto_if_set FLAG_SN_ORE_BARRY_MET, OreburghCity_EventScript_SNYoungster_End
+	lockall
+	applymovement LOCALID_ORE_YOUNGSTER, Common_Movement_ExclamationMark
+	waitmovement 0
+	sn_walktoplayer LOCALID_ORE_YOUNGSTER, SN_SPEED_NORMAL, 0, 0
+	waitmovement LOCALID_ORE_YOUNGSTER
+	sn_playerface LOCALID_ORE_YOUNGSTER, 1
+	waitmovement OBJ_EVENT_ID_PLAYER
+	msgbox OreburghCity_Text_SNYoungsterGym, MSGBOX_DEFAULT
+	closemessage
+	setflag FLAG_SN_ORE_YOUNGSTER_DONE
+	sn_walkto LOCALID_ORE_YOUNGSTER, 31, 24, SN_SPEED_NORMAL, DIR_WEST, 0, 0
+	sn_walkto OBJ_EVENT_ID_PLAYER, 30, 24, SN_SPEED_NORMAL, DIR_NORTH, 0, 1
+	waitmovement LOCALID_ORE_YOUNGSTER
+	waitmovement OBJ_EVENT_ID_PLAYER
+	setobjectxyperm LOCALID_ORE_YOUNGSTER, 31, 24
+	msgbox OreburghCity_Text_SNYoungsterSomeone, MSGBOX_DEFAULT
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkUp
+	waitmovement 0
+	releaseall
+	goto OreburghCity_EventScript_GymClosed
+OreburghCity_EventScript_SNYoungster_End:
+	end
+
 OreburghCity_EventScript_PtNpc4::
 	msgbox OreburghCity_Text_PtNpc4, MSGBOX_NPC
 	end
@@ -538,7 +565,7 @@ OreburghCity_EventScript_SNBarryPost::
 	msgbox OreburghCity_Text_SNPost3, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_SN_ORE_BARRY_POST
-		sn_walkto LOCALID_SN_ORE_BARRY_POST, 22, 22, SN_SPEED_FAST, 0, 0, 0
+	sn_walkto LOCALID_SN_ORE_BARRY_POST, 22, 22, SN_SPEED_FAST, 0, 0, 0
 	waitmovement LOCALID_SN_ORE_BARRY_POST
 	removeobject LOCALID_SN_ORE_BARRY_POST
 	setflag FLAG_SN_HIDE_ORE_BARRY_POST
@@ -565,3 +592,13 @@ OreburghCity_Text_SNPost3:
 	.string "Ten seconds before I dash!\p"
 	.string "Nine...\p"
 	.string "Bah! Who’s got time to count?!$"
+
+OreburghCity_Text_SNYoungsterGym:
+	.string "Howdy, Trainer!\p"
+	.string "Huh? Uh-oh! You don’t have a single Gym\n"
+	.string "Badge?\p"
+	.string "You’d better do something about that!\n"
+	.string "I’ll take you to the POKéMON Gym.$"
+
+OreburghCity_Text_SNYoungsterSomeone:
+	.string "Huh? There’s someone there.$"

@@ -59,5 +59,24 @@ SnowpointCity_PokemonCenter_1F_Text_PtNpc4:
 	.string "or Fighting-type POKéMON, I think.$"
 
 SnowpointCity_PokemonCenter_1F_EventScript_PtNpc4::
+	goto_if_set FLAG_BADGE07_GET, SnowpointCity_PokemonCenter_1F_EventScript_SNMayleneAfter
+	msgbox SnowpointCity_PokemonCenter_1F_Text_SNMayleneBefore, MSGBOX_NPC
+	end
+SnowpointCity_PokemonCenter_1F_EventScript_SNMayleneAfter:
 	msgbox SnowpointCity_PokemonCenter_1F_Text_PtNpc4, MSGBOX_NPC
 	end
+
+SnowpointCity_PokemonCenter_1F_Text_SNMayleneBefore:
+	.string "Maylene: Brrr...\p"
+	.string "Oh, hi, {PLAYER}! Are you taking the Gym\n"
+	.string "challenge now?\p"
+	.string "I’m hoping to see Candice soon, but I’m\n"
+	.string "staying put until I warm up again first.\p"
+	.string "Oh, you should know that Candice is a\n"
+	.string "user of Ice-type POKéMON.\p"
+	.string "I really admire Candice. She’s so\n"
+	.string "studious.\p"
+	.string "She wanted to practice against me to\n"
+	.string "learn about the Fighting type.\p"
+	.string "It’s because the Ice type matches up\n"
+	.string "badly against the Fighting type.$"

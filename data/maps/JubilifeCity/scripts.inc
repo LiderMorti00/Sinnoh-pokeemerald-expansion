@@ -161,28 +161,369 @@ JubilifeCity_Text_PtNpc11:
 	.string "double happy!$"
 
 JubilifeCity_EventScript_Dawn::
+	msgbox JubilifeCity_Text_SNJFollowD, MSGBOX_NPC
+	end
+
 JubilifeCity_EventScript_DawnScene::
 	lockall
-	call Sinnoh_EventScript_BufferCounterpartName
 	applymovement LOCALID_JUBILIFE_DAWN, Common_Movement_ExclamationMark
 	waitmovement 0
+	sn_walktoplayer LOCALID_JUBILIFE_DAWN, SN_SPEED_NORMAL, 0, 0
+	waitmovement LOCALID_JUBILIFE_DAWN
+	sn_playerface LOCALID_JUBILIFE_DAWN, 1
+	waitmovement OBJ_EVENT_ID_PLAYER
 	checkplayergender
-	call_if_eq VAR_RESULT, MALE, JubilifeCity_Text_DawnWelcome_ScrD
-	call_if_eq VAR_RESULT, FEMALE, JubilifeCity_Text_DawnWelcome_ScrL
+	call_if_eq VAR_RESULT, MALE, JubilifeCity_Text_SNJAskD_Call
+	call_if_eq VAR_RESULT, FEMALE, JubilifeCity_Text_SNJAskL_Call
+	getpartysize
+	buffernumberstring STR_VAR_1, VAR_RESULT
+	goto_if_ge VAR_RESULT, 4, JubilifeCity_EventScript_SNJMany
 	checkplayergender
-	call_if_eq VAR_RESULT, MALE, JubilifeCity_Text_DawnSchool_ScrD
-	call_if_eq VAR_RESULT, FEMALE, JubilifeCity_Text_DawnSchool_ScrL
+	call_if_eq VAR_RESULT, MALE, JubilifeCity_Text_SNJFewD_Call
+	call_if_eq VAR_RESULT, FEMALE, JubilifeCity_Text_SNJFewL_Call
+	goto JubilifeCity_EventScript_SNJFollow
+JubilifeCity_EventScript_SNJMany:
+	checkplayergender
+	call_if_eq VAR_RESULT, MALE, JubilifeCity_Text_SNJManyD_Call
+	call_if_eq VAR_RESULT, FEMALE, JubilifeCity_Text_SNJManyL_Call
+JubilifeCity_EventScript_SNJFollow:
+	checkplayergender
+	call_if_eq VAR_RESULT, MALE, JubilifeCity_Text_SNJFollowD_Call
+	call_if_eq VAR_RESULT, FEMALE, JubilifeCity_Text_SNJFollowL_Call
 	closemessage
-	applymovement LOCALID_JUBILIFE_DAWN, JubilifeCity_Movement_DawnToSchool
+	sn_walkto LOCALID_JUBILIFE_DAWN, 46, 40, SN_SPEED_NORMAL, DIR_NORTH, 0, 0
+	sn_walkto OBJ_EVENT_ID_PLAYER, 47, 40, SN_SPEED_NORMAL, DIR_NORTH, 0, 1
+	waitmovement LOCALID_JUBILIFE_DAWN
+	waitmovement OBJ_EVENT_ID_PLAYER
+	setobjectxyperm LOCALID_JUBILIFE_LOOKER, 47, 33
+	clearflag FLAG_HIDE_JUBILIFE_LOOKER
+	addobject LOCALID_JUBILIFE_LOOKER
+	sn_walkto LOCALID_JUBILIFE_LOOKER, 47, 37, SN_SPEED_NORMAL, DIR_SOUTH, 0, 2
+	waitmovement LOCALID_JUBILIFE_LOOKER
+	checkplayergender
+	call_if_eq VAR_RESULT, MALE, JubilifeCity_Text_SNJWhatD_Call
+	call_if_eq VAR_RESULT, FEMALE, JubilifeCity_Text_SNJWhatL_Call
+	closemessage
+	applymovement LOCALID_JUBILIFE_LOOKER, JubilifeCity_Movement_SNJLookerSearch
 	waitmovement 0
+	sn_walkto LOCALID_JUBILIFE_DAWN, 46, 38, SN_SPEED_NORMAL, DIR_EAST, 0, 0
+	sn_walkto OBJ_EVENT_ID_PLAYER, 47, 38, SN_SPEED_NORMAL, DIR_NORTH, 0, 1
+	waitmovement LOCALID_JUBILIFE_DAWN
+	waitmovement OBJ_EVENT_ID_PLAYER
+	checkplayergender
+	call_if_eq VAR_RESULT, MALE, JubilifeCity_Text_SNJUmD_Call
+	call_if_eq VAR_RESULT, FEMALE, JubilifeCity_Text_SNJUmL_Call
+	closemessage
+	applymovement LOCALID_JUBILIFE_LOOKER, JubilifeCity_Movement_SNJLookerNotice
+	waitmovement 0
+	msgbox JubilifeCity_Text_SNJWHAAAT, MSGBOX_DEFAULT
+	msgbox JubilifeCity_Text_SNJHowDidYouUnmaskMe, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_JUBILIFE_DAWN, Common_Movement_FaceUp
+	waitmovement 0
+	checkplayergender
+	call_if_eq VAR_RESULT, MALE, JubilifeCity_Text_SNJSmallD_Call
+	call_if_eq VAR_RESULT, FEMALE, JubilifeCity_Text_SNJSmallL_Call
+	msgbox JubilifeCity_Text_SNJIKnowBetter, MSGBOX_DEFAULT
+	msgbox JubilifeCity_Text_SNJIsSayingFamiliarToYou, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, JubilifeCity_EventScript_SNJNo
+	msgbox JubilifeCity_Text_SNJTakingFromOthersIsWrong, MSGBOX_DEFAULT
+	goto JubilifeCity_EventScript_SNJRecorder
+JubilifeCity_EventScript_SNJNo:
+	msgbox JubilifeCity_Text_SNJYouClaimToNotKnowIt, MSGBOX_DEFAULT
+JubilifeCity_EventScript_SNJRecorder:
+	msgbox JubilifeCity_Text_SNJPerhapsYouCanUseThis, MSGBOX_DEFAULT
+	giveitem ITEM_VS_RECORDER
+	msgbox JubilifeCity_Text_SNJDeviceForRecordingAMatch, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_JUBILIFE_LOOKER, JubilifeCity_Movement_SNJLookerLookAround
+	waitmovement 0
+	msgbox JubilifeCity_Text_SNJInformMeOfAnyHappenings, MSGBOX_DEFAULT
+	closemessage
+	sn_walkto LOCALID_JUBILIFE_LOOKER, 49, 32, SN_SPEED_FAST, 0, 0, 2
+	waitmovement LOCALID_JUBILIFE_LOOKER
+	removeobject LOCALID_JUBILIFE_LOOKER
+	setflag FLAG_HIDE_JUBILIFE_LOOKER
+	setvar VAR_SINNOH_LOOKER, 1
+	applymovement LOCALID_JUBILIFE_DAWN, Common_Movement_FaceRight
+	waitmovement 0
+	checkplayergender
+	call_if_eq VAR_RESULT, MALE, JubilifeCity_Text_SNJPoliceD_Call
+	call_if_eq VAR_RESULT, FEMALE, JubilifeCity_Text_SNJPoliceL_Call
+	closemessage
+	delay 30
+	sn_walkto LOCALID_JUBILIFE_DAWN, 43, 37, SN_SPEED_NORMAL, DIR_EAST, 0, 0
+	sn_walkto OBJ_EVENT_ID_PLAYER, 44, 37, SN_SPEED_NORMAL, DIR_WEST, 0, 1
+	waitmovement LOCALID_JUBILIFE_DAWN
+	waitmovement OBJ_EVENT_ID_PLAYER
+	checkplayergender
+	call_if_eq VAR_RESULT, MALE, JubilifeCity_Text_SNJSchoolD_Call
+	call_if_eq VAR_RESULT, FEMALE, JubilifeCity_Text_SNJSchoolL_Call
+	closemessage
+	applymovement LOCALID_JUBILIFE_DAWN, Common_Movement_FaceRight
+	waitmovement 0
+	checkplayergender
+	call_if_eq VAR_RESULT, MALE, JubilifeCity_Text_SNJRivalD_Call
+	call_if_eq VAR_RESULT, FEMALE, JubilifeCity_Text_SNJRivalL_Call
+	closemessage
+	sn_walkto LOCALID_JUBILIFE_DAWN, 48, 55, SN_SPEED_NORMAL, 0, 0, 0
+	waitmovement LOCALID_JUBILIFE_DAWN
 	removeobject LOCALID_JUBILIFE_DAWN
 	setflag FLAG_HIDE_JUBILIFE_DAWN
 	clearflag FLAG_HIDE_SCHOOL_BARRY
-	clearflag FLAG_HIDE_JUBILIFE_LOOKER
-	addobject LOCALID_JUBILIFE_LOOKER
 	setvar VAR_SINNOH_STORY, 13
 	releaseall
 	end
+
+JubilifeCity_Movement_SNJLookerSearch:
+	face_left
+	delay_16
+	face_right
+	delay_16
+	walk_left
+	walk_fast_left
+	walk_fast_left
+	face_right
+	delay_16
+	face_up
+	delay_16
+	walk_right
+	walk_fast_right
+	walk_fast_right
+	face_down
+	step_end
+
+JubilifeCity_Movement_SNJLookerNotice:
+	face_down
+	emote_exclamation_mark
+	step_end
+
+JubilifeCity_Movement_SNJLookerLookAround:
+	face_left
+	delay_8
+	face_right
+	delay_8
+	face_down
+	step_end
+
+JubilifeCity_Text_SNJAskD_Call:
+	msgbox JubilifeCity_Text_SNJAskD, MSGBOX_DEFAULT
+	return
+
+JubilifeCity_Text_SNJAskL_Call:
+	msgbox JubilifeCity_Text_SNJAskL, MSGBOX_DEFAULT
+	return
+
+JubilifeCity_Text_SNJManyD_Call:
+	msgbox JubilifeCity_Text_SNJManyD, MSGBOX_DEFAULT
+	return
+
+JubilifeCity_Text_SNJManyL_Call:
+	msgbox JubilifeCity_Text_SNJManyL, MSGBOX_DEFAULT
+	return
+
+JubilifeCity_Text_SNJFewD_Call:
+	msgbox JubilifeCity_Text_SNJFewD, MSGBOX_DEFAULT
+	return
+
+JubilifeCity_Text_SNJFewL_Call:
+	msgbox JubilifeCity_Text_SNJFewL, MSGBOX_DEFAULT
+	return
+
+JubilifeCity_Text_SNJFollowD_Call:
+	msgbox JubilifeCity_Text_SNJFollowD, MSGBOX_DEFAULT
+	return
+
+JubilifeCity_Text_SNJFollowL_Call:
+	msgbox JubilifeCity_Text_SNJFollowL, MSGBOX_DEFAULT
+	return
+
+JubilifeCity_Text_SNJWhatD_Call:
+	msgbox JubilifeCity_Text_SNJWhatD, MSGBOX_DEFAULT
+	return
+
+JubilifeCity_Text_SNJWhatL_Call:
+	msgbox JubilifeCity_Text_SNJWhatL, MSGBOX_DEFAULT
+	return
+
+JubilifeCity_Text_SNJUmD_Call:
+	msgbox JubilifeCity_Text_SNJUmD, MSGBOX_DEFAULT
+	return
+
+JubilifeCity_Text_SNJUmL_Call:
+	msgbox JubilifeCity_Text_SNJUmL, MSGBOX_DEFAULT
+	return
+
+JubilifeCity_Text_SNJSmallD_Call:
+	msgbox JubilifeCity_Text_SNJSmallD, MSGBOX_DEFAULT
+	return
+
+JubilifeCity_Text_SNJSmallL_Call:
+	msgbox JubilifeCity_Text_SNJSmallL, MSGBOX_DEFAULT
+	return
+
+JubilifeCity_Text_SNJPoliceD_Call:
+	msgbox JubilifeCity_Text_SNJPoliceD, MSGBOX_DEFAULT
+	return
+
+JubilifeCity_Text_SNJPoliceL_Call:
+	msgbox JubilifeCity_Text_SNJPoliceL, MSGBOX_DEFAULT
+	return
+
+JubilifeCity_Text_SNJSchoolD_Call:
+	msgbox JubilifeCity_Text_SNJSchoolD, MSGBOX_DEFAULT
+	return
+
+JubilifeCity_Text_SNJSchoolL_Call:
+	msgbox JubilifeCity_Text_SNJSchoolL, MSGBOX_DEFAULT
+	return
+
+JubilifeCity_Text_SNJRivalD_Call:
+	msgbox JubilifeCity_Text_SNJRivalD, MSGBOX_DEFAULT
+	return
+
+JubilifeCity_Text_SNJRivalL_Call:
+	msgbox JubilifeCity_Text_SNJRivalL, MSGBOX_DEFAULT
+	return
+
+JubilifeCity_Text_SNJAskD:
+	.string "Dawn: Hi, {PLAYER}! Are you catching\n"
+	.string "POKéMON?$"
+JubilifeCity_Text_SNJManyD:
+	.string "Wow! You’ve already got {STR_VAR_1}\n"
+	.string "POKéMON with you!\p"
+	.string "At that pace, your POKéDEX should be\n"
+	.string "full in no time at all!$"
+JubilifeCity_Text_SNJFewD:
+	.string "...Um...\p"
+	.string "I think you’d feel a lot safer if you\n"
+	.string "were to catch some more.\p"
+	.string "You know, like when you need to travel\n"
+	.string "to faraway places.$"
+JubilifeCity_Text_SNJFollowD:
+	.string "Oh, I know! Don’t you think it’s better\n"
+	.string "to know more about POKéMON?\p"
+	.string "Sure it is! I know just the place.\p"
+	.string "Come on! Don’t be shy. Follow me!$"
+JubilifeCity_Text_SNJWhatD:
+	.string "Dawn: That man... What is he doing?$"
+JubilifeCity_Text_SNJUmD:
+	.string "Dawn: Um...$"
+JubilifeCity_Text_SNJSmallD:
+	.string "Dawn: Huh? What? I beg your pardon? I\n"
+	.string "was just making conversation...$"
+JubilifeCity_Text_SNJPoliceD:
+	.string "Dawn: ...Working for the International\n"
+	.string "Police must be hard.$"
+JubilifeCity_Text_SNJSchoolD:
+	.string "{PLAYER}, here it is. It’s the Trainers’\n"
+	.string "School.\p"
+	.string "The name says it all!$"
+JubilifeCity_Text_SNJRivalD:
+	.string "I saw your friend {RIVAL} go in\n"
+	.string "earlier.\p"
+	.string "He could still be in there studying. OK,\n"
+	.string "bye now!$"
+JubilifeCity_Text_SNJAskL:
+	.string "Lucas: Hey, {PLAYER}! How many POKéMON\n"
+	.string "have you caught?$"
+JubilifeCity_Text_SNJManyL:
+	.string "Whoa! You already have {STR_VAR_1}\n"
+	.string "POKéMON with you!$"
+JubilifeCity_Text_SNJFewL:
+	.string "Huh? I think you should catch some\n"
+	.string "more.\p"
+	.string "It might be more of a challenge raising\n"
+	.string "a lot of POKéMON...\p"
+	.string "But it’s worth it. The more POKéMON you\n"
+	.string "have, the happier you’ll be.$"
+JubilifeCity_Text_SNJFollowL:
+	.string "Hey, that’s right! Don’t you think it’s\n"
+	.string "better to know more about POKéMON?\p"
+	.string "Sure it is! There’s this great place for\n"
+	.string "that.\p"
+	.string "Come on! It’s all right. Follow me.$"
+JubilifeCity_Text_SNJWhatL:
+	.string "Lucas: That guy... What’s he doing?$"
+JubilifeCity_Text_SNJUmL:
+	.string "Lucas: Uh, excuse...$"
+JubilifeCity_Text_SNJSmallL:
+	.string "Lucas: Huh? What? Are you kidding? I\n"
+	.string "was just making small talk...$"
+JubilifeCity_Text_SNJPoliceL:
+	.string "Lucas: ...Working for the International\n"
+	.string "Police sounds hard.$"
+JubilifeCity_Text_SNJSchoolL:
+	.string "{PLAYER}, here we are. This is the\n"
+	.string "Trainers’ School.\p"
+	.string "The name says it all!$"
+JubilifeCity_Text_SNJRivalL:
+	.string "Your pal {RIVAL} went in earlier. He\n"
+	.string "might still be studying in there.\p"
+	.string "OK, see you around!$"
+JubilifeCity_Text_SNJWHAAAT:
+	.string "WHAAAT?!$"
+JubilifeCity_Text_SNJHowDidYouUnmaskMe:
+	.string "Mysterious man: ...How did you know?\p"
+	.string "How did you unmask me as a member of\n"
+	.string "the International Police?!$"
+JubilifeCity_Text_SNJIKnowBetter:
+	.string "Shady man: ...Heh. You claim you were\n"
+	.string "only making conversation, do you?\p"
+	.string "But, I know better not to believe that.\n"
+	.string "No, no, no.\p"
+	.string "You recognized right away that I was\n"
+	.string "someone extraordinary.\p"
+	.string "That is why you spoke to me, is it not?\n"
+	.string "Your power of observation is fearsome!\p"
+	.string "Quite admirable, you are!$"
+JubilifeCity_Text_SNJIsSayingFamiliarToYou:
+	.string "Now that my cover has been blown, let\n"
+	.string "me introduce myself.\p"
+	.string "I am a globe-trotting elite of the\n"
+	.string "International Police.\p"
+	.string "My name... Ah, no, I shall inform you only\n"
+	.string "of my code name.\p"
+	.string "My code name, it is Looker. It is what\n"
+	.string "they all call me.\p"
+	.string "Incidentally, is the saying, “Don’t be a\n"
+	.string "thief!” familiar to you?$"
+JubilifeCity_Text_SNJTakingFromOthersIsWrong:
+	.string "Looker: Yes, that is correct. Taking\n"
+	.string "what belongs to others is wrong.$"
+JubilifeCity_Text_SNJYouClaimToNotKnowIt:
+	.string "Looker: No? You claim to not know it?\n"
+	.string "How could that be?\p"
+	.string "Perhaps your mama has said it, but you\n"
+	.string "have forgotten it, like usual?\p"
+	.string "Now listen, my friends. It is wrong to\n"
+	.string "take what belongs to others.$"
+JubilifeCity_Text_SNJPerhapsYouCanUseThis:
+	.string "Unfortunately, there are apparently\n"
+	.string "those who do not heed those words.\p"
+	.string "In Sinnoh, in fact, there are criminals\n"
+	.string "stealing the POKéMON of others.\p"
+	.string "I have, therefore, been on the lookout\n"
+	.string "for characters arousing my suspicion.\p"
+	.string "Incidentally, you are Trainers, yes?\n"
+	.string "Perhaps you can make use of this?$"
+JubilifeCity_Text_SNJDeviceForRecordingAMatch:
+	.string "That Vs. Recorder, it is a nifty device\n"
+	.string "for recording a match.\p"
+	.string "I obtained it because it is quite\n"
+	.string "popular these days.\p"
+	.string "But myself, I do not do POKéMON\n"
+	.string "battling very often.\p"
+	.string "It will be in better hands with you.$"
+JubilifeCity_Text_SNJInformMeOfAnyHappenings:
+	.string "Looker: Also, I have a request.\p"
+	.string "If you were to see me again, I ask that\n"
+	.string "you not talk to me, for I am on duty.\p"
+	.string "...Actually, yes, yes, you may speak to\n"
+	.string "me. You must.\p"
+	.string "Not because I am lonely, no, no! You\n"
+	.string "must inform me of bad guys!\p"
+	.string "You must inform me of any happenings!$"
 
 JubilifeCity_EventScript_PresidentScene::
 	lockall

@@ -45,6 +45,26 @@ OreburghGate_1F_Text_PtNpc1:
 	.string "All right! Now you can use the hidden\n"
 	.string "move Rock Smash on small boulders!$"
 
+OreburghGate_1F_EventScript_HikerScene::
+	goto_if_set FLAG_RECEIVED_OREBURGH_GATE_HM, OreburghGate_1F_EventScript_HikerScene_End
+	lockall
+	applymovement LOCALID_GATE_HM_HIKER, Common_Movement_ExclamationMark
+	waitmovement 0
+	sn_walktoplayer LOCALID_GATE_HM_HIKER, SN_SPEED_NORMAL, 0, 0
+	waitmovement LOCALID_GATE_HM_HIKER
+	sn_playerface LOCALID_GATE_HM_HIKER, 1
+	waitmovement OBJ_EVENT_ID_PLAYER
+	msgbox OreburghGate_1F_Text_Hiker, MSGBOX_DEFAULT
+	giveitem ITEM_HM_ROCK_SMASH
+	setflag FLAG_RECEIVED_OREBURGH_GATE_HM
+	msgbox OreburghGate_1F_Text_HikerAfter, MSGBOX_DEFAULT
+	closemessage
+	sn_walkto LOCALID_GATE_HM_HIKER, 6, 18, SN_SPEED_NORMAL, DIR_SOUTH, 0, 0
+	waitmovement LOCALID_GATE_HM_HIKER
+	releaseall
+OreburghGate_1F_EventScript_HikerScene_End:
+	end
+
 OreburghGate_1F_EventScript_HikerHM::
 	lock
 	faceplayer
@@ -61,12 +81,22 @@ OreburghGate_1F_EventScript_HikerAfter::
 	end
 
 OreburghGate_1F_Text_Hiker:
-	.string "Whoa there! Heading to OREBURGH?\n"
-	.string "This cave is full of rocks. You'll\l"
-	.string "need this!$"
+	.string "That sparkling new POKéTCH! Your\n"
+	.string "awkwardness as a traveler!\p"
+	.string "Hmm... You’re still a pretty new Trainer,\n"
+	.string "aren’t you?\p"
+	.string "But it’s all good! You’re a new fellow\n"
+	.string "friend of POKéMON!\p"
+	.string "So, let me make a gift of this Hidden\n"
+	.string "Machine to you!$"
 
 OreburghGate_1F_Text_HikerAfter:
-	.string "That HM teaches ROCK SMASH. You\n"
-	.string "can use it outside of battle once\l"
-	.string "you have the BADGE from OREBURGH\n"
-	.string "GYM.$"
+	.string "That Hidden Machine, or HM for short,\n"
+	.string "contains the hidden move Rock Smash.\p"
+	.string "A POKéMON learning Rock Smash can\n"
+	.string "smash small boulders in the field.\p"
+	.string "But the Trainer has to have the Gym\n"
+	.string "Badge from Oreburgh City.\p"
+	.string "If you don’t have that Badge, you can’t\n"
+	.string "make a POKéMON use the hidden\p"
+	.string "move Rock Smash outside of battle.$"

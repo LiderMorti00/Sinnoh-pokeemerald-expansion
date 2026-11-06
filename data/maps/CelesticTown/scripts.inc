@@ -48,20 +48,26 @@ CelesticTown_EventScript_SNVis_CEL_GRUNT_End:
 	return
 
 CelesticTown_EventScript_SNCEL_GRUNT::
-	trainerbattle_single TRAINER_ELLIOT_1, CelesticTown_EventScript_SNCEL_GRUNT_Intro, CelesticTown_EventScript_SNCEL_GRUNT_Defeat, CelesticTown_EventScript_SNCEL_GRUNT_Won
-	msgbox CelesticTown_EventScript_SNCEL_GRUNT_Post, MSGBOX_AUTOCLOSE
-	end
-
-CelesticTown_EventScript_SNCEL_GRUNT_Won:
 	lock
+	faceplayer
+	msgbox CelesticTown_Text_SNWillYouMess, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, CelesticTown_EventScript_SNCEL_GRUNT_No
+	msgbox CelesticTown_EventScript_SNCEL_GRUNT_Intro, MSGBOX_DEFAULT
+	closemessage
+	trainerbattle_no_intro TRAINER_ELLIOT_1, CelesticTown_EventScript_SNCEL_GRUNT_Defeat
 	msgbox CelesticTown_EventScript_SNCEL_GRUNT_Post, MSGBOX_DEFAULT
 	closemessage
-	fadescreen FADE_TO_BLACK
+	sn_walkto VAR_LAST_TALKED, 30, 27, SN_SPEED_FAST, 0, 0, 0
+	waitmovement 0
 	removeobject VAR_LAST_TALKED
 	setflag FLAG_SN_HIDE_CEL_GRUNT
-	fadescreen FADE_FROM_BLACK
 	release
 	end
+CelesticTown_EventScript_SNCEL_GRUNT_No:
+	msgbox CelesticTown_Text_SNVerySmart, MSGBOX_DEFAULT
+	release
+	end
+
 CelesticTown_EventScript_SNCEL_GRUNT_Intro:
 	.string "You dare to oppose Team Galactic?\p"
 	.string "That means you’re taking on the world...\n"
@@ -91,7 +97,7 @@ CelesticTown_EventScript_SNCynthia::
 	msgbox CelesticTown_EventScript_SNCynthia_T2, MSGBOX_DEFAULT
 	msgbox CelesticTown_EventScript_SNCynthia_T3, MSGBOX_DEFAULT
 	closemessage
-		sn_walkto LOCALID_SN_CEL_CYNTHIA, 18, 13, SN_SPEED_NORMAL, 0, 0, 0
+	sn_walkto LOCALID_SN_CEL_CYNTHIA, 18, 13, SN_SPEED_NORMAL, 0, 0, 0
 	waitmovement LOCALID_SN_CEL_CYNTHIA
 	removeobject LOCALID_SN_CEL_CYNTHIA
 	setflag FLAG_SN_HIDE_CEL_CYNTHIA
@@ -127,3 +133,21 @@ CelesticTown_EventScript_SNCynthia_T3:
 	.string "POKéDEX, too.\p"
 	.string "The quickest way to Canalave City is\n"
 	.string "to go west from Jubilife City.$"
+
+CelesticTown_Text_SNWillYouMess:
+	.string "This town is insignificant! There’s\n"
+	.string "nothing of value here.\p"
+	.string "It doesn’t need to exist, so I’ll blow it\n"
+	.string "up with a Galactic Bomb!\p"
+	.string "If you try to mess with me, I’ll shut\n"
+	.string "you down with a POKéMON battle.\p"
+	.string "So, what’s it going to be? Are you going\n"
+	.string "to mess with me?$"
+
+CelesticTown_Text_SNVerySmart:
+	.string "That’s right! Very smart! You know\n"
+	.string "what’s good for you!\p"
+	.string "Team Galactic has come out to the\n"
+	.string "boonies like this for everyone’s sake.\p"
+	.string "Your cooperation is appreciated. Now,\n"
+	.string "where is my partner...?$"

@@ -65,6 +65,34 @@
       "trainer_sight_or_berry_tree_id": "3",
       "script": "EternaCity_GalacticBuilding_1F_EventScript_Grunt2",
       "flag": "FLAG_HIDE_ETERNA_GALACTIC"
+    },
+    {
+      "local_id": "LOCALID_SN_ETERNA_GRUNT_LOOKER",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_GALAXY_GRUNT_M",
+      "x": 10,
+      "y": 11,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "script": "0x0",
+      "flag": "FLAG_SN_HIDE_ETERNA_GRUNT_LOOKER",
+      "elevation": 3,
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0"
+    },
+    {
+      "local_id": "LOCALID_SN_ETERNA_LOOKER",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_LOOKER",
+      "x": 10,
+      "y": 11,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "script": "EternaCity_GalacticBuilding_1F_EventScript_SNLooker",
+      "flag": "FLAG_SN_HIDE_ETERNA_LOOKER",
+      "elevation": 3,
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0"
     }
   ],
   "warp_events": [

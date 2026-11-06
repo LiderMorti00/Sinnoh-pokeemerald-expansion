@@ -116,7 +116,8 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "HearthomeCity_Gym_EventScript_PtGymGuide",
-      "flag": "0"
+      "flag": "0",
+      "local_id": "LOCALID_HEARTHOME_GYM_GUIDE"
     }
   ],
   "warp_events": [

@@ -263,7 +263,7 @@ Route210_South_EventScript_SNPsyduck::
 	setflag FLAG_SN_PSYDUCK_GONE
 	setflag FLAG_SN_USED_SECRETPOTION
 	setflag FLAG_SN_HIDE_PSYDUCK
-		sn_walkto LOCALID_SN_PSYDUCK_1, 30, 47, SN_SPEED_FAST, 0, 0, 0
+	sn_walkto LOCALID_SN_PSYDUCK_1, 30, 47, SN_SPEED_FAST, 0, 0, 0
 	sn_walkto LOCALID_SN_PSYDUCK_2, 30, 47, SN_SPEED_FAST, 0, 0, 1
 	sn_walkto LOCALID_SN_PSYDUCK_3, 25, 30, SN_SPEED_FAST, 0, 0, 2
 	sn_walkto LOCALID_SN_PSYDUCK_4, 24, 31, SN_SPEED_FAST, 0, 0, 3
@@ -316,7 +316,7 @@ Route210_South_EventScript_SNCynthiaCharm::
 	setflag FLAG_SN_RECEIVED_OLD_CHARM
 	msgbox Route210_South_EventScript_SNCynthiaCharm_T2, MSGBOX_DEFAULT
 	closemessage
-		sn_walkto LOCALID_SN_R210_CYNTHIA, 30, 47, SN_SPEED_NORMAL, 0, 0, 0
+	sn_walkto LOCALID_SN_R210_CYNTHIA, 30, 47, SN_SPEED_NORMAL, 0, 0, 0
 	waitmovement LOCALID_SN_R210_CYNTHIA
 	removeobject LOCALID_SN_R210_CYNTHIA
 	setflag FLAG_SN_HIDE_R210_CYNTHIA

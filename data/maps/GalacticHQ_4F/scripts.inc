@@ -54,21 +54,30 @@ GalacticHQ_4F_EventScript_SNVis_HQ_CYRUS_End:
 	return
 
 GalacticHQ_4F_EventScript_SNCyrus::
-	trainerbattle_single TRAINER_ABIGAIL_5, GalacticHQ_4F_EventScript_SNCyrus_Intro, GalacticHQ_4F_EventScript_SNCyrus_Defeat, GalacticHQ_4F_EventScript_SNCyrus_Won
-	end
-
-GalacticHQ_4F_EventScript_SNCyrus_Won:
 	lock
+	faceplayer
+	msgbox GalacticHQ_4F_EventScript_SNCyrus_Intro, MSGBOX_DEFAULT
+	closemessage
+	applymovement VAR_LAST_TALKED, Common_Movement_WalkInPlaceFasterDown
+	waitmovement 0
+	msgbox GalacticHQ_4F_Text_SNIKnowWhy, MSGBOX_DEFAULT
+	closemessage
+	trainerbattle_no_intro TRAINER_ABIGAIL_5, GalacticHQ_4F_EventScript_SNCyrus_Defeat
 	msgbox GalacticHQ_4F_EventScript_SNCyrus_Post, MSGBOX_DEFAULT
 	giveitem ITEM_MASTER_BALL
 	msgbox GalacticHQ_4F_EventScript_SNCyrus_Post2, MSGBOX_DEFAULT
 	closemessage
-	fadescreen FADE_TO_BLACK
-	removeobject VAR_LAST_TALKED
+	applymovement VAR_LAST_TALKED, Common_Movement_FacePlayer
+	waitmovement 0
+	msgbox GalacticHQ_4F_Text_SNWarpPanel, MSGBOX_DEFAULT
+	closemessage
 	setflag FLAG_SN_HIDE_HQ_CYRUS
 	setvar VAR_SINNOH_STORY, 32
 	setflag FLAG_SN_GALACTIC_LEFT_LAKE_VALOR
-	fadescreen FADE_FROM_BLACK
+	sn_walkto VAR_LAST_TALKED, 9, 3, SN_SPEED_NORMAL, 0, 0, 0
+	waitmovement 0
+	playse SE_EXIT
+	removeobject VAR_LAST_TALKED
 	release
 	end
 GalacticHQ_4F_EventScript_SNCyrus_Intro:
@@ -120,3 +129,38 @@ GalacticHQ_4F_EventScript_SNCyrus_Post2:
 	.string "don’t use POKéMON as tools.\p"
 	.string "Instead, I make the power of POKéMON\n"
 	.string "my own.$"
+
+GalacticHQ_4F_Text_SNIKnowWhy:
+	.string "I know why you’re here. I can sense it\n"
+	.string "in you.\p"
+	.string "It’s about UXIE, MESPRIT, and AZELF,\n"
+	.string "correct? You want to save them...\p"
+	.string "I no longer have any need for them. I\n"
+	.string "am finished with them.\p"
+	.string "If your heart aches to save them, go\n"
+	.string "right ahead. I couldn’t care less.\p"
+	.string "It will save me the trouble of\n"
+	.string "disposing of them.\p"
+	.string "But, I must say... You are a remarkable\n"
+	.string "specimen.\p"
+	.string "Those POKéMON have nothing to do with\n"
+	.string "you, do they?\p"
+	.string "But still you came to rescue them out\n"
+	.string "of pity?\p"
+	.string "Such pitifully useless emotions... It’s\n"
+	.string "illogical and irrational.\p"
+	.string "Pity and compassion are products of\n"
+	.string "the weak and faulty human heart.\p"
+	.string "You were compelled to come here by\n"
+	.string "such vacuous sentimentality!\p"
+	.string "I will make you regret paying heed to\n"
+	.string "your heart!$"
+
+GalacticHQ_4F_Text_SNWarpPanel:
+	.string "If you wish to save the POKéMON from\n"
+	.string "the lakes, take the warp panel ahead.\p"
+	.string "I am off to Mt. Coronet.\p"
+	.string "I will ascend the mountain to its peak\n"
+	.string "where destiny awaits me.\p"
+	.string "It is there that I will create my new\n"
+	.string "world...$"

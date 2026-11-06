@@ -78,6 +78,7 @@ GalacticHQ_ControlRoom_EventScript_SNVis_HQ_SATURN_End:
 
 GalacticHQ_ControlRoom_EventScript_SNSaturn::
 	trainerbattle_single TRAINER_ABIGAIL_4, GalacticHQ_ControlRoom_EventScript_SNSaturn_Intro, GalacticHQ_ControlRoom_EventScript_SNSaturn_Defeat, GalacticHQ_ControlRoom_EventScript_SNSaturn_Won
+	msgbox GalacticHQ_ControlRoom_Text_SNPressButton, MSGBOX_NPC
 	end
 
 GalacticHQ_ControlRoom_EventScript_SNSaturn_Won:
@@ -86,11 +87,7 @@ GalacticHQ_ControlRoom_EventScript_SNSaturn_Won:
 	msgbox GalacticHQ_ControlRoom_Text_SNCharon1, MSGBOX_DEFAULT
 	msgbox GalacticHQ_ControlRoom_Text_SNCharon2, MSGBOX_DEFAULT
 	msgbox GalacticHQ_ControlRoom_EventScript_SNSaturn_Post, MSGBOX_DEFAULT
-	closemessage
-	fadescreen FADE_TO_BLACK
-	removeobject VAR_LAST_TALKED
-	setflag FLAG_SN_HIDE_HQ_SATURN
-	fadescreen FADE_FROM_BLACK
+	msgbox GalacticHQ_ControlRoom_Text_SNPressButton, MSGBOX_DEFAULT
 	release
 	end
 GalacticHQ_ControlRoom_EventScript_SNSaturn_Intro:
@@ -160,3 +157,6 @@ GalacticHQ_ControlRoom_Text_SNCharon2:
 	.string "Our boss can do without your kind of\n"
 	.string "moral support.$"
 
+GalacticHQ_ControlRoom_Text_SNPressButton:
+	.string "Press the button and set them free.\n"
+	.string "Isn’t that why you came?$"

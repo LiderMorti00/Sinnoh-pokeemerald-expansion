@@ -3,7 +3,7 @@
 Lista única de tareas pendientes. Cuando se termine una tarea, se borra de aquí.
 Fuentes de referencia: Bulbapedia (guía de Platino), WikiDex, pret/pokeplatinum (textos, eventos y datos originales).
 
-Última revisión: 6 de noviembre de 2026.
+Última revisión: 6 de noviembre de 2026 (sinnoh28).
 
 ---
 
@@ -23,12 +23,13 @@ Faltan:
 
 ## 2. Escenas con la coreografía de Platino (en curso)
 
+Lista completa, escena por escena, con el guion de Platino de cada pendiente: `docs/ESCENAS.md`.
+
 Herramienta: `src/sinnoh_scene.c` y las macros `sn_walktoplayer`, `sn_walkto`, `sn_walkto_vars` y `sn_playerface` (asm/macros/event.inc) calculan los caminos al vuelo.
 
-Hechas: Rocavelo (almacén con sí/no, grunt de la llave y Looker, Wake en el gimnasio), Lago Agudeza (Júpiter y Barry) y su orilla (Barry), orilla del Lago Valor (Barry y Cynthia), Salón de la Fama (Rowan y Cynthia), Hojaverde (Barry sale de casa, su habitación, el guitarrista), casa del jugador (TV, Barry, mamá, la madre de Barry), Ruta 201 (escena de los iniciales), Lago Veraz (Cyrus y Barry), las 35 salidas con fundido que en Platino son andando, y todas las aproximaciones de NPC (ya no se calculan por casilla fija).
+Hechas: Jubileo (llegada con Dawn/Lucas y Looker, Barry en la escuela), Ruta 203 (Barry), Puerta y ciudad de Pirita (montañero y chico), Edificio Galaxia (Looker), sala de Rotom (Rowan), Valle Eólico (grunt de la puerta), Gimnasio Corazón (guía), Ruta 207 (Buscapelea), Pradera (bomba y Barry vigilando), Celestic (grunt), Biblioteca de Canal (explosión), Lago Veraz (Marte), Sede Galaxia (Cyrus y Saturno), Marina (Barry y Jasmine), Rocavelo (almacén con sí/no, grunt de la llave y Looker, Wake en el gimnasio), Lago Agudeza (Júpiter y Barry) y su orilla (Barry), orilla del Lago Valor (Barry y Cynthia), Salón de la Fama (Rowan y Cynthia), Hojaverde (Barry sale de casa, su habitación, el guitarrista), casa del jugador (TV, Barry, mamá, la madre de Barry), Ruta 201 (escena de los iniciales), Lago Veraz (Cyrus y Barry), las 35 salidas con fundido que en Platino son andando, y todas las aproximaciones de NPC (ya no se calculan por casilla fija).
 
 Faltan, por orden de la historia (comparar con `ptdump.py` de cada mapa):
-- Jubileo (Dawn/Lucas y el profesor de la escuela, payasos, presidente), Ruta 202.
 - Vetusta (estatua, Gardenia, Cynthia), Corazón (Keira, Mr. Goods), Pradera.
 - Ruinas Sosiego, Celestic (Cynthia, anciano, Cyrus), Ruta 210 Sur (Psyduck, Cynthia), Ruta 213 y 224, Lago Valor (restaurante), Puntaneva, Sede Galaxia (sala de control), Lago Veraz seco.
 - Área de Combate (Flint y Volkner), Villa, Mansión Pokémon, Ruta 227 (Buck y Wake), Marina (Jasmine, Flint).
