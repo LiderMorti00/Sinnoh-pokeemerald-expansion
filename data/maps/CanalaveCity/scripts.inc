@@ -142,6 +142,24 @@ CanalaveCity_EventScript_PtNpc6_NPCEnd:
 CanalaveCity_EventScript_SailorEldritch::
 	lock
 	faceplayer
+	goto_if_unset FLAG_SYS_GAME_CLEAR, CanalaveCity_EventScript_SNEldritchMenu
+	goto_if_set FLAG_SN_ELDRITCH_SON_WOKE, CanalaveCity_EventScript_SNEldritchWoke
+	checkitem ITEM_LUNAR_WING
+	goto_if_eq VAR_RESULT, TRUE, CanalaveCity_EventScript_SNEldritchTakeWing
+	goto_if_set FLAG_SN_ELDRITCH_ASKED, CanalaveCity_EventScript_SNEldritchMenu
+	setflag FLAG_SN_ELDRITCH_ASKED
+	msgbox CanalaveCity_Text_SNGoingToFullmoon, MSGBOX_DEFAULT
+	msgbox CanalaveCity_Text_SNCountingOnYou, MSGBOX_DEFAULT
+	goto CanalaveCity_EventScript_SNEldritchMenu
+CanalaveCity_EventScript_SNEldritchTakeWing:
+	msgbox CanalaveCity_Text_SNTakeLunarWing, MSGBOX_DEFAULT
+	release
+	end
+CanalaveCity_EventScript_SNEldritchWoke:
+	goto_if_set FLAG_SN_ELDRITCH_THANKED, CanalaveCity_EventScript_SNEldritchMenu
+	setflag FLAG_SN_ELDRITCH_THANKED
+	msgbox CanalaveCity_Text_SNComeSailWithMe, MSGBOX_DEFAULT
+CanalaveCity_EventScript_SNEldritchMenu:
 	msgbox CanalaveCity_Text_DoYouWannaSetSail, MSGBOX_DEFAULT
 	dynmultipush CanalaveCity_Text_DestIronIsland, 0
 	goto_if_unset FLAG_SYS_GAME_CLEAR, CanalaveCity_EventScript_SailorMenu
@@ -518,3 +536,25 @@ CanalaveCity_Text_SNLucasTalk:
 	.string "Verity before we join you.\p"
 	.string "Don’t try to be a hero if anything\n"
 	.string "crazy happens.$"
+
+CanalaveCity_Text_SNGoingToFullmoon:
+	.string "...You.... You’re going to Fullmoon Island\n"
+	.string "for us?$"
+
+CanalaveCity_Text_SNCountingOnYou:
+	.string "We’re both counting on you!\p"
+	.string "Only you can awaken my son from his\n"
+	.string "awful nightmare...\p"
+	.string "Please, I need the Lunar Wing from\n"
+	.string "Fullmoon Island to awaken him!\p"
+	.string "I went, but I failed to find it...$"
+
+CanalaveCity_Text_SNTakeLunarWing:
+	.string "That Lunar Wing... Please! Take it to my\n"
+	.string "son...$"
+
+CanalaveCity_Text_SNComeSailWithMe:
+	.string "Seeing you back to normal makes me\n"
+	.string "feel great!\p"
+	.string "I’ve regained my spirit as a Sailor!\n"
+	.string "Come sail with me later!$"
