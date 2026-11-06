@@ -61,7 +61,7 @@ SunyshoreCity_VistaLighthouse_EventScript_SNVolkner::
 	msgbox SunyshoreCity_VistaLighthouse_EventScript_SNVolkner_T3, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_SN_MET_VOLKNER
-		sn_walkto LOCALID_SN_LH_VOLKNER, 6, 7, SN_SPEED_NORMAL, 0, 0, 0
+	sn_walkto LOCALID_SN_LH_VOLKNER, 6, 7, SN_SPEED_NORMAL, 0, 0, 0
 	waitmovement LOCALID_SN_LH_VOLKNER
 	removeobject LOCALID_SN_LH_VOLKNER
 	setflag FLAG_SN_HIDE_LH_VOLKNER

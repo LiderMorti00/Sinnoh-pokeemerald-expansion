@@ -272,7 +272,7 @@ CanalaveCity_Library_F3_EventScript_SNRowan::
 	call_if_eq VAR_RESULT, FEMALE, CanalaveCity_Library_F3_Text_SNAfter2_ScrL
 	msgbox CanalaveCity_Library_F3_Text_SNAfter3, MSGBOX_DEFAULT
 	closemessage
-		sn_walkto LOCALID_SN_LIB_ROWAN, 1, 1, SN_SPEED_NORMAL, 0, 0, 0
+	sn_walkto LOCALID_SN_LIB_ROWAN, 1, 1, SN_SPEED_NORMAL, 0, 0, 0
 	sn_walkto LOCALID_SN_LIB_COUNTERPART, 1, 1, SN_SPEED_NORMAL, 0, 0, 1
 	sn_walkto LOCALID_SN_LIB_BARRY, 4, 3, SN_SPEED_FAST, 0, 0, 2
 	waitmovement LOCALID_SN_LIB_ROWAN

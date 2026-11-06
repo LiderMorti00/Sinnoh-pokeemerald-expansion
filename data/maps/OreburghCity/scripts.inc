@@ -565,7 +565,7 @@ OreburghCity_EventScript_SNBarryPost::
 	msgbox OreburghCity_Text_SNPost3, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_SN_ORE_BARRY_POST
-		sn_walkto LOCALID_SN_ORE_BARRY_POST, 22, 22, SN_SPEED_FAST, 0, 0, 0
+	sn_walkto LOCALID_SN_ORE_BARRY_POST, 22, 22, SN_SPEED_FAST, 0, 0, 0
 	waitmovement LOCALID_SN_ORE_BARRY_POST
 	removeobject LOCALID_SN_ORE_BARRY_POST
 	setflag FLAG_SN_HIDE_ORE_BARRY_POST

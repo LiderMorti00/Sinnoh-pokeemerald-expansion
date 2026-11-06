@@ -107,6 +107,23 @@ PastoriaCity_OnTransitionSN:
 	call PastoriaCity_EventScript_SNVis_PAST_BOMB
 	call PastoriaCity_EventScript_SNVis_PAST_GRUNT
 	call PastoriaCity_EventScript_SNVis_PAST_BARRY
+	call PastoriaCity_EventScript_SNVis_PAST_GUARD
+	end
+
+PastoriaCity_EventScript_SNVis_PAST_GUARD:
+	setflag FLAG_SN_HIDE_PAST_BARRY_GUARD
+	goto_if_unset FLAG_SN_PAST_BOMB_DONE, PastoriaCity_EventScript_SNVis_PAST_GUARD_End
+	goto_if_defeated TRAINER_ROBERT_2, PastoriaCity_EventScript_SNVis_PAST_GUARD_End
+	clearflag FLAG_SN_HIDE_PAST_BARRY_GUARD
+PastoriaCity_EventScript_SNVis_PAST_GUARD_End:
+	return
+
+PastoriaCity_EventScript_SNBarryGuard::
+	lock
+	faceplayer
+	msgbox PastoriaCity_Text_SNWhyArentYouGone, MSGBOX_DEFAULT
+	msgbox PastoriaCity_Text_SNWB4, MSGBOX_DEFAULT
+	release
 	end
 
 PastoriaCity_EventScript_SNVis_PAST_BARRY:
@@ -140,7 +157,7 @@ PastoriaCity_EventScript_SNBarry_B2:
 PastoriaCity_EventScript_SNBarry_After:
 	msgbox PastoriaCity_EventScript_SNBarry_Post, MSGBOX_DEFAULT
 	closemessage
-		sn_walkto VAR_LAST_TALKED, 20, 18, SN_SPEED_FAST, 0, 0, 0
+	sn_walkto VAR_LAST_TALKED, 20, 18, SN_SPEED_FAST, 0, 0, 0
 	waitmovement VAR_LAST_TALKED
 	removeobject VAR_LAST_TALKED
 	setflag FLAG_SN_HIDE_PAST_BARRY
@@ -243,7 +260,7 @@ PastoriaCity_EventScript_SNGrunt::
 	msgbox PastoriaCity_Text_SNGrunt1, MSGBOX_DEFAULT
 	msgbox PastoriaCity_Text_SNGrunt2, MSGBOX_DEFAULT
 	closemessage
-		sn_walkto LOCALID_SN_PAST_GRUNT, 46, 9, SN_SPEED_NORMAL, 0, 0, 0
+	sn_walkto LOCALID_SN_PAST_GRUNT, 46, 9, SN_SPEED_NORMAL, 0, 0, 0
 	waitmovement LOCALID_SN_PAST_GRUNT
 	removeobject LOCALID_SN_PAST_GRUNT
 	setflag FLAG_SN_HIDE_PAST_GRUNT
@@ -304,7 +321,7 @@ PastoriaCity_EventScript_SNWakeA::
 	waitmovement 0
 	msgbox PastoriaCity_Text_SNWA4, MSGBOX_DEFAULT
 	closemessage
-		sn_walkto LOCALID_SN_PAST_WAKE_A, 15, 26, SN_SPEED_NORMAL, 0, 0, 0
+	sn_walkto LOCALID_SN_PAST_WAKE_A, 15, 26, SN_SPEED_NORMAL, 0, 0, 0
 	sn_walkto LOCALID_SN_PAST_BARRY_A, 21, 19, SN_SPEED_FAST, 0, 0, 1
 	waitmovement LOCALID_SN_PAST_WAKE_A
 	waitmovement LOCALID_SN_PAST_BARRY_A
@@ -340,23 +357,33 @@ PastoriaCity_EventScript_SNBomb::
 	waitmovement 0
 	msgbox PastoriaCity_Text_SNWB3, MSGBOX_DEFAULT
 	msgbox PastoriaCity_Text_SNGrunt2, MSGBOX_DEFAULT
-	msgbox PastoriaCity_Text_SNGrunt1, MSGBOX_DEFAULT
 	closemessage
-		sn_walkto LOCALID_SN_PAST_GRUNT, 46, 9, SN_SPEED_NORMAL, 0, 0, 0
-	sn_walkto LOCALID_SN_PAST_WAKE_B, 36, 8, SN_SPEED_NORMAL, 0, 0, 1
+	sn_walkto LOCALID_SN_PAST_GRUNT, 48, 12, SN_SPEED_FAST, 0, 0, 0
 	waitmovement LOCALID_SN_PAST_GRUNT
-	waitmovement LOCALID_SN_PAST_WAKE_B
 	removeobject LOCALID_SN_PAST_GRUNT
 	setflag FLAG_SN_HIDE_PAST_GRUNT
-	removeobject LOCALID_SN_PAST_WAKE_B
-	msgbox PastoriaCity_Text_SNWB4, MSGBOX_DEFAULT
 	msgbox PastoriaCity_Text_SNGrunt3, MSGBOX_DEFAULT
+	msgbox PastoriaCity_Text_SNGreatMarsh, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_SN_PAST_WAKE_B, Common_Movement_FacePlayer
+	waitmovement 0
+	msgbox PastoriaCity_Text_SNDoNotFollow, MSGBOX_DEFAULT
+	closemessage
+	sn_walkto LOCALID_SN_PAST_WAKE_B, 36, 8, SN_SPEED_FAST, 0, 0, 0
+	waitmovement LOCALID_SN_PAST_WAKE_B
+	playse SE_EXIT
+	removeobject LOCALID_SN_PAST_WAKE_B
+	sn_walkto LOCALID_SN_PAST_BARRY_B, 36, 9, SN_SPEED_FAST, DIR_SOUTH, 0, 0
+	waitmovement LOCALID_SN_PAST_BARRY_B
+	sn_playerface LOCALID_SN_PAST_BARRY_B, 1
+	waitmovement OBJ_EVENT_ID_PLAYER
+	msgbox PastoriaCity_Text_SNWB4, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_SN_PAST_BOMB_DONE
-		sn_walkto LOCALID_SN_PAST_BARRY_B, 36, 8, SN_SPEED_FAST, 0, 0, 0
-	waitmovement LOCALID_SN_PAST_BARRY_B
 	removeobject LOCALID_SN_PAST_BARRY_B
 	setflag FLAG_SN_HIDE_PAST_BOMB
+	clearflag FLAG_SN_HIDE_PAST_BARRY_GUARD
+	addobject LOCALID_SN_PAST_BARRY_GUARD
 	release
 	end
 
@@ -432,3 +459,17 @@ PastoriaCity_EventScript_SNPtPARASOLLADY_Text:
 	.string "them into Poffins.\p"
 	.string "All the work is worth it when I see how\n"
 	.string "happy they make my POKéMON!$"
+
+PastoriaCity_Text_SNGreatMarsh:
+	.string "Wake: The Great Marsh is invaluable...$"
+
+PastoriaCity_Text_SNDoNotFollow:
+	.string "You two! Do NOT follow me! Don’t let\n"
+	.string "anyone else in, either!\p"
+	.string "There’d be big trouble if there’s any of\n"
+	.string "that bomb left!$"
+
+PastoriaCity_Text_SNWhyArentYouGone:
+	.string "{RIVAL}: What’s the matter?! Why\n"
+	.string "aren’t you gone already?!\p"
+	.string "Go after that Galactic goon!$"

@@ -91,7 +91,7 @@ CelesticTown_EventScript_SNCynthia::
 	msgbox CelesticTown_EventScript_SNCynthia_T2, MSGBOX_DEFAULT
 	msgbox CelesticTown_EventScript_SNCynthia_T3, MSGBOX_DEFAULT
 	closemessage
-		sn_walkto LOCALID_SN_CEL_CYNTHIA, 18, 13, SN_SPEED_NORMAL, 0, 0, 0
+	sn_walkto LOCALID_SN_CEL_CYNTHIA, 18, 13, SN_SPEED_NORMAL, 0, 0, 0
 	waitmovement LOCALID_SN_CEL_CYNTHIA
 	removeobject LOCALID_SN_CEL_CYNTHIA
 	setflag FLAG_SN_HIDE_CEL_CYNTHIA

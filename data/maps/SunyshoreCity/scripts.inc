@@ -95,7 +95,7 @@ SunyshoreCity_EventScript_SNJasmine::
 	setflag FLAG_SN_RECEIVED_HM_WATERFALL
 	msgbox SunyshoreCity_EventScript_SNJasmine_T2, MSGBOX_DEFAULT
 	closemessage
-		sn_walkto VAR_LAST_TALKED, 17, 9, SN_SPEED_NORMAL, 0, 0, 0
+	sn_walkto VAR_LAST_TALKED, 17, 9, SN_SPEED_NORMAL, 0, 0, 0
 	waitmovement VAR_LAST_TALKED
 	removeobject VAR_LAST_TALKED
 	setflag FLAG_SN_HIDE_JASMINE
@@ -208,7 +208,7 @@ SunyshoreCity_EventScript_SNBarry8::
 	msgbox SunyshoreCity_Text_SNBarry8, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_SN_SUNYSHORE_BARRY
-		sn_walkto LOCALID_SN_SUNY_BARRY, 17, 9, SN_SPEED_FAST, 0, 0, 0
+	sn_walkto LOCALID_SN_SUNY_BARRY, 17, 9, SN_SPEED_FAST, 0, 0, 0
 	waitmovement LOCALID_SN_SUNY_BARRY
 	removeobject LOCALID_SN_SUNY_BARRY
 	setflag FLAG_SN_HIDE_SUNY_BARRY

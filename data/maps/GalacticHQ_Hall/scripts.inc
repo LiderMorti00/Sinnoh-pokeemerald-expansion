@@ -35,7 +35,7 @@ GalacticHQ_Hall_EventScript_SNSpeech::
 	closemessage
 	setflag FLAG_SN_HEARD_CYRUS_SPEECH
 	setflag FLAG_SN_HIDE_HALL_SPEECH
-		sn_walkto LOCALID_SN_HALL_LOOKER, 10, 12, SN_SPEED_NORMAL, 0, 0, 0
+	sn_walkto LOCALID_SN_HALL_LOOKER, 10, 12, SN_SPEED_NORMAL, 0, 0, 0
 	waitmovement LOCALID_SN_HALL_LOOKER
 	removeobject LOCALID_SN_HALL_LOOKER
 	release

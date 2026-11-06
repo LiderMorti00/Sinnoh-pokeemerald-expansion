@@ -169,9 +169,24 @@ Route207_EventScript_SNVis_R207_COUNTERPART:
 Route207_EventScript_SNVis_R207_COUNTERPART_End:
 	return
 
+Route207_EventScript_SNCounterpartScene::
+	goto_if_set FLAG_SN_HIDE_R207_COUNTERPART, Route207_EventScript_SNCounterpartScene_End
+	lockall
+	applymovement LOCALID_R207_COUNTERPART, Common_Movement_ExclamationMark
+	waitmovement 0
+	sn_walktoplayer LOCALID_R207_COUNTERPART, SN_SPEED_NORMAL, 0, 0
+	waitmovement LOCALID_R207_COUNTERPART
+	sn_playerface LOCALID_R207_COUNTERPART, 1
+	waitmovement OBJ_EVENT_ID_PLAYER
+	goto Route207_EventScript_SNCounterpart_Main
+Route207_EventScript_SNCounterpartScene_End:
+	end
+
 Route207_EventScript_SNCounterpart::
 	lock
 	faceplayer
+Route207_EventScript_SNCounterpart_Main:
+	call Sinnoh_EventScript_BufferCounterpartName
 	checkplayergender
 	goto_if_eq VAR_RESULT, FEMALE, Route207_EventScript_SNCounterpart_Lucas
 	msgbox Route207_EventScript_SNCounterpart_D1, MSGBOX_DEFAULT
@@ -187,11 +202,11 @@ Route207_EventScript_SNCounterpart_Lucas:
 Route207_EventScript_SNCounterpart_End:
 	setflag FLAG_SN_RECEIVED_VS_SEEKER
 	closemessage
-		sn_walkto VAR_LAST_TALKED, 21, 0, SN_SPEED_NORMAL, 0, 0, 0
-	waitmovement VAR_LAST_TALKED
-	removeobject VAR_LAST_TALKED
+	sn_walkto LOCALID_R207_COUNTERPART, 21, 0, SN_SPEED_NORMAL, 0, 0, 0
+	waitmovement LOCALID_R207_COUNTERPART
+	removeobject LOCALID_R207_COUNTERPART
 	setflag FLAG_SN_HIDE_R207_COUNTERPART
-	release
+	releaseall
 	end
 Route207_EventScript_SNCounterpart_D1:
 	.string "{STR_VAR_1}: Hi, {PLAYER}! How’s your\n"

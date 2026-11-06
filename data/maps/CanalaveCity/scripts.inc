@@ -240,7 +240,7 @@ CanalaveCity_EventScript_SNBarry_B2:
 CanalaveCity_EventScript_SNBarry_After:
 	msgbox CanalaveCity_EventScript_SNBarry_Post, MSGBOX_DEFAULT
 	closemessage
-		sn_walkto VAR_LAST_TALKED, 3, 25, SN_SPEED_FAST, 0, 0, 0
+	sn_walkto VAR_LAST_TALKED, 3, 25, SN_SPEED_FAST, 0, 0, 0
 	waitmovement VAR_LAST_TALKED
 	removeobject VAR_LAST_TALKED
 	setflag FLAG_SN_HIDE_CANAL_BARRY

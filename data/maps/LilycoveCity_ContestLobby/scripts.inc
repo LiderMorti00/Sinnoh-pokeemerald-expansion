@@ -1088,7 +1088,7 @@ LilycoveCity_ContestLobby_EventScript_SNFantina::
 	msgbox LilycoveCity_ContestLobby_EventScript_SNFantina_T, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_SN_MET_FANTINA
-		sn_walkto LOCALID_SN_FANTINA, 14, 11, SN_SPEED_NORMAL, 0, 0, 0
+	sn_walkto LOCALID_SN_FANTINA, 14, 11, SN_SPEED_NORMAL, 0, 0, 0
 	waitmovement LOCALID_SN_FANTINA
 	removeobject LOCALID_SN_FANTINA
 	setflag FLAG_SN_HIDE_FANTINA

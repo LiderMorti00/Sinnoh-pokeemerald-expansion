@@ -67,7 +67,7 @@ ValorLakefront_EventScript_SNCynthia_Potion:
 	setflag FLAG_SN_RECEIVED_SECRET_POTION
 	msgbox ValorLakefront_EventScript_SNCynthia_T3, MSGBOX_DEFAULT
 	closemessage
-		sn_walkto VAR_LAST_TALKED, 47, 18, SN_SPEED_NORMAL, 0, 0, 0
+	sn_walkto VAR_LAST_TALKED, 47, 18, SN_SPEED_NORMAL, 0, 0, 0
 	waitmovement VAR_LAST_TALKED
 	removeobject VAR_LAST_TALKED
 	setflag FLAG_SN_HIDE_VALOR_CYNTHIA

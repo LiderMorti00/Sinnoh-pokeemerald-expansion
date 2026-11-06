@@ -214,7 +214,7 @@ Route217_EventScript_SNMaylene::
 	msgbox Route217_EventScript_SNMaylene_T2, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_SN_MET_MAYLENE_217
-		sn_walkto LOCALID_SN_MAYLENE, 19, 108, SN_SPEED_NORMAL, 0, 0, 0
+	sn_walkto LOCALID_SN_MAYLENE, 19, 108, SN_SPEED_NORMAL, 0, 0, 0
 	waitmovement LOCALID_SN_MAYLENE
 	removeobject LOCALID_SN_MAYLENE
 	setflag FLAG_SN_HIDE_MAYLENE

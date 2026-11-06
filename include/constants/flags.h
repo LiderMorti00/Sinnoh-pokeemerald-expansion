@@ -3167,5 +3167,6 @@
 #define FLAG_SN_HIDE_ETERNA_LOOKER                              (TRAINER_FLAGS_START + TRAINER_PABLO_3)
 #define FLAG_SN_ROTOM_ROWAN_DONE                                (TRAINER_FLAGS_START + TRAINER_MARIA_4)
 #define FLAG_SN_HIDE_ROTOM_ROWAN                                (TRAINER_FLAGS_START + TRAINER_MARIA_5)
+#define FLAG_SN_HIDE_PAST_BARRY_GUARD                           (TRAINER_FLAGS_START + TRAINER_DUSTY_2)
 
 #endif // GUARD_CONSTANTS_FLAGS_H
