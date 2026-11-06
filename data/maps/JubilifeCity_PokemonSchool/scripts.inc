@@ -84,14 +84,22 @@ JubilifeCity_PokemonSchool_EventScript_BarryScene::
 	lockall
 	applymovement LOCALID_SCHOOL_BARRY, Common_Movement_ExclamationMark
 	waitmovement 0
+	sn_walktoplayer LOCALID_SCHOOL_BARRY, SN_SPEED_FAST, 0, 0
+	waitmovement LOCALID_SCHOOL_BARRY
+	sn_playerface LOCALID_SCHOOL_BARRY, 1
+	waitmovement OBJ_EVENT_ID_PLAYER
 	msgbox JubilifeCity_PokemonSchool_Text_Barry, MSGBOX_DEFAULT
 	removeitem ITEM_PARCEL
+	playfanfare MUS_OBTAIN_ITEM
+	message JubilifeCity_PokemonSchool_Text_BarryParcel
+	waitfanfare
+	waitmessage
 	msgbox JubilifeCity_PokemonSchool_Text_Barry2, MSGBOX_DEFAULT
 	giveitem ITEM_TOWN_MAP
 	msgbox JubilifeCity_PokemonSchool_Text_Barry3, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_SCHOOL_BARRY, JubilifeCity_PokemonSchool_Movement_BarryLeaves
-	waitmovement 0
+	sn_walkto LOCALID_SCHOOL_BARRY, 6, 10, SN_SPEED_FAST, 0, 0, 0
+	waitmovement LOCALID_SCHOOL_BARRY
 	playse SE_EXIT
 	removeobject LOCALID_SCHOOL_BARRY
 	setflag FLAG_HIDE_SCHOOL_BARRY
@@ -99,35 +107,40 @@ JubilifeCity_PokemonSchool_EventScript_BarryScene::
 	releaseall
 	end
 
-JubilifeCity_PokemonSchool_Movement_BarryLeaves:
-	walk_fast_left
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_down
-	walk_fast_right
-	walk_fast_right
-	step_end
-
 JubilifeCity_PokemonSchool_Text_Barry:
-	.string "{RIVAL}: {PLAYER}! What are you\n"
-	.string "doing here? A PARCEL from my mom?\l"
-	.string "For me?\p"
-	.string "...Oh! Two TOWN MAPS! Mom always\n"
-	.string "buys everything twice.$"
+	.string "{RIVAL}: Hey, {PLAYER}!\n"
+	.string "Did you come to study, too?\p"
+	.string "I went ahead and memorized everything\n"
+	.string "that was up on the blackboard.\p"
+	.string "After all, it’s the Trainer’s job to\n"
+	.string "avoid having their precious POKéMON\l"
+	.string "hurt in battle, right?\p"
+	.string "So, {PLAYER}, what brings you?\n"
+	.string "Huh?\l"
+	.string "You’ve got something for me?$"
+
+JubilifeCity_PokemonSchool_Text_BarryParcel:
+	.string "{PLAYER} delivered the PARCEL.$"
 
 JubilifeCity_PokemonSchool_Text_Barry2:
-	.string "{RIVAL}: You can have one of them!\n"
-	.string "Here!$"
+	.string "{RIVAL}: So, what is this...?\p"
+	.string "Score!\n"
+	.string "It’s a TOWN MAP!\p"
+	.string "Huh?!\n"
+	.string "Why are there two in here?\p"
+	.string "I like it a lot, but I don’t need two.\n"
+	.string "Here, {PLAYER}, you take one!$"
 
 JubilifeCity_PokemonSchool_Text_Barry3:
-	.string "{RIVAL}: With that, you'll never get\n"
-	.string "lost! I'm heading to OREBURGH for\l"
-	.string "my first BADGE. See ya!$"
+	.string "{RIVAL}: Hmm...\p"
+	.string "Well, according to the TOWN MAP,\n"
+	.string "I guess Oreburgh City is where\l"
+	.string "I should be going next.\p"
+	.string "There’s a Gym, so it’d be perfect for\n"
+	.string "raising the POKéMON I just caught.\p"
+	.string "Well, I’m on the road to becoming\n"
+	.string "the greatest Trainer of all time!\p"
+	.string "See you around!$"
 
 JubilifeCity_PokemonSchool_EventScript_Harrison::
 	trainerbattle_single TRAINER_DAISY, JubilifeCity_PokemonSchool_Text_HarrisonIntro, JubilifeCity_PokemonSchool_Text_HarrisonDefeat

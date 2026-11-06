@@ -6,6 +6,10 @@ Route203_EventScript_BarryScene::
 	lockall
 	applymovement LOCALID_ROUTE203_BARRY, Common_Movement_ExclamationMark
 	waitmovement 0
+	sn_walktoplayer LOCALID_ROUTE203_BARRY, SN_SPEED_FAST, 0, 0
+	waitmovement LOCALID_ROUTE203_BARRY
+	sn_playerface LOCALID_ROUTE203_BARRY, 1
+	waitmovement OBJ_EVENT_ID_PLAYER
 	msgbox Route203_Text_BarryIntro, MSGBOX_DEFAULT
 	closemessage
 	switch VAR_STARTER_MON
@@ -29,8 +33,8 @@ Route203_EventScript_BattleTurtwig::
 Route203_EventScript_BarryAfter::
 	msgbox Route203_Text_BarryAfter, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_ROUTE203_BARRY, Route203_Movement_BarryLeaves
-	waitmovement 0
+	sn_walkto LOCALID_ROUTE203_BARRY, 26, 20, SN_SPEED_FAST, 0, 0, 0
+	waitmovement LOCALID_ROUTE203_BARRY
 	removeobject LOCALID_ROUTE203_BARRY
 	setflag FLAG_HIDE_ROUTE203_BARRY
 	setvar VAR_SINNOH_STORY, 17
@@ -101,20 +105,21 @@ Route203_Movement_BarryLeaves:
 	step_end
 
 Route203_Text_BarryIntro:
-	.string "{RIVAL}: Oh! {PLAYER}! Perfect\n"
-	.string "timing!\p"
-	.string "I've been training nonstop. Let's\n"
-	.string "see which of us got stronger!$"
-
+	.string "{RIVAL}: Hey! {PLAYER}! Tell me you\n"
+	.string "got a little tougher!\p"
+	.string "Me? Do you even need to ask? Of course\n"
+	.string "I got tougher!\p"
+	.string "Come on! I’ll demonstrate it to you!$"
 Route203_Text_BarryDefeat:
-	.string "Argh! You beat me again?! I'm\n"
-	.string "fining you!$"
-
+	.string "Waah! What do you mean I lost?!$"
 Route203_Text_BarryAfter:
-	.string "{RIVAL}: OREBURGH CITY is past the\n"
-	.string "gate ahead. There's a GYM there!\p"
-	.string "I'm going to get my first BADGE\n"
-	.string "before you. See ya!$"
+	.string "{RIVAL}: Well, that’s it! That’s the\n"
+	.string "last time I’ll ever lose!\p"
+	.string "I’m going to be the world’s toughest\n"
+	.string "Trainer, and you know it!\p"
+	.string "The first thing to do is take on the\n"
+	.string "Oreburgh City POKéMON Gym!\p"
+	.string "I’m gonna toughen up for that, totally!$"
 
 Route203_EventScript_Sebastian::
 	trainerbattle_single TRAINER_EDDIE, Route203_Text_SebastianIntro, Route203_Text_SebastianDefeat

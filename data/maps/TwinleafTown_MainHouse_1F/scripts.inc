@@ -121,10 +121,17 @@ TwinleafTown_MainHouse_1F_EventScript_Mom::
 	release
 	end
 TwinleafTown_MainHouse_1F_EventScript_SNMomNormal:
-	goto_if_unset FLAG_SYS_POKEMON_GET, TwinleafTown_MainHouse_1F_EventScript_SNMomTalk
-	msgbox TwinleafTown_MainHouse_1F_Text_SNMomRest, MSGBOX_DEFAULT
+	goto_if_unset FLAG_SYS_POKEMON_GET, TwinleafTown_MainHouse_1F_EventScript_SNMomEarly
+	goto_if_lt VAR_SINNOH_STORY, 10, TwinleafTown_MainHouse_1F_EventScript_SNMomShoesInfo
+	call TwinleafTown_MainHouse_1F_EventScript_SNMomRestText
 	closemessage
 	call Common_EventScript_OutOfCenterPartyHeal
+	goto_if_lt VAR_SINNOH_STORY, 31, TwinleafTown_MainHouse_1F_EventScript_SNMomRandom
+	goto_if_set FLAG_SYS_GAME_CLEAR, TwinleafTown_MainHouse_1F_EventScript_SNMomRandom
+	msgbox TwinleafTown_MainHouse_1F_Text_SNMomWorried, MSGBOX_DEFAULT
+	release
+	end
+TwinleafTown_MainHouse_1F_EventScript_SNMomRandom:
 	random 4
 	switch VAR_RESULT
 	case 0, TwinleafTown_MainHouse_1F_EventScript_SNMom0
@@ -133,6 +140,36 @@ TwinleafTown_MainHouse_1F_EventScript_SNMomNormal:
 	msgbox TwinleafTown_MainHouse_1F_Text_MomTalk, MSGBOX_DEFAULT
 	release
 	end
+TwinleafTown_MainHouse_1F_EventScript_SNMomEarly:
+	goto_if_ge VAR_SINNOH_STORY, 2, TwinleafTown_MainHouse_1F_EventScript_SNMomWaiting
+	msgbox TwinleafTown_MainHouse_1F_Text_SNMomImpatient, MSGBOX_DEFAULT
+	release
+	end
+TwinleafTown_MainHouse_1F_EventScript_SNMomWaiting:
+	msgbox TwinleafTown_MainHouse_1F_Text_SNMomIsntRivalWaiting, MSGBOX_DEFAULT
+	release
+	end
+TwinleafTown_MainHouse_1F_EventScript_SNMomShoesInfo:
+	goto_if_lt VAR_SINNOH_STORY, 5, TwinleafTown_MainHouse_1F_EventScript_SNMomTalk
+	msgbox TwinleafTown_MainHouse_1F_Text_SNMomInstructions, MSGBOX_DEFAULT
+	release
+	end
+TwinleafTown_MainHouse_1F_EventScript_SNMomRestText:
+	gettime
+	goto_if_lt VAR_0x8000, 4, TwinleafTown_MainHouse_1F_EventScript_SNMomRestLate
+	goto_if_lt VAR_0x8000, 10, TwinleafTown_MainHouse_1F_EventScript_SNMomRestMorning
+	goto_if_ge VAR_0x8000, 20, TwinleafTown_MainHouse_1F_EventScript_SNMomRestNight
+	msgbox TwinleafTown_MainHouse_1F_Text_SNMomRest, MSGBOX_DEFAULT
+	return
+TwinleafTown_MainHouse_1F_EventScript_SNMomRestLate:
+	msgbox TwinleafTown_MainHouse_1F_Text_SNMomRestLate, MSGBOX_DEFAULT
+	return
+TwinleafTown_MainHouse_1F_EventScript_SNMomRestMorning:
+	msgbox TwinleafTown_MainHouse_1F_Text_SNMomRestMorning, MSGBOX_DEFAULT
+	return
+TwinleafTown_MainHouse_1F_EventScript_SNMomRestNight:
+	msgbox TwinleafTown_MainHouse_1F_Text_SNMomRestNight, MSGBOX_DEFAULT
+	return
 TwinleafTown_MainHouse_1F_EventScript_SNMom0:
 	msgbox TwinleafTown_MainHouse_1F_Text_SNMomA, MSGBOX_DEFAULT
 	release
@@ -311,3 +348,47 @@ TwinleafTown_MainHouse_1F_Text_SNMomC:
 	.string "Well, actually, all we do is talk about\n"
 	.string "you two.$"
 
+
+TwinleafTown_MainHouse_1F_Text_SNMomImpatient:
+	.string "Mom: You know how impatient\n"
+	.string "{RIVAL} is.\p"
+	.string "He took off before I could even\n"
+	.string "ask what it was about.$"
+
+TwinleafTown_MainHouse_1F_Text_SNMomIsntRivalWaiting:
+	.string "Mom: What is it, dear?\n"
+	.string "Isn’t {RIVAL} waiting for you?$"
+
+TwinleafTown_MainHouse_1F_Text_SNMomInstructions:
+	.string "Mom: I’ll read you the instructions\n"
+	.string "for the Running Shoes...\p"
+	.string "“Press the B Button and dash\n"
+	.string "about faster than ever before!\p"
+	.string "“Put on the Running Shoes and\n"
+	.string "blaze new trails of adventure!”\p"
+	.string "Well, isn’t that just nifty!$"
+
+TwinleafTown_MainHouse_1F_Text_SNMomRestMorning:
+	.string "Mom: Welcome home, {PLAYER}.\n"
+	.string "Are you and your POKéMON healthy?\p"
+	.string "It’s still early in the morning.\n"
+	.string "Take a quick rest, dear.$"
+
+TwinleafTown_MainHouse_1F_Text_SNMomRestNight:
+	.string "Mom: Welcome home, {PLAYER}.\n"
+	.string "Are you and your POKéMON healthy?\p"
+	.string "I just made dinner.\n"
+	.string "Take a quick rest, dear.$"
+
+TwinleafTown_MainHouse_1F_Text_SNMomRestLate:
+	.string "Mom: Welcome home, {PLAYER}.\n"
+	.string "Are you and your POKéMON healthy?\p"
+	.string "It’s so late right now...\n"
+	.string "Take a quick rest, dear.$"
+
+TwinleafTown_MainHouse_1F_Text_SNMomWorried:
+	.string "Mom: {PLAYER}, is everything all\n"
+	.string "right?\p"
+	.string "I get worried seeing the news...\p"
+	.string "But you’re all right, aren’t you?\n"
+	.string "After all, you’re never alone.$"
