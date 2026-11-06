@@ -3157,5 +3157,6 @@
 #define FLAG_SN_HIDE_CANAL_SAILOR                               (TRAINER_FLAGS_START + TRAINER_THALIA_4)
 #define FLAG_SN_HIDE_KEY_LOOKER                                 (TRAINER_FLAGS_START + TRAINER_ANDRES_2)
 #define FLAG_SN_KEY_GRUNT_FLED                                  (TRAINER_FLAGS_START + TRAINER_ANDRES_3)
+#define FLAG_SN_HIDE_HOF_ROWAN                                  (TRAINER_FLAGS_START + TRAINER_ANDRES_4)
 
 #endif // GUARD_CONSTANTS_FLAGS_H
