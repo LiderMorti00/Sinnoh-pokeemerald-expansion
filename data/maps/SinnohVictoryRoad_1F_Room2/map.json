@@ -80,7 +80,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
+      "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_1",
       "x": 16,
       "y": 10,
       "elevation": 3,
@@ -184,7 +184,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
+      "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_1",
       "x": 46,
       "y": 23,
       "elevation": 3,

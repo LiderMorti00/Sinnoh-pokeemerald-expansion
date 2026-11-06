@@ -67,7 +67,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SCHOOL_KID_M",
+      "graphics_id": "OBJ_EVENT_GFX_BOY",
       "x": 10,
       "y": 3,
       "elevation": 3,
@@ -107,7 +107,7 @@
       "flag": "FLAG_HIDE_SCHOOL_BARRY"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SCHOOL_KID_M",
+      "graphics_id": "OBJ_EVENT_GFX_BOY",
       "x": 8,
       "y": 3,
       "elevation": 3,

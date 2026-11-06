@@ -26,7 +26,7 @@
   ],
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
+      "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_1",
       "x": 23,
       "y": 9,
       "elevation": 4,
@@ -39,7 +39,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_NINJA_BOY",
+      "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY_FRLG",
       "x": 9,
       "y": 30,
       "elevation": 4,
@@ -106,7 +106,7 @@
     },
     {
       "local_id": "LOCALID_SN_CEL_ELDER_OUT",
-      "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
+      "graphics_id": "OBJ_EVENT_GFX_OLD_WOMAN_FRLG",
       "x": 17,
       "y": 27,
       "elevation": 3,
