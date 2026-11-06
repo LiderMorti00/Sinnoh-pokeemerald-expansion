@@ -11,6 +11,7 @@
 #include "constants/moves.h"
 #include "constants/species.h"
 #include "string_util.h"
+#include "battle.h"
 #include "script_pokemon_util.h"
 #include "constants/flags.h"
 #include "constants/map_groups.h"
@@ -393,4 +394,20 @@ void SinnohBattlegroundSelect(void)
                 FlagSet(sBattlegroundOtherFlags[i]);
         }
     }
+}
+
+// Reto de las 5 doncellas (Mansión Pokémon)
+// VAR_RESULT = turnos objetivo del día (5-9) y STR_VAR_1 con el número.
+void SinnohMaidTarget(void)
+{
+    u32 t = 5 + ((VarGet(VAR_DAYS) + 3) * 2654435761u >> 28) % 5;
+    gSpecialVar_Result = t;
+    ConvertIntToDecimalStringN(gStringVar1, t, STR_CONV_MODE_LEFT_ALIGN, 2);
+}
+
+// Suma a VAR_0x8005 los turnos del último combate y pone el total en STR_VAR_2.
+void SinnohAddBattleTurns(void)
+{
+    gSpecialVar_0x8005 += gBattleResults.battleTurnCounter;
+    ConvertIntToDecimalStringN(gStringVar2, gSpecialVar_0x8005, STR_CONV_MODE_LEFT_ALIGN, 3);
 }

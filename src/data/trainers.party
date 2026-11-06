@@ -15620,17 +15620,20 @@ Level: 25
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_CAMRON ===
-Name: CAMRON
-Class: Triathlete
-Pic: Swimming Triathlete M
-Gender: Male
-Music: Swimmer
+Name: BELINDA
+Class: TRAINER_CLASS_MAID
+Pic: TRAINER_PIC_SINNOH_WAITRESS
+Gender: Female
+Music: Female
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Staryu
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_CLEFAIRY
+Level: 25
+- MOVE_METRONOME
+- MOVE_MINIMIZE
+- MOVE_METEOR_MASH
+- MOVE_ENDURE
 
 === TRAINER_CORY_1 ===
 Name: CORY
@@ -15654,111 +15657,100 @@ Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_CAROLINA ===
-Name: CAROLINA
-Class: Cooltrainer
-Pic: Cooltrainer F
+Name: SOPHIE
+Class: TRAINER_CLASS_MAID
+Pic: TRAINER_PIC_SINNOH_WAITRESS
 Gender: Female
-Music: Cool
-Items: Hyper Potion
+Music: Female
 Double Battle: No
 AI: Basic Trainer
 
-Manectric
-Level: 24
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-
-Swellow
-Level: 24
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-
-Manectric
-Level: 24
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+SPECIES_CLEFAIRY
+Level: 27
+- MOVE_METRONOME
+- MOVE_SING
+- MOVE_METEOR_MASH
+- MOVE_ENDURE
 
 === TRAINER_ELIJAH ===
-Name: ELIJAH
-Class: Bird Keeper
-Pic: Bird Keeper
-Gender: Male
-Music: Cool
+Name: EMILY
+Class: TRAINER_CLASS_MAID
+Pic: TRAINER_PIC_SINNOH_WAITRESS
+Gender: Female
+Music: Female
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Skarmory
-Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Skarmory
-Level: 25
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_CLEFAIRY
+Level: 29
+- MOVE_METRONOME
+- MOVE_ENCORE
+- MOVE_METEOR_MASH
+- MOVE_ENDURE
 
 === TRAINER_CELIA ===
-Name: CELIA
-Class: Picnicker
-Pic: Picnicker
+Name: ELENA
+Class: TRAINER_CLASS_MAID
+Pic: TRAINER_PIC_SINNOH_WAITRESS
 Gender: Female
-Music: Girl
+Music: Female
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Marill
-Level: 22
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Lombre
-Level: 22
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_CLEFAIRY
+Level: 31
+- MOVE_METRONOME
+- MOVE_SWAGGER
+- MOVE_METEOR_MASH
+- MOVE_ENDURE
 
 === TRAINER_BRYAN ===
-Name: BRYAN
-Class: Ruin Maniac
-Pic: Ruin Maniac
-Gender: Male
-Music: Hiker
+Name: CLARE
+Class: TRAINER_CLASS_MAID
+Pic: TRAINER_PIC_SINNOH_WAITRESS
+Gender: Female
+Music: Female
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Sandshrew
-Level: 22
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Sandslash
-Level: 22
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_CLEFAIRY
+Level: 33
+- MOVE_METRONOME
+- MOVE_BOUNCE
+- MOVE_METEOR_MASH
+- MOVE_ENDURE
 
 === TRAINER_BRANDEN ===
-Name: BRANDEN
-Class: Camper
-Pic: Camper
+Name: LIAM
+Class: TRAINER_CLASS_RICH_BOY
+Pic: TRAINER_PIC_SINNOH_RICH_BOY
 Gender: Male
-Music: Male
+Music: Rich
+Items: ITEM_FULL_RESTORE
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Taillow
-Level: 22
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Nuzleaf
-Level: 22
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_BLISSEY @ ITEM_RARE_CANDY
+Level: 35
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
 === TRAINER_BRYANT ===
-Name: BRYANT
-Class: Kindler
-Pic: Kindler
-Gender: Male
-Music: Hiker
+Name: CELESTE
+Class: TRAINER_CLASS_LADY
+Pic: TRAINER_PIC_SINNOH_LADY
+Gender: Female
+Music: Rich
+Items: ITEM_FULL_RESTORE
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
-Numel
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Slugma
-Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_BLISSEY @ ITEM_RARE_CANDY
+Level: 35
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- MOVE_FLING
+- MOVE_SOFT_BOILED
+- MOVE_EGG_BOMB
+- MOVE_PSYCHIC
 
 === TRAINER_SHAYLA ===
 Name: SHAYLA

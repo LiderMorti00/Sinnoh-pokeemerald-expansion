@@ -51,7 +51,8 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PokemonMansion_EventScript_PtNpc3",
-      "flag": "0"
+      "flag": "0",
+      "local_id": "LOCALID_MAID_FAR_WEST"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_MAID",
@@ -78,6 +79,34 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "PokemonMansion_EventScript_PtNpc5",
       "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_SN_MAID_KNOCKOUT",
+      "graphics_id": "OBJ_EVENT_GFX_SINNOH_MAID",
+      "x": 2,
+      "y": 8,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "flag": "FLAG_SN_HIDE_MAID_KNOCKOUT",
+      "elevation": 3,
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0"
+    },
+    {
+      "local_id": "LOCALID_SN_MAID_BOSS",
+      "graphics_id": "OBJ_EVENT_GFX_VAR_0",
+      "x": 2,
+      "y": 8,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "flag": "FLAG_SN_HIDE_MAID_BOSS",
+      "elevation": 3,
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0"
     }
   ],
   "warp_events": [

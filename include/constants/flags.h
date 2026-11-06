@@ -1633,7 +1633,7 @@
 #define FLAG_UNUSED_0x95B                           (DAILY_FLAGS_START + 0x3B) // Unused Flag
 #define FLAG_UNUSED_0x95C                           (DAILY_FLAGS_START + 0x3C) // Unused Flag
 #define FLAG_UNUSED_0x95D                           (DAILY_FLAGS_START + 0x3D) // Unused Flag
-#define FLAG_UNUSED_0x95E                           (DAILY_FLAGS_START + 0x3E) // Unused Flag
+#define FLAG_DAILY_SN_MAID_DONE                     (DAILY_FLAGS_START + 0x3E) // Proyecto Sinnoh: reto de las 5 doncellas
 #define FLAG_UNUSED_0x95F                           (DAILY_FLAGS_START + 0x3F) // Unused Flag
 #define DAILY_FLAGS_END                             (FLAG_UNUSED_0x95F + (7 - FLAG_UNUSED_0x95F % 8))
 #define NUM_DAILY_FLAGS                             (DAILY_FLAGS_END - DAILY_FLAGS_START + 1)
@@ -3181,5 +3181,8 @@
 #define FLAG_SN_ELDRITCH_ASKED                                  (TRAINER_FLAGS_START + TRAINER_MAXIE_MAGMA_HIDEOUT)
 #define FLAG_SN_ELDRITCH_SON_WOKE                               (TRAINER_FLAGS_START + TRAINER_MAXIE_MT_CHIMNEY)
 #define FLAG_SN_ELDRITCH_THANKED                                (TRAINER_FLAGS_START + TRAINER_WALLY_MAUVILLE)
+#define FLAG_SN_HIDE_MAID_KNOCKOUT                              (TRAINER_FLAGS_START + TRAINER_BRENDAN_LILYCOVE_MUDKIP)
+#define FLAG_SN_HIDE_MAID_BOSS                                  (TRAINER_FLAGS_START + TRAINER_BRENDAN_LILYCOVE_TREECKO)
+#define FLAG_SN_MAID_EXPLAINED                                  (TRAINER_FLAGS_START + TRAINER_BRENDAN_LILYCOVE_TORCHIC)
 
 #endif // GUARD_CONSTANTS_FLAGS_H

@@ -329,6 +329,8 @@ gSpecials::
 	def_special SinnohHoneySlather
 	def_special SinnohDayOfWeek
 	def_special SinnohBattlegroundSelect
+	def_special SinnohMaidTarget
+	def_special SinnohAddBattleTurns
 	def_special SinnohPartyMaxRibbons
 	def_special SinnohSpaTreatment
 	def_special SinnohUnownFormsCount
