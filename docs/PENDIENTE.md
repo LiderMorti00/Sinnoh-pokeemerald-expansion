@@ -3,7 +3,7 @@
 Lista única de tareas pendientes. Cuando se termine una tarea, se borra de aquí.
 Fuentes de referencia: Bulbapedia (guía de Platino), WikiDex, pret/pokeplatinum (textos, eventos y datos originales).
 
-Última revisión: 6 de noviembre de 2026 (sinnoh28).
+Última revisión: 6 de noviembre de 2026 (sinnoh29).
 
 ---
 
@@ -20,6 +20,9 @@ Faltan:
 - Charla de Riley en la Isla Hierro.
 - Túnel Maníaco con menos y con más de 26 formas de Unown.
 - Laboratorio de Arena después de la Columna Lanza (Rowan y Dawn).
+- Campo de Batalla: los dos juegos de frases diarios de cada líder, «¿otra vez?» tras decir que no, y Roark/Byron cuando están los dos.
+- Gimnasios de Pirita y Vetusta con los textos de Platino y las MT76 (Trampa Rocas) y MT86 (Hierba Lazo).
+- Canal: frases de los vecinos tras la explosión del Lago Valor.
 
 ## 2. Escenas con la coreografía de Platino (en curso)
 
@@ -29,10 +32,9 @@ Herramienta: `src/sinnoh_scene.c` y las macros `sn_walktoplayer`, `sn_walkto`, `
 
 Hechas: Jubileo (llegada con Dawn/Lucas y Looker, Barry en la escuela), Ruta 203 (Barry), Puerta y ciudad de Pirita (montañero y chico), Edificio Galaxia (Looker), sala de Rotom (Rowan), Valle Eólico (grunt de la puerta), Gimnasio Corazón (guía), Ruta 207 (Buscapelea), Pradera (bomba y Barry vigilando), Celestic (grunt), Biblioteca de Canal (explosión), Lago Veraz (Marte), Sede Galaxia (Cyrus y Saturno), Marina (Barry y Jasmine), Rocavelo (almacén con sí/no, grunt de la llave y Looker, Wake en el gimnasio), Lago Agudeza (Júpiter y Barry) y su orilla (Barry), orilla del Lago Valor (Barry y Cynthia), Salón de la Fama (Rowan y Cynthia), Hojaverde (Barry sale de casa, su habitación, el guitarrista), casa del jugador (TV, Barry, mamá, la madre de Barry), Ruta 201 (escena de los iniciales), Lago Veraz (Cyrus y Barry), las 35 salidas con fundido que en Platino son andando, y todas las aproximaciones de NPC (ya no se calculan por casilla fija).
 
-Faltan, por orden de la historia (comparar con `ptdump.py` de cada mapa):
-- Vetusta (estatua, Gardenia, Cynthia), Corazón (Keira, Mr. Goods), Pradera.
-- Ruinas Sosiego, Celestic (Cynthia, anciano, Cyrus), Ruta 210 Sur (Psyduck, Cynthia), Ruta 213 y 224, Lago Valor (restaurante), Puntaneva, Sede Galaxia (sala de control), Lago Veraz seco.
-- Área de Combate (Flint y Volkner), Villa, Mansión Pokémon, Ruta 227 (Buck y Wake), Marina (Jasmine, Flint).
+Ya no queda ninguna escena pendiente (ver `docs/ESCENAS.md`; la Villa está excluida).
+
+Diálogos de NPC que aún no tienen todas las frases de Platino (unas 980 de 2370), casi todos de cosas que no existen en el hack: Villa, Subsuelo (Hombre Topo), Dr. Footstep y cintas, Pokétch, Plaza Amistad, Galería de la TV. Lo que queda fuera de eso son frases sueltas de NPC con ramas que dependen de variables de Platino sin equivalente directo (por ejemplo, Barry en Pradera tras el gimnasio o el concurso de payasos de Jubileo).
 
 ## 3. Prueba final
 

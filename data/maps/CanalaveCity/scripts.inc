@@ -24,7 +24,16 @@ CanalaveCity_EventScript_SNGfxLucas:
 	return
 
 CanalaveCity_EventScript_PtNpc1::
-	msgbox CanalaveCity_Text_PtNpc1, MSGBOX_NPC
+	lock
+	faceplayer
+	call CanalaveCity_EventScript_SNExploded
+	goto_if_eq VAR_RESULT, TRUE, CanalaveCity_EventScript_PtNpc1_SNVar0
+	msgbox CanalaveCity_Text_PtNpc1, MSGBOX_DEFAULT
+	release
+	end
+CanalaveCity_EventScript_PtNpc1_SNVar0:
+	msgbox CanalaveCity_EventScript_PtNpc1_Text_SNVar0, MSGBOX_DEFAULT
+	release
 	end
 
 CanalaveCity_Text_PtNpc1:
@@ -33,7 +42,16 @@ CanalaveCity_Text_PtNpc1:
 	.string "Island to get a Hidden Machine, right?$"
 
 CanalaveCity_EventScript_PtNpc2::
-	msgbox CanalaveCity_Text_PtNpc2, MSGBOX_NPC
+	lock
+	faceplayer
+	call CanalaveCity_EventScript_SNExploded
+	goto_if_eq VAR_RESULT, TRUE, CanalaveCity_EventScript_PtNpc2_SNVar0
+	msgbox CanalaveCity_Text_PtNpc2, MSGBOX_DEFAULT
+	release
+	end
+CanalaveCity_EventScript_PtNpc2_SNVar0:
+	msgbox CanalaveCity_EventScript_PtNpc2_Text_SNVar0, MSGBOX_DEFAULT
+	release
 	end
 
 CanalaveCity_Text_PtNpc2:
@@ -41,7 +59,23 @@ CanalaveCity_Text_PtNpc2:
 	.string "makes its Return move powerful!$"
 
 CanalaveCity_EventScript_PtNpc3::
-	msgbox CanalaveCity_Text_PtNpc3, MSGBOX_NPC
+	lock
+	faceplayer
+	call CanalaveCity_EventScript_SNExploded
+	goto_if_eq VAR_RESULT, TRUE, CanalaveCity_EventScript_PtNpc3_SNVar0
+	goto_if_unset FLAG_BADGE06_GET, CanalaveCity_EventScript_PtNpc3_Base
+	goto_if_lt VAR_SINNOH_STORY, 31, CanalaveCity_EventScript_PtNpc3_SNVar1
+CanalaveCity_EventScript_PtNpc3_Base:
+	msgbox CanalaveCity_Text_PtNpc3, MSGBOX_DEFAULT
+	release
+	end
+CanalaveCity_EventScript_PtNpc3_SNVar0:
+	msgbox CanalaveCity_EventScript_PtNpc3_Text_SNVar0, MSGBOX_DEFAULT
+	release
+	end
+CanalaveCity_EventScript_PtNpc3_SNVar1:
+	msgbox CanalaveCity_EventScript_PtNpc3_Text_SNVar1, MSGBOX_DEFAULT
+	release
 	end
 
 CanalaveCity_Text_PtNpc3:
@@ -51,7 +85,16 @@ CanalaveCity_Text_PtNpc3:
 	.string "hub of cargo transportation.$"
 
 CanalaveCity_EventScript_PtNpc4::
-	msgbox CanalaveCity_Text_PtNpc4, MSGBOX_NPC
+	lock
+	faceplayer
+	call CanalaveCity_EventScript_SNExploded
+	goto_if_eq VAR_RESULT, TRUE, CanalaveCity_EventScript_PtNpc4_SNVar0
+	msgbox CanalaveCity_Text_PtNpc4, MSGBOX_DEFAULT
+	release
+	end
+CanalaveCity_EventScript_PtNpc4_SNVar0:
+	msgbox CanalaveCity_EventScript_PtNpc4_Text_SNVar0, MSGBOX_DEFAULT
+	release
 	end
 
 CanalaveCity_Text_PtNpc4:
@@ -60,7 +103,16 @@ CanalaveCity_Text_PtNpc4:
 	.string "of time and space.$"
 
 CanalaveCity_EventScript_PtNpc5::
-	msgbox CanalaveCity_Text_PtNpc5, MSGBOX_NPC
+	lock
+	faceplayer
+	call CanalaveCity_EventScript_SNExploded
+	goto_if_eq VAR_RESULT, TRUE, CanalaveCity_EventScript_PtNpc5_SNVar0
+	msgbox CanalaveCity_Text_PtNpc5, MSGBOX_DEFAULT
+	release
+	end
+CanalaveCity_EventScript_PtNpc5_SNVar0:
+	msgbox CanalaveCity_EventScript_PtNpc5_Text_SNVar0, MSGBOX_DEFAULT
+	release
 	end
 
 CanalaveCity_Text_PtNpc5:
@@ -558,3 +610,41 @@ CanalaveCity_Text_SNComeSailWithMe:
 	.string "feel great!\p"
 	.string "I’ve regained my spirit as a Sailor!\n"
 	.string "Come sail with me later!$"
+
+CanalaveCity_EventScript_SNExploded::
+	setvar VAR_RESULT, FALSE
+	goto_if_ne VAR_SINNOH_STORY, 31, CanalaveCity_EventScript_SNExplodedEnd
+	goto_if_set FLAG_SN_RECEIVED_GALACTIC_KEY, CanalaveCity_EventScript_SNExplodedEnd
+	setvar VAR_RESULT, TRUE
+CanalaveCity_EventScript_SNExplodedEnd:
+	return
+
+CanalaveCity_EventScript_PtNpc1_Text_SNVar0:
+	.string "The tremor earlier was no quake. It\n"
+	.string "seems it was a mysterious explosion!$"
+
+CanalaveCity_EventScript_PtNpc2_Text_SNVar0:
+	.string "E-even PS-PSYDUCK’s Future Sight\n"
+	.string "couldn’t foretell that tremor!$"
+
+CanalaveCity_EventScript_PtNpc4_Text_SNVar0:
+	.string "Hey, hey! Old dude and kids! Did you\n"
+	.string "hear?!\p"
+	.string "They’re saying there was a huge\n"
+	.string "explosion at Lake Valor!\p"
+	.string "But, I hear everything’s fine now. I\n"
+	.string "guess it was just a lot of noise.$"
+
+CanalaveCity_EventScript_PtNpc5_Text_SNVar0:
+	.string "I’m flabbergasted! What could explode\n"
+	.string "at Lake Valor?$"
+
+CanalaveCity_EventScript_PtNpc3_Text_SNVar0:
+	.string "What was that tremor? I thought Mt.\n"
+	.string "Coronet erupted!$"
+
+CanalaveCity_EventScript_PtNpc3_Text_SNVar1:
+	.string "There’s a really impatient-looking boy\n"
+	.string "hanging out in front of the library.\p"
+	.string "He’s so jittery, just seeing him makes\n"
+	.string "me feel twitchy.$"

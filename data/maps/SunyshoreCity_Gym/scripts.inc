@@ -550,8 +550,21 @@ SunyshoreCity_Gym_Text_ExplainTM:
 SunyshoreCity_Gym_Text_PtGymGuide:
 	.string "Hey, there! How’s it going,\n"
 	.string "Champ-to-be?\p"
-	.string "I’m the Gym guide! I help out Trainers\n"
-	.string "who come to challenge the Gym Leader.$"
+	.string "Let me check out your Trainer Case.\n"
+	.string "Let’s see how many Badges you have.\p"
+	.string "One, two, three... Whoa! Wow! You’ve\n"
+	.string "already got seven!\p"
+	.string "That means if you can beat this Gym\n"
+	.string "Leader, you’re on your way to the\p"
+	.string "POKéMON League next.\p"
+	.string "That also means this is the last time I\n"
+	.string "get to give you advice.\p"
+	.string "This is it, kiddo! Listen carefully...one\n"
+	.string "last time!\p"
+	.string "The Gym Leader here is a master of\n"
+	.string "Electric-type POKéMON!\p"
+	.string "That’s all I have to say. The rest is up\n"
+	.string "to you!$"
 
 SunyshoreCity_Gym_Text_PtGymGuideAfter:
 	.string "Oh! {PLAYER}! Did you beat the Gym\n"
@@ -567,13 +580,12 @@ SunyshoreCity_Gym_Text_PtGymGuideAfter:
 	.string "Way to go, kiddo!$"
 
 SunyshoreCity_Gym_Text_PtGymStatue:
-	.string "SUNYSHORE POKéMON GYM\n"
-	.string "LEADER: VOLKNER$"
+	.string "Sunyshore City POKéMON Gym\p"
+	.string "Leader: Volkner$"
 
 SunyshoreCity_Gym_Text_PtGymStatueWon:
-	.string "SUNYSHORE POKéMON GYM\n"
-	.string "LEADER: VOLKNER\p"
-	.string "WINNING TRAINERS:\n"
+	.string "Sunyshore City POKéMON Gym\p"
+	.string "Leader: Volkner Certified Trainers:\p"
 	.string "{PLAYER}$"
 
 SunyshoreCity_Gym_EventScript_SNRematch::

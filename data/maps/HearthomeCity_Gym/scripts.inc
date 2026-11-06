@@ -263,13 +263,16 @@ HearthomeCity_Gym_Text_PtGymGuideAfter:
 	.string "everyone, right?$"
 
 HearthomeCity_Gym_Text_PtGymStatue:
-	.string "HEARTHOME POKéMON GYM\n"
-	.string "LEADER: FANTINA$"
+	.string "Hearthome City POKéMON Gym\n"
+	.string "Leader: Fantina\p"
+	.string "Certified Trainers:\n"
+	.string "{RIVAL}$"
 
 HearthomeCity_Gym_Text_PtGymStatueWon:
-	.string "HEARTHOME POKéMON GYM\n"
-	.string "LEADER: FANTINA\p"
-	.string "WINNING TRAINERS:\n"
+	.string "Hearthome City POKéMON Gym\n"
+	.string "Leader: Fantina\p"
+	.string "Certified Trainers:\n"
+	.string "{RIVAL}\n"
 	.string "{PLAYER}$"
 
 HearthomeCity_Gym_EventScript_SNRematch::
@@ -323,4 +326,3 @@ HearthomeCity_Gym_Text_SNGuideInfo:
 	.string "Some panels take you back where you\n"
 	.string "started, so remember the ones you\l"
 	.string "used! FANTINA waits in the middle room.$"
-

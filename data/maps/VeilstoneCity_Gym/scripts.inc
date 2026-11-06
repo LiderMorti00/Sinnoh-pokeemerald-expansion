@@ -503,13 +503,16 @@ VeilstoneCity_Gym_Text_PtGymGuideAfter:
 	.string "Of course, I thought you’d win.$"
 
 VeilstoneCity_Gym_Text_PtGymStatue:
-	.string "VEILSTONE POKéMON GYM\n"
-	.string "LEADER: MAYLENE$"
+	.string "Veilstone City POKéMON Gym\n"
+	.string "Leader: Maylene\p"
+	.string "Certified Trainers:\n"
+	.string "{RIVAL}$"
 
 VeilstoneCity_Gym_Text_PtGymStatueWon:
-	.string "VEILSTONE POKéMON GYM\n"
-	.string "LEADER: MAYLENE\p"
-	.string "WINNING TRAINERS:\n"
+	.string "Veilstone City POKéMON Gym\n"
+	.string "Leader: Maylene\p"
+	.string "Certified Trainers:\n"
+	.string "{RIVAL}\n"
 	.string "{PLAYER}$"
 
 VeilstoneCity_Gym_EventScript_SNRematch::

@@ -397,6 +397,12 @@ void SinnohBattlegroundSelect(void)
     }
 }
 
+// Campo de Batalla: juego de frases del día (0 o 1) en VAR_TEMP_4, como el mensaje aleatorio diario de Platino.
+void SinnohBattlegroundMsgSet(void)
+{
+    VarSet(VAR_TEMP_4, ((VarGet(VAR_DAYS) + 7) * 2654435761u >> 20) & 1);
+}
+
 // Reto de las 5 doncellas (Mansión Pokémon)
 // VAR_RESULT = turnos objetivo del día (5-9) y STR_VAR_1 con el número.
 void SinnohMaidTarget(void)

@@ -3,7 +3,15 @@ SolaceonTown_MapScripts::
 	.byte 0
 
 SolaceonTown_EventScript_PtNpc1::
-	msgbox SolaceonTown_Text_PtNpc1, MSGBOX_NPC
+	lock
+	faceplayer
+	goto_if_set FLAG_BADGE03_GET, SolaceonTown_EventScript_PtNpc1_SNVar0
+	msgbox SolaceonTown_Text_PtNpc1, MSGBOX_DEFAULT
+	release
+	end
+SolaceonTown_EventScript_PtNpc1_SNVar0:
+	msgbox SolaceonTown_Text_PtNpc1_SNVar0, MSGBOX_DEFAULT
+	release
 	end
 
 SolaceonTown_Text_PtNpc1:
@@ -374,3 +382,11 @@ SolaceonTown_Text_SNBarry2:
 	.string "Defog!\p"
 	.string "Anyway, I’ll battle you another time.\n"
 	.string "See ya!$"
+
+SolaceonTown_Text_PtNpc1_SNVar0:
+	.string "Howdy, traveling Trainer. There’s\n"
+	.string "nothing here.\p"
+	.string "Well, nothing but plenty of time to\n"
+	.string "think, anyway.\p"
+	.string "Oh, right. We have the ruins here. Why\n"
+	.string "not take a tour through that?$"

@@ -116,7 +116,15 @@ JubilifeCity_Text_PtNpc6:
 	.string "have six POKéMON with you.$"
 
 JubilifeCity_EventScript_PtNpc7::
-	msgbox JubilifeCity_Text_PtNpc7, MSGBOX_NPC
+	lock
+	faceplayer
+	goto_if_set FLAG_BADGE01_GET, JubilifeCity_EventScript_PtNpc7_SNVar0
+	msgbox JubilifeCity_Text_PtNpc7, MSGBOX_DEFAULT
+	release
+	end
+JubilifeCity_EventScript_PtNpc7_SNVar0:
+	msgbox JubilifeCity_Text_PtNpc7_SNVar0, MSGBOX_DEFAULT
+	release
 	end
 
 JubilifeCity_Text_PtNpc7:
@@ -1526,3 +1534,12 @@ JubilifeCity_Text_RowanThanks_SNLu:
 	.string "You’re free to do with them as you wish.\n"
 	.string "Take care now.$"
 
+JubilifeCity_Text_PtNpc7_SNVar0:
+	.string "Hello! Let me ask you, have you paid a\n"
+	.string "visit to the TV station?\p"
+	.string "If you’ve never been, you owe it to\n"
+	.string "yourself to make the trip.\p"
+	.string "And, if you’ve been there before, it\n"
+	.string "never hurts to visit again.\p"
+	.string "After all, you can be a star! Or at\n"
+	.string "least dream of being one!$"

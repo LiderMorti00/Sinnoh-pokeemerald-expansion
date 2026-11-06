@@ -44,7 +44,15 @@ OreburghCity_PokemonCenter_1F_Text_PtNpc3:
 	.string "Wi-Fi Club downstairs!$"
 
 OreburghCity_PokemonCenter_1F_EventScript_PtNpc4::
-	msgbox OreburghCity_PokemonCenter_1F_Text_PtNpc4, MSGBOX_NPC
+	lock
+	faceplayer
+	goto_if_set FLAG_SYS_GAME_CLEAR, OreburghCity_PokemonCenter_1F_EventScript_PtNpc4_SNVar0
+	msgbox OreburghCity_PokemonCenter_1F_Text_PtNpc4, MSGBOX_DEFAULT
+	release
+	end
+OreburghCity_PokemonCenter_1F_EventScript_PtNpc4_SNVar0:
+	msgbox OreburghCity_PokemonCenter_1F_Text_PtNpc4_SNVar0, MSGBOX_DEFAULT
+	release
 	end
 
 OreburghCity_PokemonCenter_1F_Text_PtNpc4:
@@ -75,3 +83,11 @@ OreburghCity_PokemonCenter_1F_Text_PtNpc6:
 	.string "Cool! You have a Vs. Recorder!\p"
 	.string "So, did you record a great battle\n"
 	.string "with it? Did ya? Did ya?$"
+
+OreburghCity_PokemonCenter_1F_Text_PtNpc4_SNVar0:
+	.string "Hmmm! What, or who, is this Team\n"
+	.string "Galactic?!\p"
+	.string "Lately, they’ve renounced such acts as\n"
+	.string "stealing POKéMON.\p"
+	.string "They’re still involved in developing\n"
+	.string "dream energies, but ethically now.$"
