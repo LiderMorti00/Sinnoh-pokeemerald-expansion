@@ -232,14 +232,13 @@ VeilstoneCity_EventScript_SNVis_GYM_CP:
 	setflag FLAG_SN_HIDE_GYM_CP
 	call VeilstoneCity_EventScript_SNCPGfx
 	goto_if_set FLAG_BADGE04_GET, VeilstoneCity_EventScript_SNVis_GYM_CP_End
+	goto_if_set FLAG_SN_VEIL_GYM_SCENE_DONE, VeilstoneCity_EventScript_SNVis_GYM_CP_End
 	clearflag FLAG_SN_HIDE_GYM_CP
 VeilstoneCity_EventScript_SNVis_GYM_CP_End:
 	return
 
 VeilstoneCity_EventScript_SNVis_GYM_WAKE:
 	setflag FLAG_SN_HIDE_GYM_WAKE
-	goto_if_set FLAG_BADGE04_GET, VeilstoneCity_EventScript_SNVis_GYM_WAKE_End
-	clearflag FLAG_SN_HIDE_GYM_WAKE
 VeilstoneCity_EventScript_SNVis_GYM_WAKE_End:
 	return
 
@@ -338,6 +337,80 @@ VeilstoneCity_EventScript_SNGymCP_B_Lu:
 	.string "So, uh, yeah, {PLAYER}. Good luck with\n"
 	.string "the POKéMON Gym.$"
 
+VeilstoneCity_EventScript_SNGymScene::
+	goto_if_set FLAG_SN_HIDE_GYM_CP, VeilstoneCity_EventScript_SNGymScene_End
+	lockall
+	applymovement LOCALID_SN_GYM_CP, Common_Movement_ExclamationMark
+	waitmovement 0
+	sn_walktoplayer LOCALID_SN_GYM_CP, SN_SPEED_NORMAL, 0, 0
+	waitmovement LOCALID_SN_GYM_CP
+	sn_playerface LOCALID_SN_GYM_CP, 1
+	waitmovement OBJ_EVENT_ID_PLAYER
+	checkplayergender
+	goto_if_eq VAR_RESULT, FEMALE, VeilstoneCity_EventScript_SNGymScene_AL
+	msgbox VeilstoneCity_EventScript_SNGymCP_A_D, MSGBOX_DEFAULT
+	goto VeilstoneCity_EventScript_SNGymScene_Wake
+VeilstoneCity_EventScript_SNGymScene_AL:
+	msgbox VeilstoneCity_EventScript_SNGymCP_A_Lu, MSGBOX_DEFAULT
+VeilstoneCity_EventScript_SNGymScene_Wake:
+	closemessage
+	opendoor 8, 36
+	waitdooranim
+	clearflag FLAG_SN_HIDE_GYM_WAKE
+	addobject LOCALID_SN_GYM_WAKE
+	applymovement LOCALID_SN_GYM_WAKE, Common_Movement_WalkDown
+	waitmovement 0
+	closedoor 8, 36
+	waitdooranim
+	msgbox VeilstoneCity_EventScript_SNGymWake_T1, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_SN_GYM_WAKE, Common_Movement_ExclamationMark
+	waitmovement 0
+	sn_walktoplayer LOCALID_SN_GYM_WAKE, SN_SPEED_NORMAL, 0, 0
+	waitmovement LOCALID_SN_GYM_WAKE
+	sn_playerface LOCALID_SN_GYM_WAKE, 1
+	waitmovement OBJ_EVENT_ID_PLAYER
+	msgbox VeilstoneCity_EventScript_SNGymWake_T2, MSGBOX_DEFAULT
+	msgbox VeilstoneCity_EventScript_SNGymWake_T3, MSGBOX_DEFAULT
+	closemessage
+	sn_walkto LOCALID_SN_GYM_WAKE, 8, 45, SN_SPEED_FAST, 0, 0, 0
+	waitmovement LOCALID_SN_GYM_WAKE
+	removeobject LOCALID_SN_GYM_WAKE
+	setflag FLAG_SN_HIDE_GYM_WAKE
+	delay 20
+	checkplayergender
+	goto_if_eq VAR_RESULT, FEMALE, VeilstoneCity_EventScript_SNGymScene_BL
+	msgbox VeilstoneCity_Text_SNDawnDots, MSGBOX_DEFAULT
+	closemessage
+	delay 15
+	sn_playerface LOCALID_SN_GYM_CP, 1
+	waitmovement OBJ_EVENT_ID_PLAYER
+	msgbox VeilstoneCity_EventScript_SNGymCP_B_D, MSGBOX_DEFAULT
+	goto VeilstoneCity_EventScript_SNGymScene_Leave
+VeilstoneCity_EventScript_SNGymScene_BL:
+	msgbox VeilstoneCity_Text_SNLucasDots, MSGBOX_DEFAULT
+	closemessage
+	delay 15
+	sn_playerface LOCALID_SN_GYM_CP, 1
+	waitmovement OBJ_EVENT_ID_PLAYER
+	msgbox VeilstoneCity_EventScript_SNGymCP_B_Lu, MSGBOX_DEFAULT
+VeilstoneCity_EventScript_SNGymScene_Leave:
+	closemessage
+	setflag FLAG_SN_VEIL_GYM_SCENE_DONE
+	sn_walkto LOCALID_SN_GYM_CP, 15, 37, SN_SPEED_NORMAL, 0, 0, 0
+	waitmovement LOCALID_SN_GYM_CP
+	removeobject LOCALID_SN_GYM_CP
+	setflag FLAG_SN_HIDE_GYM_CP
+	releaseall
+VeilstoneCity_EventScript_SNGymScene_End:
+	end
+
+VeilstoneCity_Text_SNDawnDots:
+	.string "Dawn: ...$"
+
+VeilstoneCity_Text_SNLucasDots:
+	.string "Lucas: ...$"
+
 VeilstoneCity_EventScript_SNGymWake::
 	lock
 	faceplayer
@@ -348,15 +421,15 @@ VeilstoneCity_EventScript_SNGymWake::
 	end
 
 VeilstoneCity_EventScript_SNGymWake_T1:
-	.string "The ring is my roiling sea. ? The\n"
-	.string "towering waves shaped me.\p"
+	.string "The ring is my roiling sea.\n"
+	.string "The towering waves shaped me.\p"
 	.string "Crash! Crash! Crasher Wake! Crash!\n"
 	.string "Crash! Crasher Wake!\p"
 	.string "I’m the tidal wave of power to wash you\n"
 	.string "away!\p"
 	.string "Put out the fire, Crasher Wake! Run\n"
 	.string "from electricity, Crasher Wake!\p"
-	.string "Ah, ah, aaaah! The ring is my sea. ?$"
+	.string "Ah, ah, aaaah! The ring is my sea.$"
 
 VeilstoneCity_EventScript_SNGymWake_T2:
 	.string "Hello, dude and young lady! You’re\n"
