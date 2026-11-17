@@ -38,5 +38,6 @@ OneIsland_Harbor_EventScript_Sailor::
 	message Text_WhereDoYouWantToSail
 	waitmessage
 	setvar VAR_0x8004, SEAGALLOP_ONE_ISLAND
+	goto_if_set FLAG_SYS_GAME_CLEAR, EventScript_SeviiDestinationsPage1
 	goto EventScript_ChooseDestFromOneIsland
 	end

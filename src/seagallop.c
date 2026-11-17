@@ -66,7 +66,7 @@ static const struct BgTemplate sBGTemplates[] = {
 };
 
 static const s8 sSeag[][4] = {
-    [SEAGALLOP_VERMILION_CITY]  = {MAP_GROUP(MAP_VERMILION_CITY), MAP_NUM(MAP_VERMILION_CITY),      0x17, 0x20},
+    [SEAGALLOP_CANALAVE_CITY]   = {MAP_GROUP(MAP_CANALAVE_CITY), MAP_NUM(MAP_CANALAVE_CITY),        0x0E, 0x2F},
     [SEAGALLOP_ONE_ISLAND]      = {MAP_GROUP(MAP_ONE_ISLAND_HARBOR), MAP_NUM(MAP_ONE_ISLAND_HARBOR),   0x08, 0x05},
     [SEAGALLOP_TWO_ISLAND]      = {MAP_GROUP(MAP_TWO_ISLAND_HARBOR), MAP_NUM(MAP_TWO_ISLAND_HARBOR),   0x08, 0x05},
     [SEAGALLOP_THREE_ISLAND]    = {MAP_GROUP(MAP_THREE_ISLAND_HARBOR), MAP_NUM(MAP_THREE_ISLAND_HARBOR), 0x08, 0x05},
@@ -80,7 +80,7 @@ static const s8 sSeag[][4] = {
 };
 
 // Bitpacked array.  In the commented section, right-most bit is the
-// flag for traveling from (row port) to Vermilion City, and so on.
+// flag for traveling from (row port) to Canalave City, and so on.
 // Flags follow these enums:
 
 enum TravelDirections
@@ -90,7 +90,7 @@ enum TravelDirections
 };
 
 static const u16 sTravelDirectionMatrix[] = {
-    [SEAGALLOP_VERMILION_CITY]  = 0x6fe, // 11011111110
+    [SEAGALLOP_CANALAVE_CITY]   = 0x6fe, // 11011111110
     [SEAGALLOP_ONE_ISLAND]      = 0x6fc, // 11011111100
     [SEAGALLOP_TWO_ISLAND]      = 0x6f8, // 11011111000
     [SEAGALLOP_THREE_ISLAND]    = 0x6f0, // 11011110000
@@ -98,7 +98,7 @@ static const u16 sTravelDirectionMatrix[] = {
     [SEAGALLOP_FIVE_ISLAND]     = 0x4c0, // 10011000000
     [SEAGALLOP_SIX_ISLAND]      = 0x400, // 10000000000
     [SEAGALLOP_SEVEN_ISLAND]    = 0x440, // 10001000000
-    [SEAGALLOP_CINNABAR_ISLAND] = 0x7ff, // 11111111111
+    [SEAGALLOP_CINNABAR_ISLAND] = 0x7fe, // 11111111110
     [SEAGALLOP_NAVEL_ROCK]      = 0x6e0, // 11011100000
     [SEAGALLOP_BIRTH_ISLAND]    = 0x000  // 00000000000
 };
@@ -464,7 +464,7 @@ u8 GetSeagallopNumber(void)
     if (originId == SEAGALLOP_CINNABAR_ISLAND || destId == SEAGALLOP_CINNABAR_ISLAND)
         return 1;
 
-    if (originId == SEAGALLOP_VERMILION_CITY || destId == SEAGALLOP_VERMILION_CITY)
+    if (originId == SEAGALLOP_CANALAVE_CITY || destId == SEAGALLOP_CANALAVE_CITY)
         return 7;
 
     if (originId == SEAGALLOP_NAVEL_ROCK || destId == SEAGALLOP_NAVEL_ROCK)
@@ -494,14 +494,4 @@ u8 GetSeagallopNumber(void)
         return 5;
 
     return 6;
-}
-
-bool8 IsPlayerLeftOfVermilionSailor(void)
-{
-    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_VERMILION_CITY) 
-       && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_VERMILION_CITY) 
-       && gSaveBlock1Ptr->pos.x < 24)
-        return TRUE;
-
-    return FALSE;
 }

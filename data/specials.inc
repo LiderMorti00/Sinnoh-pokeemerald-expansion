@@ -625,7 +625,6 @@ gSpecials::
 	def_special GetSelectedSeagallopDestination
 	def_special GetSeagallopNumber
 	def_special DoSeagallopFerryScene
-	def_special IsPlayerLeftOfVermilionSailor
 	def_special SetVermilionTrashCans
 	def_special DoSSAnneDepartureCutscene
 	def_special StartMarowakBattle

@@ -69,7 +69,7 @@ VermilionCity_EventScript_CheckHasAuroraTicket::
 	end
 
 VermilionCity_EventScript_CheckSeagallopPresent::
-	setvar VAR_0x8004, SEAGALLOP_VERMILION_CITY
+	setvar VAR_0x8004, SEAGALLOP_CANALAVE_CITY
 	goto_if_ge VAR_MAP_SCENE_ONE_ISLAND_POKEMON_CENTER_1F, 5, VermilionCity_EventScript_ChooseSeagallopDestRainbowPass
 	goto_if_ge VAR_MAP_SCENE_ONE_ISLAND_POKEMON_CENTER_1F, 1, VermilionCity_EventScript_ChooseSeagallopDestTriPass
 	msgbox VermilionCity_Text_TheShipSetSail
@@ -81,7 +81,7 @@ VermilionCity_EventScript_ChooseSeagallopDestRainbowPass::
 	goto_if_eq VAR_RESULT, TRUE, VermilionCity_EventScript_HasMysticTicket
 	call VermilionCity_EventScript_CheckHasAuroraTicket
 	goto_if_eq VAR_RESULT, TRUE, VermilionCity_EventScript_HasAuroraTicket
-	setvar VAR_0x8004, SEAGALLOP_VERMILION_CITY
+	setvar VAR_0x8004, SEAGALLOP_CANALAVE_CITY
 	message VermilionCity_Text_BoardSeagallopRainbowPass
 	waitmessage
 	goto EventScript_SeviiDestinationsPage1
@@ -139,14 +139,14 @@ VermilionCity_EventScript_HasMysticAndAuroraTickets::
 
 EventScript_SailToNavelRock::
 	msgbox VermilionCity_Text_Seagallop10Departing
-	setvar VAR_0x8004, SEAGALLOP_VERMILION_CITY
+	setvar VAR_0x8004, SEAGALLOP_CANALAVE_CITY
 	setvar VAR_0x8006, SEAGALLOP_NAVEL_ROCK
 	goto EventScript_SetSail
 	end
 
 EventScript_SailToBirthIsland::
 	msgbox VermilionCity_Text_Seagallop12Departing
-	setvar VAR_0x8004, SEAGALLOP_VERMILION_CITY
+	setvar VAR_0x8004, SEAGALLOP_CANALAVE_CITY
 	setvar VAR_0x8006, SEAGALLOP_BIRTH_ISLAND
 	goto EventScript_SetSail
 	end
@@ -154,7 +154,7 @@ EventScript_SailToBirthIsland::
 VermilionCity_EventScript_ChooseSeagallopDestTriPass::
 	message VermilionCity_Text_BoardSeagallopTriPass
 	waitmessage
-	setvar VAR_0x8004, SEAGALLOP_VERMILION_CITY
+	setvar VAR_0x8004, SEAGALLOP_CANALAVE_CITY
 	multichoice 19, 5, MULTI_SEAGALLOP_123, FALSE
 	switch VAR_RESULT
 	case 0, EventScript_SailToOneIsland2
@@ -205,7 +205,7 @@ VermilionCity_EventScript_DontHaveSSTicket::
 	end
 
 VermilionCity_EventScript_CheckSeagallopPresentTrigger::
-	setvar VAR_0x8004, SEAGALLOP_VERMILION_CITY
+	setvar VAR_0x8004, SEAGALLOP_CANALAVE_CITY
 	goto_if_ge VAR_MAP_SCENE_ONE_ISLAND_POKEMON_CENTER_1F, 5, VermilionCity_EventScript_ChooseSeagallopDestRainbowPass
 	goto_if_ge VAR_MAP_SCENE_ONE_ISLAND_POKEMON_CENTER_1F, 1, VermilionCity_EventScript_ChooseSeagallopDestTriPass
 	msgbox VermilionCity_Text_TheShipSetSail

@@ -1246,7 +1246,7 @@ void DrawSeagallopDestinationMenu(void)
     }
     else
     {
-        destinationId = SEAGALLOP_VERMILION_CITY;
+        destinationId = SEAGALLOP_CANALAVE_CITY;
         numItems = 6;
         top = 0;
     }
@@ -1265,7 +1265,7 @@ void DrawSeagallopDestinationMenu(void)
 
         // Wrap around
         if (destinationId == SEAGALLOP_SEVEN_ISLAND + 1)
-            destinationId = SEAGALLOP_VERMILION_CITY;
+            destinationId = SEAGALLOP_CANALAVE_CITY;
     }
     AddTextPrinterParameterized(windowId, FONT_NORMAL, sText_Other, cursorWidth, i * 16 + 2, TEXT_SKIP_DRAW, NULL);
     i++;
@@ -1324,5 +1324,5 @@ u16 GetSelectedSeagallopDestination(void)
         else
             return gSpecialVar_Result;
     }
-    return SEAGALLOP_VERMILION_CITY;
+    return SEAGALLOP_CANALAVE_CITY;
 }

@@ -834,6 +834,7 @@ static const u8 gText_OneIsland[] = _("ONE ISLAND");
 static const u8 gText_TwoIsland[] = _("TWO ISLAND");
 static const u8 gText_ThreeIsland[] = _("THREE ISLAND");
 static const u8 gText_Vermilion[] = _("VERMILION");
+static const u8 gText_CanalaveCity[] = _("CANALAVE CITY");
 
 static const struct MenuAction sMultichoiceList_Island23[] = {
     {gText_TwoIsland},
@@ -900,8 +901,8 @@ static const struct MenuAction sMultichoiceList_SeagallopV12[] = {
     {gText_Exit}
 };
 
-static const struct MenuAction sMultichoiceList_SeagallopVermilion[] = {
-    {gText_Vermilion},
+static const struct MenuAction sMultichoiceList_SeagallopCanalave[] = {
+    {gText_CanalaveCity},
     {gText_Exit}
 };
 
@@ -1262,7 +1263,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_SEAGALLOP_V23]              = MULTICHOICE(sMultichoiceList_SeagallopV23),
     [MULTI_SEAGALLOP_V13]              = MULTICHOICE(sMultichoiceList_SeagallopV13),
     [MULTI_SEAGALLOP_V12]              = MULTICHOICE(sMultichoiceList_SeagallopV12),
-    [MULTI_SEAGALLOP_VERMILION]        = MULTICHOICE(sMultichoiceList_SeagallopVermilion),
+    [MULTI_SEAGALLOP_CANALAVE]         = MULTICHOICE(sMultichoiceList_SeagallopCanalave),
     [MULTI_GAME_CORNER_POKEMON_PRIZES] = MULTICHOICE(sMultichoiceList_GameCornerPokemonPrizes),
     [MULTI_GAME_CORNER_TMPRIZES]           = MULTICHOICE(sMultichoiceList_GameCornerTMPrizes),
     [MULTI_GAME_CORNER_BATTLE_ITEM_PRIZES] = MULTICHOICE(sMultichoiceList_GameCornerBattleItemPrizes),
@@ -1411,7 +1412,7 @@ static const u8 *const sWirelessOptions_NoRecordMixBerryCrush[] =
 };
 
 static const u8 *const sSeagallopDestStrings[] = {
-    [SEAGALLOP_VERMILION_CITY] = gText_Vermilion,
+    [SEAGALLOP_CANALAVE_CITY]  = gText_CanalaveCity,
     [SEAGALLOP_ONE_ISLAND]     = gText_OneIsland,
     [SEAGALLOP_TWO_ISLAND]     = gText_TwoIsland,
     [SEAGALLOP_THREE_ISLAND]   = gText_ThreeIsland,

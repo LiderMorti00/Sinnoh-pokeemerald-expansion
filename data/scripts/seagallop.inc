@@ -13,7 +13,7 @@ EventScript_ChooseDestFromOneIsland::
 EventScript_ChooseDestFromOneIslandVermilionAllowed::
 	multichoice 19, 5, MULTI_SEAGALLOP_V23, FALSE
 	switch VAR_RESULT
-	case 0, EventScript_SailToVermilion2
+	case 0, EventScript_SailToCanalave2
 	case 1, EventScript_SailToTwoIsland2
 	case 2, EventScript_SailToThreeIsland2
 	case 3, EventScript_CancelSail
@@ -34,15 +34,15 @@ EventScript_ChooseDestFromTwoIsland::
 EventScript_ChooseDestFromTwoIslandVermilionAllowed::
 	multichoice 19, 5, MULTI_SEAGALLOP_V13, FALSE
 	switch VAR_RESULT
-	case 0, EventScript_SailToVermilion2
+	case 0, EventScript_SailToCanalave2
 	case 1, EventScript_SailToOneIsland2
 	case 2, EventScript_SailToThreeIsland2
 	case 3, EventScript_CancelSail
 	case MULTI_B_PRESSED, EventScript_CancelSail
 	end
 
-EventScript_SailToVermilion2::
-	setvar VAR_0x8006, SEAGALLOP_VERMILION_CITY
+EventScript_SailToCanalave2::
+	setvar VAR_0x8006, SEAGALLOP_CANALAVE_CITY
 	goto EventScript_SailToDest
 	end
 
@@ -75,7 +75,7 @@ EventScript_ChooseDestFromIsland::
 EventScript_ChooseDestFromIslandVermilionAllowed::
 	multichoice 19, 5, MULTI_SEAGALLOP_V12, FALSE
 	switch VAR_RESULT
-	case 0, EventScript_SailToVermilion2
+	case 0, EventScript_SailToCanalave2
 	case 1, EventScript_SailToOneIsland2
 	case 2, EventScript_SailToTwoIsland2
 	case 3, EventScript_CancelSail
@@ -85,16 +85,6 @@ EventScript_ChooseDestFromIslandVermilionAllowed::
 EventScript_SailToDest::
 	specialvar VAR_RESULT, GetSeagallopNumber
 	buffernumberstring STR_VAR_1, VAR_RESULT
-	goto_if_eq VAR_0x8004, SEAGALLOP_VERMILION_CITY, EventScript_DepartingVermilion
-	goto_if_ne VAR_0x8004, SEAGALLOP_VERMILION_CITY, EventScript_DepartingNotVermilion
-	end
-
-EventScript_DepartingVermilion::
-	msgbox VermilionCity_Text_Seagallop7Departing
-	goto EventScript_SetSail
-	end
-
-EventScript_DepartingNotVermilion::
 	msgbox Text_AllAboardSeagallopNum
 	goto EventScript_SetSail
 	end
@@ -108,22 +98,8 @@ EventScript_SetSail::
 	end
 
 EventScript_CancelSail::
-	specialvar VAR_RESULT, IsPlayerLeftOfVermilionSailor
-	goto_if_eq VAR_RESULT, TRUE, VermilionCity_EventScript_WalkUpPier
 	release
 	end
-
-VermilionCity_EventScript_WalkUpPier::
-	closemessage
-	applymovement LOCALID_VERMILION_FERRY_SAILOR, Common_Movement_FaceOriginalDirection
-	applymovement LOCALID_PLAYER, VermilionCity_Movement_WalkUp
-	waitmovement 0
-	releaseall
-	end
-
-VermilionCity_Movement_WalkUp::
-	walk_up
-	step_end
 
 EventScript_SeviiDestinationsPage1::
 	setvar VAR_0x8005, 0
@@ -131,7 +107,7 @@ EventScript_SeviiDestinationsPage1::
 	waitstate
 	specialvar VAR_0x8006, GetSelectedSeagallopDestination
 	switch VAR_0x8006
-	case SEAGALLOP_VERMILION_CITY, EventScript_SailToVermilionCity
+	case SEAGALLOP_CANALAVE_CITY, EventScript_SailToCanalaveCity
 	case SEAGALLOP_ONE_ISLAND,     EventScript_SailToOneIsland
 	case SEAGALLOP_TWO_ISLAND,     EventScript_SailToTwoIsland
 	case SEAGALLOP_THREE_ISLAND,   EventScript_SailToThreeIsland
@@ -154,8 +130,8 @@ EventScript_SeviiDestinationsPage2::
 	case MULTI_B_PRESSED,        EventScript_CancelSail
 	end
 
-EventScript_SailToVermilionCity::
-	setvar VAR_0x8006, SEAGALLOP_VERMILION_CITY
+EventScript_SailToCanalaveCity::
+	setvar VAR_0x8006, SEAGALLOP_CANALAVE_CITY
 	goto EventScript_SailToDest
 	end
 

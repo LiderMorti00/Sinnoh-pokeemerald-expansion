@@ -212,18 +212,43 @@ CanalaveCity_EventScript_SNEldritchWoke:
 	setflag FLAG_SN_ELDRITCH_THANKED
 	msgbox CanalaveCity_Text_SNComeSailWithMe, MSGBOX_DEFAULT
 CanalaveCity_EventScript_SNEldritchMenu:
+	goto_if_unset FLAG_SYS_GAME_CLEAR, CanalaveCity_EventScript_SNEldritchDestMenu
+	goto_if_set FLAG_ENABLE_SHIP_NAVEL_ROCK, CanalaveCity_EventScript_SNEldritchDestMenu
+	msgbox CanalaveCity_Text_SNEldritchTickets, MSGBOX_DEFAULT
+	checkitem ITEM_MYSTIC_TICKET
+	goto_if_eq VAR_RESULT, TRUE, CanalaveCity_EventScript_SNEldritchCheckAuroraTicket
+	additem ITEM_MYSTIC_TICKET
+	goto_if_eq VAR_RESULT, FALSE, CanalaveCity_EventScript_SNEldritchBagFull
+CanalaveCity_EventScript_SNEldritchCheckAuroraTicket:
+	checkitem ITEM_AURORA_TICKET
+	goto_if_eq VAR_RESULT, TRUE, CanalaveCity_EventScript_SNEldritchHandOverTickets
+	additem ITEM_AURORA_TICKET
+	goto_if_eq VAR_RESULT, FALSE, CanalaveCity_EventScript_SNEldritchBagFull
+CanalaveCity_EventScript_SNEldritchHandOverTickets:
+	setflag FLAG_ENABLE_SHIP_NAVEL_ROCK
+	setflag FLAG_ENABLE_SHIP_BIRTH_ISLAND
+	goto CanalaveCity_EventScript_SNEldritchDestMenu
+CanalaveCity_EventScript_SNEldritchBagFull:
+	msgbox CanalaveCity_Text_SNEldritchBagFull, MSGBOX_DEFAULT
+CanalaveCity_EventScript_SNEldritchDestMenu:
 	msgbox CanalaveCity_Text_DoYouWannaSetSail, MSGBOX_DEFAULT
 	dynmultipush CanalaveCity_Text_DestIronIsland, 0
 	goto_if_unset FLAG_SYS_GAME_CLEAR, CanalaveCity_EventScript_SailorMenu
 	dynmultipush CanalaveCity_Text_DestFullmoon, 1
 	dynmultipush CanalaveCity_Text_DestNewmoon, 2
+	dynmultipush CanalaveCity_Text_DestOneIsland, 3
+	dynmultipush CanalaveCity_Text_DestNavelRock, 4
+	dynmultipush CanalaveCity_Text_DestBirthIsland, 5
 CanalaveCity_EventScript_SailorMenu:
-	dynmultipush CanalaveCity_Text_DestCancel, 3
+	dynmultipush CanalaveCity_Text_DestCancel, 6
 	dynmultistack 0, 0, FALSE, 4, FALSE, 0, DYN_MULTICHOICE_CB_NONE
 	switch VAR_RESULT
 	case 0, CanalaveCity_EventScript_SailIronIsland
 	case 1, CanalaveCity_EventScript_SailFullmoon
 	case 2, CanalaveCity_EventScript_SailNewmoon
+	case 3, CanalaveCity_EventScript_SailOneIsland
+	case 4, CanalaveCity_EventScript_SailNavelRock
+	case 5, CanalaveCity_EventScript_SailBirthIsland
 	msgbox CanalaveCity_Text_TellWheneverSetSail, MSGBOX_DEFAULT
 	release
 	end
@@ -252,6 +277,32 @@ CanalaveCity_EventScript_SailNewmoon:
 	release
 	end
 
+CanalaveCity_EventScript_SailOneIsland:
+	msgbox CanalaveCity_Text_SailorAllAboard, MSGBOX_DEFAULT
+	closemessage
+	warp MAP_ONE_ISLAND_HARBOR, 8, 5
+	waitstate
+	release
+	end
+
+CanalaveCity_EventScript_SailNavelRock:
+	goto_if_unset FLAG_ENABLE_SHIP_NAVEL_ROCK, CanalaveCity_EventScript_SNEldritchBagFull
+	msgbox CanalaveCity_Text_SailorAllAboard, MSGBOX_DEFAULT
+	closemessage
+	warp MAP_NAVEL_ROCK_HARBOR_FRLG, 8, 5
+	waitstate
+	release
+	end
+
+CanalaveCity_EventScript_SailBirthIsland:
+	goto_if_unset FLAG_ENABLE_SHIP_BIRTH_ISLAND, CanalaveCity_EventScript_SNEldritchBagFull
+	msgbox CanalaveCity_Text_SailorAllAboard, MSGBOX_DEFAULT
+	closemessage
+	warp MAP_BIRTH_ISLAND_HARBOR_FRLG, 8, 5
+	waitstate
+	release
+	end
+
 CanalaveCity_Text_DestIronIsland:
 	.string "IRON ISLAND$"
 
@@ -260,6 +311,15 @@ CanalaveCity_Text_DestFullmoon:
 
 CanalaveCity_Text_DestNewmoon:
 	.string "NEWMOON ISLAND$"
+
+CanalaveCity_Text_DestOneIsland:
+	.string "ONE ISLAND$"
+
+CanalaveCity_Text_DestNavelRock:
+	.string "NAVEL ROCK$"
+
+CanalaveCity_Text_DestBirthIsland:
+	.string "BIRTH ISLAND$"
 
 CanalaveCity_Text_DestCancel:
 	.string "CANCEL$"
@@ -270,6 +330,19 @@ CanalaveCity_Text_DoYouWannaSetSail:
 CanalaveCity_Text_TellWheneverSetSail:
 	.string "You just tell me whenever you need to\n"
 	.string "set sail!$"
+
+CanalaveCity_Text_SNEldritchTickets:
+	.string "These came into my keeping a long\n"
+	.string "way from here.\p"
+	.string "A ticket for the rock that burns,\n"
+	.string "and one for the rock that moves.\p"
+	.string "Wherever you want to go, the\n"
+	.string "Seagallop knows the way.$"
+
+CanalaveCity_Text_SNEldritchBagFull:
+	.string "But your BAG is full.\p"
+	.string "Come back when you have room for\n"
+	.string "these tickets.$"
 
 CanalaveCity_OnTransitionSN:
 	call CanalaveCity_EventScript_SNVis_CANAL_GYM_BARRY

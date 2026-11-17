@@ -7,9 +7,9 @@ NavelRock_Harbor_Frlg_EventScript_Sailor::
 	message Text_WhereDoYouWantToSail
 	waitmessage
 	setvar VAR_0x8004, SEAGALLOP_NAVEL_ROCK
-	multichoice 20, 8, MULTI_SEAGALLOP_VERMILION, FALSE
+	multichoice 20, 8, MULTI_SEAGALLOP_CANALAVE, FALSE
 	switch VAR_RESULT
-	case 0, EventScript_SailToVermilionCity
+	case 0, EventScript_SailToCanalaveCity
 	case 1, EventScript_CancelSail
 	case 127, EventScript_CancelSail
 	end
