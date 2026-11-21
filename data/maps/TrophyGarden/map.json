@@ -16,14 +16,14 @@
   "object_events": [],
   "warp_events": [
     {
-      "x": 7,
+      "x": 9,
       "y": 20,
       "elevation": 0,
       "dest_map": "MAP_POKEMON_MANSION",
       "dest_warp_id": "5"
     },
     {
-      "x": 8,
+      "x": 10,
       "y": 20,
       "elevation": 0,
       "dest_map": "MAP_POKEMON_MANSION",

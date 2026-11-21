@@ -1507,6 +1507,27 @@
     },
     {
       "id": "MAPSEC_ROUTE_3"
+    },
+    {
+      "id": "MAPSEC_TANOBY_RUINS"
+    },
+    {
+      "id": "MAPSEC_MONEAN_CHAMBER"
+    },
+    {
+      "id": "MAPSEC_LOST_CAVE"
+    },
+    {
+      "id": "MAPSEC_LIPTOO_CHAMBER"
+    },
+    {
+      "id": "MAPSEC_CINNABAR_ISLAND"
+    },
+    {
+      "id": "MAPSEC_ROUTE_20"
+    },
+    {
+      "id": "MAPSEC_ROUTE_21"
     }
   ]
 }

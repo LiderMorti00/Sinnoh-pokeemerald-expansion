@@ -189,7 +189,7 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 19,
+      "x": 18,
       "y": 21,
       "elevation": 0,
       "dest_map": "MAP_RESORT_AREA_VILLA",
@@ -199,7 +199,7 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 19,
+      "x": 18,
       "y": 22,
       "elevation": 3,
       "var": "VAR_TEMP_F",

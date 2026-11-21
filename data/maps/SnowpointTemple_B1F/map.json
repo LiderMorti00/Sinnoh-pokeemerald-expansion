@@ -2,7 +2,7 @@
   "id": "MAP_SNOWPOINT_TEMPLE_B1F",
   "name": "SnowpointTemple_B1F",
   "layout": "LAYOUT_SNOWPOINT_TEMPLE_B1F",
-  "music": "MUS_DPP_SNOWPOINT",
+  "music": "MUS_RG_SEVII_DUNGEON",
   "region_map_section": "MAPSEC_SNOWPOINT_TEMPLE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -30,14 +30,14 @@
   ],
   "warp_events": [
     {
-      "x": 14,
+      "x": 4,
       "y": 3,
       "elevation": 0,
       "dest_map": "MAP_SNOWPOINT_TEMPLE_1F",
       "dest_warp_id": "1"
     },
     {
-      "x": 4,
+      "x": 14,
       "y": 3,
       "elevation": 0,
       "dest_map": "MAP_SNOWPOINT_TEMPLE_B2F",

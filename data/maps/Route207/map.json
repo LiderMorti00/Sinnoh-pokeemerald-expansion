@@ -234,6 +234,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_R207_COUNTERPART",
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
       "x": 22,
       "y": 20,
@@ -244,8 +245,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route207_EventScript_SNCounterpart",
-      "flag": "FLAG_SN_HIDE_R207_COUNTERPART",
-      "local_id": "LOCALID_R207_COUNTERPART"
+      "flag": "FLAG_SN_HIDE_R207_COUNTERPART"
     }
   ],
   "warp_events": [

@@ -195,6 +195,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_SN_GYM_CP",
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
       "x": 6,
       "y": 37,
@@ -205,10 +206,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "VeilstoneCity_EventScript_SNGymCP",
-      "flag": "FLAG_SN_HIDE_GYM_CP",
-      "local_id": "LOCALID_SN_GYM_CP"
+      "flag": "FLAG_SN_HIDE_GYM_CP"
     },
     {
+      "local_id": "LOCALID_SN_GYM_WAKE",
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_WAKE",
       "x": 8,
       "y": 36,
@@ -219,8 +220,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "VeilstoneCity_EventScript_SNGymWake",
-      "flag": "FLAG_SN_HIDE_GYM_WAKE",
-      "local_id": "LOCALID_SN_GYM_WAKE"
+      "flag": "FLAG_SN_HIDE_GYM_WAKE"
     },
     {
       "local_id": "LOCALID_SN_WH_GRUNT0",

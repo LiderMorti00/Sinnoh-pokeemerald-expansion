@@ -207,6 +207,13 @@
       "elevation": 0,
       "dest_map": "MAP_ROUTE226_HOUSE",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 95,
+      "y": 16,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE226_ACCESS",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

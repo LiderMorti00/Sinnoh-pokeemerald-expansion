@@ -2,7 +2,7 @@
   "id": "MAP_SNOWPOINT_TEMPLE_B5F",
   "name": "SnowpointTemple_B5F",
   "layout": "LAYOUT_SNOWPOINT_TEMPLE_B5F",
-  "music": "MUS_DPP_SNOWPOINT",
+  "music": "MUS_RG_SEVII_DUNGEON",
   "region_map_section": "MAPSEC_SNOWPOINT_TEMPLE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -16,8 +16,8 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_MON_REGIGIGAS",
-      "x": 10,
-      "y": 12,
+      "x": 12,
+      "y": 14,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -31,7 +31,7 @@
   "warp_events": [
     {
       "x": 9,
-      "y": 4,
+      "y": 3,
       "elevation": 0,
       "dest_map": "MAP_SNOWPOINT_TEMPLE_B4F",
       "dest_warp_id": "1"

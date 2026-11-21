@@ -104,9 +104,10 @@
       "flag": "FLAG_ITEM_SUNYSHORECITY_THUNDER_STONE"
     },
     {
+      "local_id": "LOCALID_SN_SUNY_JASMINE",
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_JASMINE",
-      "x": 30,
-      "y": 13,
+      "x": 29,
+      "y": 7,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -114,8 +115,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SunyshoreCity_EventScript_SNJasmine",
-      "flag": "FLAG_SN_HIDE_JASMINE",
-      "local_id": "LOCALID_SN_SUNY_JASMINE"
+      "flag": "FLAG_SN_HIDE_JASMINE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_FLINT",

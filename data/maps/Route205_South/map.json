@@ -480,7 +480,7 @@
     },
     {
       "type": "trigger",
-      "x": 25,
+      "x": 26,
       "y": 69,
       "elevation": 3,
       "var": "VAR_SINNOH_STORY",

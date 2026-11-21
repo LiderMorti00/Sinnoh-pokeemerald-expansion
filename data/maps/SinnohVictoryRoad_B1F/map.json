@@ -43,7 +43,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SINNOH_DRAGON_TAMER",
       "x": 10,
-      "y": 6,
+      "y": 5,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,

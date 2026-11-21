@@ -11553,8 +11553,8 @@
     {
       "id": "LAYOUT_TROPHY_GARDEN",
       "name": "TrophyGarden_Layout",
-      "width": 18,
-      "height": 24,
+      "width": 20,
+      "height": 26,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Lilycove",
       "border_filepath": "data/layouts/TrophyGarden/border.bin",

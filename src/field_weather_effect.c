@@ -762,15 +762,17 @@ static void DestroyRainSprites(void)
 #undef tWaiting
 
 //------------------------------------------------------------------------------
-// Snow
+// Snow (Normal, Light, Heavy & Blizzard) - Implementación completa
 //------------------------------------------------------------------------------
 
+// Declaraciones de funciones de gestión de copos y movimiento
 static void UpdateSnowflakeSprite(struct Sprite *);
 static bool8 UpdateVisibleSnowflakeSprites(void);
 static bool8 CreateSnowflakeSprite(void);
 static bool8 DestroySnowflakeSprite(void);
 static void InitSnowflakeSpriteMovement(struct Sprite *);
 
+// Funciones de inicialización y control principal para nieve normal
 void Snow_InitVars(void)
 {
     gWeatherPtr->initStep = 0;
@@ -779,14 +781,13 @@ void Snow_InitVars(void)
     gWeatherPtr->colorMapStepDelay = 20;
     gWeatherPtr->targetSnowflakeSpriteCount = NUM_SNOWFLAKE_SPRITES;
     gWeatherPtr->snowflakeVisibleCounter = 0;
-    Weather_SetBlendCoeffs(8, BASE_SHADOW_INTENSITY); // preserve shadow darkness
+    Weather_SetBlendCoeffs(8, BASE_SHADOW_INTENSITY);
     gWeatherPtr->noShadows = FALSE;
 }
 
 void Snow_InitAll(void)
 {
     u16 i;
-
     Snow_InitVars();
     while (gWeatherPtr->weatherGfxLoaded == FALSE)
     {
@@ -813,7 +814,6 @@ bool8 Snow_Finish(void)
         gWeatherPtr->targetSnowflakeSpriteCount = 0;
         gWeatherPtr->snowflakeVisibleCounter = 0;
         gWeatherPtr->finishStep++;
-        // fall through
     case 1:
         if (!UpdateVisibleSnowflakeSprites())
         {
@@ -822,16 +822,36 @@ bool8 Snow_Finish(void)
         }
         return TRUE;
     }
-
     return FALSE;
 }
 
+// Variantes: SnowLight (8 copos), SnowHeavy (32 copos) y Blizzard (64 copos rápidos con tinte)
+void SnowLight_InitVars(void) { Snow_InitVars(); gWeatherPtr->targetSnowflakeSpriteCount = 8; }
+void SnowLight_InitAll(void) { u16 i; SnowLight_InitVars(); while (!gWeatherPtr->weatherGfxLoaded) { SnowLight_Main(); for (i = 0; i < gWeatherPtr->snowflakeSpriteCount; i++) UpdateSnowflakeSprite(gWeatherPtr->sprites.s1.snowflakeSprites[i]); } }
+void SnowLight_Main(void) { Snow_Main(); }
+bool8 SnowLight_Finish(void) { return Snow_Finish(); }
+
+void SnowHeavy_InitVars(void) { Snow_InitVars(); gWeatherPtr->targetSnowflakeSpriteCount = 32; }
+void SnowHeavy_InitAll(void) { u16 i; SnowHeavy_InitVars(); while (!gWeatherPtr->weatherGfxLoaded) { SnowHeavy_Main(); for (i = 0; i < gWeatherPtr->snowflakeSpriteCount; i++) UpdateSnowflakeSprite(gWeatherPtr->sprites.s1.snowflakeSprites[i]); } }
+void SnowHeavy_Main(void) { Snow_Main(); }
+bool8 SnowHeavy_Finish(void) { return Snow_Finish(); }
+
+void Blizzard_InitVars(void) { Snow_InitVars(); gWeatherPtr->targetColorMapIndex = 3; gWeatherPtr->targetSnowflakeSpriteCount = 64; }
+void Blizzard_InitAll(void) { u16 i; Blizzard_InitVars(); while (!gWeatherPtr->weatherGfxLoaded) { Blizzard_Main(); for (i = 0; i < gWeatherPtr->snowflakeSpriteCount; i++) UpdateSnowflakeSprite(gWeatherPtr->sprites.s1.snowflakeSprites[i]); } }
+void Blizzard_Main(void) { Snow_Main(); }
+bool8 Blizzard_Finish(void) { return Snow_Finish(); }
+
+// Control de visibilidad, creación y destrucción de sprites
 static bool8 UpdateVisibleSnowflakeSprites(void)
 {
+    u16 spawnDelay = (gWeatherPtr->currWeather == WEATHER_SNOW_LIGHT) ? 45 :
+                     (gWeatherPtr->currWeather == WEATHER_SNOW_HEAVY) ? 10 :
+                     (gWeatherPtr->currWeather == WEATHER_BLIZZARD) ? 3 : 36;
+
     if (gWeatherPtr->snowflakeSpriteCount == gWeatherPtr->targetSnowflakeSpriteCount)
         return FALSE;
 
-    if (++gWeatherPtr->snowflakeVisibleCounter > 36)
+    if (++gWeatherPtr->snowflakeVisibleCounter > spawnDelay)
     {
         gWeatherPtr->snowflakeVisibleCounter = 0;
         if (gWeatherPtr->snowflakeSpriteCount < gWeatherPtr->targetSnowflakeSpriteCount)
@@ -839,59 +859,30 @@ static bool8 UpdateVisibleSnowflakeSprites(void)
         else
             DestroySnowflakeSprite();
     }
-
     return gWeatherPtr->snowflakeSpriteCount != gWeatherPtr->targetSnowflakeSpriteCount;
 }
 
-static const struct OamData sSnowflakeSpriteOamData =
-{
-    .y = 0,
-    .affineMode = ST_OAM_AFFINE_OFF,
-    .objMode = ST_OAM_OBJ_NORMAL,
-    .mosaic = FALSE,
-    .bpp = ST_OAM_4BPP,
-    .shape = SPRITE_SHAPE(8x8),
-    .x = 0,
-    .matrixNum = 0,
-    .size = SPRITE_SIZE(8x8),
-    .tileNum = 0,
-    .priority = 1,
-    .paletteNum = 0,
-    .affineParam = 0,
+// Configuración OAM, gráficos y animaciones del copo de nieve
+static const struct OamData sSnowflakeSpriteOamData = {
+    .y = 0, .affineMode = ST_OAM_AFFINE_OFF, .objMode = ST_OAM_OBJ_NORMAL,
+    .mosaic = FALSE, .bpp = ST_OAM_4BPP, .shape = SPRITE_SHAPE(8x8),
+    .x = 0, .matrixNum = 0, .size = SPRITE_SIZE(8x8), .tileNum = 0,
+    .priority = 1, .paletteNum = 0, .affineParam = 0,
 };
 
-static const struct SpriteFrameImage sSnowflakeSpriteImages[] =
-{
+static const struct SpriteFrameImage sSnowflakeSpriteImages[] = {
     {gWeatherSnow1Tiles, sizeof(gWeatherSnow1Tiles)},
     {gWeatherSnow2Tiles, sizeof(gWeatherSnow2Tiles)},
 };
 
-static const union AnimCmd sSnowflakeAnimCmd0[] =
-{
-    ANIMCMD_FRAME(0, 16),
-    ANIMCMD_END,
-};
+static const union AnimCmd sSnowflakeAnimCmd0[] = { ANIMCMD_FRAME(0, 16), ANIMCMD_END, };
+static const union AnimCmd sSnowflakeAnimCmd1[] = { ANIMCMD_FRAME(1, 16), ANIMCMD_END, };
+static const union AnimCmd *const sSnowflakeAnimCmds[] = { sSnowflakeAnimCmd0, sSnowflakeAnimCmd1, };
 
-static const union AnimCmd sSnowflakeAnimCmd1[] =
-{
-    ANIMCMD_FRAME(1, 16),
-    ANIMCMD_END,
-};
-
-static const union AnimCmd *const sSnowflakeAnimCmds[] =
-{
-    sSnowflakeAnimCmd0,
-    sSnowflakeAnimCmd1,
-};
-
-static const struct SpriteTemplate sSnowflakeSpriteTemplate =
-{
-    .tileTag = TAG_NONE,
-    .paletteTag = PALTAG_WEATHER,
-    .oam = &sSnowflakeSpriteOamData,
-    .anims = sSnowflakeAnimCmds,
-    .images = sSnowflakeSpriteImages,
-    .callback = UpdateSnowflakeSprite,
+static const struct SpriteTemplate sSnowflakeSpriteTemplate = {
+    .tileTag = TAG_NONE, .paletteTag = PALTAG_WEATHER,
+    .oam = &sSnowflakeSpriteOamData, .anims = sSnowflakeAnimCmds,
+    .images = sSnowflakeSpriteImages, .callback = UpdateSnowflakeSprite,
 };
 
 #define tPosY         data[0]
@@ -906,9 +897,7 @@ static const struct SpriteTemplate sSnowflakeSpriteTemplate =
 static bool8 CreateSnowflakeSprite(void)
 {
     u8 spriteId = CreateSpriteAtEndUnchecked(&sSnowflakeSpriteTemplate, 0, 0, 78);
-    if (spriteId == MAX_SPRITES)
-        return FALSE;
-
+    if (spriteId == MAX_SPRITES) return FALSE;
     gSprites[spriteId].tSnowflakeId = gWeatherPtr->snowflakeSpriteCount;
     InitSnowflakeSpriteMovement(&gSprites[spriteId]);
     gSprites[spriteId].coordOffsetEnabled = TRUE;
@@ -923,15 +912,12 @@ static bool8 DestroySnowflakeSprite(void)
         DestroySprite(gWeatherPtr->sprites.s1.snowflakeSprites[--gWeatherPtr->snowflakeSpriteCount]);
         return TRUE;
     }
-
     return FALSE;
 }
 
 static void InitSnowflakeSpriteMovement(struct Sprite *sprite)
 {
-    u16 rand;
-    u16 x = ((sprite->tSnowflakeId * 5) & 7) * 30 + (Random() % 30);
-
+    u16 rand, x = ((sprite->tSnowflakeId * 5) & 7) * 30 + (Random() % 30);
     sprite->y = -3 - (gSpriteCoordOffsetY + sprite->centerToCornerVecY);
     sprite->x = x - (gSpriteCoordOffsetX + sprite->centerToCornerVecX);
     sprite->tPosY = sprite->y * 128;
@@ -961,16 +947,27 @@ static void UNUSED WaitSnowflakeSprite(struct Sprite *sprite)
 static void UpdateSnowflakeSprite(struct Sprite *sprite)
 {
     s16 x;
+    if (gWeatherPtr->currWeather == WEATHER_BLIZZARD)
+    {
+        sprite->tPosY += sprite->tDeltaY * 2;
+        sprite->x -= 3;
+    }
+    else if (gWeatherPtr->currWeather == WEATHER_SNOW_HEAVY)
+    {
+        sprite->tPosY += (sprite->tDeltaY * 3) / 2;
+    }
+    else
+    {
+        sprite->tPosY += sprite->tDeltaY;
+    }
 
-    sprite->tPosY += sprite->tDeltaY;
     sprite->y = sprite->tPosY >> 7;
     sprite->tWaveIndex += sprite->tWaveDelta;
     sprite->tWaveIndex &= 0xFF;
     sprite->x2 = gSineTable[sprite->tWaveIndex] / 64;
 
     x = (sprite->x + sprite->centerToCornerVecX + gSpriteCoordOffsetX) & 0x1FF;
-    if (x & 0x100)
-        x |= -0x100;
+    if (x & 0x100) x |= -0x100;
 
     if (x < -3)
         sprite->x = 242 - (gSpriteCoordOffsetX + sprite->centerToCornerVecX);
@@ -2673,6 +2670,9 @@ static enum OverworldWeather TranslateWeatherNum(enum OverworldWeather weather)
     case WEATHER_SUNNY:              return WEATHER_SUNNY;
     case WEATHER_RAIN:               return WEATHER_RAIN;
     case WEATHER_SNOW:               return WEATHER_SNOW;
+    case WEATHER_SNOW_LIGHT:         return WEATHER_SNOW_LIGHT;
+    case WEATHER_SNOW_HEAVY:         return WEATHER_SNOW_HEAVY;
+    case WEATHER_BLIZZARD:           return WEATHER_BLIZZARD;
     case WEATHER_RAIN_THUNDERSTORM:  return WEATHER_RAIN_THUNDERSTORM;
     case WEATHER_FOG:                return WEATHER_FOG;
     case WEATHER_FOG_HORIZONTAL:     return WEATHER_FOG_HORIZONTAL;

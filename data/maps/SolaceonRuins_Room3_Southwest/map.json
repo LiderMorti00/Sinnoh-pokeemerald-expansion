@@ -2,7 +2,7 @@
   "id": "MAP_SOLACEON_RUINS_ROOM3_SOUTHWEST",
   "name": "SolaceonRuins_Room3_Southwest",
   "layout": "LAYOUT_SOLACEON_RUINS_ROOM3_SOUTHWEST",
-  "music": "MUS_RG_SEVII_CAVE",
+  "music": "MUS_RG_SEVII_DUNGEON",
   "region_map_section": "MAPSEC_SOLACEON_RUINS",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

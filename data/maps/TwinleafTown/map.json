@@ -99,14 +99,14 @@
       "x": 6,
       "y": 18,
       "elevation": 0,
-      "dest_map": "MAP_TWINLEAF_TOWN_HAOUSE1",
+      "dest_map": "MAP_CANALAVE_CITY",
       "dest_warp_id": "0"
     },
     {
       "x": 16,
       "y": 9,
       "elevation": 0,
-      "dest_map": "MAP_TWINLEAF_TOWN_HOUSE2",
+      "dest_map": "MAP_SNOWPOINT_CITY",
       "dest_warp_id": "0"
     }
   ],
@@ -204,8 +204,8 @@
     },
     {
       "type": "hidden_item",
-      "x": 7,
-      "y": 25,
+      "x": 2,
+      "y": 23,
       "elevation": 3,
       "item": "ITEM_ODD_KEYSTONE",
       "flag": "FLAG_HIDDEN_ITEM_LAVARIDGE_TOWN_ICE_HEAL"
